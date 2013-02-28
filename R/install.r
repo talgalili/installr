@@ -1,13 +1,26 @@
 # let's create a new package called installR  (a play on words installer) - for doing installing softwares on windows without leaving R.
 
-install.URL <- function(URL, remove_install_file = T) {
-	# source: http://stackoverflow.com/questions/15071957/is-it-possible-to-install-pandoc-on-windows-using-an-r-command
-	# input: a url of an .exe file to install
-	# output: it runs the .exe file (for installing something)
-	exe_filename <- tempfile(fileext = '.exe')
-	download.file(URL, exe_filename, mode = 'wb')
-	system(exe_filename)
-	if(remove_install_file) unlink(exe_filename)
+file.name.from.url <- function(URL) tail(strsplit(URL,   "/")[[1]],1)
+
+install.packages.zip <- function(zip_URL) {
+   # zip_URL is the URL for the package_name.zip file
+   zip_filename <- file.path(tempdir(), file.name.from.url(zip_URL))   # the name of the zip file MUST be as it was downloaded...
+   download.file(zip_URL, destfile=zip_filename, mode = 'wb')   
+   install.packages(pkgs= zip_filename, repos=NULL)   
+   unlink(zip_filename)
+}
+# a simple example of use:
+# install.packages.zip(zip_URL="http://cran.r-project.org/bin/windows/contrib/r-release/TeachingSampling_2.0.1.zip")
+
+
+install.URL <- function(exe_URL, remove_install_file = T) {
+   # source: http://stackoverflow.com/questions/15071957/is-it-possible-to-install-pandoc-on-windows-using-an-r-command
+   # input: a url of an .exe file to install
+   # output: it runs the .exe file (for installing something)   
+   exe_filename <- file.path(tempdir(), file.name.from.url(exe_URL))   # the name of the zip file MUST be as it was downloaded...
+   download.file(exe_URL, destfile=exe_filename, mode = 'wb')     
+   system(exe_filename)
+   if(remove_install_file) unlink(exe_filename)
    invisible()
 }
 
@@ -48,6 +61,9 @@ install.RStudio <- function() {
 check.integer <- function(N){
    # source: http://stackoverflow.com/questions/3476782/how-to-check-if-the-number-is-integer
    # author: VitoshKa
+   
+   # notice that the function "is.integer" is used by based R for checking the object if it is of type integer.
+   
    !length(grep("[^[:digit:]]", format(N, scientific = FALSE)))
 }
 # is.integer(3)
@@ -129,9 +145,14 @@ install.R <- function() {
 # str(R.version )
 # R.version$major    
 # R.version$minor 
+}
 
+
+install.MikTeX <- function() { 
 
 }
+   
+
 
 installR <- function(what) {
 # matches a character with what to install...
