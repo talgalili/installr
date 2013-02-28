@@ -1,0 +1,18 @@
+*****************************************	
+****CHANGES IN installR VERSION 0.2****
+
+NEW FEATURES
+
+    * Added the function install.packages.zip - for installing package from a url of the ZIP file
+    * Added the function install.Rtools - for installing Rtools (allowing the user to choose which version to download)	
+    * Added the function update.R - for checking if we have the latest version of R - and if not - download and install it.
+	
+*****************************************	
+****CHANGES IN installR VERSION 0.1****
+
+NEW FEATURES
+
+    * Added the install.pandoc() function is created.
+	* Includes skeletons for some functions that will be added in the future.
+	
+	

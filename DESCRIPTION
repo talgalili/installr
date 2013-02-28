@@ -1,7 +1,7 @@
 Package: installR
 Type: Package
 Title: Functions for installing softwares from R
-Version: 0.1
+Version: 0.2
 Date: 2013-02-28
 Author: Tal Galili
 Maintainer: Tal Galili <tal.galili@gmail.com>
