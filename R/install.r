@@ -68,7 +68,7 @@ check.integer <- function(N){
 }
 # is.integer(3)
 
-ask.user.for.a.row <- function(TABLE) {
+ask.user.for.a.row <- function(TABLE, header_text = "Possible versions to download (choose one)") {
    # http://stackoverflow.com/questions/5974967/what-is-the-correct-way-to-ask-for-user-input-in-an-r-program
    # based on code by Joris Meys
    
@@ -76,7 +76,7 @@ ask.user.for.a.row <- function(TABLE) {
    nrow_TABLE <- nrow(TABLE)
    
    while(!correct_input){# n is the row number from the user
-      cat("=============Possible versions to download (choose one)====================\n")      
+      cat("=============",header_text,"====================\n")      
       print(TABLE)
       ROW_id <- readline("Please review the table of versions from above, \n  and enter the row number of the file-version you'd like to install: ")
       ROW_id <- as.numeric(ROW_id)
