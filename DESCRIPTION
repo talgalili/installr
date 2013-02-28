@@ -1,0 +1,16 @@
+Package: installR
+Type: Package
+Title: Functions for installing softwares from R
+Version: 0.1
+Date: 2013-02-28
+Author: Tal Galili
+Maintainer: Tal Galili <tal.galili@gmail.com>
+Description: The installR package contains a set of functions 
+   allowing useRs to install new softwares (on Windows OS) using R.
+   While for Linux users, the installation process of new software may be just running a short line of code, 
+   for the regular Windows user it often includes browsing online, finding the latest version, downloading it, running the installer, and deleting the installation file.
+   All of these steps are automatically done using functions in this package.   
+URL: http://www.r-statistics.com
+Depends: R (>= 2.11.0)
+Suggests: XML
+License: GPL-2
