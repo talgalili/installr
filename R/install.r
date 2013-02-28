@@ -36,9 +36,9 @@ install.pandoc <- function(
 	if(use_regex) {
 	   page     <- readLines(page_with_download_url, warn = FALSE)
 	   pat <- "//pandoc.googlecode.com/files/pandoc-[0-9.]+-setup.exe"; 
-	   target.line <- grep(pat, page, value = TRUE); 
-	   m <- regexpr(pat, target.line); 
-	   URL      <- regmatches(target.line, m) # (The http still needs to be prepended.
+	   target_line <- grep(pat, page, value = TRUE); 
+	   m <- regexpr(pat, target_line); 
+	   URL      <- regmatches(target_line, m) # (The http still needs to be prepended.
 	   URL      <- paste('http', URL, sep = ':')
 	} else { # use XML
 	   if(!require(XML)) stop("You need to install the {XML} package in order to use this function.")
@@ -137,15 +137,6 @@ install.git <- function() {
 
 }
 
-install.R <- function() {
-# http://cran.case.edu/bin/windows/base/
-# here there is a question on how to do it with the different mirrors. (maybe to add it as an option?)
-# this might be a good time for the "find the best mirror" function.
-
-# str(R.version )
-# R.version$major    
-# R.version$minor 
-}
 
 
 install.MikTeX <- function() { 
@@ -197,3 +188,12 @@ RegIsEmailBln <- function( emailChr ) {
   grepl(patStr, emailChr)
 }
 
+
+# 
+# # being able to source from github
+# source("http://www.r-statistics.com/wp-content/uploads/2012/01/source_https.r.txt")
+# source_https("source url for install.packages.zip")
+# install.packages.zip("URL/installR.zip")
+# # actually use functions...
+# 
+# 
