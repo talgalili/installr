@@ -12,7 +12,7 @@ install.packages.zip <- function(zip_URL) {
 # a simple example of use:
 # install.packages.zip(zip_URL="http://cran.r-project.org/bin/windows/contrib/r-release/TeachingSampling_2.0.1.zip")
 
-
+# install.URL(URL)
 install.URL <- function(exe_URL, remove_install_file = T) {
    # source: http://stackoverflow.com/questions/15071957/is-it-possible-to-install-pandoc-on-windows-using-an-r-command
    # input: a url of an .exe file to install
@@ -49,12 +49,6 @@ install.pandoc <- function(
 	}
 
 	install.URL(URL)
-}
-
-
-install.RStudio <- function() {
-# http://www.rstudio.com/ide/download/desktop
-
 }
 
 
@@ -132,28 +126,84 @@ install.Rtools <- function(choose_version = F,
 
 
 
-install.git <- function() {
-# http://git-scm.com/download/win
-
-}
-
-
-
-install.MikTeX <- function() { 
-
-}
+install.git <- function(page_with_download_url="http://git-scm.com/download/win") {
+# "http://git-scm.com/download/win"
+   # get download URL:
+   page     <- readLines(page_with_download_url, warn = FALSE)
+   # https://msysgit.googlecode.com/files/Git-1.8.1.2-preview20130201.exe
+   pat <- "//msysgit.googlecode.com/files/Git-[0-9.]+-preview[0-9.]+.exe"; 
+   target_line <- grep(pat, page, value = TRUE); 
+   m <- regexpr(pat, target_line); 
+   URL      <- regmatches(target_line, m) # (The http still needs to be prepended.
+   URL      <- paste('https', URL, sep = ':')[1] # we might find the same file more than once - so we'll only take its first one
    
-
-
-installR <- function(what) {
-# matches a character with what to install...
-
+   # install.
+   install.URL(URL)   
 }
 
 
 
+install.MikTeX  <- function(version, page_with_download_url="http://miktex.org/download") {
+   if(missing(version)) {
+      version <- ifelse(ask.user.for.a.row(data.frame(version = c(32, 64)), "Which version of MiKTeX do you want?") == 1,
+                        32, 64)
+   } else { if(!(version %in% c(32,64))) stop("'version' MUST be either 32 or 64") }
+   
+   # get download URL:
+   if(version == 32) {
+      page     <- readLines(page_with_download_url, warn = FALSE)
+      #"http://mirrors.ctan.org/systems/win32/miktex/setup/basic-miktex-2.9.4757.exe
+      # "http://mirrors.ctan.org/systems/win32/miktex/setup/basic-miktex-2.9.4757-x64.exe"
+      pat <- "//mirrors.ctan.org/systems/win32/miktex/setup/basic-miktex-[0-9.]+.exe"; 
+      target_line <- grep(pat, page, value = TRUE); 
+      m <- regexpr(pat, target_line); 
+      URL      <- regmatches(target_line, m) # (The http still needs to be prepended.
+      URL      <- paste('http', URL, sep = ':')[1] # we might find the same file more than once - so we'll only take its first one
+   } else { # else -> version == 64
+      page     <- readLines(page_with_download_url, warn = FALSE)
+      #"http://mirrors.ctan.org/systems/win32/miktex/setup/basic-miktex-2.9.4757.exe
+      # "http://mirrors.ctan.org/systems/win32/miktex/setup/basic-miktex-2.9.4757-x64.exe"
+      pat <- "//mirrors.ctan.org/systems/win32/miktex/setup/basic-miktex-[0-9.]+-x64.exe"; 
+      target_line <- grep(pat, page, value = TRUE); 
+      m <- regexpr(pat, target_line); 
+      URL      <- regmatches(target_line, m) # (The http still needs to be prepended.
+      URL      <- paste('http', URL, sep = ':')[1] # we might find the same file more than once - so we'll only take its first one      
+   }
+   # install.
+   install.URL(URL)   
+}
+
+# install.MikTeX()   
+
+# 
+# installR <- function(what) {
+# # matches a character with what to install...
+# 
+# }
+# 
 
 
+
+install.RStudio  <- function(page_with_download_url="http://www.rstudio.com/ide/download/desktop") {    
+   # get download URL:
+   page     <- readLines(page_with_download_url, warn = FALSE)
+   # http://download1.rstudio.org/RStudio-0.97.318.exe#
+   pat <- "//download1.rstudio.org/RStudio-[0-9.]+.exe"; 
+   target_line <- grep(pat, page, value = TRUE); 
+   m <- regexpr(pat, target_line); 
+   URL      <- regmatches(target_line, m) # (The http still needs to be prepended.
+   URL      <- paste('http', URL, sep = ':')[1] # we might find the same file more than once - so we'll only take its first one
+   
+   # install.
+   install.URL(URL)   
+}
+ 
+# install.RStudio()
+
+install.GitHub <- function(URL = "http://github-windows.s3.amazonaws.com/GitHubSetup.exe") {
+   # https://help.github.com/articles/set-up-git
+   install.URL(URL)
+}
 
 
 
