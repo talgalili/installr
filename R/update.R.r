@@ -8,7 +8,7 @@ install.R <- function(page_with_download_url = "http://cran.rstudio.com/bin/wind
    pat <- "R-[0-9.]+-win.exe"; 
    target_line <- grep(pat, page, value = TRUE); 
    m <- regexpr(pat, target_line); 
-   URL      <- regmatches(target_line, m) 
+   exe_filename   <- regmatches(target_line, m) 
    URL <- paste(page_with_download_url, exe_filename, sep = '')
    
    install.URL(URL)    
@@ -77,6 +77,18 @@ check.for.updates.R <- function(notify_user = T,
    there_is_a_newer_version
 }
 
+
+
+##' Checks for the latest R version, and if there is a newer version of R - downloads and installs it.
+##'
+##' 
+##' @param ask should the user be asked if to download R or not (default is TRUE).  If not, and the latest version of R is newer than what is currently installed - then R would be installed without asking the user for permission.  Of course the installation part itself (the running of the .exe file) is dependent on the user.
+##' @param notify_user if to tell the user what version he has and what is the latest version (default is TRUE)
+##' @return a TRUE/FALSE value on whether or not R was updated.
+##' @export
+##' @examples
+##' update.R()
+##' 
 update.R <- function(ask = T, notify_user=T) {
    # this function checks if we have the latest version of R
    # IF not - it notifies the user - and leaves.

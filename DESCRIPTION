@@ -12,7 +12,8 @@ Description: The installr package contains a set of functions allowing useRs to
     finding the latest version, downloading it, running the installer, and
     deleting the installation file. All of these steps are automatically done
     using functions in this package.
-URL: http://www.r-statistics.com
+URL: https://github.com/talgalili/installr
+BugReports: https://github.com/talgalili/installr/issues
 Depends:
     R (>= 2.11.0)
 Suggests:
