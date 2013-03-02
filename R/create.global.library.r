@@ -1,3 +1,5 @@
+# How it all started, a long long time ago: http://stackoverflow.com/questions/1401904/painless-way-to-install-a-new-version-of-r-on-windows
+
 # These functions are based on what is described here:
 # http://www.r-statistics.com/2011/04/how-to-upgrade-r-on-windows-7/
 
@@ -41,20 +43,14 @@
 
 
 
-create.global.library <- function(
-                                  copy_packges_to_global_library_folder = F, # should be T if this is the first time you are running this (either from the old or the new version of R you have just installed).
-                                  # copy_packages_from_old_R_installation = F, # should be T if you are running this for the first time, from a new installation of R, after having an old installation of R (where all of your old packages are)                                  
-                                  del_packages_that_exist_in_home_lib = F,
-                                  update_all_packages = T,
-                                  global_library_folder,
-                                  quit_R
-                                  )
+
+create.global.library <- function(global_library_folder)
 {
    # global_library_folder = "C:/Program Files/R/library"
    # global_library_folder is null then if we assume it is of the shape: # "C:/Program Files/R/library"
    
    # Step 1: In case it is not defined - decide what the global folder is.   
-   if(missing(global_library_folder))  {  # then decide what it should be
+   if(missing(global_library_folder) | is.null(global_library_folder))  {  # then decide what it should be
       # finding the parent directoy of R (into which we will add the library directory)
       R_parent_lib <- paste(head(strsplit(R.home(), "/|\\\\")[[1]], -1), collapse = "/") # the strsplit is seperating the path whether it is / or \\ (but since \\ is a problem, I need to cancel it with \\\\)      
       # if global_library_folder isn't defined, then we assume it is of the form: "C:\\Program Files\\R\\library"
@@ -63,16 +59,36 @@ create.global.library <- function(
    }   
    
    # Step 2: check if the global lib folder exists -
-         # if not -> create it.
+   # if not -> create it.
    if(file.exists(global_library_folder)) # no better solution: http://stackoverflow.com/questions/4216753/check-existence-of-directory-and-create-if-doesnt-exist
-   {	
+   {   
       cat(paste("The path:" , global_library_folder, "already exist. (no need to create it) \n"))
       did_we_create_global_library_folder <- F
    } else { # If global lib folder doesn't exist - create it.
       dir.create(global_library_folder)
       did_we_create_global_library_folder <- T
    }
+   
+   return(did_we_create_global_library_folder)
+}
 
+
+
+
+xx.global.library <- function(
+                                  copy_packges_to_global_library_folder = F, # should be T if this is the first time you are running this (either from the old or the new version of R you have just installed).
+                                  # copy_packages_from_old_R_installation = F, # should be T if you are running this for the first time, from a new installation of R, after having an old installation of R (where all of your old packages are)                                  
+                                  del_packages_that_exist_in_home_lib = F,
+                                  update_all_packages = T,
+                                  global_library_folder = NULL,
+                                  quit_R
+                                  )
+{
+   # global_library_folder = "C:/Program Files/R/library"
+   # global_library_folder is null then if we assume it is of the shape: # "C:/Program Files/R/library"
+   
+   did_we_create_global_library_folder <- create.global.library(global_library_folder)
+   
 
    # Step 3: Create a list of all the packages we have in the current .libPaths (shouldn't include the new folder, but just in case - we'll take care of that soon)
    # Copy packages from current lib folder to the global lib folder
@@ -106,7 +122,7 @@ create.global.library <- function(
       packages_in_global_library_folder <- list.files(global_library_folder) # should be empty if we have just created this folder for the first time
             
       # Step 4: check if the current (old) library folder has any packages we might wish to move. e.g: non-"high" packages (e.g: packages installed after R was installed), or packages in the global_library_folder
-      packages_to_NOT_move <- c(installed.packages(priority = "high")[,"Package"],
+      packages_to_NOT_move <- c(installed.packages(priority = "high")[,"Package"], # some context on "high" packages: http://stackoverflow.com/questions/9700799/what-is-difference-between-r-base-and-r-recommended-packages
                                 packages_in_global_library_folder)  # we wish to NOT move into the global directory packages which are from "base R", and packages which are ALREADY in the packages_in_global_library_folder.
       names_of_packages_in_libs <- sapply(strsplit(packages_in_libs, "/|\\\\"), function(x) tail(x, 1))  # this is stripping the last location from each folder (hence: the package name)
       ss_packages_to_NOT_move_froms_libs <- names_of_packages_in_libs %in%  packages_to_NOT_move
