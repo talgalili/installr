@@ -84,12 +84,13 @@ check.for.updates.R <- function(notify_user = T,
 ##' 
 ##' @param ask should the user be asked if to download R or not (default is TRUE).  If not, and the latest version of R is newer than what is currently installed - then R would be installed without asking the user for permission.  Of course the installation part itself (the running of the .exe file) is dependent on the user.
 ##' @param notify_user if to tell the user what version he has and what is the latest version (default is TRUE)
+##' @param browse_news if TRUE (and if there is a newer version of R) - it opens the browser to the NEWS of the latest version of R, for the user to read through
 ##' @return a TRUE/FALSE value on whether or not R was updated.
 ##' @export
 ##' @examples
 ##' update.R()
 ##' 
-update.R <- function(ask = T, notify_user=T) {
+update.R <- function(ask = T, notify_user=T, browse_news) {
    # this function checks if we have the latest version of R
    # IF not - it notifies the user - and leaves.
    # If there is a new version - it offers the user to download and install it.   
@@ -100,9 +101,17 @@ update.R <- function(ask = T, notify_user=T) {
    
    # else - there_is_a_newer_version_of_R==T
    # should we ask?
-   if(ask) {
+   if(ask) {      
+      
+      # since there is a newer version - do you want to see the latest NEWS?
+      if(missing(browse_news)) {
+         to_read_news <- readline("Do you wish to see the NEWS regarding this new version of R? (y/n): ")
+         browse_news <- ifelse(tolower(to_read_news) == "y", T, F)
+      }      
+      if(browse_news) browseURL("http://stat.ethz.ch/R-manual/R-patched/NEWS")
+      
       to_update <- readline("Do you wish to install the latest version of R? (y/n): ")
-      if(tolower(to_update) != "y") return(F)       
+      if(tolower(to_update) != "y") return(F)
    }
    
    # if we got this far, the user wants to install the latest version of R (and his current version is old)

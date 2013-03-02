@@ -88,6 +88,7 @@ ask.user.for.a.row <- function(TABLE, header_text = "Possible versions to downlo
 
 # ask.user.for.a.row(TABLE)
 
+
 install.Rtools <- function(choose_version = F,
    latest_Frozen = T,
    page_with_download_url = 'http://cran.r-project.org/bin/windows/Rtools/'
@@ -212,33 +213,18 @@ install.GitHub <- function(URL = "http://github-windows.s3.amazonaws.com/GitHubS
 # I can see if I am running on windows using this: 
 # http://dennislwm-star.blogspot.sg/2012/11/r-is-almost-platform-independent.html
 
-RegIsWindowsBln <- function() {
-  retBln <- (Sys.info()["sysname"] == "Windows")
-  names(retBln) <- NULL
-  retBln
-}
-RegIsLinuxBln <- function() {
-  retBln <- (Sys.info()["sysname"] == "Linux")
-  names(retBln) <- NULL
-  retBln
-}
 
 
-RegGetHomeDir <- function() {
-  retDir <- NULL
-  if( RegIsLinuxBln() )
-    retDir <- paste0("/home/",Sys.info()["user"],"/")
-  if( RegIsWindowsBln() )
-    retDir <- paste0("C:/Users/",Sys.info()["user"],"/")
-  retDir
-}
-
-RegIsEmailBln <- function( emailChr ) {  
-  patStr <- "^([a-zA-Z0-9]+[a-zA-Z0-9._%-]*@(?:[a-zA-Z0-9-])+(\\.+[a-zA-Z]{2,4}){1,2})$"
-  grepl(patStr, emailChr)
-}
-
-
+#' @title Checks if the running OS is windows#'
+#' @description #' Returns TRUE/FALSE if the R session is running on Windows or not.
+#' @details
+#' Since the 'installr' package is written mainly for Windows - it is a good thing to know if it is run on Windows or not.
+#' @param ... none are available.
+#' @return Returns TRUE/FALSE if the R session is running on Windows or not.#' 
+#' @examples
+#' is.windows() # returns TRUE on my machine.
+is.windows <- function(...) unname(Sys.info()["sysname"] == "Windows")
+# inspiration: http://dennislwm-star.blogspot.sg/2012/11/r-is-almost-platform-independent.html
 
 
 source_https <- function(URL, remove_install_file = T) {
