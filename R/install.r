@@ -1,3 +1,28 @@
+#' @title Checks if the running OS is windows
+#' @description Returns TRUE/FALSE if the R session is running on Windows or not.
+#' @details
+#' This function is run when the 'installr' package is first loaded in order to check if the current running OS is Windows.
+#' If you are running a different OS, then the installr package (at its current form) does not have much to offer you.
+#' @param ... none are available.
+#' @return Returns TRUE/FALSE if the R session is running on Windows or not. 
+#' @export
+#' @examples
+#' is.windows() # returns TRUE on my machine.
+#' 
+is.windows <- function(...) unname(Sys.info()["sysname"] == "Windows")
+# inspiration: http://dennislwm-star.blogspot.sg/2012/11/r-is-almost-platform-independent.html
+
+
+.onLoad <- function(libname, pkgname){
+   if(!is.windows()) warning("The 'installr' package was designed for installing software on Windows. \nIt appears that you are NOT running R on the Windows OS - hence it is not clear if the package has any useful functions to offer you at this point (I'm sorry...).")
+   # Thanks for Romain: http://stackoverflow.com/questions/4369334/first-lib-idiom-in-r-packages
+}
+
+
+
+
+
+
 # let's create a new package called installR  (a play on words installer) - for doing installing softwares on windows without leaving R.
 
 file.name.from.url <- function(URL) tail(strsplit(URL,   "/")[[1]],1)
@@ -28,27 +53,27 @@ install.URL <- function(exe_URL, remove_install_file = T) {
 install.pandoc <- function(
    page_with_download_url = 'http://code.google.com/p/pandoc/downloads/list',
    use_regex = T
-   ) {
-	# source: http://stackoverflow.com/questions/15071957/is-it-possible-to-install-pandoc-on-windows-using-an-r-command
-	# published on: http://www.r-statistics.com/2013/02/installing-pandoc-from-r-on-windows/
+) {
+   # source: http://stackoverflow.com/questions/15071957/is-it-possible-to-install-pandoc-on-windows-using-an-r-command
+   # published on: http://www.r-statistics.com/2013/02/installing-pandoc-from-r-on-windows/
    
    
-	if(use_regex) {
-	   page     <- readLines(page_with_download_url, warn = FALSE)
-	   pat <- "//pandoc.googlecode.com/files/pandoc-[0-9.]+-setup.exe"; 
-	   target_line <- grep(pat, page, value = TRUE); 
-	   m <- regexpr(pat, target_line); 
-	   URL      <- regmatches(target_line, m) # (The http still needs to be prepended.
-	   URL      <- paste('http', URL, sep = ':')
-	} else { # use XML
-	   if(!require(XML)) stop("You need to install the {XML} package in order to use this function.")
-	   page     <- readLines(page_with_download_url, warn = FALSE)
-	   pagetree <- htmlTreeParse(page, error=function(...){}, useInternalNodes = TRUE, encoding='UTF-8')
-	   URL      <- xpathSApply(pagetree, '//tr[2]//td[1]//a ', xmlAttrs)[1]
-	   URL      <- paste('http', URL, sep = ':')
-	}
-
-	install.URL(URL)
+   if(use_regex) {
+      page     <- readLines(page_with_download_url, warn = FALSE)
+      pat <- "//pandoc.googlecode.com/files/pandoc-[0-9.]+-setup.exe"; 
+      target_line <- grep(pat, page, value = TRUE); 
+      m <- regexpr(pat, target_line); 
+      URL      <- regmatches(target_line, m) # (The http still needs to be prepended.
+      URL      <- paste('http', URL, sep = ':')
+   } else { # use XML
+      if(!require(XML)) stop("You need to install the {XML} package in order to use this function.")
+      page     <- readLines(page_with_download_url, warn = FALSE)
+      pagetree <- htmlTreeParse(page, error=function(...){}, useInternalNodes = TRUE, encoding='UTF-8')
+      URL      <- xpathSApply(pagetree, '//tr[2]//td[1]//a ', xmlAttrs)[1]
+      URL      <- paste('http', URL, sep = ':')
+   }
+   
+   install.URL(URL)
 }
 
 
@@ -90,9 +115,9 @@ ask.user.for.a.row <- function(TABLE, header_text = "Possible versions to downlo
 
 
 install.Rtools <- function(choose_version = F,
-   latest_Frozen = T,
-   page_with_download_url = 'http://cran.r-project.org/bin/windows/Rtools/'
-   ) {
+                           latest_Frozen = T,
+                           page_with_download_url = 'http://cran.r-project.org/bin/windows/Rtools/'
+) {
    # choose_version==T allows the user to choose which version of Rtools he wishes to install
    # latest_Frozen==T means we get the latest Rtools version which is Frozen (when writing this function it is Rtools215.exe)
    # latest_Frozen==F means we get the latest Rtools version which is not Frozen (when writing this function it is Rtools30.exe)
@@ -100,7 +125,7 @@ install.Rtools <- function(choose_version = F,
    
    if(!require(XML)) stop("You need to install the {XML} package in order to use this function.")
    TABLE <- readHTMLTable(page_with_download_url, header=T,stringsAsFactors=F)[[1]]
-         # example: http://stackoverflow.com/questions/1395528/scraping-html-tables-into-r-data-frames-using-the-xml-package
+   # example: http://stackoverflow.com/questions/1395528/scraping-html-tables-into-r-data-frames-using-the-xml-package
    
    
    if(choose_version) {
@@ -116,10 +141,10 @@ install.Rtools <- function(choose_version = F,
          exe_filename <- TABLE[ss,"Download"] # the latest un-Frozen filename
       }
    }
-      
+   
    
    URL <- paste(page_with_download_url, exe_filename, sep = '')
-
+   
    install.URL(URL)   
 }
 
@@ -128,7 +153,7 @@ install.Rtools <- function(choose_version = F,
 
 
 install.git <- function(page_with_download_url="http://git-scm.com/download/win") {
-# "http://git-scm.com/download/win"
+   # "http://git-scm.com/download/win"
    # get download URL:
    page     <- readLines(page_with_download_url, warn = FALSE)
    # https://msysgit.googlecode.com/files/Git-1.8.1.2-preview20130201.exe
@@ -198,7 +223,7 @@ install.RStudio  <- function(page_with_download_url="http://www.rstudio.com/ide/
    # install.
    install.URL(URL)   
 }
- 
+
 # install.RStudio()
 
 install.GitHub <- function(URL = "http://github-windows.s3.amazonaws.com/GitHubSetup.exe") {
@@ -214,17 +239,6 @@ install.GitHub <- function(URL = "http://github-windows.s3.amazonaws.com/GitHubS
 # http://dennislwm-star.blogspot.sg/2012/11/r-is-almost-platform-independent.html
 
 
-
-#' @title Checks if the running OS is windows#'
-#' @description #' Returns TRUE/FALSE if the R session is running on Windows or not.
-#' @details
-#' Since the 'installr' package is written mainly for Windows - it is a good thing to know if it is run on Windows or not.
-#' @param ... none are available.
-#' @return Returns TRUE/FALSE if the R session is running on Windows or not.#' 
-#' @examples
-#' is.windows() # returns TRUE on my machine.
-is.windows <- function(...) unname(Sys.info()["sysname"] == "Windows")
-# inspiration: http://dennislwm-star.blogspot.sg/2012/11/r-is-almost-platform-independent.html
 
 
 source_https <- function(URL, remove_install_file = T) {

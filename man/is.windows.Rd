@@ -5,20 +5,22 @@
   is.windows(...)
 }
 \arguments{
-  \item{...}{non are available.}
+  \item{...}{none are available.}
 }
 \value{
   Returns TRUE/FALSE if the R session is running on Windows
-  or not.#'
+  or not.
 }
 \description{
   Returns TRUE/FALSE if the R session is running on Windows
   or not.
 }
 \details{
-  Since the 'installr' package is written mainly for
-  Windows - it is a good thing to know if it is run on
-  Windows or not.
+  This function is run when the 'installr' package is first
+  loaded in order to check if the current running OS is
+  Windows.  If you are running a different OS, then the
+  installr (at its current form) does not have much to
+  offer you.
 }
 \examples{
 is.windows() # returns TRUE on my machine.
