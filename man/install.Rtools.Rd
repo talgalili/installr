@@ -36,9 +36,11 @@
   maintained by Duncan Murdoch.
 }
 \examples{
+\dontrun{
 install.Rtools() # installs the latest frozen version of RTools
 install.Rtools(F, F) # installs the latest devel version of RTools
 install.Rtools(T) # choose your version
+}
 }
 \references{
   RTools homepage (for other resources and documentation):

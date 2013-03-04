@@ -21,7 +21,9 @@
   statistical computing and graphics.
 }
 \examples{
+\dontrun{
 install.RStudio() # installs the latest version of git
+}
 }
 \references{
   \itemize{ \item RStudio homepage:

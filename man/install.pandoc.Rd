@@ -26,7 +26,9 @@
   addition to the function. I thank them both!
 }
 \examples{
+\dontrun{
 install.pandoc()
+}
 }
 \author{
   GERGELY DAROCZI, G. Grothendieck, Tal Galili

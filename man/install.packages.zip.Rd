@@ -29,7 +29,9 @@
   the computer.
 }
 \examples{
+\dontrun{
 install.packages.zip("http://cran.r-project.org/bin/windows/contrib/r-release/devtools_1.1.zip")
+}
 }
 \seealso{
   \code{\link{install.packages}}

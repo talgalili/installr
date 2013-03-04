@@ -20,7 +20,9 @@
   management system with an emphasis on speed.
 }
 \examples{
+\dontrun{
 install.git() # installs the latest version of git
+}
 }
 \references{
   git homepage: \link{http://git-scm.com/} git download

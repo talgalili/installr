@@ -1,4 +1,8 @@
+export(check.for.updates.R)
+export(copy.packages.between.libraries)
+export(create.global.library)
 export(file.name.from.url)
+export(get.installed.R.folders)
 export(install.git)
 export(install.GitHub)
 export(install.MikTeX)

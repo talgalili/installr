@@ -8,7 +8,9 @@
 #' @return Returns TRUE/FALSE if the R session is running on Windows or not. 
 #' @export
 #' @examples
+#' \dontrun{
 #' is.windows() # returns TRUE on my machine.
+#' }
 is.windows <- function(...) unname(Sys.info()["sysname"] == "Windows")
 # inspiration: http://dennislwm-star.blogspot.sg/2012/11/r-is-almost-platform-independent.html
 

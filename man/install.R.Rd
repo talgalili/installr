@@ -22,6 +22,8 @@
   care of your old packages), then you can use install.R()
 }
 \examples{
+\dontrun{
 install.R()
+}
 }
 

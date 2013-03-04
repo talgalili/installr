@@ -23,6 +23,8 @@
   to offer you.
 }
 \examples{
+\dontrun{
 is.windows() # returns TRUE on my machine.
+}
 }
 

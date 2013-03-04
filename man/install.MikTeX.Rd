@@ -28,7 +28,9 @@
   Vignette for R packages.
 }
 \examples{
+\dontrun{
 install.MikTeX() # installs the latest version of git
+}
 }
 \references{
   MikTeX homepage: \link{http://miktex.org/} MikTeX

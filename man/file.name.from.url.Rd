@@ -21,7 +21,9 @@
   the same name as the file which is online.
 }
 \examples{
+\dontrun{
 file.name.from.url("http://cran.r-project.org/bin/windows/base/R-2.15.3-win.exe") # returns: "R-2.15.3-win.exe"
+}
 }
 \seealso{
   \code{\link{install.URL}},

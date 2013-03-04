@@ -10,7 +10,9 @@
 #' @export
 #' @seealso \code{\link{install.URL}}, \code{\link{install.packages.zip}}
 #' @examples
+#' \dontrun{
 #' file.name.from.url("http://cran.r-project.org/bin/windows/base/R-2.15.3-win.exe") # returns: "R-2.15.3-win.exe"
+#' }
 file.name.from.url <- function(URL) tail(strsplit(URL,   "/")[[1]],1)
 
 
@@ -29,7 +31,9 @@ file.name.from.url <- function(URL) tail(strsplit(URL,   "/")[[1]],1)
 #' @export
 #' @seealso \code{\link{install.packages}}
 #' @examples
+#' \dontrun{
 #' install.packages.zip("http://cran.r-project.org/bin/windows/contrib/r-release/devtools_1.1.zip")
+#' }
 install.packages.zip <- function(zip_URL) {
    # zip_URL is the URL for the package_name.zip file
    zip_filename <- file.path(tempdir(), file.name.from.url(zip_URL))   # the name of the zip file MUST be as it was downloaded...
@@ -79,7 +83,9 @@ install.URL <- function(exe_URL, keep_install_file = F) {
 #' @author GERGELY DAROCZI, G. Grothendieck, Tal Galili
 #' @source \link{http://stackoverflow.com/questions/15071957/is-it-possible-to-install-pandoc-on-windows-using-an-r-command}
 #' @examples
+#' \dontrun{
 #' install.pandoc() 
+#' }
 install.pandoc <- function(
    page_with_download_url = 'http://code.google.com/p/pandoc/downloads/list',
    use_regex = T
@@ -143,16 +149,27 @@ check.integer <- function(N){
 #' @details
 #' This function is used in \code{installr} when we are not sure what version of the software to download, or when various actions are available for the user to choose from.
 #' If the user doesn't give a valid row number, the function repeats its questions until a valid row number is chosen (or the user escapes)
-#' @param TABLE a data.frame table with rows from which we wish the user to choose a row.
-#' @param header_text the text the users sees (often a question) - explaining which row he should choose from
+#' @param TABLE a data.frame table with rows from which we wish the user to choose a row.  If TABLE is not a data.frame, it will be coerced into one.
+#' @param header_text the text the users sees (often a question) as a title for the printed table - explaining which row he should choose from
+#' @param questions_text the question the users see after the printing of the table - explaining which row he should choose from
 #' @return The row number the user has choosen from the data.frame table.
 #' @source On how to ask the user for input: \link{http://stackoverflow.com/questions/5974967/what-is-the-correct-way-to-ask-for-user-input-in-an-r-program}
 #' @examples
+#' \dontrun{
 #' version_table <- data.frame(versions = c("devel", "V 1.0.0", "V 2.0.0"))
 #' installr:::ask.user.for.a.row(version_table)
-ask.user.for.a.row <- function(TABLE, header_text = "Possible versions to download (choose one)") {
+#' }
+ask.user.for.a.row <- function(TABLE, 
+                               header_text = "Possible versions to download (choose one)",
+                               questions_text = "Please review the table of versions from above, \n  and enter the row number of the file-version you'd like to install: ") {
    # http://stackoverflow.com/questions/5974967/what-is-the-correct-way-to-ask-for-user-input-in-an-r-program
    # based on code by Joris Meys
+   if(class(TABLE) != "data.frame") {
+      TABLE <- as.data.frame(TABLE)
+      colnames(TABLE)[1] <- "Choose:"
+   }
+   
+   rownames(TABLE) <- seq_len(nrow(TABLE))# makes sure that the table's row names are in the "rownames"
    
    correct_input <- F
    nrow_TABLE <- nrow(TABLE)
@@ -160,14 +177,14 @@ ask.user.for.a.row <- function(TABLE, header_text = "Possible versions to downlo
    while(!correct_input){# n is the row number from the user
       cat("=============",header_text,"====================\n")      
       print(TABLE)
-      ROW_id <- readline("Please review the table of versions from above, \n  and enter the row number of the file-version you'd like to install: ")
+      ROW_id <- readline(questions_text)
       ROW_id <- as.numeric(ROW_id)
       correct_input <- 
          !is.na(ROW_id) && # don't check other condition if this is not met.
          check.integer(ROW_id) & # is integer AND
          ROW_id >= 1 & # make sure our ROW_id is within range (between 1 and the number of rows in the table)
          ROW_id <= nrow_TABLE
-      if(!correct_input) cat("Wrong input: Please enter a valid number (integer, between 1 to the number of rows) \n  for the row number for the file you'd like to install\n")
+      if(!correct_input) cat("Wrong input: Please enter a valid number (integer, between 1 to the number of rows) \n  for the row number of your choice\n")
       # if(is.na(n)){break}  # breaks when hit enter
    }
    
@@ -192,9 +209,11 @@ ask.user.for.a.row <- function(TABLE, header_text = "Possible versions to downlo
 #' @references
 #' RTools homepage (for other resources and documentation): \link{http://cran.r-project.org/bin/windows/Rtools/}
 #' @examples
+#' \dontrun{
 #' install.Rtools() # installs the latest frozen version of RTools
 #' install.Rtools(F, F) # installs the latest devel version of RTools
 #' install.Rtools(T) # choose your version
+#' }
 install.Rtools <- function(choose_version = F,
                            latest_Frozen = T,
                            page_with_download_url = 'http://cran.r-project.org/bin/windows/Rtools/'
@@ -243,7 +262,9 @@ install.Rtools <- function(choose_version = F,
 #' git homepage: \link{http://git-scm.com/}
 #' git download page: \link{http://git-scm.com/download/win}
 #' @examples
+#' \dontrun{
 #' install.git() # installs the latest version of git
+#' }
 install.git <- function(page_with_download_url="http://git-scm.com/download/win") {
    # "http://git-scm.com/download/win"
    # get download URL:
@@ -274,7 +295,9 @@ install.git <- function(page_with_download_url="http://git-scm.com/download/win"
 #' MikTeX homepage: \link{http://miktex.org/}
 #' MikTeX download page: \link{http://miktex.org/download}
 #' @examples
+#' \dontrun{
 #' install.MikTeX() # installs the latest version of git
+#' }
 install.MikTeX  <- function(version, page_with_download_url="http://miktex.org/download") {
    if(missing(version)) {
       version <- ifelse(ask.user.for.a.row(data.frame(version = c(32, 64)), "Which version of MiKTeX do you want?") == 1,
@@ -328,7 +351,9 @@ install.MikTeX  <- function(version, page_with_download_url="http://miktex.org/d
 #' \item devtools::source_url \link{http://rgm3.lab.nig.ac.jp/RGM/r_function?p=devtools&f=source_url}
 #' } 
 #' @examples
+#' \dontrun{
 #' install.RStudio() # installs the latest version of git
+#' }
 install.RStudio  <- function(page_with_download_url="http://www.rstudio.com/ide/download/desktop") {    
    # get download URL:
    page     <- readLines(page_with_download_url, warn = FALSE)
@@ -360,7 +385,9 @@ install.RStudio  <- function(page_with_download_url="http://www.rstudio.com/ide/
 #' \item GitHub for windows download page: \url{http://windows.github.com/}
 #' } 
 #' @examples
+#' \dontrun{
 #' install.GitHub() # installs the latest version of git
+#' }
 install.GitHub <- function(URL = "http://github-windows.s3.amazonaws.com/GitHubSetup.exe") {
    # https://help.github.com/articles/set-up-git
    install.URL(URL)
@@ -394,7 +421,9 @@ install.GitHub <- function(URL = "http://github-windows.s3.amazonaws.com/GitHubS
 #' \item A erlevant (OLD) discussion: http://stackoverflow.com/questions/7715723/sourcing-r-script-over-https
 #' }
 #' @examples
+#' \dontrun{
 #' source.https("https://raw.github.com/talgalili/installr/master/R/install.r") 
+#' }
 source.https <- function(URL,..., remove_r_file = T) {
    # this is an alternative to this code: http://tonybreyal.wordpress.com/2011/11/24/source.https-sourcing-an-r-script-from-github/
    # but one which does not require RCurl

@@ -28,7 +28,9 @@
   they say...)
 }
 \examples{
+\dontrun{
 source.https("https://raw.github.com/talgalili/installr/master/R/install.r")
+}
 }
 \references{
   Other solutions to the source.https problem: \itemize{

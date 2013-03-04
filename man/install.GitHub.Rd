@@ -19,7 +19,9 @@
   they say...)
 }
 \examples{
+\dontrun{
 install.GitHub() # installs the latest version of git
+}
 }
 \references{
   \itemize{ \item GitHub homepage:
