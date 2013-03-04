@@ -20,3 +20,9 @@ is.windows <- function(...) unname(Sys.info()["sysname"] == "Windows")
 
 
 # using "zzz.r" like in devtools...
+
+# When adding new files, make sure they are listed in DESCRIPTION:
+# Collate:
+#    'create.global.library.r'
+# 'install.r'
+# 'update.R.r'

@@ -1,8 +1,8 @@
-\name{source_https}
-\alias{source_https}
+\name{source.https}
+\alias{source.https}
 \title{Read R Code from a File in an https URL}
 \usage{
-  source_https(URL, ..., remove_r_file = T)
+  source.https(URL, ..., remove_r_file = T)
 }
 \arguments{
   \item{URL}{the URL of the .r file to download and
@@ -17,7 +17,7 @@
   Nothing.
 }
 \description{
-  source_https causes R to accept its input from a File in
+  source.https causes R to accept its input from a File in
   an https URL. Input is read and parsed from that file
   until the end of the file is reached, then the parsed
   expressions are evaluated sequentially in the chosen
@@ -28,12 +28,12 @@
   they say...)
 }
 \examples{
-source_https("https://raw.github.com/talgalili/installr/master/R/install.r")
+source.https("https://raw.github.com/talgalili/installr/master/R/install.r")
 }
 \references{
-  Other solutions to the source_https problem: \itemize{
+  Other solutions to the source.https problem: \itemize{
   \item Using RCurl:
-  \url{http://tonybreyal.wordpress.com/2011/11/24/source_https-sourcing-an-r-script-from-github/}
+  \url{http://tonybreyal.wordpress.com/2011/11/24/source.https-sourcing-an-r-script-from-github/}
   \item devtools::source_url
   \link{http://rgm3.lab.nig.ac.jp/RGM/r_function?p=devtools&f=source_url}
   \item A erlevant (OLD) discussion:

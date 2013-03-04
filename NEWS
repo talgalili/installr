@@ -1,28 +1,48 @@
-installr 0.3
-------------
+installR 0.3-0.5
+----------------
 
-NEW FEATURES
+NEW FUNCTIONS ADDED:
+   * source.https
+   * install.MikTeX
+   * install.git
+   * install.RStudio
+   * install.GitHub
+   * create.global.library - a merge of create.global.library.oldR and create.global.library.newR (from the post: http://www.r-statistics.com/2011/04/how-to-upgrade-r-on-windows-7/)
+   * is.windows() - so when the function is loaded it is checked if the current OS is windows or not.
 
-   * Added the functions create.global.library.oldR and create.global.library.newR
+UPDATED FUNCTIONS:
+   * isntall.R - removed extra parameter.
+   * update.R - allow the user to review the NEWS of the newer version
 
+OTHER NOTES:
+
+   * Updated the NEWS format and text
+   * Updated the description file
+   * Changed the name of the package from installR to installr.
+   * Added a README.md	
+   * Added dcoumentation to all the functions in install.r (via roxygen2)
 
 
 installR 0.2
 ------------
 
-NEW FEATURES
+NEW FUNCTIONS ADDED:
 
-   * Added the function install.packages.zip - for installing package from a url of the ZIP file
-   * Added the function install.Rtools - for installing Rtools (allowing the user to choose which version to download)	
-   * Added the function update.R - for checking if we have the latest version of R - and if not - download and install it.
+   * install.packages.zip - for installing package from a url of the ZIP file
+   * install.Rtools - for installing Rtools (allowing the user to choose which version to download)	
+   * update.R - for checking if we have the latest version of R - and if not - download and install it.
+   * install.R
 	
 
 
 installR 0.1
 ------------
 
-NEW FEATURES
+NEW FUNCTIONS ADDED:
 
-   * Added the install.pandoc() function is created.
+   * install.pandoc() function is created.
+
+OTHER NOTES:
+
 	* Includes skeletons for some functions that will be added in the future.
 	
