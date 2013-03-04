@@ -1,0 +1,29 @@
+\name{install.git}
+\alias{install.git}
+\title{Downloads and installs git and git-gui for windows}
+\usage{
+  install.git(page_with_download_url = "http://git-scm.com/download/win")
+}
+\arguments{
+  \item{page_with_download_url}{the URL of the git download
+  page.}
+}
+\value{
+  Nothing.
+}
+\description{
+  Allows the user to downloads and install the latest
+  version of git for Windows.
+}
+\details{
+  Git is a distributed revision control and source code
+  management system with an emphasis on speed.
+}
+\examples{
+install.git() # installs the latest version of git
+}
+\references{
+  git homepage: \link{http://git-scm.com/} git download
+  page: \link{http://git-scm.com/download/win}
+}
+

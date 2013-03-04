@@ -1,9 +1,18 @@
+#' @title Downloads and installs the latest R version
+#' @description Fetches the latest (not development!) R version
+#' @details
+#' If you are not sure if you need to update R or not, you are 
+#' It is better to use update.R for updating R, since it includes more options.
+#' But in case you wish to only install R, with no other steps taken (for example, taking care of your old packages), then you can use install.R()
+#' @param page_with_download_url URL from which the latest stable version of R can be downloaded from.
+#' @return Nothing.
+#' @export
+#' @examples
+#' install.R() 
 install.R <- function(page_with_download_url = "http://cran.rstudio.com/bin/windows/base/") {
    # I'm using the rsudio cran since it redirects to other servers wourld wide.
    # here there is a question on how to do it with the different mirrors. (maybe to add it as an option?)
-   # this might be a good time for the "find the best mirror" function.
-   
-   
+   # this might be a good time for the "find the best mirror" function.   
    page   <- readLines(page_with_download_url, warn = FALSE)
    pat <- "R-[0-9.]+-win.exe"; 
    target_line <- grep(pat, page, value = TRUE); 

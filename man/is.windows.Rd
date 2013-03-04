@@ -18,9 +18,9 @@
 \details{
   This function is run when the 'installr' package is first
   loaded in order to check if the current running OS is
-  Windows.  If you are running a different OS, then the
-  installr (at its current form) does not have much to
-  offer you.
+  Windows. If you are running a different OS, then the
+  installr package (at its current form) does not have much
+  to offer you.
 }
 \examples{
 is.windows() # returns TRUE on my machine.
