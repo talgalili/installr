@@ -1,3 +1,24 @@
+installR 0.6
+------------
+
+NEW FUNCTIONS ADDED:
+   * get.installed.R.folders - Returns folder names with R installations
+   * copy.packages.between.libraries - Copies all packages from one library folder to another
+
+UPDATED FUNCTIONS:
+   * update.R  - major update.  Now the user can copy his packages from the old R version to the new version.
+   * ask.user.for.a.row - new "questions_text" parameter
+
+OTHER NOTES:
+   * Updated the NEWS
+   * More documentation
+
+TODO for future releases:
+   * uninstall.R() for the old version of R (including the library folder)
+   * Better integration with the "global library" strategy
+
+
+
 installR 0.3-0.5
 ----------------
 
@@ -20,7 +41,7 @@ OTHER NOTES:
    * Updated the description file
    * Changed the name of the package from installR to installr.
    * Added a README.md	
-   * Added dcoumentation to all the functions in install.r (via roxygen2)
+   * Added documentation to all the functions in install.r (via roxygen2)
 
 
 installR 0.2

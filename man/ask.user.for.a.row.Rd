@@ -7,14 +7,21 @@
 }
 \usage{
   ask.user.for.a.row(TABLE,
-    header_text = "Possible versions to download (choose one)")
+    header_text = "Possible versions to download (choose one)",
+    questions_text = "Please review the table of versions from above, \n  and enter the row number of the file-version you'd like to install: ")
 }
 \arguments{
   \item{TABLE}{a data.frame table with rows from which we
-  wish the user to choose a row.}
+  wish the user to choose a row.  If TABLE is not a
+  data.frame, it will be coerced into one.}
 
   \item{header_text}{the text the users sees (often a
-  question) - explaining which row he should choose from}
+  question) as a title for the printed table - explaining
+  which row he should choose from}
+
+  \item{questions_text}{the question the users see after
+  the printing of the table - explaining which row he
+  should choose from}
 }
 \value{
   The row number the user has choosen from the data.frame

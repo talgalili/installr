@@ -143,16 +143,25 @@ check.integer <- function(N){
 #' @details
 #' This function is used in \code{installr} when we are not sure what version of the software to download, or when various actions are available for the user to choose from.
 #' If the user doesn't give a valid row number, the function repeats its questions until a valid row number is chosen (or the user escapes)
-#' @param TABLE a data.frame table with rows from which we wish the user to choose a row.
-#' @param header_text the text the users sees (often a question) - explaining which row he should choose from
+#' @param TABLE a data.frame table with rows from which we wish the user to choose a row.  If TABLE is not a data.frame, it will be coerced into one.
+#' @param header_text the text the users sees (often a question) as a title for the printed table - explaining which row he should choose from
+#' @param questions_text the question the users see after the printing of the table - explaining which row he should choose from
 #' @return The row number the user has choosen from the data.frame table.
 #' @source On how to ask the user for input: \link{http://stackoverflow.com/questions/5974967/what-is-the-correct-way-to-ask-for-user-input-in-an-r-program}
 #' @examples
 #' version_table <- data.frame(versions = c("devel", "V 1.0.0", "V 2.0.0"))
 #' installr:::ask.user.for.a.row(version_table)
-ask.user.for.a.row <- function(TABLE, header_text = "Possible versions to download (choose one)") {
+ask.user.for.a.row <- function(TABLE, 
+                               header_text = "Possible versions to download (choose one)",
+                               questions_text = "Please review the table of versions from above, \n  and enter the row number of the file-version you'd like to install: ") {
    # http://stackoverflow.com/questions/5974967/what-is-the-correct-way-to-ask-for-user-input-in-an-r-program
    # based on code by Joris Meys
+   if(class(TABLE) != "data.frame") {
+      TABLE <- as.data.frame(TABLE)
+      colnames(TABLE)[1] <- "Choose:"
+   }
+   
+   rownames(TABLE) <- seq_len(nrow(TABLE))# makes sure that the table's row names are in the "rownames"
    
    correct_input <- F
    nrow_TABLE <- nrow(TABLE)
@@ -160,14 +169,14 @@ ask.user.for.a.row <- function(TABLE, header_text = "Possible versions to downlo
    while(!correct_input){# n is the row number from the user
       cat("=============",header_text,"====================\n")      
       print(TABLE)
-      ROW_id <- readline("Please review the table of versions from above, \n  and enter the row number of the file-version you'd like to install: ")
+      ROW_id <- readline(questions_text)
       ROW_id <- as.numeric(ROW_id)
       correct_input <- 
          !is.na(ROW_id) && # don't check other condition if this is not met.
          check.integer(ROW_id) & # is integer AND
          ROW_id >= 1 & # make sure our ROW_id is within range (between 1 and the number of rows in the table)
          ROW_id <= nrow_TABLE
-      if(!correct_input) cat("Wrong input: Please enter a valid number (integer, between 1 to the number of rows) \n  for the row number for the file you'd like to install\n")
+      if(!correct_input) cat("Wrong input: Please enter a valid number (integer, between 1 to the number of rows) \n  for the row number of your choice\n")
       # if(is.na(n)){break}  # breaks when hit enter
    }
    

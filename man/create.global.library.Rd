@@ -1,0 +1,23 @@
+\name{create.global.library}
+\alias{create.global.library}
+\title{Creates a global library folder}
+\usage{
+  create.global.library(global_library_folder)
+}
+\arguments{
+  \item{global_library_folder}{the path of the new global
+  library folder to create.  If missing, will be set to
+  R_path/R/library. (for example: "C:/Program
+  Files/R/library")}
+}
+\value{
+  TRUE/FALSE if we created a new folder or not.
+}
+\description{
+  Creates a global library folder (above the folder R is
+  currently installed in)
+}
+\examples{
+create.global.library()
+}
+
