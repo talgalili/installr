@@ -54,20 +54,22 @@ install.packages.zip <- function(zip_URL) {
 #' The .exe file is downloaded into a temporary directory, where it is erased after installation has started (by default - though this can be changed)
 #' @param exe_URL A character with a link to an installer file (with the .exe file extension)
 #' @param keep_install_file If TRUE - the installer file will not be erased after it is downloaded and run.
-#' @return Nothing.
+#' @param wait should the R interpreter wait for the command to finish? The default is to NOT wait.
+#' @param ... parameters passed to 'shell'
+#' @return The output of shell of running the command.  See 'value' in \link{shell}.
 #' @export
 #' @author GERGELY DAROCZI, Tal Galili
 #' @examples
 #' # install.URL() 
-install.URL <- function(exe_URL, keep_install_file = F) {
+install.URL <- function(exe_URL, keep_install_file = F, wait = F, ...) {
    # source: http://stackoverflow.com/questions/15071957/is-it-possible-to-install-pandoc-on-windows-using-an-r-command
    # input: a url of an .exe file to install
    # output: it runs the .exe file (for installing something)   
    exe_filename <- file.path(tempdir(), file.name.from.url(exe_URL))   # the name of the zip file MUST be as it was downloaded...
    download.file(exe_URL, destfile=exe_filename, mode = 'wb')     
-   shell(exe_filename) # system(exe_filename) # I suspect shell works better than system
+   shell_output <- shell(exe_filename, wait = wait) # system(exe_filename) # I suspect shell works better than system
    if(!keep_install_file) on.exit(unlink(exe_filename))
-   invisible()
+   shell_output
 }
 
 
