@@ -29,7 +29,7 @@
   latest version of Rtools for Windows.
 }
 \details{
-  RTools is a collection of softwares for building packages
+  RTools is a collection of software for building packages
   for R under Microsoft Windows, or for building R itself
   (version 1.9.0 or later). The original collection was put
   together by Prof. Brian Ripley; it is currently being

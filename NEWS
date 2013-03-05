@@ -1,3 +1,15 @@
+installR 0.8
+--------------
+
+FIXES FOR CRAN SUBMISSION:
+   * Fixed some spelling mistakes in DESCRIPTION,
+   * Made sure to run the checks in the latest R version (R 2.15.3, oh the irony)
+   * Changed update.R to be called updateR (in order to avoid confusing it as an S3 variation to 'update')
+
+
+My thanks goes to Prof Brian Ripley for his help.
+
+
 installR 0.7
 --------------
 

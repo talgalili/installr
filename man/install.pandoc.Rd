@@ -26,7 +26,7 @@
 \details{
   pandoc is a free open source software for converting
   documents from many filetypes to many filetypes.  For
-  details, see \link{http://johnmacfarlane.net/pandoc/}.
+  details, see \url{http://johnmacfarlane.net/pandoc/}.
 
   Credit: the code in this function is based on GERGELY
   DAROCZIs coding in his answer on the Q&A forum

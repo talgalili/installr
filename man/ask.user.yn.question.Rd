@@ -20,7 +20,8 @@
 \description{
   Asks the user for one yes/no question.  If the users
   replies with a "yes" (or Y, or y) the function returns
-  TRUE.  Otherwise, FALSE.
+  TRUE.  Otherwise, FALSE. (also exists as the function
+  devtools::yesno)
 }
 \examples{
 \dontrun{

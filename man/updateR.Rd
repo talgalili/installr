@@ -1,10 +1,10 @@
-\name{update.R}
-\alias{update.R}
+\name{updateR}
+\alias{updateR}
 \title{Checks for the latest R version, and if there is a newer version of R - downloads and installs it.}
 \usage{
-  update.R(browse_news, install_R, copy_packages,
+  updateR(browse_news, install_R, copy_packages,
     keep_old_packages, update_packages, start_new_R,
-    quit_R, print_R_versions = T)
+    quit_R, print_R_versions = T, ...)
 }
 \arguments{
   \item{browse_news}{if TRUE (and if there is a newer
@@ -49,6 +49,9 @@
 
   \item{print_R_versions}{if to tell the user what version
   he has and what is the latest version (default is TRUE)}
+
+  \item{...}{Other arguments (this is currently not used in
+  any way)}
 }
 \value{
   a TRUE/FALSE value on whether or not R was updated.
@@ -76,8 +79,8 @@
 }
 \examples{
 \dontrun{
-update.R(T, T, T, T, T, T, T) # the safest upgrade option: See the NEWS, install R, copy packages, keep old packages, update packages in the new installation, start the Rgui of the new R, and quite current session of R
-update.R() # will ask you what you want at every decision.
+updateR(T, T, T, T, T, T, T) # the safest upgrade option: See the NEWS, install R, copy packages, keep old packages, update packages in the new installation, start the Rgui of the new R, and quite current session of R
+updateR() # will ask you what you want at every decision.
 }
 }
 \seealso{

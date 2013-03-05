@@ -70,7 +70,7 @@ check.for.updates.R <- function(notify_user = T,
 #' @description Fetches the latest (not development!) R version
 #' @details
 #' If you are not sure if you need to update R or not, you are 
-#' It is better to use update.R for updating R, since it includes more options.
+#' It is better to use updateR for updating R, since it includes more options.
 #' But in case you wish to only install R, with no other steps taken (for example, taking care of your old packages), then you can use install.R()
 #' @param page_with_download_url URL from which the latest stable version of R can be downloaded from.
 #' @return Nothing.
@@ -333,14 +333,15 @@ copy.packages.between.libraries <- function(from, to, ask =F,keep_old = T, do_NO
 #' @param start_new_R TRUE/FALSE - if to start the new R (Rgui) after we will quit the old R. Default is TRUE. It will try to start the 64 bit R version, if it does not exist, the 32 bit will be started. This may be less useful for people using RStudio or the likes.
 #' @param quit_R TRUE/FALSE - if to quite R after the installation and package copying or not. If missing (this is the default) - the user is asked what to do.
 #' @param print_R_versions if to tell the user what version he has and what is the latest version (default is TRUE)
+#' @param ... Other arguments (this is currently not used in any way)
 #' @return a TRUE/FALSE value on whether or not R was updated.
 #' @seealso \link{check.for.updates.R}, \link{install.R}, \link{copy.packages.between.libraries}, 
 #' @examples
 #' \dontrun{
-#' update.R(T, T, T, T, T, T, T) # the safest upgrade option: See the NEWS, install R, copy packages, keep old packages, update packages in the new installation, start the Rgui of the new R, and quite current session of R
-#' update.R() # will ask you what you want at every decision.
+#' updateR(T, T, T, T, T, T, T) # the safest upgrade option: See the NEWS, install R, copy packages, keep old packages, update packages in the new installation, start the Rgui of the new R, and quite current session of R
+#' updateR() # will ask you what you want at every decision.
 #' }
-update.R <- function(browse_news, install_R, copy_packages, keep_old_packages,  update_packages, start_new_R, quit_R,  print_R_versions=T) {
+updateR <- function(browse_news, install_R, copy_packages, keep_old_packages,  update_packages, start_new_R, quit_R,  print_R_versions=T, ...) {
    # this function checks if we have the latest version of R
    # IF not - it notifies the user - and leaves.
    # If there is a new version - it offers the user to download and install it.   

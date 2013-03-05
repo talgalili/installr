@@ -65,8 +65,8 @@ install.URL <- function(exe_URL, keep_install_file = F) {
    # output: it runs the .exe file (for installing something)   
    exe_filename <- file.path(tempdir(), file.name.from.url(exe_URL))   # the name of the zip file MUST be as it was downloaded...
    download.file(exe_URL, destfile=exe_filename, mode = 'wb')     
-   system(exe_filename)
-   if(!keep_install_file) unlink(exe_filename)
+   shell(exe_filename) # system(exe_filename) # I suspect shell works better than system
+   if(!keep_install_file) on.exit(unlink(exe_filename))
    invisible()
 }
 
@@ -74,7 +74,7 @@ install.URL <- function(exe_URL, keep_install_file = F) {
 #' @title Downloads and installs pandoc
 #' @description Downloads and installs the latest version of pandoc for Windows.
 #' @details
-#' pandoc is a free open source software for converting documents from many filetypes to many filetypes.  For details, see \link{http://johnmacfarlane.net/pandoc/}.
+#' pandoc is a free open source software for converting documents from many filetypes to many filetypes.  For details, see \url{http://johnmacfarlane.net/pandoc/}.
 #' 
 #' Credit: the code in this function is based on GERGELY DAROCZIs coding in his answer on the Q&A forum StackOverflow, and also G. Grothendieck for the non-XML addition to the function. 
 #' I thank them both!
@@ -201,7 +201,7 @@ ask.user.for.a.row <- function(TABLE,
 #' @title Downloads and installs Rtools
 #' @description Allows the user to choose, downloads and install - the latest version of Rtools for Windows.
 #' @details
-#' RTools is a collection of softwares for building packages for R under Microsoft Windows, or for building R itself (version 1.9.0 or later).
+#' RTools is a collection of software for building packages for R under Microsoft Windows, or for building R itself (version 1.9.0 or later).
 #' The original collection was put together by Prof. Brian Ripley; it is currently being maintained by Duncan Murdoch.
 #' @param choose_version if TRUE, allows the user to choose which version of RTools to install.  Useful if you wish to install the devel version of RTools, or if you are running on an old version of R which requires an old version of R.
 #' @param latest_Frozen if FALSE (and choose_version is FALSE) the function installs the latest devel version of RTools (good for people using the devel version of R).  If TRUE (default), the latest frozen version of RTools is installed.

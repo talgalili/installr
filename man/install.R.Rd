@@ -16,7 +16,7 @@
 }
 \details{
   If you are not sure if you need to update R or not, you
-  are It is better to use update.R for updating R, since it
+  are It is better to use updateR for updating R, since it
   includes more options. But in case you wish to only
   install R, with no other steps taken (for example, taking
   care of your old packages), then you can use install.R()
