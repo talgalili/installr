@@ -6,6 +6,10 @@
     page_with_download_url = "http://miktex.org/download")
 }
 \arguments{
+  \item{version}{gets the values 32 and 64. Deciding if we
+  should install version 32bit or 64bit. If missing
+  (default) the user is prompted for a decisioin.}
+
   \item{page_with_download_url}{the URL of the MikTeX
   download page.}
 }
@@ -33,7 +37,7 @@ install.MikTeX() # installs the latest version of git
 }
 }
 \references{
-  MikTeX homepage: \link{http://miktex.org/} MikTeX
-  download page: \link{http://miktex.org/download}
+  MikTeX homepage: \url{http://miktex.org/} MikTeX download
+  page: \url{http://miktex.org/download}
 }
 

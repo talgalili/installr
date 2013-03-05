@@ -81,7 +81,9 @@ install.URL <- function(exe_URL, keep_install_file = F) {
 #' @return Nothing.
 #' @export
 #' @author GERGELY DAROCZI, G. Grothendieck, Tal Galili
-#' @source \link{http://stackoverflow.com/questions/15071957/is-it-possible-to-install-pandoc-on-windows-using-an-r-command}
+#' @param page_with_download_url a link to the list of download links of pandoc
+#' @param use_regex (default TRUE) should the regex method be used to extract exe links, or should the XML package be used.
+#' @source \url{http://stackoverflow.com/questions/15071957/is-it-possible-to-install-pandoc-on-windows-using-an-r-command}
 #' @examples
 #' \dontrun{
 #' install.pandoc() 
@@ -120,7 +122,7 @@ install.pandoc <- function(
 #' @param N A number (if a vector is supplied only the first element is checked - without warning)
 #' @return TRUE/FALSE on whether a number is integer or not.
 #' @author VitoshKa
-#' @source \link{http://stackoverflow.com/questions/3476782/how-to-check-if-the-number-is-integer}
+#' @source \url{http://stackoverflow.com/questions/3476782/how-to-check-if-the-number-is-integer}
 #' @examples
 #' check.integer <- installr:::check.integer
 #' check.integer(4) # TRUE
@@ -153,7 +155,7 @@ check.integer <- function(N){
 #' @param header_text the text the users sees (often a question) as a title for the printed table - explaining which row he should choose from
 #' @param questions_text the question the users see after the printing of the table - explaining which row he should choose from
 #' @return The row number the user has choosen from the data.frame table.
-#' @source On how to ask the user for input: \link{http://stackoverflow.com/questions/5974967/what-is-the-correct-way-to-ask-for-user-input-in-an-r-program}
+#' @source On how to ask the user for input: \url{http://stackoverflow.com/questions/5974967/what-is-the-correct-way-to-ask-for-user-input-in-an-r-program}
 #' @examples
 #' \dontrun{
 #' version_table <- data.frame(versions = c("devel", "V 1.0.0", "V 2.0.0"))
@@ -207,7 +209,7 @@ ask.user.for.a.row <- function(TABLE,
 #' @return Nothing.
 #' @export
 #' @references
-#' RTools homepage (for other resources and documentation): \link{http://cran.r-project.org/bin/windows/Rtools/}
+#' RTools homepage (for other resources and documentation): \url{http://cran.r-project.org/bin/windows/Rtools/}
 #' @examples
 #' \dontrun{
 #' install.Rtools() # installs the latest frozen version of RTools
@@ -259,8 +261,8 @@ install.Rtools <- function(choose_version = F,
 #' @return Nothing.
 #' @export
 #' @references
-#' git homepage: \link{http://git-scm.com/}
-#' git download page: \link{http://git-scm.com/download/win}
+#' git homepage: \url{http://git-scm.com/}
+#' git download page: \url{http://git-scm.com/download/win}
 #' @examples
 #' \dontrun{
 #' install.git() # installs the latest version of git
@@ -288,12 +290,13 @@ install.git <- function(page_with_download_url="http://git-scm.com/download/win"
 #' MiKTeX is a typesetting system for Microsoft Windows that is developed by Christian Schenk. It consists of an implementation of TeX and a set of related programs. MiKTeX provides the tools necessary to prepare documents using the TeX/LaTeX markup language, as well a simple tex editor (TeXworks).
 #' 
 #' MiKTeX is essential for using Sweave, knitr, and creating Vignette for R packages.
+#' @param version gets the values 32 and 64. Deciding if we should install version 32bit or 64bit. If missing (default) the user is prompted for a decisioin.
 #' @param page_with_download_url the URL of the MikTeX download page.
 #' @return Nothing.
 #' @export
 #' @references
-#' MikTeX homepage: \link{http://miktex.org/}
-#' MikTeX download page: \link{http://miktex.org/download}
+#' MikTeX homepage: \url{http://miktex.org/}
+#' MikTeX download page: \url{http://miktex.org/download}
 #' @examples
 #' \dontrun{
 #' install.MikTeX() # installs the latest version of git
@@ -302,7 +305,10 @@ install.MikTeX  <- function(version, page_with_download_url="http://miktex.org/d
    if(missing(version)) {
       version <- ifelse(ask.user.for.a.row(data.frame(version = c(32, 64)), "Which version of MiKTeX do you want?") == 1,
                         32, 64)
-   } else { if(!(version %in% c(32,64))) stop("'version' MUST be either 32 or 64") }
+   } else { 
+      if(!(version %in% c(32,64)))       version <- ifelse(ask.user.for.a.row(data.frame(version = c(32, 64)), "Which version of MiKTeX do you want?") == 1,
+                                                           32, 64)      
+   }
    
    # get download URL:
    if(version == 32) {
@@ -348,7 +354,7 @@ install.MikTeX  <- function(version, page_with_download_url="http://miktex.org/d
 #' @references
 #' \itemize{
 #' \item RStudio homepage: \url{http://www.rstudio.com//}
-#' \item devtools::source_url \link{http://rgm3.lab.nig.ac.jp/RGM/r_function?p=devtools&f=source_url}
+#' \item devtools::source_url \url{http://rgm3.lab.nig.ac.jp/RGM/r_function?p=devtools&f=source_url}
 #' } 
 #' @examples
 #' \dontrun{
@@ -417,7 +423,7 @@ install.GitHub <- function(URL = "http://github-windows.s3.amazonaws.com/GitHubS
 #' Other solutions to the source.https problem:
 #' \itemize{
 #' \item Using RCurl: \url{http://tonybreyal.wordpress.com/2011/11/24/source.https-sourcing-an-r-script-from-github/}
-#' \item devtools::source_url \link{http://rgm3.lab.nig.ac.jp/RGM/r_function?p=devtools&f=source_url}
+#' \item devtools::source_url \url{http://rgm3.lab.nig.ac.jp/RGM/r_function?p=devtools&f=source_url}
 #' \item A erlevant (OLD) discussion: http://stackoverflow.com/questions/7715723/sourcing-r-script-over-https
 #' }
 #' @examples
@@ -428,7 +434,7 @@ source.https <- function(URL,..., remove_r_file = T) {
    # this is an alternative to this code: http://tonybreyal.wordpress.com/2011/11/24/source.https-sourcing-an-r-script-from-github/
    # but one which does not require RCurl
    r_filename <- file.path(tempdir(), file.name.from.url(URL))   # the name of the zip file MUST be as it was downloaded...
-   download.file(URL, destfile=exe_filename, mode = 'wb')     
+   download.file(URL, destfile=r_filename, mode = 'wb')     
    source(r_filename,...)
    if(remove_r_file) unlink(r_filename)
    invisible(T)

@@ -44,6 +44,6 @@ install.Rtools(T) # choose your version
 }
 \references{
   RTools homepage (for other resources and documentation):
-  \link{http://cran.r-project.org/bin/windows/Rtools/}
+  \url{http://cran.r-project.org/bin/windows/Rtools/}
 }
 

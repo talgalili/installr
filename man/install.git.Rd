@@ -25,7 +25,7 @@ install.git() # installs the latest version of git
 }
 }
 \references{
-  git homepage: \link{http://git-scm.com/} git download
-  page: \link{http://git-scm.com/download/win}
+  git homepage: \url{http://git-scm.com/} git download
+  page: \url{http://git-scm.com/download/win}
 }
 

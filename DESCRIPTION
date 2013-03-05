@@ -1,18 +1,19 @@
 Package: installr
 Type: Package
 Title: Functions for updating and installing R and other softwares - from R
-Version: 0.6
-Date: 2013-03-04
+Version: 0.7
+Date: 2013-03-05
 Author: Tal Galili
 Maintainer: Tal Galili <tal.galili@gmail.com>
-Description: The installr package aims at making the process of updating R on windows as easy as possible,
-   the main function for this purpose is the update.R() function.
-   Also, the package contains a set of functions allowing useRs to install new softwares (on Windows OS) using R.
-   While for Linux users, the installation process of new software may be 
-   just running a short line of code, for the regular Windows user it often includes browsing online,
-   finding the latest version, downloading it, running the installer, and
-   deleting the installation file. All of these steps are automatically done
-   using functions in this package.
+Description: The installr package aims at making the process of updating R on
+    windows as easy as possible, the main function for this purpose is the
+    update.R() function. Also, the package contains a set of functions allowing
+    useRs to install new softwares (on Windows OS) using R. While for Linux
+    users, the installation process of new software may be just running a short
+    line of code, for the regular Windows user it often includes browsing
+    online, finding the latest version, downloading it, running the installer,
+    and deleting the installation file. All of these steps are automatically
+    done using functions in this package.
 URL: https://github.com/talgalili/installr
 BugReports: https://github.com/talgalili/installr/issues
 Depends:
@@ -20,3 +21,8 @@ Depends:
 Suggests:
     XML
 License: GPL-2
+Collate:
+    'create.global.library.r'
+    'install.r'
+    'update.R.r'
+    'zzz.r'

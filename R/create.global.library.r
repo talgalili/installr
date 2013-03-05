@@ -100,7 +100,8 @@ xx.global.library <- function(
    
    did_we_create_global_library_folder <- create.global.library(global_library_folder)
    
-
+   R_parent_lib <- paste(head(strsplit(R.home(), "/|\\\\")[[1]], -1), collapse = "/") # the strsplit is seperating the path whether it is / or \\ (but since \\ is a problem, I need to cancel it with \\\\)      
+   
    # Step 3: Create a list of all the packages we have in the current .libPaths (shouldn't include the new folder, but just in case - we'll take care of that soon)
    # Copy packages from current lib folder to the global lib folder
 

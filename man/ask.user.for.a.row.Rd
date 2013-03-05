@@ -3,7 +3,7 @@
 \title{Asks the user for a row number from a data.frame table}
 \source{
   On how to ask the user for input:
-  \link{http://stackoverflow.com/questions/5974967/what-is-the-correct-way-to-ask-for-user-input-in-an-r-program}
+  \url{http://stackoverflow.com/questions/5974967/what-is-the-correct-way-to-ask-for-user-input-in-an-r-program}
 }
 \usage{
   ask.user.for.a.row(TABLE,

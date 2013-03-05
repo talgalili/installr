@@ -1,3 +1,24 @@
+installR 0.7
+--------------
+
+NEW FUNCTIONS ADDED:
+   * ask.user.yn.question - Asks the user for one yes/no question.
+
+UPDATED FUNCTIONS:
+   * update.R  - fixed a bug in quit_R, and added an option to open the Rgui of the new R. Started using ask.user.yn.question in the function (to make it more readable).
+   * fixed some parameters not defined in the function.
+   * made install.MikTeX more friendly in case a wrong version number is specified.
+
+OTHER NOTES:
+   * More documentation.  Updated README.md (fixed \link vs \url)
+   * More documentation.  Updated README.md
+
+TODO for future releases:
+   * uninstall.R() for the old version of R (including the library folder)
+   * Better integration with the "global library" strategy
+
+
+
 installR 0.6
 ------------
 

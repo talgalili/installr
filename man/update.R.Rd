@@ -3,8 +3,8 @@
 \title{Checks for the latest R version, and if there is a newer version of R - downloads and installs it.}
 \usage{
   update.R(browse_news, install_R, copy_packages,
-    keep_old_packages, update_packages, quit_R,
-    print_R_versions = T)
+    keep_old_packages, update_packages, start_new_R,
+    quit_R, print_R_versions = T)
 }
 \arguments{
   \item{browse_news}{if TRUE (and if there is a newer
@@ -36,6 +36,12 @@
   is the default) - the user will be asked for his
   preference (he should say yes, unless he is using a
   global library folder).}
+
+  \item{start_new_R}{TRUE/FALSE - if to start the new R
+  (Rgui) after we will quit the old R. Default is TRUE. It
+  will try to start the 64 bit R version, if it does not
+  exist, the 32 bit will be started. This may be less
+  useful for people using RStudio or the likes.}
 
   \item{quit_R}{TRUE/FALSE - if to quite R after the
   installation and package copying or not. If missing (this
@@ -69,7 +75,7 @@
 }
 \examples{
 \dontrun{
-update.R(T, T, T, T, T, T) # the safest upgrade option: See the NEWS, install R, copy packages, keep old packages, update packages in the new installation, and quite current session of R
+update.R(T, T, T, T, T, T, T) # the safest upgrade option: See the NEWS, install R, copy packages, keep old packages, update packages in the new installation, start the Rgui of the new R, and quite current session of R
 update.R() # will ask you what you want at every decision.
 }
 }
