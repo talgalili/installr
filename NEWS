@@ -1,5 +1,15 @@
-installR 0.8
+installR 0.8.1
 --------------
+
+NEW FEATURE:
+   * install.URL - added a "wait" parameter with default as F (it now means that R doesn't wait for the installation of the software to finish before it releases the console).  And also "..." with access to the shell command run.
+
+BUG FIXES:
+   * Fixed a bug in updateR, to make sure it will be able to open the new Rgui, and also close the old R.
+
+
+installR 0.8
+------------
 
 FIXES FOR CRAN SUBMISSION:
    * Fixed some spelling mistakes in DESCRIPTION,

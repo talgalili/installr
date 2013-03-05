@@ -384,16 +384,18 @@ updateR <- function(browse_news, install_R, copy_packages, keep_old_packages,  u
       update_packages_expression <- paste(new_Rscript_path, ' -e " options(repos=structure(c(CRAN=\'http://cran.rstudio.com/\'))); update.packages(checkBuilt=TRUE, ask=F) "')
       #    update_packages_expression <- paste(new_Rscript_path, ' -e "date()"')
       #    update_packages_expression <- paste(new_Rscript_path, ' -e "print(R.version)"')
-      shell(update_packages_expression)
+      shell(update_packages_expression, wait = T, intern = T) 
+      # makes sure the user will not be able to move on to open the new Rgui, until all of its packages are updated
+      # also, makes sure the user will see the output of the update.packages function.
    }
    
    
-   # should we turn R off?
+   # should we turn Rgui on?
    if(missing(start_new_R)) start_new_R <- ask.user.yn.question("Do you wish to start the Rgui.exe of your new R installation? ")
    if(start_new_R) {
       new_Rexe_path <- file.path(get.installed.R.folders()[1], "bin/x64/Rgui.exe")      
       if(!file.exists(new_Rexe_path)) new_Rexe_path <- file.path(get.installed.R.folders()[1], "bin/i386/Rgui.exe")
-      shell(new_Rexe_path) # start new R gui.
+      shell(new_Rexe_path, wait = F) # start new R gui.  The wait =F makes sure we will be able to close R afterwords.
    }   
    
    # should we turn R off?

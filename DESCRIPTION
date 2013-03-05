@@ -2,7 +2,7 @@ Package: installr
 Type: Package
 Title: Functions for updating and installing a new version of R and other
     software - from R
-Version: 0.8
+Version: 0.8.1
 Date: 2013-03-05
 Author: Tal Galili
 Maintainer: Tal Galili <tal.galili@gmail.com>
