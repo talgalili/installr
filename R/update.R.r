@@ -322,6 +322,7 @@ copy.packages.between.libraries <- function(from, to, ask =F,keep_old = T, do_NO
 #' \item Once the installation is done, you should press "any-key", and the function will proceed with copying all of your packages from your old (well, current) R installation, into your newer R installation.
 #' \item You can then erase all of the packages in your old R installation.
 #' \item After your packages are moved (and the old ones possibly erased), you will get the option to update all of your packages in the new version of R.
+#' \item You will be asked if to open the Rgui of your new R.
 #' \item Lastely - you can close the current session of your old R. 
 #' } 
 #' @param browse_news if TRUE (and if there is a newer version of R) - it opens the browser to the NEWS of the latest version of R, for the user to read through
