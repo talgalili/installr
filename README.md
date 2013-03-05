@@ -8,7 +8,7 @@ The *installr* package offers a set of R functions for the installation and upda
 
 The available functions are:
 
-* update.R() - serves as a "check for updates" function of R itself.  Running the function will check for a newer version of R than the one currently used.  If one exists, the function will download the most updated R version and run its installer.  Once done, the function will offer to copy (or move) all of the packages from the old R library to the new R library. It will then offer to update the moved packages, offer to open the new Rgui, and lastely, it will quit the old R.
+* updateR() - serves as a "check for updates" function of R itself.  Running the function will check for a newer version of R than the one currently used.  If one exists, the function will download the most updated R version and run its installer.  Once done, the function will offer to copy (or move) all of the packages from the old R library to the new R library. It will then offer to update the moved packages, offer to open the new Rgui, and lastely, it will quit the old R.
 
 * install.RStudio() - download and runs the installer for RStudio.
 * install.Rtools() - download and runs the installer for Rtools (allowing the user to choose which version to download)	
