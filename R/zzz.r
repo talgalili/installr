@@ -32,6 +32,7 @@ is.windows <- function(...) unname(Sys.info()["sysname"] == "Windows")
 # when a function is renamed, its document in man must be removed - otherwise it may cause problems with the built check (it will try to run the code in the example, and will fail.)
 # When all is done, run:
 # require(devtools)
+# build_win()
 # release()
 
 # IMPORTANT NOTICE: this will add Collate to the DESCRIPTION file, and if any new r file is added - it will need to be updated.
