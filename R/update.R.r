@@ -1,5 +1,5 @@
 #' @title Asks the user for one yes/no question.
-#' @description Asks the user for one yes/no question.  If the users replies with a "yes" (or Y, or y) the function returns TRUE.  Otherwise, FALSE.
+#' @description Asks the user for one yes/no question.  If the users replies with a "yes" (or Y, or y) the function returns TRUE.  Otherwise, FALSE. (also exists as the function devtools::yesno)
 #' @param question a character string with a question to the user.
 #' @param yn_text the y/n text after the question.
 #' @param add_lines_before if to add a line before asking the question.  Default is TRUE.
