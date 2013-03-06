@@ -9,6 +9,7 @@ UPDATED FUNCTIONS:
 
 BUG FIXES:
    * Fixed a bug in updateR, to make sure it will be able to open the new Rgui, and also close the old R.
+   * Fixed a bug in updateR, "Error in !install_R : 'install_R' is missing" (install_R was called in too early) (thanks to AC for the bug report!)
 
 
 installR 0.8

@@ -348,7 +348,7 @@ updateR <- function(browse_news, install_R, copy_packages, keep_old_packages,  u
    
    there_is_a_newer_version_of_R <- check.for.updates.R(print_R_versions)
    
-   if(!there_is_a_newer_version_of_R | !install_R) return(F) # if we have the latest version - we might as well stop now...
+   if(!there_is_a_newer_version_of_R) return(F) # if we have the latest version - we might as well stop now...
    
    # else - there_is_a_newer_version_of_R==T
 
