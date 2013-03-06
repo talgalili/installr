@@ -39,11 +39,6 @@ OTHER NOTES:
    * More documentation.  Updated README.md (fixed \link vs \url)
    * More documentation.  Updated README.md
 
-TODO for future releases:
-   * uninstall.R() for the old version of R (including the library folder)
-   * Better integration with the "global library" strategy
-
-
 
 installR 0.6
 ------------
@@ -60,11 +55,6 @@ OTHER NOTES:
    * Updated the NEWS
    * More documentation
    * Added "\dontrun{" so to make the package pass CRAN tests (http://stackoverflow.com/questions/12038160/how-to-not-run-an-example-using-roxygen2)
-
-TODO for future releases:
-   * uninstall.R() for the old version of R (including the library folder)
-   * Better integration with the "global library" strategy
-
 
 
 installR 0.3-0.5
@@ -115,3 +105,11 @@ OTHER NOTES:
 
 	* Includes skeletons for some functions that will be added in the future.
 	
+
+	
+
+TODO for future releases:
+-------------------------
+	* uninstall.R() for the old version of R (including the library folder)
+	* Better integration with the "global library" strategy
+	* Integrating with a GUI via winMenuAdd and winDialog (thanks:  http://stackoverflow.com/questions/15250487/how-to-add-a-menu-item-to-rgui)
