@@ -414,3 +414,31 @@ updateR <- function(browse_news, install_R, copy_packages, keep_old_packages,  u
 uninstall.R <- function() {
    # notice that running the uninstall of R does not remove the old library folder!
 }
+
+
+
+
+
+
+#############################################
+## Adding a menu item for Rgui (not RStudio)
+#############################################
+
+# probably I should add updateR_console, updateR_GUI, and have updateR direct to each of them based on a parameter.
+# the function should 
+
+
+#' @title Checks if the R session is running within RStudio
+#' @description Returns TRUE/FALSE if the R session is running within RStudio or not.
+#' @details
+#' This function is used in order to check if a GUI can be added to the session or not.
+#' @return Returns TRUE/FALSE if the R session is running within RStudio or not.
+#' @export
+#' @examples
+#' \dontrun{
+#' is.RStudio() 
+#' }
+is.RStudio <- function() "tools:rstudio"  %in% search()
+
+
+

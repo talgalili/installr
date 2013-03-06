@@ -3,6 +3,7 @@ installR 0.8.1
 
 NEW FUNCTIONS ADDED:
    * shutdown - Shut down the operating system with the command `shutdown'.  A modified version of Yihui's shitdown function from the {fun} package (see: https://github.com/yihui/fun/blob/master/R/shutdown.R)
+   * is.RStudio - checks if the current R session is running within RStudio or not.
 
 UPDATED FUNCTIONS:
    * install.URL - added a "wait" parameter with default as F (it now means that R doesn't wait for the installation of the software to finish before it releases the console).  And also "..." with access to the shell command run.
