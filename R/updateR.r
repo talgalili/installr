@@ -41,7 +41,7 @@ check.for.updates.R <- function(notify_user = T,
    latest_R_version  <- regmatches(target_line, m) 
    latest_R_version  <- gsub(pattern="R-|-win" ,"", latest_R_version) # remove junk text
    
-   current_R_version <- paste(R.version$major, R.version$minor, sep=".")
+   current_R_version <- as.character(getRversion()) # paste(R.version$major, R.version$minor, sep=".")
    
    # Turn the version character into a number
    latest_R_version_long <- turn.version.to.number(latest_R_version)   
