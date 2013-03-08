@@ -2,8 +2,11 @@ installR 0.8.3
 --------------
 
 NEW FUNCTIONS ADDED:
+   * A new GUI for Rgui - added the "Update" to the menu, with two submenu items: Update R, and Update R Packages.
    * shutdown - Shut down the operating system with the command `shutdown'.  A modified version of Yihui's shitdown function from the {fun} package (see: https://github.com/yihui/fun/blob/master/R/shutdown.R)
    * is.RStudio - checks if the current R session is running within RStudio or not.
+   * is.Rgui - checks if the current R session is running within Rgui or not.
+   * add.installr.GUI and remove.installr.GUI - for adding a menu system to Rgui
 
 UPDATED FUNCTIONS:
    * install.URL - 
@@ -122,4 +125,5 @@ TODO for future releases:
 -------------------------
 	* uninstall.R() for the old version of R (including the library folder)
 	* Better integration with the "global library" strategy
-	* Integrating with a GUI via winMenuAdd and winDialog (thanks:  http://stackoverflow.com/questions/15250487/how-to-add-a-menu-item-to-rgui)
+	* Integrating with a GUI via winDialog (thanks:  http://stackoverflow.com/questions/15250487/how-to-add-a-menu-item-to-rgui)
+   * BUG: Having the menus removed once the package is un attached.

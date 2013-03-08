@@ -444,17 +444,5 @@ uninstall.R <- function() {
 # the function should 
 
 
-#' @title Checks if the R session is running within RStudio
-#' @description Returns TRUE/FALSE if the R session is running within RStudio or not.
-#' @details
-#' This function is used in order to check if a GUI can be added to the session or not.
-#' @return Returns TRUE/FALSE if the R session is running within RStudio or not.
-#' @export
-#' @examples
-#' \dontrun{
-#' is.RStudio() 
-#' }
-is.RStudio <- function() "tools:rstudio"  %in% search()
-
 
 

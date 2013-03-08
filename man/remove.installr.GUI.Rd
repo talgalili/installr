@@ -1,0 +1,23 @@
+\name{remove.installr.GUI}
+\alias{remove.installr.GUI}
+\title{Removes the menu based GUI for updating R within Rgui}
+\usage{
+  remove.installr.GUI()
+}
+\value{
+  invisible(NULL)
+}
+\description{
+  Removes the menu based GUI for updating R within Rgui.
+}
+\details{
+  This function is used during .Last.lib to remove the
+  menus for the installr package in Rgui.
+}
+\examples{
+\dontrun{
+add.installr.GUI()  # add menus
+remove.installr.GUI() # remove them
+}
+}
+
