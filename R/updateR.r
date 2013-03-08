@@ -73,7 +73,7 @@ check.for.updates.R <- function(notify_user = T,
 #' It is better to use updateR for updating R, since it includes more options.
 #' But in case you wish to only install R, with no other steps taken (for example, taking care of your old packages), then you can use install.R()
 #' @param page_with_download_url URL from which the latest stable version of R can be downloaded from.
-#' @return Nothing.
+#' @return TRUE/FALSE - was the installation of R successful or not.
 #' @export
 #' @examples
 #' \dontrun{
@@ -363,13 +363,14 @@ updateR <- function(browse_news, install_R, copy_packages, keep_old_packages,  u
    
    # if we got this far, the user wants to install the latest version of R (and his current version is old)
    cat("Installing the newest version of R, pleaes wait for the installer file to download and run, and be sure to click 'next' as needed...\n")
-   install.R()
+   did_R_install <- install.R() 
+   if(!did_R_install) return(FALSE) # this is not the safest way - it is better to also check this with checksum MDS5 - but not today.
    
    
    if(missing(copy_packages)) copy_packages <- ask.user.yn.question("Do you wish to copy your packages from the older version of R to the newer version of R?")
    
    if(copy_packages) {
-      ask.user.for.a.row(c("Yes"), "Did you finish running the installer for the new R?", "Press 1 (and Enter) if the installation of R is finished:")
+#       ask.user.for.a.row(c("Yes"), "Did you finish running the installer for the new R?", "Press 1 (and Enter) if the installation of R is finished:")
       # should we keep the old packages?
       if(missing(keep_old_packages)) keep_old_packages <- ask.user.yn.question("Once your packages are copied to the new R, \ndo you wish to KEEP the packages from the library in the OLD R installation? \n(if NOT 'y' is choosen (say 'n) - you will erase your packages in the old R version) ")
       # Next, copy (or MOVE):
@@ -380,11 +381,11 @@ updateR <- function(browse_news, install_R, copy_packages, keep_old_packages,  u
    if(missing(update_packages)) update_packages <- ask.user.yn.question("Do you wish to update your packages in the newely installed R? ")
    
    if(update_packages & copy_packages) { # we should not update packages if we didn't copy them first...
-      new_Rscript_path <- file.path(get.installed.R.folders()[2], "bin/Rscript.exe")
-      update_packages_expression <- paste(new_Rscript_path, ' -e " options(repos=structure(c(CRAN=\'http://cran.rstudio.com/\'))); update.packages(checkBuilt=TRUE, ask=F) "')
+      new_Rscript_path <- file.path(get.installed.R.folders()[1], "bin/Rscript.exe") # make sure to run the newer R to update the packages.
+      update_packages_expression <- paste(new_Rscript_path, ' -e " setInternet2(TRUE); options(repos=structure(c(CRAN=\'http://cran.rstudio.com/\'))); update.packages(checkBuilt=TRUE, ask=F) "')
       #    update_packages_expression <- paste(new_Rscript_path, ' -e "date()"')
       #    update_packages_expression <- paste(new_Rscript_path, ' -e "print(R.version)"')
-      shell(update_packages_expression, wait = T, intern = T) 
+      shell(update_packages_expression, wait = T, intern = T)  
       # makes sure the user will not be able to move on to open the new Rgui, until all of its packages are updated
       # also, makes sure the user will see the output of the update.packages function.
    }

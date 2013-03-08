@@ -6,7 +6,14 @@ NEW FUNCTIONS ADDED:
    * is.RStudio - checks if the current R session is running within RStudio or not.
 
 UPDATED FUNCTIONS:
-   * install.URL - added a "wait" parameter with default as F (it now means that R doesn't wait for the installation of the software to finish before it releases the console).  And also "..." with access to the shell command run.
+   * install.URL - 
+      * added a "wait" parameter with default as F (it now means that R doesn't wait for the installation of the software to finish before it releases the console).  And also "..." with access to the shell command run.
+      * Made sure that if keep_install_file = FALSE then wait= TRUE (since otherwise, we'll erase the file before we get to run it)
+      * output now returns TRUE/FLASE on whether the installation worked or not.
+   * install.?? - now returns TRUE/FLASE on whether to installation worked or not.
+   * updateR - 
+      * added setInternet2(TRUE) for when updating packages (to help it work with specification of proxies, etc.). (this seems to be safe for regular users - but I hope it won't cause new problems.).  Thanks to a bug report by Gilbert Pétain-Coup.
+      * now checks if R was installed or not (Based on the output of install.R), and removed the need to ask the user that.
 
 BUG FIXES:
    * Fixed a bug in updateR, to make sure it will be able to open the new Rgui, and also close the old R.
@@ -114,3 +121,4 @@ TODO for future releases:
 	* uninstall.R() for the old version of R (including the library folder)
 	* Better integration with the "global library" strategy
 	* Integrating with a GUI via winMenuAdd and winDialog (thanks:  http://stackoverflow.com/questions/15250487/how-to-add-a-menu-item-to-rgui)
+   * Add MDS5 checksum for installation of R.
