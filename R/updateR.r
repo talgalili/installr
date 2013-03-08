@@ -73,13 +73,14 @@ check.for.updates.R <- function(notify_user = T,
 #' It is better to use updateR for updating R, since it includes more options.
 #' But in case you wish to only install R, with no other steps taken (for example, taking care of your old packages), then you can use install.R()
 #' @param page_with_download_url URL from which the latest stable version of R can be downloaded from.
+#' @param to_checkMD5sums Should we check that the new R installation has the files we expect it to (by checking the MD5 sums)? default is TRUE.  It assumes that the R which was isntalled is the latest R version.
 #' @return TRUE/FALSE - was the installation of R successful or not.
 #' @export
 #' @examples
 #' \dontrun{
 #' install.R() 
 #' }
-install.R <- function(page_with_download_url = "http://cran.rstudio.com/bin/windows/base/") {
+install.R <- function(page_with_download_url = "http://cran.rstudio.com/bin/windows/base/", to_checkMD5sums = TRUE) {
    # I'm using the rsudio cran since it redirects to other servers wourld wide.
    # here there is a question on how to do it with the different mirrors. (maybe to add it as an option?)
    # this might be a good time for the "find the best mirror" function.   
@@ -90,8 +91,22 @@ install.R <- function(page_with_download_url = "http://cran.rstudio.com/bin/wind
    exe_filename   <- regmatches(target_line, m) 
    URL <- paste(page_with_download_url, exe_filename, sep = '')
    
-   install.URL(URL)    
+   did_R_install <- install.URL(URL)
+   if(!did_R_install) return(FALSE) 
    
+   # checks the MD5sums from the new R installation:
+   if(to_checkMD5sums)    {
+      new_R_path <- get.installed.R.folders()[1]
+      require(tools)
+      pass_checkMD5sums <- checkMD5sums(dir = new_R_path)
+      if(!pass_checkMD5sums) {
+         warning("There was some problem with installing R.  Some files are not what they should be (e.g: check MD5 sums did not pass all the tests)")
+         return(FALSE)
+      }
+   }
+   
+   # if we got to the end it means we got to install R, and it passed the MD5 checksum test
+   return(TRUE)      
    # str(R.version )
    # R.version$major    
    # R.version$minor 
@@ -364,8 +379,8 @@ updateR <- function(browse_news, install_R, copy_packages, keep_old_packages,  u
    # if we got this far, the user wants to install the latest version of R (and his current version is old)
    cat("Installing the newest version of R, pleaes wait for the installer file to download and run, and be sure to click 'next' as needed...\n")
    did_R_install <- install.R() 
-   if(!did_R_install) return(FALSE) # this is not the safest way - it is better to also check this with checksum MDS5 - but not today.
-   
+   if(!did_R_install) return(FALSE) 
+   new_R_path <- get.installed.R.folders()[1]
    
    if(missing(copy_packages)) copy_packages <- ask.user.yn.question("Do you wish to copy your packages from the older version of R to the newer version of R?")
    
@@ -381,7 +396,7 @@ updateR <- function(browse_news, install_R, copy_packages, keep_old_packages,  u
    if(missing(update_packages)) update_packages <- ask.user.yn.question("Do you wish to update your packages in the newely installed R? ")
    
    if(update_packages & copy_packages) { # we should not update packages if we didn't copy them first...
-      new_Rscript_path <- file.path(get.installed.R.folders()[1], "bin/Rscript.exe") # make sure to run the newer R to update the packages.
+      new_Rscript_path <- file.path(new_R_path, "bin/Rscript.exe") # make sure to run the newer R to update the packages.
       update_packages_expression <- paste(new_Rscript_path, ' -e " setInternet2(TRUE); options(repos=structure(c(CRAN=\'http://cran.rstudio.com/\'))); update.packages(checkBuilt=TRUE, ask=F) "')
       #    update_packages_expression <- paste(new_Rscript_path, ' -e "date()"')
       #    update_packages_expression <- paste(new_Rscript_path, ' -e "print(R.version)"')
@@ -394,8 +409,8 @@ updateR <- function(browse_news, install_R, copy_packages, keep_old_packages,  u
    # should we turn Rgui on?
    if(missing(start_new_R)) start_new_R <- ask.user.yn.question("Do you wish to start the Rgui.exe of your new R installation? ")
    if(start_new_R) {
-      new_Rexe_path <- file.path(get.installed.R.folders()[1], "bin/x64/Rgui.exe")      
-      if(!file.exists(new_Rexe_path)) new_Rexe_path <- file.path(get.installed.R.folders()[1], "bin/i386/Rgui.exe")
+      new_Rexe_path <- file.path(new_R_path, "bin/x64/Rgui.exe")      
+      if(!file.exists(new_Rexe_path)) new_Rexe_path <- file.path(new_R_path, "bin/i386/Rgui.exe")
       shell(new_Rexe_path, wait = F) # start new R gui.  The wait =F makes sure we will be able to close R afterwords.
    }   
    
