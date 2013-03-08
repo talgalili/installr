@@ -1,4 +1,4 @@
-installR 0.8.3
+installR 0.8.4
 --------------
 
 NEW FUNCTIONS ADDED:
@@ -126,4 +126,3 @@ TODO for future releases:
 	* uninstall.R() for the old version of R (including the library folder)
 	* Better integration with the "global library" strategy
 	* Integrating with a GUI via winDialog (thanks:  http://stackoverflow.com/questions/15250487/how-to-add-a-menu-item-to-rgui)
-   * BUG: Having the menus removed once the package is un attached.

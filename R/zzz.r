@@ -90,7 +90,7 @@ remove.installr.GUI <- function() {
    # Thanks to Dason: http://stackoverflow.com/questions/15250487/how-to-add-a-menu-item-to-rgui/15250992?iemail=1#15250992
    # Add GUI (only in Windows's Rgui)
    if(is.windows() & is.Rgui() & !is.RStudio()){
-      winMenuDel("Update")
+      if("Update" %in% winMenuNames()) winMenuDel("Update")
    }
    return(invisible(NULL))
 }
@@ -103,9 +103,18 @@ remove.installr.GUI <- function() {
 .onLoad <- function(libname, pkgname){
    if(!is.windows()) warning("The 'installr' package was designed for installing software on Windows. \nIt appears that you are NOT running R on the Windows OS - hence it is not clear if the package has any useful functions to offer you at this point (I'm sorry...).")
    # Thanks for Romain: http://stackoverflow.com/questions/4369334/first-lib-idiom-in-r-packages
-
-   add.installr.GUI()
+   
+   # adding and removing menus from the Rgui when loading and detaching the library
+   setHook(packageEvent("installr", "attach"), {function(pkgname, libpath) {add.installr.GUI()}  } )
+   setHook(packageEvent("installr", "detach"), {function(pkgname, libpath) {remove.installr.GUI()}  } )
+   
 }
+
+# menus are added and removed as needed: !!
+# require(installr)
+# search()
+# detach("package:installr")
+
 
 
 
