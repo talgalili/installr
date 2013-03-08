@@ -9,7 +9,7 @@
   download page.}
 }
 \value{
-  Nothing.
+  TRUE/FALSE - was the installation successful or not.
 }
 \description{
   Allows the user to downloads and install the latest

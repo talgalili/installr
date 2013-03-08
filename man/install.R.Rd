@@ -9,7 +9,7 @@
   stable version of R can be downloaded from.}
 }
 \value{
-  Nothing.
+  TRUE/FALSE - was the installation of R successful or not.
 }
 \description{
   Fetches the latest (not development!) R version

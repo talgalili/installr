@@ -17,7 +17,7 @@
   be used.}
 }
 \value{
-  Nothing.
+  TRUE/FALSE - was the installation successful or not.
 }
 \description{
   Downloads and installs the latest version of pandoc for

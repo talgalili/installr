@@ -22,7 +22,7 @@
   download page.}
 }
 \value{
-  Nothing.
+  TRUE/FALSE - was the installation successful or not.
 }
 \description{
   Allows the user to choose, downloads and install - the

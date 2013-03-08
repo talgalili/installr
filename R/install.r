@@ -56,21 +56,36 @@ install.packages.zip <- function(zip_URL) {
 #' @param keep_install_file If TRUE - the installer file will not be erased after it is downloaded and run.
 #' @param wait should the R interpreter wait for the command to finish? The default is to NOT wait.
 #' @param ... parameters passed to 'shell'
-#' @return The output of shell of running the command.  See 'value' in \link{shell}.
+#' @return TRUE/FALSE - was the installation successful or not. (this is based on the output of shell of running the command being either 0 or 1/2.  0 means the file was succesfully installed, while 1 or 2 means there was a failure in running the installer.)
+#' @seealso \link{shell}
 #' @export
 #' @author GERGELY DAROCZI, Tal Galili
 #' @examples
 #' # install.URL() 
-install.URL <- function(exe_URL, keep_install_file = F, wait = F, ...) {
+install.URL <- function(exe_URL, keep_install_file = FALSE, wait = TRUE, ...) {
    # source: http://stackoverflow.com/questions/15071957/is-it-possible-to-install-pandoc-on-windows-using-an-r-command
    # input: a url of an .exe file to install
    # output: it runs the .exe file (for installing something)   
    exe_filename <- file.path(tempdir(), file.name.from.url(exe_URL))   # the name of the zip file MUST be as it was downloaded...
-   download.file(exe_URL, destfile=exe_filename, mode = 'wb')     
-   shell_output <- shell(exe_filename, wait = wait) # system(exe_filename) # I suspect shell works better than system
-   if(!keep_install_file) on.exit(unlink(exe_filename))
-   shell_output
+   download.file(exe_URL, destfile=exe_filename, mode = 'wb')
+   if(!keep_install_file & !wait) {
+      wait <- TRUE
+      warning("wait was set to TRUE since you wanted to installation file removed. In order to be able to run the installer AND remove the file - we must first wait for the isntaller to finish running before removing the file.")
+   }
+   shell_output <- shell(exe_filename, wait = wait,...) # system(exe_filename) # I suspect shell works better than system
+   if(!keep_install_file) unlink(exe_filename, force = TRUE) # on.exit(unlink(exe_filename)) # on.exit doesn't work in case of problems in the running of the file
+   # unlink can take some time until done, for some reason.
+      #    file.remove(exe_filename)
+      #    file.info(exe_filename)
+      #    file.access(exe_filename, mode = 0)
+      #    file.access(exe_filename, mode = 1)
+      #    file.access(exe_filename, mode = 2)
+      #    file.access(exe_filename, mode = 3)
+   return(shell_output == 0)
+   # error code 1/2 means that we couldn't finish running the file
+   # # 0 means - the file was succesfully installed.   
 }
+
 
 
 #' @title Downloads and installs pandoc
@@ -80,7 +95,7 @@ install.URL <- function(exe_URL, keep_install_file = F, wait = F, ...) {
 #' 
 #' Credit: the code in this function is based on GERGELY DAROCZIs coding in his answer on the Q&A forum StackOverflow, and also G. Grothendieck for the non-XML addition to the function. 
 #' I thank them both!
-#' @return Nothing.
+#' @return TRUE/FALSE - was the installation successful or not.
 #' @export
 #' @author GERGELY DAROCZI, G. Grothendieck, Tal Galili
 #' @param page_with_download_url a link to the list of download links of pandoc
@@ -208,7 +223,7 @@ ask.user.for.a.row <- function(TABLE,
 #' @param choose_version if TRUE, allows the user to choose which version of RTools to install.  Useful if you wish to install the devel version of RTools, or if you are running on an old version of R which requires an old version of R.
 #' @param latest_Frozen if FALSE (and choose_version is FALSE) the function installs the latest devel version of RTools (good for people using the devel version of R).  If TRUE (default), the latest frozen version of RTools is installed.
 #' @param page_with_download_url the URL of the RTools download page.
-#' @return Nothing.
+#' @return TRUE/FALSE - was the installation successful or not.
 #' @export
 #' @references
 #' RTools homepage (for other resources and documentation): \url{http://cran.r-project.org/bin/windows/Rtools/}
@@ -260,7 +275,7 @@ install.Rtools <- function(choose_version = F,
 #' @details
 #' Git is a distributed revision control and source code management system with an emphasis on speed.
 #' @param page_with_download_url the URL of the git download page.
-#' @return Nothing.
+#' @return TRUE/FALSE - was the installation successful or not.
 #' @export
 #' @references
 #' git homepage: \url{http://git-scm.com/}
@@ -294,7 +309,7 @@ install.git <- function(page_with_download_url="http://git-scm.com/download/win"
 #' MiKTeX is essential for using Sweave, knitr, and creating Vignette for R packages.
 #' @param version gets the values 32 and 64. Deciding if we should install version 32bit or 64bit. If missing (default) the user is prompted for a decisioin.
 #' @param page_with_download_url the URL of the MikTeX download page.
-#' @return Nothing.
+#' @return TRUE/FALSE - was the installation successful or not.
 #' @export
 #' @references
 #' MikTeX homepage: \url{http://miktex.org/}
@@ -351,7 +366,7 @@ install.MikTeX  <- function(version, page_with_download_url="http://miktex.org/d
 #' @details
 #' RStudio is a free and open source integrated development environment (IDE) for R, a programming language for statistical computing and graphics.
 #' @param page_with_download_url the URL of the RStudio download page.
-#' @return Nothing.
+#' @return TRUE/FALSE - was the installation successful or not.
 #' @export
 #' @references
 #' \itemize{
@@ -385,7 +400,7 @@ install.RStudio  <- function(page_with_download_url="http://www.rstudio.com/ide/
 #' @details
 #' "The easiest way to use Git on Windows." (at least so they say...)
 #' @param URL the URL of the GitHub download page.
-#' @return Nothing.
+#' @return TRUE/FALSE - was the installation successful or not.
 #' @export
 #' @references
 #' \itemize{
