@@ -2,7 +2,8 @@
 \alias{install.Rtools}
 \title{Downloads and installs Rtools}
 \usage{
-  install.Rtools(choose_version = F, latest_Frozen = T,
+  install.Rtools(choose_version = FALSE,
+    latest_Frozen = FALSE,
     page_with_download_url = "http://cran.r-project.org/bin/windows/Rtools/")
 }
 \arguments{

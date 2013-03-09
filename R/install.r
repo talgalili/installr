@@ -233,8 +233,8 @@ ask.user.for.a.row <- function(TABLE,
 #' install.Rtools(F, F) # installs the latest devel version of RTools
 #' install.Rtools(T) # choose your version
 #' }
-install.Rtools <- function(choose_version = F,
-                           latest_Frozen = T,
+install.Rtools <- function(choose_version = FALSE,
+                           latest_Frozen = FALSE,
                            page_with_download_url = 'http://cran.r-project.org/bin/windows/Rtools/'
 ) {
    # choose_version==T allows the user to choose which version of Rtools he wishes to install

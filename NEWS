@@ -129,3 +129,4 @@ TODO for future releases:
 -------------------------
 	* uninstall.R() for the old version of R (including the library folder)
 	* Better integration with the "global library" strategy
+   * update RTools to be smarter about how to ask the user what to choose.
