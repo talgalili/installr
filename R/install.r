@@ -503,3 +503,44 @@ shutdown = function(s=0, m=0, h=0) {
           system("shutdown -h now"))
 }
 
+
+
+
+
+#' @title Installing software from R
+#' @export
+#' @description Gives the user the option to download software from within R.
+#' @param use_GUI a logical indicating whether a graphics menu should be used if available.  If TRUE, and on Windows, it will use \link{winDialog}, otherwise it will use \link[utils]{menu}.
+#' @param ... not in use
+#' @return TRUE/FALSE - if the software was installed succesfully or no.
+#' @seealso \link{updateR}, \link{install.R}, \link{install.URL}, 
+#' \link{install.RStudio}, \link{install.Rtools}, \link{install.pandoc}, \link{install.packages.zip},
+#' \link{install.MikTeX}, \link{install.git}, \link{install.git}, \link{check.for.updates.R}
+#' 
+#' @examples
+#' \dontrun{
+#' installr()
+#' }
+installr <- function(use_GUI = TRUE, ...) {
+   choices <- c("R",
+                "RStudio",
+                "Rtools",
+                "git",
+                "MikTeX",
+                "pandoc",
+                "GitHub",
+                "Cancel")
+   
+   the_answer <- menu(choices, graphics = use_GUI, title = "Which software (for Windows) would you like to install?")            
+   
+   switch(the_answer, 
+          install.R(),
+          install.RStudio(),
+          install.Rtools(),
+          install.git(),
+          install.MikTeX(),
+          install.pandoc(),
+          install.GitHub(),
+          return(FALSE)
+   )
+}

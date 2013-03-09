@@ -2,6 +2,7 @@ installR 0.8.5
 --------------
 
 NEW FUNCTIONS ADDED:
+   * installr - allows the user to choose which software to install (from a GUI or console based menu system)
    * A new GUI for Rgui - added the "Update" to the menu, with two submenu items: Update R, and Update R Packages.
    * shutdown - Shut down the operating system with the command `shutdown'.  A modified version of Yihui's shitdown function from the {fun} package (see: https://github.com/yihui/fun/blob/master/R/shutdown.R)
    * is.RStudio - checks if the current R session is running within RStudio or not.

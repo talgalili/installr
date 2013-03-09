@@ -17,7 +17,6 @@
 #'   ullamco laboris nisi ut aliquip ex ea commodo consequat. Do \n you \n love R?") # checking how it deals with multi lines, and a lot of text (very good actually)
 #'   
 #' }
-
 ask.user.yn.question <- function(question, use_GUI = TRUE, add_lines_before = TRUE) {
    choices <- c("Yes", "No")
    

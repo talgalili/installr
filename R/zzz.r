@@ -69,6 +69,7 @@ add.installr.GUI <- function() {
       winMenuAdd("Update")
       winMenuAddItem("Update", "Update R", "updateR()")
       winMenuAddItem("Update", "Update R packages", "update.packages(ask = F)")      
+      winMenuAddItem("Update", "Install software", "installr()")
       return(invisible(TRUE))
    } else {
       return(invisible(FALSE))      
