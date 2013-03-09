@@ -67,7 +67,7 @@ add.installr.GUI <- function() {
    # Add GUI (only in Windows's Rgui)
    if(is.windows() & is.Rgui() & !is.RStudio()){
       winMenuAdd("Update")
-      winMenuAddItem("Update", "Update R", "updateR(browse_news=TRUE, install_R=TRUE)")
+      winMenuAddItem("Update", "Update R", "updateR()")
       winMenuAddItem("Update", "Update R packages", "update.packages(ask = F)")      
       return(invisible(TRUE))
    } else {
