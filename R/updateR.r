@@ -1,19 +1,35 @@
 #' @title Asks the user for one yes/no question.
+#' @export
 #' @description Asks the user for one yes/no question.  If the users replies with a "yes" (or Y, or y) the function returns TRUE.  Otherwise, FALSE. (also exists as the function devtools::yesno)
 #' @param question a character string with a question to the user.
-#' @param yn_text the y/n text after the question.
+#' @param use_GUI a logical indicating whether a graphics menu should be used if available.  If TRUE, and on Windows, it will use \link{winDialog}, otherwise it will use \link[utils]{menu}.
 #' @param add_lines_before if to add a line before asking the question.  Default is TRUE.
 #' @return TRUE/FALSE - if the user answeres yes or no.
+#' @seealso \link[utils]{menu}, (yesno in the package {devtools}) 
+#' @references \url{http://stackoverflow.com/questions/15250487/how-to-add-a-menu-item-to-rgui} (my thanks goes to Dason for his answer and help)
 #' @examples
 #' \dontrun{
 #' ask.user.yn.question("Do you love R?")
+#' ask.user.yn.question(question = "Do you love R?", use_GUI = TRUE) # the same one as before
+#' ask.user.yn.question(question = "Do you love R?", use_GUI = FALSE) # reverts to command line questions
+#' ask.user.yn.question("Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation
+#' 
+#'   ullamco laboris nisi ut aliquip ex ea commodo consequat. Do \n you \n love R?") # checking how it deals with multi lines, and a lot of text (very good actually)
+#'   
 #' }
-ask.user.yn.question <- function(question, yn_text = "(y/n):", add_lines_before =T) {
-   if(add_lines_before) cat("------------------------\n")
-   TEXT <- paste(question, yn_text)
-   the_answer <- readline(TEXT) # get user's input
-   the_answer <- substr(the_answer, start=1, stop=1) # get just the first letter   
-   ifelse(tolower(the_answer) == "y", T, F)   # returns TRUE or FALSE   
+
+ask.user.yn.question <- function(question, use_GUI = TRUE, add_lines_before = TRUE) {
+   choices <- c("Yes", "No")
+   
+   if(use_GUI & is.windows()) {
+      the_answer <- winDialog(type = "yesno", message = question)
+      the_answer <- ifelse(the_answer == "YES", 1L, 2L) # turns it to 1/2
+   } else { # no Windows, and/or no GUI
+      if(add_lines_before & !use_GUI) cat("------------------------\n")   
+      the_answer <- menu(choices, graphics = use_GUI, title = question)            
+   }
+   
+   ifelse(the_answer == 1L, TRUE, FALSE)   # returns TRUE or FALSE
 }
 
 
@@ -21,6 +37,7 @@ ask.user.yn.question <- function(question, yn_text = "(y/n):", add_lines_before 
 #' @export
 #' @description Fetches the latest (not development!) R version and compares it with your currently installed R version (the version of the R session from which you are running this function).
 #' @param notify_user if to print to you (the user) what is the latest version and what version you are currently using.
+#' @param use_GUI a logical indicating whether a graphics menu should be used if available.  If TRUE, and on Windows, it will use \link{winDialog}, otherwise it will use \link{cat}.
 #' @param page_with_download_url the URL of the page from which R can be downloaded.
 #' @return TRUE/FALSE - if there is a newer version of R to install or not.
 #' @examples
@@ -32,7 +49,8 @@ ask.user.yn.question <- function(question, yn_text = "(y/n):", add_lines_before 
 #' #  And the latest R version is:  2.15.3 
 #' #  [1] TRUE
 #' }
-check.for.updates.R <- function(notify_user = T, 
+check.for.updates.R <- function(notify_user = TRUE, 
+                                use_GUI = TRUE, 
                                 page_with_download_url = "http://cran.rstudio.com/bin/windows/base/") {
    page   <- readLines(page_with_download_url, warn = FALSE)
    pat <- "R-[0-9.]+-win"; 
@@ -48,19 +66,26 @@ check.for.updates.R <- function(notify_user = T,
    current_R_version_long <- turn.version.to.number(current_R_version)   
    
    there_is_a_newer_version <- current_R_version_long < latest_R_version_long # TRUE = there IS a need to update (since the latest version is higher then what we currently have)
+
+   if(there_is_a_newer_version) {
+      message_text <-   paste("There is a newer version of R for you to download!\n",
+                                  "You are using R version: ", gsub("R version", "", R.version$version.string), "\n",
+                                  "And the latest R version is: ", latest_R_version, "\n")      
+   } else {
+      message_text <- paste("No need to update. You are using the latest R version: \n", R.version$version.string)
+   }   
+   
    
    if(notify_user) {
-      if(there_is_a_newer_version) {
-         cat("There is a newer version of R for you to download!\n")
-         cat("You are using R version: ", current_R_version, "\n")
-         cat("And the latest R version is: ", latest_R_version, "\n")
-      } else {# we are not using the latest R version - now what...
-         # tell it to the user:
-         cat("No need to update - you are using the latest R version: ", R.version$version.string   , "\n")
-      }         
-   }
+      if(use_GUI) {
+         winDialog(type = "ok", message = message_text)   
+      } else {
+         cat(message_text)
+      }
+   }     
    
-   there_is_a_newer_version
+   
+   return(there_is_a_newer_version)
 }
 
 
@@ -348,6 +373,7 @@ copy.packages.between.libraries <- function(from, to, ask =F,keep_old = T, do_NO
 #' @param start_new_R TRUE/FALSE - if to start the new R (Rgui) after we will quit the old R. Default is TRUE. It will try to start the 64 bit R version, if it does not exist, the 32 bit will be started. This may be less useful for people using RStudio or the likes.
 #' @param quit_R TRUE/FALSE - if to quite R after the installation and package copying or not. If missing (this is the default) - the user is asked what to do.
 #' @param print_R_versions if to tell the user what version he has and what is the latest version (default is TRUE)
+#' @param use_GUI a logical indicating whether a graphics menu should be used if available.  If TRUE, and on Windows, it will use \link{winDialog}, otherwise it will use \link[utils]{menu}.
 #' @param ... Other arguments (this is currently not used in any way)
 #' @return a TRUE/FALSE value on whether or not R was updated.
 #' @seealso \link{check.for.updates.R}, \link{install.R}, \link{copy.packages.between.libraries}, 
@@ -356,7 +382,7 @@ copy.packages.between.libraries <- function(from, to, ask =F,keep_old = T, do_NO
 #' updateR(T, T, T, T, T, T, T) # the safest upgrade option: See the NEWS, install R, copy packages, keep old packages, update packages in the new installation, start the Rgui of the new R, and quite current session of R
 #' updateR() # will ask you what you want at every decision.
 #' }
-updateR <- function(browse_news, install_R, copy_packages, keep_old_packages,  update_packages, start_new_R, quit_R,  print_R_versions=T, ...) {
+updateR <- function(browse_news, install_R, copy_packages, keep_old_packages,  update_packages, start_new_R, quit_R,  print_R_versions=T, use_GUI = TRUE, ...) {
    # this function checks if we have the latest version of R
    # IF not - it notifies the user - and leaves.
    # If there is a new version - it offers the user to download and install it.   
@@ -368,12 +394,12 @@ updateR <- function(browse_news, install_R, copy_packages, keep_old_packages,  u
    # else - there_is_a_newer_version_of_R==T
 
    # should we open the NEWS?
-   if(missing(browse_news)) browse_news <- ask.user.yn.question("Do you wish to see the NEWS regarding this new version of R?")      
+   if(missing(browse_news)) browse_news <- ask.user.yn.question("Do you wish to see the NEWS regarding this new version of R?", use_GUI = use_GUI)
    if(browse_news) browseURL("http://stat.ethz.ch/R-manual/R-patched/NEWS")
    
    
    # should we install R?
-   if(missing(install_R)) install_R <- ask.user.yn.question("Do you wish to install the latest version of R?")
+   if(missing(install_R)) install_R <- ask.user.yn.question("Do you wish to install the latest version of R?", use_GUI = use_GUI)
    if(!install_R) return(F) # if not - return F
    
    # if we got this far, the user wants to install the latest version of R (and his current version is old)
@@ -387,13 +413,13 @@ updateR <- function(browse_news, install_R, copy_packages, keep_old_packages,  u
    if(copy_packages) {
 #       ask.user.for.a.row(c("Yes"), "Did you finish running the installer for the new R?", "Press 1 (and Enter) if the installation of R is finished:")
       # should we keep the old packages?
-      if(missing(keep_old_packages)) keep_old_packages <- ask.user.yn.question("Once your packages are copied to the new R, \ndo you wish to KEEP the packages from the library in the OLD R installation? \n(if NOT 'y' is choosen (say 'n) - you will erase your packages in the old R version) ")
+      if(missing(keep_old_packages)) keep_old_packages <- ask.user.yn.question("Once your packages are copied to the new R, \ndo you wish to KEEP the packages from the library in the OLD R installation? \n(if you choose 'NO' - you will erase your packages in the old R version) ", use_GUI = use_GUI)
       # Next, copy (or MOVE):
       copy.packages.between.libraries(keep_old=keep_old_packages)   
    }
 
    # should we update_packages?
-   if(missing(update_packages)) update_packages <- ask.user.yn.question("Do you wish to update your packages in the newely installed R? ")
+   if(missing(update_packages)) update_packages <- ask.user.yn.question("Do you wish to update your packages in the newely installed R? ", use_GUI = use_GUI)
    
    if(update_packages & copy_packages) { # we should not update packages if we didn't copy them first...
       new_Rscript_path <- file.path(new_R_path, "bin/Rscript.exe") # make sure to run the newer R to update the packages.
@@ -407,7 +433,7 @@ updateR <- function(browse_news, install_R, copy_packages, keep_old_packages,  u
    
    
    # should we turn Rgui on?
-   if(missing(start_new_R)) start_new_R <- ask.user.yn.question("Do you wish to start the Rgui.exe of your new R installation? ")
+   if(missing(start_new_R)) start_new_R <- ask.user.yn.question("Do you wish to start the Rgui.exe of your new R installation? ", use_GUI = use_GUI)
    if(start_new_R) {
       new_Rexe_path <- file.path(new_R_path, "bin/x64/Rgui.exe")      
       if(!file.exists(new_Rexe_path)) new_Rexe_path <- file.path(new_R_path, "bin/i386/Rgui.exe")
@@ -415,7 +441,7 @@ updateR <- function(browse_news, install_R, copy_packages, keep_old_packages,  u
    }   
    
    # should we turn R off?
-   if(missing(quit_R)) quit_R <- ask.user.yn.question("Do you wish to quit R (your workspace will NOT be saved)? ")
+   if(missing(quit_R)) quit_R <- ask.user.yn.question("Do you wish to quit R (your workspace will NOT be saved)? ", use_GUI = use_GUI)
    if(quit_R) quit(save = "no")
    
       

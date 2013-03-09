@@ -4,7 +4,7 @@
 \usage{
   updateR(browse_news, install_R, copy_packages,
     keep_old_packages, update_packages, start_new_R,
-    quit_R, print_R_versions = T, ...)
+    quit_R, print_R_versions = T, use_GUI = TRUE, ...)
 }
 \arguments{
   \item{browse_news}{if TRUE (and if there is a newer
@@ -49,6 +49,11 @@
 
   \item{print_R_versions}{if to tell the user what version
   he has and what is the latest version (default is TRUE)}
+
+  \item{use_GUI}{a logical indicating whether a graphics
+  menu should be used if available.  If TRUE, and on
+  Windows, it will use \link{winDialog}, otherwise it will
+  use \link[utils]{menu}.}
 
   \item{...}{Other arguments (this is currently not used in
   any way)}

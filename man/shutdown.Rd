@@ -23,8 +23,7 @@
 \description{
   There is a command \command{shutdown} in both Windows and
   Linux, and this function uses it to shut down a computer.
-}
-\details{
+
   After the time \code{wait} has passed, R will execute
   \command{shutdown -s -t 0} (for Windows) or
   \command{shutdown -h now} to shut down the computer.

@@ -2,14 +2,17 @@
 \alias{ask.user.yn.question}
 \title{Asks the user for one yes/no question.}
 \usage{
-  ask.user.yn.question(question, yn_text = "(y/n):",
-    add_lines_before = T)
+  ask.user.yn.question(question, use_GUI = TRUE,
+    add_lines_before = TRUE)
 }
 \arguments{
   \item{question}{a character string with a question to the
   user.}
 
-  \item{yn_text}{the y/n text after the question.}
+  \item{use_GUI}{a logical indicating whether a graphics
+  menu should be used if available.  If TRUE, and on
+  Windows, it will use \link{winDialog}, otherwise it will
+  use \link[utils]{menu}.}
 
   \item{add_lines_before}{if to add a line before asking
   the question.  Default is TRUE.}
@@ -26,6 +29,19 @@
 \examples{
 \dontrun{
 ask.user.yn.question("Do you love R?")
+ask.user.yn.question(question = "Do you love R?", use_GUI = TRUE) # the same one as before
+ask.user.yn.question(question = "Do you love R?", use_GUI = FALSE) # reverts to command line questions
+ask.user.yn.question("Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation
+
+  ullamco laboris nisi ut aliquip ex ea commodo consequat. Do \\n you \\n love R?") # checking how it deals with multi lines, and a lot of text (very good actually)
+
 }
+}
+\references{
+  \url{http://stackoverflow.com/questions/15250487/how-to-add-a-menu-item-to-rgui}
+  (my thanks goes to Dason for his answer and help)
+}
+\seealso{
+  \link[utils]{menu}, (yesno in the package {devtools})
 }
 

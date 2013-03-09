@@ -1,4 +1,4 @@
-installR 0.8.4
+installR 0.8.5
 --------------
 
 NEW FUNCTIONS ADDED:
@@ -16,8 +16,11 @@ UPDATED FUNCTIONS:
    * install.?? - now returns TRUE/FLASE on whether to installation worked or not.
    * install.R - Now uses MD5sums to check the newly installed R has all of the files it should.
    * updateR - 
+      * added a menu based GUI!
       * added setInternet2(TRUE) for when updating packages (to help it work with specification of proxies, etc.). (this seems to be safe for regular users - but I hope it won't cause new problems.).  Thanks to a bug report by Gilbert Pétain-Coup.
       * now checks if R was installed or not (Based on the output of install.R), and removed the need to ask the user that.
+   * ask.user.yn.question - added a menu based GUI.
+   * check.for.updates.R - added a menu based GUI.
 
 
 BUG FIXES:
@@ -125,4 +128,3 @@ TODO for future releases:
 -------------------------
 	* uninstall.R() for the old version of R (including the library folder)
 	* Better integration with the "global library" strategy
-	* Integrating with a GUI via winDialog (thanks:  http://stackoverflow.com/questions/15250487/how-to-add-a-menu-item-to-rgui)

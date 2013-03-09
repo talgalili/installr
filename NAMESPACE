@@ -1,3 +1,4 @@
+export(ask.user.yn.question)
 export(check.for.updates.R)
 export(copy.packages.between.libraries)
 export(create.global.library)
