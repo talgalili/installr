@@ -27,7 +27,7 @@ install.RStudio() # installs the latest version of git
 }
 \references{
   \itemize{ \item RStudio homepage:
-  \url{http://www.rstudio.com//} \item devtools::source_url
+  \url{http://www.rstudio.com/} \item devtools::source_url
   \url{http://rgm3.lab.nig.ac.jp/RGM/r_function?p=devtools&f=source_url}
   }
 }

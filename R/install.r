@@ -370,7 +370,7 @@ install.MikTeX  <- function(version, page_with_download_url="http://miktex.org/d
 #' @export
 #' @references
 #' \itemize{
-#' \item RStudio homepage: \url{http://www.rstudio.com//}
+#' \item RStudio homepage: \url{http://www.rstudio.com/}
 #' \item devtools::source_url \url{http://rgm3.lab.nig.ac.jp/RGM/r_function?p=devtools&f=source_url}
 #' } 
 #' @examples
@@ -391,7 +391,40 @@ install.RStudio  <- function(page_with_download_url="http://www.rstudio.com/ide/
    install.URL(URL)   
 }
 
-# install.RStudio()
+
+
+
+#' @title Downloads and installs ImageMagick for windows
+#' @description Allows the user to downloads and install the latest version of ImageMagick for Windows.
+#' @details
+#' ImageMagick® is a software suite to create, edit, compose, or convert bitmap images. It can read and write images in a variety of formats (over 100) including DPX, EXR, GIF, JPEG, JPEG-2000, PDF, PhotoCD, PNG, Postscript, SVG, and TIFF. Use ImageMagick to resize, flip, mirror, rotate, distort, shear and transform images, adjust image colors, apply various special effects, or draw text, lines, polygons, ellipses and Bézier curves.
+#' This function downloads Win32 dynamic at 16 bits-per-pixel.
+#' @param page_with_download_url the URL of the ImageMagick download page.
+#' @return TRUE/FALSE - was the installation successful or not.
+#' @export
+#' @references
+#' \itemize{
+#' \item ImageMagick homepage: \url{http://www.imagemagick.org/script/index.php}
+#' } 
+#' @examples
+#' \dontrun{
+#' install.ImageMagick() # installs the latest version of git
+#' }
+install.ImageMagick  <- function(page_with_download_url="http://www.imagemagick.org/script/binary-releases.php") {    
+   # get download URL:
+   page     <- readLines(page_with_download_url, warn = FALSE)
+   # http://www.imagemagick.org/download/binaries/ImageMagick-6.8.3-8-Q16-x86-dll.exe
+   pat <- "//www.imagemagick.org/download/binaries/ImageMagick-[0-9.]+-8-Q16-x86-dll.exe"; 
+   target_line <- grep(pat, page, value = TRUE); 
+   m <- regexpr(pat, target_line); 
+   URL      <- regmatches(target_line, m) # (The http still needs to be prepended.
+   URL      <- paste('http', URL, sep = ':')[1] # we might find the same file more than once - so we'll only take its first one
+   
+   # install.
+   install.URL(URL)   
+}
+
+
 
 
 
@@ -529,6 +562,7 @@ installr <- function(use_GUI = TRUE, ...) {
                 "MikTeX",
                 "pandoc",
                 "GitHub",
+                "ImageMagick",
                 "Cancel")
    
    the_answer <- menu(choices, graphics = use_GUI, title = "Which software (for Windows) would you like to install?")            
@@ -541,6 +575,7 @@ installr <- function(use_GUI = TRUE, ...) {
           install.MikTeX(),
           install.pandoc(),
           install.GitHub(),
+          install.ImageMagick(),
           return(FALSE)
    )
 }

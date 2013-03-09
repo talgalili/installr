@@ -8,6 +8,7 @@ NEW FUNCTIONS ADDED:
    * is.RStudio - checks if the current R session is running within RStudio or not.
    * is.Rgui - checks if the current R session is running within Rgui or not.
    * add.installr.GUI and remove.installr.GUI - for adding a menu system to Rgui
+   * install.ImageMagick.
 
 UPDATED FUNCTIONS:
    * install.URL - 
@@ -129,6 +130,6 @@ TODO for future releases:
 -------------------------
 	* uninstall.R() for the old version of R (including the library folder)
 	* Better integration with the "global library" strategy
-	* update RTools to be smarter about how to ask the user what to choose.
+	* update RTools to be smarter about how to ask the user what to choose.  Also check if the Rtools is already installed or not (devtools has such a function)
 	* update README.md for 0.8.5
 	
