@@ -428,6 +428,42 @@ install.ImageMagick  <- function(page_with_download_url="http://www.imagemagick.
 
 
 
+
+
+#' @title Downloads and installs GraphicsMagick for windows
+#' @description Allows the user to downloads and install the latest version of GraphicsMagick for Windows.
+#' @details
+#' GraphicsMagick is the swiss army knife of image processing. Comprised of 282K physical lines (according to David A. Wheeler's SLOCCount) of source code in the base package (or 964K including 3rd party libraries) it provides a robust and efficient collection of tools and libraries which support reading, writing, and manipulating an image in over 88 major formats including important formats like DPX, GIF, JPEG, JPEG-2000, PNG, PDF, PNM, and TIFF.
+#' This function downloads Win32 dynamic at 16 bits-per-pixel.
+#' @param page_with_download_url the URL of the ImageMagick download page.
+#' @return TRUE/FALSE - was the installation successful or not.
+#' @export
+#' @references
+#' \itemize{
+#' \item GraphicsMagick homepage: \url{http://www.graphicsmagick.org/}
+#' } 
+#' @examples
+#' \dontrun{
+#' install.GraphicsMagick() # installs the latest version of git
+#' }
+install.GraphicsMagick  <- function(page_with_download_url="http://sourceforge.net/projects/graphicsmagick/") {    
+   # get download URL:
+   page     <- readLines(page_with_download_url, warn = FALSE)
+   # http://downloads.sourceforge.net/project/graphicsmagick/graphicsmagick-binaries/1.3.17/GraphicsMagick-1.3.17-Q16-windows-dll.exe?r=http%3A%2F%2Fsourceforge.net%2Fprojects%2Fgraphicsmagick%2Ffiles%2F&ts=1362862824&use_mirror=garr
+   # http://sourceforge.net/projects/graphicsmagick/files/graphicsmagick-binaries/1.3.17/GraphicsMagick-1.3.17-Q8-windows-dll.exe/download
+   pat <- "//sourceforge.net/projects/graphicsmagick/files/graphicsmagick-binaries/[0-9.]+/GraphicsMagick-[0-9.]+-Q16-windows-dll.exe"  
+   target_line <- grep(pat, page, value = TRUE); 
+   m <- regexpr(pat, target_line); 
+   URL      <- regmatches(target_line, m) # (The http still needs to be prepended.
+   URL      <- paste('http', URL, sep = ':')[1] # we might find the same file more than once - so we'll only take its first one
+   
+   # install.
+   install.URL(URL)   
+}
+
+
+
+
 #' @title Downloads and installs GitHub for windows
 #' @description Allows the user to downloads and install the latest version of GitHub for Windows.
 #' @details
@@ -563,6 +599,7 @@ installr <- function(use_GUI = TRUE, ...) {
                 "pandoc",
                 "GitHub",
                 "ImageMagick",
+                "GraphicsMagick",
                 "Cancel")
    
    the_answer <- menu(choices, graphics = use_GUI, title = "Which software (for Windows) would you like to install?")            
@@ -576,6 +613,7 @@ installr <- function(use_GUI = TRUE, ...) {
           install.pandoc(),
           install.GitHub(),
           install.ImageMagick(),
+          install.GraphicsMagick(),
           return(FALSE)
    )
 }

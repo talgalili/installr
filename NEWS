@@ -8,7 +8,8 @@ NEW FUNCTIONS ADDED:
    * is.RStudio - checks if the current R session is running within RStudio or not.
    * is.Rgui - checks if the current R session is running within Rgui or not.
    * add.installr.GUI and remove.installr.GUI - for adding a menu system to Rgui
-   * install.ImageMagick.
+   * install.ImageMagick
+   * install.GraphicsMagick
 
 UPDATED FUNCTIONS:
    * install.URL - 
