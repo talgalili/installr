@@ -26,10 +26,11 @@ installr()
 }
 }
 \seealso{
-  \link{updateR}, \link{install.R}, \link{install.URL},
-  \link{install.RStudio}, \link{install.Rtools},
-  \link{install.pandoc}, \link{install.packages.zip},
+  \link{updateR}, \link{install.R}, \link{install.RStudio},
+  \link{install.Rtools}, \link{install.pandoc},
   \link{install.MikTeX}, \link{install.git},
-  \link{install.git}, \link{check.for.updates.R}
+  \link{install.git}, \link{install.GraphicsMagick},
+  \link{install.ImageMagick}, \link{check.for.updates.R},
+  \link{install.URL}, \link{install.packages.zip},
 }
 
