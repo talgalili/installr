@@ -98,13 +98,14 @@ check.for.updates.R <- function(notify_user = TRUE,
 #' But in case you wish to only install R, with no other steps taken (for example, taking care of your old packages), then you can use install.R()
 #' @param page_with_download_url URL from which the latest stable version of R can be downloaded from.
 #' @param to_checkMD5sums Should we check that the new R installation has the files we expect it to (by checking the MD5 sums)? default is TRUE.  It assumes that the R which was isntalled is the latest R version.
+#' @param ... extra parameters to pass to \link{install.URL}
 #' @return TRUE/FALSE - was the installation of R successful or not.
 #' @export
 #' @examples
 #' \dontrun{
 #' install.R() 
 #' }
-install.R <- function(page_with_download_url = "http://cran.rstudio.com/bin/windows/base/", to_checkMD5sums = TRUE) {
+install.R <- function(page_with_download_url = "http://cran.rstudio.com/bin/windows/base/", to_checkMD5sums = TRUE,...) {
    # I'm using the rsudio cran since it redirects to other servers wourld wide.
    # here there is a question on how to do it with the different mirrors. (maybe to add it as an option?)
    # this might be a good time for the "find the best mirror" function.   
@@ -115,7 +116,7 @@ install.R <- function(page_with_download_url = "http://cran.rstudio.com/bin/wind
    exe_filename   <- regmatches(target_line, m) 
    URL <- paste(page_with_download_url, exe_filename, sep = '')
    
-   did_R_install <- install.URL(URL)
+   did_R_install <- install.URL(URL,...)
    if(!did_R_install) return(FALSE) 
    
    # checks the MD5sums from the new R installation:

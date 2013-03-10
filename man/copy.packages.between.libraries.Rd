@@ -2,8 +2,9 @@
 \alias{copy.packages.between.libraries}
 \title{Copies all packages from one library folder to another}
 \usage{
-  copy.packages.between.libraries(from, to, ask = F,
-    keep_old = T, do_NOT_override_packages_in_new_R = T)
+  copy.packages.between.libraries(from, to, ask = FALSE,
+    keep_old = TRUE,
+    do_NOT_override_packages_in_new_R = TRUE)
 }
 \arguments{
   \item{from}{a character vector for the location of the

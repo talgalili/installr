@@ -4,7 +4,8 @@
 \usage{
   install.Rtools(choose_version = FALSE,
     latest_Frozen = FALSE,
-    page_with_download_url = "http://cran.r-project.org/bin/windows/Rtools/")
+    page_with_download_url = "http://cran.r-project.org/bin/windows/Rtools/",
+    ...)
 }
 \arguments{
   \item{choose_version}{if TRUE, allows the user to choose
@@ -21,6 +22,9 @@
 
   \item{page_with_download_url}{the URL of the RTools
   download page.}
+
+  \item{...}{extra parameters to pass to
+  \link{install.URL}}
 }
 \value{
   TRUE/FALSE - was the installation successful or not.

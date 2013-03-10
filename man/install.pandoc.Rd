@@ -6,7 +6,7 @@
 }
 \usage{
   install.pandoc(page_with_download_url = "http://code.google.com/p/pandoc/downloads/list",
-    use_regex = T)
+    use_regex = T, ...)
 }
 \arguments{
   \item{page_with_download_url}{a link to the list of
@@ -15,6 +15,9 @@
   \item{use_regex}{(default TRUE) should the regex method
   be used to extract exe links, or should the XML package
   be used.}
+
+  \item{...}{extra parameters to pass to
+  \link{install.URL}}
 }
 \value{
   TRUE/FALSE - was the installation successful or not.

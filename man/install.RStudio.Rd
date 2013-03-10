@@ -2,11 +2,15 @@
 \alias{install.RStudio}
 \title{Downloads and installs RStudio for windows}
 \usage{
-  install.RStudio(page_with_download_url = "http://www.rstudio.com/ide/download/desktop")
+  install.RStudio(page_with_download_url = "http://www.rstudio.com/ide/download/desktop",
+    ...)
 }
 \arguments{
   \item{page_with_download_url}{the URL of the RStudio
   download page.}
+
+  \item{...}{extra parameters to pass to
+  \link{install.URL}}
 }
 \value{
   TRUE/FALSE - was the installation successful or not.

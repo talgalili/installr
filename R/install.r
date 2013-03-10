@@ -100,6 +100,7 @@ install.URL <- function(exe_URL, keep_install_file = FALSE, wait = TRUE, ...) {
 #' @author GERGELY DAROCZI, G. Grothendieck, Tal Galili
 #' @param page_with_download_url a link to the list of download links of pandoc
 #' @param use_regex (default TRUE) should the regex method be used to extract exe links, or should the XML package be used.
+#' @param ... extra parameters to pass to \link{install.URL}
 #' @source \url{http://stackoverflow.com/questions/15071957/is-it-possible-to-install-pandoc-on-windows-using-an-r-command}
 #' @examples
 #' \dontrun{
@@ -107,7 +108,7 @@ install.URL <- function(exe_URL, keep_install_file = FALSE, wait = TRUE, ...) {
 #' }
 install.pandoc <- function(
    page_with_download_url = 'http://code.google.com/p/pandoc/downloads/list',
-   use_regex = T
+   use_regex = T,...
 ) {
    # source: http://stackoverflow.com/questions/15071957/is-it-possible-to-install-pandoc-on-windows-using-an-r-command
    # published on: http://www.r-statistics.com/2013/02/installing-pandoc-from-r-on-windows/
@@ -128,7 +129,7 @@ install.pandoc <- function(
       URL      <- paste('http', URL, sep = ':')
    }
    
-   install.URL(URL)
+   install.URL(URL,...)
 }
 
 #' @title Check if a number is integer
@@ -223,6 +224,7 @@ ask.user.for.a.row <- function(TABLE,
 #' @param choose_version if TRUE, allows the user to choose which version of RTools to install.  Useful if you wish to install the devel version of RTools, or if you are running on an old version of R which requires an old version of R.
 #' @param latest_Frozen if FALSE (and choose_version is FALSE) the function installs the latest devel version of RTools (good for people using the devel version of R).  If TRUE (default), the latest frozen version of RTools is installed.
 #' @param page_with_download_url the URL of the RTools download page.
+#' @param ... extra parameters to pass to \link{install.URL}
 #' @return TRUE/FALSE - was the installation successful or not.
 #' @export
 #' @references
@@ -235,7 +237,7 @@ ask.user.for.a.row <- function(TABLE,
 #' }
 install.Rtools <- function(choose_version = FALSE,
                            latest_Frozen = FALSE,
-                           page_with_download_url = 'http://cran.r-project.org/bin/windows/Rtools/'
+                           page_with_download_url = 'http://cran.r-project.org/bin/windows/Rtools/',...
 ) {
    # choose_version==T allows the user to choose which version of Rtools he wishes to install
    # latest_Frozen==T means we get the latest Rtools version which is Frozen (when writing this function it is Rtools215.exe)
@@ -264,7 +266,7 @@ install.Rtools <- function(choose_version = FALSE,
    
    URL <- paste(page_with_download_url, exe_filename, sep = '')
    
-   install.URL(URL)   
+   install.URL(URL,...)   
 }
 
 
@@ -275,6 +277,7 @@ install.Rtools <- function(choose_version = FALSE,
 #' @details
 #' Git is a distributed revision control and source code management system with an emphasis on speed.
 #' @param page_with_download_url the URL of the git download page.
+#' @param ... extra parameters to pass to \link{install.URL}
 #' @return TRUE/FALSE - was the installation successful or not.
 #' @export
 #' @references
@@ -284,7 +287,7 @@ install.Rtools <- function(choose_version = FALSE,
 #' \dontrun{
 #' install.git() # installs the latest version of git
 #' }
-install.git <- function(page_with_download_url="http://git-scm.com/download/win") {
+install.git <- function(page_with_download_url="http://git-scm.com/download/win",...) {
    # "http://git-scm.com/download/win"
    # get download URL:
    page     <- readLines(page_with_download_url, warn = FALSE)
@@ -296,7 +299,7 @@ install.git <- function(page_with_download_url="http://git-scm.com/download/win"
    URL      <- paste('https', URL, sep = ':')[1] # we might find the same file more than once - so we'll only take its first one
    
    # install.
-   install.URL(URL)   
+   install.URL(URL,...)   
 }
 
 
@@ -309,6 +312,7 @@ install.git <- function(page_with_download_url="http://git-scm.com/download/win"
 #' MiKTeX is essential for using Sweave, knitr, and creating Vignette for R packages.
 #' @param version gets the values 32 and 64. Deciding if we should install version 32bit or 64bit. If missing (default) the user is prompted for a decisioin.
 #' @param page_with_download_url the URL of the MikTeX download page.
+#' @param ... extra parameters to pass to \link{install.URL}
 #' @return TRUE/FALSE - was the installation successful or not.
 #' @export
 #' @references
@@ -318,7 +322,7 @@ install.git <- function(page_with_download_url="http://git-scm.com/download/win"
 #' \dontrun{
 #' install.MikTeX() # installs the latest version of git
 #' }
-install.MikTeX  <- function(version, page_with_download_url="http://miktex.org/download") {
+install.MikTeX  <- function(version, page_with_download_url="http://miktex.org/download",...) {
    if(missing(version)) {
       version <- ifelse(ask.user.for.a.row(data.frame(version = c(32, 64)), "Which version of MiKTeX do you want?") == 1,
                         32, 64)
@@ -348,7 +352,7 @@ install.MikTeX  <- function(version, page_with_download_url="http://miktex.org/d
       URL      <- paste('http', URL, sep = ':')[1] # we might find the same file more than once - so we'll only take its first one      
    }
    # install.
-   install.URL(URL)   
+   install.URL(URL,...)   
 }
 
 # install.MikTeX()   
@@ -366,6 +370,7 @@ install.MikTeX  <- function(version, page_with_download_url="http://miktex.org/d
 #' @details
 #' RStudio is a free and open source integrated development environment (IDE) for R, a programming language for statistical computing and graphics.
 #' @param page_with_download_url the URL of the RStudio download page.
+#' @param ... extra parameters to pass to \link{install.URL}
 #' @return TRUE/FALSE - was the installation successful or not.
 #' @export
 #' @references
@@ -377,7 +382,7 @@ install.MikTeX  <- function(version, page_with_download_url="http://miktex.org/d
 #' \dontrun{
 #' install.RStudio() # installs the latest version of git
 #' }
-install.RStudio  <- function(page_with_download_url="http://www.rstudio.com/ide/download/desktop") {    
+install.RStudio  <- function(page_with_download_url="http://www.rstudio.com/ide/download/desktop",...) {    
    # get download URL:
    page     <- readLines(page_with_download_url, warn = FALSE)
    # http://download1.rstudio.org/RStudio-0.97.318.exe#
@@ -388,7 +393,7 @@ install.RStudio  <- function(page_with_download_url="http://www.rstudio.com/ide/
    URL      <- paste('http', URL, sep = ':')[1] # we might find the same file more than once - so we'll only take its first one
    
    # install.
-   install.URL(URL)   
+   install.URL(URL,...)   
 }
 
 
@@ -400,6 +405,7 @@ install.RStudio  <- function(page_with_download_url="http://www.rstudio.com/ide/
 #' ImageMagick® is a software suite to create, edit, compose, or convert bitmap images. It can read and write images in a variety of formats (over 100) including DPX, EXR, GIF, JPEG, JPEG-2000, PDF, PhotoCD, PNG, Postscript, SVG, and TIFF. Use ImageMagick to resize, flip, mirror, rotate, distort, shear and transform images, adjust image colors, apply various special effects, or draw text, lines, polygons, ellipses and Bézier curves.
 #' This function downloads Win32 dynamic at 16 bits-per-pixel.
 #' @param page_with_download_url the URL of the ImageMagick download page.
+#' @param ... extra parameters to pass to \link{install.URL}
 #' @return TRUE/FALSE - was the installation successful or not.
 #' @export
 #' @references
@@ -410,7 +416,7 @@ install.RStudio  <- function(page_with_download_url="http://www.rstudio.com/ide/
 #' \dontrun{
 #' install.ImageMagick() # installs the latest version of git
 #' }
-install.ImageMagick  <- function(page_with_download_url="http://www.imagemagick.org/script/binary-releases.php") {    
+install.ImageMagick  <- function(page_with_download_url="http://www.imagemagick.org/script/binary-releases.php",...) {    
    # get download URL:
    page     <- readLines(page_with_download_url, warn = FALSE)
    # http://www.imagemagick.org/download/binaries/ImageMagick-6.8.3-8-Q16-x86-dll.exe
@@ -422,7 +428,7 @@ install.ImageMagick  <- function(page_with_download_url="http://www.imagemagick.
    URL      <- paste('http', URL, sep = ':')[1] # we might find the same file more than once - so we'll only take its first one
    
    # install.
-   install.URL(URL)   
+   install.URL(URL,...)   
 }
 
 
@@ -437,6 +443,7 @@ install.ImageMagick  <- function(page_with_download_url="http://www.imagemagick.
 #' GraphicsMagick is the swiss army knife of image processing. Comprised of 282K physical lines (according to David A. Wheeler's SLOCCount) of source code in the base package (or 964K including 3rd party libraries) it provides a robust and efficient collection of tools and libraries which support reading, writing, and manipulating an image in over 88 major formats including important formats like DPX, GIF, JPEG, JPEG-2000, PNG, PDF, PNM, and TIFF.
 #' This function downloads Win32 dynamic at 16 bits-per-pixel.
 #' @param page_with_download_url the URL of the ImageMagick download page.
+#' @param ... extra parameters to pass to \link{install.URL}
 #' @return TRUE/FALSE - was the installation successful or not.
 #' @export
 #' @references
@@ -447,7 +454,7 @@ install.ImageMagick  <- function(page_with_download_url="http://www.imagemagick.
 #' \dontrun{
 #' install.GraphicsMagick() # installs the latest version of git
 #' }
-install.GraphicsMagick  <- function(page_with_download_url="http://sourceforge.net/projects/graphicsmagick/") {    
+install.GraphicsMagick  <- function(page_with_download_url="http://sourceforge.net/projects/graphicsmagick/",...) {    
    # get download URL:
    page     <- readLines(page_with_download_url, warn = FALSE)
    # http://downloads.sourceforge.net/project/graphicsmagick/graphicsmagick-binaries/1.3.17/GraphicsMagick-1.3.17-Q16-windows-dll.exe?r=http%3A%2F%2Fsourceforge.net%2Fprojects%2Fgraphicsmagick%2Ffiles%2F&ts=1362862824&use_mirror=garr
@@ -459,7 +466,7 @@ install.GraphicsMagick  <- function(page_with_download_url="http://sourceforge.n
    URL      <- paste('http', URL, sep = ':')[1] # we might find the same file more than once - so we'll only take its first one
    
    # install.
-   install.URL(URL)   
+   install.URL(URL,...)   
 }
 
 
@@ -470,6 +477,7 @@ install.GraphicsMagick  <- function(page_with_download_url="http://sourceforge.n
 #' @details
 #' "The easiest way to use Git on Windows." (at least so they say...)
 #' @param URL the URL of the GitHub download page.
+#' @param ... extra parameters to pass to \link{install.URL}
 #' @return TRUE/FALSE - was the installation successful or not.
 #' @export
 #' @references
@@ -481,9 +489,9 @@ install.GraphicsMagick  <- function(page_with_download_url="http://sourceforge.n
 #' \dontrun{
 #' install.GitHub() # installs the latest version of git
 #' }
-install.GitHub <- function(URL = "http://github-windows.s3.amazonaws.com/GitHubSetup.exe") {
+install.GitHub <- function(URL = "http://github-windows.s3.amazonaws.com/GitHubSetup.exe",...) {
    # https://help.github.com/articles/set-up-git
-   install.URL(URL)
+   install.URL(URL,...)
 }
 
 

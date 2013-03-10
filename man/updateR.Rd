@@ -4,7 +4,7 @@
 \usage{
   updateR(browse_news, install_R, copy_packages,
     keep_old_packages, update_packages, start_new_R,
-    quit_R, print_R_versions = T, use_GUI = TRUE, ...)
+    quit_R, print_R_versions = TRUE, use_GUI = TRUE, ...)
 }
 \arguments{
   \item{browse_news}{if TRUE (and if there is a newer

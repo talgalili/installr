@@ -2,11 +2,15 @@
 \alias{install.git}
 \title{Downloads and installs git and git-gui for windows}
 \usage{
-  install.git(page_with_download_url = "http://git-scm.com/download/win")
+  install.git(page_with_download_url = "http://git-scm.com/download/win",
+    ...)
 }
 \arguments{
   \item{page_with_download_url}{the URL of the git download
   page.}
+
+  \item{...}{extra parameters to pass to
+  \link{install.URL}}
 }
 \value{
   TRUE/FALSE - was the installation successful or not.

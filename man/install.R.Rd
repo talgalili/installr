@@ -3,7 +3,7 @@
 \title{Downloads and installs the latest R version}
 \usage{
   install.R(page_with_download_url = "http://cran.rstudio.com/bin/windows/base/",
-    to_checkMD5sums = TRUE)
+    to_checkMD5sums = TRUE, ...)
 }
 \arguments{
   \item{page_with_download_url}{URL from which the latest
@@ -13,6 +13,9 @@
   installation has the files we expect it to (by checking
   the MD5 sums)? default is TRUE.  It assumes that the R
   which was isntalled is the latest R version.}
+
+  \item{...}{extra parameters to pass to
+  \link{install.URL}}
 }
 \value{
   TRUE/FALSE - was the installation of R successful or not.
