@@ -414,7 +414,8 @@ install.ImageMagick  <- function(page_with_download_url="http://www.imagemagick.
    # get download URL:
    page     <- readLines(page_with_download_url, warn = FALSE)
    # http://www.imagemagick.org/download/binaries/ImageMagick-6.8.3-8-Q16-x86-dll.exe
-   pat <- "//www.imagemagick.org/download/binaries/ImageMagick-[0-9.]+-8-Q16-x86-dll.exe"; 
+   # http://www.imagemagick.org/download/binaries/ImageMagick-6.8.3-9-Q16-x86-dll.exe
+   pat <- "//www.imagemagick.org/download/binaries/ImageMagick-[0-9.]+-[0-9]-Q16-x86-dll.exe"; 
    target_line <- grep(pat, page, value = TRUE); 
    m <- regexpr(pat, target_line); 
    URL      <- regmatches(target_line, m) # (The http still needs to be prepended.
@@ -451,7 +452,7 @@ install.GraphicsMagick  <- function(page_with_download_url="http://sourceforge.n
    page     <- readLines(page_with_download_url, warn = FALSE)
    # http://downloads.sourceforge.net/project/graphicsmagick/graphicsmagick-binaries/1.3.17/GraphicsMagick-1.3.17-Q16-windows-dll.exe?r=http%3A%2F%2Fsourceforge.net%2Fprojects%2Fgraphicsmagick%2Ffiles%2F&ts=1362862824&use_mirror=garr
    # http://sourceforge.net/projects/graphicsmagick/files/graphicsmagick-binaries/1.3.17/GraphicsMagick-1.3.17-Q8-windows-dll.exe/download
-   pat <- "//sourceforge.net/projects/graphicsmagick/files/graphicsmagick-binaries/[0-9.]+/GraphicsMagick-[0-9.]+-Q16-windows-dll.exe"  
+   pat <- "//sourceforge.net/projects/graphicsmagick/files/graphicsmagick-binaries/[0-9.]+/GraphicsMagick-[0-9.]+-Q16-windows-dll.exe"
    target_line <- grep(pat, page, value = TRUE); 
    m <- regexpr(pat, target_line); 
    URL      <- regmatches(target_line, m) # (The http still needs to be prepended.
@@ -593,7 +594,7 @@ shutdown = function(s=0, m=0, h=0) {
 #' installr()
 #' }
 installr <- function(use_GUI = TRUE, ...) {
-   choices <- c("R",
+   choices <- c("R (updateR)",
                 "RStudio",
                 "Rtools",
                 "git",
@@ -607,7 +608,7 @@ installr <- function(use_GUI = TRUE, ...) {
    the_answer <- menu(choices, graphics = use_GUI, title = "Which software (for Windows) would you like to install?")            
    
    switch(the_answer, 
-          install.R(),
+          updateR(),
           install.RStudio(),
           install.Rtools(),
           install.git(),

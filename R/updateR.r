@@ -273,7 +273,7 @@ get.installed.R.folders <- function(sort_by_version = T, add_version_to_name = T
 #' copy.packages.between.libraries(ask = T) # it will ask you from what R version to copy the packages into which R version.  Since (do_NOT_override_packages_in_new_R = T) the function will make sure to NOT override your newer packages.
 #' # copy.packages.between.libraries(ask = T, keep_old = F) # As before, but this time it will MOVE (instead of COPY) the packages.  e.g: erase them from their old location.
 #' }
-copy.packages.between.libraries <- function(from, to, ask =F,keep_old = T, do_NOT_override_packages_in_new_R = T) {
+copy.packages.between.libraries <- function(from, to, ask =FALSE,keep_old = TRUE, do_NOT_override_packages_in_new_R = TRUE) {
    
    installed_R_folders <- get.installed.R.folders()   
    installed_R_folders_TABLE <-data.frame("R_version" = names(installed_R_folders) , Folder = installed_R_folders)
@@ -299,8 +299,8 @@ copy.packages.between.libraries <- function(from, to, ask =F,keep_old = T, do_NO
       }      
    }
    
-   if(missing(to)) to <- installed_R_folders[1] # copy inTO the newest R
    if(missing(from)) from <- installed_R_folders[2] # copy FROM the one version before newest R
+   if(missing(to)) to <- installed_R_folders[1] # copy inTO the newest R
    
    # the libraries
    from_library <- file.path(from , "library")
@@ -333,7 +333,7 @@ copy.packages.between.libraries <- function(from, to, ask =F,keep_old = T, do_NO
    packages_to_YES_move_from
    folders.copied <- file.copy(from = paths_of_packages_to_copy_from,    # copy folders
                                to = to_library,
-                               overwrite = TRUE,
+                               overwrite = !do_NOT_override_packages_in_new_R, # to be SURE that an old library will not override a new one.
                                recursive =TRUE)   
    cat("=====================","\n")
    cat("Done. We finished copying all the packages to the new location\n")
@@ -381,7 +381,7 @@ copy.packages.between.libraries <- function(from, to, ask =F,keep_old = T, do_NO
 #' updateR(T, T, T, T, T, T, T) # the safest upgrade option: See the NEWS, install R, copy packages, keep old packages, update packages in the new installation, start the Rgui of the new R, and quite current session of R
 #' updateR() # will ask you what you want at every decision.
 #' }
-updateR <- function(browse_news, install_R, copy_packages, keep_old_packages,  update_packages, start_new_R, quit_R,  print_R_versions=T, use_GUI = TRUE, ...) {
+updateR <- function(browse_news, install_R, copy_packages, keep_old_packages,  update_packages, start_new_R, quit_R,  print_R_versions=TRUE, use_GUI = TRUE, ...) {
    # this function checks if we have the latest version of R
    # IF not - it notifies the user - and leaves.
    # If there is a new version - it offers the user to download and install it.   
