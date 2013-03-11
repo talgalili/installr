@@ -10,6 +10,7 @@ NEW FUNCTIONS ADDED:
    * add.installr.GUI and remove.installr.GUI - for adding a menu system to Rgui
    * install.ImageMagick
    * install.GraphicsMagick
+   * install.LyX
 
 UPDATED FUNCTIONS:
    * install.URL - 

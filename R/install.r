@@ -365,6 +365,64 @@ install.MikTeX  <- function(version, page_with_download_url="http://miktex.org/d
 # 
 
 
+
+
+
+
+#' @title Downloads and installs LyX for windows
+#' @description Allows the user to downloads and install the latest version of LyX for Windows.
+#' @details
+#' LyX is an advanced open source document processor running on Linux/Unix, Windows, and Mac OS X. It is called a "document processor", because unlike standard word processors, LyX encourages an approach to writing based on the structure of your documents, not their appearance. LyX lets you concentrate on writing, leaving details of visual layout to the software. LyX automates formatting according to predefined rule sets, yielding consistency throughout even the most complex documents. LyX produces high quality, professional output – using LaTeX, an open source, industrial strength typesetting engine, in the background.
+#' @param page_with_download_url the URL of the LyX download page.
+#' @new_installation boolean. TRUE means we should make a new installation of LyX. FALSE means to update an existing installation.  Missing - prompts the user to decide.
+#' @param ... extra parameters to pass to \link{install.URL}
+#' @return TRUE/FALSE - was the installation successful or not.
+#' @export
+#' @references
+#' \itemize{
+#' \item LyX homepage: \url{http://www.lyx.org/}
+#' } 
+#' @examples
+#' \dontrun{
+#' install.LyX() # installs the latest version of git
+#' }
+install.LyX  <- function(page_with_download_url="http://www.lyx.org/Download", new_installation, ...) {    
+
+   # get download URL:
+   page     <- readLines(page_with_download_url, warn = FALSE)
+   
+   
+   # decide which version to get:
+   if(missing(new_installation) || is.logical(new_installation)) {
+      choices <- c("New: install a new version of LyX",
+                   "Update: update an existing installation of LyX")   
+      the_answer <- menu(choices, graphics = FALSE, title = "Do you wish a new installation of LyX\n or an update to an existing installation?")                  
+   } else {
+      the_answer <- ifelse(new_installation, 1, 2)
+   }
+
+   pat <-    switch(the_answer,           
+                    "ftp://ftp.lyx.org/pub/lyx/bin/[0-9.]+/LyX-[0-9.]+-Bundle-[0-9.]+.exe",
+                    "ftp://ftp.lyx.org/pub/lyx/bin/[0-9.]+/LyX-[0-9.]+-Installer-[0-9.]+.exe"
+                  )   
+   
+   # ftp://ftp.lyx.org/pub/lyx/bin/2.0.5.1/LyX-2.0.5.1-Bundle-4.exe
+   # URL = "ftp://ftp.lyx.org/pub/lyx/bin/2.0.5.1/LyX-2.0.5.1-Installer-4.exe"
+   # install.URL(URL)
+   
+   target_line <- grep(pat, page, value = TRUE); 
+   m <- regexpr(pat, target_line); 
+   URL      <- regmatches(target_line, m) # (The http still needs to be prepended.
+   
+   # install.
+   install.URL(URL,...)   
+}
+
+
+
+
+
+
 #' @title Downloads and installs RStudio for windows
 #' @description Allows the user to downloads and install the latest version of RStudio for Windows.
 #' @details
@@ -607,6 +665,7 @@ installr <- function(use_GUI = TRUE, ...) {
                 "Rtools",
                 "git",
                 "MikTeX",
+                "LyX",
                 "pandoc",
                 "GitHub",
                 "ImageMagick",
@@ -621,6 +680,7 @@ installr <- function(use_GUI = TRUE, ...) {
           install.Rtools(),
           install.git(),
           install.MikTeX(),
+          install.LyX(),
           install.pandoc(),
           install.GitHub(),
           install.ImageMagick(),
