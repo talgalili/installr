@@ -216,56 +216,143 @@ ask.user.for.a.row <- function(TABLE,
 
 
 
+
+
+
+
+
+
+
+# 
+# if(FALSE) {
+#    # version_info is taken from https://github.com/hadley/devtools/blob/master/R/rtools.r
+#    version_info <- list(
+#       "2.11" = list(
+#          version_min = "2.10.0",
+#          version_max = "2.11.1",
+#          path = c("bin", "perl/bin", "MinGW/bin")
+#       ),
+#       "2.12" = list(
+#          version_min = "2.12.0",
+#          version_max = "2.12.2",
+#          path = c("bin", "perl/bin", "MinGW/bin", "MinGW64/bin")
+#       ),
+#       "2.13" = list(
+#          version_min = "2.13.0",
+#          version_max = "2.13.2",
+#          path = c("bin", "MinGW/bin", "MinGW64/bin")
+#       ),
+#       "2.14" = list(
+#          version_min = "2.13.0",
+#          version_max = "2.14.2",
+#          path = c("bin", "MinGW/bin", "MinGW64/bin")
+#       ),
+#       "2.15" = list(
+#          version_min = "2.14.2",
+#          version_max = "2.15.1",
+#          path = c("bin", "gcc-4.6.3/bin")
+#       ),
+#       "2.16" = list(
+#          version_min = "2.15.2",
+#          version_max = "3.0.0",
+#          path = c("bin", "gcc-4.6.3/bin")
+#       ),
+#       "3.0" = list(
+#          version_min = "2.15.2",
+#          version_max = "3.0.0",
+#          path = c("bin", "gcc-4.6.3/bin")
+#       )
+#    )      
+#    
+#    require(plyr)
+#    version_info2 <- ldply(version_info, function(xx) {data.frame(version_min=xx$version_min, version_max = xx$version_max)})
+#    colnames(version_info2)[1] <- "version"
+#   version_info2[,2] <- as.character(version_info2[,2])
+#    version_info2[,3] <- as.character(version_info2[,3])
+#    dput(version_info2)
+# }
+
+
+
 #' @title Downloads and installs Rtools
-#' @description Allows the user to choose, downloads and install - the latest version of Rtools for Windows.
+#' @description Allows the user to choose, downloads and install - the latest version of Rtools for Windows.  By default, the function searches if RTools is installed, if not, it checks if it knows which version to isntall for the current R version, and if not - it asks the user to choose which Rtools version to install.
 #' @details
 #' RTools is a collection of software for building packages for R under Microsoft Windows, or for building R itself (version 1.9.0 or later).
 #' The original collection was put together by Prof. Brian Ripley; it is currently being maintained by Duncan Murdoch.
 #' @param choose_version if TRUE, allows the user to choose which version of RTools to install.  Useful if you wish to install the devel version of RTools, or if you are running on an old version of R which requires an old version of R.
-#' @param latest_Frozen if FALSE (and choose_version is FALSE) the function installs the latest devel version of RTools (good for people using the devel version of R).  If TRUE (default), the latest frozen version of RTools is installed.
+#' @param check checks if we need to install Rtools or not.  Relies on the "find_rtools" function in the {devtools} package.
+#' @param use_GUI Should a GUI be used when asking the user questions? (defaults to TRUE)
 #' @param page_with_download_url the URL of the RTools download page.
 #' @param ... extra parameters to pass to \link{install.URL}
 #' @return TRUE/FALSE - was the installation successful or not.
 #' @export
+#' @source
+#' Some parts of the code are taken from the devtools, see \url{https://github.com/hadley/devtools/blob/master/R/rtools.r}
 #' @references
 #' RTools homepage (for other resources and documentation): \url{http://cran.r-project.org/bin/windows/Rtools/}
 #' @examples
 #' \dontrun{
-#' install.Rtools() # installs the latest frozen version of RTools
-#' install.Rtools(F, F) # installs the latest devel version of RTools
-#' install.Rtools(T) # choose your version
+#' install.Rtools() # installs the latest version of RTools (if one is needed)
+#' install.Rtools(TRUE) # if one is needed - asks the user to choose the latest version of RTools to install
+#' install.Rtools(TRUE, FALSE) # asks the user to choose the latest version of RTools to install (regardless if one is needed)
 #' }
-install.Rtools <- function(choose_version = FALSE,
-                           latest_Frozen = FALSE,
-                           page_with_download_url = 'http://cran.r-project.org/bin/windows/Rtools/',...
+install.Rtools <- function(choose_version = FALSE,                           
+                           check=TRUE,
+                           use_GUI = TRUE,
+                           page_with_download_url = 'http://cran.r-project.org/bin/windows/Rtools/',
+                           ...
 ) {
    # choose_version==T allows the user to choose which version of Rtools he wishes to install
    # latest_Frozen==T means we get the latest Rtools version which is Frozen (when writing this function it is Rtools215.exe)
    # latest_Frozen==F means we get the latest Rtools version which is not Frozen (when writing this function it is Rtools30.exe)
-   
-   
-   if(!require(XML)) stop("You need to install the {XML} package in order to use this function.")
-   TABLE <- readHTMLTable(page_with_download_url, header=T,stringsAsFactors=F)[[1]]
-   # example: http://stackoverflow.com/questions/1395528/scraping-html-tables-into-r-data-frames-using-the-xml-package
-   
-   
-   if(choose_version) {
-      cat("Please remember you are using: ", R.version$version.string , "\n")
-      ROW_id <- ask.user.for.a.row(TABLE)
-      exe_filename <- TABLE[ROW_id,"Download"] # the version the user asked for
-   } else { # if we choose the version for the user, we rely on latest_Frozen
-      if(latest_Frozen) {
-         ss <- TABLE[,"Frozen?"] == "Yes"
-         exe_filename <- TABLE[ss,"Download"][1] # the latest Frozen filename
-      } else { # choose the latest un-frozen (e.g: bleeding edge)
-         ss <- TABLE[,"Frozen?"] == "No"
-         exe_filename <- TABLE[ss,"Download"] # the latest un-Frozen filename
+
+   if(check & require(devtools)) { # if we have devtools we can check for the existance of rtools
+      found_rtools <- find_rtools()
+      if(found_rtools) {
+         cat("No need to install Rtools - You've got the relevant version of Rtools installed")
+         return(FALSE)
       }
-   }
+   }# if we reached here - it means we'll need to install Rtools.
+
+
+   version_info2 <- structure(list(version = c("2.11", "2.12", "2.13", "2.14", "2.15", 
+                                               "2.16", "3.0"), version_min = c("2.10.0", "2.12.0", "2.13.0", 
+                                                                               "2.13.0", "2.14.2", "2.15.2", "2.15.2"), version_max = c("2.11.1", 
+                                                                                                                                        "2.12.2", "2.13.2", "2.14.2", "2.15.1", "3.0.0", "3.0.0")), .Names = c("version", 
+                                                                                                                                                                                                               "version_min", "version_max"), row.names = c(NA, -7L), class = "data.frame")
+      
+#    version_info2
    
+   # try to fit the best Rtools to isntall
+   Rversion <- as.character(getRversion())
+   Rversion_number <- turn.version.to.number(Rversion)      
+   ss_min <- Rversion_number >= turn.version.to.number(version_info2$version_min)
+   ss_max <- Rversion_number <= turn.version.to.number(version_info2$version_max)
+   version_to_install <- tail(version_info2$version[ss_min & ss_max], 1) # get the latest version that fits our current R version.
+
    
-   URL <- paste(page_with_download_url, exe_filename, sep = '')
+   if(length(version_to_install) > 0 & !choose_version) { # e.g: there is some version to install      
+      version_to_install_no_dots <- gsub("\\.","", version_to_install)
+      exe_filename <-   paste("Rtools" , version_to_install_no_dots , ".exe", sep = "")
+   } else { # else - it means we have a version of R which is beyond our current knowledge of Rtools (or that the user asked to choose a version), so we'll have to let the user decide on what to do.
+      if(!require(XML)) {
+         cat("You need to install the {XML} package in order to use this function.")
+         install_XML <- ask.user.yn.question("Do you wish to install the {XML} package?", use_GUI = use_GUI)
+         if(install_XML) install.packages("XML")         
+      }
+      TABLE <- readHTMLTable(page_with_download_url, header=T,stringsAsFactors=F)[[1]]
+      # example: http://stackoverflow.com/questions/1395528/scraping-html-tables-into-r-data-frames-using-the-xml-package
+      
+      # choose a version:
+      cat("Please remember you are using: ", R.version$version.string , "\n")
+      choices <- paste(TABLE[,"Download"], " (",TABLE[,2],")", sep = "")      
+      ROW_id <- menu(choices, graphics = use_GUI, title = "Which Rtools would you like to download?")      
+      
+      exe_filename <- TABLE[ROW_id,"Download"] # the version the user asked for
+   }      
    
+   # install Rtools!
+   URL <- paste(page_with_download_url, exe_filename, sep = '')   
    install.URL(URL,...)   
 }
 
@@ -374,7 +461,7 @@ install.MikTeX  <- function(version, page_with_download_url="http://miktex.org/d
 #' @details
 #' LyX is an advanced open source document processor running on Linux/Unix, Windows, and Mac OS X. It is called a "document processor", because unlike standard word processors, LyX encourages an approach to writing based on the structure of your documents, not their appearance. LyX lets you concentrate on writing, leaving details of visual layout to the software. LyX automates formatting according to predefined rule sets, yielding consistency throughout even the most complex documents. LyX produces high quality, professional output – using LaTeX, an open source, industrial strength typesetting engine, in the background.
 #' @param page_with_download_url the URL of the LyX download page.
-#' @new_installation boolean. TRUE means we should make a new installation of LyX. FALSE means to update an existing installation.  Missing - prompts the user to decide.
+#' @param new_installation boolean. TRUE means we should make a new installation of LyX. FALSE means to update an existing installation.  Missing - prompts the user to decide.
 #' @param ... extra parameters to pass to \link{install.URL}
 #' @return TRUE/FALSE - was the installation successful or not.
 #' @export

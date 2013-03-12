@@ -1,4 +1,4 @@
-installR 0.8.5
+installR 0.8.6
 --------------
 
 NEW FUNCTIONS ADDED:
@@ -25,7 +25,7 @@ UPDATED FUNCTIONS:
       * now checks if R was installed or not (Based on the output of install.R), and removed the need to ask the user that.
    * ask.user.yn.question - added a menu based GUI.
    * check.for.updates.R - added a menu based GUI.
-
+   * install.Rtools - removed "latest_Frozen", added "check".  Made the function know which Rtools to install based on your R version (and if it is not known - it asks the user to choose a version)
 
 BUG FIXES:
    * Fixed a bug in updateR, to make sure it will be able to open the new Rgui, and also close the old R.

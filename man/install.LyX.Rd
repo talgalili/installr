@@ -9,6 +9,11 @@
   \item{page_with_download_url}{the URL of the LyX download
   page.}
 
+  \item{new_installation}{boolean. TRUE means we should
+  make a new installation of LyX. FALSE means to update an
+  existing installation.  Missing - prompts the user to
+  decide.}
+
   \item{...}{extra parameters to pass to
   \link{install.URL}}
 }

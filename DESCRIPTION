@@ -2,8 +2,8 @@ Package: installr
 Type: Package
 Title: Functions for updating and installing a new version of R and other
     software - from R
-Version: 0.8.5
-Date: 2013-03-09
+Version: 0.8.6
+Date: 2013-03-12
 Author: Tal Galili
 Maintainer: Tal Galili <tal.galili@gmail.com>
 Description: The 'installr' package aims at making the process of updating R on
@@ -20,7 +20,7 @@ BugReports: https://github.com/talgalili/installr/issues
 Depends:
     R (>= 2.11.0)
 Suggests:
-    XML
+    XML, devtools
 License: GPL-2
 Collate:
     'create.global.library.r'

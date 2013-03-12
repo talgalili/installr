@@ -1,9 +1,13 @@
 \name{install.Rtools}
 \alias{install.Rtools}
 \title{Downloads and installs Rtools}
+\source{
+  Some parts of the code are taken from the devtools, see
+  \url{https://github.com/hadley/devtools/blob/master/R/rtools.r}
+}
 \usage{
-  install.Rtools(choose_version = FALSE,
-    latest_Frozen = FALSE,
+  install.Rtools(choose_version = FALSE, check = TRUE,
+    use_GUI = TRUE,
     page_with_download_url = "http://cran.r-project.org/bin/windows/Rtools/",
     ...)
 }
@@ -14,11 +18,12 @@
   running on an old version of R which requires an old
   version of R.}
 
-  \item{latest_Frozen}{if FALSE (and choose_version is
-  FALSE) the function installs the latest devel version of
-  RTools (good for people using the devel version of R).
-  If TRUE (default), the latest frozen version of RTools is
-  installed.}
+  \item{check}{checks if we need to install Rtools or not.
+  Relies on the "find_rtools" function in the {devtools}
+  package.}
+
+  \item{use_GUI}{Should a GUI be used when asking the user
+  questions? (defaults to TRUE)}
 
   \item{page_with_download_url}{the URL of the RTools
   download page.}
@@ -31,7 +36,11 @@
 }
 \description{
   Allows the user to choose, downloads and install - the
-  latest version of Rtools for Windows.
+  latest version of Rtools for Windows.  By default, the
+  function searches if RTools is installed, if not, it
+  checks if it knows which version to isntall for the
+  current R version, and if not - it asks the user to
+  choose which Rtools version to install.
 }
 \details{
   RTools is a collection of software for building packages
@@ -42,9 +51,9 @@
 }
 \examples{
 \dontrun{
-install.Rtools() # installs the latest frozen version of RTools
-install.Rtools(F, F) # installs the latest devel version of RTools
-install.Rtools(T) # choose your version
+install.Rtools() # installs the latest version of RTools (if one is needed)
+install.Rtools(TRUE) # if one is needed - asks the user to choose the latest version of RTools to install
+install.Rtools(TRUE, FALSE) # asks the user to choose the latest version of RTools to install (regardless if one is needed)
 }
 }
 \references{
