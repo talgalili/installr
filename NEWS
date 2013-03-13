@@ -146,3 +146,4 @@ TODO for future releases:
 	* update README.md for 0.8.5
 	* Add install.notepad and install.notepadpp
    * Maybe add some timer to the os.manage functions.  And also allow input for how long from x time to perform the action.
+   * Add a rate function for the package

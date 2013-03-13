@@ -195,7 +195,7 @@ os.manage  <- function(use_GUI = TRUE, ...) {
                 "Restart",
                 "Cancel")
    
-   the_answer <- menu(choices, graphics = use_GUI, title = "Managing action for your OS (for Windows)")            
+   the_answer <- menu(choices, graphics = use_GUI, title = "Manage your OS (for Windows)")            
    
    switch(the_answer, 
           os.shutdown(),
