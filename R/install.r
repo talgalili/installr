@@ -56,7 +56,7 @@ install.packages.zip <- function(zip_URL) {
 #' @param keep_install_file If TRUE - the installer file will not be erased after it is downloaded and run.
 #' @param wait should the R interpreter wait for the command to finish? The default is to NOT wait.
 #' @param ... parameters passed to 'shell'
-#' @return TRUE/FALSE - was the installation successful or not. (this is based on the output of shell of running the command being either 0 or 1/2.  0 means the file was succesfully installed, while 1 or 2 means there was a failure in running the installer.)
+#' @return invisible(TRUE/FALSE) - was the installation successful or not. (this is based on the output of shell of running the command being either 0 or 1/2.  0 means the file was succesfully installed, while 1 or 2 means there was a failure in running the installer.)
 #' @seealso \link{shell}
 #' @export
 #' @author GERGELY DAROCZI, Tal Galili
@@ -81,7 +81,7 @@ install.URL <- function(exe_URL, keep_install_file = FALSE, wait = TRUE, ...) {
       #    file.access(exe_filename, mode = 1)
       #    file.access(exe_filename, mode = 2)
       #    file.access(exe_filename, mode = 3)
-   return(shell_output == 0)
+   return(invisible(shell_output == 0))
    # error code 1/2 means that we couldn't finish running the file
    # # 0 means - the file was succesfully installed.   
 }
@@ -284,7 +284,7 @@ ask.user.for.a.row <- function(TABLE,
 #' @param use_GUI Should a GUI be used when asking the user questions? (defaults to TRUE)
 #' @param page_with_download_url the URL of the RTools download page.
 #' @param ... extra parameters to pass to \link{install.URL}
-#' @return TRUE/FALSE - was the installation successful or not.
+#' @return invisible(TRUE/FALSE) - was the installation successful or not.
 #' @export
 #' @source
 #' Some parts of the code are taken from the devtools, see \url{https://github.com/hadley/devtools/blob/master/R/rtools.r}
@@ -309,8 +309,8 @@ install.Rtools <- function(choose_version = FALSE,
    if(check & require(devtools)) { # if we have devtools we can check for the existance of rtools
       found_rtools <- find_rtools()
       if(found_rtools) {
-         cat("No need to install Rtools - You've got the relevant version of Rtools installed")
-         return(FALSE)
+         cat("No need to install Rtools - You've got the relevant version of Rtools installed\n")
+         return(invisible(FALSE))
       }
    }# if we reached here - it means we'll need to install Rtools.
 
