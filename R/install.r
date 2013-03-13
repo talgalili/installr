@@ -694,42 +694,6 @@ source.https <- function(URL,..., remove_r_file = T) {
 
 
 
-#' @title Shut down the operating system with the command `shutdown'
-#' @export
-#' @description
-#' There is a command \command{shutdown} in both Windows and Linux,
-#' and this function uses it to shut down a computer.
-#'
-#' After the time \code{wait} has passed, R will execute \command{shutdown -s -t 0} (for Windows) or \command{shutdown -h now} to shut down the computer.
-#' 
-#' This function is a modified version of Yihui's shutdown function from the {fun} package.
-#' @param s time to wait before shutting down (in seconds), added to m and h; passed to \code{\link[base]{Sys.sleep}}
-#' @param m time to wait before shutting down (in minutes), added to s and h; passed to \code{\link[base]{Sys.sleep}}
-#' @param h time to wait before shutting down (in hours), added to s and m; passed to \code{\link[base]{Sys.sleep}}
-#' @return The status code of \code{\link[base]{system}}.
-#' @author Yihui Xie <\url{http://yihui.name}>, and Tal Galili
-#' @seealso \code{\link[base]{system}},\code{\link[base]{shell}}, \code{\link[base]{Sys.sleep}}, \code{\link{is.windows}}
-#' @references \url{http://cos.name/en/topic/shut-down-your-windows-with-r} , \url{https://github.com/yihui/fun/blob/master/R/shutdown.R}
-#' @examples
-#' \dontrun{
-#' ## when your code is extremely time-consuming, you may need this function; e.g. you go to sleep, and R is running long computation... complex graphics... and long long computation... at last,
-#' shutdown()
-#' ## the next day you wake up, "thank you, R" :)
-#' }
-shutdown = function(s=0, m=0, h=0) {
-   
-   wait <- s + m*60 + h*60*60
-   Sys.sleep(wait)
-   
-   ifelse(is.windows(), 
-          shell("shutdown -s -t 0", wait = F),# without wait =F, the shuting down will not work properly since Windows will wait for R to close (which will be waiting for Windows to shutdown)
-          system("shutdown -h now"))
-}
-
-
-
-
-
 #' @title Installing software from R
 #' @export
 #' @description Gives the user the option to download software from within R.

@@ -1,0 +1,47 @@
+\name{os.lock}
+\alias{os.lock}
+\title{Locks the operating system (Windows) through a shell command}
+\usage{
+  os.lock(s = 0, m = 0, h = 0)
+}
+\arguments{
+  \item{s}{time to wait before shutting down (in seconds),
+  added to m and h; passed to
+  \code{\link[base]{Sys.sleep}}}
+
+  \item{m}{time to wait before shutting down (in minutes),
+  added to s and h; passed to
+  \code{\link[base]{Sys.sleep}}}
+
+  \item{h}{time to wait before shutting down (in hours),
+  added to s and m; passed to
+  \code{\link[base]{Sys.sleep}}}
+}
+\value{
+  The status code of \code{\link[base]{shell}}.
+}
+\description{
+  This locks Windows after set amount of time.
+}
+\examples{
+\dontrun{
+## when your code is extremely time-consuming, you may need this function to run at the end of the simulation.
+os.lock()
+}
+}
+\author{
+  Tal Galili
+}
+\references{
+  \url{http://superuser.com/questions/42124/how-can-i-put-the-computer-to-sleep-from-command-prompt-run-menu}
+  ,
+  \url{http://www.howtogeek.com/howto/windows-vista/quick-tip-create-shutdown-restart-lock-icons-in-windows-vista/}
+}
+\seealso{
+  \code{\link[base]{system}},\code{\link[base]{shell}},
+  \code{\link[base]{Sys.sleep}}, \code{\link{is.windows}},
+  \code{\link{os.shutdown}}, \code{\link{os.sleep}},
+  \code{\link{os.hibernate}}, \code{\link{os.lock}},
+  \code{\link{os.restart}}
+}
+

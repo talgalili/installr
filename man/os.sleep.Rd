@@ -1,0 +1,55 @@
+\name{os.sleep}
+\alias{os.sleep}
+\title{Sleeps the operating system (Windows) through a shell command}
+\usage{
+  os.sleep(s = 0, m = 0, h = 0,
+    first_turn_hibernate_off = TRUE)
+}
+\arguments{
+  \item{s}{time to wait before shutting down (in seconds),
+  added to m and h; passed to
+  \code{\link[base]{Sys.sleep}}}
+
+  \item{m}{time to wait before shutting down (in minutes),
+  added to s and h; passed to
+  \code{\link[base]{Sys.sleep}}}
+
+  \item{h}{time to wait before shutting down (in hours),
+  added to s and m; passed to
+  \code{\link[base]{Sys.sleep}}}
+
+  \item{first_turn_hibernate_off}{The command rundll32.exe
+  powrprof.dll,SetSuspendState 0,1,0 for sleep is correct -
+  however, it will hibernate instead of sleep if you don't
+  turn the hibernation off.  I'm not sure this is true, but
+  that's what is explained in the linke (see bellow)}
+}
+\value{
+  The status code of \code{\link[base]{shell}}.
+}
+\description{
+  This sleeps Windows after set amount of time.
+}
+\examples{
+\dontrun{
+## when your code is extremely time-consuming, you may need this function to run at the end of the simulation.
+os.sleep()
+}
+}
+\author{
+  Tal Galili
+}
+\references{
+  \url{http://superuser.com/questions/42124/how-can-i-put-the-computer-to-sleep-from-command-prompt-run-menu}
+  ,
+  \url{http://www.howtogeek.com/howto/windows-vista/quick-tip-create-shutdown-restart-lock-icons-in-windows-vista/},
+  \url{http://superuser.com/a/135450/28536}
+}
+\seealso{
+  \code{\link[base]{system}},\code{\link[base]{shell}},
+  \code{\link[base]{Sys.sleep}}, \code{\link{is.windows}},
+  \code{\link{os.shutdown}}, \code{\link{os.sleep}},
+  \code{\link{os.hibernate}}, \code{\link{os.lock}},
+  \code{\link{os.restart}}
+}
+

@@ -1,0 +1,43 @@
+\name{os.manage}
+\alias{os.manage}
+\title{Gives managing option to the current OS (shutdown, restart, sleep, hibernate, etc...)}
+\usage{
+  os.manage(use_GUI = TRUE, ...)
+}
+\arguments{
+  \item{use_GUI}{a logical indicating whether a graphics
+  menu should be used if available.  If TRUE, and on
+  Windows, it will use \link{winDialog}, otherwise it will
+  use \link[utils]{menu}.}
+
+  \item{...}{not in use}
+}
+\value{
+  The status code of \code{\link[base]{system}}.
+}
+\description{
+  A centeral function to run functions for shuting down,
+  restarting, sleeping (etc.) your computer. This will run
+  these functions immediatly.
+}
+\examples{
+\dontrun{
+## when your code is extremely time-consuming, you may need this function; e.g. you go to sleep, and R is running long computation... complex graphics... and long long computation... at last,
+os.manage()
+## the next day you wake up, "thank you, R" :)
+}
+}
+\references{
+  \url{http://superuser.com/questions/42124/how-can-i-put-the-computer-to-sleep-from-command-prompt-run-menu}
+  ,
+  \url{http://www.howtogeek.com/howto/windows-vista/quick-tip-create-shutdown-restart-lock-icons-in-windows-vista/}
+  \url{http://cos.name/en/topic/shut-down-your-windows-with-r}
+}
+\seealso{
+  \code{\link[base]{system}},\code{\link[base]{shell}},
+  \code{\link[base]{Sys.sleep}}, \code{\link{is.windows}},
+  \code{\link{os.shutdown}}, \code{\link{os.sleep}},
+  \code{\link{os.hibernate}}, \code{\link{os.lock}},
+  \code{\link{os.restart}}
+}
+

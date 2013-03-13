@@ -1,8 +1,8 @@
-\name{shutdown}
-\alias{shutdown}
+\name{os.shutdown}
+\alias{os.shutdown}
 \title{Shut down the operating system with the command `shutdown'}
 \usage{
-  shutdown(s = 0, m = 0, h = 0)
+  os.shutdown(s = 0, m = 0, h = 0)
 }
 \arguments{
   \item{s}{time to wait before shutting down (in seconds),
@@ -34,7 +34,7 @@
 \examples{
 \dontrun{
 ## when your code is extremely time-consuming, you may need this function; e.g. you go to sleep, and R is running long computation... complex graphics... and long long computation... at last,
-shutdown()
+os.shutdown()
 ## the next day you wake up, "thank you, R" :)
 }
 }
@@ -48,6 +48,9 @@ shutdown()
 }
 \seealso{
   \code{\link[base]{system}},\code{\link[base]{shell}},
-  \code{\link[base]{Sys.sleep}}, \code{\link{is.windows}}
+  \code{\link[base]{Sys.sleep}}, \code{\link{is.windows}},
+  \code{\link{os.shutdown}}, \code{\link{os.sleep}},
+  \code{\link{os.hibernate}}, \code{\link{os.lock}},
+  \code{\link{os.restart}}
 }
 
