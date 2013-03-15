@@ -32,7 +32,8 @@
   \link{install.URL}}
 }
 \value{
-  TRUE/FALSE - was the installation successful or not.
+  invisible(TRUE/FALSE) - was the installation successful
+  or not.
 }
 \description{
   Allows the user to choose, downloads and install - the

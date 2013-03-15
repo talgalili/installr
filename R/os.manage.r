@@ -28,7 +28,11 @@ os.shutdown <- function(s=0, m=0, h=0) {
    Sys.sleep(wait)
    
    ifelse(is.windows(), 
-          shell("shutdown -s -t 0", wait = F),# without wait =F, the shuting down will not work properly since Windows will wait for R to close (which will be waiting for Windows to shutdown)
+          {
+		  shell("shutdown -s -f -t 1", wait = F) # -f == forces the shutdown.  And I give R 2 seconds to close.
+		  quit("no")
+		  }
+		  ,# without wait =F, the shuting down will not work properly since Windows will wait for R to close (which will be waiting for Windows to shutdown)
           system("shutdown -h now"))
 }
 

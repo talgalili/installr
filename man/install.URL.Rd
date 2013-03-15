@@ -18,9 +18,9 @@
   \item{...}{parameters passed to 'shell'}
 }
 \value{
-  TRUE/FALSE - was the installation successful or not.
-  (this is based on the output of shell of running the
-  command being either 0 or 1/2.  0 means the file was
+  invisible(TRUE/FALSE) - was the installation successful
+  or not. (this is based on the output of shell of running
+  the command being either 0 or 1/2.  0 means the file was
   succesfully installed, while 1 or 2 means there was a
   failure in running the installer.)
 }

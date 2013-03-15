@@ -9,7 +9,7 @@ NEW FUNCTIONS ADDED:
 
 UPDATED FUNCTIONS:
    * install.Rtools - removed "latest_Frozen", added "check".  Made the function know which Rtools to install based on your R version (and if it is not known - it asks the user to choose a version)
-   * Removed shutdown (turned into os.shutdown)
+   * Removed shutdown (turned into os.shutdown), and made sure it uses "force" shutdown.
 
 
 installR 0.8.5
@@ -147,3 +147,4 @@ TODO for future releases:
 	* Add install.notepad and install.notepadpp
    * Maybe add some timer to the os.manage functions.  And also allow input for how long from x time to perform the action.
    * Add a rate function for the package
+   * Add automatic check for a new R version every X time.

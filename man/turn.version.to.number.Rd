@@ -5,7 +5,7 @@
   turn.version.to.number(version_with_dots)
 }
 \arguments{
-  \item{version_with_dots}{A character vector - of the
+  \item{version_with_dots}{- A character vector - of the
   version of R (for example 2.15.2)}
 }
 \value{

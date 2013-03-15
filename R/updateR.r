@@ -144,6 +144,7 @@ install.R <- function(page_with_download_url = "http://cran.rstudio.com/bin/wind
 #' @title Turns version to number (for 1 value only)
 #' @param version_with_dots A character value - of the version of R (for example 2.15.2)
 #' @return A "number" representation of the version (for example: 2015002)
+#' @seealso \link{turn.version.to.number}
 #' @examples
 #' \dontrun{
 #' turn.version.to.number1("2.15.2")
@@ -163,8 +164,10 @@ turn.version.to.number1 <- function(version_with_dots) {
 }
 
 
+
+### @aliases turn.version.to.number1
 #' @title Turns version to number (for a vector of values)
-#' @param version_with_dots A character vector - of the version of R (for example 2.15.2)
+#' @param version_with_dots - A character vector - of the version of R (for example 2.15.2)
 #' @return A vector of "numbers" representing the versions (for example: 2015002).  The names of the vector is the original version character.
 #' @examples
 #' \dontrun{
