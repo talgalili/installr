@@ -899,6 +899,9 @@ installr <- function(use_GUI = TRUE, ...) {
                 "GitHub",
                 "ImageMagick",
                 "GraphicsMagick",
+                "SWFTools",
+                "FFmpeg",
+                "7-zip",
                 "Cancel")
    
    the_answer <- menu(choices, graphics = use_GUI, title = "Which software (for Windows) would you like to install?")            
@@ -914,6 +917,9 @@ installr <- function(use_GUI = TRUE, ...) {
           install.GitHub(),
           install.ImageMagick(),
           install.GraphicsMagick(),
+          install.SWFTools(),
+          install.FFmpeg(),
+          install.7zip(),
           return(FALSE)
    )
 }
