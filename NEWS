@@ -1,3 +1,12 @@
+installR 0.8.7
+--------------
+NEW FUNCTIONS ADDED:
+   * install.SWFTools
+   * install.FFmpeg
+   * install.7zip - for unzipping of FFmpeg
+   * system.PATH - to see what is in the users PATH for running .exe programs.
+
+
 installR 0.8.6
 --------------
 

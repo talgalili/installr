@@ -617,6 +617,184 @@ install.GraphicsMagick  <- function(page_with_download_url="http://sourceforge.n
 
 
 
+
+#' @title Downloads and installs SWFTools for windows
+#' @description Allows the user to downloads and install the latest version of SWFTools for Windows.
+#' @details
+#' SWFTools is a collection of utilities for working with Adobe Flash files (SWF files). The tool collection includes programs for reading SWF files, combining them, and creating them from other content (like images, sound files, videos or sourcecode). SWFTools is released under the GPL. 
+#' This function downloads current releases and NOT the Development Snapshots.
+#' This function is useful for saveSWF() in the {animation} package.
+#' @param page_with_download_url the URL of the SWFTools download page.
+#' @param ... extra parameters to pass to \link{install.URL}
+#' @return TRUE/FALSE - was the installation successful or not.
+#' @export
+#' @references
+#' \itemize{
+#' \item SWFTools homepage: \url{http://swftools.org/}
+#' } 
+#' @examples
+#' \dontrun{
+#' install.SWFTools() # installs the latest version of SWFTools
+#' }
+install.SWFTools  <- function(page_with_download_url="http://swftools.org/download.html",...) {    
+   # get download URL:
+   page     <- readLines(page_with_download_url, warn = FALSE)
+   # http://swftools.org/swftools-0.9.0.exe
+   pat <- "swftools-[0-9.]+.exe"
+   target_line <- grep(pat, page, value = TRUE); 
+   m <- regexpr(pat, target_line); 
+   URL      <- regmatches(target_line, m) # (The http still needs to be prepended.
+   URL      <- paste('http://swftools.org/', URL, sep = '')[1] # we might find the same file more than once - so we'll only take its first one
+   
+   # install.
+   install.URL(URL,...)   
+}
+
+
+
+
+#' @title Downloads and installs 7-Zip for windows
+#' @description Allows the user to downloads and install the latest version of 7-Zip for Windows.
+#' @details
+#' 7-Zip is open source software. Most of the source code is under the GNU LGPL license. The unRAR code is under a mixed license: GNU LGPL + unRAR restrictions. Check license information here: 7-Zip license.
+#' You can use 7-Zip on any computer, including a computer in a commercial organization. You don't need to register or pay for 7-Zip.
+#' *The main features of 7-Zip
+#' *High compression ratio in 7z format with LZMA and LZMA2 compression
+#' *Supported formats:
+#' **Packing / unpacking: 7z, XZ, BZIP2, GZIP, TAR, ZIP and WIM
+#' **Unpacking only: ARJ, CAB, CHM, CPIO, CramFS, DEB, DMG, FAT, HFS, ISO, LZH, LZMA, MBR, MSI, NSIS, NTFS, RAR, RPM, SquashFS, UDF, VHD, WIM, XAR and Z.
+#' For ZIP and GZIP formats, 7-Zip provides a compression ratio that is 2-10 % better than the ratio provided by PKZip and WinZip
+#' *Strong AES-256 encryption in 7z and ZIP formats
+#' *Self-extracting capability for 7z format
+#' *Integration with Windows Shell
+#' *Powerful File Manager
+#' *Powerful command line version
+#' *Plugin for FAR Manager
+#' *Localizations for 79 languages
+#' 
+#' @param page_with_download_url the URL of the 7-Zip download page.
+#' @param ... extra parameters to pass to \link{install.URL}
+#' @return TRUE/FALSE - was the installation successful or not.
+#' @export
+#' @references
+#' \itemize{
+#' \item 7-zip homepage: \url{http://www.7-zip.org/}
+#' } 
+#' @examples
+#' \dontrun{
+#' install.7zip() # installs the latest version of SWFTools
+#' }
+install.7zip  <- function(page_with_download_url="http://www.7-zip.org/download.html",...) {    
+   # get download URL:
+   page     <- readLines(page_with_download_url, warn = FALSE)
+   # http://downloads.sourceforge.net/sevenzip/7z920.exe
+   pat <- "7z[0-9.]+.exe"
+   target_line <- grep(pat, page, value = TRUE); 
+   m <- regexpr(pat, target_line); 
+   URL      <- regmatches(target_line, m) # (The http still needs to be prepended.
+   URL      <- paste('http://downloads.sourceforge.net/sevenzip/', URL, sep = '')[1] # we might find the same file more than once - so we'll only take its first one
+   
+   # install.
+   install.URL(URL,...)   
+}
+
+
+# 
+# #' @title Unzips a file using 7z
+# #' @param page_with_download_url the URL of the FFmpeg download page.
+# #' @param ... NOT used
+# #' @return the shell output of 7z
+# #' @references
+# #' \url{http://stackoverflow.com/questions/14122732/unzip-files-7-zip-via-cmd-command}
+# #' @examples
+# #' \dontrun{
+# #' 
+# #' }
+# un7zip <- function(zip_file, the_7zip_path = "C:\\Program Files (x86)\\7-Zip\\",...)
+# {
+#    shell(paste("'",the_7zip_path,"7z.exe' -x '", a_7z_filename, "'", sep = ""), intern = TRUE, translate = TRUE)
+# }
+# # This function doesn't quite work...
+
+
+
+
+#' @title Downloads and installs FFmpeg for windows
+#' @description Allows the user to downloads the latest version of FFmpeg for Windows.
+#' IMPORTANT NOTE: The user (YOU) are responsible for unpacking the 7zip file into the relevant directory.  All that this function does is to download the 7zip file and "run" it.
+#' @details
+#' FFmpeg is a complete, cross-platform solution to record, convert and stream audio and video. It includes libavcodec - the leading audio/video codec library. See the documentation for a complete feature list and the Changelog for recent changes.
+#' This function downloads current releases and NOT the Development Snapshots.
+#' This function is useful for saveVideo() in the {animation} package.
+#' @param page_with_download_url the URL of the FFmpeg download page.
+#' @param ... extra parameters to pass to \link{install.URL}
+#' @return NULL
+#' @export
+#' @references
+#' \itemize{
+#' \item FFmpeg homepage: \url{http://FFmpeg.org/}
+#' } 
+#' @examples
+#' \dontrun{
+#' install.FFmpeg() # installs the latest version of FFmpeg 
+#' }
+install.FFmpeg   <- function(page_with_download_url="http://ffmpeg.zeranoe.com/builds/",...) {    
+   URL      <- "http://ffmpeg.zeranoe.com/builds/win32/static/ffmpeg-latest-win32-static.7z" # it's always the same URL. The challange is to extract the 7z from it.
+   a_7z_filename <- file.path(tempdir(), file.name.from.url(URL))   # the name of the zip file MUST be as it was downloaded...
+   download.file(URL, destfile=a_7z_filename, mode = 'wb') # Downloads the 7zip file
+
+   shell(a_7z_filename,wait=FALSE)
+   NULL
+}
+
+
+
+
+
+#' @title Returns the search path for executable files
+#' @export
+#' @description Returns the search path for executable files based on %PATH%
+#' @param NONE
+#' @return A character vector with the search path for executable files
+#' @references
+#' \url{http://www.microsoft.com/resources/documentation/windows/xp/all/proddocs/en-us/ntcmds_shelloverview.mspx?mfr=true}#' @examples
+#' \dontrun{
+#' system.PATH() # 
+#' }
+system.PATH <- function() strsplit(shell("echo %PATH% ", intern= TRUE), ";")[[1]]
+
+#' @title Checks if some .exe is available in on the Windows machine search PATH
+#' @description Checks the existence of an .exe extention in the search path for executable files
+#' @param exe_file a character with the name of the 
+#' @return A boolean vector indication the existence of each program on the system.
+#' \dontrun{
+#' is.exe.installed(c("zip.exe", "Rgui.exe", "blablabla")) # [1]  TRUE  TRUE FALSE#' 
+#' is.exe.installed("7z") 
+#' }
+is.exe.installed <- function(exe_file) {
+   all_installed_exe <- list.files(system.PATH())
+   exe_file %in% installed_exe
+}
+ 
+# ' @title Extends the current path with more possible softwares
+# ' @description Useful for adding new softwares to the current search path
+# ' @param exe_folder the folder where the relevant .exe file is.
+# ' @return The updated search PATH
+# ' @references
+# ' \url{http://stackoverflow.com/questions/14122732/unzip-files-7-zip-via-cmd-command}
+# ' \dontrun{
+# ' set.PATH("C:\\Program Files (x86)\\7-Zip\\")
+# ' is.exe.installed("7z") 
+# ' }
+# set.PATH <- function(exe_folder){
+#    shell(paste('setx PATH=%PATH%;',exe_folder, sep = ""))         
+#    system.PATH()
+# }
+
+
+
+
+
 #' @title Downloads and installs GitHub for windows
 #' @description Allows the user to downloads and install the latest version of GitHub for Windows.
 #' @details
