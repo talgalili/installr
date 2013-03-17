@@ -179,6 +179,7 @@ os.restart  <- function(s=0, m=0, h=0) {
 #' A centeral function to run functions for shuting down, restarting, sleeping (etc.) your computer.
 #' This will run these functions immediatly.
 #' @param use_GUI a logical indicating whether a graphics menu should be used if available.  If TRUE, and on Windows, it will use \link{winDialog}, otherwise it will use \link[utils]{menu}.
+#' @param ask a logical indicating whether to ask the user for the number of minutes in which to perform the operation.
 #' @param ... not in use
 #' @return The status code of \code{\link[base]{system}}.
 #' @seealso \code{\link[base]{system}},\code{\link[base]{shell}}, \code{\link[base]{Sys.sleep}}, 
@@ -191,7 +192,7 @@ os.restart  <- function(s=0, m=0, h=0) {
 #' os.manage()
 #' ## the next day you wake up, "thank you, R" :)
 #' }
-os.manage  <- function(use_GUI = TRUE, ...) {
+os.manage  <- function(use_GUI = TRUE, ask = TRUE, ...) {
    choices <- c("Shutdown",
                 "Sleep",
                 "Hibernate",
@@ -201,12 +202,21 @@ os.manage  <- function(use_GUI = TRUE, ...) {
    
    the_answer <- menu(choices, graphics = use_GUI, title = "Manage your OS (for Windows)")            
    
+   # in how many minutes to perform the operation?
+   if(ask) minutes <- 
+      winDialogString(      
+      paste("In how many MINUTES would you like to ", choices[the_answer] , "?", sep=""), 
+         "")
+   minutes <- as.numeric(minutes)
+   if(is.na(minutes)) minutes<- 0
+   
+   # perform the operation:
    switch(the_answer, 
-          os.shutdown(),
-          os.sleep(),
-          os.hibernate(),
-          os.lock(),
-          os.restart(),
+          os.shutdown(m = minutes),
+          os.sleep(m = minutes),
+          os.hibernate(m = minutes),
+          os.lock(m = minutes),
+          os.restart(m = minutes),
           return(FALSE)
    )
 }
