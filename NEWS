@@ -1,5 +1,12 @@
-installR 0.8.7
---------------
+installR 0.8.8 (2013-03-22)
+---------------------------
+NEW FUNCTIONS ADDED:
+   * install.notepadpp
+   * install.npptor
+
+
+installR 0.8.7 (2013-03-16)
+---------------------------
 NEW FUNCTIONS ADDED:
    * install.SWFTools
    * install.FFmpeg
@@ -56,8 +63,8 @@ BUG FIXES:
    * Fixed a bug in updateR, "Error in !install_R : 'install_R' is missing" (install_R was called in too early) (thanks to AC for the bug report!)
 
 
-installR 0.8
-------------
+installR 0.8 (2013-03-05)
+-------------------------
 
 FIXES FOR CRAN SUBMISSION:
    * Fixed some spelling mistakes in DESCRIPTION,
@@ -138,8 +145,8 @@ NEW FUNCTIONS ADDED:
 	
 
 
-installR 0.1
-------------
+installR 0.1 (2013-03-01) 
+-------------------------
 
 NEW FUNCTIONS ADDED:
 

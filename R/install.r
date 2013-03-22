@@ -391,6 +391,80 @@ install.git <- function(page_with_download_url="http://git-scm.com/download/win"
 
 
 
+
+
+
+#' @title Downloads and installs Notepad++ for windows
+#' @description Allows the user to downloads and install the latest version of Notepad++ for Windows.
+#' @details
+#' Notepad++ is a free (as in "free speech" and also as in "free beer") source code editor and Notepad replacement that supports several languages. Running in the MS Windows environment, its use is governed by GPL License.
+#' Based on the powerful editing component Scintilla, Notepad++ is written in C++ and uses pure Win32 API and STL which ensures a higher execution speed and smaller program size. By optimizing as many routines as possible without losing user friendliness, Notepad++ is trying to reduce the world carbon dioxide emissions. When using less CPU power, the PC can throttle down and reduce power consumption, resulting in a greener environment.
+#' @param page_with_download_url the URL of the Notepad++ download page.
+#' @param ... extra parameters to pass to \link{install.URL}
+#' @return invisible TRUE/FALSE - was the installation successful or not.
+#' @export
+#' @references
+#' homepage: \url{http://notepad-plus-plus.org/}
+#' download page: \url{http://notepad-plus-plus.org/download/}
+#' @examples
+#' \dontrun{
+#' install.notepadpp() # installs the latest version of git
+#' }
+install.notepadpp <- function(page_with_download_url="http://notepad-plus-plus.org/download/",...) {
+   # "http://git-scm.com/download/win"
+   # get download URL:
+   page     <- readLines(page_with_download_url, warn = FALSE)
+   # http://download.tuxfamily.org/notepadplus/6.3.1/npp.6.3.1.Installer.exe
+   pat <- "http://download.tuxfamily.org/notepadplus/[0-9.]+/npp.[0-9.]+.Installer.exe"
+   target_line <- grep(pat, page, value = TRUE); 
+   m <- regexpr(pat, target_line); 
+   URL      <- regmatches(target_line, m) # (The http still needs to be prepended.
+   
+   # install.
+   install.URL(URL,...)   
+}
+
+
+
+
+
+
+#' @title Downloads and installs NppToR for windows
+#' @description Allows the user to downloads and install the latest version of NppToR extension for Notepad++ for Windows.
+#' @details
+#' Similar to the windows R gui built in editor, NppToR aims to extend the functionality of code passing to the Notepad++ code editor. In addition to passing to the R gui, NppToR provides optional passing to a PuTTY window for passing to an R instance a remote machine.
+#' 
+#' NppToR is a companion utility that facilitates communication between R and Notepad++. It provides code passing from Notepad++ into the windows R Gui. NppToR also provides an autocompletion database which is dynamically generated from the users' R library of packages, thanks to an addition by Yihui Xie. Notepad++ provides built it R code highlighting and folding.
+#' @param page_with_download_url the URL of the Notepad++ download page.
+#' @param ... extra parameters to pass to \link{install.URL}
+#' @return invisible TRUE/FALSE - was the installation successful or not.
+#' @export
+#' @references
+#' homepage: \url{http://npptor.sourceforge.net/}
+#' download page: \url{http://sourceforge.net/projects/npptor/}
+#' @examples
+#' \dontrun{
+#' install.npptor() # installs the latest version of git
+#' }
+install.npptor <- function(page_with_download_url="http://sourceforge.net/projects/npptor/files/npptor%20installer/",...) {
+   # "http://git-scm.com/download/win"
+   # get download URL:
+   page     <- readLines(page_with_download_url, warn = FALSE)
+   # /npptor installer/NppToR-2.6.2.exe
+   # http://sourceforge.net/projects/npptor/files/npptor%20installer/NppToR-2.6.2.exe/
+   # http://sourceforge.net/projects/npptor/files/npptor%20installer/NppToR-[0-9.]+.exe
+   pat <- "http://sourceforge.net/projects/npptor/files/npptor%20installer/NppToR-[0-9.]+.exe"
+   target_line <- grep(pat, page, value = TRUE); 
+   m <- regexpr(pat, target_line); 
+   URL      <- regmatches(target_line, m)[1] # (The http still needs to be prepended.
+   
+   # install.
+   install.URL(URL,...)   
+}
+
+
+
+
 #' @title Downloads and installs MikTeX for windows
 #' @description Allows the user to downloads and install the latest version of MikTeX for Windows.
 #' @details
@@ -906,6 +980,8 @@ installr <- function(use_GUI = TRUE, ...) {
                 "SWFTools",
                 "FFmpeg",
                 "7-zip",
+                "NotePad++",
+                "NppToR (R extension to NotePad++)",
                 "Cancel")
    
    the_answer <- menu(choices, graphics = use_GUI, title = "Which software (for Windows) would you like to install?")            
@@ -924,6 +1000,8 @@ installr <- function(use_GUI = TRUE, ...) {
           install.SWFTools(),
           install.FFmpeg(),
           install.7zip(),
+          install.notepadpp(),
+          install.npptor(),
           return(FALSE)
    )
 }
