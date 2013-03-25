@@ -3,7 +3,7 @@ installR 0.8.8 (2013-03-22)
 NEW FUNCTIONS ADDED:
    * install.notepadpp
    * install.npptor
-
+   * install.Cygwin
 
 installR 0.8.7 (2013-03-16)
 ---------------------------

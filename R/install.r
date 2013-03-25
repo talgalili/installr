@@ -731,6 +731,44 @@ install.SWFTools  <- function(page_with_download_url="http://swftools.org/downlo
 
 
 
+
+
+
+
+#' @title Downloads and installs Cygwin for windows
+#' @description Allows the user to downloads and install the latest version of Cygwin for Windows.
+#' @details
+#' Cygwin is a collection of tools which provide a Linux look and feel environment for Windows.
+#' @param URL the URL of the Cygwin setup.exe file.
+#' @param ... extra parameters to pass to \link{install.URL}
+#' @return TRUE/FALSE - was the installation successful or not.
+#' @export
+#' @references
+#' \itemize{
+#' \item Cygwin homepage: \url{http://cygwin.com/}
+#' } 
+#' @examples
+#' \dontrun{
+#' install.Cygwin() # installs the latest version of SWFTools
+#' }
+install.Cygwin  <- function(URL = "http://cygwin.com/setup.exe",...) {    
+#    # get download URL:
+#    page     <- readLines(page_with_download_url, warn = FALSE)
+#    # http://swftools.org/swftools-0.9.0.exe
+#    pat <- "swftools-[0-9.]+.exe"
+#    target_line <- grep(pat, page, value = TRUE); 
+#    m <- regexpr(pat, target_line); 
+#    URL      <- regmatches(target_line, m) # (The http still needs to be prepended.   
+   # install.
+   install.URL(URL,...)   
+}
+
+
+
+
+
+
+
 #' @title Downloads and installs 7-Zip for windows
 #' @description Allows the user to downloads and install the latest version of 7-Zip for Windows.
 #' @details
@@ -824,6 +862,8 @@ install.FFmpeg   <- function(page_with_download_url="http://ffmpeg.zeranoe.com/b
    shell(a_7z_filename,wait=FALSE)
    NULL
 }
+
+
 
 
 
@@ -982,6 +1022,7 @@ installr <- function(use_GUI = TRUE, ...) {
                 "7-zip",
                 "NotePad++",
                 "NppToR (R extension to NotePad++)",
+                "Cygwin",
                 "Cancel")
    
    the_answer <- menu(choices, graphics = use_GUI, title = "Which software (for Windows) would you like to install?")            
@@ -1002,6 +1043,7 @@ installr <- function(use_GUI = TRUE, ...) {
           install.7zip(),
           install.notepadpp(),
           install.npptor(),
+          install.Cygwin(),
           return(FALSE)
    )
 }
