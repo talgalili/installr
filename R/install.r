@@ -733,6 +733,37 @@ install.SWFTools  <- function(page_with_download_url="http://swftools.org/downlo
 
 
 
+#' @title Downloads and installs LaTeX2RTF for windows
+#' @description Allows the user to downloads and install the latest version of LaTeX2RTF for Windows.
+#' @details
+#' Latex2rtf tries to convert your LaTeX file into a RTF file for opening in Microsoft Word. The general idea is to try and get the things that computers are good at correct: character conversion, graphic conversion, etc. Page layout suffers because control in RTF is pretty pathetic compared to TeX. Consequently, it is likely that manual reformatting will be needed.
+#' @param page_with_download_url the URL of the SWFTools download page.
+#' @param ... extra parameters to pass to \link{install.URL}
+#' @return TRUE/FALSE - was the installation successful or not.
+#' @export
+#' @references
+#' \itemize{
+#' \item SWFTools homepage: \url{http://latex2rtf.sourceforge.net/}
+#' } 
+#' @examples
+#' \dontrun{
+#' install.LaTeX2RTF() # installs the latest version of LaTeX2RTF
+#' }
+install.LaTeX2RTF  <- function(page_with_download_url="http://sourceforge.net/projects/latex2rtf/",...) {    
+   # get download URL:
+   page     <- readLines(page_with_download_url, warn = FALSE)
+   #   http://sourceforge.net/projects/latex2rtf/files/latex2rtf-win/2.3.3/latex2rtf-2.3.3_win.exe/download
+   pat <- "http://sourceforge.net/projects/latex2rtf/files/latex2rtf-win/[0-9.]+/latex2rtf-[0-9.]+_win.exe"
+   target_line <- grep(pat, page, value = TRUE); 
+   m <- regexpr(pat, target_line); 
+   URL      <- regmatches(target_line, m) # (The http still needs to be prepended.
+   # install.
+   install.URL(URL,...)   
+}
+
+
+
+
 
 
 #' @title Downloads and installs Cygwin for windows
@@ -1014,6 +1045,7 @@ installr <- function(use_GUI = TRUE, ...) {
                 "MikTeX",
                 "LyX",
                 "pandoc",
+                "LaTeX2RTF",
                 "GitHub",
                 "ImageMagick",
                 "GraphicsMagick",
@@ -1035,6 +1067,7 @@ installr <- function(use_GUI = TRUE, ...) {
           install.MikTeX(),
           install.LyX(),
           install.pandoc(),
+          install.LaTeX2RTF(),
           install.GitHub(),
           install.ImageMagick(),
           install.GraphicsMagick(),
