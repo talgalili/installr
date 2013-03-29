@@ -1,3 +1,14 @@
+installR 0.9 (2013-03-29)
+---------------------------
+
+UPDATED FUNCTIONS:
+   * Made sure to include a lower-case version of all install.X functions.
+
+OTHER NOTES:
+   * More documentation.  Updated README.md (fixed \link vs \url)
+
+
+
 installR 0.8.8 (2013-03-26)
 ---------------------------
 NEW FUNCTIONS ADDED:
@@ -5,6 +16,8 @@ NEW FUNCTIONS ADDED:
    * install.npptor
    * install.Cygwin
    * install.LaTeX2RTF
+
+
 
 installR 0.8.7 (2013-03-16)
 ---------------------------
@@ -164,10 +177,9 @@ TODO for future releases:
 -------------------------
 	* uninstall.R() for the old version of R (including the library folder)
 	* Better integration with the "global library" strategy
-	* update RTools to be smarter about how to ask the user what to choose.  Also check if the Rtools is already installed or not (devtools has such a function)
-	* update README.md for 0.8.5
 	* Add install.notepad and install.notepadpp
    * Maybe add some timer to the os.manage functions.  And also allow input for how long from x time to perform the action.
+   * make the os.manage work by running an Rscript, in order to allow for their use in long running of knitr/Sweave projects.
    * Add a rate function for the package
    * Add automatic check for a new R version every X time.
    * a way to copy/move Rprofile.site from one installation to the next such as "C:\Program Files\R\R-2.15.2\etc\Rprofile.site" to "C:\Program Files\R\R-2.15.3\etc\Rprofile.site"? (requested by: Farrel Buchinsky)
