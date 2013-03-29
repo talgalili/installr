@@ -18,7 +18,9 @@
   added to s and m; passed to
   \code{\link[base]{Sys.sleep}}}
 
-  \item{first_turn_hibernate_on}{}
+  \item{first_turn_hibernate_on}{default is TRUE. This runs
+  "powercfg -hibernate on" in order to turn hibernate on,
+  in cases where it was off.}
 }
 \value{
   The status code of \code{\link[base]{shell}}.

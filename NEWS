@@ -5,7 +5,8 @@ UPDATED FUNCTIONS:
    * Made sure to include a lower-case version of all install.X functions.
 
 OTHER NOTES:
-   * More documentation.  Updated README.md (fixed \link vs \url)
+   * More documentation.  Updated README.md
+   * installR 0.9 is to be shiped to CRAN.
 
 
 
@@ -84,6 +85,7 @@ FIXES FOR CRAN SUBMISSION:
    * Fixed some spelling mistakes in DESCRIPTION,
    * Made sure to run the checks in the latest R version (R 2.15.3, oh the irony)
    * Changed update.R to be called updateR (in order to avoid confusing it as an S3 variation to 'update')
+   * installR 0.8 is to be shiped to CRAN.
 
 
 My thanks goes to Prof Brian Ripley for his help.
@@ -102,8 +104,6 @@ UPDATED FUNCTIONS:
 
 OTHER NOTES:
    * More documentation.  Updated README.md (fixed \link vs \url)
-   * More documentation.  Updated README.md
-
 
 installR 0.6
 ------------

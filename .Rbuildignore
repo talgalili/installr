@@ -2,3 +2,5 @@
 ^\.Rproj\.user$
 \.gitignore$
 installR.Rproj
+\.RData$
+\.Rhistory$

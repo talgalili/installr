@@ -1,6 +1,6 @@
 \name{install.ImageMagick}
-\alias{install.imagemagick}
 \alias{install.ImageMagick}
+\alias{install.imagemagick}
 \title{Downloads and installs ImageMagick for windows}
 \usage{
   install.ImageMagick(page_with_download_url = "http://www.imagemagick.org/script/binary-releases.php",
@@ -21,15 +21,15 @@
   version of ImageMagick for Windows.
 }
 \details{
-  ImageMagick® is a software suite to create, edit,
-  compose, or convert bitmap images. It can read and write
-  images in a variety of formats (over 100) including DPX,
-  EXR, GIF, JPEG, JPEG-2000, PDF, PhotoCD, PNG, Postscript,
-  SVG, and TIFF. Use ImageMagick to resize, flip, mirror,
-  rotate, distort, shear and transform images, adjust image
-  colors, apply various special effects, or draw text,
-  lines, polygons, ellipses and Bézier curves. This
-  function downloads Win32 dynamic at 16 bits-per-pixel.
+  ImageMagick is a software suite to create, edit, compose,
+  or convert bitmap images. It can read and write images in
+  a variety of formats (over 100) including DPX, EXR, GIF,
+  JPEG, JPEG-2000, PDF, PhotoCD, PNG, Postscript, SVG, and
+  TIFF. Use ImageMagick to resize, flip, mirror, rotate,
+  distort, shear and transform images, adjust image colors,
+  apply various special effects, or draw text, lines,
+  polygons, ellipses and Bezier curves. This function
+  downloads Win32 dynamic at 16 bits-per-pixel.
 }
 \examples{
 \dontrun{

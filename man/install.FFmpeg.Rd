@@ -1,18 +1,12 @@
 \name{install.FFmpeg}
-\alias{install.ffmpeg}
 \alias{install.FFmpeg}
-\title{Unzips a file using 7z
-#}
+\alias{install.ffmpeg}
+\title{Downloads and installs FFmpeg for windows}
 \usage{
   install.FFmpeg(page_with_download_url = "http://ffmpeg.zeranoe.com/builds/",
     ...)
 }
 \arguments{
-  \item{page_with_download_url}{the URL of the FFmpeg
-  download page. #}
-
-  \item{...}{NOT used #}
-
   \item{page_with_download_url}{the URL of the FFmpeg
   download page.}
 
@@ -20,8 +14,6 @@
   \link{install.URL}}
 }
 \value{
-  the shell output of 7z #
-
   NULL
 }
 \description{
@@ -32,8 +24,6 @@
   the 7zip file and "run" it.
 }
 \details{
-  #
-
   FFmpeg is a complete, cross-platform solution to record,
   convert and stream audio and video. It includes
   libavcodec - the leading audio/video codec library. See
@@ -44,14 +34,11 @@
   package.
 }
 \examples{
-#\dontrun{
-#
-#}
+\dontrun{
+install.FFmpeg() # installs the latest version of FFmpeg
+}
 }
 \references{
-  #\url{http://stackoverflow.com/questions/14122732/unzip-files-7-zip-via-cmd-command}
-  #
-
   \itemize{ \item FFmpeg homepage: \url{http://FFmpeg.org/}
   }
 }

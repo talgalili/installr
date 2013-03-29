@@ -9,12 +9,16 @@
 }
 \value{
   A boolean vector indication the existence of each program
-  on the system. \dontrun{ is.exe.installed(c("zip.exe",
-  "Rgui.exe", "blablabla")) # [1] TRUE TRUE FALSE#'
-  is.exe.installed("7z") }
+  on the system.
 }
 \description{
   Checks the existence of an .exe extention in the search
   path for executable files
+}
+\examples{
+\dontrun{
+is.exe.installed(c("zip.exe", "Rgui.exe", "blablabla")) # [1]  TRUE  TRUE FALSE
+is.exe.installed("7z")
+}
 }
 

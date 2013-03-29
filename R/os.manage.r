@@ -85,7 +85,7 @@ os.sleep <- function(s=0, m=0, h=0, first_turn_hibernate_off = TRUE) {
 #' @param s time to wait before shutting down (in seconds), added to m and h; passed to \code{\link[base]{Sys.sleep}}
 #' @param m time to wait before shutting down (in minutes), added to s and h; passed to \code{\link[base]{Sys.sleep}}
 #' @param h time to wait before shutting down (in hours), added to s and m; passed to \code{\link[base]{Sys.sleep}}
-#' @param first_turn_hibernate_on
+#' @param first_turn_hibernate_on default is TRUE. This runs "powercfg -hibernate on" in order to turn hibernate on, in cases where it was off.
 #' @return The status code of \code{\link[base]{shell}}.
 #' @author Tal Galili
 #' @seealso \code{\link[base]{system}},\code{\link[base]{shell}}, \code{\link[base]{Sys.sleep}}, 

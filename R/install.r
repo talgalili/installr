@@ -630,7 +630,7 @@ install.rstudio <- function(...) install.RStudio(...)
 #' @aliases install.imagemagick
 #' @description Allows the user to downloads and install the latest version of ImageMagick for Windows.
 #' @details
-#' ImageMagick® is a software suite to create, edit, compose, or convert bitmap images. It can read and write images in a variety of formats (over 100) including DPX, EXR, GIF, JPEG, JPEG-2000, PDF, PhotoCD, PNG, Postscript, SVG, and TIFF. Use ImageMagick to resize, flip, mirror, rotate, distort, shear and transform images, adjust image colors, apply various special effects, or draw text, lines, polygons, ellipses and Bézier curves.
+#' ImageMagick is a software suite to create, edit, compose, or convert bitmap images. It can read and write images in a variety of formats (over 100) including DPX, EXR, GIF, JPEG, JPEG-2000, PDF, PhotoCD, PNG, Postscript, SVG, and TIFF. Use ImageMagick to resize, flip, mirror, rotate, distort, shear and transform images, adjust image colors, apply various special effects, or draw text, lines, polygons, ellipses and Bezier curves.
 #' This function downloads Win32 dynamic at 16 bits-per-pixel.
 #' @param page_with_download_url the URL of the ImageMagick download page.
 #' @param ... extra parameters to pass to \link{install.URL}
@@ -860,16 +860,16 @@ install.7zip  <- function(page_with_download_url="http://www.7-zip.org/download.
 
 
 # 
-# #' @title Unzips a file using 7z
-# #' @param page_with_download_url the URL of the FFmpeg download page.
-# #' @param ... NOT used
-# #' @return the shell output of 7z
-# #' @references
-# #' \url{http://stackoverflow.com/questions/14122732/unzip-files-7-zip-via-cmd-command}
-# #' @examples
-# #' \dontrun{
-# #' 
-# #' }
+# # ' @title Unzips a file using 7z
+# # ' @param page_with_download_url the URL of the FFmpeg download page.
+# # ' @param ... NOT used
+# # ' @return the shell output of 7z
+# # ' @references
+# # ' \url{http://stackoverflow.com/questions/14122732/unzip-files-7-zip-via-cmd-command}
+# # ' @examples
+# # ' \dontrun{
+# # ' 
+# # ' }
 # un7zip <- function(zip_file, the_7zip_path = "C:\\Program Files (x86)\\7-Zip\\",...)
 # {
 #    shell(paste("'",the_7zip_path,"7z.exe' -x '", a_7z_filename, "'", sep = ""), intern = TRUE, translate = TRUE)
@@ -919,10 +919,10 @@ install.ffmpeg <- function(...) install.FFmpeg(...)
 #' @title Returns the search path for executable files
 #' @export
 #' @description Returns the search path for executable files based on %PATH%
-#' @param NONE
 #' @return A character vector with the search path for executable files
 #' @references
-#' \url{http://www.microsoft.com/resources/documentation/windows/xp/all/proddocs/en-us/ntcmds_shelloverview.mspx?mfr=true}#' @examples
+#' \url{http://www.microsoft.com/resources/documentation/windows/xp/all/proddocs/en-us/ntcmds_shelloverview.mspx?mfr=true}
+#' @examples
 #' \dontrun{
 #' system.PATH() # 
 #' }
@@ -932,13 +932,14 @@ system.PATH <- function() strsplit(shell("echo %PATH% ", intern= TRUE), ";")[[1]
 #' @description Checks the existence of an .exe extention in the search path for executable files
 #' @param exe_file a character with the name of the 
 #' @return A boolean vector indication the existence of each program on the system.
+#' @examples
 #' \dontrun{
-#' is.exe.installed(c("zip.exe", "Rgui.exe", "blablabla")) # [1]  TRUE  TRUE FALSE#' 
+#' is.exe.installed(c("zip.exe", "Rgui.exe", "blablabla")) # [1]  TRUE  TRUE FALSE
 #' is.exe.installed("7z") 
 #' }
 is.exe.installed <- function(exe_file) {
    all_installed_exe <- list.files(system.PATH())
-   exe_file %in% installed_exe
+   exe_file %in% all_installed_exe
 }
  
 # ' @title Extends the current path with more possible softwares
