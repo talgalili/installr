@@ -275,6 +275,7 @@ ask.user.for.a.row <- function(TABLE,
 
 
 #' @title Downloads and installs Rtools
+#' @aliases install.rtools
 #' @description Allows the user to choose, downloads and install - the latest version of Rtools for Windows.  By default, the function searches if RTools is installed, if not, it checks if it knows which version to isntall for the current R version, and if not - it asks the user to choose which Rtools version to install.
 #' @details
 #' RTools is a collection of software for building packages for R under Microsoft Windows, or for building R itself (version 1.9.0 or later).
@@ -355,6 +356,11 @@ install.Rtools <- function(choose_version = FALSE,
    URL <- paste(page_with_download_url, exe_filename, sep = '')   
    install.URL(URL,...)   
 }
+
+
+#' @export
+install.rtools <- function(...) install.Rtools(...)
+
 
 
 
@@ -464,8 +470,8 @@ install.npptor <- function(page_with_download_url="http://sourceforge.net/projec
 
 
 
-
 #' @title Downloads and installs MikTeX for windows
+#' @aliases install.miktex
 #' @description Allows the user to downloads and install the latest version of MikTeX for Windows.
 #' @details
 #' MiKTeX is a typesetting system for Microsoft Windows that is developed by Christian Schenk. It consists of an implementation of TeX and a set of related programs. MiKTeX provides the tools necessary to prepare documents using the TeX/LaTeX markup language, as well a simple tex editor (TeXworks).
@@ -516,21 +522,15 @@ install.MikTeX  <- function(version, page_with_download_url="http://miktex.org/d
    install.URL(URL,...)   
 }
 
-# install.MikTeX()   
-
-# 
-# installR <- function(what) {
-# # matches a character with what to install...
-# 
-# }
-# 
-
+#' @export
+install.miktex <- function(...) install.MikTeX(...)
 
 
 
 
 
 #' @title Downloads and installs LyX for windows
+#' @aliases install.lyx
 #' @description Allows the user to downloads and install the latest version of LyX for Windows.
 #' @details
 #' LyX is an advanced open source document processor running on Linux/Unix, Windows, and Mac OS X.
@@ -584,11 +584,13 @@ install.LyX  <- function(page_with_download_url="http://www.lyx.org/Download", n
 }
 
 
-
+#' @export
+install.lyx <- function(...) install.LyX(...)
 
 
 
 #' @title Downloads and installs RStudio for windows
+#' @aliases install.rstudio
 #' @description Allows the user to downloads and install the latest version of RStudio for Windows.
 #' @details
 #' RStudio is a free and open source integrated development environment (IDE) for R, a programming language for statistical computing and graphics.
@@ -619,10 +621,13 @@ install.RStudio  <- function(page_with_download_url="http://www.rstudio.com/ide/
    install.URL(URL,...)   
 }
 
+#' @export
+install.rstudio <- function(...) install.RStudio(...)
 
 
 
 #' @title Downloads and installs ImageMagick for windows
+#' @aliases install.imagemagick
 #' @description Allows the user to downloads and install the latest version of ImageMagick for Windows.
 #' @details
 #' ImageMagick® is a software suite to create, edit, compose, or convert bitmap images. It can read and write images in a variety of formats (over 100) including DPX, EXR, GIF, JPEG, JPEG-2000, PDF, PhotoCD, PNG, Postscript, SVG, and TIFF. Use ImageMagick to resize, flip, mirror, rotate, distort, shear and transform images, adjust image colors, apply various special effects, or draw text, lines, polygons, ellipses and Bézier curves.
@@ -654,13 +659,13 @@ install.ImageMagick  <- function(page_with_download_url="http://www.imagemagick.
    install.URL(URL,...)   
 }
 
-
-
-
+#' @export
+install.imagemagick <- function(...) install.ImageMagick(...)
 
 
 
 #' @title Downloads and installs GraphicsMagick for windows
+#' @aliases install.graphicsmagick
 #' @description Allows the user to downloads and install the latest version of GraphicsMagick for Windows.
 #' @details
 #' GraphicsMagick is the swiss army knife of image processing. Comprised of 282K physical lines (according to David A. Wheeler's SLOCCount) of source code in the base package (or 964K including 3rd party libraries) it provides a robust and efficient collection of tools and libraries which support reading, writing, and manipulating an image in over 88 major formats including important formats like DPX, GIF, JPEG, JPEG-2000, PNG, PDF, PNM, and TIFF.
@@ -692,11 +697,13 @@ install.GraphicsMagick  <- function(page_with_download_url="http://sourceforge.n
    install.URL(URL,...)   
 }
 
-
+#' @export
+install.graphicsmagick <- function(...) install.GraphicsMagick(...)
 
 
 
 #' @title Downloads and installs SWFTools for windows
+#' @aliases install.swftools
 #' @description Allows the user to downloads and install the latest version of SWFTools for Windows.
 #' @details
 #' SWFTools is a collection of utilities for working with Adobe Flash files (SWF files). The tool collection includes programs for reading SWF files, combining them, and creating them from other content (like images, sound files, videos or sourcecode). SWFTools is released under the GPL. 
@@ -728,12 +735,13 @@ install.SWFTools  <- function(page_with_download_url="http://swftools.org/downlo
    install.URL(URL,...)   
 }
 
-
-
+#' @export
+install.swftools <- function(...) install.SWFTools(...)
 
 
 
 #' @title Downloads and installs LaTeX2RTF for windows
+#' @aliases install.latex2rtf
 #' @description Allows the user to downloads and install the latest version of LaTeX2RTF for Windows.
 #' @details
 #' Latex2rtf tries to convert your LaTeX file into a RTF file for opening in Microsoft Word. The general idea is to try and get the things that computers are good at correct: character conversion, graphic conversion, etc. Page layout suffers because control in RTF is pretty pathetic compared to TeX. Consequently, it is likely that manual reformatting will be needed.
@@ -761,12 +769,15 @@ install.LaTeX2RTF  <- function(page_with_download_url="http://sourceforge.net/pr
    install.URL(URL,...)   
 }
 
+#' @export
+install.latex2rtf <- function(...) install.LaTeX2RTF(...)
 
 
 
 
 
 #' @title Downloads and installs Cygwin for windows
+#' @aliases install.cygwin
 #' @description Allows the user to downloads and install the latest version of Cygwin for Windows.
 #' @details
 #' Cygwin is a collection of tools which provide a Linux look and feel environment for Windows.
@@ -794,6 +805,8 @@ install.Cygwin  <- function(URL = "http://cygwin.com/setup.exe",...) {
    install.URL(URL,...)   
 }
 
+#' @export
+install.cygwin <- function(...) install.Cygwin(...)
 
 
 
@@ -867,6 +880,7 @@ install.7zip  <- function(page_with_download_url="http://www.7-zip.org/download.
 
 
 #' @title Downloads and installs FFmpeg for windows
+#' @aliases install.ffmpeg
 #' @description Allows the user to downloads the latest version of FFmpeg for Windows.
 #' IMPORTANT NOTE: The user (YOU) are responsible for unpacking the 7zip file into the relevant directory.  All that this function does is to download the 7zip file and "run" it.
 #' @details
@@ -894,6 +908,8 @@ install.FFmpeg   <- function(page_with_download_url="http://ffmpeg.zeranoe.com/b
    NULL
 }
 
+#' @export
+install.ffmpeg <- function(...) install.FFmpeg(...)
 
 
 
@@ -945,6 +961,7 @@ is.exe.installed <- function(exe_file) {
 
 
 #' @title Downloads and installs GitHub for windows
+#' @aliases install.github
 #' @description Allows the user to downloads and install the latest version of GitHub for Windows.
 #' @details
 #' "The easiest way to use Git on Windows." (at least so they say...)
@@ -966,6 +983,8 @@ install.GitHub <- function(URL = "http://github-windows.s3.amazonaws.com/GitHubS
    install.URL(URL,...)
 }
 
+#' @export
+install.github <- function(...) install.GitHub(...)
 
 
 
@@ -1080,3 +1099,9 @@ installr <- function(use_GUI = TRUE, ...) {
           return(FALSE)
    )
 }
+
+
+
+
+
+

@@ -1,4 +1,5 @@
 \name{install.FFmpeg}
+\alias{install.ffmpeg}
 \alias{install.FFmpeg}
 \title{Unzips a file using 7z
 #}

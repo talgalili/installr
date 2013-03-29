@@ -1,4 +1,5 @@
 \name{install.GraphicsMagick}
+\alias{install.graphicsmagick}
 \alias{install.GraphicsMagick}
 \title{Downloads and installs GraphicsMagick for windows}
 \usage{

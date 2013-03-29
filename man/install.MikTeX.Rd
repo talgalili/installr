@@ -1,4 +1,5 @@
 \name{install.MikTeX}
+\alias{install.miktex}
 \alias{install.MikTeX}
 \title{Downloads and installs MikTeX for windows}
 \usage{

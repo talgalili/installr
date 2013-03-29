@@ -1,4 +1,5 @@
 \name{install.ImageMagick}
+\alias{install.imagemagick}
 \alias{install.ImageMagick}
 \title{Downloads and installs ImageMagick for windows}
 \usage{

@@ -1,4 +1,5 @@
 \name{install.Cygwin}
+\alias{install.cygwin}
 \alias{install.Cygwin}
 \title{Downloads and installs Cygwin for windows}
 \usage{

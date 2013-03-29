@@ -1,4 +1,5 @@
 \name{install.LyX}
+\alias{install.lyx}
 \alias{install.LyX}
 \title{Downloads and installs LyX for windows}
 \usage{

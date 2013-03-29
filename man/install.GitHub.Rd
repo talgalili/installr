@@ -1,4 +1,5 @@
 \name{install.GitHub}
+\alias{install.github}
 \alias{install.GitHub}
 \title{Downloads and installs GitHub for windows}
 \usage{

@@ -1,4 +1,5 @@
 \name{install.Rtools}
+\alias{install.rtools}
 \alias{install.Rtools}
 \title{Downloads and installs Rtools}
 \source{

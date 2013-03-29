@@ -1,4 +1,5 @@
 \name{install.SWFTools}
+\alias{install.swftools}
 \alias{install.SWFTools}
 \title{Downloads and installs SWFTools for windows}
 \usage{

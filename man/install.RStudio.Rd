@@ -1,4 +1,5 @@
 \name{install.RStudio}
+\alias{install.rstudio}
 \alias{install.RStudio}
 \title{Downloads and installs RStudio for windows}
 \usage{

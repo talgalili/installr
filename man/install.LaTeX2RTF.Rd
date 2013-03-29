@@ -1,4 +1,5 @@
 \name{install.LaTeX2RTF}
+\alias{install.latex2rtf}
 \alias{install.LaTeX2RTF}
 \title{Downloads and installs LaTeX2RTF for windows}
 \usage{
