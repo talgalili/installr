@@ -23,7 +23,7 @@ install.packages('installr')
 To install the GitHub version:
 
 ```r
-if (!require('devtools')) install.packages('devtools')
+if (!require('devtools')) install.packages('devtools'); require('devtools')
 install_github('installr', 'talgalili')
 ```
 
