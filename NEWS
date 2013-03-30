@@ -1,4 +1,4 @@
-installR 0.9 (2013-03-29)
+installr 0.9 (2013-03-29)
 ---------------------------
 
 UPDATED FUNCTIONS:
@@ -6,11 +6,11 @@ UPDATED FUNCTIONS:
 
 OTHER NOTES:
    * More documentation.  Updated README.md
-   * installR 0.9 is to be shiped to CRAN.
+   * installr 0.9 is to be shiped to CRAN.
 
 
 
-installR 0.8.8 (2013-03-26)
+installr 0.8.8 (2013-03-26)
 ---------------------------
 NEW FUNCTIONS ADDED:
    * install.notepadpp
@@ -20,7 +20,7 @@ NEW FUNCTIONS ADDED:
 
 
 
-installR 0.8.7 (2013-03-16)
+installr 0.8.7 (2013-03-16)
 ---------------------------
 NEW FUNCTIONS ADDED:
    * install.SWFTools
@@ -34,7 +34,7 @@ UPDATED FUNCTIONS:
 BUG FIXES:
    * Fixed a bug in install.LyX.rd that caused it to not load properly when using install_github (props goes to Richard Cotton for catching the bug.)
 
-installR 0.8.6
+installr 0.8.6
 --------------
 
 NEW FUNCTIONS ADDED:
@@ -48,7 +48,7 @@ UPDATED FUNCTIONS:
    * Removed shutdown (turned into os.shutdown), and made sure it uses "force" shutdown.
 
 
-installR 0.8.5
+installr 0.8.5
 --------------
 
 NEW FUNCTIONS ADDED:
@@ -78,20 +78,20 @@ BUG FIXES:
    * Fixed a bug in updateR, "Error in !install_R : 'install_R' is missing" (install_R was called in too early) (thanks to AC for the bug report!)
 
 
-installR 0.8 (2013-03-05)
+installr 0.8 (2013-03-05)
 -------------------------
 
 FIXES FOR CRAN SUBMISSION:
    * Fixed some spelling mistakes in DESCRIPTION,
    * Made sure to run the checks in the latest R version (R 2.15.3, oh the irony)
    * Changed update.R to be called updateR (in order to avoid confusing it as an S3 variation to 'update')
-   * installR 0.8 is to be shiped to CRAN.
+   * installr 0.8 is to be shiped to CRAN.
 
 
 My thanks goes to Prof Brian Ripley for his help.
 
 
-installR 0.7
+installr 0.7
 --------------
 
 NEW FUNCTIONS ADDED:
@@ -105,7 +105,7 @@ UPDATED FUNCTIONS:
 OTHER NOTES:
    * More documentation.  Updated README.md (fixed \link vs \url)
 
-installR 0.6
+installr 0.6
 ------------
 
 NEW FUNCTIONS ADDED:
@@ -122,7 +122,7 @@ OTHER NOTES:
    * Added "\dontrun{" so to make the package pass CRAN tests (http://stackoverflow.com/questions/12038160/how-to-not-run-an-example-using-roxygen2)
 
 
-installR 0.3-0.5
+installr 0.3-0.5
 ----------------
 
 NEW FUNCTIONS ADDED:

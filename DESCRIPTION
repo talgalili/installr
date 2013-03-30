@@ -2,8 +2,8 @@ Package: installr
 Type: Package
 Title: Functions for updating and installing a new version of R and other
     software - from R
-Version: 0.9
-Date: 2013-03-29
+Version: 0.9.1
+Date: 2013-03-30
 Author: Tal Galili
 Maintainer: Tal Galili <tal.galili@gmail.com>
 Description: The 'installr' package aims at making the process of updating R on
@@ -12,7 +12,7 @@ Description: The 'installr' package aims at making the process of updating R on
     R. By simply running the installr() function, the user can easily select
     (via a GUI interface) a software to install. There are also dedicated
     functions for installing each software, such as: updateR(),
-    install.RTools(), install.pandoc(), and many more. While for Linux users,
+    install.Rtools(), install.pandoc(), and many more. While for Linux users,
     the installation process of new software may be just running a short line
     of code, for the regular Windows user it often includes browsing online,
     finding the latest version, downloading it, running the installer, and
