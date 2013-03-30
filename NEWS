@@ -1,3 +1,14 @@
+installr 0.9.1 (2013-03-30)
+---------------------------
+
+UPDATED FUNCTIONS:
+   * install.pandoc - fixed it to work with the new URL scheme they've chosen for their site (they moved to MSI instead of .EXE about two weeks ago...)
+   * install.URL - updated the error massage to explain better what (probably) went wrong.  And engorage the users to e-mail me with bug reports.
+
+OTHER NOTES:
+   * Fixed wrongly used capital letters (for example, in the NEWS file)
+
+
 installr 0.9 (2013-03-29)
 ---------------------------
 

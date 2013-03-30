@@ -61,13 +61,16 @@ install.packages.zip <- function(zip_URL) {
 #' @export
 #' @author GERGELY DAROCZI, Tal Galili
 #' @examples
-#' # install.URL() 
+#' \dontrun{
+#' install.URL("adfadf") # shows the error produced when the URL is not valid.
+#' }
 install.URL <- function(exe_URL, keep_install_file = FALSE, wait = TRUE, ...) {
    # source: http://stackoverflow.com/questions/15071957/is-it-possible-to-install-pandoc-on-windows-using-an-r-command
    # input: a url of an .exe file to install
    # output: it runs the .exe file (for installing something)   
-   exe_filename <- file.path(tempdir(), file.name.from.url(exe_URL))   # the name of the zip file MUST be as it was downloaded...
-   download.file(exe_URL, destfile=exe_filename, mode = 'wb')
+   exe_filename <- file.path(tempdir(), file.name.from.url(exe_URL))   # the name of the zip file MUST be as it was downloaded...   
+   tryCatch(download.file(exe_URL, destfile=exe_filename, mode = 'wb'), 
+            finally = cat("\nExplenation of the error: There was a change in the software download page, \nand the function you just ran no longer works. \n\n This is often caused by a change in the URL of the installer file in the download page of the software \n(making our function unable to know what to download). \n\n Please e-mail: tal.galili@gmail.com and let me know this function needs updating/fixing - thanks!\n"))  
    if(!keep_install_file & !wait) {
       wait <- TRUE
       warning("wait was set to TRUE since you wanted to installation file removed. In order to be able to run the installer AND remove the file - we must first wait for the isntaller to finish running before removing the file.")
@@ -108,7 +111,7 @@ install.URL <- function(exe_URL, keep_install_file = FALSE, wait = TRUE, ...) {
 #' }
 install.pandoc <- function(
    page_with_download_url = 'http://code.google.com/p/pandoc/downloads/list',
-   use_regex = T,...
+   use_regex = TRUE,...
 ) {
    # source: http://stackoverflow.com/questions/15071957/is-it-possible-to-install-pandoc-on-windows-using-an-r-command
    # published on: http://www.r-statistics.com/2013/02/installing-pandoc-from-r-on-windows/
@@ -116,7 +119,8 @@ install.pandoc <- function(
    
    if(use_regex) {
       page     <- readLines(page_with_download_url, warn = FALSE)
-      pat <- "//pandoc.googlecode.com/files/pandoc-[0-9.]+-setup.exe"; 
+      #"//pandoc.googlecode.com/files/pandoc-1.11.1.msi"
+      pat <- "//pandoc.googlecode.com/files/pandoc-[0-9.]+.msi"
       target_line <- grep(pat, page, value = TRUE); 
       m <- regexpr(pat, target_line); 
       URL      <- regmatches(target_line, m) # (The http still needs to be prepended.
