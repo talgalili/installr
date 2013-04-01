@@ -194,3 +194,6 @@ TODO for future releases:
    * Add a rate function for the package
    * Add automatic check for a new R version every X time.
    * a way to copy/move Rprofile.site from one installation to the next such as "C:\Program Files\R\R-2.15.2\etc\Rprofile.site" to "C:\Program Files\R\R-2.15.3\etc\Rprofile.site"? (requested by: Farrel Buchinsky)
+   * Add more checks for when copying library folders. If it is found the user has more than one library - show him the options of what he is copying from where to where - and ask the user to approve.  If he denies, to ask him which folder to choose "from", and which "to" copy the libraries into.
+   *add a general package help file.
+   * Fix install.RStudio to act differently in case it is being run from within RStudio (keeping the installation file for the user to run it)
