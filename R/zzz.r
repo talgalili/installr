@@ -66,12 +66,18 @@ add.installr.GUI <- function() {
    # Thanks to Dason: http://stackoverflow.com/questions/15250487/how-to-add-a-menu-item-to-rgui/15250992?iemail=1#15250992
    # Add GUI (only in Windows's Rgui)
    if(is.windows() & is.Rgui() & !is.RStudio()){
-      winMenuAdd("Update")
-      winMenuAddItem("Update", "Update R", "updateR()")
-      winMenuAddItem("Update", "Update R packages", "update.packages(ask = F)")      
-      winMenuAddItem("Update", "Install software", "installr()")
-      winMenuAddItem("Update", "Manage Windows", "os.manage()")      
-      return(invisible(TRUE))
+      Update_in_winMenuNames <- "Update" %in% winMenuNames() # I'm making sure this function wasn't used before.  If it was, then running it again might cause bugs...   
+      if(!Update_in_winMenuNames) {
+         winMenuAdd("Update")
+         winMenuAddItem("Update", "Update R", "updateR()")
+         winMenuAddItem("Update", "Update R packages", "update.packages(ask = F)")      
+         winMenuAddItem("Update", "Install software", "installr()")
+         winMenuAddItem("Update", "Manage Windows", "os.manage()")      
+         return(invisible(TRUE))         
+      } else {
+         warning("Can not add a new menu item for installr since the menu already has 'Update' in it")   
+         return(invisible(FALSE))      
+      }
    } else {
       return(invisible(FALSE))      
    }      

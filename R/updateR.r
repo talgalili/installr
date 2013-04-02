@@ -406,7 +406,7 @@ updateR <- function(browse_news, install_R, copy_packages, keep_old_packages,  u
    if(!install_R) return(F) # if not - return F
    
    # if we got this far, the user wants to install the latest version of R (and his current version is old)
-   cat("Installing the newest version of R, pleaes wait for the installer file to download and run, and be sure to click 'next' as needed...\n")
+   cat("Installing the newest version of R, please wait for the installer file to download and run, and be sure to click 'next' as needed...\n")
    did_R_install <- install.R() 
    if(!did_R_install) return(FALSE) 
    new_R_path <- get.installed.R.folders()[1]
