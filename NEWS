@@ -7,6 +7,8 @@ NEW FUNCTIONS ADDED:
 UPDATED FUNCTIONS:
    * install.URL - updated the error massage to explain better what (probably) went wrong.  And engorage the users to e-mail me with bug reports.
    * add.installr.GUI - made sure the function wouldn't add items if "Update" is already present. e.g: made a fail-safe machanism in case the function installr:::add.installr.GUI() is run more than once (my thanks goes to Dieter Menne for the suggestion)
+   * install.R - Updated the warning massage on install.R in case checkMD5sum fails.
+   * updateR - added the to_checkMD5sums parameter to updateR (to be passed on to install.R() )
 
 BUG FIXES:
    * install.pandoc - fixed it to work with the new URL scheme they've chosen for their site (they moved to MSI instead of .EXE about two weeks ago...)

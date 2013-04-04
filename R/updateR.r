@@ -189,7 +189,7 @@ install.R <- function(page_with_download_url = "http://cran.rstudio.com/bin/wind
       require(tools)
       pass_checkMD5sums <- checkMD5sums(dir = new_R_path)
       if(!pass_checkMD5sums) {
-         warning("There was some problem with installing R.  Some files are not what they should be (e.g: check MD5 sums did not pass all the tests)")
+         warning("There was some problem with installing R.  Some files are not what they should be (e.g: check MD5 sums did not pass all the tests). \n  You can try installing R again (either manually or through install.R()), \n  and if the problem persists you can file a bug report by running:  bug.report(package = 'installr') ")
          return(FALSE)
       }
    }
@@ -441,6 +441,7 @@ copy.packages.between.libraries <- function(from, to, ask =FALSE,keep_old = TRUE
 #' @param quit_R TRUE/FALSE - if to quite R after the installation and package copying or not. If missing (this is the default) - the user is asked what to do.
 #' @param print_R_versions if to tell the user what version he has and what is the latest version (default is TRUE)
 #' @param use_GUI a logical indicating whether a graphics menu should be used if available.  If TRUE, and on Windows, it will use \link{winDialog}, otherwise it will use \link[utils]{menu}.
+#' @param to_checkMD5sums Should we check that the new R installation has the files we expect it to (by checking the MD5 sums)? default is TRUE.  It assumes that the R which was isntalled is the latest R version. parameter is passed to install.R()
 #' @param ... Other arguments (this is currently not used in any way)
 #' @return a TRUE/FALSE value on whether or not R was updated.
 #' @seealso \link{check.for.updates.R}, \link{install.R}, \link{copy.packages.between.libraries}, 
@@ -449,7 +450,7 @@ copy.packages.between.libraries <- function(from, to, ask =FALSE,keep_old = TRUE
 #' updateR(T, T, T, T, T, T, T) # the safest upgrade option: See the NEWS, install R, copy packages, keep old packages, update packages in the new installation, start the Rgui of the new R, and quite current session of R
 #' updateR() # will ask you what you want at every decision.
 #' }
-updateR <- function(browse_news, install_R, copy_packages, keep_old_packages,  update_packages, start_new_R, quit_R,  print_R_versions=TRUE, use_GUI = TRUE, ...) {
+updateR <- function(browse_news, install_R, copy_packages, keep_old_packages,  update_packages, start_new_R, quit_R,  print_R_versions=TRUE, use_GUI = TRUE, to_checkMD5sums = TRUE, ...) {
    # this function checks if we have the latest version of R
    # IF not - it notifies the user - and leaves.
    # If there is a new version - it offers the user to download and install it.   
@@ -471,7 +472,7 @@ updateR <- function(browse_news, install_R, copy_packages, keep_old_packages,  u
    
    # if we got this far, the user wants to install the latest version of R (and his current version is old)
    cat("Installing the newest version of R, please wait for the installer file to download and run, and be sure to click 'next' as needed...\n")
-   did_R_install <- install.R() 
+   did_R_install <- install.R(to_checkMD5sums = to_checkMD5sums) 
    if(!did_R_install) return(FALSE) 
    new_R_path <- get.installed.R.folders()[1]
    
