@@ -154,6 +154,33 @@ check.for.updates.R <- function(notify_user = TRUE,
 
 
 
+
+
+#' @title See the NEWS file for the latest R release
+#' @export
+#' @description Sends the user the the NEWS html file on "http://cran.rstudio.com/bin/windows/base/NEWS.R-3.0.0.html" (URL changes with each version)
+#' @param page_with_download_url the URL of the page from which R can be downloaded.
+#' @param ... for future use
+#' @return invisible(NULL)
+#' @examples
+#' \dontrun{
+#' browse.latest.R.NEWS() 
+#' }
+browse.latest.R.NEWS <- function(
+                                page_with_download_url = "http://cran.rstudio.com/bin/windows/base/",...) {
+   page   <- readLines(page_with_download_url, warn = FALSE)
+   pat <- "NEWS.R-[0-9.]+.html"# this is the structure of the link...
+   target_line <- grep(pat, page, value = TRUE); 
+   m <- regexpr(pat, target_line); 
+   latest_R_version_NEWS_html  <- regmatches(target_line, m)[1]
+   
+   URL <- paste(page_with_download_url, latest_R_version_NEWS_html, sep = "")
+   browseURL(URL)   
+   
+   return(invisible(NULL))
+}
+
+
 #' @title Downloads and installs the latest R version
 #' @description Fetches the latest (not development!) R version
 #' @details
@@ -463,7 +490,7 @@ updateR <- function(browse_news, install_R, copy_packages, keep_old_packages,  u
 
    # should we open the NEWS?
    if(missing(browse_news)) browse_news <- ask.user.yn.question("Do you wish to see the NEWS regarding this new version of R?", use_GUI = use_GUI)
-   if(browse_news) browseURL("http://stat.ethz.ch/R-manual/R-patched/NEWS")
+   if(browse_news) browse.latest.R.NEWS()      
    
    
    # should we install R?

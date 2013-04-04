@@ -1,4 +1,5 @@
 export(ask.user.yn.question)
+export(browse.latest.R.NEWS)
 export(check.for.updates.R)
 export(checkMD5sums2)
 export(copy.packages.between.libraries)
