@@ -1,3 +1,67 @@
+#' @title Check and Create MD5 Checksum Files
+#' @export
+#' @description checkMD5sums checks the files against a file ‘MD5’.  This extends the default checkMD5sums from package tools by adding a new parameter "md5file"
+#' @param package the name of an installed package
+#' @param dir the path to the top-level directory of an installed package.
+#' @param md5file the exact path of the md5file to compare the dir with
+#' @return checkMD5sums returns a logical, NA if there is no ‘MD5’ file to be checked.
+#' @seealso \link[tools]{checkMD5sums}
+checkMD5sums2 <- function (package, dir, md5file) 
+{
+   library(tools) # making sure this is used.
+   
+   if (missing(dir)) 
+      dir <- find.package(package, quiet = TRUE)
+   if (!length(dir)) 
+      return(NA)
+   if(missing(md5file)) {
+      md5file <- file.path(dir, "MD5") # the "if-missing" is the only line added to the original function.
+      if (!file.exists(md5file)) # I've moved this section into the "if" since file.exists fails if md5file is on the internet
+         return(NA)
+   }
+   inlines <- readLines(md5file)
+   xx <- sub("^([0-9a-fA-F]*)(.*)", "\\1", inlines)
+   nmxx <- names(xx) <- sub("^[0-9a-fA-F]* [ |*](.*)", "\\1", 
+                            inlines)
+   dot <- getwd()
+   if (is.null(dot)) 
+      stop("current working directory cannot be ascertained")
+   setwd(dir)
+   x <- md5sum(dir(dir, recursive = TRUE))
+   setwd(dot)
+   x <- x[names(x) != "MD5"]
+   nmx <- names(x)
+   res <- TRUE
+   not.here <- !(nmxx %in% nmx)
+   if (any(not.here)) {
+      res <- FALSE
+      if (sum(not.here) > 1L) 
+         cat("files", paste(sQuote(nmxx[not.here]), collapse = ", "), 
+             "are missing\n", sep = " ")
+      else cat("file", sQuote(nmxx[not.here]), "is missing\n", 
+               sep = " ")
+   }
+   nmxx <- nmxx[!not.here]
+   diff <- xx[nmxx] != x[nmxx]
+   if (any(diff)) {
+      res <- FALSE
+      files <- nmxx[diff]
+      if (length(files) > 1L) 
+         cat("files", paste(sQuote(files), collapse = ", "), 
+             "have the wrong MD5 checksums\n", sep = " ")
+      else cat("file", sQuote(files), "has the wrong MD5 checksum\n")
+   }
+   res
+}
+
+
+
+
+
+
+
+
+
 #' @title Asks the user for one yes/no question.
 #' @export
 #' @description Asks the user for one yes/no question.  If the users replies with a "yes" (or Y, or y) the function returns TRUE.  Otherwise, FALSE. (also exists as the function devtools::yesno)

@@ -1,5 +1,8 @@
-installr 0.9.1 (2013-03-30)
+installr 0.9.1 (2013-04-04)
 ---------------------------
+
+NEW FUNCTIONS ADDED:
+   * checkMD5sums2 - Just like checkMD5sums from the tools package, but with the added md5file parameter. (useful for manually checking if the downloaded R EXE installer is fine, combined with this MD5 file: http://cran.rstudio.com/bin/windows/base/md5sum.txt)
 
 UPDATED FUNCTIONS:
    * install.URL - updated the error massage to explain better what (probably) went wrong.  And engorage the users to e-mail me with bug reports.
@@ -201,3 +204,4 @@ TODO for future releases:
    * Add more checks for when copying library folders. If it is found the user has more than one library - show him the options of what he is copying from where to where - and ask the user to approve.  If he denies, to ask him which folder to choose "from", and which "to" copy the libraries into.
    *add a general package help file.
    * Fix install.RStudio to act differently in case it is being run from within RStudio (keeping the installation file for the user to run it)
+   *  Add control on which mirror to use when running install.R()

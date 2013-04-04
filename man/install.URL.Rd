@@ -35,7 +35,9 @@
   started (by default - though this can be changed)
 }
 \examples{
-# install.URL()
+\dontrun{
+install.URL("adfadf") # shows the error produced when the URL is not valid.
+}
 }
 \author{
   GERGELY DAROCZI, Tal Galili

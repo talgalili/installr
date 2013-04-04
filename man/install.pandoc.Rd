@@ -6,7 +6,7 @@
 }
 \usage{
   install.pandoc(page_with_download_url = "http://code.google.com/p/pandoc/downloads/list",
-    use_regex = T, ...)
+    use_regex = TRUE, ...)
 }
 \arguments{
   \item{page_with_download_url}{a link to the list of
