@@ -50,8 +50,8 @@ installr() #  user can easily select (via a GUI interface) a software to install
 
 You are welcome to:
 * submit suggestions and bug-reports at: <https://github.com/talgalili/installr/issues>
-* send pull requests are welcome on: <https://github.com/talgalili/installr/>
-* compose friendly e-mail to: <tal.galili@gmail.com>
+* send a pull request on: <https://github.com/talgalili/installr/>
+* compose a friendly e-mail to: <tal.galili@gmail.com>
 
 
 ## Available functions are:

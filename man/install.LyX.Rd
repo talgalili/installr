@@ -1,6 +1,6 @@
 \name{install.LyX}
-\alias{install.LyX}
 \alias{install.lyx}
+\alias{install.LyX}
 \title{Downloads and installs LyX for windows}
 \usage{
   install.LyX(page_with_download_url = "http://www.lyx.org/Download",

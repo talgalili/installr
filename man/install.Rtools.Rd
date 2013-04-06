@@ -1,6 +1,6 @@
 \name{install.Rtools}
-\alias{install.Rtools}
 \alias{install.rtools}
+\alias{install.Rtools}
 \title{Downloads and installs Rtools}
 \source{
   Some parts of the code are taken from the devtools, see

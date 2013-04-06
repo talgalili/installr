@@ -1,6 +1,6 @@
 \name{install.GraphicsMagick}
-\alias{install.GraphicsMagick}
 \alias{install.graphicsmagick}
+\alias{install.GraphicsMagick}
 \title{Downloads and installs GraphicsMagick for windows}
 \usage{
   install.GraphicsMagick(page_with_download_url = "http://sourceforge.net/projects/graphicsmagick/",

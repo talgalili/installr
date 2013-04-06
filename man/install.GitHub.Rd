@@ -1,6 +1,6 @@
 \name{install.GitHub}
-\alias{install.GitHub}
 \alias{install.github}
+\alias{install.GitHub}
 \title{Downloads and installs GitHub for windows}
 \usage{
   install.GitHub(URL = "http://github-windows.s3.amazonaws.com/GitHubSetup.exe",
