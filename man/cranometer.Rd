@@ -1,0 +1,71 @@
+\name{cranometer}
+\alias{cranometer}
+\title{Measures the speed of downloading from different CRAN mirrors}
+\source{
+  \url{https://stat.ethz.ch/pipermail/r-help/2009-July/206430.html}
+}
+\usage{
+  cranometer(ms = getCRANmirrors(all = FALSE, local.only = FALSE),
+    ...)
+}
+\arguments{
+  \item{ms}{- the output of getCRANmirrors.  Defaults to
+  using all of the mirrors.}
+
+  \item{...}{not in use}
+}
+\value{
+  a data.frame with details on mirror sites and the time it
+  took to download their NEWS file.
+}
+\description{
+  Estimates the speed of each CRAN mirror by measuring the
+  time it takes to download the NEWS file.
+}
+\details{
+  It works by downloading the latest NEWS file (288 Kbytes
+  at the moment, so not huge) from each of the mirror sites
+  in the CRAN mirrors list. If you want to test it on a
+  subset then call getCRANmirrors yourself and subset it
+  somehow.
+
+  It runs on the full CRAN list and while desiginig this
+  package I've yet to find a timeout or error so I'm not
+  sure what will happen if download.file fails. It retuns a
+  data frame like you get from getCRANmirrors but with an
+  extra 't' column giving the elapsed time to get the NEWS
+  file.
+
+  CAVEATS: if your network has any local caching then these
+  results will be wrong, since your computer will probably
+  be getting the locally cached NEWS file and not the one
+  on the server. Especially if you run it twice. Oh, I
+  should have put cacheOK=FALSE in the download.file - but
+  even that might get overruled somewhere. Also, sites may
+  have good days and bad days, good minutes and bad
+  minutes, your network may be congested on a short-term
+  basis, etc etc.
+
+  There may also be a difference in reliability, which
+  would not so easily be measured by an individual user.
+
+  Later that year, Barry also wrote Cranography. See:
+  \url{https://stat.ethz.ch/pipermail/r-help/2009-July/206489.html},
+  \url{http://www.maths.lancs.ac.uk/~rowlings/R/Cranography/}.
+}
+\examples{
+\dontrun{
+x <- cranometer()#'
+time_order <- order(x$t)
+head(x[time_order,c(1:4, 9)], 20)
+with(x[rev(time_order),],
+ dotchart(t, labels =Name,
+ cex = .5, xlab = "Timing of CRAN mirror")
+ )
+
+}
+}
+\author{
+  Barry Rowlingson <b.rowlingson
+}
+

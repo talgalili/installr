@@ -1044,6 +1044,78 @@ source.https <- function(URL,..., remove_r_file = T) {
 
 
 
+#' @title Measures the speed of downloading from different CRAN mirrors
+#' @export
+#' @description Estimates the speed of each CRAN mirror by measuring the time it takes to download the NEWS file.
+#' 
+#' @author Barry Rowlingson <b.rowlingson@lancaster.ac.uk>
+#' 
+#' @param ms - the output of getCRANmirrors.  Defaults to using all of the mirrors.
+#' @param ... not in use
+#' 
+#' 
+#' @details
+#' It works by downloading the latest NEWS file (288 Kbytes at the moment, so not huge) 
+#' from each of the mirror sites in the CRAN mirrors list. 
+#' If you want to test it on a subset then call getCRANmirrors yourself and subset it somehow.
+#' 
+#' It runs on the full CRAN list and while desiginig this package I've yet to find a 
+#' timeout or error so I'm not sure what will happen if download.file
+#' fails. It retuns a data frame like you get from getCRANmirrors but
+#' with an extra 't' column giving the elapsed time to get the NEWS file.
+#' 
+#' CAVEATS: if your network has any local caching then these results
+#' will be wrong, since your computer will probably be getting the
+#' locally cached NEWS file and not the one on the server. Especially if
+#' you run it twice. Oh, I should have put cacheOK=FALSE in the
+#' download.file - but even that might get overruled somewhere. Also,
+#' sites may have good days and bad days, good minutes and bad minutes,
+#' your network may be congested on a short-term basis, etc etc.
+#' 
+#' There may also be a difference in reliability, which would not so easily be measured by an individual user.
+#' 
+#' Later that year, Barry also wrote Cranography. See: \url{https://stat.ethz.ch/pipermail/r-help/2009-July/206489.html}, \url{http://www.maths.lancs.ac.uk/~rowlings/R/Cranography/}.
+#' 
+#' @return a data.frame with details on mirror sites and the time it took to download their NEWS file.
+#' 
+#' @source \url{https://stat.ethz.ch/pipermail/r-help/2009-July/206430.html}
+#' 
+#' @examples
+#' \dontrun{
+#' x <- cranometer()#' 
+#' time_order <- order(x$t)
+#' head(x[time_order,c(1:4, 9)], 20)
+#' with(x[rev(time_order),],
+#'  dotchart(t, labels =Name,
+#'  cex = .5, xlab = "Timing of CRAN mirror")
+#'  )
+#'
+#' }
+cranometer <- function(ms = getCRANmirrors(all = FALSE, local.only = FALSE),...){   
+   dest = tempfile()
+   
+   nms = dim(ms)[1]
+   ms$t = rep(NA,nms)
+   for(i in 1:nms){
+      m = ms[i,]
+      url = paste(m$URL,"/src/base/NEWS",sep="")
+      t = try(system.time(download.file(url,dest),gcFirst=TRUE))
+      if(file.exists(dest)){
+         file.remove(dest)
+         ms$t[i]=t['elapsed']
+      }else{
+         ms$t[i]=NA
+      }
+   }
+   
+   ms$t <- as.numeric(ms$t)
+   
+   return(ms)
+}
+
+
+
+
 
 #' @title Installing software from R
 #' @export

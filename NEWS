@@ -1,3 +1,10 @@
+installr 0.9.2 (2013-05-11)
+---------------------------
+
+NEW FUNCTIONS ADDED:
+   * cranometer - Estimates the speed of each CRAN mirror by measuring the time it takes to download the NEWS file.
+
+
 installr 0.9.1 (2013-04-04)
 ---------------------------
 
