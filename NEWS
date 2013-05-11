@@ -15,7 +15,7 @@ UPDATED FUNCTIONS:
 
 BUG FIXES:
    * install.pandoc - fixed it to work with the new URL scheme they've chosen for their site (they moved to MSI instead of .EXE about two weeks ago...)
-   * updateR - fixed a type in the installation massage (thanks to Henrik Pärn)
+   * updateR - fixed a typo in the installation massage (thanks to Henrik Pärn)
 
 OTHER NOTES:
    * Fixed wrongly used capital letters (for example, in the NEWS file)
