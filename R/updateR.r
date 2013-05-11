@@ -1,10 +1,10 @@
 #' @title Check and Create MD5 Checksum Files
 #' @export
-#' @description checkMD5sums checks the files against a file ‘MD5’.  This extends the default checkMD5sums from package tools by adding a new parameter "md5file"
+#' @description checkMD5sums checks the files against a file 'MD5'.  This extends the default checkMD5sums from package tools by adding a new parameter "md5file"
 #' @param package the name of an installed package
 #' @param dir the path to the top-level directory of an installed package.
 #' @param md5file the exact path of the md5file to compare the dir with
-#' @return checkMD5sums returns a logical, NA if there is no ‘MD5’ file to be checked.
+#' @return checkMD5sums returns a logical, NA if there is no 'MD5' file to be checked.
 #' @seealso \link[tools]{checkMD5sums}
 checkMD5sums2 <- function (package, dir, md5file) 
 {
