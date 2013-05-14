@@ -2,8 +2,13 @@ installr 0.9.2 (2013-05-14)
 ---------------------------
 
 NEW FUNCTIONS ADDED:
-   * cranometer - Estimates the speed of each CRAN mirror by measuring the time it takes to download the NEWS file. (including an example of creating a worldmap based on this data)
+   * cranometer - Estimates the speed of each CRAN mirror by measuring the time it takes to download the NEWS file. (including an example of creating a world-map based on this data)
    * require2 - just like "require", only makes sure to download and install the package in case it is not present on the system (useful for examples...)
+
+OTHER NOTES:
+   * More documentation.  Updated README.md
+   * installr 0.9 is to be shipped to CRAN.
+
 
 installr 0.9.1 (2013-04-04)
 ---------------------------
@@ -13,8 +18,8 @@ NEW FUNCTIONS ADDED:
    * browse.latest.R.NEWS() - sends the user to the latest R NEWS file.
 
 UPDATED FUNCTIONS:
-   * install.URL - updated the error massage to explain better what (probably) went wrong.  And engorage the users to e-mail me with bug reports.
-   * add.installr.GUI - made sure the function wouldn't add items if "Update" is already present. e.g: made a fail-safe machanism in case the function installr:::add.installr.GUI() is run more than once (my thanks goes to Dieter Menne for the suggestion)
+   * install.URL - updated the error massage to explain better what (probably) went wrong.  And encourage the users to e-mail me with bug reports.
+   * add.installr.GUI - made sure the function wouldn't add items if "Update" is already present. e.g: made a fail-safe mechanism in case the function installr:::add.installr.GUI() is run more than once (my thanks goes to Dieter Menne for the suggestion)
    * install.R - Updated the warning massage on install.R in case checkMD5sum fails.
    * updateR -
       ** added the to_checkMD5sums parameter to updateR (to be passed on to install.R() )
@@ -36,7 +41,7 @@ UPDATED FUNCTIONS:
 
 OTHER NOTES:
    * More documentation.  Updated README.md
-   * installr 0.9 is to be shiped to CRAN.
+   * installr 0.9 is to be shipped to CRAN.
 
 
 
@@ -84,7 +89,7 @@ installr 0.8.5
 NEW FUNCTIONS ADDED:
    * installr - allows the user to choose which software to install (from a GUI or console based menu system)
    * A new GUI for Rgui - added the "Update" to the menu, with three submenu items: Update R, Update R Packages, and Installing software. (thanks to Dason and Yihui Xie for their ideas and help)
-   * shutdown - Shut down the operating system with the command `shutdown'.  A modified version of Yihui's shitdown function from the {fun} package (see: https://github.com/yihui/fun/blob/master/R/shutdown.R)
+   * shutdown - Shut down the operating system with the command `shutdown'.  A modified version of Yihui's shutdown function from the {fun} package (see: https://github.com/yihui/fun/blob/master/R/shutdown.R)
    * is.RStudio - checks if the current R session is running within RStudio or not.
    * is.Rgui - checks if the current R session is running within Rgui or not.
    * add.installr.GUI and remove.installr.GUI - for adding a menu system to Rgui
@@ -115,7 +120,7 @@ FIXES FOR CRAN SUBMISSION:
    * Fixed some spelling mistakes in DESCRIPTION,
    * Made sure to run the checks in the latest R version (R 2.15.3, oh the irony)
    * Changed update.R to be called updateR (in order to avoid confusing it as an S3 variation to 'update')
-   * installr 0.8 is to be shiped to CRAN.
+   * installr 0.8 is to be shipped to CRAN.
 
 
 My thanks goes to Prof Brian Ripley for his help.
@@ -207,8 +212,6 @@ TODO for future releases:
 -------------------------
 	* uninstall.R() for the old version of R (including the library folder)
 	* Better integration with the "global library" strategy
-	* Add install.notepad and install.notepadpp
-   * Maybe add some timer to the os.manage functions.  And also allow input for how long from x time to perform the action.
    * make the os.manage work by running an Rscript, in order to allow for their use in long running of knitr/Sweave projects.
    * Add a rate function for the package
    * Add automatic check for a new R version every X time.

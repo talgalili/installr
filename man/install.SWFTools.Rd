@@ -1,6 +1,6 @@
 \name{install.SWFTools}
-\alias{install.swftools}
 \alias{install.SWFTools}
+\alias{install.swftools}
 \title{Downloads and installs SWFTools for windows}
 \usage{
   install.SWFTools(page_with_download_url = "http://swftools.org/download.html",
