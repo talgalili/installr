@@ -1044,11 +1044,37 @@ source.https <- function(URL,..., remove_r_file = T) {
 
 
 
+
+#' @title Loading Packages (and Installing them if they are missing)
+#' @export
+#' @description  require2 load add-on packages by passing it to \link{require}.  However, if the package is not available on the system, it will first install it (through \link{install.packages}), and only then try to load it again.
+#' 
+#' @param package A character of the name of a package.
+#' @param ... not used
+#' 
+#' @return  returns (invisibly) a logical indicating whether the required package is available.
+#' @examples
+#' \dontrun{
+#' a= require2("devtools")
+#' a
+#' a= require2("geonames")
+#' a
+#' }
+require2 <- function(package, ...) {
+   if(!suppressWarnings(require(package=package, character.only = TRUE))) install.packages(pkgs=package)
+   require(package=package, character.only = TRUE)
+}
+
+
+# Escaping “@” in Roxygen2 Style Documentation
+# http://stackoverflow.com/questions/8809004/escaping-in-roxygen2-style-documentation
+
+
 #' @title Measures the speed of downloading from different CRAN mirrors
 #' @export
 #' @description Estimates the speed of each CRAN mirror by measuring the time it takes to download the NEWS file.
 #' 
-#' @author Barry Rowlingson <b.rowlingson@lancaster.ac.uk>
+#' @author Barry Rowlingson <b.rowlingson@@lancaster.ac.uk>
 #' 
 #' @param ms - the output of getCRANmirrors.  Defaults to using all of the mirrors.
 #' @param ... not in use
@@ -1082,14 +1108,42 @@ source.https <- function(URL,..., remove_r_file = T) {
 #' 
 #' @examples
 #' \dontrun{
-#' x <- cranometer()#' 
+#' # this can take some time
+#' x <- cranometer() 
+#' 
 #' time_order <- order(x$t)
+#' 
+#' # a quick overview of the fastest mirrors
 #' head(x[time_order,c(1:4, 9)], 20)
+#' 
+#' # a dotchart of the fastest mirrors
 #' with(x[rev(time_order),],
 #'  dotchart(t, labels =Name,
 #'  cex = .5, xlab = "Timing of CRAN mirror")
 #'  )
 #'
+#'# tail(geonames_df)
+#'# tail(x)
+#'require(plyr)
+#'ss <- !(x$Name == "0-Cloud")
+#'gvis_df <- ddply(x[ss,], .(CountryCode), function(xx) {
+#'   ss <- which.min(xx$t) 
+#'   if(length(ss) == 0) ss <- 1
+#'   data.frame(time = xx$t[ss], name = xx$Name[ss] )
+#'})
+#'gvis_df <- gvis_df[!is.na(gvis_df$time), ]
+#'
+#'require2("googleVis")
+#'Geo<-gvisGeoMap(gvis_df,
+#'               locationvar = "CountryCode",
+#'                numvar="time",
+#'                hovervar = "name",
+#'                options=list(
+#'                             colors='[0xA5EF63, 
+#'                              0xFFB581, 0xFF8747]')
+#'               )
+#'# Display chart
+#'plot(Geo) 
 #' }
 cranometer <- function(ms = getCRANmirrors(all = FALSE, local.only = FALSE),...){   
    dest = tempfile()
@@ -1112,6 +1166,32 @@ cranometer <- function(ms = getCRANmirrors(all = FALSE, local.only = FALSE),...)
    
    return(ms)
 }
+
+## ----
+# # a geomap of mirrors around the world, and how fast each one is
+# require2("geonames")
+# this can take some time
+# find the geo-locations for all of the CRAN mirrors based on http://www.geonames.org/export/geonames-search.html
+# geonames_df <- NULL
+# for(i in 1:nrow(x)) {
+#    tmp_geo <- with(x[i,], GNsearch(name=City, country= CountryCode))[1,]
+#    # if we have no columns, it probably means that GNsearch couldn't find that city name, in which case, we shorten the name of the city and search again.
+#    if(ncol(tmp_geo) == 0) {
+#       tmp_city <- paste(tail(strsplit(x[i,"City"], " ")[[1]], -1), collapse = " ")
+#       tmp_geo <- with(x[i,], GNsearch(name=tmp_city, country= CountryCode))[1,]      
+#    }
+#    if(ncol(tmp_geo) == 0) tmp_geo <- NA # if we still can't find anything, we should turn this to NA so that we would still add a row (though an empy one) to the data.frame
+#       
+#    geonames_df <- rbind(geonames_df,tmp_geo)            
+# }
+# LatLong <- with(geonames_df, paste(lat, ":", lng, sep = ""))
+# gvis_df <- data.frame(LatLong, time = x$t, name = x$Name)
+
+
+
+
+
+
 
 
 

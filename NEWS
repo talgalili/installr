@@ -1,9 +1,9 @@
-installr 0.9.2 (2013-05-11)
+installr 0.9.2 (2013-05-14)
 ---------------------------
 
 NEW FUNCTIONS ADDED:
-   * cranometer - Estimates the speed of each CRAN mirror by measuring the time it takes to download the NEWS file.
-
+   * cranometer - Estimates the speed of each CRAN mirror by measuring the time it takes to download the NEWS file. (including an example of creating a worldmap based on this data)
+   * require2 - just like "require", only makes sure to download and install the package in case it is not present on the system (useful for examples...)
 
 installr 0.9.1 (2013-04-04)
 ---------------------------
@@ -217,3 +217,4 @@ TODO for future releases:
    *add a general package help file.
    * Fix install.RStudio to act differently in case it is being run from within RStudio (keeping the installation file for the user to run it)
    *  Add control on which mirror to use when running install.R()
+   * add a welcome massage like: require(googleVis)

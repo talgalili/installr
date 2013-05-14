@@ -55,17 +55,45 @@
 }
 \examples{
 \dontrun{
-x <- cranometer()#'
+# this can take some time
+x <- cranometer()
+
 time_order <- order(x$t)
+
+# a quick overview of the fastest mirrors
 head(x[time_order,c(1:4, 9)], 20)
+
+# a dotchart of the fastest mirrors
 with(x[rev(time_order),],
  dotchart(t, labels =Name,
  cex = .5, xlab = "Timing of CRAN mirror")
  )
 
+# tail(geonames_df)
+# tail(x)
+require(plyr)
+ss <- !(x$Name == "0-Cloud")
+gvis_df <- ddply(x[ss,], .(CountryCode), function(xx) {
+  ss <- which.min(xx$t)
+  if(length(ss) == 0) ss <- 1
+  data.frame(time = xx$t[ss], name = xx$Name[ss] )
+})
+gvis_df <- gvis_df[!is.na(gvis_df$time), ]
+
+require2("googleVis")
+Geo<-gvisGeoMap(gvis_df,
+              locationvar = "CountryCode",
+               numvar="time",
+               hovervar = "name",
+               options=list(
+                            colors='[0xA5EF63,
+                             0xFFB581, 0xFF8747]')
+              )
+# Display chart
+plot(Geo)
 }
 }
 \author{
-  Barry Rowlingson <b.rowlingson
+  Barry Rowlingson <b.rowlingson@lancaster.ac.uk>
 }
 

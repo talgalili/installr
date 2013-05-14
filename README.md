@@ -76,3 +76,5 @@ You are welcome to:
 * install.npptor()
 * install.Cygwin()
 * manage.os() - for shutdown/sleep of a Windows computer (useful for running at the end of a simulation)
+* cranometer - Estimates the speed of each CRAN mirror by measuring the time it takes to download the NEWS file.
+* require2 - just like "require", only makes sure to download and install the package in case it is not present on the system (useful for examples...)
