@@ -2,12 +2,12 @@
 \alias{browse.latest.R.NEWS}
 \title{See the NEWS file for the latest R release}
 \usage{
-  browse.latest.R.NEWS(page_with_download_url = "http://cran.rstudio.com/bin/windows/base/",
+  browse.latest.R.NEWS(URL = "http://cran.rstudio.com/bin/windows/base/",
     ...)
 }
 \arguments{
-  \item{page_with_download_url}{the URL of the page from
-  which R can be downloaded.}
+  \item{URL}{the URL of the page from which R can be
+  downloaded.}
 
   \item{...}{for future use}
 }

@@ -5,12 +5,12 @@
   \url{http://stackoverflow.com/questions/15071957/is-it-possible-to-install-pandoc-on-windows-using-an-r-command}
 }
 \usage{
-  install.pandoc(page_with_download_url = "http://code.google.com/p/pandoc/downloads/list",
+  install.pandoc(URL = "http://code.google.com/p/pandoc/downloads/list",
     use_regex = TRUE, ...)
 }
 \arguments{
-  \item{page_with_download_url}{a link to the list of
-  download links of pandoc}
+  \item{URL}{a link to the list of download links of
+  pandoc}
 
   \item{use_regex}{(default TRUE) should the regex method
   be used to extract exe links, or should the XML package

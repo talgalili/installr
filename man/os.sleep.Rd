@@ -32,7 +32,9 @@
 }
 \examples{
 \dontrun{
-## when your code is extremely time-consuming, you may need this function to run at the end of the simulation.
+## when your code is extremely time-consuming,
+# you may need this function to run at the end of
+# the simulation.
 os.sleep()
 }
 }

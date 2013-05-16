@@ -3,12 +3,13 @@
 \title{Asks the user for a row number from a data.frame table}
 \source{
   On how to ask the user for input:
+
   \url{http://stackoverflow.com/questions/5974967/what-is-the-correct-way-to-ask-for-user-input-in-an-r-program}
 }
 \usage{
   ask.user.for.a.row(TABLE,
     header_text = "Possible versions to download (choose one)",
-    questions_text = "Please review the table of versions from above, \n  and enter the row number of the file-version you'd like to install: ")
+    questions_text)
 }
 \arguments{
   \item{TABLE}{a data.frame table with rows from which we
@@ -21,7 +22,9 @@
 
   \item{questions_text}{the question the users see after
   the printing of the table - explaining which row he
-  should choose from}
+  should choose from. (the default is: "Please review the
+  table of versions from above, and enter the row number of
+  the file-version you'd like to install: ")}
 }
 \value{
   The row number the user has choosen from the data.frame

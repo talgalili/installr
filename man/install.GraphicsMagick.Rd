@@ -3,12 +3,11 @@
 \alias{install.graphicsmagick}
 \title{Downloads and installs GraphicsMagick for windows}
 \usage{
-  install.GraphicsMagick(page_with_download_url = "http://sourceforge.net/projects/graphicsmagick/",
+  install.GraphicsMagick(URL = "http://sourceforge.net/projects/graphicsmagick/",
     ...)
 }
 \arguments{
-  \item{page_with_download_url}{the URL of the ImageMagick
-  download page.}
+  \item{URL}{the URL of the ImageMagick download page.}
 
   \item{...}{extra parameters to pass to
   \link{install.URL}}
@@ -34,7 +33,7 @@
 }
 \examples{
 \dontrun{
-install.GraphicsMagick() # installs the latest version of git
+install.GraphicsMagick() # installs the latest version of GraphicsMagick
 }
 }
 \references{

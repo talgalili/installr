@@ -18,7 +18,10 @@
 #' @references \url{http://cos.name/en/topic/shut-down-your-windows-with-r} , \url{https://github.com/yihui/fun/blob/master/R/shutdown.R}
 #' @examples
 #' \dontrun{
-#' ## when your code is extremely time-consuming, you may need this function; e.g. you go to sleep, and R is running long computation... complex graphics... and long long computation... at last,
+#' ## when your code is extremely time-consuming, 
+#' # you may need this function; 
+#' # e.g. you wish to go to sleep, while keeping R running long computation...
+#' 
 #' os.shutdown()
 #' ## the next day you wake up, "thank you, R" :)
 #' }
@@ -58,7 +61,9 @@ os.shutdown <- function(s=0, m=0, h=0) {
 #' \url{http://superuser.com/questions/42124/how-can-i-put-the-computer-to-sleep-from-command-prompt-run-menu} , \url{http://www.howtogeek.com/howto/windows-vista/quick-tip-create-shutdown-restart-lock-icons-in-windows-vista/}, \url{http://superuser.com/a/135450/28536}
 #' @examples
 #' \dontrun{
-#' ## when your code is extremely time-consuming, you may need this function to run at the end of the simulation.
+#' ## when your code is extremely time-consuming,
+#' # you may need this function to run at the end of
+#' # the simulation.
 #' os.sleep()
 #' }
 os.sleep <- function(s=0, m=0, h=0, first_turn_hibernate_off = TRUE) {
@@ -93,7 +98,9 @@ os.sleep <- function(s=0, m=0, h=0, first_turn_hibernate_off = TRUE) {
 #' @references \url{http://superuser.com/questions/42124/how-can-i-put-the-computer-to-sleep-from-command-prompt-run-menu} , \url{http://www.howtogeek.com/howto/windows-vista/quick-tip-create-shutdown-restart-lock-icons-in-windows-vista/}
 #' @examples
 #' \dontrun{
-#' ## when your code is extremely time-consuming, you may need this function to run at the end of the simulation.
+#' ## when your code is extremely time-consuming, 
+#' # you may need this function to run at the 
+#' # end of the simulation.
 #' os.hibernate()
 #' }
 os.hibernate  <- function(s=0, m=0, h=0, first_turn_hibernate_on = TRUE) {
@@ -127,7 +134,9 @@ os.hibernate  <- function(s=0, m=0, h=0, first_turn_hibernate_on = TRUE) {
 #' @references \url{http://superuser.com/questions/42124/how-can-i-put-the-computer-to-sleep-from-command-prompt-run-menu} , \url{http://www.howtogeek.com/howto/windows-vista/quick-tip-create-shutdown-restart-lock-icons-in-windows-vista/}
 #' @examples
 #' \dontrun{
-#' ## when your code is extremely time-consuming, you may need this function to run at the end of the simulation.
+#' ## when your code is extremely time-consuming, 
+#' # you may need this function to run at the
+#' # end of the simulation.
 #' os.lock()
 #' }
 os.lock  <- function(s=0, m=0, h=0) {
@@ -188,7 +197,12 @@ os.restart  <- function(s=0, m=0, h=0) {
 #' \url{http://cos.name/en/topic/shut-down-your-windows-with-r} 
 #' @examples
 #' \dontrun{
-#' ## when your code is extremely time-consuming, you may need this function; e.g. you go to sleep, and R is running long computation... complex graphics... and long long computation... at last,
+#' ## when your code is extremely time-consuming, 
+#' # you may need this function; 
+#' # e.g. you wish to go to sleep, 
+#' # while keeping R running with a long computation... 
+#' # complex graphics... and long long computation... 
+#' # at last,
 #' os.manage()
 #' ## the next day you wake up, "thank you, R" :)
 #' }

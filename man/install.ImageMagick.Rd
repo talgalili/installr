@@ -3,12 +3,11 @@
 \alias{install.imagemagick}
 \title{Downloads and installs ImageMagick for windows}
 \usage{
-  install.ImageMagick(page_with_download_url = "http://www.imagemagick.org/script/binary-releases.php",
+  install.ImageMagick(URL = "http://www.imagemagick.org/script/binary-releases.php",
     ...)
 }
 \arguments{
-  \item{page_with_download_url}{the URL of the ImageMagick
-  download page.}
+  \item{URL}{the URL of the ImageMagick download page.}
 
   \item{...}{extra parameters to pass to
   \link{install.URL}}

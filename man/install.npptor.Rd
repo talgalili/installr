@@ -2,12 +2,11 @@
 \alias{install.npptor}
 \title{Downloads and installs NppToR for windows}
 \usage{
-  install.npptor(page_with_download_url = "http://sourceforge.net/projects/npptor/files/npptor\%20installer/",
+  install.npptor(URL = "http://sourceforge.net/projects/npptor/files/npptor\%20installer/",
     ...)
 }
 \arguments{
-  \item{page_with_download_url}{the URL of the Notepad++
-  download page.}
+  \item{URL}{the URL of the Notepad++ download page.}
 
   \item{...}{extra parameters to pass to
   \link{install.URL}}
@@ -37,7 +36,7 @@
 }
 \examples{
 \dontrun{
-install.npptor() # installs the latest version of git
+install.npptor() # installs the latest version of npptor
 }
 }
 \references{

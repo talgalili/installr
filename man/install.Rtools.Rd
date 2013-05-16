@@ -54,8 +54,12 @@
 \examples{
 \dontrun{
 install.Rtools() # installs the latest version of RTools (if one is needed)
-install.Rtools(TRUE) # if one is needed - asks the user to choose the latest version of RTools to install
-install.Rtools(TRUE, FALSE) # asks the user to choose the latest version of RTools to install (regardless if one is needed)
+install.Rtools(TRUE) # if one is needed - asks the user to choose the latest
+# version of RTools to install
+
+install.Rtools(TRUE, FALSE) # asks the user to choose
+# the latest version of RTools to install
+# (regardless if one is needed)
 }
 }
 \references{

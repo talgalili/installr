@@ -33,8 +33,16 @@
 }
 \examples{
 \dontrun{
-get.installed.R.folders() # returns the sorted and named vector of folder names where R is installed (in different versions).  The first element is the folder of the newest version of R.
-get.installed.R.folders(F, F) # returns the folder names where R is installed (in different versions) - no sorting of the folder names was performed
+get.installed.R.folders()
+# returns the sorted and named vector of
+# folder names where R is installed (in different versions).
+#  The first element is
+# the folder of the newest version of R.
+
+get.installed.R.folders(F, F)
+# returns the folder names where R is
+# installed (in different versions) - no sorting of
+# the folder names was performed
 }
 }
 \seealso{

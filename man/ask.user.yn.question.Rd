@@ -30,10 +30,16 @@
 \dontrun{
 ask.user.yn.question("Do you love R?")
 ask.user.yn.question(question = "Do you love R?", use_GUI = TRUE) # the same one as before
-ask.user.yn.question(question = "Do you love R?", use_GUI = FALSE) # reverts to command line questions
-ask.user.yn.question("Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation
+ask.user.yn.question(question = "Do you love R?", use_GUI = FALSE)
+# reverts to command line questions
 
-  ullamco laboris nisi ut aliquip ex ea commodo consequat. Do \\n you \\n love R?") # checking how it deals with multi lines, and a lot of text (very good actually)
+ask.user.yn.question("Lorem ipsum dolor sit amet, consectetur adipisicing elit,
+sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
+Ut enim ad minim veniam, quis nostrud exercitation
+
+  ullamco laboris nisi ut aliquip
+  ex ea commodo consequat. Do \\n you \\n love R?")
+   # checking how it deals with multi lines, and a lot of text (very good actually)
 
 }
 }

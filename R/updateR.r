@@ -70,15 +70,22 @@ checkMD5sums2 <- function (package, dir, md5file)
 #' @param add_lines_before if to add a line before asking the question.  Default is TRUE.
 #' @return TRUE/FALSE - if the user answeres yes or no.
 #' @seealso \link[utils]{menu}, (yesno in the package {devtools}) 
-#' @references \url{http://stackoverflow.com/questions/15250487/how-to-add-a-menu-item-to-rgui} (my thanks goes to Dason for his answer and help)
+#' @references \url{http://stackoverflow.com/questions/15250487/how-to-add-a-menu-item-to-rgui} 
+#' (my thanks goes to Dason for his answer and help)
 #' @examples
 #' \dontrun{
 #' ask.user.yn.question("Do you love R?")
 #' ask.user.yn.question(question = "Do you love R?", use_GUI = TRUE) # the same one as before
-#' ask.user.yn.question(question = "Do you love R?", use_GUI = FALSE) # reverts to command line questions
-#' ask.user.yn.question("Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation
+#' ask.user.yn.question(question = "Do you love R?", use_GUI = FALSE) 
+#' # reverts to command line questions
 #' 
-#'   ullamco laboris nisi ut aliquip ex ea commodo consequat. Do \n you \n love R?") # checking how it deals with multi lines, and a lot of text (very good actually)
+#' ask.user.yn.question("Lorem ipsum dolor sit amet, consectetur adipisicing elit, 
+#' sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. 
+#' Ut enim ad minim veniam, quis nostrud exercitation
+#' 
+#'   ullamco laboris nisi ut aliquip 
+#'   ex ea commodo consequat. Do \n you \n love R?")
+#'    # checking how it deals with multi lines, and a lot of text (very good actually)
 #'   
 #' }
 ask.user.yn.question <- function(question, use_GUI = TRUE, add_lines_before = TRUE) {
@@ -159,7 +166,7 @@ check.for.updates.R <- function(notify_user = TRUE,
 #' @title See the NEWS file for the latest R release
 #' @export
 #' @description Sends the user the the NEWS html file on "http://cran.rstudio.com/bin/windows/base/NEWS.R-3.0.0.html" (URL changes with each version)
-#' @param page_with_download_url the URL of the page from which R can be downloaded.
+#' @param URL the URL of the page from which R can be downloaded.
 #' @param ... for future use
 #' @return invisible(NULL)
 #' @examples
@@ -167,7 +174,8 @@ check.for.updates.R <- function(notify_user = TRUE,
 #' browse.latest.R.NEWS() 
 #' }
 browse.latest.R.NEWS <- function(
-                                page_with_download_url = "http://cran.rstudio.com/bin/windows/base/",...) {
+                                URL = "http://cran.rstudio.com/bin/windows/base/",...) {
+   page_with_download_url <- URL
    page   <- readLines(page_with_download_url, warn = FALSE)
    pat <- "NEWS.R-[0-9.]+.html"# this is the structure of the link...
    target_line <- grep(pat, page, value = TRUE); 
@@ -317,8 +325,16 @@ turn.number.version <- function(number_to_dots) {
 #' @seealso \link{copy.packages.between.libraries}
 #' @examples
 #' \dontrun{
-#' get.installed.R.folders() # returns the sorted and named vector of folder names where R is installed (in different versions).  The first element is the folder of the newest version of R.
-#' get.installed.R.folders(F, F) # returns the folder names where R is installed (in different versions) - no sorting of the folder names was performed
+#' get.installed.R.folders() 
+#' # returns the sorted and named vector of
+#' # folder names where R is installed (in different versions).
+#' #  The first element is 
+#' # the folder of the newest version of R.
+#' 
+#' get.installed.R.folders(F, F) 
+#' # returns the folder names where R is 
+#' # installed (in different versions) - no sorting of 
+#' # the folder names was performed
 #' }
 get.installed.R.folders <- function(sort_by_version = T, add_version_to_name = T) {
    # get the parent folder of the current R installation
@@ -365,8 +381,15 @@ get.installed.R.folders <- function(sort_by_version = T, add_version_to_name = T
 #' @seealso \link{get.installed.R.folders}
 #' @examples
 #' \dontrun{
-#' copy.packages.between.libraries(ask = T) # it will ask you from what R version to copy the packages into which R version.  Since (do_NOT_override_packages_in_new_R = T) the function will make sure to NOT override your newer packages.
-#' # copy.packages.between.libraries(ask = T, keep_old = F) # As before, but this time it will MOVE (instead of COPY) the packages.  e.g: erase them from their old location.
+#' copy.packages.between.libraries(ask = T) 
+#' # it will ask you from what R version 
+#' # to copy the packages into which R version.  
+#' # Since (do_NOT_override_packages_in_new_R = T) the function will 
+#' # make sure to NOT override your newer packages.
+#' 
+#' # copy.packages.between.libraries(ask = T, keep_old = F) 
+#' # As before, but this time it will MOVE (instead of COPY) the packages.
+#' #  e.g: erase them from their old location.
 #' }
 copy.packages.between.libraries <- function(from, to, ask =FALSE,keep_old = TRUE, do_NOT_override_packages_in_new_R = TRUE) {
    
@@ -474,7 +497,13 @@ copy.packages.between.libraries <- function(from, to, ask =FALSE,keep_old = TRUE
 #' @seealso \link{check.for.updates.R}, \link{install.R}, \link{copy.packages.between.libraries}, 
 #' @examples
 #' \dontrun{
-#' updateR(T, T, T, T, T, T, T) # the safest upgrade option: See the NEWS, install R, copy packages, keep old packages, update packages in the new installation, start the Rgui of the new R, and quite current session of R
+#' updateR(T, T, T, T, T, T, T) 
+#' # # the safest upgrade option: See the NEWS, 
+#' # install R, copy packages, keep old packages, 
+#' # update packages in the new installation, 
+#' # start the Rgui of the new R, and quite current session 
+#' # of R
+#' 
 #' updateR() # will ask you what you want at every decision.
 #' }
 updateR <- function(browse_news, install_R, copy_packages, keep_old_packages,  update_packages, start_new_R, quit_R,  print_R_versions=TRUE, use_GUI = TRUE, to_checkMD5sums = TRUE, ...) {

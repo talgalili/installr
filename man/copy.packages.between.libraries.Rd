@@ -50,8 +50,15 @@
 }
 \examples{
 \dontrun{
-copy.packages.between.libraries(ask = T) # it will ask you from what R version to copy the packages into which R version.  Since (do_NOT_override_packages_in_new_R = T) the function will make sure to NOT override your newer packages.
-# copy.packages.between.libraries(ask = T, keep_old = F) # As before, but this time it will MOVE (instead of COPY) the packages.  e.g: erase them from their old location.
+copy.packages.between.libraries(ask = T)
+# it will ask you from what R version
+# to copy the packages into which R version.
+# Since (do_NOT_override_packages_in_new_R = T) the function will
+# make sure to NOT override your newer packages.
+
+# copy.packages.between.libraries(ask = T, keep_old = F)
+# As before, but this time it will MOVE (instead of COPY) the packages.
+#  e.g: erase them from their old location.
 }
 }
 \seealso{

@@ -33,7 +33,10 @@
 }
 \examples{
 \dontrun{
-## when your code is extremely time-consuming, you may need this function; e.g. you go to sleep, and R is running long computation... complex graphics... and long long computation... at last,
+## when your code is extremely time-consuming,
+# you may need this function;
+# e.g. you wish to go to sleep, while keeping R running long computation...
+
 os.shutdown()
 ## the next day you wake up, "thank you, R" :)
 }
