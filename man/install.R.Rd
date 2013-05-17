@@ -3,7 +3,7 @@
 \title{Downloads and installs the latest R version}
 \usage{
   install.R(page_with_download_url = "http://cran.rstudio.com/bin/windows/base/",
-    to_checkMD5sums = TRUE, ...)
+    to_checkMD5sums = FALSE, ...)
 }
 \arguments{
   \item{page_with_download_url}{URL from which the latest
