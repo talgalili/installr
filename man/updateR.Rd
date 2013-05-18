@@ -5,7 +5,7 @@
   updateR(browse_news, install_R, copy_packages,
     keep_old_packages, update_packages, start_new_R,
     quit_R, print_R_versions = TRUE, use_GUI = TRUE,
-    to_checkMD5sums = FALSE, ...)
+    to_checkMD5sums = TRUE, ...)
 }
 \arguments{
   \item{browse_news}{if TRUE (and if there is a newer
@@ -88,6 +88,12 @@
   the new version of R. \item You will be asked if to open
   the Rgui of your new R. \item Lastely - you can close the
   current session of your old R. }
+}
+\details{
+  It is worth noting that the function assumes that you are
+  installing R in the same directory as before. That is, if
+  the old R was on: D:\R\R-3.0.0 then the new R will be on
+  D:\R\R-3.0.1.
 }
 \examples{
 \dontrun{

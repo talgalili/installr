@@ -1,9 +1,9 @@
-installr 0.9.3 (2013-05-17)
+installr 0.9.3 (2013-05-18)
 ---------------------------
 
 UPDATED FUNCTIONS:
-   * install.R and updateR - changed to_checkMD5sums to default as FALSE (since R 3.0.0 and 3.0.1 seems to have wrong MD5 checksums for the files ‘etc/Rconsole’ and ‘etc/Rprofile.site’)
-
+   * install.R - started using checkMD5sums2 instead of checkMD5sums in order to allow the manual removal of the files ‘etc/Rconsole’ and ‘etc/Rprofile.site’ from the checksums (they are changed during the R installation process, and always give an error massage)
+   * checkMD5sums2 - added the omit_files parameter (allowing the removal of the files ‘etc/Rconsole’ and ‘etc/Rprofile.site’ from the checksums of an R installation)
 
 
 

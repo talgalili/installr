@@ -18,6 +18,7 @@
 \examples{
 \dontrun{
 turn.version.to.number1("2.15.2")
+turn.version.to.number1("3.0.1")
 }
 }
 \seealso{
