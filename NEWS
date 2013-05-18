@@ -4,7 +4,8 @@ installr 0.9.3 (2013-05-18)
 UPDATED FUNCTIONS:
    * install.R - started using checkMD5sums2 instead of checkMD5sums in order to allow the manual removal of the files ‘etc/Rconsole’ and ‘etc/Rprofile.site’ from the checksums (they are changed during the R installation process, and always give an error massage)
    * checkMD5sums2 - added the omit_files parameter (allowing the removal of the files ‘etc/Rconsole’ and ‘etc/Rprofile.site’ from the checksums of an R installation)
-
+   * get.installed.R.folders - making the function more robust, by having it rely on the README files instead of the folder names. (based on a bug report by GilesCrane - thanks.)
+   * R_version_in_a_folder function added (get the version of R installed in a folder. Based on the README file name inside the folder)
 
 
 installr 0.9.2 (2013-05-14)

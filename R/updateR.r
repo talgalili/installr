@@ -323,6 +323,31 @@ turn.number.version <- function(number_to_dots) {
 
 
 
+#' @title Get the version of the R installed in a folder
+#' @export
+#' @description 
+#' Get the version of the R installed in a folder based on the structure of the filename README.R-... (where ... is a version number for R).
+#' This function helps detect the version number of an R installation even if the name of the folder is not standard.
+#' @param folder The folder for which we wish to know the R version.
+#' @return Returns a character vector of the R version (or NA, if this is not an R installation folder)
+#' @seealso \link{get.installed.R.folders}
+#' @examples
+#' \dontrun{
+#' R_version_in_a_folder(R.home()) 
+#' # returns the version of the current R installation
+#' }
+R_version_in_a_folder <- function(folder) { 
+#    folder = R.home()
+   files <- list.files(folder)
+   ss <- grep("README.R-[0-9]+.[0-9]+.[0-9]+$", files)
+   if(length(ss)==0) return(NA) # this means that the current folder is NOT an R installation folder with the file README.R-numbers
+   README_x <- files[ss] # for example: "README.R-3.0.1"   
+   
+   # alternative to start=10:  regexpr("[0-9]+.[0-9]+.[0-9]", README_x)
+   substr(README_x, start=10, stop = nchar(README_x))       
+}
+   
+
 
 
 
@@ -350,18 +375,31 @@ turn.number.version <- function(number_to_dots) {
 #' # installed (in different versions) - no sorting of 
 #' # the folder names was performed
 #' }
-get.installed.R.folders <- function(sort_by_version = T, add_version_to_name = T) {
+get.installed.R.folders <- function(sort_by_version = TRUE, add_version_to_name = TRUE) {
    # get the parent folder of the current R installation
    R_parent_folder <- paste(head(strsplit(R.home(), "/|\\\\")[[1]], -1), collapse = "/") # the strsplit is seperating the path whether it is / or \\ (but since \\ is a problem, I need to cancel it with \\\\)      
    items_in_R_parent_folder <- list.files(R_parent_folder)
-   ss_R_subfolders_in_R_parent_folder <- grepl("R-[0-9]+.[0-9]+.[0-9]+$", items_in_R_parent_folder)
-   # notice the use of $ at the end of the regex
-   # Good regex syntax http://laurikari.net/tre/documentation/regex-syntax/
-   R_subfolders <- items_in_R_parent_folder[ss_R_subfolders_in_R_parent_folder]
    
-   R_folders <- file.path(R_parent_folder, R_subfolders) # a vector with the full path folders of all of the R installations (Assuming they are all on the same folder)
-   R_folders_versions <- gsub("R-", "", R_subfolders)
-   R_folders_versions_number <- turn.version.to.number(R_folders_versions)
+   R_folders <- file.path(R_parent_folder, items_in_R_parent_folder) # some of these may NOT be R folders
+   R_folders_versions <- sapply(R_folders, R_version_in_a_folder)
+
+   # remove NON R installation folders (for example "library")
+   ss_R_folders <- !is.na(R_folders_versions)
+   R_folders <- R_folders[ss_R_folders]
+   R_folders_versions <- R_folders_versions[ss_R_folders]
+   
+### old way of doing this which relied on the folder being of the form:  D:/R/R-3.0.1  
+#    ss_R_subfolders_in_R_parent_folder <- grepl("R-[0-9]+.[0-9]+.[0-9]+$", items_in_R_parent_folder)
+#    # notice the use of $ at the end of the regex
+#    # Good regex syntax http://laurikari.net/tre/documentation/regex-syntax/
+#    R_subfolders <- items_in_R_parent_folder[ss_R_subfolders_in_R_parent_folder]
+#    
+#    R_folders <- file.path(R_parent_folder, R_subfolders) # a vector with the full path folders of all of the R installations (Assuming they are all on the same folder)
+#    R_folders_versions <- gsub("R-", "", R_subfolders)
+
+   
+   
+   R_folders_versions_number <- turn.version.to.number(R_folders_versions)   
    
    if(add_version_to_name) names(R_folders) <- R_folders_versions   
    
@@ -372,6 +410,8 @@ get.installed.R.folders <- function(sort_by_version = T, add_version_to_name = T
    return(R_folders)            
 }
 
+# for testing:
+#turn.version.to.number = installr:::turn.version.to.number
 
 
 
@@ -567,7 +607,7 @@ updateR <- function(browse_news, install_R, copy_packages, keep_old_packages,  u
       update_packages_expression <- paste(new_Rscript_path, ' -e " setInternet2(TRUE); options(repos=structure(c(CRAN=\'http://cran.rstudio.com/\'))); update.packages(checkBuilt=TRUE, ask=F) "')
       #    update_packages_expression <- paste(new_Rscript_path, ' -e "date()"')
       #    update_packages_expression <- paste(new_Rscript_path, ' -e "print(R.version)"')
-      shell(update_packages_expression, wait = T, intern = T)  
+      shell(update_packages_expression, wait = TRUE, intern = TRUE)  
       # makes sure the user will not be able to move on to open the new Rgui, until all of its packages are updated
       # also, makes sure the user will see the output of the update.packages function.
    }

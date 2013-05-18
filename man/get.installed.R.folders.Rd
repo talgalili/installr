@@ -2,8 +2,8 @@
 \alias{get.installed.R.folders}
 \title{Returns folder names with R installations}
 \usage{
-  get.installed.R.folders(sort_by_version = T,
-    add_version_to_name = T)
+  get.installed.R.folders(sort_by_version = TRUE,
+    add_version_to_name = TRUE)
 }
 \arguments{
   \item{sort_by_version}{should the returned vector be
