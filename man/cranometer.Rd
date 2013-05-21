@@ -96,4 +96,7 @@ plot(Geo)
 \author{
   Barry Rowlingson <b.rowlingson@lancaster.ac.uk>
 }
+\seealso{
+  \link{freegeoip}, \link{myip}, \link{cranometer}
+}
 

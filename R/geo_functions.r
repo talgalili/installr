@@ -38,6 +38,8 @@
 #' 
 #' @source \url{https://stat.ethz.ch/pipermail/r-help/2009-July/206430.html}
 #' 
+#' @seealso \link{freegeoip}, \link{myip}, \link{cranometer}
+#' 
 #' @examples
 #' \dontrun{
 #' # this can take some time
@@ -134,7 +136,7 @@ cranometer <- function(ms = getCRANmirrors(all = FALSE, local.only = FALSE),...)
 #' 
 #' @author Heuristic Andrew (see source for details)
 #' 
-#' @param ip the output of getCRANmirrors.  Defaults to using all of the mirrors.
+#' @param ip a character vector of ips (default is the output from \link{myip})
 #' @param format format of the output. Either "list" (default) or "data.frame" 
 #' @param ... not in use
 #' 
@@ -142,11 +144,12 @@ cranometer <- function(ms = getCRANmirrors(all = FALSE, local.only = FALSE),...)
 #' 
 #' @source  \url{http://heuristically.wordpress.com/2013/05/20/geolocate-ip-addresses-in-r/}.  \url{http://freegeoip.net/json/}
 #' 
+#' @seealso \link{freegeoip}, \link{myip}, \link{cranometer}
 #' @examples
 #' \dontrun{
 #' freegeoip()
 #' }
-freegeoip <- function(ip, format = ifelse(length(ip)==1,'list','dataframe'),...)
+freegeoip <- function(ip = myip(), format = ifelse(length(ip)==1,'list','dataframe'),...)
 {
    if (1 == length(ip))
    {
@@ -172,12 +175,13 @@ freegeoip <- function(ip, format = ifelse(length(ip)==1,'list','dataframe'),...)
 
 
 
-
 #' @title Retreiving your public IP via http://api.exip.org/
 #' @export
-#' @param ... not in use#' 
-#' @return your current ip.#' 
-#' @source  \url{http://www.exip.org/about.php}, \url{http://api.exip.org/?call=ip},  \url{http://stackoverflow.com/questions/3097589/getting-my-public-ip-via-api}#' 
+#' @param ... not in use
+#' @return your current ip.
+#' @source  \url{http://www.exip.org/about.php}, \url{http://api.exip.org/?call=ip},  \url{http://stackoverflow.com/questions/3097589/getting-my-public-ip-via-api}
+#' @seealso \link{freegeoip}, \link{myip}, \link{cranometer}
+#' 
 #' @examples
 #' \dontrun{
 #' myip() # "37.132.25.15"
@@ -185,7 +189,6 @@ freegeoip <- function(ip, format = ifelse(length(ip)==1,'list','dataframe'),...)
 myip <- function(...) {
    readLines("http://api.exip.org/?call=ip", warn = FALSE)
 }
-
 
 
 

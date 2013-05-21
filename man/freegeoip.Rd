@@ -6,13 +6,13 @@
   \url{http://freegeoip.net/json/}
 }
 \usage{
-  freegeoip(ip,
+  freegeoip(ip = myip(),
     format = ifelse(length(ip) == 1, "list", "dataframe"),
     ...)
 }
 \arguments{
-  \item{ip}{the output of getCRANmirrors.  Defaults to
-  using all of the mirrors.}
+  \item{ip}{a character vector of ips (default is the
+  output from \link{myip})}
 
   \item{format}{format of the output. Either "list"
   (default) or "data.frame"}
@@ -38,5 +38,8 @@ freegeoip()
 }
 \author{
   Heuristic Andrew (see source for details)
+}
+\seealso{
+  \link{freegeoip}, \link{myip}, \link{cranometer}
 }
 
