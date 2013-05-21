@@ -26,7 +26,8 @@ Depends:
 Suggests:
     XML,
     devtools,
-    tools
+    tools,
+    rjson
 License: GPL-2
 Collate:
     'create.global.library.r'

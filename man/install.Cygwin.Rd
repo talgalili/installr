@@ -1,6 +1,6 @@
 \name{install.Cygwin}
-\alias{install.Cygwin}
 \alias{install.cygwin}
+\alias{install.Cygwin}
 \title{Downloads and installs Cygwin for windows}
 \usage{
   install.Cygwin(URL = "http://cygwin.com/setup.exe", ...)

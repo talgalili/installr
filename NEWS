@@ -1,3 +1,18 @@
+installr 0.9.4 (2013-05-21)
+---------------------------
+
+NEW FUNCTIONS ADDED:
+   * myip - return your ip address.
+   * freegeoip - Geolocate IP addresses in R (contributed by Heuristic Andrew)
+
+UPDATED FUNCTIONS:
+   * require2 - added the "ask" parameter.
+
+OTHER NOTES:
+   * geo_functions.r file created
+   * cranometer - function moved to the geo_functions.r file.
+
+
 installr 0.9.3 (2013-05-18)
 ---------------------------
 
@@ -223,7 +238,7 @@ TODO for future releases:
 -------------------------
 	* uninstall.R() for the old version of R (including the library folder)
 	* Better integration with the "global library" strategy
-   * make the os.manage work by running an Rscript, in order to allow for their use in long running of knitr/Sweave projects.
+	* make the os.manage work by running an Rscript, in order to allow for their use in long running of knitr/Sweave projects.
    * Add a rate function for the package
    * Add automatic check for a new R version every X time.
    * a way to copy/move Rprofile.site from one installation to the next such as "C:\Program Files\R\R-2.15.2\etc\Rprofile.site" to "C:\Program Files\R\R-2.15.3\etc\Rprofile.site"? (requested by: Farrel Buchinsky)
@@ -232,3 +247,4 @@ TODO for future releases:
    * Fix install.RStudio to act differently in case it is being run from within RStudio (keeping the installation file for the user to run it)
    *  Add control on which mirror to use when running install.R()
    * add a welcome massage like: require(googleVis)
+   *  allow a user to browse and find the old and new R installation on his system, in case there is a change in file directory from the standard directory structure.

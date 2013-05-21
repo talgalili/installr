@@ -1,6 +1,6 @@
 \name{install.RStudio}
-\alias{install.RStudio}
 \alias{install.rstudio}
+\alias{install.RStudio}
 \title{Downloads and installs RStudio for windows}
 \usage{
   install.RStudio(page_with_download_url = "http://www.rstudio.com/ide/download/desktop",

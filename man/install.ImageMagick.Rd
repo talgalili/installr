@@ -1,6 +1,6 @@
 \name{install.ImageMagick}
-\alias{install.ImageMagick}
 \alias{install.imagemagick}
+\alias{install.ImageMagick}
 \title{Downloads and installs ImageMagick for windows}
 \usage{
   install.ImageMagick(URL = "http://www.imagemagick.org/script/binary-releases.php",
