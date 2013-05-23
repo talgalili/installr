@@ -34,6 +34,18 @@
 \examples{
 \dontrun{
 freegeoip()
+
+# install.packages("maps")
+# install.packages("mapdata")
+library(maps)
+library(mapdata)    # Contains the hi-resolution points that mark out the countries.
+map('worldHires')
+require(installr)
+myip_details <- freegeoip(myip())
+my_lati <- myip_details$latitude
+my_long <- myip_details$longitude
+points(my_lati,my_long,col=2,pch=18, cex = 1)
+# lines(c(my_lati,0) ,c(my_long, 50), col = 2)#'
 }
 }
 \author{
