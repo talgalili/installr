@@ -4,7 +4,8 @@ installr 0.9.4 (2013-05-21)
 NEW FUNCTIONS ADDED:
    * myip - return your ip address.
    * freegeoip - Geolocate IP addresses in R (contributed by Heuristic Andrew)
-
+   * restart_RGui - a function to restart Rgui from Rgui
+   
 UPDATED FUNCTIONS:
    * require2 - added the "ask" parameter.
 

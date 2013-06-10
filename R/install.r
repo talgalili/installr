@@ -1094,6 +1094,34 @@ require2 <- function(package, ask= TRUE, ...) {
 
 
 
+#' @title Restart RGui from RGui
+#' @export
+#' @description Start a new RGui session and then quites the current one.
+#' 
+#' This is a Windows only function.
+#' @param ... passed to q()
+#' 
+#' @return  q(...)
+#' @examples
+#' \dontrun{
+#' restart_RGui()
+#' }
+restart_RGui <- function(...) {
+	# start a new RGui
+	# .Last <- function() 
+   if(!is.windows()) stop("This function only works on Windows OS")
+	if(!is.Rgui()) stop("This function only works when running it from Rgui.exe")
+	shell(file.path(R.home("bin"),"Rgui.exe"), wait = FALSE)
+	# close this one:
+	q(...)
+}
+
+
+
+
+
+
+
 
 
 
@@ -1156,7 +1184,6 @@ installr <- function(use_GUI = TRUE, ...) {
           return(FALSE)
    )
 }
-
 
 
 

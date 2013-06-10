@@ -35,6 +35,7 @@
 \dontrun{
 freegeoip()
 
+## http://www.students.ncl.ac.uk/keith.newman/r/maps-in-r
 # install.packages("maps")
 # install.packages("mapdata")
 library(maps)

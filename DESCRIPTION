@@ -34,4 +34,5 @@ Collate:
     'install.r'
     'updateR.r'
     'os.manage.r'
+    'geo_functions.r'
     'zzz.r'
