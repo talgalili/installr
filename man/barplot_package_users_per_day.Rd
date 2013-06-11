@@ -1,0 +1,51 @@
+\name{barplot_package_users_per_day}
+\alias{barplot_package_users_per_day}
+\title{barplot for the number of users installation of a package}
+\usage{
+  barplot_package_users_per_day(pkg_name, dataset,
+    remove_dups = TRUE, ...)
+}
+\arguments{
+  \item{pkg_name}{a string of the package we are interested
+  in checking.}
+
+  \item{dataset}{a dataset output from running
+  \link{read_RStudio_CRAN_data}.}
+
+  \item{remove_dups}{default is TRUE. Should the duplicate
+  user ids (based on their ips) be removed.  If TRUE, then
+  the plot is the number of unique users who have
+  downloaded our package everyday.}
+
+  \item{...}{not in use.}
+}
+\value{
+  Returns the total number of downloads of the package for
+  that time period.
+}
+\description{
+  This function is a first template for creating a barplot
+  of the number of downloads a package had in a time
+  period. This function is based on some other functions,
+  have a look at the example for more details.
+}
+\details{
+  RStudio maintains its own CRAN mirror,
+  \url{http://cran.rstudio.com} and offers its log files.
+}
+\examples{
+\dontrun{
+# The first two functions might take a good deal of time to run (depending on the date range)
+RStudio_CRAN_data_folder <- download_RStudio_CRAN_data(START = '2013-04-02', END = '2013-04-05') # around the time R 3.0.0 was released
+my_RStudio_CRAN_data <- read_RStudio_CRAN_data(RStudio_CRAN_data_folder)
+
+# barplots: (more functions can easily be added in the future)
+barplot_package_users_per_day("installr", my_RStudio_CRAN_data)
+barplot_package_users_per_day("plyr", my_RStudio_CRAN_data)
+}
+}
+\seealso{
+  \link{download_RStudio_CRAN_data},
+  \link{read_RStudio_CRAN_data},\link{barplot_package_users_per_day}
+}
+

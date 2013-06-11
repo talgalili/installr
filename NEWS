@@ -1,3 +1,16 @@
+installr 0.9.5 (2013-06-11)
+---------------------------
+
+NEW FUNCTIONS ADDED:
+   * download_RStudio_CRAN_data
+   * read_RStudio_CRAN_data
+   * barplot_package_users_per_day
+
+OTHER NOTES:
+   * RStudio_CRAN_data.r file created
+
+
+
 installr 0.9.4 (2013-05-21)
 ---------------------------
 
