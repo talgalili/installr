@@ -2,19 +2,27 @@
 \alias{download_RStudio_CRAN_data}
 \title{Download RStudio CRAN mirror data files into a folder}
 \usage{
-  download_RStudio_CRAN_data(START = "2013-04-02",
-    END = "2013-04-20", log_folder = tempdir(), ...)
+  download_RStudio_CRAN_data(START = as.Date(Sys.time()) - 5,
+    END = as.Date(Sys.time()), log_folder = tempdir(),
+    trunc_END_date_to_today = TRUE, ...)
 }
 \arguments{
-  \item{START}{A character string of the START date for
-  files to be downloaded. The date format is "YYYY-MM-DD".}
+  \item{START}{the defaults is 5 days before today. A
+  character string of the START date for files to be
+  downloaded. The date format is "YYYY-MM-DD".}
 
-  \item{END}{A character string of the END date for files
-  to be downloaded. The date format is "YYYY-MM-DD".}
+  \item{END}{the defaults is today. A character string of
+  the END date for files to be downloaded. The date format
+  is "YYYY-MM-DD".}
 
   \item{log_folder}{the folder into which we would like the
   files to be downloaded to. Default is the temporary
   folder picked by \link{tempdir}.}
+
+  \item{trunc_END_date_to_today}{default is TRUE. Makes
+  sure that if END date is later then today, the END date
+  will be change to today (since otherwise, we will only
+  get many 404 errors)}
 
   \item{...}{not in use.}
 }
@@ -34,6 +42,7 @@
 \dontrun{
 # The first two functions might take a good deal of time to run (depending on the date range)
 RStudio_CRAN_data_folder <- download_RStudio_CRAN_data(START = '2013-04-02', END = '2013-04-05') # around the time R 3.0.0 was released
+# RStudio_CRAN_data_folder <- download_RStudio_CRAN_data()
 my_RStudio_CRAN_data <- read_RStudio_CRAN_data(RStudio_CRAN_data_folder)
 
 # barplots: (more functions can easily be added in the future)
