@@ -156,8 +156,8 @@ format_RStudio_CRAN_data <- function(dataset, ...) {
    is_data_table_loaded <- require2(data.table)
    if(!is_data_table_loaded) stop("The 'data.table' package MUST be installed/loaded in order for this function to work.")
    
-   if(!("data.table" %in% class(dataset))) {
-      dataset <- as.data.table(dataset)
+   if(("data.table" %in% class(dataset))) {
+      dataset <- as.data.frame(dataset)
    }
 
    # add some keys and define variable types
@@ -174,6 +174,7 @@ format_RStudio_CRAN_data <- function(dataset, ...) {
 #    dataset[, weekday:=weekdays(dataset$date)]
 #    dataset[, week:=strftime(as.POSIXlt(dataset$date),format="%Y-%W")]
    
+   dataset <- as.data.table(dataset)
    setkey(dataset, package, date, week, country)  
    
    return(dataset)
@@ -270,7 +271,7 @@ lineplot_package_downloads <- function(pkg_names, dataset, by_time = c("date", "
    # plot 1: Compare downloads of selected packages on a weekly basis
 #    agg1 <- dataset[J(pkg_names), length(unique(dataset$ip_id)), by=c(by_time, "package")]
    
-   agg1 <- ddply(dataset[J(pkg_names)], .(time= get(by_time), package), function(xx) {c(V1 = length(unique(xx$ip_id)))})
+   agg1 <- ddply(dataset[dataset$package %in% pkg_names,], .(time= get(by_time), package), function(xx) {c(V1 = length(unique(xx$ip_id)))})
    
 #    suppressWarnings(colnames(agg1)[1] <- "time")   
    o <- ggplot(agg1, aes(x=time, y=V1, color=package, group=package)) + geom_line() + ylab("Downloads") + theme_bw() + theme(axis.text.x  = element_text(angle=90, size=8, vjust=0.5))   
