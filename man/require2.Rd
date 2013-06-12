@@ -5,7 +5,8 @@
   require2(package, ask = TRUE, ...)
 }
 \arguments{
-  \item{package}{A character of the name of a package.}
+  \item{package}{A character of the name of a package (can
+  also be without quotes).}
 
   \item{ask}{Should the user be asked to install the
   require packaged, in case it is missing? (default is
@@ -28,7 +29,7 @@
 \dontrun{
 a= require2("devtools")
 a
-a= require2("geonames")
+a= require2(geonames)
 a
 }
 }

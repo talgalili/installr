@@ -1067,7 +1067,7 @@ source.https <- function(URL,..., remove_r_file = T) {
 #' @export
 #' @description  require2 load add-on packages by passing it to \link{require}.  However, if the package is not available on the system, it will first install it (through \link{install.packages}), and only then try to load it again.
 #' 
-#' @param package A character of the name of a package.
+#' @param package A character of the name of a package (can also be without quotes).
 #' @param ask Should the user be asked to install the require packaged, in case it is missing? (default is TRUE)
 #' @param ... not used
 #' 
@@ -1076,10 +1076,11 @@ source.https <- function(URL,..., remove_r_file = T) {
 #' \dontrun{
 #' a= require2("devtools")
 #' a
-#' a= require2("geonames")
+#' a= require2(geonames)
 #' a
 #' }
 require2 <- function(package, ask= TRUE, ...) {
+   package <- as.character(substitute(package))
    if(!suppressWarnings(require(package=package, character.only = TRUE))) {
       install_package <- ask.user.yn.question(paste("Package ",package, " is not installed. Should it be installed?"))
       if(install_package) install.packages(pkgs=package)
