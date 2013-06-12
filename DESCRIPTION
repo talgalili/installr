@@ -3,7 +3,7 @@ Type: Package
 Title: Functions for updating and installing a new version of R and other
     software - from R
 Version: 0.9.5
-Date: 2013-06-11
+Date: 2013-06-12
 Author: Tal Galili
 Maintainer: Tal Galili <tal.galili@gmail.com>
 Description: The 'installr' package aims at making the process of updating R on
@@ -27,7 +27,10 @@ Suggests:
     XML,
     devtools,
     tools,
-    rjson
+    rjson,
+    data.table,
+    plyr,
+    ggplot2
 License: GPL-2
 Collate:
     'create.global.library.r'

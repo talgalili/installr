@@ -68,12 +68,17 @@ download_RStudio_CRAN_data <- function(START = as.Date(Sys.time())-5, END = as.D
 #' @description 
 #' This function reads files downloaded from the downlaod page (\url{http://cran-logs.rstudio.com/}).
 #' 
+#' This function relies on data.table to run faster.
 #' WARNING: this function can be quite slow...
 #' @details
 #' RStudio maintains its own CRAN mirror, \url{http://cran.rstudio.com} and offers its log files.
 #' @param log_folder the folder which contains the RStudio CRAN log files that were downloaded to. Default is the temporary folder picked by \link{tempdir}.
+#' @param use_data_table default is TRUE. A switch for wether or not to use thte data.table pacakge
+#' in order to merge the log files using rbindlist. This function is MUCH faster then the alternative.
 #' @param ... not in use.
+#' @author Felix Schonbrodt, Tal Galili
 #' @return Returns the combined data file.
+#' @source \url{http://www.nicebread.de/finally-tracking-cran-packages-downloads/}
 #' @seealso \link{download_RStudio_CRAN_data}, \link{read_RStudio_CRAN_data},\link{barplot_package_users_per_day}
 #' @examples
 #' \dontrun{
@@ -85,19 +90,90 @@ download_RStudio_CRAN_data <- function(START = as.Date(Sys.time())-5, END = as.D
 #' barplot_package_users_per_day("installr", my_RStudio_CRAN_data)
 #' barplot_package_users_per_day("plyr", my_RStudio_CRAN_data)
 #' }
-read_RStudio_CRAN_data <- function(log_folder = tempdir(),...) {
+read_RStudio_CRAN_data <- function(log_folder = tempdir(), use_data_table = TRUE, ...) {
    file_list <- file.path(log_folder, list.files(log_folder))
    file_list <- file_list [ grep("[0-9]+-[0-9]+-[0-9]+.csv.gz", file_list)] # include only the relevant type of files, such as: "2013-04-02.csv.gz"  
+
+   # removes empty files
+   file_list_info <- file.info(file_list)
+#    colnames(file_list_info)
+   ss_non_0_files <- file_list_info$size > 0 
+   file_list <- file_list[ss_non_0_files]      
+   # this version is slower   
    
-   dataset <- do.call("rbind",lapply(file_list,
-                                     FUN=function(files){read.table(files,
-                                                                    header=TRUE, sep=",", stringsAsFactors = FALSE, check.names = FALSE)}))
+   # read files
+   logs <- list()
+   for (file in file_list) {
+      print(paste("Reading", file, "..."))
+      logs[[file]] <- read.table(file, header = TRUE, sep = ",", quote = "\"",
+                                 dec = ".", fill = TRUE, stringsAsFactors = FALSE,
+                                 comment.char = "", as.is=TRUE)
+   }
+
+   
+   # rbind the files.
+   if(use_data_table) is_data_table_loaded <- require2(data.table)
+   if(use_data_table & is_data_table_loaded) {
+      dataset <- rbindlist(logs) # MUCH faster...
+   } else {
+      dataset <- do.call("rbind",logs)
+   }
+   
    return(dataset)
 }
 
 
 
-# system.time(my_RStudio_CRAN_data <- read_RStudio_CRAN_data(RStudio_CRAN_data_folder))
+#' @title Format the RStudio CRAN mirror data into the data.table format
+#' @export
+#' @description 
+#' This function makes sure the the RStudio CRAN mirror data object has correct 
+#' classes for the columns date, package, country. It also adds the columns weekday and week. Lastly, it also sets a key.
+#' 
+#' @details
+#' RStudio maintains its own CRAN mirror, \url{http://cran.rstudio.com} and offers its log files.
+#' @param dataset the RStudio CRAN mirror data object
+#' @param ... not in use.
+#' @author Felix Schonbrodt, Tal Galili
+#' @return Returns the re-formated data object.
+#' @source \url{http://www.nicebread.de/finally-tracking-cran-packages-downloads/}
+#' @seealso \link{download_RStudio_CRAN_data}, \link{read_RStudio_CRAN_data},\link{barplot_package_users_per_day}
+#' @examples
+#' \dontrun{
+#' # The first two functions might take a good deal of time to run (depending on the date range)
+#' RStudio_CRAN_data_folder <- download_RStudio_CRAN_data(START = '2013-04-02', END = '2013-04-05') # around the time R 3.0.0 was released
+#' my_RStudio_CRAN_data <- read_RStudio_CRAN_data(RStudio_CRAN_data_folder)
+#' my_RStudio_CRAN_data <- format_RStudio_CRAN_data(my_RStudio_CRAN_data)
+#' head(my_RStudio_CRAN_data)
+#' lineplot_package_downloads(pkg_names = c("ggplot2", "reshape", "plyr", "installr"), dataset = my_RStudio_CRAN_data)
+#' 
+#' # older plots:
+#' # barplots: (more functions can easily be added in the future)
+#' barplot_package_users_per_day("installr", my_RStudio_CRAN_data)
+#' barplot_package_users_per_day("plyr", my_RStudio_CRAN_data)
+#' }
+format_RStudio_CRAN_data <- function(dataset, ...) {
+   is_data_table_loaded <- require2(data.table)
+   if(!is_data_table_loaded) stop("The 'data.table' package MUST be installed/loaded in order for this function to work.")
+   
+   if(!("data.table" %in% class(dataset))) {
+      dataset <- as.data.table(dataset)
+   }
+   
+   # add some keys and define variable types
+   dataset[, date:=as.Date(date)]
+   dataset[, package:=factor(package)]
+   dataset[, country:=factor(country)]
+   dataset[, weekday:=weekdays(date)]
+   dataset[, week:=strftime(as.POSIXlt(date),format="%Y-%W")]
+   
+   setkey(dataset, package, date, week, country)  
+   
+   return(dataset)
+}
+
+
+
 
 
 
@@ -120,7 +196,11 @@ read_RStudio_CRAN_data <- function(log_folder = tempdir(),...) {
 #' # The first two functions might take a good deal of time to run (depending on the date range)
 #' RStudio_CRAN_data_folder <- download_RStudio_CRAN_data(START = '2013-04-02', END = '2013-04-05') # around the time R 3.0.0 was released
 #' my_RStudio_CRAN_data <- read_RStudio_CRAN_data(RStudio_CRAN_data_folder)
+#' my_RStudio_CRAN_data <- format_RStudio_CRAN_data(my_RStudio_CRAN_data)
+#' head(my_RStudio_CRAN_data)
+#' lineplot_package_downloads(pkg_names = c("ggplot2", "reshape", "plyr", "installr"), dataset = my_RStudio_CRAN_data)
 #' 
+#' # older plots:
 #' # barplots: (more functions can easily be added in the future)
 #' barplot_package_users_per_day("installr", my_RStudio_CRAN_data)
 #' barplot_package_users_per_day("plyr", my_RStudio_CRAN_data)
@@ -145,4 +225,51 @@ barplot_package_users_per_day <- function(pkg_name, dataset, remove_dups = TRUE,
    return(list(total_installations = sum(installation_per_day$times) )) # return the total number of installations
 }
 
+
+
+
+
+#' @title barplot for the number of users installation of a package
+#' @export
+#' @description 
+#' This function gets a vector of package names, and returns a line plot of 
+#' number of downloads for these packages per week.
+#' @details
+#' RStudio maintains its own CRAN mirror, \url{http://cran.rstudio.com} and offers its log files.
+#' @param pkg_names a character vector of packages we are interested in checking.
+#' @param dataset a dataset output from running \link{read_RStudio_CRAN_data}, after going through \link{format_RStudio_CRAN_data}.
+#' @param by_time by what time frame should packages be plotted? defaults to "date", but can also be "week"
+#' @param ... not in use.
+#' @author Felix Schonbrodt, Tal Galili
+#' @return invisible aggregated data that was used for the plot
+#' @source \url{http://www.nicebread.de/finally-tracking-cran-packages-downloads/}
+#' @seealso \link{download_RStudio_CRAN_data}, \link{read_RStudio_CRAN_data},\link{barplot_package_users_per_day}
+#' @examples
+#' \dontrun{
+#' # The first two functions might take a good deal of time to run (depending on the date range)
+#' RStudio_CRAN_data_folder <- download_RStudio_CRAN_data(START = '2013-04-02', END = '2013-04-05') # around the time R 3.0.0 was released
+#' my_RStudio_CRAN_data <- read_RStudio_CRAN_data(RStudio_CRAN_data_folder)
+#' my_RStudio_CRAN_data <- format_RStudio_CRAN_data(my_RStudio_CRAN_data)
+#' head(my_RStudio_CRAN_data)
+#' lineplot_package_downloads(pkg_names = c("ggplot2", "reshape", "plyr", "installr"), dataset = my_RStudio_CRAN_data)
+#' 
+#' # older plots:
+#' # barplots: (more functions can easily be added in the future)
+#' barplot_package_users_per_day("installr", my_RStudio_CRAN_data)
+#' barplot_package_users_per_day("plyr", my_RStudio_CRAN_data)
+#' }
+lineplot_package_downloads <- function(pkg_names, dataset, by_time = c("date", "week"), ...) {   
+   require2(ggplot2)
+   require2(plyr)
+   
+   by_time <- by_time[1]
+   
+   # plot 1: Compare downloads of selected packages on a weekly basis
+   agg1 <- dataset[J(pkg_names), length(unique(ip_id)), by=c(by_time, "package")]
+   suppressWarnings(colnames(agg1)[1] <- "time")   
+   o <- ggplot(agg1, aes(x=time, y=V1, color=package, group=package)) + geom_line() + ylab("Downloads") + theme_bw() + theme(axis.text.x  = element_text(angle=90, size=8, vjust=0.5))   
+   print(o)
+   
+   return(invisible(agg1))
+}
 

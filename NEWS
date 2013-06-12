@@ -1,10 +1,15 @@
-installr 0.9.5 (2013-06-11)
+installr 0.9.5 (2013-06-12)
 ---------------------------
 
 NEW FUNCTIONS ADDED:
    * download_RStudio_CRAN_data
    * read_RStudio_CRAN_data
    * barplot_package_users_per_day
+   * lineplot_package_downloads
+   * format_RStudio_CRAN_data
+
+UPDATED FUNCTIONS:
+   * require2 - the 'package' parameter no longer needs quotes. (just like in the require function)
 
 OTHER NOTES:
    * RStudio_CRAN_data.r file created

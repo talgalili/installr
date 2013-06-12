@@ -1,34 +1,25 @@
-\name{read_RStudio_CRAN_data}
-\alias{read_RStudio_CRAN_data}
-\title{Reads RStudio CRAN mirror data files from a folder}
+\name{format_RStudio_CRAN_data}
+\alias{format_RStudio_CRAN_data}
+\title{Format the RStudio CRAN mirror data into the data.table format}
 \source{
   \url{http://www.nicebread.de/finally-tracking-cran-packages-downloads/}
 }
 \usage{
-  read_RStudio_CRAN_data(log_folder = tempdir(),
-    use_data_table = TRUE, ...)
+  format_RStudio_CRAN_data(dataset, ...)
 }
 \arguments{
-  \item{log_folder}{the folder which contains the RStudio
-  CRAN log files that were downloaded to. Default is the
-  temporary folder picked by \link{tempdir}.}
-
-  \item{use_data_table}{default is TRUE. A switch for
-  wether or not to use thte data.table pacakge in order to
-  merge the log files using rbindlist. This function is
-  MUCH faster then the alternative.}
+  \item{dataset}{the RStudio CRAN mirror data object}
 
   \item{...}{not in use.}
 }
 \value{
-  Returns the combined data file.
+  Returns the re-formated data object.
 }
 \description{
-  This function reads files downloaded from the downlaod
-  page (\url{http://cran-logs.rstudio.com/}).
-
-  This function relies on data.table to run faster.
-  WARNING: this function can be quite slow...
+  This function makes sure the the RStudio CRAN mirror data
+  object has correct classes for the columns date, package,
+  country. It also adds the columns weekday and week.
+  Lastly, it also sets a key.
 }
 \details{
   RStudio maintains its own CRAN mirror,
@@ -39,7 +30,11 @@
 # The first two functions might take a good deal of time to run (depending on the date range)
 RStudio_CRAN_data_folder <- download_RStudio_CRAN_data(START = '2013-04-02', END = '2013-04-05') # around the time R 3.0.0 was released
 my_RStudio_CRAN_data <- read_RStudio_CRAN_data(RStudio_CRAN_data_folder)
+my_RStudio_CRAN_data <- format_RStudio_CRAN_data(my_RStudio_CRAN_data)
+head(my_RStudio_CRAN_data)
+lineplot_package_downloads(pkg_names = c("ggplot2", "reshape", "plyr", "installr"), dataset = my_RStudio_CRAN_data)
 
+# older plots:
 # barplots: (more functions can easily be added in the future)
 barplot_package_users_per_day("installr", my_RStudio_CRAN_data)
 barplot_package_users_per_day("plyr", my_RStudio_CRAN_data)
