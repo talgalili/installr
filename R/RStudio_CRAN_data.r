@@ -159,22 +159,25 @@ format_RStudio_CRAN_data <- function(dataset, ...) {
    if(!("data.table" %in% class(dataset))) {
       dataset <- as.data.table(dataset)
    }
-   
+
    # add some keys and define variable types
-   dataset[, date:=as.Date(date)]
-   dataset[, package:=factor(package)]
-   dataset[, country:=factor(country)]
-   dataset[, weekday:=weekdays(date)]
-   dataset[, week:=strftime(as.POSIXlt(date),format="%Y-%W")]
+   dataset <- within(dataset, {
+      date=as.Date(date)
+      package=factor(package)
+      country=factor(country)
+      weekday=weekdays(date)
+      week=strftime(as.POSIXlt(date),format="%Y-%W")
+   })
+#    dataset[, date:=as.Date(dataset$date)]
+#    dataset[, package:=factor(dataset$package)]
+#    dataset[, country:=factor(dataset$country)]
+#    dataset[, weekday:=weekdays(dataset$date)]
+#    dataset[, week:=strftime(as.POSIXlt(dataset$date),format="%Y-%W")]
    
    setkey(dataset, package, date, week, country)  
    
    return(dataset)
 }
-
-
-
-
 
 
 
@@ -265,11 +268,44 @@ lineplot_package_downloads <- function(pkg_names, dataset, by_time = c("date", "
    by_time <- by_time[1]
    
    # plot 1: Compare downloads of selected packages on a weekly basis
-   agg1 <- dataset[J(pkg_names), length(unique(ip_id)), by=c(by_time, "package")]
-   suppressWarnings(colnames(agg1)[1] <- "time")   
+#    agg1 <- dataset[J(pkg_names), length(unique(dataset$ip_id)), by=c(by_time, "package")]
+   
+   agg1 <- ddply(dataset[J(pkg_names)], .(time= get(by_time), package), function(xx) {c(V1 = length(unique(xx$ip_id)))})
+   
+#    suppressWarnings(colnames(agg1)[1] <- "time")   
    o <- ggplot(agg1, aes(x=time, y=V1, color=package, group=package)) + geom_line() + ylab("Downloads") + theme_bw() + theme(axis.text.x  = element_text(angle=90, size=8, vjust=0.5))   
    print(o)
    
    return(invisible(agg1))
 }
 
+
+
+#' @title Most downloaded packages
+#' @export
+#' @description 
+#' Gives the top "x" most downloaded packages.
+#' @details
+#' RStudio maintains its own CRAN mirror, \url{http://cran.rstudio.com} and offers its log files.
+#' @param dataset a dataset output from running \link{read_RStudio_CRAN_data}, after going through \link{format_RStudio_CRAN_data}.
+#' @param n the number of top packages to show.
+#' @param ... not in use.
+#' @return a table of top packages by downloads (a numeric vector with packages as names)
+#' @source \url{http://www.nicebread.de/finally-tracking-cran-packages-downloads/}
+#' @seealso \link{download_RStudio_CRAN_data}, \link{read_RStudio_CRAN_data},\link{barplot_package_users_per_day}
+#' @examples
+#' \dontrun{
+#' # The first two functions might take a good deal of time to run (depending on the date range)
+#' RStudio_CRAN_data_folder <- download_RStudio_CRAN_data(START = '2013-04-02', END = '2013-04-05') # around the time R 3.0.0 was released
+#' my_RStudio_CRAN_data <- read_RStudio_CRAN_data(RStudio_CRAN_data_folder)
+#' my_RStudio_CRAN_data <- format_RStudio_CRAN_data(my_RStudio_CRAN_data)
+#' head(my_RStudio_CRAN_data)
+#' most_downloaded_packages(my_RStudio_CRAN_data)
+#' 
+#' top_packages <- names(most_downloaded_packages(my_RStudio_CRAN_data))
+#' lineplot_package_downloads(pkg_names = top_packages, dataset = my_RStudio_CRAN_data)
+#' 
+#' }
+most_downloaded_packages <- function(dataset, n = 6L,...) {
+   head(sort(table(dataset$package),decreasing=TRUE), n = n)   
+}

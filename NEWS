@@ -7,6 +7,7 @@ NEW FUNCTIONS ADDED:
    * barplot_package_users_per_day
    * lineplot_package_downloads
    * format_RStudio_CRAN_data
+   * most_downloaded_packages
 
 UPDATED FUNCTIONS:
    * require2 - the 'package' parameter no longer needs quotes. (just like in the require function)
