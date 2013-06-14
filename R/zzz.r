@@ -109,7 +109,7 @@ remove.installr.GUI <- function() {
 
 
 .onLoad <- function(libname, pkgname){
-   if(!is.windows()) warning("The 'installr' package was designed for installing software on Windows. \nIt appears that you are NOT running R on the Windows OS - hence it is not clear if the package has any useful functions to offer you at this point (I'm sorry...).")
+   # if(!is.windows()) warning("The 'installr' package was designed for installing software on Windows. \nIt appears that you are NOT running R on the Windows OS - hence it is not clear if the package has any useful functions to offer you at this point (I'm sorry...).")
    # Thanks for Romain: http://stackoverflow.com/questions/4369334/first-lib-idiom-in-r-packages
    
    # adding and removing menus from the Rgui when loading and detaching the library
