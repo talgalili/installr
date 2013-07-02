@@ -2,7 +2,10 @@
 \alias{is.RStudio}
 \title{Checks if the R session is running within RStudio}
 \usage{
-  is.RStudio()
+  is.RStudio(...)
+}
+\arguments{
+  \item{...}{none are available.}
 }
 \value{
   Returns TRUE/FALSE if the R session is running within

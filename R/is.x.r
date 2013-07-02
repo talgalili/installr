@@ -36,13 +36,14 @@ is.windows <- function(...) unname(Sys.info()["sysname"] == "Windows")
 #' @description Returns TRUE/FALSE if the R session is running within RStudio or not.
 #' @details
 #' This function is used in order to check if a GUI can be added to the session or not.
+#' @param ... none are available.
 #' @return Returns TRUE/FALSE if the R session is running within RStudio or not.
 #' @export
 #' @examples
 #' \dontrun{
 #' is.RStudio() 
 #' }
-is.RStudio <- function() {
+is.RStudio <- function(...) {
    "tools:rstudio"  %in% search()
 }
 
@@ -53,6 +54,7 @@ is.RStudio <- function() {
 #' @description Returns TRUE/FALSE if the R session is running within Rgui or not.
 #' @details
 #' This function is used in order to check if a GUI can be added to the session or not.
+#' @param ... none are available.
 #' @return Returns TRUE/FALSE if the R session is running within Rgui or not.
 #' @export
 #' @seealso \link{is.RStudio}, \link{is.windows}
@@ -60,8 +62,62 @@ is.RStudio <- function() {
 #' \dontrun{
 #' is.Rgui() 
 #' }
-is.Rgui <- function() {
+is.Rgui <- function(...) {
    .Platform$GUI == "Rgui"
 }
 
+
+
+
+
+
+#' @title Checks if an object is empty (e.g: of zero length)
+#' @description 
+#' Checks if an object is empty (e.g: of zero length) and
+#' returns TRUE/FALSE 
+#' @details
+#' Uses identical and avoids any attribute problems by using the fact that it is the 
+#' empty set of that class of object and combine it with an element of that class.
+#' @author James (\url{http://stackoverflow.com/users/269476/james})
+#' @param x an object
+#' @param mode is the object an empty (zero length) 
+#' object of this mode (can be "integer", "numeric", and so on...)
+#' @param ... none are available.
+#' @return Returns TRUE/FALSE if the object is empty or not.
+#' @export
+#' @seealso \link{integer}, \link{identical}
+#' @source \url{http://stackoverflow.com/questions/6451152/how-to-catch-integer0}
+#' @examples
+#' 
+#' is.empty(integer(0)) #TRUE
+#' is.empty(0L)         #FALSE
+#' is.empty(numeric(0)) #TRUE
+#' is.empty(NA) # FALSE 
+#' is.empty(FALSE) # FALSE 
+#' is.empty(NULL) # FALSE (with a warning)
+#' 
+#' a <- which(1:3 == 5)
+#' b <- numeric(0)
+#' is.empty(a)
+#' is.empty(a,"numeric")
+#' is.empty(b)
+#' is.empty(b,"integer")
+#' 
+is.empty <- function(x, mode=NULL,...){
+   
+   if(is.null(x)) {
+      warning("x is NULL")
+      return(FALSE)
+   }
+      
+   if(is.null(mode)) mode <- class(x)
+   identical(vector(mode,1),c(x,vector(class(x),1)))
+}
+
+
+# example(is.empty)
+# is.empty(xxxxxx)
+# fo <- function(x) missing(x)
+# fo(xx) 
+# fo(xxxxxxxxx) 
 

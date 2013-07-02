@@ -2,7 +2,10 @@
 \alias{is.Rgui}
 \title{Checks if the R session is running within Rgui (Windows OS)}
 \usage{
-  is.Rgui()
+  is.Rgui(...)
+}
+\arguments{
+  \item{...}{none are available.}
 }
 \value{
   Returns TRUE/FALSE if the R session is running within

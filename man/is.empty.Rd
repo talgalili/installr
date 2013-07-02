@@ -1,0 +1,51 @@
+\name{is.empty}
+\alias{is.empty}
+\title{Checks if an object is empty (e.g: of zero length)}
+\source{
+  \url{http://stackoverflow.com/questions/6451152/how-to-catch-integer0}
+}
+\usage{
+  is.empty(x, mode = NULL, ...)
+}
+\arguments{
+  \item{x}{an object}
+
+  \item{mode}{is the object an empty (zero length) object
+  of this mode (can be "integer", "numeric", and so on...)}
+
+  \item{...}{none are available.}
+}
+\value{
+  Returns TRUE/FALSE if the object is empty or not.
+}
+\description{
+  Checks if an object is empty (e.g: of zero length) and
+  returns TRUE/FALSE
+}
+\details{
+  Uses identical and avoids any attribute problems by using
+  the fact that it is the empty set of that class of object
+  and combine it with an element of that class.
+}
+\examples{
+is.empty(integer(0)) #TRUE
+is.empty(0L)         #FALSE
+is.empty(numeric(0)) #TRUE
+is.empty(NA) # FALSE
+is.empty(FALSE) # FALSE
+is.empty(NULL) # FALSE (with a warning)
+
+a <- which(1:3 == 5)
+b <- numeric(0)
+is.empty(a)
+is.empty(a,"numeric")
+is.empty(b)
+is.empty(b,"integer")
+}
+\author{
+  James (\url{http://stackoverflow.com/users/269476/james})
+}
+\seealso{
+  \link{integer}, \link{identical}
+}
+
