@@ -2,8 +2,8 @@ Package: installr
 Type: Package
 Title: Functions for updating and installing a new version of R and other
     software - from R
-Version: 0.9.5
-Date: 2013-06-12
+Version: 0.10.0
+Date: 2013-07-02
 Author: Tal Galili
 Maintainer: Tal Galili <tal.galili@gmail.com>
 Description: The 'installr' package aims at making the process of updating R on
@@ -39,4 +39,5 @@ Collate:
     'os.manage.r'
     'geo_functions.r'
     'RStudio_CRAN_data.r'
+    'is.x.r'
     'zzz.r'
