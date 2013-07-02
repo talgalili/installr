@@ -78,6 +78,34 @@ remove.installr.GUI <- function() {
 
 
 
+.onAttach <- function(lib, pkg,...){
+   packageStartupMessage(installrWelcomeMessage())
+}
+
+
+installrWelcomeMessage <- function(){
+   
+   paste("\n",     
+         "Welcome to installr version ", packageDescription("installr")$Version, "\n",
+         "\n",
+         # "Type ?installr to access the overall documentation and\n",
+         # "vignette('installr') for the package vignette.\n",
+         # "You can execute a demo of the package via: demo(installr)\n",
+         "\n",  
+         "More information is available on the installr project web-site:\n",
+         "https://github.com/talgalili/installr/\n",
+         "\n",               
+         "Contact: <tal.galili@gmail.com>\n",
+         "Suggestions and bug-reports can be submitted at: https://github.com/talgalili/installr/issues\n",
+         "\n",
+         "To suppress the this message use:\n",
+         "suppressPackageStartupMessages(library(installr))\n",  
+         sep="")
+}
+
+
+
+
 # For some reason, non of the two seems to work.  This is worth checking at some point.
 # .onUnload <- function(libpath){
 #    remove.installr.GUI()   
