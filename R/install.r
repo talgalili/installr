@@ -950,19 +950,7 @@ install.ffmpeg <- function(...) install.FFmpeg(...)
 #' }
 system.PATH <- function() strsplit(shell("echo %PATH% ", intern= TRUE), ";")[[1]]
 
-#' @title Checks if some .exe is available in on the Windows machine search PATH
-#' @description Checks the existence of an .exe extention in the search path for executable files
-#' @param exe_file a character with the name of the 
-#' @return A boolean vector indication the existence of each program on the system.
-#' @examples
-#' \dontrun{
-#' is.exe.installed(c("zip.exe", "Rgui.exe", "blablabla")) # [1]  TRUE  TRUE FALSE
-#' is.exe.installed("7z") 
-#' }
-is.exe.installed <- function(exe_file) {
-   all_installed_exe <- list.files(system.PATH())
-   exe_file %in% all_installed_exe
-}
+
  
 # ' @title Extends the current path with more possible softwares
 # ' @description Useful for adding new softwares to the current search path
