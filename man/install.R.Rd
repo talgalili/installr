@@ -35,4 +35,7 @@
 install.R()
 }
 }
+\seealso{
+  \link{uninstall.R}, \link{updateR}, \link{shell}
+}
 

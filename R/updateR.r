@@ -203,6 +203,7 @@ browse.latest.R.NEWS <- function(
 
 
 #' @title Downloads and installs the latest R version
+#' @export
 #' @description Fetches the latest (not development!) R version
 #' @details
 #' If you are not sure if you need to update R or not, you are 
@@ -212,7 +213,7 @@ browse.latest.R.NEWS <- function(
 #' @param to_checkMD5sums Should we check that the new R installation has the files we expect it to (by checking the MD5 sums)? default is TRUE.  It assumes that the R which was isntalled is the latest R version.
 #' @param ... extra parameters to pass to \link{install.URL}
 #' @return TRUE/FALSE - was the installation of R successful or not.
-#' @export
+#' @seealso \link{uninstall.R}, \link{updateR}, \link{shell}
 #' @examples
 #' \dontrun{
 #' install.R() 
@@ -551,7 +552,8 @@ copy.packages.between.libraries <- function(from, to, ask =FALSE,keep_old = TRUE
 #' @param to_checkMD5sums Should we check that the new R installation has the files we expect it to (by checking the MD5 sums)? default is TRUE.  It assumes that the R which was isntalled is the latest R version. parameter is passed to install.R()
 #' @param ... Other arguments (this is currently not used in any way)
 #' @return a TRUE/FALSE value on whether or not R was updated.
-#' @seealso \link{check.for.updates.R}, \link{install.R}, \link{copy.packages.between.libraries}, 
+#' @seealso \link{check.for.updates.R}, \link{install.R}, 
+#' \link{copy.packages.between.libraries}, \link{uninstall.R}
 #' @examples
 #' \dontrun{
 #' updateR(T, T, T, T, T, T, T) 
@@ -646,7 +648,7 @@ updateR <- function(browse_news, install_R, copy_packages, keep_old_packages,  u
 #' default is empty - resulting in a prompt massage asking the user what to do.
 #' @param use_GUI If asking the user which R version to uninstall, should the GUI be used? (default is TRUE) 
 #' @return the output of \link{shell} running the uninstaller
-#' @seealso \link{install.R}, \link{update.R}, \link{shell}
+#' @seealso \link{install.R}, \link{updateR}, \link{shell}
 #' @examples
 #' \dontrun{
 #' uninstall.R() # choose an R version to uninstall

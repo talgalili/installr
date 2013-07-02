@@ -1,6 +1,6 @@
 \name{uninstall.R}
-\alias{uninstall.r}
 \alias{uninstall.R}
+\alias{uninstall.r}
 \title{Uninstall an R version}
 \usage{
   uninstall.R(r_version, use_GUI = TRUE)
@@ -33,6 +33,6 @@ uninstall.R("10.10.0") # would pop up the menu options (until R 10.10.0 will be 
 }
 }
 \seealso{
-  \link{install.R}, \link{update.R}, \link{shell}
+  \link{install.R}, \link{updateR}, \link{shell}
 }
 

@@ -1,6 +1,6 @@
 \name{install.FFmpeg}
-\alias{install.ffmpeg}
 \alias{install.FFmpeg}
+\alias{install.ffmpeg}
 \title{Downloads and installs FFmpeg for windows}
 \usage{
   install.FFmpeg(page_with_download_url = "http://ffmpeg.zeranoe.com/builds/",

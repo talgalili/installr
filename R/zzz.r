@@ -86,7 +86,7 @@ remove.installr.GUI <- function() {
 installrWelcomeMessage <- function(){
    
    paste("\n",     
-         "Welcome to installr version ", packageDescription("installr")$Version, "\n",
+         "Welcome to installr version ", utils:::packageDescription("installr")$Version, "\n",
          "\n",
          # "Type ?installr to access the overall documentation and\n",
          # "vignette('installr') for the package vignette.\n",

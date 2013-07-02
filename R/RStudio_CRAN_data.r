@@ -263,15 +263,21 @@ barplot_package_users_per_day <- function(pkg_name, dataset, remove_dups = TRUE,
 #' barplot_package_users_per_day("plyr", my_RStudio_CRAN_data)
 #' }
 lineplot_package_downloads <- function(pkg_names, dataset, by_time = c("date", "week"), ...) {   
-   require2(ggplot2)
-   require2(plyr)
+   require2("ggplot2")
+   require2("plyr")
    
    by_time <- by_time[1]
    
    # plot 1: Compare downloads of selected packages on a weekly basis
 #    agg1 <- dataset[J(pkg_names), length(unique(dataset$ip_id)), by=c(by_time, "package")]
    
-   agg1 <- ddply(dataset[dataset$package %in% pkg_names,], .(time= get(by_time), package), function(xx) {c(V1 = length(unique(xx$ip_id)))})
+   #-----
+   # only added in order to avoid the "note" in the check before uploading to CRAN...
+   V1 <- NA 
+   package <- NA
+   #-----
+   
+   agg1 <- ddply(dataset[dataset$"package" %in% pkg_names,], .(time= get(by_time), package), function(xx) {c(V1 = length(unique(xx$ip_id)))})
    
 #    suppressWarnings(colnames(agg1)[1] <- "time")   
    o <- ggplot(agg1, aes(x=time, y=V1, color=package, group=package)) + geom_line() + ylab("Downloads") + theme_bw() + theme(axis.text.x  = element_text(angle=90, size=8, vjust=0.5))   
