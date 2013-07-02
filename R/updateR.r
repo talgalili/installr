@@ -634,12 +634,54 @@ updateR <- function(browse_news, install_R, copy_packages, keep_old_packages,  u
 
 
 
-uninstall.R <- function() {
+#' @title Uninstall an R version
+#' @export
+#' @aliases uninstall.r
+#' @description 
+#' Choose an R version to uninstall via a menubar. 
+#' By default, the function allows the user to pick an R version to uninstall from a list.
+#' Also, the function can be called with using "r_version", where multiple R versions can be supplied
+#' and all will be uninstalled.
+#' @param r_version a character vector for R versions to uninstall (the format is of the style: "2.15.3"). 
+#' default is empty - resulting in a prompt massage asking the user what to do.
+#' @param use_GUI If asking the user which R version to uninstall, should the GUI be used? (default is TRUE) 
+#' @return the output of \link{shell} running the uninstaller
+#' @seealso \link{install.R}, \link{update.R}, \link{shell}
+#' @examples
+#' \dontrun{
+#' uninstall.R() # choose an R version to uninstall
+#' uninstall.R("2.15.3") # will uninstall R 2.15.3
+#' uninstall.R(c("2.15.3", "2.14.0")) # will uninstall two R versions (if both exists)
+#' uninstall.R("10.10.0") # would pop up the menu options (until R 10.10.0 will be released :D )
+#' }
+uninstall.R <- function(r_version, use_GUI = TRUE) {
    # notice that running the uninstall of R does not remove the old library folder!
+   
+   # get R folders
+   R_folders <- get.installed.R.folders()
+   choices <- names(R_folders)   
+   
+   #which R version to uninstall?
+   if(!missing(r_version)) the_answer <- which(choices %in% r_version)   
+   
+   if(missing(r_version) || is.empty(the_answer)) {
+            # note: the double | (||) is essential if r_version is missing - 
+            #        then the_answer would not be created...
+      the_answer <- menu(choices, graphics = use_GUI, title = "Which R version would you like to UN-install?")            
+   }
+   
+   # uninstall R!
+   for(i in seq_along(the_answer)) {
+      exe_path <- file.path(R_folders[the_answer[i]], "unins000.exe")
+      shell(exe_path, wait = F) # start new R gui.  The wait =F makes sure we will be able to close R afterwords.
+   }
 }
 
 
 
+
+#' @export
+uninstall.r <- function(...) uninstall.R(...)
 
 
 
