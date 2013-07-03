@@ -5,6 +5,9 @@ NEW FUNCTIONS ADDED:
    * uninstall.R
    * is.empty - function added for checking if an object is empty (e.g: of zero length)
 
+UPDATED FUNCTIONS:
+   * check.for.updates.R - added a date for the latest R version in the window prompt.
+
 OTHER NOTES:
    * Moving to the versioning scheme suggested by Yihui (see: http://yihui.name/en/2013/06/r-package-versioning/)
    * is.x.r file created - moving various "is.*" functions to this file.

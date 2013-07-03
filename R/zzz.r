@@ -91,15 +91,15 @@ installrWelcomeMessage <- function(){
          # "Type ?installr to access the overall documentation and\n",
          # "vignette('installr') for the package vignette.\n",
          # "You can execute a demo of the package via: demo(installr)\n",
-         "\n",  
+         # "\n",  
          "More information is available on the installr project web-site:\n",
          "https://github.com/talgalili/installr/\n",
          "\n",               
          "Contact: <tal.galili@gmail.com>\n",
          "Suggestions and bug-reports can be submitted at: https://github.com/talgalili/installr/issues\n",
          "\n",
-         "To suppress the this message use:\n",
-         "suppressPackageStartupMessages(library(installr))\n",  
+         "\t\t\tTo suppress the this message use:\n",
+         "\t\t\tsuppressPackageStartupMessages(library(installr))\n",  
          sep="")
 }
 
@@ -124,11 +124,6 @@ installrWelcomeMessage <- function(){
 # 'install.r'
 # 'updateR.r'
 
-# when a function is renamed, its document in man must be removed - otherwise it may cause problems with the built check (it will try to run the code in the example, and will fail.)
-# When all is done, run:
-# require(devtools)
-# build_win()
-# release()
 
 # IMPORTANT NOTICE: this will add Collate to the DESCRIPTION file, and if any new r file is added - it will need to be updated.
 # Collate:
@@ -136,3 +131,9 @@ installrWelcomeMessage <- function(){
 # +    'install.r'
 # +    'updateR.r'
 # +    'zzz.r'
+
+# when a function is renamed, its document in man must be removed - otherwise it may cause problems with the built check (it will try to run the code in the example, and will fail.)
+# When all is done, run:
+# require(devtools)
+# build_win()
+# release()

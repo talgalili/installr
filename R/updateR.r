@@ -142,6 +142,13 @@ check.for.updates.R <- function(notify_user = TRUE,
    latest_R_version  <- regmatches(target_line, m) 
    latest_R_version  <- gsub(pattern="R-|-win" ,"", latest_R_version) # remove junk text
    
+   pat <- "Last change: [0-9.]+-[0-9.]+-[0-9.]+"; 
+   target_line <- grep(pat, page, value = TRUE); 
+   m <- regexpr(pat, target_line); 
+   latest_R_date  <- regmatches(target_line, m) 
+   latest_R_date  <- gsub(pattern="Last change: " ,"", latest_R_date) # remove junk text
+   
+   
    current_R_version <- as.character(getRversion()) # paste(R.version$major, R.version$minor, sep=".")
    
    # Turn the version character into a number
@@ -151,9 +158,10 @@ check.for.updates.R <- function(notify_user = TRUE,
    there_is_a_newer_version <- current_R_version_long < latest_R_version_long # TRUE = there IS a need to update (since the latest version is higher then what we currently have)
    
    if(there_is_a_newer_version) {
-      message_text <-   paste("There is a newer version of R for you to download!\n",
-                              "You are using R version: ", gsub("R version", "", R.version$version.string), "\n",
-                              "And the latest R version is: ", latest_R_version, "\n")      
+      message_text <-   paste("There is a newer version of R for you to download!\n\n",
+                              "You are using R version:    \t", gsub("R version", "", R.version$version.string), "\n",
+                              "And the latest R version is:\t ", latest_R_version, " (",latest_R_date,")", "\n",
+                              sep = "")  
    } else {
       message_text <- paste("No need to update. You are using the latest R version: \n", R.version$version.string)
    }   
@@ -171,7 +179,7 @@ check.for.updates.R <- function(notify_user = TRUE,
    return(there_is_a_newer_version)
 }
 
-
+# check.for.updates.R() 
 
 
 
