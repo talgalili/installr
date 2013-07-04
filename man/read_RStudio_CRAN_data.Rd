@@ -37,7 +37,10 @@
 \examples{
 \dontrun{
 # The first two functions might take a good deal of time to run (depending on the date range)
-RStudio_CRAN_data_folder <- download_RStudio_CRAN_data(START = '2013-04-02', END = '2013-04-05') # around the time R 3.0.0 was released
+RStudio_CRAN_data_folder <-
+      download_RStudio_CRAN_data(START = '2013-04-02',
+                                 END = '2013-04-05')
+                                 # around the time R 3.0.0 was released
 my_RStudio_CRAN_data <- read_RStudio_CRAN_data(RStudio_CRAN_data_folder)
 
 # barplots: (more functions can easily be added in the future)
