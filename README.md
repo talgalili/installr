@@ -64,6 +64,10 @@ You are welcome to:
    * uninstall.R
    * require2 - just like "require", only makes sure to download and install the package in case it is not present on the system (useful for examples...)
    * restart_RGui - a function to restart Rgui from Rgui
+   * check.for.updates.R
+   * install.R
+   * install.Rdevel - usefull for when developing R packages (as this version contains the latest checks.)
+
 
 * Installing software from withing R:
    * install.RStudio() - download and runs the installer for RStudio.

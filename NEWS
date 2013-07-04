@@ -4,6 +4,7 @@ installr 0.10.0 (2013-07-02)
 NEW FUNCTIONS ADDED:
    * uninstall.R
    * is.empty - function added for checking if an object is empty (e.g: of zero length)
+   * install.Rdevel - usefull for when developing R packages (as this version contains the latest checks.)
 
 UPDATED FUNCTIONS:
    * check.for.updates.R - added a date for the latest R version in the window prompt.
@@ -285,3 +286,4 @@ TODO for future releases:
    *  Add control on which mirror to use when running install.R()
    *  allow a user to browse and find the old and new R installation on his system, in case there is a change in file directory from the standard directory structure.
    * consider having a way to deal with R version installed in other folders.
+   * create updateRdevel?

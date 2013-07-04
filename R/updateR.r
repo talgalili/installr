@@ -214,24 +214,30 @@ browse.latest.R.NEWS <- function(
 #' @export
 #' @description Fetches the latest (not development!) R version
 #' @details
-#' If you are not sure if you need to update R or not, you are 
+#' If you are not sure if you need to update R or not, 
 #' It is better to use updateR for updating R, since it includes more options.
 #' But in case you wish to only install R, with no other steps taken (for example, taking care of your old packages), then you can use install.R()
+#' 
+#' See the \link{install.Rdevel} function for installing the latest R-devel version.
 #' @param page_with_download_url URL from which the latest stable version of R can be downloaded from.
+#' @param pat the pattern of R .exe file to download
 #' @param to_checkMD5sums Should we check that the new R installation has the files we expect it to (by checking the MD5 sums)? default is TRUE.  It assumes that the R which was isntalled is the latest R version.
 #' @param ... extra parameters to pass to \link{install.URL}
 #' @return TRUE/FALSE - was the installation of R successful or not.
-#' @seealso \link{uninstall.R}, \link{updateR}, \link{shell}
+#' @seealso \link{uninstall.R}, \link{install.Rdevel}, \link{updateR}, \link{shell}
+#' @references \url{http://cran.rstudio.com/bin/windows/base/}
 #' @examples
 #' \dontrun{
 #' install.R() 
 #' }
-install.R <- function(page_with_download_url = "http://cran.rstudio.com/bin/windows/base/", to_checkMD5sums = TRUE,...) {
+install.R <- function(page_with_download_url = "http://cran.rstudio.com/bin/windows/base/", 
+                      pat = "R-[0-9.]+-win.exe",
+                      to_checkMD5sums = TRUE,...) {
    # I'm using the rsudio cran since it redirects to other servers wourld wide.
    # here there is a question on how to do it with the different mirrors. (maybe to add it as an option?)
    # this might be a good time for the "find the best mirror" function.   
    page   <- readLines(page_with_download_url, warn = FALSE)
-   pat <- "R-[0-9.]+-win.exe"; 
+   ### pat <- "R-[0-9.]+-win.exe"; # moved to the function's parameters list.
    target_line <- grep(pat, page, value = TRUE); 
    m <- regexpr(pat, target_line); 
    exe_filename   <- regmatches(target_line, m) 
@@ -258,6 +264,34 @@ install.R <- function(page_with_download_url = "http://cran.rstudio.com/bin/wind
    # R.version$minor 
    # R.version$version.string
 }
+
+
+
+
+
+
+
+#' @title Downloads and installs the latest Rdevel version
+#' @export
+#' @description Fetches the latest (development!) R version
+#' @details
+#' This is a development version of R. It likely contains bugs, 
+#' so be careful if you use it. Please don't report bugs in this version through the usual 
+#' R bug reporting system, please report them on the r-devel mailing list
+#' ---but only if they persist for a few days.
+#' @param exe_URL A character with a link to an installer file (with the .exe file extension)
+#' @param ... extra parameters to pass to \link{install.URL}
+#' @return TRUE/FALSE - was the installation of R successful or not.
+#' @seealso \link{install.R}, \link{updateR}
+#' @references \url{http://cran.rstudio.com/bin/windows/base/rdevel.html}
+#' @examples
+#' \dontrun{
+#' install.Rdevel() 
+#' }
+install.Rdevel <- function(exe_URL = "http://cran.rstudio.com/bin/windows/base/R-devel-win.exe", ...) {
+   install.URL(exe_URL)   
+}
+
 
 
 
