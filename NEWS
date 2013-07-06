@@ -1,3 +1,13 @@
+installr 0.10.2 (2013-07-06)
+---------------------------
+
+UPDATED FUNCTIONS:
+   * updateR - added a test to be sure the new R version was installed in the same relative directory as the old R version (otherwise, the copy-packages function should not work)
+
+OTHER NOTES:
+   * Updating the docs a bit (description).
+
+
 installr 0.10.1 (2013-07-04)
 ---------------------------
 

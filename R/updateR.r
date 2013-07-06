@@ -611,10 +611,13 @@ updateR <- function(browse_news, install_R, copy_packages, keep_old_packages,  u
    # this function checks if we have the latest version of R
    # IF not - it notifies the user - and leaves.
    # If there is a new version - it offers the user to download and install it.   
+
+   old_R_path <- get.installed.R.folders()[1]
+   
    
    there_is_a_newer_version_of_R <- check.for.updates.R(print_R_versions)
    
-   if(!there_is_a_newer_version_of_R) return(F) # if we have the latest version - we might as well stop now...
+   if(!there_is_a_newer_version_of_R) return(FALSE) # if we have the latest version - we might as well stop now...
    
    # else - there_is_a_newer_version_of_R==T
    
@@ -625,13 +628,21 @@ updateR <- function(browse_news, install_R, copy_packages, keep_old_packages,  u
    
    # should we install R?
    if(missing(install_R)) install_R <- ask.user.yn.question("Do you wish to install the latest version of R?", use_GUI = use_GUI)
-   if(!install_R) return(F) # if not - return F
+   if(!install_R) return(FALSE) # if not - return F
    
    # if we got this far, the user wants to install the latest version of R (and his current version is old)
-   cat("Installing the newest version of R, please wait for the installer file to download and run, and be sure to click 'next' as needed...\n")
+   cat("Installing the newest version of R,\n please wait for the installer file to be download and executed.\n Be sure to click 'next' as needed...\n")
    did_R_install <- install.R(to_checkMD5sums = to_checkMD5sums) 
    if(!did_R_install) return(FALSE) 
    new_R_path <- get.installed.R.folders()[1]
+   
+   if(new_R_path==old_R_path) {
+      cat("
+We can not seem to find the location if the new R you have installed.
+The rest of the updating process is aborted, please take care to copy
+your packages to the new R installation.")
+      return(TRUE)
+   }
    
    if(missing(copy_packages)) copy_packages <- ask.user.yn.question("Do you wish to copy your packages from the older version of R to the newer version of R?")
    
