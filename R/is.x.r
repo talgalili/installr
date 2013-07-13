@@ -63,7 +63,7 @@ is.RStudio <- function(...) {
 #' is.Rgui() 
 #' }
 is.Rgui <- function(...) {
-   .Platform$GUI == "Rgui"
+   .Platform$GUI == "Rgui" #if running on MAC OS, this would likely be "AQUA"
 }
 
 

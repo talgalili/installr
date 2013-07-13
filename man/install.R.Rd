@@ -45,6 +45,6 @@ install.R()
 }
 \seealso{
   \link{uninstall.R}, \link{install.Rdevel},
-  \link{updateR}, \link{shell}
+  \link{updateR}, \link{system}
 }
 

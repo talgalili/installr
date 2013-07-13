@@ -1,3 +1,22 @@
+installr 0.10.3 (2013-07-13)
+---------------------------
+
+IMPORTANT NOTES:
+   * TODO: this release is a step before 0.11.0 - when mac will be supported.
+
+UPDATED FUNCTIONS:
+   * checkMD5sums2 - added "..."
+   * check.for.updates.R - added a "pat" (pattern) parameter (this function might need more tweaking)
+   * install.URL - moved to using "system" instead of "shell" (purpose - to allow the function to be useful for mac users as well.)
+
+NEW FUNCTIONS ADDED:
+   * up_folder - gets a vector of characters of folder paths, and returns them after turning them into a file.path once their tail was trimmed (through head(n = - 1).
+
+OTHER NOTES:
+   * moved to using "system" instead of "shell" (purpose - to allow the function to be useful for mac users as well.)
+
+
+
 installr 0.10.2 (2013-07-06)
 ---------------------------
 
@@ -304,3 +323,4 @@ TODO for future releases:
    *  allow a user to browse and find the old and new R installation on his system, in case there is a change in file directory from the standard directory structure.
    * consider having a way to deal with R version installed in other folders.
    * create updateRdevel?
+   * install.Rpatch # TODO someday

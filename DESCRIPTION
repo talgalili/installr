@@ -1,8 +1,8 @@
 Package: installr
 Type: Package
 Title: using R to install stuff (such as: R, Rtools RStudio, git, and more!)
-Version: 0.10.2
-Date: 2013-07-06
+Version: 0.10.3
+Date: 2013-07-13
 Author: Tal Galili
 Maintainer: Tal Galili <tal.galili@gmail.com>
 Description: R is great for installing software.  Through the 'installr' 

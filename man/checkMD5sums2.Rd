@@ -2,7 +2,7 @@
 \alias{checkMD5sums2}
 \title{Check and Create MD5 Checksum Files}
 \usage{
-  checkMD5sums2(package, dir, md5file, omit_files)
+  checkMD5sums2(package, dir, md5file, omit_files, ...)
 }
 \arguments{
   \item{package}{the name of an installed package}
@@ -15,6 +15,9 @@
 
   \item{omit_files}{a character vector with the files or
   file diractories to not include in the checksums}
+
+  \item{...}{not used. (but good for future backward
+  compatibility)}
 }
 \value{
   checkMD5sums returns a logical, NA if there is no 'MD5'

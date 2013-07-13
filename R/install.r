@@ -19,6 +19,25 @@ file.name.from.url <- function(URL) tail(strsplit(URL,   "/")[[1]],1)
 
 
 
+#' @title Performs "up-level" on a folder string
+#' @export
+#' @description Gets a character vector of folder strings and
+#'  returns the same vector after removing the end of the folder path.
+#' @param FOLDER a character vector of folders
+#' @param n passed to n in function \link{head}
+#' @param ... not used.
+#' @return The name of the file in the URL
+#' @examples
+#' up_folder(FOLDER = c("D:/R/R-3.0.1", "D:/R/R-3.0.2", "D:/R/R-3.0.3"))
+up_folder <- function(FOLDER, n = -1,...) {
+#    strsplit("a\\b/c",   "/|\\\\")
+   splitted_folders <- lapply(FOLDER, strsplit,   split="/|\\\\")
+   tailed_splitted_folders <- lapply(splitted_folders, function(x) {head(x[[1]], n = n)})
+   sapply(tailed_splitted_folders, paste, collapse = "/")
+}
+
+
+
 #' @title Downloads and installs a ZIP R package Binary (for Windows) from a URL
 #' @description Gets a character with a link to an R package Binary, downloads it, and installs it.
 #' @details
@@ -76,7 +95,7 @@ install.URL <- function(exe_URL, keep_install_file = FALSE, wait = TRUE, ...) {
       wait <- TRUE
       warning("wait was set to TRUE since you wanted to installation file removed. In order to be able to run the installer AND remove the file - we must first wait for the isntaller to finish running before removing the file.")
    }
-   shell_output <- shell(exe_filename, wait = wait,...) # system(exe_filename) # I suspect shell works better than system
+   shell_output <- system(exe_filename, wait = wait,...) # system(exe_filename) # I suspect shell works better than system
    if(!keep_install_file) unlink(exe_filename, force = TRUE) # on.exit(unlink(exe_filename)) # on.exit doesn't work in case of problems in the running of the file
    # unlink can take some time until done, for some reason.
       #    file.remove(exe_filename)

@@ -3,7 +3,8 @@
 \title{Checks if there is a newer version of R}
 \usage{
   check.for.updates.R(notify_user = TRUE, use_GUI = TRUE,
-    page_with_download_url = "http://cran.rstudio.com/bin/windows/base/")
+    page_with_download_url = "http://cran.rstudio.com/bin/windows/base/",
+    pat = "R-[0-9.]+-win")
 }
 \arguments{
   \item{notify_user}{if to print to you (the user) what is
@@ -17,6 +18,9 @@
 
   \item{page_with_download_url}{the URL of the page from
   which R can be downloaded.}
+
+  \item{pat}{pattern to search for when looking for a newer
+  R version}
 }
 \value{
   TRUE/FALSE - if there is a newer version of R to install
