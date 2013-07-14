@@ -12,6 +12,10 @@ UPDATED FUNCTIONS:
 NEW FUNCTIONS ADDED:
    * up_folder - gets a vector of characters of folder paths, and returns them after turning them into a file.path once their tail was trimmed (through head(n = - 1).
 
+
+BUG FIXES:
+   * install.Rtools - now returns FALSE gracefully if the user chooses to abort.
+
 OTHER NOTES:
    * moved to using "system" instead of "shell" (purpose - to allow the function to be useful for mac users as well.)
 

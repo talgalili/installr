@@ -1,6 +1,6 @@
 \name{uninstall.R}
-\alias{uninstall.R}
 \alias{uninstall.r}
+\alias{uninstall.R}
 \title{Uninstall an R version}
 \usage{
   uninstall.R(r_version, use_GUI = TRUE)
@@ -15,7 +15,7 @@
   uninstall, should the GUI be used? (default is TRUE)}
 }
 \value{
-  the output of \link{shell} running the uninstaller
+  the output of \link{system} running the uninstaller
 }
 \description{
   Choose an R version to uninstall via a menubar. By
@@ -33,6 +33,6 @@ uninstall.R("10.10.0") # would pop up the menu options (until R 10.10.0 will be 
 }
 }
 \seealso{
-  \link{install.R}, \link{updateR}, \link{shell}
+  \link{install.R}, \link{updateR}, \link{system}
 }
 

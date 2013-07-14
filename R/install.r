@@ -387,6 +387,8 @@ install.Rtools <- function(choose_version = FALSE,
       choices <- paste(TABLE[,"Download"], " (",TABLE[,2],")", sep = "")      
       ROW_id <- menu(choices, graphics = use_GUI, title = "Which Rtools would you like to download?")      
       
+      if(ROW_id == 0) return(FALSE)
+      
       exe_filename <- TABLE[ROW_id,"Download"] # the version the user asked for
    }      
    
