@@ -23,11 +23,11 @@
 }
 \examples{
 \dontrun{
-is_in_.First_in_Rprofile.site("require(installr)") # FALSE
-add_to_.First_in_Rprofile.site("require(installr)")
-is_in_.First_in_Rprofile.site("require(installr)") # TRUE
-remove_from_.First_in_Rprofile.site("require(installr)")
-is_in_.First_in_Rprofile.site("require(installr)") # FALSE
+is_in_.First_in_Rprofile.site("suppressMessages(require(installr))") # FALSE
+add_to_.First_in_Rprofile.site("suppressMessages(require(installr))")
+is_in_.First_in_Rprofile.site("suppressMessages(require(installr))") # TRUE
+remove_from_.First_in_Rprofile.site("suppressMessages(require(installr))")
+is_in_.First_in_Rprofile.site("suppressMessages(require(installr))") # FALSE
 # this would still leave .First
 }
 }
