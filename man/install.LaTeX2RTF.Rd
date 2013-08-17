@@ -1,6 +1,6 @@
 \name{install.LaTeX2RTF}
-\alias{install.LaTeX2RTF}
 \alias{install.latex2rtf}
+\alias{install.LaTeX2RTF}
 \title{Downloads and installs LaTeX2RTF for windows}
 \usage{
   install.LaTeX2RTF(page_with_download_url = "http://sourceforge.net/projects/latex2rtf/",
