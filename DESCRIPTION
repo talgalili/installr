@@ -1,8 +1,8 @@
 Package: installr
 Type: Package
 Title: using R to install stuff (such as: R, Rtools RStudio, git, and more!)
-Version: 0.10.3
-Date: 2013-07-13
+Version: 0.11.0
+Date: 2013-08-17
 Author: Tal Galili
 Maintainer: Tal Galili <tal.galili@gmail.com>
 Description: R is great for installing software.  Through the 'installr' 
@@ -41,4 +41,5 @@ Collate:
     'geo_functions.r'
     'RStudio_CRAN_data.r'
     'is.x.r'
+    'startup.r'
     'zzz.r'

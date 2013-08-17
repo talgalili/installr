@@ -1,5 +1,61 @@
 
 
+
+#' @title Adds a menu based GUI for updating R within Rgui
+#' @description Adds a menu based GUI for updating R within Rgui.
+#' @details
+#' This function is used during .onLoad to load the menus for the installr package in Rgui.
+#' @author Tal Galili, Dason
+#' @return Returns invisible TRUE/FALSE if menus were added or not.
+#' @references 
+#' My thanks goes to Yihui and Dason, for the idea and help with implementation.  See also: 
+#' \url{http://stackoverflow.com/questions/15250487/how-to-add-a-menu-item-to-rgui/}
+#' @examples
+#' \dontrun{
+#' add.installr.GUI() 
+#' }
+add.installr.GUI <- function() {
+
+   if(is.windows() & is.Rgui() & !is.RStudio()){
+      Update_in_winMenuNames <- "Update" %in% winMenuNames() # I'm making sure this function wasn't used before.  If it was, then running it again might cause bugs...   
+      if(!Update_in_winMenuNames) {
+         winMenuAdd("Update")
+         winMenuAddItem("Update", "Update R", "updateR()")
+         winMenuAddItem("Update", "Update R packages", "update.packages(ask = F)")      
+         winMenuAddItem("Update", "Install software", "installr()")
+         winMenuAddItem("Update", "Manage Windows", "os.manage()")      
+         
+         
+         # add a menu for adding/removing the installr package to startup
+         # based on whether or not it is already setup to run on startup.
+         if(is_in_.First_in_Rprofile.site("require(installr)")) {
+            add_remove_installr_from_startup_menu()
+         } else {
+            add_load_installr_on_startup_menu()   
+         }        
+         
+         
+         return(invisible(TRUE))         
+      } else {
+         warning("Can not add a new menu item for installr since the menu already has 'Update' in it")   
+         return(invisible(FALSE))      
+      }
+   } else {
+      return(invisible(FALSE))      
+   }      
+}
+
+
+
+
+
+
+
+
+
+
+
+
 #' @title Adds a menu based GUI for updating R within Rgui
 #' @description Adds a menu based GUI for updating R within Rgui.
 #' @details

@@ -1,6 +1,22 @@
+installr 0.11.0 (2013-08-17)
+---------------------------
+NEW FEATURES:
+   * Adds a menu-item on startup to allow the automatic loading of installr whenever starting R.
+
+NEW FUNCTIONS ADDED:
+   * add_load_installr_on_startup_menu
+   * add_remove_installr_from_startup_menu
+   * add_to_.First_in_Rprofile.site
+   * is_in_.First_in_Rprofile.site
+   * load_installr_on_startup
+   * remove_from_.First_in_Rprofile.site
+   * rm_installr_from_startup
+
+NEW FILES ADDED:
+   * startup.r
+
 installr 0.10.3 (2013-07-13)
 ---------------------------
-
 IMPORTANT NOTES:
    * TODO: this release is a step before 0.11.0 - when mac will be supported.
 
