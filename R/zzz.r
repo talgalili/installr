@@ -81,7 +81,7 @@ remove.installr.GUI <- function() {
    # Thanks for Romain: http://stackoverflow.com/questions/4369334/first-lib-idiom-in-r-packages
    
    # adding and removing menus from the Rgui when loading and detaching the library
-   setHook(packageEvent("installr", "attach"), {function(pkgname, libpath) {add.installr.GUI()}  } )
+   setHook(packageEvent("installr", "attach"), {function(pkgname, libpath) {tryCatch(add.installr.GUI(), error = function(e) invisible(FALSE))}  } )
    setHook(packageEvent("installr", "detach"), {function(pkgname, libpath) {remove.installr.GUI()}  } )
    
 }
