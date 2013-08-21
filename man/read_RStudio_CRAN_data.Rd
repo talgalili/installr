@@ -14,7 +14,7 @@
   temporary folder picked by \link{tempdir}.}
 
   \item{use_data_table}{default is TRUE. A switch for
-  wether or not to use thte data.table pacakge in order to
+  wether or not to use the data.table package in order to
   merge the log files using rbindlist. This function is
   MUCH faster then the alternative.}
 
