@@ -76,7 +76,7 @@ download_RStudio_CRAN_data <- function(START = as.Date(Sys.time())-5, END = as.D
 #' @details
 #' RStudio maintains its own CRAN mirror, \url{http://cran.rstudio.com} and offers its log files.
 #' @param log_folder the folder which contains the RStudio CRAN log files that were downloaded to. Default is the temporary folder picked by \link{tempdir}.
-#' @param use_data_table default is TRUE. A switch for wether or not to use thte data.table pacakge
+#' @param use_data_table default is TRUE. A switch for wether or not to use the data.table package
 #' in order to merge the log files using rbindlist. This function is MUCH faster then the alternative.
 #' @param ... not in use.
 #' @author Felix Schonbrodt, Tal Galili
@@ -336,4 +336,78 @@ lineplot_package_downloads <- function(pkg_names, dataset, by_time = c("date", "
 #' }
 most_downloaded_packages <- function(dataset, n = 6L,...) {
    head(sort(table(dataset$package),decreasing=TRUE), n = n)   
+}
+
+
+
+#' @title Worldmap colored by the number of downloads for a given package
+#' @export
+#' @description
+#' Plots a worldmap colored by the number of users installation for a given package
+#' @details
+#' RStudio maintains its own CRAN mirror, \url{http://cran.rstudio.com} and offers its log files.
+#' @param pkg_name a character string of the package we are interested in.
+#' @param dataset a dataset output from running \link{read_RStudio_CRAN_data}.
+#' @param remove_dups default is TRUE. Should the duplicate user ids (based on their ips) be removed.
+#' @param ... not in use.
+#' @author Boris Hejblum
+#' @return a ggplot object
+#' @source \url{http://www.nicebread.de/finally-tracking-cran-packages-downloads/}
+#' @seealso \link{download_RStudio_CRAN_data}, \link{read_RStudio_CRAN_data}, \link{barplot_package_users_per_day}, \link{ggplot}
+#' @examples
+#' \dontrun{
+#' # The first two functions might take a good deal of time to run (depending on the date range)
+#' RStudio_CRAN_data_folder <- 
+#'       download_RStudio_CRAN_data(START = '2013-04-02',
+#'                                  END = '2013-04-05') 
+#'                                  # around the time R 3.0.0 was released
+#' my_RStudio_CRAN_data <- read_RStudio_CRAN_data(RStudio_CRAN_data_folder)
+#' head(my_RStudio_CRAN_data)
+#'
+#' wm <- pkgDNLs_worldmapcolor(pkg_name="installr", dataset = my_RStudio_CRAN_data)
+#' wm
+#'
+#' }
+pkgDNLs_worldmapcolor <- function(pkg_name, dataset, remove_dups=TRUE, ...){
+  require2(ggplot2)
+  require2(data.table)
+  require2(sp)
+  
+  data <- dataset[which(dataset$package == pkg_name),]
+  if(remove_dups){
+    data <- data[!duplicated(data$ip_id),]
+  }
+  
+  counts <- cbind.data.frame(table(data$country))
+  names(counts) <- c("country", "count")
+  
+  
+  data(WorldBordersData) #loading the world map definition file
+  # downloaded as a shapefile of the world map from Natural Earth:
+  # http://www.naturalearthdata.com/http//www.naturalearthdata.com/download/110m/cultural/ne_110m_admin_0_countries.zip
+  # and unzip it in the 'shp.file.repos' repository
+  # world<-readShapePoly(fn=paste(shp.file.repos, "ne_110m_admin_0_countries", sep="/"))
+  # ISO_full <- as.character(world@data$iso_a2)
+  # ISO_full[146] <- "SOM"  # The iso identifier for the Republic of Somaliland is missing
+  # ISO_full[89]  <- "KV" # as for the Republic of Kosovo
+  # ISO_full[39]  <- "CYP" # as for Cyprus
+  
+  colcode <- numeric(length(ISO_full))
+  names(colcode) <- ISO_full
+  dnl_places <- names(colcode[which(names(colcode) %in% as.character(counts$country))])
+  rownames(counts) <- counts$country
+  colcode[dnl_places] <- counts[dnl_places, "count"]
+  
+  world@data$id <- rownames(world@data)
+  world.points <- fortify(world, by="id")
+  names(colcode) <- rownames(world@data)
+  world.points$dnls <- colcode[world.points$id]
+  
+  world.map <-  ggplot(data=world.points) +
+    geom_polygon(aes(x = long, y = lat, group=group, fill=dnls), color="black") +
+    coord_equal() + #theme_minimal() +
+    scale_fill_gradientn(colours=c("white", "yellow", "red"), name="Downloads", values=c(0,0.25,1)) +
+    #scale_fill_gradientn(colours=c("white", "#9ECAE1", "#6BAED6", "#2171B5", "#034E7B"), name="Downloads", values=c(0, 0.15, 0.5, 0.75,  1)) 
+    labs(title=paste(pkg_name, " downloads from the '0-Cloud' CRAN mirror by country\nfrom ", min(dataset$date), " to ", max(dataset$date),"\n(Total downloads: ", sum(counts$count), ")", sep=""))
+  world.map
 }
