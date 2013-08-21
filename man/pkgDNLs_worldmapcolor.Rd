@@ -15,8 +15,8 @@
   \item{dataset}{a dataset output from running
   \link{read_RStudio_CRAN_data}.}
 
-  \item{remove_dups}{default is TRUE. Should the duplicate
-  user ids (based on their ips) be removed.}
+  \item{remove_dups}{logical (default is TRUE). Should the
+  duplicate user ids (based on their ips) be removed.}
 
   \item{...}{not in use.}
 }

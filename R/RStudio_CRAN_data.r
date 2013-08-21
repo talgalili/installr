@@ -348,7 +348,7 @@ most_downloaded_packages <- function(dataset, n = 6L,...) {
 #' RStudio maintains its own CRAN mirror, \url{http://cran.rstudio.com} and offers its log files.
 #' @param pkg_name a character string of the package we are interested in.
 #' @param dataset a dataset output from running \link{read_RStudio_CRAN_data}.
-#' @param remove_dups default is TRUE. Should the duplicate user ids (based on their ips) be removed.
+#' @param remove_dups logical (default is TRUE). Should the duplicate user ids (based on their ips) be removed.
 #' @param ... not in use.
 #' @author Boris Hejblum
 #' @return a ggplot object
@@ -409,5 +409,6 @@ pkgDNLs_worldmapcolor <- function(pkg_name, dataset, remove_dups=TRUE, ...){
     scale_fill_gradientn(colours=c("white", "yellow", "red"), name="Downloads", values=c(0,0.25,1)) +
     #scale_fill_gradientn(colours=c("white", "#9ECAE1", "#6BAED6", "#2171B5", "#034E7B"), name="Downloads", values=c(0, 0.15, 0.5, 0.75,  1)) 
     labs(title=paste(pkg_name, " downloads from the '0-Cloud' CRAN mirror by country\nfrom ", min(dataset$date), " to ", max(dataset$date),"\n(Total downloads: ", sum(counts$count), ")", sep=""))
-  world.map
+  
+  return(world.map)
 }
