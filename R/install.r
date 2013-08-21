@@ -1199,3 +1199,144 @@ installr <- function(use_GUI = TRUE, ...) {
 
 
 
+
+
+
+
+
+#' @title Access tag elements from R's Rd file
+#' @export
+#' @description
+#' A function to extract elements from R's help file.
+#' 
+#' It is useful, for example, for going through a package and 
+#' discover who are its authors (useful for me to help me give proper
+#' credit in the DESCRIPTION file).
+#' 
+#' @param package a character string of the package we are interested in.
+#' @param tag a character vector of tag(s) to get from a package's Rd files.
+#' @param ... not in use.
+#' @author Thomas J. Leeper <thosjleeper@gmail.com>
+#' @return a character vector with the tag's contant, and the name of the 
+#' Rd source of the function the tag came from.
+#' @source \url{http://stackoverflow.com/questions/17909081/access-elements-from-rs-rd-file}
+#' @seealso \link{package_authors}
+#' @examples
+#' \dontrun{
+#' fetch_tag_from_Rd("installr", "\\author")
+#' fetch_tag_from_Rd("knitr", "\\author")
+#' fetch_tag_from_Rd("lubridate", "\\author")
+#' 
+#' fetch_tag_from_Rd("installr", "\\source")
+#' 
+#' # get all the authors for this package
+#' unique(unname(fetch_tag_from_Rd("installr", "\\author")))
+#'
+#' fetch_tag_from_Rd("installr", "\\author")
+#' package_authors("installr")
+#' 
+#' }
+fetch_tag_from_Rd <- function(package, tag = "\\author",...){
+   db <- tools::Rd_db(package)
+   tag_content <- lapply(db,function(x) {
+      tags <- tools:::RdTags(x)
+      if(tag %in% tags){
+         # return a crazy list of results
+         #out <- x[which(tmp=="\\author")]
+         # return something a little cleaner
+         out <- paste(unlist(x[which(tags %in% tag)]),collapse="")
+      }
+      else
+         out <- NULL
+      invisible(out)
+   })
+   tag_content <- gsub("\n","",unlist(tag_content)) # further cleanup
+   
+   return(tag_content)
+}
+
+
+
+#' @title Access (and clean) author elements from R's Rd file
+#' @export
+#' @details
+#' List authors for a package from its "author" tag elements from its Rd files.
+#' The function also seperate lists of authors, and cleans the output a bit 
+#' (from spaces at the beginning of the strings).
+#' 
+#' @param package a character string of the package we are interested in.
+#' @param to_strsplit logical (TRUE). Should the authors strings be split
+#' (in cases of a "and" or a comma ",")?
+#' @param split a character scalar to be passed to \link{strsplt} split paramter.
+#' default is c(",|and)
+#' @param to_table logical (FALSE). Should the authors strings be listed in a
+#' table - showing a count of how many .Rd files they were listed in?
+#' If not - a unique list is produced.
+#' @param ... not used.
+#' @return a character vector with a package authors (as extracted from 
+#' the author tag in the .Rd files)
+#' 
+#' @seealso \link{fetch_tag_from_Rd}
+#' 
+#' @references
+#' Useful for updating your DESCRIPTION file:
+#' 
+#' \url{http://cran.r-project.org/doc/manuals/R-exts.html#The-DESCRIPTION-file}
+#' 
+#' @examples
+#' \dontrun{
+#' 
+#' # before:
+#' fetch_tag_from_Rd("installr", "\\author")
+#' # after:
+#' package_authors("installr")
+#' sort(package_authors("installr")) # sorted name list...
+#' 
+#' 
+#' ## From the top R packages list: 
+#' ## http://www.r-statistics.com/2013/06/top-100-r-packages-for-2013-jan-may/
+#' package_authors("plyr")
+#' package_authors("digest")
+#' package_authors("ggplot2")
+#' package_authors("colorspace")
+#' package_authors("stringr") # empty string.
+#' 
+#' package_authors("knitr")
+#' package_authors("MASS")
+#' package_authors("rpart")
+#' package_authors("Rcpp")
+#' 
+#' 
+#' }
+package_authors <- function(package, to_strsplit = TRUE, split=c(",|and"), to_table = FALSE, ...) {
+   authors <- unname(fetch_tag_from_Rd(package, "\\author"))
+   
+   if(length(authors) == 0) {
+      cat("No author tag found for this package.\n")
+      return(invisible(authors))
+   }
+
+   # split multiple authors in the same string:
+   if(to_strsplit) {
+      authors <- unlist(strsplit(authors,split=split))      
+   }
+   
+   # Remove empty spaces from the begining of the strings
+   authors <- gsub("^ *","",authors) 
+   
+   # Remove empty char.
+   ss_empty <- which(nchar(authors)==0)
+   if(length(ss_empty) > 0) {
+      authors <- authors[-ss_empty]   
+   }  
+   
+   if(to_table) {
+      authors <- sort(table(authors))   
+   } else {
+      # Keep unique names
+      authors <- unique(authors)      
+   }   
+
+   return(authors)
+}
+
