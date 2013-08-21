@@ -1,0 +1,57 @@
+\name{pkgDNLs_worldmapcolor}
+\alias{pkgDNLs_worldmapcolor}
+\title{Worldmap colored by the number of downloads for a given package}
+\source{
+  \url{http://www.nicebread.de/finally-tracking-cran-packages-downloads/}
+}
+\usage{
+  pkgDNLs_worldmapcolor(pkg_name, dataset,
+    remove_dups = TRUE, ...)
+}
+\arguments{
+  \item{pkg_name}{a character string of the package we are
+  interested in.}
+
+  \item{dataset}{a dataset output from running
+  \link{read_RStudio_CRAN_data}.}
+
+  \item{remove_dups}{default is TRUE. Should the duplicate
+  user ids (based on their ips) be removed.}
+
+  \item{...}{not in use.}
+}
+\value{
+  a ggplot object
+}
+\description{
+  Plots a worldmap colored by the number of users
+  installation for a given package
+}
+\details{
+  RStudio maintains its own CRAN mirror,
+  \url{http://cran.rstudio.com} and offers its log files.
+}
+\examples{
+\dontrun{
+# The first two functions might take a good deal of time to run (depending on the date range)
+RStudio_CRAN_data_folder <-
+      download_RStudio_CRAN_data(START = '2013-04-02',
+                                 END = '2013-04-05')
+                                 # around the time R 3.0.0 was released
+my_RStudio_CRAN_data <- read_RStudio_CRAN_data(RStudio_CRAN_data_folder)
+head(my_RStudio_CRAN_data)
+
+wm <- pkgDNLs_worldmapcolor(pkg_name="installr", dataset = my_RStudio_CRAN_data)
+wm
+
+}
+}
+\author{
+  Boris Hejblum
+}
+\seealso{
+  \link{download_RStudio_CRAN_data},
+  \link{read_RStudio_CRAN_data},
+  \link{barplot_package_users_per_day}, \link{ggplot}
+}
+
