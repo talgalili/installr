@@ -1,3 +1,14 @@
+installr 0.12.0 (2013-08-21)
+---------------------------
+NEW FUNCTIONS ADDED:
+   * pkgDNLs_worldmapcolor (kindly contributed by Boris Hejblum) - A worldmap colored by the number of downloads for a given package
+   * fetch_tag_from_Rd - A function to extract elements from R's help file.
+   * package_authors - finding all the authors for this (and other) packages.
+
+OTHER NOTES:
+   * Gave credit to other contributers of this package in the DESCRIPTION file (using the fetch_tag_from_Rd function). Contributers' names are sorted alphabetically.
+
+
 installr 0.11.0 (2013-08-17)
 ---------------------------
 NEW FEATURES:
