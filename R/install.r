@@ -14,7 +14,11 @@
 #' url <- "http://cran.r-project.org/bin/windows/base/R-2.15.3-win.exe"
 #' file.name.from.url(url) # returns: "R-2.15.3-win.exe"
 #' }
-file.name.from.url <- function(URL) tail(strsplit(URL,   "/")[[1]],1)
+file.name.from.url <- function(URL) {
+ #  tail(strsplit(URL,   "/")[[1]],1)
+   # corrected to use R's base function thanks to Uwe's remark.
+   basename(URL)
+}
 
 
 
@@ -95,7 +99,11 @@ install.URL <- function(exe_URL, keep_install_file = FALSE, wait = TRUE, ...) {
       wait <- TRUE
       warning("wait was set to TRUE since you wanted to installation file removed. In order to be able to run the installer AND remove the file - we must first wait for the isntaller to finish running before removing the file.")
    }
-   shell_output <- system(exe_filename, wait = wait,...) # system(exe_filename) # I suspect shell works better than system
+   if(is.windows()) {
+      shell_output <- shell(exe_filename, wait = wait,...) # system(exe_filename) # I suspect shell works better than system
+   } else {
+      shell_output <- system(exe_filename, wait = wait,...) # system(exe_filename) # I suspect shell works better than system
+   }   
    if(!keep_install_file) unlink(exe_filename, force = TRUE) # on.exit(unlink(exe_filename)) # on.exit doesn't work in case of problems in the running of the file
    # unlink can take some time until done, for some reason.
       #    file.remove(exe_filename)

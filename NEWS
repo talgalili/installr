@@ -1,3 +1,9 @@
+installr 0.12.1 (2013-08-23)
+---------------------------
+BUG FIXES:
+   * install.URL - didn't work on Windows. It was because "system" did not run .exe, and "shell" was the correct choice to use here.
+
+
 installr 0.12.0 (2013-08-21)
 ---------------------------
 NEW FUNCTIONS ADDED:
