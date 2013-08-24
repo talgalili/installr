@@ -1,6 +1,6 @@
 \name{uninstall.R}
-\alias{uninstall.r}
 \alias{uninstall.R}
+\alias{uninstall.r}
 \title{Uninstall an R version}
 \usage{
   uninstall.R(r_version, use_GUI = TRUE)
