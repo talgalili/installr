@@ -53,7 +53,7 @@ up_folder <- function(FOLDER, n = -1,...) {
 #' @param zip_URL a link to a ZIP R package Binary.
 #' @return Invisible NULL
 #' @export
-#' @seealso \code{\link{install.packages}}
+#' @seealso \code{\link{install.packages}}, \code{\link[R.utils]{installPackages}}
 #' @examples
 #' \dontrun{
 #' install.packages.zip("http://cran.r-project.org/bin/windows/contrib/r-release/devtools_1.1.zip")
