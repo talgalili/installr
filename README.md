@@ -52,12 +52,21 @@ installr() #  user can easily select (via a GUI interface) a software to install
 ## Contact
 
 You are welcome to:
+
 * submit suggestions and bug-reports at: <https://github.com/talgalili/installr/issues>
+
 * send a pull request on: <https://github.com/talgalili/installr/>
+
 * compose a friendly e-mail to: <tal.galili@gmail.com>
 
 
 ## Available functions are:
+
+You can see the most recent changes to the package in the NEWS.md file:
+
+- https://github.com/talgalili/installr/blob/master/NEWS.md
+
+
 
 * R install/update/uninstall related functions:
    * updateR() - serves as a "check for updates" function of R itself.  Running the function will check for a newer version of R than the one currently used.  If one exists, the function will download the most updated R version and run its installer.  Once done, the function will offer to copy (or move) all of the packages from the old R library to the new R library. It will then offer to update the moved packages, offer to open the new Rgui, and lastely, it will quit the old R.

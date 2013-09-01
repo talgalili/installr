@@ -155,5 +155,6 @@ installrWelcomeMessage <- function(){
 # check()
 # check(args="--as-cran")
 #                 Thanks to: http://stackoverflow.com/questions/10017702/r-cmd-check-options-for-more-rigorous-testing-2-15-0
+# file.copy("NEWS", "NEWS.md")
 # build_win()
 # release()
