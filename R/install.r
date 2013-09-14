@@ -1,6 +1,5 @@
 
 
-
 #' @title Extract the file name from some URL
 #' @description Gets a character of link to some file, and returns the name of the file in this link.
 #' @details
@@ -462,7 +461,7 @@ install.git <- function(page_with_download_url="http://git-scm.com/download/win"
 #' download page: \url{http://notepad-plus-plus.org/download/}
 #' @examples
 #' \dontrun{
-#' install.notepadpp() # installs the latest version of git
+#' install.notepadpp() # installs the latest version of Notepad++
 #' }
 install.notepadpp <- function(page_with_download_url="http://notepad-plus-plus.org/download/",...) {
    # "http://git-scm.com/download/win"
@@ -498,7 +497,7 @@ install.notepadpp <- function(page_with_download_url="http://notepad-plus-plus.o
 #' download page: \url{http://sourceforge.net/projects/npptor/}
 #' @examples
 #' \dontrun{
-#' install.npptor() # installs the latest version of npptor
+#' install.npptor() # installs the latest version of NppToR
 #' }
 install.npptor <- function(URL="http://sourceforge.net/projects/npptor/files/npptor%20installer/",...) {
    page_with_download_url <- URL
@@ -536,7 +535,7 @@ install.npptor <- function(URL="http://sourceforge.net/projects/npptor/files/npp
 #' MikTeX download page: \url{http://miktex.org/download}
 #' @examples
 #' \dontrun{
-#' install.MikTeX() # installs the latest version of git
+#' install.MikTeX() # installs the latest version of MikTeX
 #' }
 install.MikTeX  <- function(version, page_with_download_url="http://miktex.org/download",...) {
    if(missing(version)) {
@@ -598,7 +597,7 @@ install.miktex <- function(...) install.MikTeX(...)
 #' } 
 #' @examples
 #' \dontrun{
-#' install.LyX() # installs the latest version of git
+#' install.LyX() # installs the latest version of LyX
 #' }
 install.LyX  <- function(page_with_download_url="http://www.lyx.org/Download", new_installation, ...) {    
 
@@ -654,7 +653,7 @@ install.lyx <- function(...) install.LyX(...)
 #' } 
 #' @examples
 #' \dontrun{
-#' install.RStudio() # installs the latest version of git
+#' install.RStudio() # installs the latest version of RStudio
 #' }
 install.RStudio  <- function(page_with_download_url="http://www.rstudio.com/ide/download/desktop",...) {    
    # get download URL:
@@ -691,7 +690,7 @@ install.rstudio <- function(...) install.RStudio(...)
 #' } 
 #' @examples
 #' \dontrun{
-#' install.ImageMagick() # installs the latest version of git
+#' install.ImageMagick() # installs the latest version of ImageMagick
 #' }
 install.ImageMagick  <- function(URL="http://www.imagemagick.org/script/binary-releases.php",...) {    
    page_with_download_url <- URL
@@ -842,7 +841,7 @@ install.latex2rtf <- function(...) install.LaTeX2RTF(...)
 #' } 
 #' @examples
 #' \dontrun{
-#' install.Cygwin() # installs the latest version of SWFTools
+#' install.Cygwin() # installs the latest version of Cygwin
 #' }
 install.Cygwin  <- function(URL = "http://cygwin.com/setup.exe",...) {    
 #    # get download URL:
@@ -893,7 +892,7 @@ install.cygwin <- function(...) install.Cygwin(...)
 #' } 
 #' @examples
 #' \dontrun{
-#' install.7zip() # installs the latest version of SWFTools
+#' install.7zip() # installs the latest version of 7-Zip
 #' }
 install.7zip  <- function(page_with_download_url="http://www.7-zip.org/download.html",...) {    
    # get download URL:
@@ -1016,7 +1015,7 @@ system.PATH <- function() strsplit(shell("echo %PATH% ", intern= TRUE), ";")[[1]
 #' } 
 #' @examples
 #' \dontrun{
-#' install.GitHub() # installs the latest version of git
+#' install.GitHub() # installs the latest version of GitHub for windows
 #' }
 install.GitHub <- function(URL = "http://github-windows.s3.amazonaws.com/GitHubSetup.exe",...) {
    # https://help.github.com/articles/set-up-git
