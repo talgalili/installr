@@ -78,6 +78,9 @@ download_RStudio_CRAN_data <- function(START = as.Date(Sys.time())-5, END = as.D
 #' @param log_folder the folder which contains the RStudio CRAN log files that were downloaded to. Default is the temporary folder picked by \link{tempdir}.
 #' @param use_data_table default is TRUE. A switch for wether or not to use the data.table package
 #' in order to merge the log files using rbindlist. This function is MUCH faster then the alternative.
+#' @param packages a character vector containing the names of packages for which information is extracted.
+#'        If not specified, all packages are included, but this can cause out-of-memory problems if
+#'        there are many log files.
 #' @param ... not in use.
 #' @author Felix Schonbrodt, Tal Galili
 #' @return Returns the combined data file.
@@ -96,7 +99,7 @@ download_RStudio_CRAN_data <- function(START = as.Date(Sys.time())-5, END = as.D
 #' barplot_package_users_per_day("installr", my_RStudio_CRAN_data)
 #' barplot_package_users_per_day("plyr", my_RStudio_CRAN_data)
 #' }
-read_RStudio_CRAN_data <- function(log_folder = tempdir(), use_data_table = TRUE, ...) {
+read_RStudio_CRAN_data <- function(log_folder = tempdir(), use_data_table = TRUE, packages,  ...) {
    file_list <- file.path(log_folder, list.files(log_folder))
    file_list <- file_list [ grep("[0-9]+-[0-9]+-[0-9]+.csv.gz", file_list)] # include only the relevant type of files, such as: "2013-04-02.csv.gz"  
 
@@ -110,10 +113,12 @@ read_RStudio_CRAN_data <- function(log_folder = tempdir(), use_data_table = TRUE
    # read files
    logs <- list()
    for (file in file_list) {
-      print(paste("Reading", file, "..."))
-      logs[[file]] <- read.table(file, header = TRUE, sep = ",", quote = "\"",
+      cat(paste("Reading", file, "...\n"))
+      logfile <- read.table(file, header = TRUE, sep = ",", quote = "\"",
                                  dec = ".", fill = TRUE, stringsAsFactors = FALSE,
                                  comment.char = "", as.is=TRUE)
+      if (!missing(packages)) logfile <- subset(logfile, package %in% packages)
+      logs[[file]] <- logfile
    }
 
    
