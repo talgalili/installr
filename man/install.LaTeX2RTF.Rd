@@ -3,8 +3,9 @@
 \alias{install.latex2rtf}
 \title{Downloads and installs LaTeX2RTF for windows}
 \usage{
+
   install.LaTeX2RTF(page_with_download_url = "http://sourceforge.net/projects/latex2rtf/",
-    ...)
+  ...)
 }
 \arguments{
   \item{page_with_download_url}{the URL of the SWFTools
@@ -14,20 +15,20 @@
   \link{install.URL}}
 }
 \value{
-  TRUE/FALSE - was the installation successful or not.
+TRUE/FALSE - was the installation successful or not.
 }
 \description{
-  Allows the user to downloads and install the latest
-  version of LaTeX2RTF for Windows.
+Allows the user to downloads and install the latest version
+of LaTeX2RTF for Windows.
 }
 \details{
-  Latex2rtf tries to convert your LaTeX file into a RTF
-  file for opening in Microsoft Word. The general idea is
-  to try and get the things that computers are good at
-  correct: character conversion, graphic conversion, etc.
-  Page layout suffers because control in RTF is pretty
-  pathetic compared to TeX. Consequently, it is likely that
-  manual reformatting will be needed.
+Latex2rtf tries to convert your LaTeX file into a RTF file
+for opening in Microsoft Word. The general idea is to try
+and get the things that computers are good at correct:
+character conversion, graphic conversion, etc. Page layout
+suffers because control in RTF is pretty pathetic compared
+to TeX. Consequently, it is likely that manual reformatting
+will be needed.
 }
 \examples{
 \dontrun{
@@ -35,7 +36,7 @@ install.LaTeX2RTF() # installs the latest version of LaTeX2RTF
 }
 }
 \references{
-  \itemize{ \item SWFTools homepage:
-  \url{http://latex2rtf.sourceforge.net/} }
+\itemize{ \item SWFTools homepage:
+\url{http://latex2rtf.sourceforge.net/} }
 }
 

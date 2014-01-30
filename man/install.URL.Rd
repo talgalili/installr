@@ -2,8 +2,7 @@
 \alias{install.URL}
 \title{Downloads and runs a .exe installer file for some software from a URL}
 \usage{
-  install.URL(exe_URL, keep_install_file = FALSE,
-    wait = TRUE, ...)
+install.URL(exe_URL, keep_install_file = FALSE, wait = TRUE, ...)
 }
 \arguments{
   \item{exe_URL}{A character with a link to an installer
@@ -18,21 +17,21 @@
   \item{...}{parameters passed to 'shell'}
 }
 \value{
-  invisible(TRUE/FALSE) - was the installation successful
-  or not. (this is based on the output of shell of running
-  the command being either 0 or 1/2.  0 means the file was
-  succesfully installed, while 1 or 2 means there was a
-  failure in running the installer.)
+invisible(TRUE/FALSE) - was the installation successful or
+not. (this is based on the output of shell of running the
+command being either 0 or 1/2.  0 means the file was
+succesfully installed, while 1 or 2 means there was a
+failure in running the installer.)
 }
 \description{
-  Gets a character with a link to an installer file,
-  downloads it, runs it, and then erases it.
+Gets a character with a link to an installer file,
+downloads it, runs it, and then erases it.
 }
 \details{
-  This function is used by many functions in the installr
-  package. The .exe file is downloaded into a temporary
-  directory, where it is erased after installation has
-  started (by default - though this can be changed)
+This function is used by many functions in the installr
+package. The .exe file is downloaded into a temporary
+directory, where it is erased after installation has
+started (by default - though this can be changed)
 }
 \examples{
 \dontrun{
@@ -40,9 +39,9 @@ install.URL("adfadf") # shows the error produced when the URL is not valid.
 }
 }
 \author{
-  GERGELY DAROCZI, Tal Galili
+GERGELY DAROCZI, Tal Galili
 }
 \seealso{
-  \link{shell}
+\link{shell}
 }
 

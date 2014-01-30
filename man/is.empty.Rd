@@ -2,10 +2,10 @@
 \alias{is.empty}
 \title{Checks if an object is empty (e.g: of zero length)}
 \source{
-  \url{http://stackoverflow.com/questions/6451152/how-to-catch-integer0}
+\url{http://stackoverflow.com/questions/6451152/how-to-catch-integer0}
 }
 \usage{
-  is.empty(x, mode = NULL, ...)
+is.empty(x, mode = NULL, ...)
 }
 \arguments{
   \item{x}{an object}
@@ -16,16 +16,16 @@
   \item{...}{none are available.}
 }
 \value{
-  Returns TRUE/FALSE if the object is empty or not.
+Returns TRUE/FALSE if the object is empty or not.
 }
 \description{
-  Checks if an object is empty (e.g: of zero length) and
-  returns TRUE/FALSE
+Checks if an object is empty (e.g: of zero length) and
+returns TRUE/FALSE
 }
 \details{
-  Uses identical and avoids any attribute problems by using
-  the fact that it is the empty set of that class of object
-  and combine it with an element of that class.
+Uses identical and avoids any attribute problems by using
+the fact that it is the empty set of that class of object
+and combine it with an element of that class.
 }
 \examples{
 is.empty(integer(0)) #TRUE
@@ -43,9 +43,9 @@ is.empty(b)
 is.empty(b,"integer")
 }
 \author{
-  James (\url{http://stackoverflow.com/users/269476/james})
+James (\url{http://stackoverflow.com/users/269476/james})
 }
 \seealso{
-  \link{integer}, \link{identical}
+\link{integer}, \link{identical}
 }
 

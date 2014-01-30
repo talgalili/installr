@@ -3,8 +3,8 @@
 \alias{install.ffmpeg}
 \title{Downloads and installs FFmpeg for windows}
 \usage{
-  install.FFmpeg(page_with_download_url = "http://ffmpeg.zeranoe.com/builds/",
-    ...)
+install.FFmpeg(page_with_download_url = "http://ffmpeg.zeranoe.com/builds/",
+  ...)
 }
 \arguments{
   \item{page_with_download_url}{the URL of the FFmpeg
@@ -13,25 +13,21 @@
   \item{...}{extra parameters to pass to
   \link{install.URL}}
 }
-\value{
-  NULL
-}
 \description{
-  Allows the user to downloads the latest version of FFmpeg
-  for Windows. IMPORTANT NOTE: The user (YOU) are
-  responsible for unpacking the 7zip file into the relevant
-  directory.  All that this function does is to download
-  the 7zip file and "run" it.
+Allows the user to downloads the latest version of FFmpeg
+for Windows. IMPORTANT NOTE: The user (YOU) are responsible
+for unpacking the 7zip file into the relevant directory.
+All that this function does is to download the 7zip file
+and "run" it.
 }
 \details{
-  FFmpeg is a complete, cross-platform solution to record,
-  convert and stream audio and video. It includes
-  libavcodec - the leading audio/video codec library. See
-  the documentation for a complete feature list and the
-  Changelog for recent changes. This function downloads
-  current releases and NOT the Development Snapshots. This
-  function is useful for saveVideo() in the {animation}
-  package.
+FFmpeg is a complete, cross-platform solution to record,
+convert and stream audio and video. It includes libavcodec
+- the leading audio/video codec library. See the
+documentation for a complete feature list and the Changelog
+for recent changes. This function downloads current
+releases and NOT the Development Snapshots. This function
+is useful for saveVideo() in the {animation} package.
 }
 \examples{
 \dontrun{
@@ -39,7 +35,6 @@ install.FFmpeg() # installs the latest version of FFmpeg
 }
 }
 \references{
-  \itemize{ \item FFmpeg homepage: \url{http://FFmpeg.org/}
-  }
+\itemize{ \item FFmpeg homepage: \url{http://FFmpeg.org/} }
 }
 

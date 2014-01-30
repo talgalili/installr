@@ -2,8 +2,7 @@
 \alias{get.installed.R.folders}
 \title{Returns folder names with R installations}
 \usage{
-  get.installed.R.folders(sort_by_version = TRUE,
-    add_version_to_name = TRUE)
+get.installed.R.folders(sort_by_version = TRUE, add_version_to_name = TRUE)
 }
 \arguments{
   \item{sort_by_version}{should the returned vector be
@@ -18,18 +17,18 @@
   added to the vector of folders? (default is yes)}
 }
 \value{
-  Returns a character vector (possibly named, possibly
-  sorted) of the folders where there are R installations.
+Returns a character vector (possibly named, possibly
+sorted) of the folders where there are R installations.
 }
 \description{
-  The function finds the folders where there are R
-  installations.  This is important for deciding what to
-  uninstall, and where from and to to move libraries. This
-  function ignores installations of R-devel at this point.
-  Also, this function is based on only looking at the
-  folders above the current installation of R.  If there
-  are other isntallations of R outside the above folder,
-  they will not be listed.
+The function finds the folders where there are R
+installations.  This is important for deciding what to
+uninstall, and where from and to to move libraries. This
+function ignores installations of R-devel at this point.
+Also, this function is based on only looking at the folders
+above the current installation of R.  If there are other
+isntallations of R outside the above folder, they will not
+be listed.
 }
 \examples{
 \dontrun{
@@ -46,6 +45,6 @@ get.installed.R.folders(F, F)
 }
 }
 \seealso{
-  \link{copy.packages.between.libraries}
+\link{copy.packages.between.libraries}
 }
 

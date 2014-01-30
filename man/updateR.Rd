@@ -2,10 +2,9 @@
 \alias{updateR}
 \title{Checks for the latest R version, and if there is a newer version of R - downloads and installs it.}
 \usage{
-  updateR(browse_news, install_R, copy_packages,
-    keep_old_packages, update_packages, start_new_R,
-    quit_R, print_R_versions = TRUE, use_GUI = TRUE,
-    to_checkMD5sums = TRUE, ...)
+updateR(browse_news, install_R, copy_packages, keep_old_packages,
+  update_packages, start_new_R, quit_R, print_R_versions = TRUE,
+  use_GUI = TRUE, to_checkMD5sums = TRUE, ...)
 }
 \arguments{
   \item{browse_news}{if TRUE (and if there is a newer
@@ -66,34 +65,34 @@
   any way)}
 }
 \value{
-  a TRUE/FALSE value on whether or not R was updated.
+a TRUE/FALSE value on whether or not R was updated.
 }
 \description{
-  This function performs the following steps: \itemize{
-  \item Check what is the latest R version.  If the current
-  installed R version is up-to-date, the function ends (and
-  returns FALSE) \item If a newer version of R is
-  available, the user is asked if to review the NEWS of the
-  latest R version - in order to decide if to install the
-  newest R or not. \item If the user wishes to - the
-  function will download and install it. (you will need to
-  press the "next" buttons on your own) \item Once the
-  installation is done, you should press "any-key", and the
-  function will proceed with copying all of your packages
-  from your old (well, current) R installation, into your
-  newer R installation. \item You can then erase all of the
-  packages in your old R installation. \item After your
-  packages are moved (and the old ones possibly erased),
-  you will get the option to update all of your packages in
-  the new version of R. \item You will be asked if to open
-  the Rgui of your new R. \item Lastely - you can close the
-  current session of your old R. }
+This function performs the following steps: \itemize{ \item
+Check what is the latest R version.  If the current
+installed R version is up-to-date, the function ends (and
+returns FALSE) \item If a newer version of R is available,
+the user is asked if to review the NEWS of the latest R
+version - in order to decide if to install the newest R or
+not. \item If the user wishes to - the function will
+download and install it. (you will need to press the "next"
+buttons on your own) \item Once the installation is done,
+you should press "any-key", and the function will proceed
+with copying all of your packages from your old (well,
+current) R installation, into your newer R installation.
+\item You can then erase all of the packages in your old R
+installation. \item After your packages are moved (and the
+old ones possibly erased), you will get the option to
+update all of your packages in the new version of R. \item
+You will be asked if to open the Rgui of your new R. \item
+Lastely - you can close the current session of your old R.
+}
 }
 \details{
-  It is worth noting that the function assumes that you are
-  installing R in the same directory as before. That is, if
-  the old R was on: D:\R\R-3.0.0 then the new R will be on
-  D:\R\R-3.0.1.
+It is worth noting that the function assumes that you are
+installing R in the same directory as before. That is, if
+the old R was on: D:\R\R-3.0.0 then the new R will be on
+D:\R\R-3.0.1.
 }
 \examples{
 \dontrun{
@@ -108,8 +107,7 @@ updateR() # will ask you what you want at every decision.
 }
 }
 \seealso{
-  \link{check.for.updates.R}, \link{install.R},
-  \link{copy.packages.between.libraries},
-  \link{uninstall.R}
+\link{check.for.updates.R}, \link{install.R},
+\link{copy.packages.between.libraries}, \link{uninstall.R}
 }
 

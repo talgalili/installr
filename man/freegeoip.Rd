@@ -2,13 +2,12 @@
 \alias{freegeoip}
 \title{Geolocate IP addresses in R}
 \source{
-  \url{http://heuristically.wordpress.com/2013/05/20/geolocate-ip-addresses-in-r/}.
-  \url{http://freegeoip.net/json/}
+\url{http://heuristically.wordpress.com/2013/05/20/geolocate-ip-addresses-in-r/}.
+\url{http://freegeoip.net/json/}
 }
 \usage{
-  freegeoip(ip = myip(),
-    format = ifelse(length(ip) == 1, "list", "dataframe"),
-    ...)
+freegeoip(ip = myip(), format = ifelse(length(ip) == 1, "list",
+  "dataframe"), ...)
 }
 \arguments{
   \item{ip}{a character vector of ips (default is the
@@ -20,16 +19,16 @@
   \item{...}{not in use}
 }
 \value{
-  a list or data.frame with details on your geo location
-  based on the freegeoip.net service.
+a list or data.frame with details on your geo location
+based on the freegeoip.net service.
 }
 \description{
-  This R function uses the free freegeoip.net geocoding
-  service to resolve an IP address (or a vector of them)
-  into country, region, city, zip, latitude, longitude,
-  area and metro codes.
+This R function uses the free freegeoip.net geocoding
+service to resolve an IP address (or a vector of them) into
+country, region, city, zip, latitude, longitude, area and
+metro codes.
 
-  The function require rjson.
+The function require rjson.
 }
 \examples{
 \dontrun{
@@ -50,9 +49,9 @@ points(my_lati,my_long,col=2,pch=18, cex = 1)
 }
 }
 \author{
-  Heuristic Andrew (see source for details)
+Heuristic Andrew (see source for details)
 }
 \seealso{
-  \link{freegeoip}, \link{myip}, \link{cranometer}
+\link{freegeoip}, \link{myip}, \link{cranometer}
 }
 

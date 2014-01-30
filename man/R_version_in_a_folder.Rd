@@ -2,22 +2,22 @@
 \alias{R_version_in_a_folder}
 \title{Get the version of the R installed in a folder}
 \usage{
-  R_version_in_a_folder(folder)
+R_version_in_a_folder(folder)
 }
 \arguments{
   \item{folder}{The folder for which we wish to know the R
   version.}
 }
 \value{
-  Returns a character vector of the R version (or NA, if
-  this is not an R installation folder)
+Returns a character vector of the R version (or NA, if this
+is not an R installation folder)
 }
 \description{
-  Get the version of the R installed in a folder based on
-  the structure of the filename README.R-... (where ... is
-  a version number for R). This function helps detect the
-  version number of an R installation even if the name of
-  the folder is not standard.
+Get the version of the R installed in a folder based on the
+structure of the filename README.R-... (where ... is a
+version number for R). This function helps detect the
+version number of an R installation even if the name of the
+folder is not standard.
 }
 \examples{
 \dontrun{
@@ -26,6 +26,6 @@ R_version_in_a_folder(R.home())
 }
 }
 \seealso{
-  \link{get.installed.R.folders}
+\link{get.installed.R.folders}
 }
 

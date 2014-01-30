@@ -44,13 +44,3 @@ Suggests:
     plyr,
     ggplot2
 License: GPL-2
-Collate:
-    'create.global.library.r'
-    'install.r'
-    'updateR.r'
-    'os.manage.r'
-    'geo_functions.r'
-    'RStudio_CRAN_data.r'
-    'is.x.r'
-    'startup.r'
-    'zzz.r'

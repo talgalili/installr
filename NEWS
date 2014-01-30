@@ -4,8 +4,13 @@ installr 0.13.0 (2014-01-30)
 UPDATED FUNCTIONS:
    * make checkMD5 issue warnings (maybe with a dialog box) instead of errors (since the current state of affairs is more hassle than it is worth...)
 
+BUG FIXES:
+   * Updated some functions and documents in order to pass CRAN checks: RStudio_CRAN_data_folder, pkgDNLs_worldmapcolor, fetch_tag_from_Rd, add_to_.First_in_Rprofile.site, remove_from_.First_in_Rprofile.site, add_load_installr_on_startup_menu.
+   * README.md - some tweaks to work with the HTML option on CRAN.
+
 OTHER NOTES:
    * installr 0.13.0 is to be shipped to CRAN.
+
 
 
 installr 0.12.2 (2013-11-26)

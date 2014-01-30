@@ -2,8 +2,7 @@
 \alias{os.sleep}
 \title{Sleeps the operating system (Windows) through a shell command}
 \usage{
-  os.sleep(s = 0, m = 0, h = 0,
-    first_turn_hibernate_off = TRUE)
+os.sleep(s = 0, m = 0, h = 0, first_turn_hibernate_off = TRUE)
 }
 \arguments{
   \item{s}{time to wait before shutting down (in seconds),
@@ -25,10 +24,10 @@
   that's what is explained in the linke (see bellow)}
 }
 \value{
-  The status code of \code{\link[base]{shell}}.
+The status code of \code{\link[base]{shell}}.
 }
 \description{
-  This sleeps Windows after set amount of time.
+This sleeps Windows after set amount of time.
 }
 \examples{
 \dontrun{
@@ -39,19 +38,19 @@ os.sleep()
 }
 }
 \author{
-  Tal Galili
+Tal Galili
 }
 \references{
-  \url{http://superuser.com/questions/42124/how-can-i-put-the-computer-to-sleep-from-command-prompt-run-menu}
-  ,
-  \url{http://www.howtogeek.com/howto/windows-vista/quick-tip-create-shutdown-restart-lock-icons-in-windows-vista/},
-  \url{http://superuser.com/a/135450/28536}
+\url{http://superuser.com/questions/42124/how-can-i-put-the-computer-to-sleep-from-command-prompt-run-menu}
+,
+\url{http://www.howtogeek.com/howto/windows-vista/quick-tip-create-shutdown-restart-lock-icons-in-windows-vista/},
+\url{http://superuser.com/a/135450/28536}
 }
 \seealso{
-  \code{\link[base]{system}},\code{\link[base]{shell}},
-  \code{\link[base]{Sys.sleep}}, \code{\link{is.windows}},
-  \code{\link{os.shutdown}}, \code{\link{os.sleep}},
-  \code{\link{os.hibernate}}, \code{\link{os.lock}},
-  \code{\link{os.restart}}
+\code{\link[base]{system}},\code{\link[base]{shell}},
+\code{\link[base]{Sys.sleep}}, \code{\link{is.windows}},
+\code{\link{os.shutdown}}, \code{\link{os.sleep}},
+\code{\link{os.hibernate}}, \code{\link{os.lock}},
+\code{\link{os.restart}}
 }
 

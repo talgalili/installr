@@ -1,4 +1,3 @@
-
 #' @title Shut down the operating system with the command `shutdown'
 #' @export
 #' @description

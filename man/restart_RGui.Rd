@@ -2,18 +2,18 @@
 \alias{restart_RGui}
 \title{Restart RGui from RGui}
 \usage{
-  restart_RGui(...)
+restart_RGui(...)
 }
 \arguments{
   \item{...}{passed to q()}
 }
 \value{
-  q(...)
+q(...)
 }
 \description{
-  Start a new RGui session and then quites the current one.
+Start a new RGui session and then quites the current one.
 
-  This is a Windows only function.
+This is a Windows only function.
 }
 \examples{
 \dontrun{

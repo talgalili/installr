@@ -1293,7 +1293,7 @@ fetch_tag_from_Rd <- function(package, tag = "\\author",...){
 #' @param package a character string of the package we are interested in.
 #' @param to_strsplit logical (TRUE). Should the authors strings be split
 #' (in cases of a "and" or a comma ",")?
-#' @param split a character scalar to be passed to \link{strsplt} split paramter.
+#' @param split a character scalar to be passed to \link{strsplit} split paramter.
 #' default is c(",|and)
 #' @param to_table logical (FALSE). Should the authors strings be listed in a
 #' table - showing a count of how many .Rd files they were listed in?

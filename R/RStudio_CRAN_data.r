@@ -353,7 +353,7 @@ most_downloaded_packages <- function(dataset, n = 6L,...) {
 #' @author Boris Hejblum
 #' @return a ggplot object
 #' @source \url{http://www.nicebread.de/finally-tracking-cran-packages-downloads/}
-#' @seealso \link{download_RStudio_CRAN_data}, \link{read_RStudio_CRAN_data}, \link{barplot_package_users_per_day}, \link{ggplot}
+#' @seealso \link{download_RStudio_CRAN_data}, \link{read_RStudio_CRAN_data}, \link{barplot_package_users_per_day}, \link[ggplot2]{ggplot}
 #' @examples
 #' \dontrun{
 #' # The first two functions might take a good deal of time to run (depending on the date range)
@@ -369,9 +369,9 @@ most_downloaded_packages <- function(dataset, n = 6L,...) {
 #'
 #' }
 pkgDNLs_worldmapcolor <- function(pkg_name, dataset, remove_dups=TRUE, ...){
-  require2(ggplot2)
-  require2(data.table)
-  require2(sp)
+  require2("ggplot2")
+  require2("data.table")
+  require2("sp")
   
   data <- dataset[which(dataset$package == pkg_name),]
   if(remove_dups){
@@ -382,7 +382,7 @@ pkgDNLs_worldmapcolor <- function(pkg_name, dataset, remove_dups=TRUE, ...){
   names(counts) <- c("country", "count")
   
   
-  data(WorldBordersData) #loading the world map definition file
+  data("WorldBordersData") #loading the world map definition file
   # downloaded as a shapefile of the world map from Natural Earth:
   # http://www.naturalearthdata.com/http//www.naturalearthdata.com/download/110m/cultural/ne_110m_admin_0_countries.zip
   # and unzip it in the 'shp.file.repos' repository
@@ -391,6 +391,22 @@ pkgDNLs_worldmapcolor <- function(pkg_name, dataset, remove_dups=TRUE, ...){
   # ISO_full[146] <- "SOM"  # The iso identifier for the Republic of Somaliland is missing
   # ISO_full[89]  <- "KV" # as for the Republic of Kosovo
   # ISO_full[39]  <- "CYP" # as for Cyprus
+
+  
+  # solving the following:
+  # pkgDNLs_worldmapcolor: no visible binding for global variable 'long'
+  # This doesn't work:
+#   if(getRversion() >= "2.15.1")  utils::globalVariables(
+#      c("ISO_full","long","lat","group","dnls")
+#      )
+   # this does... 
+   # http://stackoverflow.com/questions/8096313/no-visible-binding-for-global-variable-note-in-r-cmd-check
+  ISO_full <- get("ISO_full")
+  long <- get("long")
+  lat <- get("lat")
+  group <- get("group")
+  dnls <- get("dnls")
+  
   
   colcode <- numeric(length(ISO_full))
   names(colcode) <- ISO_full

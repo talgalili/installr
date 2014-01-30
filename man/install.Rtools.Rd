@@ -3,14 +3,13 @@
 \alias{install.rtools}
 \title{Downloads and installs Rtools}
 \source{
-  Some parts of the code are taken from the devtools, see
-  \url{https://github.com/hadley/devtools/blob/master/R/rtools.r}
+Some parts of the code are taken from the devtools, see
+\url{https://github.com/hadley/devtools/blob/master/R/rtools.r}
 }
 \usage{
-  install.Rtools(choose_version = FALSE, check = TRUE,
-    use_GUI = TRUE,
-    page_with_download_url = "http://cran.r-project.org/bin/windows/Rtools/",
-    ...)
+install.Rtools(choose_version = FALSE, check = TRUE, use_GUI = TRUE,
+  page_with_download_url = "http://cran.r-project.org/bin/windows/Rtools/",
+  ...)
 }
 \arguments{
   \item{choose_version}{if TRUE, allows the user to choose
@@ -33,23 +32,23 @@
   \link{install.URL}}
 }
 \value{
-  invisible(TRUE/FALSE) - was the installation successful
-  or not.
+invisible(TRUE/FALSE) - was the installation successful or
+not.
 }
 \description{
-  Allows the user to choose, downloads and install - the
-  latest version of Rtools for Windows.  By default, the
-  function searches if RTools is installed, if not, it
-  checks if it knows which version to isntall for the
-  current R version, and if not - it asks the user to
-  choose which Rtools version to install.
+Allows the user to choose, downloads and install - the
+latest version of Rtools for Windows.  By default, the
+function searches if RTools is installed, if not, it checks
+if it knows which version to isntall for the current R
+version, and if not - it asks the user to choose which
+Rtools version to install.
 }
 \details{
-  RTools is a collection of software for building packages
-  for R under Microsoft Windows, or for building R itself
-  (version 1.9.0 or later). The original collection was put
-  together by Prof. Brian Ripley; it is currently being
-  maintained by Duncan Murdoch.
+RTools is a collection of software for building packages
+for R under Microsoft Windows, or for building R itself
+(version 1.9.0 or later). The original collection was put
+together by Prof. Brian Ripley; it is currently being
+maintained by Duncan Murdoch.
 }
 \examples{
 \dontrun{
@@ -63,7 +62,7 @@ install.Rtools(TRUE, FALSE) # asks the user to choose
 }
 }
 \references{
-  RTools homepage (for other resources and documentation):
-  \url{http://cran.r-project.org/bin/windows/Rtools/}
+RTools homepage (for other resources and documentation):
+\url{http://cran.r-project.org/bin/windows/Rtools/}
 }
 

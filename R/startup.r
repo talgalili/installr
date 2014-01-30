@@ -71,10 +71,8 @@ add_to_.First_in_Rprofile.site <- function(code, indent = "\t", ... ) {
 #' Goes through Rprofile.site text, finds a line of code - and removes it.
 #' @param code A character scalar with code to add at the beginning of the
 #' .First function in Rprofile.site
-#' @param indent a character scalar indicating the text to be added before
-#' code. Default is a tab.
-#' @param ... passed to \link{grep}
 #' @param fixed passed to \link{grep}
+#' @param ... passed to \link{grep}
 #' @return logical. Did we remove that line or not (in case it was not there)
 #' @references
 #' \url{http://stackoverflow.com/questions/1395301/how-to-get-r-to-recognize-your-working-directory-as-its-working-directory}
@@ -118,8 +116,6 @@ remove_from_.First_in_Rprofile.site <- function(code, fixed = TRUE, ... ) {
 #' Goes through 
 #' @param code A character scalar with code to add at the beginning of the
 #' .First function in Rprofile.site
-#' @param indent a character scalar indicating the text to be added before
-#' code. Default is a tab.
 #' @param fixed passed to \link{grep}
 #' @param ... passed to \link{grep}
 #' @return logical, if code is in Rprofile.site or not.
@@ -160,6 +156,7 @@ is_in_.First_in_Rprofile.site <- function(code, fixed= TRUE, ... ) {
 
 
 #' Add menu item for having installr load on startup
+#' @param ... not used. (but good for future backward compatibility)
 #' @export
 add_load_installr_on_startup_menu <- function(...) {
    
@@ -195,6 +192,7 @@ add_load_installr_on_startup_menu <- function(...) {
 
 
 #' Add menu item for having installr NOT load on startup
+#' @param ... not used. (but good for future backward compatibility)
 #' @export
 add_remove_installr_from_startup_menu <- function(...) {
    
@@ -243,7 +241,7 @@ add_remove_installr_from_startup_menu <- function(...) {
 
 #' @title Have the installr package load on startup
 #' @export
-#' @param ... not used.
+#' @param ... not used. (but good for future backward compatibility)
 #' @return invisible(NULL)
 #' @references
 #' \url{http://stackoverflow.com/questions/1395301/how-to-get-r-to-recognize-your-working-directory-as-its-working-directory}
@@ -265,7 +263,7 @@ load_installr_on_startup <- function(...) {
 
 #' @title Have the installr package NOT load on startup
 #' @export
-#' @param ... not used.
+#' @param ... not used. (but good for future backward compatibility)
 #' @return invisible(NULL)
 #' @references
 #' \url{http://stackoverflow.com/questions/1395301/how-to-get-r-to-recognize-your-working-directory-as-its-working-directory}

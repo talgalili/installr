@@ -2,8 +2,7 @@
 \alias{barplot_package_users_per_day}
 \title{barplot for the number of users installation of a package}
 \usage{
-  barplot_package_users_per_day(pkg_name, dataset,
-    remove_dups = TRUE, ...)
+barplot_package_users_per_day(pkg_name, dataset, remove_dups = TRUE, ...)
 }
 \arguments{
   \item{pkg_name}{a string of the package we are interested
@@ -20,18 +19,18 @@
   \item{...}{not in use.}
 }
 \value{
-  Returns the total number of downloads of the package for
-  that time period.
+Returns the total number of downloads of the package for
+that time period.
 }
 \description{
-  This function is a first template for creating a barplot
-  of the number of downloads a package had in a time
-  period. This function is based on some other functions,
-  have a look at the example for more details.
+This function is a first template for creating a barplot of
+the number of downloads a package had in a time period.
+This function is based on some other functions, have a look
+at the example for more details.
 }
 \details{
-  RStudio maintains its own CRAN mirror,
-  \url{http://cran.rstudio.com} and offers its log files.
+RStudio maintains its own CRAN mirror,
+\url{http://cran.rstudio.com} and offers its log files.
 }
 \examples{
 \dontrun{
@@ -53,7 +52,7 @@ barplot_package_users_per_day("plyr", my_RStudio_CRAN_data)
 }
 }
 \seealso{
-  \link{download_RStudio_CRAN_data},
-  \link{read_RStudio_CRAN_data},\link{barplot_package_users_per_day}
+\link{download_RStudio_CRAN_data},
+\link{read_RStudio_CRAN_data},\link{barplot_package_users_per_day}
 }
 
