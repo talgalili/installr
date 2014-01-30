@@ -5,7 +5,8 @@
 \url{http://www.nicebread.de/finally-tracking-cran-packages-downloads/}
 }
 \usage{
-read_RStudio_CRAN_data(log_folder = tempdir(), use_data_table = TRUE, ...)
+read_RStudio_CRAN_data(log_folder = tempdir(), use_data_table = TRUE,
+  packages, ...)
 }
 \arguments{
   \item{log_folder}{the folder which contains the RStudio
@@ -16,6 +17,11 @@ read_RStudio_CRAN_data(log_folder = tempdir(), use_data_table = TRUE, ...)
   wether or not to use the data.table package in order to
   merge the log files using rbindlist. This function is
   MUCH faster then the alternative.}
+
+  \item{packages}{a character vector containing the names
+  of packages for which information is extracted.  If not
+  specified, all packages are included, but this can cause
+  out-of-memory problems if there are many log files.}
 
   \item{...}{not in use.}
 }

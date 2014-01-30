@@ -1,3 +1,10 @@
+installr 0.13.1 (2014-01-31)
+---------------------------
+
+UPDATED FUNCTIONS:
+   * read_RStudio_CRAN_data - Added a packages= option to read_RStudio_CRAN_data. read_RStudio_CRAN_data fails on out-of-memory (in the rbindlist call) if you've downloaded many RStudio CRAN logs.  This patch adds a packages= option if you're only interested in a subset of packages, which subsets the daily log data on the fly.  Other such filters might also be added.
+
+
 installr 0.13.0 (2014-01-30)
 ---------------------------
 
