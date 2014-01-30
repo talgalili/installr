@@ -382,7 +382,7 @@ pkgDNLs_worldmapcolor <- function(pkg_name, dataset, remove_dups=TRUE, ...){
   names(counts) <- c("country", "count")
   
   
-  data("WorldBordersData") #loading the world map definition file
+  data("WorldBordersData", envir = environment()) #loading the world map definition file
   # downloaded as a shapefile of the world map from Natural Earth:
   # http://www.naturalearthdata.com/http//www.naturalearthdata.com/download/110m/cultural/ne_110m_admin_0_countries.zip
   # and unzip it in the 'shp.file.repos' repository
