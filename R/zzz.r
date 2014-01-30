@@ -109,7 +109,7 @@ installrWelcomeMessage <- function(){
          # "vignette('installr') for the package vignette.\n",
          # "You can execute a demo of the package via: demo(installr)\n",
          # "\n",  
-         "More information is available on the installr project web-site:\n",
+         "More information is available on the installr project website:\n",
          "https://github.com/talgalili/installr/\n",
          "\n",               
          "Contact: <tal.galili@gmail.com>\n",

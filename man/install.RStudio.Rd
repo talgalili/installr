@@ -27,7 +27,7 @@
 }
 \examples{
 \dontrun{
-install.RStudio() # installs the latest version of git
+install.RStudio() # installs the latest version of RStudio
 }
 }
 \references{

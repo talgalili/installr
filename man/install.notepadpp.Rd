@@ -36,7 +36,7 @@
 }
 \examples{
 \dontrun{
-install.notepadpp() # installs the latest version of git
+install.notepadpp() # installs the latest version of Notepad++
 }
 }
 \references{

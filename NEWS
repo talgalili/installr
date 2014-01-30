@@ -1,3 +1,19 @@
+installr 0.13.0 (2014-01-30)
+---------------------------
+
+UPDATED FUNCTIONS:
+   * make checkMD5 issue warnings (maybe with a dialog box) instead of errors (since the current state of affairs is more hassle than it is worth...)
+
+OTHER NOTES:
+   * installr 0.13.0 is to be shipped to CRAN.
+
+
+installr 0.12.2 (2013-11-26)
+---------------------------
+UPDATED FUNCTIONS:
+   * install.pandoc - added "to_restart" parameter. With a massage to remind the user they should restart their computer after pandoc is installed.
+
+
 installr 0.12.1 (2013-08-23)
 ---------------------------
 BUG FIXES:

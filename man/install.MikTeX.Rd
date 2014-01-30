@@ -38,7 +38,7 @@
 }
 \examples{
 \dontrun{
-install.MikTeX() # installs the latest version of git
+install.MikTeX() # installs the latest version of MikTeX
 }
 }
 \references{

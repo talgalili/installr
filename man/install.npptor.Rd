@@ -36,7 +36,7 @@
 }
 \examples{
 \dontrun{
-install.npptor() # installs the latest version of npptor
+install.npptor() # installs the latest version of NppToR
 }
 }
 \references{

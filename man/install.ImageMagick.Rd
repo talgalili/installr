@@ -32,7 +32,7 @@
 }
 \examples{
 \dontrun{
-install.ImageMagick() # installs the latest version of git
+install.ImageMagick() # installs the latest version of ImageMagick
 }
 }
 \references{

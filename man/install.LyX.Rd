@@ -41,7 +41,7 @@
 }
 \examples{
 \dontrun{
-install.LyX() # installs the latest version of git
+install.LyX() # installs the latest version of LyX
 }
 }
 \references{

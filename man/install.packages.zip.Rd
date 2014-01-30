@@ -34,6 +34,7 @@ install.packages.zip("http://cran.r-project.org/bin/windows/contrib/r-release/de
 }
 }
 \seealso{
-  \code{\link{install.packages}}
+  \code{\link{install.packages}},
+  \code{\link[R.utils]{installPackages}}
 }
 

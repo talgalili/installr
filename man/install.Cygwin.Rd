@@ -24,7 +24,7 @@
 }
 \examples{
 \dontrun{
-install.Cygwin() # installs the latest version of SWFTools
+install.Cygwin() # installs the latest version of Cygwin
 }
 }
 \references{

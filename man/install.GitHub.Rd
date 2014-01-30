@@ -25,7 +25,7 @@
 }
 \examples{
 \dontrun{
-install.GitHub() # installs the latest version of git
+install.GitHub() # installs the latest version of GitHub for windows
 }
 }
 \references{

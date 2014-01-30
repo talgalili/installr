@@ -42,7 +42,7 @@
 }
 \examples{
 \dontrun{
-install.7zip() # installs the latest version of SWFTools
+install.7zip() # installs the latest version of 7-Zip
 }
 }
 \references{
