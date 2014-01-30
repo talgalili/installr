@@ -6,7 +6,7 @@
 }
 \usage{
   install.pandoc(URL = "http://code.google.com/p/pandoc/downloads/list",
-    use_regex = TRUE, ...)
+    use_regex = TRUE, to_restart, ...)
 }
 \arguments{
   \item{URL}{a link to the list of download links of
@@ -15,6 +15,10 @@
   \item{use_regex}{(default TRUE) should the regex method
   be used to extract exe links, or should the XML package
   be used.}
+
+  \item{to_restart}{boolean. Should the computer be
+  restarted after pandoc is installed? (if missing then the
+  user is prompted for a decision)}
 
   \item{...}{extra parameters to pass to
   \link{install.URL}}

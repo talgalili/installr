@@ -130,6 +130,9 @@ install.URL <- function(exe_URL, keep_install_file = FALSE, wait = TRUE, ...) {
 #' @author GERGELY DAROCZI, G. Grothendieck, Tal Galili
 #' @param URL a link to the list of download links of pandoc
 #' @param use_regex (default TRUE) should the regex method be used to extract exe links, or should the XML package be used.
+#' @param to_restart boolean. Should the computer be restarted 
+#'  after pandoc is installed? (if missing then the user is prompted 
+#' 	for a decision)
 #' @param ... extra parameters to pass to \link{install.URL}
 #' @source \url{http://stackoverflow.com/questions/15071957/is-it-possible-to-install-pandoc-on-windows-using-an-r-command}
 #' @examples
@@ -138,7 +141,7 @@ install.URL <- function(exe_URL, keep_install_file = FALSE, wait = TRUE, ...) {
 #' }
 install.pandoc <- function(
    URL = 'http://code.google.com/p/pandoc/downloads/list',
-   use_regex = TRUE,...
+   use_regex = TRUE, to_restart,...
 ) {
    page_with_download_url <- URL
    # source: http://stackoverflow.com/questions/15071957/is-it-possible-to-install-pandoc-on-windows-using-an-r-command
@@ -162,6 +165,21 @@ install.pandoc <- function(
    }
    
    install.URL(URL,...)
+   
+   if(missing(to_restart)) {
+	   if(is.windows()) {
+			you_should_restart <- "You should restart your computer\n in order for pandoc to work properly"
+		  winDialog(type = "ok", message = you_should_restart)
+		  choices <- c("Yes", "No")
+		  question <- "Do you want to restart your computer now?"
+		  the_answer <- menu(choices, graphics = "TRUE", title = question)
+		  to_restart <- the_answer == 1L 
+		}   else {
+			to_restart <- FALSE
+		}
+	}
+   if(to_restart) os.restart()
+   
 }
 
 #' @title Check if a number is integer
