@@ -1225,7 +1225,7 @@ installr <- function(use_GUI = TRUE, ...) {
 
 
 
-
+# http://stackoverflow.com/questions/8809004/escaping-in-roxygen2-style-documentation
 
 
 
@@ -1242,7 +1242,7 @@ installr <- function(use_GUI = TRUE, ...) {
 #' @param package a character string of the package we are interested in.
 #' @param tag a character vector of tag(s) to get from a package's Rd files.
 #' @param ... not in use.
-#' @author Thomas J. Leeper <thosjleeper@gmail.com>
+#' @author Thomas J. Leeper <thosjleeper@@gmail.com>
 #' @return a character vector with the tag's contant, and the name of the 
 #' Rd source of the function the tag came from.
 #' @source \url{http://stackoverflow.com/questions/17909081/access-elements-from-rs-rd-file}
@@ -1263,7 +1263,7 @@ installr <- function(use_GUI = TRUE, ...) {
 #' 
 #' }
 fetch_tag_from_Rd <- function(package, tag = "\\author",...){
-	# require(tools)
+	require(tools)
 
 	# from "tools" but it is not exported
 	# RdTags <- function (Rd) 
@@ -1273,7 +1273,15 @@ fetch_tag_from_Rd <- function(package, tag = "\\author",...){
           # res <- character()
        # res
     # }
-	RdTags <- tools:::RdTags
+	RdTags <- function (Rd) 
+		{
+			res <- sapply(Rd, attr, "Rd_tag")
+			if (!length(res)) 
+				res <- character()
+			res
+		}
+	# tools:::RdTags
+	# This is causing too many errors...
 	
    db <- tools::Rd_db(package)
    tag_content <- lapply(db,function(x) {

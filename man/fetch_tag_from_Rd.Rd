@@ -44,7 +44,7 @@ package_authors("installr")
 }
 }
 \author{
-Thomas J. Leeper <thosjleeper
+Thomas J. Leeper <thosjleeper@gmail.com>
 }
 \seealso{
 \link{package_authors}
