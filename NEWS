@@ -1,3 +1,15 @@
+installr 0.13.2 (2014-01-31)
+---------------------------
+
+OTHER NOTES:
+   * moved tools from imports to suggest in order to avoid "call not declared from" error.
+   * Added "RdTags" as an internal function, since using tools:::RdTags caused too many problems.
+   * Fixed a single "@" in a roxygen2 doc (which caused erros)
+   * Changed main e-mail to be @gmail instead of @math.tau.ac.il.
+   * installr 0.13.2 is to be shipped to CRAN.
+
+
+
 installr 0.13.1 (2014-01-31)
 ---------------------------
 
