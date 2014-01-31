@@ -117,13 +117,14 @@ read_RStudio_CRAN_data <- function(log_folder = tempdir(), use_data_table = TRUE
       logfile <- read.table(file, header = TRUE, sep = ",", quote = "\"",
                                  dec = ".", fill = TRUE, stringsAsFactors = FALSE,
                                  comment.char = "", as.is=TRUE)
+      package <- logfile$package
       if (!missing(packages)) logfile <- subset(logfile, package %in% packages)
       logs[[file]] <- logfile
    }
 
    
    # rbind the files.
-   if(use_data_table) is_data_table_loaded <- require2(data.table)
+   if(use_data_table) is_data_table_loaded <- require2("data.table")
    if(use_data_table & is_data_table_loaded) {
       dataset <- rbindlist(logs) # MUCH faster...
    } else {

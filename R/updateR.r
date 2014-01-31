@@ -15,7 +15,11 @@
 #' }
 checkMD5sums2 <- function (package, dir, md5file, omit_files,...)
 {
-   library(tools) # making sure this is used.
+   # require(tools) # making sure this is used.
+   # R code in the package should call library or require only exceptionally. Such calls are never needed for packages listed in ‘Depends’ as they will already be on the search path. It used to be common practice to use require calls for packages listed in ‘suggests’ in functions which used their functionality, but nowadays it is better to access such functionality via :: calls.
+   # from: http://cran.r-project.org/doc/manuals/R-exts.html
+
+
    
    if (missing(dir)) 
       dir <- find.package(package, quiet = TRUE)
@@ -41,7 +45,7 @@ checkMD5sums2 <- function (package, dir, md5file, omit_files,...)
    if (is.null(dot)) 
       stop("current working directory cannot be ascertained")
    setwd(dir)
-   x <- md5sum(dir(dir, recursive = TRUE))
+   x <- tools::md5sum(dir(dir, recursive = TRUE))
    setwd(dot)
    x <- x[names(x) != "MD5"]
    nmx <- names(x)
@@ -251,7 +255,7 @@ install.R <- function(page_with_download_url = "http://cran.rstudio.com/bin/wind
    # checks the MD5sums from the new R installation:
    if(to_checkMD5sums)    {
       new_R_path <- get.installed.R.folders()[1]
-      require(tools)
+      # require(tools)
       pass_checkMD5sums <- checkMD5sums2(dir=new_R_path, omit_files = c("etc/Rconsole", "etc/Rprofile.site")) # will work!         
       if(!pass_checkMD5sums) {
          warning("There was some problem with installing R.  Some files are not what they should be (e.g: check MD5 sums did not pass all the tests). \n  You can try installing R again (either manually or through install.R()), \n  and if the problem persists you can file a bug report by running:  bug.report(package = 'installr') ")

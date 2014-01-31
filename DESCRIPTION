@@ -3,7 +3,7 @@ Type: Package
 Title: using R to install stuff (such as: R, Rtools RStudio, git, and more!)
 Version: 0.13.1
 Date: 2014-01-31
-Authors@R: c(person("Tal Galili", "Developer", role = c("aut", "cre", "ctb"),
+Authors@R: c(person("Tal Galili", "Developer", role = c("aut", "cre"),
     email = "tal.galili@math.tau.ac.il"), person("Barry Rowlingson",
     "Developer", role = "ctb", email = "b.rowlingson@lancaster.ac.uk"),
     person("Boris Hejblum", "Developer", role = "ctb") , person("Dason",
@@ -17,7 +17,6 @@ Authors@R: c(person("Tal Galili", "Developer", role = c("aut", "cre", "ctb"),
     , person("Yihui Xie", "Developer", role = "ctb", comment =
     "http://yihui.name"), person("Michael Friendly", "Developer", role = "ctb",
     comment = "http://datavis.ca/") )
-Maintainer: Tal Galili <tal.galili@gmail.com>
 Description: R is great for installing software.  Through the 'installr'
     package you can automate the updating of R (on Windows) and install new
     software (currently only for Windows OS). Software installation is
@@ -33,15 +32,16 @@ URL: https://github.com/talgalili/installr/,
     http://www.r-statistics.com/tag/installr/
 BugReports: https://github.com/talgalili/installr/issues
 Depends:
-    R (>= 2.11.0)
+    R (>= 2.11.0),
+    tools
 Imports:
     utils
 Suggests:
     XML,
     devtools,
-    tools,
     rjson,
     data.table,
     plyr,
-    ggplot2
+    ggplot2,
+    sp
 License: GPL-2

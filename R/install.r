@@ -1263,9 +1263,21 @@ installr <- function(use_GUI = TRUE, ...) {
 #' 
 #' }
 fetch_tag_from_Rd <- function(package, tag = "\\author",...){
+	# require(tools)
+
+	# from "tools" but it is not exported
+	# RdTags <- function (Rd) 
+    # {
+       # res <- sapply(Rd, attr, "Rd_tag")
+       # if (!length(res)) 
+          # res <- character()
+       # res
+    # }
+	RdTags <- tools:::RdTags
+	
    db <- tools::Rd_db(package)
    tag_content <- lapply(db,function(x) {
-      tags <- tools:::RdTags(x)
+      tags <- RdTags(x)
       if(tag %in% tags){
          # return a crazy list of results
          #out <- x[which(tmp=="\\author")]
