@@ -1,33 +1,29 @@
 Package: installr
 Type: Package
-Title: using R to install stuff (such as: R, Rtools RStudio, git, and more!)
-Version: 0.13.2
-Date: 2014-01-31
-Authors@R: c(person("Tal Galili", "Developer", role = c("aut", "cre"),
-    email = "tal.galili@gmail.com"), person("Barry Rowlingson",
-    "Developer", role = "ctb", email = "b.rowlingson@lancaster.ac.uk"),
-    person("Boris Hejblum", "Developer", role = "ctb") , person("Dason",
-    "Developer", role = "ctb") , person("Felix Schonbrodt", "Developer", role =
-    "ctb") , person("G. Grothendieck", "Developer", role = "ctb") ,
-    person("GERGELY DAROCZI", "Developer", role = "ctb") , person("Heuristic
-    Andrew", "Developer", role = "ctb") , person("James", "Developer", role =
-    "ctb", comment = "http://stackoverflow.com/users/269476/james"),
-    person("Thomas J. Leeper", "Developer", role = "ctb", comment =
-    "http://thomasleeper.com/"), person("VitoshKa", "Developer", role = "ctb")
-    , person("Yihui Xie", "Developer", role = "ctb", comment =
-    "http://yihui.name"), person("Michael Friendly", "Developer", role = "ctb",
-    comment = "http://datavis.ca/") )
+Title: Using R to install stuff (such as: R, Rtools, RStudio, git, and more!)
+Version: 0.13.3
+Date: 2014-02-01
+Authors@R: c(person("Tal", "Galili", role = c("aut", "cre", "cph"), email =
+    "tal.galili@gmail.com", comment = "http://www.r-statistics.com"),
+    person("Barry", "Rowlingson", role = "ctb", email =
+    "b.rowlingson@lancaster.ac.uk"), person("Boris", "Hejblum", role = "ctb") ,
+    person("Dason", role = "ctb"), person("Felix", "Schonbrodt", role = "ctb"),
+    person("G.", "Grothendieck", role = "ctb") , person("GERGELY", "DAROCZI",
+    role = "ctb") , person("Heuristic", "Andrew", role = "ctb") ,
+    person("James", role = "ctb", comment =
+    "http://stackoverflow.com/users/269476/james"), person("Thomas", "Leeper",
+    role = "ctb", comment = "http://thomasleeper.com/"), person("VitoshKa",
+    role = "ctb"), person("Yihui", "Xie", role = "ctb", comment =
+    "http://yihui.name"), person("Michael", "Friendly", role = "ctb", comment =
+    "http://datavis.ca/") )
 Description: R is great for installing software.  Through the 'installr'
-    package you can automate the updating of R (on Windows) and install new
-    software (currently only for Windows OS). Software installation is
-    initiated through a gui (just run installr()), or through functions such
-    as: install.Rtools(), install.pandoc(), install.git(), and many more. As
-    for updating R, simply run updateR(). Motivation: While for Linux users,
-    the installation process of new software may be simply running a short line
-    of code, for the regular Windows user it often includes browsing online,
-    finding the latest version, downloading it, running the installer, and
-    deleting the installation file. All of these steps are automatically done
-    using functions in this package.
+    package you can automate the updating of R (on Windows, using updateR())
+    and install new software. Software installation is initiated through a
+    gui (just run installr()), or through functions such as: install.Rtools(),
+    install.pandoc(), install.git(), and many more. The updateR() command
+    performs the follwoing: finding the latest R version, downloading it,
+    running the installer, deleting the installation file, copy and updating
+    old packages to the new R installation.
 URL: https://github.com/talgalili/installr/,
     http://www.r-statistics.com/tag/installr/
 BugReports: https://github.com/talgalili/installr/issues
