@@ -21,7 +21,7 @@ Description: R is great for installing software.  Through the 'installr'
     and install new software. Software installation is initiated through a
     gui (just run installr()), or through functions such as: install.Rtools(),
     install.pandoc(), install.git(), and many more. The updateR() command
-    performs the follwoing: finding the latest R version, downloading it,
+    performs the following: finding the latest R version, downloading it,
     running the installer, deleting the installation file, copy and updating
     old packages to the new R installation.
 URL: https://github.com/talgalili/installr/,
