@@ -129,7 +129,7 @@ install.URL <- function(exe_URL, keep_install_file = FALSE, wait = TRUE, ...) {
 #' @export
 #' @author GERGELY DAROCZI, G. Grothendieck, Tal Galili
 #' @param URL a link to the list of download links of pandoc
-#' @param use_regex (default TRUE) should the regex method be used to extract exe links, or should the XML package be used.
+#' @param use_regex (default TRUE) - defunced (kept for legacy purposes).
 #' @param to_restart boolean. Should the computer be restarted 
 #'  after pandoc is installed? (if missing then the user is prompted 
 #' 	for a decision)
@@ -147,8 +147,9 @@ install.pandoc <- function(
    # source: http://stackoverflow.com/questions/15071957/is-it-possible-to-install-pandoc-on-windows-using-an-r-command
    # published on: http://www.r-statistics.com/2013/02/installing-pandoc-from-r-on-windows/
    
+   if(!use_regex) warning("use_regex is no longer supported, you can stop using it from now on...")
    
-   if(use_regex) {
+#    if(use_regex) {
       page     <- readLines(page_with_download_url, warn = FALSE)
       #"//pandoc.googlecode.com/files/pandoc-1.11.1.msi"
       pat <- "//pandoc.googlecode.com/files/pandoc-[0-9.]+.msi"
@@ -156,15 +157,18 @@ install.pandoc <- function(
       m <- regexpr(pat, target_line); 
       URL      <- regmatches(target_line, m) # (The http still needs to be prepended.
       URL      <- paste('http', URL, sep = ':')
-   } else { # use XML
-      if(!require(XML)) stop("You need to install the {XML} package in order to use this function.")
-      page     <- readLines(page_with_download_url, warn = FALSE)
-      pagetree <- htmlTreeParse(page, error=function(...){}, useInternalNodes = TRUE, encoding='UTF-8')
-      URL      <- xpathSApply(pagetree, '//tr[2]//td[1]//a ', xmlAttrs)[1]
-      URL      <- paste('http', URL, sep = ':')
-   }
+#    } else { # use XML
+#       if(!require(XML)) stop("You need to install the {XML} package in order to use this function.")
+#       page     <- readLines(page_with_download_url, warn = FALSE)
+#       pagetree <- htmlTreeParse(page, error=function(...){}, useInternalNodes = TRUE, encoding='UTF-8')
+#       URL      <- xpathSApply(pagetree, '//tr[2]//td[1]//a ', xmlAttrs)[1]
+#       URL      <- paste('http', URL, sep = ':')
+#    }
    
-   install.URL(URL,...)
+   installed <- install.URL(URL,...)
+   
+   # if the installation failed, no need to ask about restarting the computer!
+   if(!installed) return(invisible(FALSE))
    
    if(missing(to_restart)) {
 	   if(is.windows()) {
