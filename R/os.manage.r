@@ -215,6 +215,8 @@ os.manage  <- function(use_GUI = TRUE, ask = TRUE, ...) {
    
    the_answer <- menu(choices, graphics = use_GUI, title = "Manage your OS (for Windows)")            
    
+   if (the_answer==0 || choices[the_answer]=="Cancel") return(FALSE)
+   
    # in how many minutes to perform the operation?
    if(ask) minutes <- 
       winDialogString(      
