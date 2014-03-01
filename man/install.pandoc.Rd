@@ -12,9 +12,8 @@ install.pandoc(URL = "http://code.google.com/p/pandoc/downloads/list",
   \item{URL}{a link to the list of download links of
   pandoc}
 
-  \item{use_regex}{(default TRUE) should the regex method
-  be used to extract exe links, or should the XML package
-  be used.}
+  \item{use_regex}{(default TRUE) - defunced (kept for
+  legacy purposes).}
 
   \item{to_restart}{boolean. Should the computer be
   restarted after pandoc is installed? (if missing then the

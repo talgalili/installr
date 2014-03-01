@@ -1,3 +1,10 @@
+installr 0.13.5 (2014-03-01)
+---------------------------
+
+UPDATED FUNCTIONS:
+   * os.manage - shouldn't ask for minutes if no appropriate option was selected. Don't ask for minutes if 'Cancel' is selected or window was closed without selecting any option. Props to Kornelius Rohmeyer for the commit (rohmeyer@small-projects.de).
+
+
 installr 0.13.4 (2014-02-06)
 ---------------------------
 
