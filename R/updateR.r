@@ -436,8 +436,8 @@ get.installed.R.folders <- function(sort_by_version = TRUE, add_version_to_name 
 
    # remove NON R installation folders (for example "library")
    ss_R_folders <- !is.na(R_folders_versions)
-   R_folders <- unlist(R_folders[ss_R_folders])
-   R_folders_versions <- R_folders_versions[ss_R_folders]
+   R_folders <- R_folders[ss_R_folders]
+   R_folders_versions <- unlist(R_folders_versions[ss_R_folders])
    
 ### old way of doing this which relied on the folder being of the form:  D:/R/R-3.0.1  
 #    ss_R_subfolders_in_R_parent_folder <- grepl("R-[0-9]+.[0-9]+.[0-9]+$", items_in_R_parent_folder)
