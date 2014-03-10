@@ -16,7 +16,7 @@
 checkMD5sums2 <- function (package, dir, md5file, omit_files,...)
 {
    require(tools) # making sure this is used.
-   # R code in the package should call library or require only exceptionally. Such calls are never needed for packages listed in ‘Depends’ as they will already be on the search path. It used to be common practice to use require calls for packages listed in ‘suggests’ in functions which used their functionality, but nowadays it is better to access such functionality via :: calls.
+   # R code in the package should call library or require only exceptionally. Such calls are never needed for packages listed in ï¿½Dependsï¿½ as they will already be on the search path. It used to be common practice to use require calls for packages listed in ï¿½suggestsï¿½ in functions which used their functionality, but nowadays it is better to access such functionality via :: calls.
    # from: http://cran.r-project.org/doc/manuals/R-exts.html
 
 
@@ -436,7 +436,7 @@ get.installed.R.folders <- function(sort_by_version = TRUE, add_version_to_name 
 
    # remove NON R installation folders (for example "library")
    ss_R_folders <- !is.na(R_folders_versions)
-   R_folders <- R_folders[ss_R_folders]
+   R_folders <- unlist(R_folders[ss_R_folders])
    R_folders_versions <- R_folders_versions[ss_R_folders]
    
 ### old way of doing this which relied on the folder being of the form:  D:/R/R-3.0.1  
