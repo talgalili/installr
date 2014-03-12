@@ -229,6 +229,7 @@ browse.latest.R.NEWS <- function(
 #' @param pat the pattern of R .exe file to download
 #' @param to_checkMD5sums Should we check that the new R installation has the files we expect it to (by checking the MD5 sums)? default is TRUE.  It assumes that the R which was isntalled is the latest R version.
 #' @param keep_install_file If TRUE - the installer file will not be erased after it is downloaded and run.
+#' @param download_dir A character of the directory into which to download the file. (default is \link{tempdir}())
 #' @param ... extra parameters to pass to \link{install.URL}
 #' @return TRUE/FALSE - was the installation of R successful or not.
 #' @seealso \link{uninstall.R}, \link{install.Rdevel}, \link{updateR}, \link{system}
@@ -241,6 +242,7 @@ install.R <- function(page_with_download_url = "http://cran.rstudio.com/bin/wind
                       pat = "R-[0-9.]+-win.exe",
                       to_checkMD5sums = TRUE,
                       keep_install_file = FALSE,
+                      download_dir = tempdir(),
                       ...) {
    # I'm using the rsudio cran since it redirects to other servers wourld wide.
    # here there is a question on how to do it with the different mirrors. (maybe to add it as an option?)
@@ -252,7 +254,7 @@ install.R <- function(page_with_download_url = "http://cran.rstudio.com/bin/wind
    exe_filename   <- regmatches(target_line, m) 
    URL <- paste(page_with_download_url, exe_filename, sep = '')
    
-   did_R_install <- install.URL(URL, keep_install_file = keep_install_file, ...)
+   did_R_install <- install.URL(URL, keep_install_file = keep_install_file,download_dir=download_dir, ...)
    if(!did_R_install) return(FALSE) 
    
    # checks the MD5sums from the new R installation:
@@ -604,6 +606,7 @@ copy.packages.between.libraries <- function(from, to, ask =FALSE,keep_old = TRUE
 #' @param use_GUI a logical indicating whether a graphics menu should be used if available.  If TRUE, and on Windows, it will use \link{winDialog}, otherwise it will use \link[utils]{menu}.
 #' @param to_checkMD5sums Should we check that the new R installation has the files we expect it to (by checking the MD5 sums)? default is TRUE.  It assumes that the R which was isntalled is the latest R version. parameter is passed to install.R()
 #' @param keep_install_file If TRUE - the installer file will not be erased after it is downloaded and run.
+#' @param download_dir A character of the directory into which to download the file. (default is \link{tempdir}())
 #' @param ... Other arguments (this is currently not used in any way)
 #' @return a TRUE/FALSE value on whether or not R was updated.
 #' @seealso \link{check.for.updates.R}, \link{install.R}, 
@@ -620,7 +623,7 @@ copy.packages.between.libraries <- function(from, to, ask =FALSE,keep_old = TRUE
 #' updateR() # will ask you what you want at every decision.
 #' }
 updateR <- function(browse_news, install_R, copy_packages, keep_old_packages,  update_packages, start_new_R, quit_R,  print_R_versions=TRUE, use_GUI = TRUE, 
-                    to_checkMD5sums = TRUE, keep_install_file = FALSE, ...) {
+                    to_checkMD5sums = TRUE, keep_install_file = FALSE, download_dir = tempdir(), ...) {
    # this function checks if we have the latest version of R
    # IF not - it notifies the user - and leaves.
    # If there is a new version - it offers the user to download and install it.   
@@ -645,7 +648,7 @@ updateR <- function(browse_news, install_R, copy_packages, keep_old_packages,  u
    
    # if we got this far, the user wants to install the latest version of R (and his current version is old)
    cat("Installing the newest version of R,\n please wait for the installer file to be download and executed.\n Be sure to click 'next' as needed...\n")
-   did_R_install <- install.R(to_checkMD5sums = to_checkMD5sums, keep_install_file = keep_install_file) 
+   did_R_install <- install.R(to_checkMD5sums = to_checkMD5sums, keep_install_file = keep_install_file, download_dir = download_dir) 
    if(!did_R_install) return(FALSE) 
    new_R_path <- get.installed.R.folders()[1]
 

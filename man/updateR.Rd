@@ -4,7 +4,8 @@
 \usage{
 updateR(browse_news, install_R, copy_packages, keep_old_packages,
   update_packages, start_new_R, quit_R, print_R_versions = TRUE,
-  use_GUI = TRUE, to_checkMD5sums = TRUE, keep_install_file = FALSE, ...)
+  use_GUI = TRUE, to_checkMD5sums = TRUE, keep_install_file = FALSE,
+  download_dir = tempdir(), ...)
 }
 \arguments{
   \item{browse_news}{if TRUE (and if there is a newer
@@ -63,6 +64,10 @@ updateR(browse_news, install_R, copy_packages, keep_old_packages,
 
   \item{keep_install_file}{If TRUE - the installer file
   will not be erased after it is downloaded and run.}
+
+  \item{download_dir}{A character of the directory into
+  which to download the file. (default is
+  \link{tempdir}())}
 
   \item{...}{Other arguments (this is currently not used in
   any way)}

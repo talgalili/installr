@@ -4,8 +4,10 @@ installr 0.13.6 (2014-03-12)
 UPDATED FUNCTIONS:
    * install.URL - new parameters added:
          * massage (TRUE) parameter. The function now prints (cat) if the file was downloaded succesfully or not, combined with the location of the file. It also informs the user if the file is later removed or not.
+   * updateR, install.R - new parameters added:
+         * keep_install_file parameter (default is FALSE). Based on the request by Boral here: http://www.r-statistics.com/2014/03/r-3-0-3-is-released/
+   * install.URL, install.R, updateR - new parameters added:
          * download_dir (tempdir) character. Allowing the user to choose into which directory the file should be downloaded.
-   * updateR, install.R - added the keep_install_file parameter (default is FALSE). Based on the request by Boral here: http://www.r-statistics.com/2014/03/r-3-0-3-is-released/
 
 installr 0.13.5 (2014-03-01)
 ---------------------------
