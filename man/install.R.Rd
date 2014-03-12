@@ -4,7 +4,8 @@
 \usage{
 
   install.R(page_with_download_url = "http://cran.rstudio.com/bin/windows/base/",
-  pat = "R-[0-9.]+-win.exe", to_checkMD5sums = TRUE, ...)
+  pat = "R-[0-9.]+-win.exe", to_checkMD5sums = TRUE,
+  keep_install_file = FALSE, ...)
 }
 \arguments{
   \item{page_with_download_url}{URL from which the latest
@@ -16,6 +17,9 @@
   installation has the files we expect it to (by checking
   the MD5 sums)? default is TRUE.  It assumes that the R
   which was isntalled is the latest R version.}
+
+  \item{keep_install_file}{If TRUE - the installer file
+  will not be erased after it is downloaded and run.}
 
   \item{...}{extra parameters to pass to
   \link{install.URL}}
