@@ -27,7 +27,7 @@ if (!require('devtools')) install.packages('devtools'); require('devtools')
 # make sure you have Rtools installed first! if not, then run:
 #install.packages('installr')
 #install_Rtools()
-install_github('talgalili/installr')
+devtools::install_github('talgalili/installr')
 ```
 
 ## Usage
