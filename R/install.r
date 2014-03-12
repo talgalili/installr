@@ -109,15 +109,18 @@ install.URL <- function(exe_URL, keep_install_file = FALSE, wait = TRUE, downloa
    
    if(!keep_install_file & !wait) {
       wait <- TRUE
-      warning("wait was set to TRUE since you wanted to installation file removed. In order to be able to run the installer AND remove the file - we must first wait for the isntaller to finish running before removing the file.")
+      if(massage) cat("wait was set to TRUE since you wanted to installation file removed. In order to be able to run the installer AND remove the file - we must first wait for the installer to finish running before removing the file.")
    }
+
+   if(massage) cat("\nRunning the installer now...\n")
+   
    if(is.windows()) {
       shell_output <- shell(exe_filename, wait = wait,...) # system(exe_filename) # I suspect shell works better than system
    } else {
       shell_output <- system(exe_filename, wait = wait,...) # system(exe_filename) # I suspect shell works better than system
    }   
    if(!keep_install_file) {
-      if(massage) cat("\nInstallation complete, removing the file:\n", exe_filename, "\n (In the future, you may keep the file by setting keep_install_file=TRUE) \n")
+      if(massage) cat("\nInstallation status: ", shell_output == 0 ,". Removing the file:\n", exe_filename, "\n (In the future, you may keep the file by setting keep_install_file=TRUE) \n")
       unlink(exe_filename, force = TRUE) # on.exit(unlink(exe_filename)) # on.exit doesn't work in case of problems in the running of the file
    }
    # unlink can take some time until done, for some reason.
