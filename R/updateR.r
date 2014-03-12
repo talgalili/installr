@@ -438,11 +438,18 @@ get.installed.R.folders <- function(sort_by_version = TRUE, add_version_to_name 
    
    R_folders <- file.path(R_parent_folder, items_in_R_parent_folder) # some of these may NOT be R folders
    R_folders_versions <- sapply(R_folders, R_version_in_a_folder)
-
+   #    R_folders = "C:/R-3.0.2"     
+   if(all(is.na(R_folders_versions))) warning("Could not find any R installation on your system.")
+   
    # remove NON R installation folders (for example "library")
    ss_R_folders <- !is.na(R_folders_versions)
    R_folders <- R_folders[ss_R_folders]
    R_folders_versions <- R_folders_versions[ss_R_folders]
+   
+   # Fix thanks to Dieter Menne:
+   R_folders_versions <- unlist(R_folders_versions)
+   # this might resolve some cases - but it is not yet clear to me that it does.
+   
    
 ### old way of doing this which relied on the folder being of the form:  D:/R/R-3.0.1  
 #    ss_R_subfolders_in_R_parent_folder <- grepl("R-[0-9]+.[0-9]+.[0-9]+$", items_in_R_parent_folder)
