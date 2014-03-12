@@ -16,7 +16,7 @@
 checkMD5sums2 <- function (package, dir, md5file, omit_files,...)
 {
    require(tools) # making sure this is used.
-   # R code in the package should call library or require only exceptionally. Such calls are never needed for packages listed in �Depends� as they will already be on the search path. It used to be common practice to use require calls for packages listed in �suggests� in functions which used their functionality, but nowadays it is better to access such functionality via :: calls.
+   # R code in the package should call library or require only exceptionally. Such calls are never needed for packages listed in ?Depends? as they will already be on the search path. It used to be common practice to use require calls for packages listed in ?suggests? in functions which used their functionality, but nowadays it is better to access such functionality via :: calls.
    # from: http://cran.r-project.org/doc/manuals/R-exts.html
 
 
@@ -379,6 +379,7 @@ turn.number.version <- function(number_to_dots) {
 #' @description 
 #' Get the version of the R installed in a folder based on the structure of the filename README.R-... (where ... is a version number for R).
 #' This function helps detect the version number of an R installation even if the name of the folder is not standard.
+#' If multiple versions were installed, overwriting each other, the most recent is selected.
 #' @param folder The folder for which we wish to know the R version.
 #' @return Returns a character vector of the R version (or NA, if this is not an R installation folder)
 #' @seealso \link{get.installed.R.folders}
@@ -395,7 +396,9 @@ R_version_in_a_folder <- function(folder) {
    README_x <- files[ss] # for example: "README.R-3.0.1"   
    
    # alternative to start=10:  regexpr("[0-9]+.[0-9]+.[0-9]", README_x)
-   substr(README_x, start=10, stop = nchar(README_x))       
+   versions <- sort(substr(README_x, start=10, stop = nchar(README_x)))
+   # Only take last if there are multiple
+   versions[length(versions)]
 }
    
 
@@ -437,7 +440,7 @@ get.installed.R.folders <- function(sort_by_version = TRUE, add_version_to_name 
    # remove NON R installation folders (for example "library")
    ss_R_folders <- !is.na(R_folders_versions)
    R_folders <- R_folders[ss_R_folders]
-   R_folders_versions <- unlist(R_folders_versions[ss_R_folders])
+   R_folders_versions <- R_folders_versions[ss_R_folders]
    
 ### old way of doing this which relied on the folder being of the form:  D:/R/R-3.0.1  
 #    ss_R_subfolders_in_R_parent_folder <- grepl("R-[0-9]+.[0-9]+.[0-9]+$", items_in_R_parent_folder)
