@@ -2,7 +2,8 @@
 \alias{install.URL}
 \title{Downloads and runs a .exe installer file for some software from a URL}
 \usage{
-install.URL(exe_URL, keep_install_file = FALSE, wait = TRUE, ...)
+install.URL(exe_URL, keep_install_file = FALSE, wait = TRUE,
+  download_dir = tempdir(), massage = TRUE, ...)
 }
 \arguments{
   \item{exe_URL}{A character with a link to an installer
@@ -13,6 +14,13 @@ install.URL(exe_URL, keep_install_file = FALSE, wait = TRUE, ...)
 
   \item{wait}{should the R interpreter wait for the command
   to finish? The default is to NOT wait.}
+
+  \item{download_dir}{A character of the directory into
+  which to download the file. (default is
+  \link{tempdir}())}
+
+  \item{massage}{boolean. Should a massage on the file be
+  printed or not (default is TRUE)}
 
   \item{...}{parameters passed to 'shell'}
 }

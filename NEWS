@@ -1,3 +1,11 @@
+installr 0.13.6 (2014-03-12)
+---------------------------
+
+UPDATED FUNCTIONS:
+   * install.URL - new parameters added:
+         * massage (TRUE) parameter. The function now prints (cat) if the file was downloaded succesfully or not, combined with the location of the file. It also informs the user if the file is later removed or not.
+         * download_dir (tempdir) character. Allowing the user to choose into which directory the file should be downloaded.
+
 installr 0.13.5 (2014-03-01)
 ---------------------------
 
