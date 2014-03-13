@@ -1,3 +1,10 @@
+installr 0.13.7 (2014-03-13)
+---------------------------
+UPDATED FUNCTIONS:
+   * R_version_in_a_folder - Handled the case of using one directory for subsequent overwriting R installations by selecting the last one. Contributed by Dieter Menne.
+
+
+
 installr 0.13.6 (2014-03-12)
 ---------------------------
 

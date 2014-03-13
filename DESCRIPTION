@@ -17,7 +17,8 @@ Authors@R: c(person("Tal", "Galili", role = c("aut", "cre", "cph"), email =
     "http://yihui.name"), person("Michael", "Friendly", role = "ctb", comment =
     "http://datavis.ca/") , person("Kornelius", "Rohmeyer", email =
     "rohmeyer@small-projects.de", role = "ctb", comment =
-    "http://algorithm-forge.com/techblog/"))
+    "http://algorithm-forge.com/techblog/"), person("Dieter", "Menne", email =
+    "dieter.menne@menne-biomed.de", role = "ctb"))
 Description: R is great for installing software.  Through the 'installr'
     package you can automate the updating of R (on Windows, using updateR())
     and install new software. Software installation is initiated through a
