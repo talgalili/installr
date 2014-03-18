@@ -893,11 +893,11 @@ install.Cygwin  <- function(bit = 32, ...) {
 #    m <- regexpr(pat, target_line); 
 #    URL      <- regmatches(target_line, m) # (The http still needs to be prepended.   
    # install.
-   if(bit = 32){
+   if(bit == 32){
       install.URL("http://cygwin.com/setup-x86.exe", ...)
    }
 
-   if(bit = 32){
+   if(bit == 32){
       install.URL("http://cygwin.com/setup-x86_64.exe", ...)
    }
 

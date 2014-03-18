@@ -2,9 +2,9 @@
 \alias{download_RStudio_CRAN_data}
 \title{Download RStudio CRAN mirror data files into a folder}
 \usage{
-download_RStudio_CRAN_data(START = as.Date(Sys.time()) - 5,
-  END = as.Date(Sys.time()), log_folder = tempdir(),
-  trunc_END_date_to_today = TRUE, ...)
+  download_RStudio_CRAN_data(START = as.Date(Sys.time()) - 5,
+    END = as.Date(Sys.time()), log_folder = tempdir(),
+    trunc_END_date_to_today = TRUE, ...)
 }
 \arguments{
   \item{START}{the defaults is 5 days before today. A
@@ -27,16 +27,16 @@ download_RStudio_CRAN_data(START = as.Date(Sys.time()) - 5,
   \item{...}{not in use.}
 }
 \value{
-Returns the value of log_folder.
+  Returns the value of log_folder.
 }
 \description{
-This function downlaod these files based on the code from
-the downlaod page (\url{http://cran-logs.rstudio.com/})
-into a temporary folder.
+  This function downlaod these files based on the code from
+  the downlaod page (\url{http://cran-logs.rstudio.com/})
+  into a temporary folder.
 }
 \details{
-RStudio maintains its own CRAN mirror,
-\url{http://cran.rstudio.com} and offers its log files.
+  RStudio maintains its own CRAN mirror,
+  \url{http://cran.rstudio.com} and offers its log files.
 }
 \examples{
 \dontrun{
@@ -54,7 +54,7 @@ barplot_package_users_per_day("plyr", my_RStudio_CRAN_data)
 }
 }
 \seealso{
-\link{download_RStudio_CRAN_data},
-\link{read_RStudio_CRAN_data},\link{barplot_package_users_per_day}
+  \link{download_RStudio_CRAN_data},
+  \link{read_RStudio_CRAN_data},\link{barplot_package_users_per_day}
 }
 

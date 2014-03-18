@@ -44,3 +44,13 @@ Suggests:
     sp,
     tools
 License: GPL-2
+Collate:
+    'create.global.library.r'
+    'geo_functions.r'
+    'install.r'
+    'is.x.r'
+    'os.manage.r'
+    'RStudio_CRAN_data.r'
+    'startup.r'
+    'updateR.r'
+    'zzz.r'

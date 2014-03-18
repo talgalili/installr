@@ -2,9 +2,8 @@
 \alias{install.npptor}
 \title{Downloads and installs NppToR for windows}
 \usage{
-
   install.npptor(URL = "http://sourceforge.net/projects/npptor/files/npptor\%20installer/",
-  ...)
+    ...)
 }
 \arguments{
   \item{URL}{the URL of the Notepad++ download page.}
@@ -13,27 +12,27 @@
   \link{install.URL}}
 }
 \value{
-invisible TRUE/FALSE - was the installation successful or
-not.
+  invisible TRUE/FALSE - was the installation successful or
+  not.
 }
 \description{
-Allows the user to downloads and install the latest version
-of NppToR extension for Notepad++ for Windows.
+  Allows the user to downloads and install the latest
+  version of NppToR extension for Notepad++ for Windows.
 }
 \details{
-Similar to the windows R gui built in editor, NppToR aims
-to extend the functionality of code passing to the
-Notepad++ code editor. In addition to passing to the R gui,
-NppToR provides optional passing to a PuTTY window for
-passing to an R instance a remote machine.
+  Similar to the windows R gui built in editor, NppToR aims
+  to extend the functionality of code passing to the
+  Notepad++ code editor. In addition to passing to the R
+  gui, NppToR provides optional passing to a PuTTY window
+  for passing to an R instance a remote machine.
 
-NppToR is a companion utility that facilitates
-communication between R and Notepad++. It provides code
-passing from Notepad++ into the windows R Gui. NppToR also
-provides an autocompletion database which is dynamically
-generated from the users' R library of packages, thanks to
-an addition by Yihui Xie. Notepad++ provides built it R
-code highlighting and folding.
+  NppToR is a companion utility that facilitates
+  communication between R and Notepad++. It provides code
+  passing from Notepad++ into the windows R Gui. NppToR
+  also provides an autocompletion database which is
+  dynamically generated from the users' R library of
+  packages, thanks to an addition by Yihui Xie. Notepad++
+  provides built it R code highlighting and folding.
 }
 \examples{
 \dontrun{
@@ -41,7 +40,7 @@ install.npptor() # installs the latest version of NppToR
 }
 }
 \references{
-homepage: \url{http://npptor.sourceforge.net/} download
-page: \url{http://sourceforge.net/projects/npptor/}
+  homepage: \url{http://npptor.sourceforge.net/} download
+  page: \url{http://sourceforge.net/projects/npptor/}
 }
 
