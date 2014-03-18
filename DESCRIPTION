@@ -44,3 +44,4 @@ Suggests:
     sp,
     tools
 License: GPL-2
+Roxygen: list(wrap = TRUE)
