@@ -2,18 +2,18 @@
 \alias{turn.version.to.number1}
 \title{Turns version to number (for 1 value only)}
 \usage{
-turn.version.to.number1(version_with_dots)
+  turn.version.to.number1(version_with_dots)
 }
 \arguments{
   \item{version_with_dots}{A character value - of the
   version of R (for example 2.15.2)}
 }
 \value{
-A "number" representation of the version (for example:
-2015002)
+  A "number" representation of the version (for example:
+  2015002)
 }
 \description{
-Turns version to number (for 1 value only)
+  Turns version to number (for 1 value only)
 }
 \examples{
 \dontrun{
@@ -22,6 +22,6 @@ turn.version.to.number1("3.0.1")
 }
 }
 \seealso{
-\link{turn.version.to.number}
+  \link{turn.version.to.number}
 }
 
