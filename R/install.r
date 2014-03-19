@@ -872,7 +872,7 @@ install.latex2rtf <- function(...) install.LaTeX2RTF(...)
 #' @description Allows the user to downloads and install the latest version of Cygwin for Windows.
 #' @details
 #' Cygwin is a collection of tools which provide a Linux look and feel environment for Windows.
-#' @param URL the URL of the Cygwin setup.exe file.
+#' @param bit Specify 32 bit or 64 for your particular version of Windows.
 #' @param ... extra parameters to pass to \link{install.URL}
 #' @return TRUE/FALSE - was the installation successful or not.
 #' @export
@@ -884,7 +884,7 @@ install.latex2rtf <- function(...) install.LaTeX2RTF(...)
 #' \dontrun{
 #' install.Cygwin() # installs the latest version of Cygwin
 #' }
-install.Cygwin  <- function(URL = "http://cygwin.com/setup.exe",...) {    
+install.Cygwin  <- function(bit = 32, ...) {    
 #    # get download URL:
 #    page     <- readLines(page_with_download_url, warn = FALSE)
 #    # http://swftools.org/swftools-0.9.0.exe
@@ -893,7 +893,14 @@ install.Cygwin  <- function(URL = "http://cygwin.com/setup.exe",...) {
 #    m <- regexpr(pat, target_line); 
 #    URL      <- regmatches(target_line, m) # (The http still needs to be prepended.   
    # install.
-   install.URL(URL,...)   
+   if(bit == 32){
+      install.URL("http://cygwin.com/setup-x86.exe", ...)
+   }
+
+   if(bit == 32){
+      install.URL("http://cygwin.com/setup-x86_64.exe", ...)
+   }
+
 }
 
 #' @export

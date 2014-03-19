@@ -3,19 +3,20 @@
 \alias{turn.number.version}
 \title{Turns a vector of version-numbers back to version-character}
 \usage{
-turn.number.version(number_to_dots)
+  turn.number.version(number_to_dots)
 }
 \arguments{
   \item{number_to_dots}{A numeric vector - of the
   number-version of R}
 }
 \value{
-A vector of "numbers" representing the versions (for
-example: 2015002).  The names of the vector is the original
-version character.
+  A vector of "numbers" representing the versions (for
+  example: 2015002).  The names of the vector is the
+  original version character.
 }
 \description{
-Turns a vector of version-numbers back to version-character
+  Turns a vector of version-numbers back to
+  version-character
 }
 \examples{
 \dontrun{

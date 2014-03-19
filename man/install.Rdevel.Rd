@@ -3,9 +3,8 @@
 \alias{install.Rdevel}
 \title{Downloads and installs the latest Rdevel version}
 \usage{
-
   install.Rdevel(exe_URL = "http://cran.rstudio.com/bin/windows/base/R-devel-win.exe",
-  ...)
+    ...)
 }
 \arguments{
   \item{exe_URL}{A character with a link to an installer
@@ -15,17 +14,17 @@
   \link{install.URL}}
 }
 \value{
-TRUE/FALSE - was the installation of R successful or not.
+  TRUE/FALSE - was the installation of R successful or not.
 }
 \description{
-Fetches the latest (development!) R version
+  Fetches the latest (development!) R version
 }
 \details{
-This is a development version of R. It likely contains
-bugs, so be careful if you use it. Please don't report bugs
-in this version through the usual R bug reporting system,
-please report them on the r-devel mailing list ---but only
-if they persist for a few days.
+  This is a development version of R. It likely contains
+  bugs, so be careful if you use it. Please don't report
+  bugs in this version through the usual R bug reporting
+  system, please report them on the r-devel mailing list
+  ---but only if they persist for a few days.
 }
 \examples{
 \dontrun{
@@ -33,9 +32,9 @@ install.Rdevel()
 }
 }
 \references{
-\url{http://cran.rstudio.com/bin/windows/base/rdevel.html}
+  \url{http://cran.rstudio.com/bin/windows/base/rdevel.html}
 }
 \seealso{
-\link{install.R}, \link{updateR}
+  \link{install.R}, \link{updateR}
 }
 

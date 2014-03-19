@@ -3,7 +3,7 @@
 \alias{os.shutdown}
 \title{Shut down the operating system with the command `shutdown'}
 \usage{
-os.shutdown(s = 0, m = 0, h = 0)
+  os.shutdown(s = 0, m = 0, h = 0)
 }
 \arguments{
   \item{s}{time to wait before shutting down (in seconds),
@@ -19,18 +19,18 @@ os.shutdown(s = 0, m = 0, h = 0)
   \code{\link[base]{Sys.sleep}}}
 }
 \value{
-The status code of \code{\link[base]{system}}.
+  The status code of \code{\link[base]{system}}.
 }
 \description{
-There is a command \command{shutdown} in both Windows and
-Linux, and this function uses it to shut down a computer.
+  There is a command \command{shutdown} in both Windows and
+  Linux, and this function uses it to shut down a computer.
 
-After the time \code{wait} has passed, R will execute
-\command{shutdown -s -t 0} (for Windows) or
-\command{shutdown -h now} to shut down the computer.
+  After the time \code{wait} has passed, R will execute
+  \command{shutdown -s -t 0} (for Windows) or
+  \command{shutdown -h now} to shut down the computer.
 
-This function is a modified version of Yihui's shutdown
-function from the {fun} package.
+  This function is a modified version of Yihui's shutdown
+  function from the {fun} package.
 }
 \examples{
 \dontrun{
@@ -43,18 +43,18 @@ os.shutdown()
 }
 }
 \author{
-Yihui Xie <\url{http://yihui.name}>, and Tal Galili
+  Yihui Xie <\url{http://yihui.name}>, and Tal Galili
 }
 \references{
-\url{http://cos.name/en/topic/shut-down-your-windows-with-r}
-,
-\url{https://github.com/yihui/fun/blob/master/R/shutdown.R}
+  \url{http://cos.name/en/topic/shut-down-your-windows-with-r}
+  ,
+  \url{https://github.com/yihui/fun/blob/master/R/shutdown.R}
 }
 \seealso{
-\code{\link[base]{system}},\code{\link[base]{shell}},
-\code{\link[base]{Sys.sleep}}, \code{\link{is.windows}},
-\code{\link{os.shutdown}}, \code{\link{os.sleep}},
-\code{\link{os.hibernate}}, \code{\link{os.lock}},
-\code{\link{os.restart}}
+  \code{\link[base]{system}},\code{\link[base]{shell}},
+  \code{\link[base]{Sys.sleep}}, \code{\link{is.windows}},
+  \code{\link{os.shutdown}}, \code{\link{os.sleep}},
+  \code{\link{os.hibernate}}, \code{\link{os.lock}},
+  \code{\link{os.restart}}
 }
 

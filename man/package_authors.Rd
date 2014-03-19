@@ -3,8 +3,8 @@
 \alias{package_authors}
 \title{Access (and clean) author elements from R's Rd file}
 \usage{
-package_authors(package, to_strsplit = TRUE, split = c(",|and"),
-  to_table = FALSE, ...)
+  package_authors(package, to_strsplit = TRUE,
+    split = c(",|and"), to_table = FALSE, ...)
 }
 \arguments{
   \item{package}{a character string of the package we are
@@ -24,17 +24,17 @@ package_authors(package, to_strsplit = TRUE, split = c(",|and"),
   \item{...}{not used.}
 }
 \value{
-a character vector with a package authors (as extracted
-from the author tag in the .Rd files)
+  a character vector with a package authors (as extracted
+  from the author tag in the .Rd files)
 }
 \description{
-Access (and clean) author elements from R's Rd file
+  Access (and clean) author elements from R's Rd file
 }
 \details{
-List authors for a package from its "author" tag elements
-from its Rd files. The function also seperate lists of
-authors, and cleans the output a bit (from spaces at the
-beginning of the strings).
+  List authors for a package from its "author" tag elements
+  from its Rd files. The function also seperate lists of
+  authors, and cleans the output a bit (from spaces at the
+  beginning of the strings).
 }
 \examples{
 \dontrun{
@@ -63,11 +63,11 @@ package_authors("Rcpp")
 }
 }
 \references{
-Useful for updating your DESCRIPTION file:
+  Useful for updating your DESCRIPTION file:
 
-\url{http://cran.r-project.org/doc/manuals/R-exts.html#The-DESCRIPTION-file}
+  \url{http://cran.r-project.org/doc/manuals/R-exts.html#The-DESCRIPTION-file}
 }
 \seealso{
-\link{fetch_tag_from_Rd}
+  \link{fetch_tag_from_Rd}
 }
 

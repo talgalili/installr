@@ -3,9 +3,9 @@
 \alias{check.for.updates.R}
 \title{Checks if there is a newer version of R}
 \usage{
-check.for.updates.R(notify_user = TRUE, use_GUI = TRUE,
-  page_with_download_url = "http://cran.rstudio.com/bin/windows/base/",
-  pat = "R-[0-9.]+-win")
+  check.for.updates.R(notify_user = TRUE, use_GUI = TRUE,
+    page_with_download_url = "http://cran.rstudio.com/bin/windows/base/",
+    pat = "R-[0-9.]+-win")
 }
 \arguments{
   \item{notify_user}{if to print to you (the user) what is
@@ -24,14 +24,14 @@ check.for.updates.R(notify_user = TRUE, use_GUI = TRUE,
   R version}
 }
 \value{
-TRUE/FALSE - if there is a newer version of R to install or
-not.
+  TRUE/FALSE - if there is a newer version of R to install
+  or not.
 }
 \description{
-Fetches the latest (not development!) R version and
-compares it with your currently installed R version (the
-version of the R session from which you are running this
-function).
+  Fetches the latest (not development!) R version and
+  compares it with your currently installed R version (the
+  version of the R session from which you are running this
+  function).
 }
 \examples{
 \dontrun{
