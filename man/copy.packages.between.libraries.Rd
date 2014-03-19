@@ -3,9 +3,8 @@
 \alias{copy.packages.between.libraries}
 \title{Copies all packages from one library folder to another}
 \usage{
-  copy.packages.between.libraries(from, to, ask = FALSE,
-    keep_old = TRUE,
-    do_NOT_override_packages_in_new_R = TRUE)
+copy.packages.between.libraries(from, to, ask = FALSE, keep_old = TRUE,
+  do_NOT_override_packages_in_new_R = TRUE)
 }
 \arguments{
   \item{from}{a character vector for the location of the
@@ -32,22 +31,22 @@
   be FALSE)}
 }
 \value{
-  TRUE if it copied (moved) packages, and FALSE if it did
-  not.
+TRUE if it copied (moved) packages, and FALSE if it did
+not.
 }
 \description{
-  Copies all packages from one folder to another.  This
-  function is used if we wish to either: \itemize{ \item
-  Upgrade R to a new version - and copy all of the packages
-  from the old R installation to the new one. \item Move to
-  a global library system - and wanting to copy all of
-  packages from the local library folder to the global one
-  } It takes into account that we don't want to copy
-  packages which have "high" importance (such as MASS,
-  boot, graphics, utils, rpart, Matrix and more GREAT
-  packages...) to the new library folder. Also, it assumes
-  that within an R installation, the packages are located
-  inside the "library" folder.
+Copies all packages from one folder to another.  This
+function is used if we wish to either: \itemize{ \item
+Upgrade R to a new version - and copy all of the packages
+from the old R installation to the new one. \item Move to a
+global library system - and wanting to copy all of packages
+from the local library folder to the global one } It takes
+into account that we don't want to copy packages which have
+"high" importance (such as MASS, boot, graphics, utils,
+rpart, Matrix and more GREAT packages...) to the new
+library folder. Also, it assumes that within an R
+installation, the packages are located inside the "library"
+folder.
 }
 \examples{
 \dontrun{
@@ -63,6 +62,6 @@ copy.packages.between.libraries(ask = T)
 }
 }
 \seealso{
-  \link{get.installed.R.folders}
+\link{get.installed.R.folders}
 }
 

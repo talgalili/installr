@@ -3,11 +3,11 @@
 \alias{read_RStudio_CRAN_data}
 \title{Reads RStudio CRAN mirror data files from a folder}
 \source{
-  \url{http://www.nicebread.de/finally-tracking-cran-packages-downloads/}
+\url{http://www.nicebread.de/finally-tracking-cran-packages-downloads/}
 }
 \usage{
-  read_RStudio_CRAN_data(log_folder = tempdir(),
-    use_data_table = TRUE, packages, ...)
+read_RStudio_CRAN_data(log_folder = tempdir(), use_data_table = TRUE,
+  packages, ...)
 }
 \arguments{
   \item{log_folder}{the folder which contains the RStudio
@@ -27,18 +27,18 @@
   \item{...}{not in use.}
 }
 \value{
-  Returns the combined data file.
+Returns the combined data file.
 }
 \description{
-  This function reads files downloaded from the downlaod
-  page (\url{http://cran-logs.rstudio.com/}).
+This function reads files downloaded from the downlaod page
+(\url{http://cran-logs.rstudio.com/}).
 
-  This function relies on data.table to run faster.
-  WARNING: this function can be quite slow...
+This function relies on data.table to run faster. WARNING:
+this function can be quite slow...
 }
 \details{
-  RStudio maintains its own CRAN mirror,
-  \url{http://cran.rstudio.com} and offers its log files.
+RStudio maintains its own CRAN mirror,
+\url{http://cran.rstudio.com} and offers its log files.
 }
 \examples{
 \dontrun{
@@ -55,10 +55,10 @@ barplot_package_users_per_day("plyr", my_RStudio_CRAN_data)
 }
 }
 \author{
-  Felix Schonbrodt, Tal Galili
+Felix Schonbrodt, Tal Galili
 }
 \seealso{
-  \link{download_RStudio_CRAN_data},
-  \link{read_RStudio_CRAN_data},\link{barplot_package_users_per_day}
+\link{download_RStudio_CRAN_data},
+\link{read_RStudio_CRAN_data},\link{barplot_package_users_per_day}
 }
 

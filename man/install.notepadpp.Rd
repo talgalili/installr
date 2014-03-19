@@ -3,8 +3,9 @@
 \alias{install.notepadpp}
 \title{Downloads and installs Notepad++ for windows}
 \usage{
+
   install.notepadpp(page_with_download_url = "http://notepad-plus-plus.org/download/",
-    ...)
+  ...)
 }
 \arguments{
   \item{page_with_download_url}{the URL of the Notepad++
@@ -14,26 +15,26 @@
   \link{install.URL}}
 }
 \value{
-  invisible TRUE/FALSE - was the installation successful or
-  not.
+invisible TRUE/FALSE - was the installation successful or
+not.
 }
 \description{
-  Allows the user to downloads and install the latest
-  version of Notepad++ for Windows.
+Allows the user to downloads and install the latest version
+of Notepad++ for Windows.
 }
 \details{
-  Notepad++ is a free (as in "free speech" and also as in
-  "free beer") source code editor and Notepad replacement
-  that supports several languages. Running in the MS
-  Windows environment, its use is governed by GPL License.
-  Based on the powerful editing component Scintilla,
-  Notepad++ is written in C++ and uses pure Win32 API and
-  STL which ensures a higher execution speed and smaller
-  program size. By optimizing as many routines as possible
-  without losing user friendliness, Notepad++ is trying to
-  reduce the world carbon dioxide emissions. When using
-  less CPU power, the PC can throttle down and reduce power
-  consumption, resulting in a greener environment.
+Notepad++ is a free (as in "free speech" and also as in
+"free beer") source code editor and Notepad replacement
+that supports several languages. Running in the MS Windows
+environment, its use is governed by GPL License. Based on
+the powerful editing component Scintilla, Notepad++ is
+written in C++ and uses pure Win32 API and STL which
+ensures a higher execution speed and smaller program size.
+By optimizing as many routines as possible without losing
+user friendliness, Notepad++ is trying to reduce the world
+carbon dioxide emissions. When using less CPU power, the PC
+can throttle down and reduce power consumption, resulting
+in a greener environment.
 }
 \examples{
 \dontrun{
@@ -41,7 +42,7 @@ install.notepadpp() # installs the latest version of Notepad++
 }
 }
 \references{
-  homepage: \url{http://notepad-plus-plus.org/} download
-  page: \url{http://notepad-plus-plus.org/download/}
+homepage: \url{http://notepad-plus-plus.org/} download
+page: \url{http://notepad-plus-plus.org/download/}
 }
 

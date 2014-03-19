@@ -3,11 +3,11 @@
 \alias{lineplot_package_downloads}
 \title{barplot for the number of users installation of a package}
 \source{
-  \url{http://www.nicebread.de/finally-tracking-cran-packages-downloads/}
+\url{http://www.nicebread.de/finally-tracking-cran-packages-downloads/}
 }
 \usage{
-  lineplot_package_downloads(pkg_names, dataset,
-    by_time = c("date", "week"), ...)
+lineplot_package_downloads(pkg_names, dataset, by_time = c("date", "week"),
+  ...)
 }
 \arguments{
   \item{pkg_names}{a character vector of packages we are
@@ -23,16 +23,16 @@
   \item{...}{not in use.}
 }
 \value{
-  invisible aggregated data that was used for the plot
+invisible aggregated data that was used for the plot
 }
 \description{
-  This function gets a vector of package names, and returns
-  a line plot of number of downloads for these packages per
-  week.
+This function gets a vector of package names, and returns a
+line plot of number of downloads for these packages per
+week.
 }
 \details{
-  RStudio maintains its own CRAN mirror,
-  \url{http://cran.rstudio.com} and offers its log files.
+RStudio maintains its own CRAN mirror,
+\url{http://cran.rstudio.com} and offers its log files.
 }
 \examples{
 \dontrun{
@@ -54,10 +54,10 @@ barplot_package_users_per_day("plyr", my_RStudio_CRAN_data)
 }
 }
 \author{
-  Felix Schonbrodt, Tal Galili
+Felix Schonbrodt, Tal Galili
 }
 \seealso{
-  \link{download_RStudio_CRAN_data},
-  \link{read_RStudio_CRAN_data},\link{barplot_package_users_per_day}
+\link{download_RStudio_CRAN_data},
+\link{read_RStudio_CRAN_data},\link{barplot_package_users_per_day}
 }
 

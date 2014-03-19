@@ -3,7 +3,7 @@
 \alias{create.global.library}
 \title{Creates a global library folder}
 \usage{
-  create.global.library(global_library_folder)
+create.global.library(global_library_folder)
 }
 \arguments{
   \item{global_library_folder}{the path of the new global
@@ -12,11 +12,11 @@
   Files/R/library")}
 }
 \value{
-  TRUE/FALSE if we created a new folder or not.
+TRUE/FALSE if we created a new folder or not.
 }
 \description{
-  Creates a global library folder (above the folder R is
-  currently installed in)
+Creates a global library folder (above the folder R is
+currently installed in)
 }
 \examples{
 \dontrun{

@@ -3,8 +3,7 @@
 \alias{ask.user.yn.question}
 \title{Asks the user for one yes/no question.}
 \usage{
-  ask.user.yn.question(question, use_GUI = TRUE,
-    add_lines_before = TRUE)
+ask.user.yn.question(question, use_GUI = TRUE, add_lines_before = TRUE)
 }
 \arguments{
   \item{question}{a character string with a question to the
@@ -19,13 +18,13 @@
   the question.  Default is TRUE.}
 }
 \value{
-  TRUE/FALSE - if the user answeres yes or no.
+TRUE/FALSE - if the user answeres yes or no.
 }
 \description{
-  Asks the user for one yes/no question.  If the users
-  replies with a "yes" (or Y, or y) the function returns
-  TRUE.  Otherwise, FALSE. (also exists as the function
-  devtools::yesno)
+Asks the user for one yes/no question.  If the users
+replies with a "yes" (or Y, or y) the function returns
+TRUE.  Otherwise, FALSE. (also exists as the function
+devtools::yesno)
 }
 \examples{
 \dontrun{
@@ -45,10 +44,10 @@ Ut enim ad minim veniam, quis nostrud exercitation
 }
 }
 \references{
-  \url{http://stackoverflow.com/questions/15250487/how-to-add-a-menu-item-to-rgui}
-  (my thanks goes to Dason for his answer and help)
+\url{http://stackoverflow.com/questions/15250487/how-to-add-a-menu-item-to-rgui}
+(my thanks goes to Dason for his answer and help)
 }
 \seealso{
-  \link[utils]{menu}, (yesno in the package {devtools})
+\link[utils]{menu}, (yesno in the package {devtools})
 }
 
