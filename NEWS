@@ -1,4 +1,10 @@
 
+installr 0.14.1 (2014-04-12)
+---------------------------
+UPDATED FUNCTIONS:
+   * download_RStudio_CRAN_data - added the override and massage parameters (makes sure we do not have to download files already downloaded)
+
+
 installr 0.14.0 (2014-04-02)
 ---------------------------
 OTHER NOTES:
@@ -464,3 +470,4 @@ TODO for future releases:
    * install.Rpatch # TODO someday
    * install.python # TODO someday
    * install.java # with correct downloading for each type of windows R (version 32 or 64 bits...
+   * install.qpdf - http://sourceforge.net/projects/qpdf/files/qpdf/

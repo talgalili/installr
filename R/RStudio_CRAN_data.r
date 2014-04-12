@@ -16,6 +16,9 @@
 #' @param trunc_END_date_to_today default is TRUE. Makes sure that if END date is later then today,
 #'  the END date will be change to today
 #'  (since otherwise, we will only get many 404 errors)
+#' @param override boolean (default is FALSE) - should the function download files that
+#' are already available in the temp folder
+#' @param massage boolean (default is TRUE) - should a massage be printed in interesting cases.
 #' @param ... not in use.
 #' @return Returns the value of log_folder.
 #' @seealso \link{download_RStudio_CRAN_data}, \link{read_RStudio_CRAN_data},\link{barplot_package_users_per_day}
@@ -33,7 +36,13 @@
 #' barplot_package_users_per_day("installr", my_RStudio_CRAN_data)
 #' barplot_package_users_per_day("plyr", my_RStudio_CRAN_data)
 #' }
-download_RStudio_CRAN_data <- function(START = as.Date(Sys.time())-5, END = as.Date(Sys.time()), log_folder = tempdir(), trunc_END_date_to_today = TRUE,...) {
+download_RStudio_CRAN_data <- function(START = as.Date(Sys.time())-5, 
+                                       END = as.Date(Sys.time()), 
+                                       log_folder = tempdir(), 
+                                       trunc_END_date_to_today = TRUE,
+                                       override = FALSE,
+                                       massage = TRUE,
+                                       ...) {
    # Here's an easy way to get all the URLs in R
    START <- as.Date(START)
    END <- as.Date(END)
@@ -51,16 +60,28 @@ download_RStudio_CRAN_data <- function(START = as.Date(Sys.time())-5, END = as.D
    missing_days <- setdiff(all_days, tools::file_path_sans_ext(dir(), TRUE))
 
 
+   avilable_files <- list.files(log_folder)
+   
    # download files
    for(i in seq_along(urls)) {
-      zip_filename <- file.path(log_folder, file.name.from.url(urls[i]))
-      tryCatch(download.file(urls[i], destfile=zip_filename, mode = 'wb'), error = function(e) e)
+      zip_filename <- file.path(file.name.from.url(urls[i]))
+      zip_filename_path <- file.path(log_folder, zip_filename)
+      
+      # if the file is here, and I should NOT override - then skip
+      if(zip_filename %in% avilable_files & !override) {
+         if(massage) cat("The file: ", zip_filename, " is already available in the folder - skipping it\n")
+         # do nothing - skip
+      } else { # download
+         tryCatch(download.file(urls[i], destfile=zip_filename_path, mode = 'wb'), error = function(e) e)
+      }      
    }
-
-   return(log_folder)
+   
+   if(massage) cat("Files where downloaded to: ", log_folder, "\n")
+   
+   return(invisible(log_folder))
 }
 # unlink(list.files(tempdir()))
-
+# download_RStudio_CRAN_data()
 # http://www.r-bloggers.com/where-is-the-r-activity/
 # source:  http://psychwire.wordpress.com/2011/06/03/merge-all-files-in-a-directory-using-r-into-a-single-dataframe/
 
@@ -130,10 +151,15 @@ read_RStudio_CRAN_data <- function(log_folder = tempdir(), use_data_table = TRUE
    } else {
       dataset <- do.call("rbind",logs)
    }
-   
+
+   if(("data.table" %in% class(dataset))) {
+      dataset <- as.data.frame(dataset)
+   }
+
    return(dataset)
 }
 
+# a= read_RStudio_CRAN_data()
 
 
 #' @title Format the RStudio CRAN mirror data into the data.table format

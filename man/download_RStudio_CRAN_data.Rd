@@ -5,7 +5,7 @@
 \usage{
 download_RStudio_CRAN_data(START = as.Date(Sys.time()) - 5,
   END = as.Date(Sys.time()), log_folder = tempdir(),
-  trunc_END_date_to_today = TRUE, ...)
+  trunc_END_date_to_today = TRUE, override = FALSE, massage = TRUE, ...)
 }
 \arguments{
   \item{START}{the defaults is 5 days before today. A
@@ -24,6 +24,13 @@ download_RStudio_CRAN_data(START = as.Date(Sys.time()) - 5,
   sure that if END date is later then today, the END date
   will be change to today (since otherwise, we will only
   get many 404 errors)}
+
+  \item{override}{boolean (default is FALSE) - should the
+  function download files that are already available in the
+  temp folder}
+
+  \item{massage}{boolean (default is TRUE) - should a
+  massage be printed in interesting cases.}
 
   \item{...}{not in use.}
 }
