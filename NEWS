@@ -1,3 +1,8 @@
+installr 0.14.2 (2014-04-17)
+---------------------------
+NEW FUNCTIONS ADDED:
+   * uninstall.packages - removes packages from R.
+
 
 installr 0.14.1 (2014-04-12)
 ---------------------------

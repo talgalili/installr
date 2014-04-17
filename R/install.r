@@ -70,6 +70,51 @@ install.packages.zip <- function(zip_URL) {
 
 
 
+
+#' @title uninstalls (removes) Installed Packages
+#' @export
+#' @description 
+#' A wrapper for \link{remove.packages}. Usefull since it also works if the 
+#' package is currently loaded into the workspace.
+#' @param pkgs a character vector with the names of the packages to be removed.
+#' @param lib a character vector giving the library directories to remove the packages from. 
+#' If missing, defaults to the first element in \link{.libPaths()}.
+#' @param warning boolean (TRUE), should a massage be printed in various cases.
+#' @param ... currently ignored.
+#' @return Invisible NULL
+#' @seealso \code{\link{install.packages}}, \code{\link{remove.packages}},
+#' \code{\link[installr]{install.packages.zip}}
+#' @examples
+#' \dontrun{
+#' install.packages(c("reshape", "plyr"))
+#' require(plyr)
+#' uninstall.packages(c("reshape", "plyr"))
+#' install.packages(c("reshape", "plyr"))
+#' }
+uninstall.packages <- function(pkgs,lib, warning = TRUE, ...) {   
+   
+   if(missing(lib)) lib <- .libPaths()[1]   
+   
+   uninstall_1_pkg <- function(pkg,lib,...) {      
+      pkg_pkg <- paste("package:", pkg, sep = "")
+      if (pkg_pkg %in% search()) { detach(pkg_pkg, unload=TRUE, character.only=TRUE) }
+      if (pkg %in% rownames(installed.packages())) { 
+         remove.packages(pkg,lib) 
+      } else {
+         if(warning) warning(paste("Package {", pkg , "}, was not installed in ", lib, "\n", sep=""))
+      }
+   }
+   uninstall_n_pkg <- Vectorize(FUN=uninstall_1_pkg, vectorize.args=c("pkg"))
+   
+   uninstall_n_pkg(pkgs,lib,...)
+   
+   invisible(NULL)
+}
+# a simple example of use:
+# install.packages.zip(zip_URL="http://cran.r-project.org/bin/windows/contrib/r-release/TeachingSampling_2.0.1.zip")
+
+
+
 #' @title Downloads and runs a .exe installer file for some software from a URL
 #' @description Gets a character with a link to an installer file, downloads it, runs it, and then erases it.
 #' @details
