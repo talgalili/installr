@@ -79,7 +79,7 @@
 #'# Display chart
 #'plot(Geo) 
 #' }
-cranometer <- function(ms = getCRANmirrors(all = FALSE, local.only = FALSE),...){   
+cranometer <- function(ms = getCRANmirrors(all = FALSE, local.only = FALSE),...){
    dest = tempfile()
    
    nms = dim(ms)[1]

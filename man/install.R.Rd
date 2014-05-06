@@ -6,7 +6,7 @@
 
   install.R(page_with_download_url = "http://cran.rstudio.com/bin/windows/base/",
   pat = "R-[0-9.]+-win.exe", to_checkMD5sums = TRUE,
-  keep_install_file = FALSE, download_dir = tempdir(), ...)
+  keep_install_file = FALSE, download_dir = tempdir(), silent=FALSE, ...)
 }
 \arguments{
   \item{page_with_download_url}{URL from which the latest
@@ -25,6 +25,8 @@
   \item{download_dir}{A character of the directory into
   which to download the file. (default is
   \link{tempdir}())}
+
+  \item{silent}{If TRUE - enables silent installation mode.}
 
   \item{...}{extra parameters to pass to
   \link{install.URL}}
