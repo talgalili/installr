@@ -4,7 +4,7 @@
 \title{Downloads and runs a .exe installer file for some software from a URL}
 \usage{
 install.URL(exe_URL, keep_install_file = FALSE, wait = TRUE,
-  download_dir = tempdir(), massage = TRUE, ...)
+  download_dir = tempdir(), massage = TRUE, installer_option = NULL, ...)
 }
 \arguments{
   \item{exe_URL}{A character with a link to an installer
@@ -22,6 +22,8 @@ install.URL(exe_URL, keep_install_file = FALSE, wait = TRUE,
 
   \item{massage}{boolean. Should a massage on the file be
   printed or not (default is TRUE)}
+
+  \item{installer_option}{A character of the command line arguments. (default is NULL)}
 
   \item{...}{parameters passed to 'shell'}
 }
