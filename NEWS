@@ -1,3 +1,13 @@
+installr 0.14.3 (2014-05-06)
+---------------------------
+UPDATED FUNCTIONS:
+	* install.URL - added installer_option A character of the command line arguments
+	* install.R, updaeR - added silent installation mode to 
+
+UPDATED DESCRIPTION:
+    * Bump version to 0.14.3
+	* added Takekatsu Hiramura as a contributor.
+	
 installr 0.14.2 (2014-04-17)
 ---------------------------
 NEW FUNCTIONS ADDED:
