@@ -6,7 +6,7 @@
 updateR(browse_news, install_R, copy_packages, keep_old_packages,
   update_packages, start_new_R, quit_R, print_R_versions = TRUE,
   use_GUI = TRUE, to_checkMD5sums = TRUE, keep_install_file = FALSE,
-  download_dir = tempdir(), ...)
+  download_dir = tempdir(), silent=FALSE, ...)
 }
 \arguments{
   \item{browse_news}{if TRUE (and if there is a newer
@@ -69,6 +69,8 @@ updateR(browse_news, install_R, copy_packages, keep_old_packages,
   \item{download_dir}{A character of the directory into
   which to download the file. (default is
   \link{tempdir}())}
+
+  \item{silent}{If TRUE - enables silent installation mode.}
 
   \item{...}{Other arguments (this is currently not used in
   any way)}
