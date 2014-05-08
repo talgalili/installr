@@ -149,7 +149,7 @@ install.URL <- function(exe_URL, keep_install_file = FALSE, wait = TRUE, downloa
    if(file.exists(exe_filename)) {
       if(massage) cat("\nThe file was downloaded succesfully into:\n", exe_filename, "\n")
    } else {
-      if(massage) cat("\nWe failed to download the file into:\n", exe_filename, "\nfunctions is stepped.")
+      if(massage) cat("\nWe failed to download the file into:\n", exe_filename, "\n(i.e.: the installation failed)\n")
       return(invisible(FALSE))      
    }
    
@@ -201,7 +201,7 @@ install.URL <- function(exe_URL, keep_install_file = FALSE, wait = TRUE, downloa
 #' @export
 #' @author GERGELY DAROCZI, G. Grothendieck, Tal Galili
 #' @param URL a link to the list of download links of pandoc
-#' @param use_regex (default TRUE) - defunced (kept for legacy purposes).
+#' @param use_regex (default TRUE) - deprecated (kept for legacy purposes).
 #' @param to_restart boolean. Should the computer be restarted 
 #'  after pandoc is installed? (if missing then the user is prompted 
 #' 	for a decision)
@@ -212,30 +212,34 @@ install.URL <- function(exe_URL, keep_install_file = FALSE, wait = TRUE, downloa
 #' install.pandoc() 
 #' }
 install.pandoc <- function(
-   URL = 'http://code.google.com/p/pandoc/downloads/list',
+   URL = 'https://github.com/jgm/pandoc/releases',
    use_regex = TRUE, to_restart,...
 ) {
    page_with_download_url <- URL
    # source: http://stackoverflow.com/questions/15071957/is-it-possible-to-install-pandoc-on-windows-using-an-r-command
    # published on: http://www.r-statistics.com/2013/02/installing-pandoc-from-r-on-windows/
    
+   # https://github.com/jgm/pandoc/releases/download/1.12.4/pandoc-1.12.4.msi.Windows.installer.msi
+   
    if(!use_regex) warning("use_regex is no longer supported, you can stop using it from now on...")
    
-#    if(use_regex) {
       page     <- readLines(page_with_download_url, warn = FALSE)
       #"//pandoc.googlecode.com/files/pandoc-1.11.1.msi"
-      pat <- "//pandoc.googlecode.com/files/pandoc-[0-9.]+.msi"
-      target_line <- grep(pat, page, value = TRUE); 
+      # https://github.com/jgm/pandoc/releases/download/1.12.4/pandoc-1.12.4.msi.Windows.installer.msi
+   pat <- "jgm/pandoc/releases/download/[0-9.]+/pandoc-[0-9.]+\\.msi"
+#    grep(pat, page, value = TRUE, fixed = F)
+#    glob2rx("jgm/pandoc/releases/download/1.12.4/pandoc-1.12.4.msi.Windows.installer.msi")
+#    grep("aaa[:graph:]*", "aaasdfadsfa  adaf / sdfa", value = TRUE)
+   
+      target_line <- grep(pat, page, value = TRUE)
       m <- regexpr(pat, target_line); 
       URL      <- regmatches(target_line, m) # (The http still needs to be prepended.
-      URL      <- paste('http', URL, sep = ':')
-#    } else { # use XML
-#       if(!require(XML)) stop("You need to install the {XML} package in order to use this function.")
-#       page     <- readLines(page_with_download_url, warn = FALSE)
-#       pagetree <- htmlTreeParse(page, error=function(...){}, useInternalNodes = TRUE, encoding='UTF-8')
-#       URL      <- xpathSApply(pagetree, '//tr[2]//td[1]//a ', xmlAttrs)[1]
-#       URL      <- paste('http', URL, sep = ':')
-#    }
+      URL      <- head(URL,1)
+# https://github.com/jgm/pandoc/releases/download/1.12.4/pandoc-1.12.4.msi.Windows.installer.msi
+      URL      <- paste('https://github.com/', 
+                        URL, 
+                        ".Windows.installer.msi",
+                        sep = '')
    
    installed <- install.URL(URL,...)
    

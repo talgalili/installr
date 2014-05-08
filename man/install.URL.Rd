@@ -23,7 +23,8 @@ install.URL(exe_URL, keep_install_file = FALSE, wait = TRUE,
   \item{massage}{boolean. Should a massage on the file be
   printed or not (default is TRUE)}
 
-  \item{installer_option}{A character of the command line arguments. (default is NULL)}
+  \item{installer_option}{A character of the command line
+  arguments}
 
   \item{...}{parameters passed to 'shell'}
 }

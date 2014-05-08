@@ -1,8 +1,14 @@
+installr 0.14.4 (2014-05-08)
+---------------------------
+UPDATED FUNCTIONS:
+   * install.pandoc - the project has moved from http://code.google.com/p/pandoc/downloads/list to https://github.com/jgm/pandoc/releases - so the function had to be updated... (props to  Patrick Kelley for the bug report)
+   * install.url - tweaks to the massage.
+
 installr 0.14.3 (2014-05-06)
 ---------------------------
 UPDATED FUNCTIONS:
 	* install.URL - added installer_option A character of the command line arguments
-	* install.R, updaeR - added silent installation mode to 
+	* install.R, updaeR - added silent installation mode (source: http://hiratake55.wordpress.com/2014/05/01/how-to-do-a-silent-install-of-r/)
 
 UPDATED DESCRIPTION:
     * Bump version to 0.14.3
