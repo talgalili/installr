@@ -414,31 +414,18 @@ pkgDNLs_worldmapcolor <- function(pkg_name, dataset, remove_dups=TRUE, ...){
   names(counts) <- c("country", "count")
   
   
-  data("WorldBordersData", envir = environment()) #loading the world map definition file
-  # downloaded as a shapefile of the world map from Natural Earth:
-  # http://www.naturalearthdata.com/http//www.naturalearthdata.com/download/110m/cultural/ne_110m_admin_0_countries.zip
-  # and unzip it in the 'shp.file.repos' repository
+  data("WorldBordersData", envir = environment(), package="installr") # loading the world map definition file
+  ## downloaded as a shapefile of the world map from Natural Earth:
+  ## http://www.naturalearthdata.com/http//www.naturalearthdata.com/download/110m/cultural/ne_110m_admin_0_countries.zip
+  ## and extract (unzip) it in the 'shp.file.repos' repository
+  # library(maptools)
   # world<-readShapePoly(fn=paste(shp.file.repos, "ne_110m_admin_0_countries", sep="/"))
   # ISO_full <- as.character(world@data$iso_a2)
   # ISO_full[146] <- "SOM"  # The iso identifier for the Republic of Somaliland is missing
   # ISO_full[89]  <- "KV" # as for the Republic of Kosovo
   # ISO_full[39]  <- "CYP" # as for Cyprus
-
   
-  # solving the following:
-  # pkgDNLs_worldmapcolor: no visible binding for global variable 'long'
-  # This doesn't work:
-#   if(getRversion() >= "2.15.1")  utils::globalVariables(
-#      c("ISO_full","long","lat","group","dnls")
-#      )
-   # this does... 
-   # http://stackoverflow.com/questions/8096313/no-visible-binding-for-global-variable-note-in-r-cmd-check
-  ISO_full <- get("ISO_full")
-  long <- get("long")
-  lat <- get("lat")
-  group <- get("group")
-  dnls <- get("dnls")
-  
+  ISO_full <- get("ISO_full") # needed for R CMD check
   
   colcode <- numeric(length(ISO_full))
   names(colcode) <- ISO_full
@@ -452,11 +439,11 @@ pkgDNLs_worldmapcolor <- function(pkg_name, dataset, remove_dups=TRUE, ...){
   world.points$dnls <- colcode[world.points$id]
   
   world.map <-  ggplot(data=world.points) +
-    geom_polygon(aes(x = long, y = lat, group=group, fill=dnls), color="black") +
+    geom_polygon(aes_string(x = "long", y = "lat", group="group", fill="dnls"), color="black") +
     coord_equal() + #theme_minimal() +
     scale_fill_gradientn(colours=c("white", "yellow", "red"), name="Downloads", values=c(0,0.25,1)) +
     #scale_fill_gradientn(colours=c("white", "#9ECAE1", "#6BAED6", "#2171B5", "#034E7B"), name="Downloads", values=c(0, 0.15, 0.5, 0.75,  1)) 
-    labs(title=paste(pkg_name, " downloads from the '0-Cloud' CRAN mirror by country\nfrom ", min(dataset$date), " to ", max(dataset$date),"\n(Total downloads: ", sum(counts$count), ")", sep=""))
+    labs(title=paste(pkg_name, " downloads from the Rstudio '0-Cloud' CRAN mirror by country\nfrom ", min(dataset$date), " to ", max(dataset$date),"\n(Total downloads: ", sum(counts$count), ")", sep=""))
   
   return(world.map)
 }
