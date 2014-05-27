@@ -1,3 +1,14 @@
+installr 0.14.5 (2014-05-19)
+---------------------------
+
+UPDATED FUNCTIONS: (by Boris Hejblum)
+   * Update pkgDNLs_worldmapcolor    
+      Updating pkgDNLs_worldmapcolor function with ggplot2::aes_string (better
+      for R CMD CHECK).
+      Also, the 'data' directory of the package is not on the CRAN (but is on
+      the github version of the package). pkgDNLs_worldmapcolor(...) needs the
+      'WorldBordersData.RData' file in order to work.
+
 installr 0.14.4 (2014-05-08)
 ---------------------------
 UPDATED FUNCTIONS:
