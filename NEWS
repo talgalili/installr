@@ -1,3 +1,37 @@
+installr 0.15.1 (2014-06-14)
+---------------------------
+
+NEW FUNCTIONS:
+   * get_pid - get the process id by its name
+   * kill_pid - kills the process of all the scripts with some pid
+   * kill_process - kills process with some name
+
+
+BUG FIXES:
+   * install.git - works again. The guys there moved git from googlecode to github.
+
+
+
+installr 0.15.0 (2014-06-08)
+---------------------------
+
+NEW FUNCTIONS:
+   * get_tasklist - returns a data.frame with the current running processes. Windows only.
+   * get_Rscript_PID - returns all of the process IDs (i.e.: PID) of the Rscript.exe that are running. Windows only.
+   * kill_all_Rscript_s - kills the process of all the Rscript.exe that are running (you can schedule how long it should wait before doing it). Windows only.
+
+
+UPDATED FUNCTIONS:
+   * install.URL - made sure to exit the function if it could not download the file
+
+NEW FILES ADDED:
+   * kill_pid.r
+
+
+OTHER NOTES:
+   * Added copyrights to all .r files.
+
+
 installr 0.14.5 (2014-05-19)
 ---------------------------
 
@@ -503,3 +537,5 @@ TODO for future releases:
    * install.python # TODO someday
    * install.java # with correct downloading for each type of windows R (version 32 or 64 bits...
    * install.qpdf - http://sourceforge.net/projects/qpdf/files/qpdf/
+   * install.pandoc - fix!
+   * kill.pid - add doc
