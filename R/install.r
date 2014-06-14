@@ -549,7 +549,9 @@ install.git <- function(page_with_download_url="http://git-scm.com/download/win"
    # get download URL:
    page     <- readLines(page_with_download_url, warn = FALSE)
    # https://msysgit.googlecode.com/files/Git-1.8.1.2-preview20130201.exe
-   pat <- "//msysgit.googlecode.com/files/Git-[0-9.]+-preview[0-9.]+.exe"; 
+#    pat <- "//msysgit.googlecode.com/files/Git-[0-9.]+-preview[0-9.]+.exe"; 
+# https://github.com/msysgit/msysgit/releases/download/Git-1.9.4-preview20140611/Git-1.9.4-preview20140611.exe
+   pat <- "//github.com/msysgit/msysgit/releases/download/Git-[0-9.]+-preview[0-9.]+/Git-[0-9.]+-preview[0-9.]+.exe"; 
    target_line <- grep(pat, page, value = TRUE); 
    m <- regexpr(pat, target_line); 
    URL      <- regmatches(target_line, m) # (The http still needs to be prepended.
@@ -558,6 +560,7 @@ install.git <- function(page_with_download_url="http://git-scm.com/download/win"
    # install.
    install.URL(URL,...)   
 }
+
 
 
 
