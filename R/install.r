@@ -244,9 +244,11 @@ install.pandoc <- function(
    
       page     <- readLines(page_with_download_url, warn = FALSE)
       #"//pandoc.googlecode.com/files/pandoc-1.11.1.msi"
-      # https://github.com/jgm/pandoc/releases/download/1.12.4/pandoc-1.12.4.msi.Windows.installer.msi
-   pat <- "jgm/pandoc/releases/download/[0-9.]+/pandoc-[0-9.]+\\.msi"
-#    grep(pat, page, value = TRUE, fixed = F)
+      # https://github.com/jgm/pandoc/releases/download/1.12.4/pandoc-1.12.4-windows.msi
+      # https://github.com/jgm/pandoc/releases/download/1.12.4.2/pandoc-1.12.4.2-1-windows.msi
+#    pat <- "jgm/pandoc/releases/download/[0-9.]+/pandoc-[0-9.]+-windows\\.msi"
+   pat <- "jgm/pandoc/releases/download/[0-9.]+/pandoc-[0-9.-]+-windows\\.msi"
+   #    grep(pat, page, value = TRUE, fixed = F)
 #    glob2rx("jgm/pandoc/releases/download/1.12.4/pandoc-1.12.4.msi.Windows.installer.msi")
 #    grep("aaa[:graph:]*", "aaasdfadsfa  adaf / sdfa", value = TRUE)
    
@@ -257,7 +259,7 @@ install.pandoc <- function(
 # https://github.com/jgm/pandoc/releases/download/1.12.4/pandoc-1.12.4.msi.Windows.installer.msi
       URL      <- paste('https://github.com/', 
                         URL, 
-                        ".Windows.installer.msi",
+#                         ".Windows.installer.msi",
                         sep = '')
    
    installed <- install.URL(URL,...)
