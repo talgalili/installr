@@ -251,6 +251,9 @@ get_Rscript_PID <- function(...) {
 #' @export
 #' @description kill (i.e.: stop) all running "Rscript" processes 
 #' based on their process ID (pid)
+#' @param s numeric. number of seconds to wait before killing the processes
+#' @param m numeric. number of minutes to wait before killing the processes
+#' @param h numeric. number of hours to wait before killing the processes
 #' @param ... not used.
 #' @return an integer vector with the process ID (pid) of the "Rscript" processes.
 #' @references
@@ -276,3 +279,4 @@ kill_all_Rscript_s <- function(s=0, m=0, h=0,...) {
    # kill'em
 	kill_pid(Rscript_PID, s=s, m=m, h=h, ...)	
 }
+

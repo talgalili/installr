@@ -11,7 +11,7 @@ uninstall.packages(pkgs, lib, warning = TRUE, ...)
 
   \item{lib}{a character vector giving the library
   directories to remove the packages from. If missing,
-  defaults to the first element in \link{.libPaths()}.}
+  defaults to the first element in \link{.libPaths}.}
 
   \item{warning}{boolean (TRUE), should a massage be
   printed in various cases.}

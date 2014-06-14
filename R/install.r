@@ -96,7 +96,7 @@ install.packages.zip <- function(zip_URL) {
 #' package is currently loaded into the workspace.
 #' @param pkgs a character vector with the names of the packages to be removed.
 #' @param lib a character vector giving the library directories to remove the packages from. 
-#' If missing, defaults to the first element in \link{.libPaths()}.
+#' If missing, defaults to the first element in \link{.libPaths}.
 #' @param warning boolean (TRUE), should a massage be printed in various cases.
 #' @param ... currently ignored.
 #' @return Invisible NULL

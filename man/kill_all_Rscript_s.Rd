@@ -6,6 +6,15 @@
 kill_all_Rscript_s(s = 0, m = 0, h = 0, ...)
 }
 \arguments{
+  \item{s}{numeric. number of seconds to wait before
+  killing the processes}
+
+  \item{m}{numeric. number of minutes to wait before
+  killing the processes}
+
+  \item{h}{numeric. number of hours to wait before killing
+  the processes}
+
   \item{...}{not used.}
 }
 \value{
