@@ -1,8 +1,16 @@
+installr 0.15.3 (2014-06-14)
+---------------------------
+
+OTHER NOTES:
+   * Fixes to doc in kill_all_Rscript_s and uninstall.packages.
+   * installr 0.15.3 is to be shipped to CRAN
+
+
 installr 0.15.2 (2014-06-14)
 ---------------------------
 
 BUG FIXES:
-   * install.pandoc - works again. The guys there moved git from googlecode to github.
+   * install.pandoc - works again. The guys there moved git from googlecode to github, with also a tweak where version numbers can include hyphens ("-").
 
 
 installr 0.15.1 (2014-06-14)
