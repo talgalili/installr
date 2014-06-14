@@ -1,3 +1,10 @@
+installr 0.15.2 (2014-06-14)
+---------------------------
+
+BUG FIXES:
+   * install.pandoc - works again. The guys there moved git from googlecode to github.
+
+
 installr 0.15.1 (2014-06-14)
 ---------------------------
 
@@ -8,8 +15,7 @@ NEW FUNCTIONS:
 
 
 BUG FIXES:
-   * install.git - works again. The guys there moved git from googlecode to github.
-
+   * install.git - works again. The guys there moved git from googlecode to github. (props to Tom Bancroft for the bug report)
 
 
 installr 0.15.0 (2014-06-08)
@@ -537,5 +543,3 @@ TODO for future releases:
    * install.python # TODO someday
    * install.java # with correct downloading for each type of windows R (version 32 or 64 bits...
    * install.qpdf - http://sourceforge.net/projects/qpdf/files/qpdf/
-   * install.pandoc - fix!
-   * kill.pid - add doc
