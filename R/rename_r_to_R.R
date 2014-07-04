@@ -21,6 +21,7 @@
 
 
 #' @title Rename files' extensions in a folder from .r to .R
+#' @export
 #' @description 
 #' Rename files' extensions in a folder from .r to .R.
 #' @details
