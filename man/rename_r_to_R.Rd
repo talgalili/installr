@@ -3,11 +3,18 @@
 \alias{rename_r_to_R}
 \title{Rename files' extensions in a folder from .r to .R}
 \usage{
-rename_r_to_R(subdir, ...)
+rename_r_to_R(subdir = ".", recursive = FALSE, massage = TRUE, ...)
 }
 \arguments{
-  \item{subdir}{sub folder from the current working
-  directoryl in which the files should be changed}
+  \item{subdir}{(character) sub folder from the current
+  working directoryl in which the files should be changed.
+  Default is "".}
+
+  \item{recursive}{(logical) FALSE. Should the function
+  keep going into folders and check them as well?}
+
+  \item{massage}{(logical) should we output how many files
+  were changed. (defualt is FALSE)}
 
   \item{...}{not used.}
 }
@@ -22,10 +29,19 @@ This came after a discussion with Hadley, JJ, and Martin
 leading to the realization that since we are using the R
 language (and not the r language), the standard is to use
 .R files instead of .r
+
+Be careful when using the recursive argument. And remember
+that source("miao.r") and source("miao.R") Are NOT the
+same...
 }
 \examples{
 \dontrun{
+rename_r_to_R() # changes only .r in the current wd
 rename_r_to_R("R") # fixing the file ending inside a package directory
+rename_r_to_R(recursive = TRUE) # Changes
+rename_r_to_R(recursive = TRUE, massage = FALSE) # Changes
+# ALL of the .r files underneath the current
+# working directory
 }
 }
 
