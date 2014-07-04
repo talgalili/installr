@@ -261,3 +261,4 @@ os.manage  <- function(use_GUI = TRUE, ask = TRUE, ...) {
           return(FALSE)
    )
 }
+

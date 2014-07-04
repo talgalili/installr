@@ -177,3 +177,4 @@ installrWelcomeMessage <- function(){
 # file.copy("NEWS", "NEWS.md")
 # build_win(version = "R-devel")
 # release(check = TRUE)
+

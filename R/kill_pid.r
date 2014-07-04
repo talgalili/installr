@@ -280,3 +280,4 @@ kill_all_Rscript_s <- function(s=0, m=0, h=0,...) {
 	kill_pid(Rscript_PID, s=s, m=m, h=h, ...)	
 }
 
+

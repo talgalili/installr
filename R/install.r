@@ -1497,3 +1497,4 @@ package_authors <- function(package, to_strsplit = TRUE, split=c(",|and"), to_ta
    return(authors)
 }
 
+

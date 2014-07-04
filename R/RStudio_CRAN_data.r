@@ -469,3 +469,4 @@ pkgDNLs_worldmapcolor <- function(pkg_name, dataset, remove_dups=TRUE, ...){
   
   return(world.map)
 }
+
