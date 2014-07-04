@@ -36,13 +36,14 @@ add.installr.GUI <- function() {
    require(utils) # needed for winMenuNames etc.
    
    if(is.windows() & is.Rgui() & !is.RStudio()){
-      Update_in_winMenuNames <- "Update" %in% winMenuNames() # I'm making sure this function wasn't used before.  If it was, then running it again might cause bugs...   
+      main_menu_name <- "installr" # "Update"
+      Update_in_winMenuNames <- main_menu_name %in% winMenuNames() # I'm making sure this function wasn't used before.  If it was, then running it again might cause bugs...   
       if(!Update_in_winMenuNames) {
-         winMenuAdd("Update")
-         winMenuAddItem("Update", "Update R", "updateR()")
-         winMenuAddItem("Update", "Update R packages", "update.packages(ask = F)")      
-         winMenuAddItem("Update", "Install software", "installr()")
-         winMenuAddItem("Update", "Manage Windows", "os.manage()")      
+         winMenuAdd(main_menu_name)
+         winMenuAddItem(main_menu_name, "Update R", "updateR()")
+         winMenuAddItem(main_menu_name, "Update R packages", "update.packages(ask = F)")      
+         winMenuAddItem(main_menu_name, "Install software", "installr()")
+         winMenuAddItem(main_menu_name, "Manage Windows", "os.manage()")      
          
          
          # add a menu for adding/removing the installr package to startup
@@ -84,7 +85,7 @@ remove.installr.GUI <- function() {
    # Thanks to Dason: http://stackoverflow.com/questions/15250487/how-to-add-a-menu-item-to-rgui/15250992?iemail=1#15250992
    # Add GUI (only in Windows's Rgui)
    if(is.windows() & is.Rgui() & !is.RStudio()){
-      if("Update" %in% winMenuNames()) winMenuDel("Update")
+      if("installr" %in% winMenuNames()) winMenuDel("installr")
    }
    return(invisible(NULL))
 }

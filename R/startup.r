@@ -185,17 +185,17 @@ add_load_installr_on_startup_menu <- function(...) {
    remove_installr_startup_txt <- "Remove 'installr' from startup"
    
    if(is.windows() & is.Rgui() & !is.RStudio()){
-      Update_in_winMenuNames <- "Update" %in% winMenuNames() # I'm making sure this function wasn't used before.  If it was, then running it again might cause bugs...   
+      Update_in_winMenuNames <- "installr" %in% winMenuNames() # I'm making sure this function wasn't used before.  If it was, then running it again might cause bugs...   
       if(Update_in_winMenuNames) {
          
-         update_menus <- names(winMenuItems("Update"))
+         update_menus <- names(winMenuItems("installr"))
          
          if(remove_installr_startup_txt %in% update_menus) {
             # remove menu-item
-            winMenuDelItem("Update", remove_installr_startup_txt)
+            winMenuDelItem("installr", remove_installr_startup_txt)
             # add menu-item
          }
-         winMenuAddItem("Update", add_installr_startup_txt, "load_installr_on_startup()")
+         winMenuAddItem("installr", add_installr_startup_txt, "load_installr_on_startup()")
          
          
          return(invisible(TRUE))         
@@ -221,17 +221,17 @@ add_remove_installr_from_startup_menu <- function(...) {
    remove_installr_startup_txt <- "Remove 'installr' from startup"
    
    if(is.windows() & is.Rgui() & !is.RStudio()){
-      Update_in_winMenuNames <- "Update" %in% winMenuNames() # I'm making sure this function wasn't used before.  If it was, then running it again might cause bugs...   
+      Update_in_winMenuNames <- "installr" %in% winMenuNames() # I'm making sure this function wasn't used before.  If it was, then running it again might cause bugs...   
       if(Update_in_winMenuNames) {
          
-         update_menus <- names(winMenuItems("Update"))
+         update_menus <- names(winMenuItems("installr"))
          
          if(add_installr_startup_txt %in% update_menus) {
             # remove menu-item
-            winMenuDelItem("Update", add_installr_startup_txt)
+            winMenuDelItem("installr", add_installr_startup_txt)
          }
          # add menu-item
-         winMenuAddItem("Update", remove_installr_startup_txt, "rm_installr_from_startup()")
+         winMenuAddItem("installr", remove_installr_startup_txt, "rm_installr_from_startup()")
          #          }
          
          return(invisible(TRUE))         
