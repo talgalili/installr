@@ -1,3 +1,21 @@
+installr 0.15.5 (2014-07-04)
+---------------------------
+NEW FUNCTIONS:
+   * rename_r_to_R -  Rename files' extensions in a folder from .r to .R.
+
+NEW FILES ADDED:
+   * rename_r_to_R.R
+
+OTHER NOTES:
+   * Changed all R script files from .r to .R!
+
+installr 0.15.4 (2014-06-26)
+---------------------------
+
+OTHER NOTES:
+   * Changed the menu item to be "installr" instead of "Update" (in both zzz.r and startup.r)
+
+
 installr 0.15.3 (2014-06-14)
 ---------------------------
 
