@@ -168,6 +168,32 @@ installrWelcomeMessage <- function(){
 # +    'updateR.r'
 # +    'zzz.r'
 
+
+
+
+
+
+
+
+
+# # Creating a changelog using git
+# First make sure git is in the path. Run the 
+# following using cmd.exe, as admin:
+# setx PATH "C:\\Program Files (x86)\\Git\\bin"
+# 
+# Then - run the script to create the ChangeLog before shipping the package.
+# # http://stackoverflow.com/questions/10330425/how-do-i-export-a-git-log-to-a-text-file
+# # http://stackoverflow.com/questions/3523534/good-ways-to-manage-a-changelog-using-git
+# # http://www.commandlinefu.com/commands/view/12420/generate-a-change-log-with-git
+# shell("git log --decorate > ChangeLog", intern = T)
+# 
+# system.PATH()
+# shell("path")
+
+
+
+
+
 # when a function is renamed, its document in man must be removed - otherwise it may cause problems with the built check (it will try to run the code in the example, and will fail.)
 # When all is done, run:
 # require(devtools)
@@ -177,4 +203,7 @@ installrWelcomeMessage <- function(){
 # file.copy("NEWS", "NEWS.md")
 # build_win(version = "R-devel")
 # release(check = TRUE)
+
+
+
 

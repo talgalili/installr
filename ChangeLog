@@ -1,0 +1,1358 @@
+commit 9c6c95796c21edd80ccdc29c431d809408f5682b (HEAD, master)
+Author: Tal Galili <tal.galili@gmail.com>
+Date:   Fri Jul 4 19:18:04 2014 +0300
+
+    Exported rename_r_to_R
+
+commit c3d6722407c395bf0469fb44618a2c017182749e (tag: 0.15.5)
+Author: Tal Galili <tal.galili@gmail.com>
+Date:   Fri Jul 4 18:46:49 2014 +0300
+
+    Change defaults for subdir. Added parameters recursive and massage. Updated the docs
+
+commit 2ce650a2a6e775bddc50d19d728ef9a6af5c18ec
+Author: Tal Galili <tal.galili@gmail.com>
+Date:   Fri Jul 4 17:56:43 2014 +0300
+
+    Version bump - 0.15.5
+
+commit 3818b60cb5ade800c5482a8a9ee0e8235f709cd3
+Author: Tal Galili <tal.galili@gmail.com>
+Date:   Fri Jul 4 17:56:12 2014 +0300
+
+    Changed all R script files from .r to .R!
+    (added a space in each file, so that git will pick up on the change)
+
+commit 3b23240867d8d848a5645eb4da106b50ab20f3cf
+Author: Tal Galili <tal.galili@gmail.com>
+Date:   Fri Jul 4 17:54:14 2014 +0300
+
+    roxygen2 from 4.0.0 to  4.0.1
+
+commit 6340e19f7576c0f08edf007b4809228b64b83f48
+Author: Tal Galili <tal.galili@gmail.com>
+Date:   Fri Jul 4 17:53:23 2014 +0300
+
+    rename_r_to_R -  A NEW FUNCTIONS for Renaming files' extensions in a folder from .r to .R.
+
+commit f9afb6ad002996efbd635c0f2a8e31a77328bf39 (tag: 0.15.3)
+Author: Tal Galili <tal.galili@gmail.com>
+Date:   Fri Jul 4 17:52:54 2014 +0300
+
+    Changed the menu item to be "installr" instead of "Update" (in both zzz.r and startup.r)
+
+commit 150c16948f0236ed2cbcee3568c198caea8af0c7
+Author: Tal Galili <tal.galili@gmail.com>
+Date:   Sat Jun 14 21:08:14 2014 +0300
+
+    Bump version to 0.15.3
+
+commit 77a7da8942684320a4529045c4bf81df3ff51552
+Author: Tal Galili <tal.galili@gmail.com>
+Date:   Sat Jun 14 21:02:56 2014 +0300
+
+    Fixes to doc in kill_all_Rscript_s and uninstall.packages.
+
+commit b3f9235beb9af1d61ca491207531c03dd6c95690 (installr_github/master)
+Author: Tal Galili <tal.galili@gmail.com>
+Date:   Sat Jun 14 10:44:43 2014 +0300
+
+    install.pandoc - fixed and now works again.
+
+commit 295a0e0edb9d24a3d50e569220e63eebcb5651aa (tag: 0.15.1)
+Author: Tal Galili <tal.galili@gmail.com>
+Date:   Sat Jun 14 10:25:26 2014 +0300
+
+    version bump to 0.15.1
+
+commit 101a01bffd7ad76ed31200a9c99768b257eb71a8
+Author: Tal Galili <tal.galili@gmail.com>
+Date:   Sat Jun 14 10:22:51 2014 +0300
+
+    Added the file kill_pid.r
+    
+    With the new functions:
+       * get_pid - get the process id by its name
+       * kill_pid - kills the process of all the scripts with some pid
+       * kill_process - kills process with some name
+       * get_tasklist - returns a data.frame with the current running processes. Windows only.
+       * get_Rscript_PID - returns all of the process IDs (i.e.: PID) of the Rscript.exe that are running. Windows only.
+       * kill_all_Rscript_s - kills the process of all the Rscript.exe that are running (you can schedule how long it should wait before doing it). Windows only.
+
+commit ba8f917d87a7a911548c5fba09e4f1bc11ffcbd7
+Author: Tal Galili <tal.galili@gmail.com>
+Date:   Sat Jun 14 09:17:53 2014 +0300
+
+    install.git - works again. The guys there moved git from googlecode to github.
+
+commit fde6f1bf7946e2b6e3215af0f44f1e3d559a90e2
+Author: Tal Galili <tal.galili@gmail.com>
+Date:   Sun Jun 8 00:28:33 2014 +0300
+
+    install.URL - made sure to exit the function if it could not download the file
+
+commit 8d219e3eb51e9ff3fc2fe2faf867478b47ba666f
+Author: Tal Galili <tal.galili@gmail.com>
+Date:   Sun Jun 8 00:24:19 2014 +0300
+
+    Added copyrights to all .r files.
+
+commit 419e0e565418fe3152182504174abe66a8b7e673 (tag: 0.14.5)
+Author: Tal Galili <tal.galili@gmail.com>
+Date:   Tue May 27 23:10:08 2014 +0300
+
+    Bump version to 0.14.5
+
+commit a2ee551547150c8f8c276d06137e712c4d04b6c0
+Merge: 8ce0ef3 84f9c0f
+Author: Tal Galili <tal.galili@gmail.com>
+Date:   Mon May 19 18:09:06 2014 +0300
+
+    Merge pull request #15 from borishejblum/master
+    
+    Updating pkgDNLs_worldmapcolor
+
+commit 84f9c0feb1cd51ff3ec1997c24801dbff73fad3a
+Author: borishejblum <boris.hejblum@isped.u-bordeaux2.fr>
+Date:   Mon May 19 16:36:16 2014 +0200
+
+    Update pkgDNLs_worldmapcolor
+    
+    Updating pkgDNLs_worldmapcolor function with ggplot2::aes_string (better
+    for R CMD CHECK).
+    Also, the 'data' directory of the package is not on the CRAN (but is on
+    the github version of the package). pkgDNLs_worldmapcolor(...) needs the
+    'WorldBordersData.RData' file in order to work.
+
+commit 8ce0ef39a296495ce25d120117d5e3b612a61362 (tag: 0.14.4)
+Author: Tal Galili <tal.galili@gmail.com>
+Date:   Thu May 8 23:34:10 2014 +0300
+
+    install.pandoc - the project has moved from http://code.google.com/p/pandoc/downloads/list to https://github.com/jgm/pandoc/releases - so the function had to be updated... (props to  Patrick Kelley for the bug report)
+
+commit 43e98a22b55231b049211d76e6f806da47e605e6
+Merge: a6a21c3 5ea7887
+Author: Tal Galili <tal.galili@gmail.com>
+Date:   Tue May 6 11:31:47 2014 +0300
+
+    Merge branch 'master' of https://talgalili:e80b5154c23c9fcaf0d1ed5027@github.com/talgalili/installr/
+
+commit a6a21c3b8b745e551e41dda3ac6b21dfa6d2768f (tag: 0.14.3)
+Author: Tal Galili <tal.galili@gmail.com>
+Date:   Tue May 6 11:28:51 2014 +0300
+
+    UPDATED DESCRIPTION:
+    * Bump version to 0.14.3
+    * added Takekatsu Hiramura as a contributor.
+
+commit 5ea7887b59c095969efb598a8744320f4690995e
+Merge: 10006ba 8cf149b
+Author: Tal Galili <tal.galili@gmail.com>
+Date:   Tue May 6 11:23:47 2014 +0300
+
+    Merge pull request #14 from hiratake55/master
+    
+    added silent installation mode
+
+commit 8cf149b7ce96c2a25eed786f3883b4856461040d
+Author: Takekatsu Hiramura <hiratake55@gmail.com>
+Date:   Tue May 6 16:11:11 2014 +0900
+
+    added silent installation mode
+
+commit 10006ba61b4bb71d2a316cd01c88f3ccef749a15 (tag: 0.14.2)
+Author: Tal Galili <tal.galili@gmail.com>
+Date:   Fri Apr 18 00:02:27 2014 +0300
+
+    New function:  uninstall.packages - removes packages from R.
+
+commit 57d142227d091dc3c9d45e53ce8649fe513b9e03 (tag: 0.14.1)
+Author: Tal Galili <tal.galili@gmail.com>
+Date:   Sat Apr 12 10:45:11 2014 +0300
+
+    download_RStudio_CRAN_data - added the override and massage parameters (makes sure we do not have to download files already downloaded)
+    
+    (version 0.14.1)
+
+commit 5324f413af43e4f94c6fa95bf49eebba2c5f7ee3 (tag: 0.14.0)
+Author: Tal Galili <tal.galili@gmail.com>
+Date:   Wed Apr 2 13:47:44 2014 +0300
+
+    Version: 0.14.0
+
+commit 7d3a323cfdd80ac531456d8190c134741b9ad8c8
+Author: Tal Galili <tal.galili@gmail.com>
+Date:   Wed Mar 19 17:24:16 2014 +0200
+
+    person("Tyler", "Hunt"...
+
+commit b96bbc6074b29c6f63c8acf2b9cf1b1b6adfa188 (tag: 0.13.8)
+Author: Tal Galili <tal.galili@gmail.com>
+Date:   Wed Mar 19 10:45:44 2014 +0200
+
+    Version 0.13.8 bump
+
+commit 249f2f1b80c0cae03a08efcdfe80a9c61040801a
+Author: Tal Galili <tal.galili@gmail.com>
+Date:   Wed Mar 19 10:45:19 2014 +0200
+
+    Fix Roxygen2 after previos commit.
+
+commit 72fe469061f6d35f56297d1af069ca819470f5c1
+Merge: 3126d4e e308776
+Author: Tal Galili <tal.galili@gmail.com>
+Date:   Wed Mar 19 10:36:56 2014 +0200
+
+    Merge branch 'master' of https://talgalili:kukBsbmiFPf5FOqWKiuP@github.com/talgalili/installr/
+    
+    Conflicts:
+    	DESCRIPTION
+    	NAMESPACE
+    	man/R_version_in_a_folder.Rd
+
+commit e308776685e839707102ab6178059676130688e7
+Merge: 375b36e 392868a
+Author: Tal Galili <tal.galili@gmail.com>
+Date:   Wed Mar 19 10:29:11 2014 +0200
+
+    Merge pull request #12 from JackStat/master
+    
+    Fixed Cygwin installer and added bit option
+
+commit 3126d4e069c5196896ab17dbf593a94d5fb5825c
+Author: Tal Galili <tal.galili@gmail.com>
+Date:   Tue Mar 18 20:58:23 2014 +0200
+
+    Moved to roxygene (4.0.0)
+    
+    (mainly added a comment to all of the files)
+
+commit 392868a1e0082a0f886ba8b3c5bde63a839543c4
+Author: JackStat <tyler.hunt@utah.edu>
+Date:   Tue Mar 18 09:06:34 2014 -0600
+
+    Fixed URL and added in 32 and 64 bit options.  roxygenized
+
+commit 717ce141db89f183291646f80161f46e802c8d3a
+Author: JackStat <tyler.hunt@utah.edu>
+Date:   Tue Mar 18 09:04:16 2014 -0600
+
+    Fixed URL and added 32 and 64 bit option
+
+commit 375b36e13a7377cdc3ed5ca5f526e0bec80a92f4 (tag: 0.13.7)
+Author: Tal Galili <tal.galili@gmail.com>
+Date:   Thu Mar 13 14:30:43 2014 +0200
+
+    Version bump 0.13.7
+    
+    Added Dieter Menne as a contributor
+
+commit fa70abdb99861c19d8630bb6e6aebed8dc2114d1
+Merge: 1af7c5e f6208cd
+Author: Tal Galili <tal.galili@gmail.com>
+Date:   Thu Mar 13 14:13:42 2014 +0200
+
+    Merge pull request #10 from dmenne/master
+    
+    Added workaround for multiple overwriting R installations in one directory
+
+commit f6208cd45f65b7c0a0e0a17618b30081ad63ecb4
+Author: Dieter Menne <dieter.menne@menne-biomed.de>
+Date:   Wed Mar 12 15:36:28 2014 +0100
+
+    Handled the case of using one directory for subsequent overwriting R installations by selecting the last one.
+
+commit 1af7c5eb09bd1fa893d20ab64f6a0a621a247ab0
+Author: Tal Galili <tal.galili@gmail.com>
+Date:   Wed Mar 12 13:54:52 2014 +0200
+
+    possible fix thanks to Dieter Menne. Still needs to be checked.
+
+commit a944a65fc8af0116db54fbc4b954c8428c274315 (tag: 0.13.6)
+Author: Tal Galili <tal.galili@gmail.com>
+Date:   Wed Mar 12 13:33:42 2014 +0200
+
+    Version bump: 0.13.6
+
+commit 977aa09839e76816d17540e8e5077958ab33a7a1
+Author: Tal Galili <tal.galili@gmail.com>
+Date:   Wed Mar 12 13:29:16 2014 +0200
+
+    install.URL - added more massages
+
+commit a0c3dfec009523d4d624fc67185dc0fd34cb085c
+Author: Tal Galili <tal.galili@gmail.com>
+Date:   Wed Mar 12 13:29:02 2014 +0200
+
+    install.R, updateR - new parameters added:
+             * download_dir (tempdir) character. Allowing the user to choose into which directory the file should be downloaded.
+
+commit e7bd2566d968043492d327c318aa0d7717d4f2f1
+Author: Tal Galili <tal.galili@gmail.com>
+Date:   Wed Mar 12 13:15:13 2014 +0200
+
+    updateR, install.R - added the keep_install_file parameter (default is FALSE). Based on the request by Boral here: http://www.r-statistics.com/2014/03/r-3-0-3-is-released/
+
+commit 09ab8abed037795a84d360909030c30ac8cd981a
+Author: Tal Galili <tal.galili@gmail.com>
+Date:   Wed Mar 12 13:11:42 2014 +0200
+
+    install.URL - new parameters added:
+             * massage (TRUE) parameter. The function now prints (cat) if the file was downloaded succesfully or not, combined with the location of the file. It also informs the user if the file is later removed or not.
+             * download_dir (tempdir) character. Allowing the user to choose into which directory the file should be downloaded.
+
+commit 24c2bd595494ab3fee4611c455927872c20d1302
+Author: Dieter Menne <dieter.menne@menne-biomed.de>
+Date:   Mon Mar 10 19:17:08 2014 +0100
+
+    Corrected wrong unlist position
+
+commit 4eb6785f390ac676407ef42466f4b0db30e1cedb
+Author: Dieter Menne <dieter.menne@menne-biomed.de>
+Date:   Mon Mar 10 19:13:02 2014 +0100
+
+    Handle case of multiple R_folders
+    
+    In den original code, multiple folders resulted in error in turn.version.to.number
+    
+    error in strsplit(version_with_dots, "\\.") : non-character argument
+    
+    because the length of R_folders was 1 (it was a list with 1 element, having  char[3]
+    
+    This change was not back-tested against when there was only 1 folder.
+
+commit d92938bfccffe08ad7d2f3c1cd08316f7b751cc7 (tag: 0.13.5)
+Author: Tal Galili <tal.galili@gmail.com>
+Date:   Sat Mar 1 11:52:15 2014 +0200
+
+    Updated NEWS and DESCRIPTION about the fix to os.manage by Kornelius Rohmeyer
+
+commit 08975241c9d74c8f80191598ffa674d632ce1e44
+Merge: b038840 89b8562
+Author: Tal Galili <tal.galili@gmail.com>
+Date:   Sat Mar 1 11:45:22 2014 +0200
+
+    Merge pull request #9 from kornl/master
+    
+    os.manage shouldn't ask for minutes if no appropriate option was selected
+
+commit 89b8562b128c9d8dc0aa58e127bdb29b3d2700f4
+Author: Kornelius Rohmeyer <rohmeyer@small-projects.de>
+Date:   Sat Mar 1 10:34:30 2014 +0100
+
+    Don't ask for minutes if 'Cancel' is selected or window was closed without selecting any option.
+
+commit b038840449d22454d51f4799a31757c7c46176a7 (tag: 0.13.4)
+Author: Tal Galili <tal.galili@gmail.com>
+Date:   Fri Feb 7 21:06:12 2014 +0200
+
+    install.pandoc - retiring "use_regex" from service. (props to Scott Milligan for the bug report.)
+    Also, if the installation failed, no need to ask about restarting the computer!
+
+commit 3edbb3874aab9bc33349a40553915ce88d9c1f0f
+Author: Tal Galili <tal.galili@gmail.com>
+Date:   Sun Feb 2 23:55:12 2014 +0200
+
+    Fix a typo (thanks to Uwe)
+
+commit 09656a5236a2fa3c4bfe1986d26872a3419f73e3 (tag: 0.13.3)
+Author: Tal Galili <tal.galili@gmail.com>
+Date:   Sat Feb 1 18:47:36 2014 +0200
+
+    Fixed the usage of person() (thanks to the patient guidance of Uwe Ligges!) with also some minor tweaks to Title and Description
+    
+    Version bumped to 0.13.3
+
+commit b30a15647fa0de306b7223a6cc9b0198fe4409a2 (tag: 0.13.2)
+Author: Tal Galili <tal.galili@gmail.com>
+Date:   Fri Jan 31 16:23:15 2014 +0200
+
+    0.13.2 version bump
+
+commit e1b959a7cdc49632b1ee0fcc4cb03976be99d67d
+Author: Tal Galili <tal.galili@gmail.com>
+Date:   Fri Jan 31 16:18:12 2014 +0200
+
+    Fixed a single "@" in a roxygen2 doc (which caused erros)
+    
+    Added "RdTags" as an internal function, since using tools:::RdTags caused too many problems.
+
+commit 0a210586a5ed9ccee4343c7377cbff999f3630de
+Author: Tal Galili <tal.galili@gmail.com>
+Date:   Fri Jan 31 02:12:23 2014 +0200
+
+    CRAN fixes -
+    
+    Changed DESCRIPTION - removed maintainer (to be made automatically)
+    
+    Also issues with tools:: stuff...
+
+commit b4913865ad4828a0d9de33a8d178afe3097669f9
+Author: Tal Galili <tal.galili@gmail.com>
+Date:   Fri Jan 31 00:09:17 2014 +0200
+
+    Added "Michael Friendly" as a contributor, and bumped to 0.13.1 after merging his changes.
+
+commit 33f90bf7f7ef4b2cb9c803cdb64904aa06983bca (tag: 0.13.1)
+Author: Tal Galili <tal.galili@gmail.com>
+Date:   Fri Jan 31 00:05:31 2014 +0200
+
+    Updated NEWS and manual for adding a packages= option to read_RStudio_CRAN_data.
+    
+    read_RStudio_CRAN_data fails on out-of-memory (in the rbindlist call) if you've downloaded many RStudio CRAN logs.  This patch adds a packages= option if you're only interested in a subset of packages, which subsets the daily log data on the fly.  Other such filters might also be added.
+
+commit 4ab4848a13f6778473d390a81418728901a062a0
+Merge: 94198ac 5c8a05c
+Author: Tal Galili <tal.galili@gmail.com>
+Date:   Fri Jan 31 00:02:02 2014 +0200
+
+    Merge branch 'master' of https://talgalili:kukBsbmiFPf5FOqWKiuP@github.com/talgalili/installr/
+
+commit 94198ace60786baf1c1f47dd0b54c943962dfd43 (tag: 0.13.0)
+Author: Tal Galili <tal.galili@gmail.com>
+Date:   Thu Jan 30 23:50:15 2014 +0200
+
+    Better use of "data" inside a function in a package.
+
+commit 8f58a40893ff2cfc365c47a2ccaa4b01eb6094de
+Author: Tal Galili <tal.galili@gmail.com>
+Date:   Thu Jan 30 23:37:01 2014 +0200
+
+    Updated some functions and documents in order to pass CRAN checks: RStudio_CRAN_data_folder, pkgDNLs_worldmapcolor, fetch_tag_from_Rd, add_to_.First_in_Rprofile.site, remove_from_.First_in_Rprofile.site, add_load_installr_on_startup_menu,README.md
+
+commit d307866cf162b920c97a99ea377a7dc23a71c339
+Author: Tal Galili <tal.galili@gmail.com>
+Date:   Thu Jan 30 13:12:13 2014 +0200
+
+    Bump to 0.13.0
+    
+    make checkMD5 issue warnings (maybe with a dialog box) instead of errors (since the current state of affairs is more hassle than it is worth...)
+
+commit 267373e81a54b34a835d43d8d2549fe927bb532e
+Author: Tal Galili <tal.galili@gmail.com>
+Date:   Thu Jan 30 13:10:27 2014 +0200
+
+    install.pandoc - added "to_restart" parameter. With a massage to remind the user they should restart their computer after pandoc is installed.
+
+commit 5c8a05c43a3637f6cb6d5feca61a8d7d5f585dd6
+Merge: 2fd389d 6ad830b
+Author: Tal Galili <tal.galili@gmail.com>
+Date:   Thu Oct 31 12:14:16 2013 -0700
+
+    Merge pull request #7 from friendly/patch-1
+    
+    Added a packages= option to read_RStudio_CRAN_data
+
+commit 6ad830b5e25f2e56ae5240de8fa0eecd9c31bb65
+Author: Michael Friendly <friendly@yorku.ca>
+Date:   Sun Oct 27 13:45:48 2013 -0400
+
+    Added a packages= option to read_RStudio_CRAN_data
+    
+    read_RStudio_CRAN_data fails on out-of-memory (in the rbindlist call) if you've downloaded many RStudio CRAN logs.  This patch adds a packages= option if you're only interested in a subset of packages, which subsets the daily log data on the fly.  Other such filters might also be added.
+
+commit 2fd389dc31f12a15194d0fa36f97379cdecf0603
+Merge: 8f95ce9 1b8f100
+Author: Tal Galili <tal.galili@gmail.com>
+Date:   Sat Sep 14 10:01:10 2013 -0700
+
+    Merge pull request #6 from tjmahr/patch-1
+    
+    Update install.r - fix docs
+
+commit 1b8f100d2e6159dead87c0bc6dd369b1affe7b4a
+Author: tj mahr <mahr@wisc.edu>
+Date:   Sat Sep 14 10:42:44 2013 -0500
+
+    Update install.r
+    
+    Noticed that the docs said things like `install.MikTeX() # installs the latest version of git`
+
+commit 8f95ce9a77d42e7f4218ffd55b19c7b5f8c68320
+Author: Tal Galili <tal.galili@gmail.com>
+Date:   Sun Sep 1 23:49:17 2013 +0300
+
+    Added NEWS.md
+
+commit 46ebba52b658050cc47e18b7a44f3d6df68bbbbe
+Author: Tal Galili <tal.galili@gmail.com>
+Date:   Tue Aug 27 18:46:56 2013 +0300
+
+    added reference to R.utils::installPackages(url)
+
+commit 6ef5688afd7d35fb3ed5338fe7588a2da662d336
+Author: Tal Galili <tal.galili@gmail.com>
+Date:   Sat Aug 24 13:14:17 2013 +0300
+
+    minor
+
+commit a408160be7adf064dfe8d4caee1b7111e7948d12
+Author: Tal Galili <tal.galili@gmail.com>
+Date:   Fri Aug 23 12:11:01 2013 +0300
+
+    BUG FIX: install.URL didn't work on Windows. It was because "system" did not run .exe, and "shell" was the correct choice to use here. It is now fixed.
+
+commit abd12ab12b87e3d3177d000d4c0ab3a1d3295011
+Author: Tal Galili <tal.galili@gmail.com>
+Date:   Wed Aug 21 23:39:19 2013 +0300
+
+    Fix question in require2
+
+commit 5b75f32da503e7951581608d62a982a491849313 (tag: 0.12.0)
+Author: Tal Galili <tal.galili@gmail.com>
+Date:   Wed Aug 21 22:42:45 2013 +0300
+
+    Version bump to 0.12.0
+    
+    Major update to the contributers list in the DESCRIPTION file!
+
+commit ded58d4da9574d7187c4add3277bcafad487bb83
+Author: Tal Galili <tal.galili@gmail.com>
+Date:   Wed Aug 21 22:42:11 2013 +0300
+
+    NEW FUNCTIONS ADDED:
+       * fetch_tag_from_Rd - A function to extract elements from R's help file.
+       * package_authors - finding all the authors for this (and other) packages.
+
+commit a1775dcb6c1da56e39d9deddd30576cd0fa473ca
+Author: Tal Galili <tal.galili@gmail.com>
+Date:   Wed Aug 21 22:41:37 2013 +0300
+
+    minor edits to pkgDNLs_worldmapcolor doc.
+
+commit 0b675d8448bec944dbbba01b091af265b5ce954e
+Merge: 6650d3f 2c74168
+Author: Tal Galili <tal.galili@gmail.com>
+Date:   Wed Aug 21 11:12:24 2013 -0700
+
+    Merge pull request #4 from borishejblum/worldmap-plot
+    
+    Worldmap of one's package downloads function added
+
+commit 2c74168f58bcd69a132d0a6d361bb599a353bec7
+Author: Boris Hejblum <boris.hejblum@isped.u-bordeaux2.com>
+Date:   Wed Aug 21 15:26:13 2013 +0200
+
+    Worldmap of one's package downloads function added
+
+commit 6650d3f514b078ed746bfab9fa449924625b6ce9 (tag: 0.11.0)
+Author: Tal Galili <tal.galili@gmail.com>
+Date:   Sun Aug 18 16:33:52 2013 +0300
+
+    mute error massage when starting in Rstudio.
+
+commit e143e85b69a7420d53d360d40167ae3479222760
+Author: Tal Galili <tal.galili@gmail.com>
+Date:   Sat Aug 17 15:54:26 2013 +0300
+
+    *Removed a double call to a function.
+    *Call "utils" to make sure menus can be added on startup
+    *supress the startup massage of the installr package (it is not needed for someone who have added it)
+
+commit a156f70224ac6529b4a0c7783d6b30a877a23219
+Author: Tal Galili <tal.galili@gmail.com>
+Date:   Sat Aug 17 15:18:42 2013 +0300
+
+    Version 0.11.0 -
+    Adds a menu-item on startup to allow the automatic loading of installr whenever starting R.
+
+commit 65b406a7e111d1bc136cbe9fc66a0564ad5fd027
+Author: Tal Galili <tal.galili@gmail.com>
+Date:   Sat Aug 17 15:16:04 2013 +0300
+
+    misc.
+
+commit 91910559faf128e12a0fea0a17669eb90107079d
+Author: Tal Galili <tal.galili@gmail.com>
+Date:   Sun Jul 14 06:47:48 2013 +0300
+
+    bug fix: install.Rtools - now returns FALSE gracefully if the user chooses to abort.
+
+commit a1fd70074db2c69ccb0a60cd13bf2223538fd7c4
+Author: Tal Galili <tal.galili@gmail.com>
+Date:   Sat Jul 13 13:55:45 2013 +0300
+
+    Prepering to support MAC:
+    
+    UPDATED FUNCTIONS:
+       * checkMD5sums2 - added "..."
+       * check.for.updates.R - added a "pat" (pattern) parameter (this function might need more tweaking)
+       * install.URL - moved to using "system" instead of "shell" (purpose - to allow the function to be useful for mac users as well.)
+    
+    NEW FUNCTIONS ADDED:
+       * up_folder - gets a vector of characters of folder paths, and returns them after turning them into a file.path once their tail was trimmed (through head(n = - 1).
+    
+    OTHER NOTES:
+       * moved to using "system" instead of "shell" (purpose - to allow the function to be useful for mac users as well.)
+
+commit 720f4bb22a77ad47e3e3524e395da424728f5614
+Author: Tal Galili <tal.galili@gmail.com>
+Date:   Sat Jul 6 15:06:41 2013 +0300
+
+    updateR - added a test to be sure the new R version was installed in the same relative directory as the old R version (otherwise, the copy-packages function should not work)
+    
+    (bumped to version 0.10.2)
+
+commit 34229f9b10a82b60d930f3c565f9c8c52157f376
+Author: Tal Galili <tal.galili@gmail.com>
+Date:   Thu Jul 4 09:19:15 2013 +0300
+
+    Bump to version 0.10.1 - in order to note the fixes made for CRAN upload.
+
+commit f3d15068b8d14597cf645fc4e07ec8da41a01e2d
+Author: Tal Galili <tal.galili@gmail.com>
+Date:   Thu Jul 4 07:56:02 2013 +0300
+
+    Updates to the .Rd docs: fixing text width.
+
+commit 7b68e98c51f5bd474482dd1ce93df99673d9ed26
+Author: Tal Galili <tal.galili@gmail.com>
+Date:   Thu Jul 4 07:24:41 2013 +0300
+
+    install.Rdevel function added
+    
+    Allows for installing the latest R-devel, useful for package developers...
+
+commit 08d85f992fc8aa16eee252c454a896baee9eb1bc (tag: v0.10.0, tag: 0.10.0)
+Author: Tal Galili <tal.galili@gmail.com>
+Date:   Wed Jul 3 21:02:17 2013 +0300
+
+    check.for.updates.R function updated - added a date for the latest R version in the window prompt.
+
+commit 744e70926b21a1c0c6df8f7eb05c665bef623d5b
+Author: Tal Galili <tal.galili@gmail.com>
+Date:   Tue Jul 2 23:37:35 2013 +0300
+
+    Fixes for CRAN upload
+
+commit a7b3f61ce7503242ec3ed8a7b6e182461cf3fccc
+Author: Tal Galili <tal.galili@gmail.com>
+Date:   Tue Jul 2 23:16:21 2013 +0300
+
+    Updating DESCRIPTION, NEWS, README
+
+commit c0db17b4fab2aea0a450ef1bedffd08ce80267e7
+Author: Tal Galili <tal.galili@gmail.com>
+Date:   Tue Jul 2 23:05:10 2013 +0300
+
+    Added a welcome massage when loading the package
+
+commit f5e5466bf3a66e5c4c6eee723f56b9f2bf5aaf5a
+Author: Tal Galili <tal.galili@gmail.com>
+Date:   Tue Jul 2 22:54:20 2013 +0300
+
+    uninstall.R function added
+
+commit 83d3507a14ee30cd037e56efd86a308535947119
+Author: Tal Galili <tal.galili@gmail.com>
+Date:   Tue Jul 2 22:53:43 2013 +0300
+
+    is.empty - function added for checking if an object is empty (e.g: of zero length)
+    
+    also adding "..." to some is.x functions
+
+commit a77acd71a5cf35aee2b680388095461df02c42a1
+Author: Tal Galili <tal.galili@gmail.com>
+Date:   Tue Jul 2 22:17:08 2013 +0300
+
+    is.x.r file created - moving various "is.*" functions to this file.
+
+commit 5a2f52a35095905df3307087738a451c0c035609
+Author: Tal Galili <tal.galili@gmail.com>
+Date:   Fri Jun 14 10:11:21 2013 +0300
+
+    Removing the comment that "installr" is for Windows only, since it now includes some general purpose functions :)
+
+commit bc46178c62c95f21b04b898ec9cfeedd43f26d7b
+Author: Tal Galili <tal.galili@gmail.com>
+Date:   Wed Jun 12 13:06:21 2013 +0300
+
+    data.table doing troubles...
+
+commit d39796d7ac143271dcbcfb7466e5f2e5f271da86
+Author: Tal Galili <tal.galili@gmail.com>
+Date:   Wed Jun 12 10:45:30 2013 +0300
+
+    most_downloaded_packages function added
+
+commit f9b1761f865677aa02f214bff622b98ca655b482
+Author: Tal Galili <tal.galili@gmail.com>
+Date:   Wed Jun 12 10:26:14 2013 +0300
+
+    Added lineplot_package_downloads
+     and format_RStudio_CRAN_data
+    
+    Based on work by Felix Schönbrodt
+
+commit c5bee80bc6c9732106809cd6f174da29ce00a4c6
+Author: Tal Galili <tal.galili@gmail.com>
+Date:   Wed Jun 12 09:22:38 2013 +0300
+
+    require2 - allows it to get package names without quotes (just like "require" does)
+
+commit 8c3df7d21384df35b88887c1f564d2b4646ed670
+Author: Tal Galili <tal.galili@gmail.com>
+Date:   Wed Jun 12 09:05:35 2013 +0300
+
+    download_RStudio_CRAN_data no longer breaks if a wrong time range is provided.
+    
+    Also added different defaults to START and END dates (for today and 5 days before today)
+
+commit 726b8343dad9d153fe451e34e31bcd8643d0de11
+Author: Tal Galili <tal.galili@gmail.com>
+Date:   Tue Jun 11 23:51:43 2013 +0300
+
+    RStudio_CRAN_data:
+    
+    NEW FUNCTIONS ADDED:
+       * download_RStudio_CRAN_data
+       * read_RStudio_CRAN_data
+       * barplot_package_users_per_day
+    
+    OTHER NOTES:
+       * RStudio_CRAN_data.r file created
+
+commit 0c7d247d02a02f6a980c802ca8ec4033402cdeb7
+Author: Tal Galili <tal.galili@gmail.com>
+Date:   Mon Jun 10 21:56:13 2013 +0300
+
+    restart_RGui function added
+    
+    And a minor fix to the collate - to allow the package to compile...
+
+commit e5abeb6a99668a939899abc355ada1c9770ca71d
+Author: Tal Galili <tal.galili@gmail.com>
+Date:   Thu May 23 22:01:09 2013 +0300
+
+    freegeoip - extended example (with world map :) )
+
+commit 09de25c963b5c5c3f6ffa1a0e7c0a32127a8c95c
+Author: Tal Galili <tal.galili@gmail.com>
+Date:   Tue May 21 22:30:54 2013 +0300
+
+    corss-linking the geo_functions.
+
+commit 55c42810b575af5c9bfea2d970206043f5d0a504
+Author: Tal Galili <tal.galili@gmail.com>
+Date:   Tue May 21 21:35:11 2013 +0300
+
+    geo_functions.r file created -
+    
+    NEW FUNCTIONS ADDED:
+       * myip - return your ip address.
+       * freegeoip - Geolocate IP addresses in R (contributed by Heuristic Andrew)
+    
+    UPDATED FUNCTIONS:
+       * require2 - added the "ask" parameter.
+    
+    cranometer - function moved to the geo_functions.r file.
+
+commit bf841fa2f014e67a72ccb38fa4cb99367031b7cc
+Author: Tal Galili <tal.galili@gmail.com>
+Date:   Sat May 18 23:36:41 2013 +0300
+
+    get.installed.R.folders - making the function more robust, by having it rely on the README files instead of the folder names. (based on a bug report by GilesCrane - thanks.)
+    
+    Also: R_version_in_a_folder function added (get the version of R installed in a folder. Based on the README file name inside the folder)
+
+commit cf62e588a7d081fa1d59c9176e634fdea79b300f
+Author: Tal Galili <tal.galili@gmail.com>
+Date:   Sat May 18 12:41:59 2013 +0300
+
+    checkMD5sums2 - added the omit_files parameter (allowing the removal of the files ‘etc/Rconsole’ and ‘etc/Rprofile.site’ from the checksums of an R installation)
+    
+    Also:
+    
+    install.R - started using checkMD5sums2 instead of checkMD5sums in order to allow the manual removal of the files ‘etc/Rconsole’ and ‘etc/Rprofile.site’ from the checksums (they are changed during the R installation process, and always give an error massage)
+
+commit 0fc49fd7a32e8dd8fe46daa5feddfd8e8937c613 (tag: v0.9.3)
+Author: Tal Galili <tal.galili@gmail.com>
+Date:   Fri May 17 21:03:30 2013 +0300
+
+    bump to 0.9.3 - changed to_checkMD5sums to default as FALSE
+
+commit 3e4e99ab17212a9e1996d31e582d4150d15bcf08
+Author: Tal Galili <tal.galili@gmail.com>
+Date:   Thu May 16 11:07:40 2013 +0300
+
+    Fix width - for reference PDF and CRAN compliance
+
+commit 8fada480bd379819f29d8be992b4517bdc927d90
+Author: Tal Galili <tal.galili@gmail.com>
+Date:   Tue May 14 19:48:24 2013 +0300
+
+    spellchecking NEWS
+
+commit c9990cc88885da352293502b95281a6313b06d12
+Author: Tal Galili <tal.galili@gmail.com>
+Date:   Tue May 14 19:29:57 2013 +0300
+
+    require2 function added
+    
+    Also added a googleVis example for cranometer
+
+commit f021bb563d709e9ec66beaef077c58e24d244540
+Author: Tal Galili <tal.galili@gmail.com>
+Date:   Sat May 11 14:20:53 2013 +0300
+
+    Minor charset fixes to checkMD5sums2 to have the package compile.
+
+commit 6d9bcccabcbdb8d1e3442a347111169d59e0487c
+Author: Tal Galili <tal.galili@gmail.com>
+Date:   Sat May 11 13:36:25 2013 +0300
+
+    cranometer function added
+
+commit 02dab12002ae22490d805e98ebfa08367abf66c2
+Author: Tal Galili <tal.galili@gmail.com>
+Date:   Sat May 11 12:37:33 2013 +0300
+
+    fixed a typo in the word typo :P
+
+commit 192fcf9b4a244834cdce0e99a092ba30c1a7e83c
+Author: Tal Galili <tal.galili@gmail.com>
+Date:   Sat Apr 6 18:47:49 2013 +0300
+
+    fix README
+
+commit a481e83197c8c3d05e20bb3c3d83e7463196dcc6
+Author: Tal Galili <tal.galili@gmail.com>
+Date:   Thu Apr 4 22:03:10 2013 +0300
+
+    browse.latest.R.NEWS() function added (and is now used in updateR() )
+
+commit 8c188342f2b2709119f680ea3ad0f1522aab2bfb
+Author: Tal Galili <tal.galili@gmail.com>
+Date:   Thu Apr 4 21:44:00 2013 +0300
+
+    Updated the warning massage on install.R in case checkMD5sum fails.
+    
+    Also added the to_checkMD5sums parameter to updateR (to be passed on to install.R() )
+
+commit c0b24b0f9d714f943508bb0e1ad79d3bf50a3cee
+Author: Tal Galili <tal.galili@gmail.com>
+Date:   Thu Apr 4 21:13:43 2013 +0300
+
+    checkMD5sums2 function added
+
+commit 744aac474ee81dd21257aeaa65c1b64d796cddad
+Author: Tal Galili <tal.galili@gmail.com>
+Date:   Tue Apr 2 11:23:44 2013 +0300
+
+    Fixed a type in updateR
+
+commit 119d366545cd2904181108b30d991935746712ad
+Author: Tal Galili <tal.galili@gmail.com>
+Date:   Mon Apr 1 16:31:08 2013 +0300
+
+    fix the install.URL error massage to only show up when the function fails
+
+commit 1661c9dae888e156c71e84f0cf99cc0b8a49c4d0
+Author: Tal Galili <tal.galili@gmail.com>
+Date:   Sat Mar 30 14:01:04 2013 +0300
+
+    updated README to both install and load the latest {installr} version.
+
+commit c12a2d77338136e17626939cf4299a2dabf83be1
+Author: Tal Galili <tal.galili@gmail.com>
+Date:   Sat Mar 30 13:45:55 2013 +0300
+
+    Fixed install.pandoc to deal with the new dowload file (MSI instead of EXE).
+    
+    Also updated install.URL to give more informative error massages.
+    
+    + updated the NEWS
+
+commit 928bd72653c9e70f1cc4915540a0ec23a1e44978
+Author: Tal Galili <tal.galili@gmail.com>
+Date:   Sat Mar 30 12:52:04 2013 +0300
+
+    Fixing minot capital letters in NEWS and description
+
+commit f23c3b606b0d88dccbe5d78f3dc6389e0561d964
+Author: Tal Galili <tal.galili@gmail.com>
+Date:   Fri Mar 29 22:23:32 2013 +0300
+
+    Fixes to the .Rd files in order to pass the checks for CRAN submission.
+
+commit d5e38c971c4ff0fe8db9c2dd07ad27cc76a36bcd (tag: v0.9, tag: 0.9)
+Author: Tal Galili <tal.galili@gmail.com>
+Date:   Fri Mar 29 21:30:30 2013 +0300
+
+    Bump to 0.9
+    
+    Update description, NEWS and README.
+
+commit b79a18842f2fbb91c7a9698a9053f2aeedc83927
+Author: Tal Galili <tal.galili@gmail.com>
+Date:   Fri Mar 29 11:35:08 2013 +0300
+
+    Added aliases to all install.X functions so that they would accept a lower-case function name.
+
+commit f607e5fe01d4640b4550adb3e54be9df0b83335a
+Author: Tal Galili <tal.galili@gmail.com>
+Date:   Tue Mar 26 23:02:35 2013 +0200
+
+    Added install.LaTeX2RTF
+
+commit 3eb711cd02cd8ec8d4e0af861d6e67ecee5c3519
+Author: Tal Galili <tal.galili@gmail.com>
+Date:   Mon Mar 25 10:06:22 2013 +0200
+
+    Added install.Cygwin
+
+commit a1e4773e03c033ec38998e23414785b6b55f157d
+Author: Tal Galili <tal.galili@gmail.com>
+Date:   Fri Mar 22 10:50:36 2013 +0200
+
+    Added: install.notepadpp and install.npptor
+    
+    Bumped to version 0.8.8
+    
+    Also added some dates to the NEWS section headers.
+
+commit 94a3476f1de11e950b44500fd7943d60aea6c3b7
+Author: Tal Galili <tal.galili@gmail.com>
+Date:   Sun Mar 17 22:49:35 2013 +0200
+
+    os.manage - now asks the user in how many minutes to perform the operation.
+
+commit 42e6fd099f8068498ed3bb7499b3b37f7d5f71f8
+Author: Tal Galili <tal.galili@gmail.com>
+Date:   Sun Mar 17 18:29:37 2013 +0200
+
+    Fixing a bug in install.LyX documentation (thanks Richard Cotton) - that caused it to fail when using install_github
+
+commit e5aa0f3f81744577b07f2f466cc86b4b99b430d4
+Author: Tal Galili <tal.galili@gmail.com>
+Date:   Sat Mar 16 11:04:05 2013 +0200
+
+    Updated installr with more software for animation
+
+commit 4f03726a7a4444c8193e70f5e1c230b52e9ad78e
+Author: Tal Galili <tal.galili@gmail.com>
+Date:   Sat Mar 16 11:01:31 2013 +0200
+
+    Added: install.SWFTools, install.7zip, install.FFmpeg, system.PATH
+
+commit 968ea94e054f49af35272e322be79df15d6b8f6a
+Author: Tal Galili <tal.galili@gmail.com>
+Date:   Fri Mar 15 10:08:15 2013 +0200
+
+    os.shutdown - made to force shutdown
+    
+    Also added some docs, and changed the return of TRUE/FALSE in install.URL to be invisible.
+
+commit c82a69d2a0313cb1c864ebb6b44922e09a749f08
+Author: Tal Galili <tal.galili@gmail.com>
+Date:   Wed Mar 13 10:31:38 2013 +0200
+
+    Changing the output of installing stuff to become invisible.
+
+commit 45cecc47e9a0452f1dd89006e99044db1cb2f765
+Author: Tal Galili <tal.galili@gmail.com>
+Date:   Wed Mar 13 10:14:54 2013 +0200
+
+    Added os.manage to the main menu bar
+
+commit 88ab31ebc5b9473e4efe6955aaae7b6d464ae4fd
+Author: Tal Galili <tal.galili@gmail.com>
+Date:   Wed Mar 13 09:53:26 2013 +0200
+
+    Remove installR.Proj
+
+commit 8db0541c9dfe990aadce1a68bf11d7563a492321
+Author: Tal Galili <tal.galili@gmail.com>
+Date:   Wed Mar 13 09:52:29 2013 +0200
+
+    Removed main .Rproj file from git
+
+commit 3c41ca1dd0bb38cd8c0c8dd9c67bab6a2df35fce
+Author: Tal Galili <tal.galili@gmail.com>
+Date:   Wed Mar 13 09:22:03 2013 +0200
+
+    Added os.manage, os.shutdown, os.restart, os.hibernate, os.sleep, os.lock
+    
+    These are a set of functions to turn off the computer after simulation or the likes.
+    
+    Also removed "shutdown".
+
+commit 775b2017acae2f6ba7d468e6fc95e1c64eaa400c
+Author: Tal Galili <tal.galili@gmail.com>
+Date:   Tue Mar 12 09:51:10 2013 +0200
+
+    Upgraded install.Rtools - removed "latest_Frozen", added "check".  Made the function know which Rtools to install based on your R version (and if it is not known - it asks the user to choose a version)
+    
+    Also bumped to version v0.8.6
+
+commit b843c33c50c29887e4928f2f76648f71a871da35
+Author: Tal Galili <tal.galili@gmail.com>
+Date:   Mon Mar 11 20:48:07 2013 +0200
+
+    Added install.LyX
+
+commit 353a475ff57443e0786376463ecbb7837805f1e5
+Author: Tal Galili <tal.galili@gmail.com>
+Date:   Mon Mar 11 00:10:36 2013 +0200
+
+    Added "..." to all install.x functions to be passed to install.URL
+
+commit 4bfa9b0d997b3394c5eb2f50e733b11aec64296d
+Author: Tal Galili <tal.galili@gmail.com>
+Date:   Sun Mar 10 23:56:42 2013 +0200
+
+    Fix imagemagick to follow updates.
+
+commit 27b2b9737ff1babe446e887f201d00b483ce415c
+Author: Tal Galili <tal.galili@gmail.com>
+Date:   Sun Mar 10 17:44:27 2013 +0200
+
+    Added doc to installr function
+
+commit 5383172400226d92bd4a1e3876242136d4dc907c
+Author: Tal Galili <tal.galili@gmail.com>
+Date:   Sat Mar 9 23:11:55 2013 +0200
+
+    Added install.GraphicsMagick
+
+commit 36b7da36c78d97c3fce94775f24be94b37eae74f
+Author: Tal Galili <tal.galili@gmail.com>
+Date:   Sat Mar 9 22:47:24 2013 +0200
+
+    Added install.ImageMagick
+    
+    Also updated README a bit.
+
+commit 06da01913462de160578beb1a32714d6ca118b67
+Author: Tal Galili <tal.galili@gmail.com>
+Date:   Sat Mar 9 21:02:10 2013 +0200
+
+    NEWS update
+
+commit 2eb4fd62075238f1203eef0766f298459379b954
+Author: Tal Galili <tal.galili@gmail.com>
+Date:   Sat Mar 9 20:54:05 2013 +0200
+
+    Changes install.Rtools defaults
+
+commit fa0806e8cf9e42c9c6dbbf99459baf3bb5c323b6
+Author: Tal Galili <tal.galili@gmail.com>
+Date:   Sat Mar 9 20:49:07 2013 +0200
+
+    Added installr function
+    
+    A function to allow users to choose which software to install.
+    Also added it to the menusystem.
+
+commit b9d1cebf3a5342734b500ca0c7e2d9123a9496af
+Author: Tal Galili <tal.galili@gmail.com>
+Date:   Sat Mar 9 20:33:02 2013 +0200
+
+    Ask the user if to install R or not - When using the menu system.
+
+commit ed06f9904c59ca8aaf40bcadc0f7360b81a37a7d
+Author: Tal Galili <tal.galili@gmail.com>
+Date:   Sat Mar 9 20:28:14 2013 +0200
+
+    Added menu GUI!
+    
+    Based on menu and winDialog.
+    Updated functions:
+    
+       * ask.user.yn.question - added a menu based GUI.
+       * check.for.updates.R - added a menu based GUI.
+
+commit 831c5de08947d8cddb14c046f21f157bb4d36733
+Author: Tal Galili <tal.galili@gmail.com>
+Date:   Fri Mar 8 22:19:08 2013 +0200
+
+    Made sure to having the menus removed once the package is detach(ed).
+    
+    This is worth a version bump to 0.8.4 :)
+
+commit bf17487d68b14126d083a9a5c6c82ca4844c85ae
+Author: Tal Galili <tal.galili@gmail.com>
+Date:   Fri Mar 8 22:00:14 2013 +0200
+
+    A new GUI for Rgui - added the "Update" to the menu, with two submenu items
+
+commit abdbafb0ab158ede5266b209affc02a145402c08
+Author: Tal Galili <tal.galili@gmail.com>
+Date:   Fri Mar 8 18:15:41 2013 +0200
+
+    Added MD5 checksum for the installation of R.
+
+commit f9b1524576360e5ee06b11e848d47612246e70aa
+Author: Tal Galili <tal.galili@gmail.com>
+Date:   Fri Mar 8 17:44:27 2013 +0200
+
+    Bump to version 0.8.3
+
+commit 5cb2d12b9db149ee064818f530816e4a54976f87
+Author: Tal Galili <tal.galili@gmail.com>
+Date:   Fri Mar 8 17:43:07 2013 +0200
+
+    updateR - now checks if R was installed or not (Based on the output of install.R), and removed the need to ask the user that.
+    
+    Also added setInternet2(TRUE) for when updating packages (to help it work with specification of proxies, etc.). (this seems to be safe for regular users - but I hope it won't cause new problems.)
+
+commit 71e890c63362ef6f9e6d006d4b2a04b86d062351
+Author: Tal Galili <tal.galili@gmail.com>
+Date:   Fri Mar 8 17:41:49 2013 +0200
+
+    install.URL Return TRUE/FLASE on whether the installation worked or not.
+    
+    added a "wait" parameter with default as F (it now means that R doesn't wait for the installation of the software to finish before it releases the console).  And also "..." with access to the shell command run.
+
+commit 23173cc51a003e84c3c1f278639a80d0d0d6cab5
+Author: Tal Galili <tal.galili@gmail.com>
+Date:   Wed Mar 6 23:10:21 2013 +0200
+
+    Using getRversion() instead of R.version
+    
+    (nicer code...)
+
+commit 9038111d8ec565d899e1bae45fa6b9363dc7a1ca
+Author: Tal Galili <tal.galili@gmail.com>
+Date:   Wed Mar 6 22:48:46 2013 +0200
+
+    Adding is.RStudio
+
+commit 063baa0ae6b9a80900d1666bdf7411274907f472
+Author: Tal Galili <tal.galili@gmail.com>
+Date:   Wed Mar 6 18:37:18 2013 +0200
+
+    Moved TODOs to the end of the NEWS file
+
+commit 3baaf508f617a4015ee59ea543d133e288c3fe5c
+Author: Tal Galili <tal.galili@gmail.com>
+Date:   Wed Mar 6 08:38:05 2013 +0200
+
+    "Error in !install_R : 'install_R' is missing" (install_R was called in too early) - Fixed a bug in updateR,
+    
+    (thanks to AC for the bug report!)
+
+commit fa057fbb1ff635bf8b7055cf538b40041968ad48
+Author: Tal Galili <tal.galili@gmail.com>
+Date:   Tue Mar 5 15:05:19 2013 +0200
+
+    Added the shutdown function
+
+commit fa4aab68d8aed3624eb74fbd1ef55db004b12a2f
+Author: Tal Galili <tal.galili@gmail.com>
+Date:   Tue Mar 5 14:36:58 2013 +0200
+
+    Made shell not wait in updateR - this makes sure that one can turn the new Rgui on, while closing the old R.
+    
+    Fixed a bug - where it is now possible to open the new Rgui while closing the old R (shell had to have wait=F)
+
+commit 4f43e92740e29b80c83210a64d6681c3da050e0e
+Author: Tal Galili <tal.galili@gmail.com>
+Date:   Tue Mar 5 14:19:55 2013 +0200
+
+    updated install.URL so it will not wait for the command to finish running before it releases R.
+
+commit ae9bdc342b61587b656fd114c7dfa27d96bebb98
+Author: Tal Galili <tal.galili@gmail.com>
+Date:   Tue Mar 5 13:53:41 2013 +0200
+
+    update.R -> updateR (in README)
+
+commit 30fd8eaa9cdd68ad472d00a5515dc9297666f869
+Author: Tal Galili <tal.galili@gmail.com>
+Date:   Tue Mar 5 13:50:35 2013 +0200
+
+    v0.8 for CRAN
+    
+    Changed update.R to updateR, and fixed some spelling mistakes
+
+commit e91c9fba02a3a1b660e7b42f892da79e26c2a41d
+Author: Tal Galili <tal.galili@gmail.com>
+Date:   Tue Mar 5 09:47:33 2013 +0200
+
+    minor doc update
+
+commit 80fb32a783e56508cdee1974fd58d872bc9a2886
+Author: Tal Galili <tal.galili@gmail.com>
+Date:   Tue Mar 5 09:37:06 2013 +0200
+
+    Fixed doc in update.R
+
+commit c98ef0ab2433cf7f2ba25785547dbd8231b6d65c
+Author: Tal Galili <tal.galili@gmail.com>
+Date:   Tue Mar 5 09:29:44 2013 +0200
+
+    Minor NAMESPACE fixes
+
+commit 486ff65cc6bd0121806e02f5f9fb1957cd3d7051 (tag: v0.7)
+Author: Tal Galili <tal.galili@gmail.com>
+Date:   Tue Mar 5 09:23:09 2013 +0200
+
+    Created the ask.user.yn.question
+    made update.R easier to read
+    
+    Allow the user to open the Rgui of the new R
+    
+    Fixed a bug in quit_R in update.R
+    
+    updated NEWS
+    
+    bump version
+    
+    Adding .gitignore to .Rbuildignore
+    
+    fixing some \link to \url in the .Rd
+
+commit 2c42f6ff6c2885b1fd2e95bf7f94a21ddbf02e71
+Author: Tal Galili <tal.galili@gmail.com>
+Date:   Mon Mar 4 23:41:16 2013 +0200
+
+    New functions:
+    * get.installed.R.folders - Returns folder names with R installations
+    * copy.packages.between.libraries - Copies all packages from one library folder to another
+    
+    Updated functions:
+    * update.R  - major update!!!
+    * ask.user.for.a.row - new "questions_text" parameter
+    
+    More documentation for functions.
+    Made sure to have "do not run" wherever needed.
+
+commit e65a2c4a5ada9f92a557611482c3ea6e05c7cc6e
+Author: Tal Galili <tal.galili@gmail.com>
+Date:   Mon Mar 4 16:55:38 2013 +0200
+
+    Version 0.5
+    
+    Updated NEWS and DESCRIPTION.
+    (Also fixed a problem with COLLATE)
+
+commit 8e1a41ccbdbc9f46122ec43c59a844caee0af902
+Author: Tal Galili <tal.galili@gmail.com>
+Date:   Mon Mar 4 16:28:35 2013 +0200
+
+    Added dcoumentation to all the functions in install.r
+    
+    Also moved the .onLoad function to zzz.r
+
+commit 88ed37bc72e98dc5bbb57c7987e847a7a23ab1f1
+Author: Tal Galili <tal.galili@gmail.com>
+Date:   Sun Mar 3 22:44:47 2013 +0200
+
+    Added .onLoad with the is.windows function checking if the package is currently used on a Windows OS.
+    
+    (it's a small thing, but I wanted to see how to make it work)
+    
+    Also added NAMESPACE.
+
+commit 7fd13ea5eae49730d14682440b7bb303106f7e39
+Author: Tal Galili <tal.galili@gmail.com>
+Date:   Sun Mar 3 00:17:58 2013 +0200
+
+    minor: Fixed the name in NEWS
+    
+    Added some documentation for package (e.g: .Rd)
+    
+    And started changing the global library code.
+
+commit 99f3b029dd8210a5b427d21a4a3fe9908a0dd606
+Author: Tal Galili <tal.galili@gmail.com>
+Date:   Sat Mar 2 23:19:09 2013 +0200
+
+    * Added a README.md
+    * updated update.R to allow the user to review the NEWS of the newer version of R.
+    * Added function is.windows() with proper roxygen2 documentation. :)
+
+commit 026c50841da55938dd591d447c1656bd46078c0e
+Author: Tal Galili <tal.galili@gmail.com>
+Date:   Sat Mar 2 18:37:03 2013 +0200
+
+    Added the function:
+    * source_https
+    
+    bugfix:
+    * install.R() - parameter which was not used
+    
+    Documentation:
+    *Added first documentation for update.R
+    *added link in the description on the github website hosting installr
+
+commit fd92ca917ea1cc8f8934791c56933236d6c973c3
+Author: Tal Galili <tal.galili@gmail.com>
+Date:   Sat Mar 2 11:44:05 2013 +0200
+
+    Changing the package name from installR to installr
+
+commit 0e395475c51d5d24f7e0df5ba62f5e20effe6e00
+Author: Tal Galili <tal.galili@gmail.com>
+Date:   Fri Mar 1 14:55:31 2013 +0200
+
+    Added the functions:
+    * install.MikTeX
+    * install.git
+    * install.RStudio
+    * install.GitHub
+
+commit fd1a96c93108b915bca327aa086a9ddf236b73c4
+Author: Tal Galili <tal.galili@gmail.com>
+Date:   Thu Feb 28 23:07:57 2013 +0200
+
+    Merged the two functions in create.global.library into one.
+    
+    This took a lot of work, but now there is only ONE function that handles this package strategy...
+
+commit c70a505481ad15cab35cd9e6da26fb1c07e20336
+Author: Tal Galili <tal.galili@gmail.com>
+Date:   Thu Feb 28 17:46:02 2013 +0200
+
+    Added the "create.global.library" functions (for the global library strategy in R)
+    
+    Changed the format of NEWS to follow that of Hadleys
+
+commit 8cf805ce117e5130342226e8ff92193ab73aa33c (tag: v0.2)
+Author: Tal Galili <tal.galili@gmail.com>
+Date:   Thu Feb 28 17:42:03 2013 +0200
+
+    Bump version number to 0.2
+    
+    Added a NEWS file.
+
+commit 6fa71e23c6be3c06adf0ce134430e08efd849d25
+Author: Tal Galili <tal.galili@gmail.com>
+Date:   Thu Feb 28 16:58:19 2013 +0200
+
+    Added the update.R function.
+    
+    This function checks for a newer version of R, and if it exists - it downloads it.
+    
+    I seperated this function to its own .r file, which also contain a bunch of other functions such as
+    install.R - for installing R.
+    check.for.updates.R - for checking if a newer version of R exists.
+    And turn.version.to.number - which turns a version character (like 2.15.2) to a number which allows  the comparison between versions.
+
+commit 77452312dfbd99be18d36dcc3707a08d34774c11
+Author: Tal Galili <tal.galili@gmail.com>
+Date:   Thu Feb 28 15:39:13 2013 +0200
+
+    Added install.packages.zip to enable people to install this package before it gets to CRAN.
+    
+    Also made install.URL to start using the original file name as the name which will be used once the file is downloaded to the computer (this is not very important, but it may be useful if someone would wish to keep the file)
+
+commit 0cd2bdc5d7a5094bf83d679251633a943592f8a1
+Author: Tal Galili <tal.galili@gmail.com>
+Date:   Thu Feb 28 13:55:23 2013 +0200
+
+    Added the install.Rtools function
+    
+    And also a few other accessory functions:
+    
+    check.integer
+    ask.user.for.a.row (to choose a version of a software to download)
+    
+    While adding some parameters to each function
+
+commit 11eef40dba821ca1e0f11f6196ed1b0041a140f7 (tag: v0.1)
+Author: Tal Galili <tal.galili@gmail.com>
+Date:   Thu Feb 28 12:40:36 2013 +0200
+
+    First skeleton for the package (with a few minor edits)
