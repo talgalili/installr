@@ -39,6 +39,8 @@
 #' into folders and check them as well?
 #' @param massage (logical) should we output how many
 #' files were changed. (defualt is FALSE)
+#' @param text_to_find old file extension (should have $ at the end!)
+#' @param new_extension new file extension...
 #' @param ... not used.
 #' @return (integer) the number of files changed
 #' @examples
@@ -49,8 +51,21 @@
 #' rename_r_to_R(recursive = TRUE, massage = FALSE) # Changes 
 #' # ALL of the .r files underneath the current 
 #' # working directory
+#' 
+#' 
+#' # First run the following in git bash:
+#' # git config core.ignorecase false
+#' rename_r_to_R(recursive = TRUE, text_to_find="\\.R$", new_extension = ".b")
+#' 
+#' # mmm, since it does not work nicely, you'd need to run the following:
+#' # and commit between the two.
+#' rename_r_to_R(recursive = TRUE, text_to_find="\\.r$", new_extension = ".b")
+#' # commit!
+#' rename_r_to_R(recursive = TRUE, text_to_find="\\.b$", new_extension = ".R")
+#' 
 #' }
-rename_r_to_R <- function(subdir = ".", recursive = FALSE, massage = TRUE, ...) {
+rename_r_to_R <- function(subdir = ".", recursive = FALSE, massage = TRUE, 
+                          text_to_find="\\.r$", new_extension = ".R", ...) {
    
    wd <- getwd()
    dir_to_work_on <- file.path(wd, subdir)
@@ -63,20 +78,21 @@ rename_r_to_R <- function(subdir = ".", recursive = FALSE, massage = TRUE, ...) 
 
    # find files with .r
    files_without_ext <- substr(files, 1, nchar(files)-2)
-   files_with_R <- paste(files_without_ext, ".R", sep = "")
+   files_with_R <- paste(files_without_ext, new_extension, sep = "")
 
-   ss_r <- grepl("\\.r$", files)
+   ss_r <- grepl(text_to_find, files)
    file.rename(from = file.path(dir_to_work_on,files)[ss_r],
                to = file.path(dir_to_work_on,files_with_R)[ss_r])
    
 
    n_changes <- sum(ss_r) 
-   if(massage) cat("We renamed ", n_changes, " files from .r to .R\n\n")
+   if(massage) cat("We renamed ", n_changes, " files from ",text_to_find," to ",new_extension,"\n\n")
    if(massage & n_changes>0) cat("We renamed: \n", paste(files[ss_r], collapse = "\n"))
 
    if(recursive) {
       all_dirs <- list.dirs(full.names = FALSE, recursive = TRUE)
-      n_changes_dirs <- sapply(all_dirs, rename_r_to_R, massage = massage)
+      fo <- function(x,...) rename_r_to_R(subdir = x, text_to_find=text_to_find, new_extension=new_extension ,...)
+      n_changes_dirs <- sapply(all_dirs, fo, massage = massage)
       n_changes <- n_changes + n_changes_dirs
    }
    
