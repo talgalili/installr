@@ -3,7 +3,8 @@
 \alias{rename_r_to_R}
 \title{Rename files' extensions in a folder from .r to .R}
 \usage{
-rename_r_to_R(subdir = ".", recursive = FALSE, massage = TRUE, ...)
+rename_r_to_R(subdir = ".", recursive = FALSE, massage = TRUE,
+  text_to_find = "\\\\.r$", new_extension = ".R", ...)
 }
 \arguments{
   \item{subdir}{(character) sub folder from the current
@@ -15,6 +16,11 @@ rename_r_to_R(subdir = ".", recursive = FALSE, massage = TRUE, ...)
 
   \item{massage}{(logical) should we output how many files
   were changed. (defualt is FALSE)}
+
+  \item{text_to_find}{old file extension (should have $ at
+  the end!)}
+
+  \item{new_extension}{new file extension...}
 
   \item{...}{not used.}
 }
@@ -42,6 +48,18 @@ rename_r_to_R(recursive = TRUE) # Changes
 rename_r_to_R(recursive = TRUE, massage = FALSE) # Changes
 # ALL of the .r files underneath the current
 # working directory
+
+
+# First run the following in git bash:
+# git config core.ignorecase false
+rename_r_to_R(recursive = TRUE, text_to_find="\\\\.R$", new_extension = ".b")
+
+# mmm, since it does not work nicely, you'd need to run the following:
+# and commit between the two.
+rename_r_to_R(recursive = TRUE, text_to_find="\\\\.r$", new_extension = ".b")
+# commit!
+rename_r_to_R(recursive = TRUE, text_to_find="\\\\.b$", new_extension = ".R")
+
 }
 }
 
