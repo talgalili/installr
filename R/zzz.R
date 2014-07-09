@@ -186,7 +186,11 @@ installrWelcomeMessage <- function(){
 # # http://stackoverflow.com/questions/3523534/good-ways-to-manage-a-changelog-using-git
 # # http://www.commandlinefu.com/commands/view/12420/generate-a-change-log-with-git
 # shell("git log --decorate > ChangeLog", intern = T)
-# 
+#
+
+# use this:
+# shell('git log --graph --stat --date=short --pretty=format:"%ad(%an) %s |%h" > ChangeLog', intern = TRUE)
+#
 # system.PATH()
 # shell("path")
 
