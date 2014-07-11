@@ -432,6 +432,7 @@ turn.number.version <- function(number_to_dots) {
 R_version_in_a_folder <- function(folder) { 
 #    folder = R.home()
    files <- list.files(folder)
+   files <- gsub("patched", "", files)
    ss <- grep("README.R-[0-9]+.[0-9]+.[0-9]+$", files)
    if(length(ss)==0) return(NA) # this means that the current folder is NOT an R installation folder with the file README.R-numbers
    README_x <- files[ss] # for example: "README.R-3.0.1"   

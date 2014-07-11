@@ -52,7 +52,7 @@
 #' # ALL of the .r files underneath the current 
 #' # working directory
 #' 
-#' 
+#' # source: http://stackoverflow.com/questions/52950/how-to-make-git-ignore-changes-in-case
 #' # First run the following in git bash:
 #' # git config core.ignorecase false
 #' rename_r_to_R(recursive = TRUE, text_to_find="\\.R$", new_extension = ".b")

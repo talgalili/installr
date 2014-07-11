@@ -1,3 +1,9 @@
+installr 0.15.7 (2014-07-11)
+---------------------------
+
+UPDATED FUNCTIONS:
+   * R_version_in_a_folder - updated so it could handle "patched" versions of R. (bug report thanks to rogerjbos i.e.: https://github.com/rogerjbos)
+
 installr 0.15.6 (2014-07-10)
 ---------------------------
 

@@ -1,3 +1,25 @@
+* 2014-07-11(Tal Galili) R_version_in_a_folder - updated so it could handle "patched" versions of R. |42e35b7| 
+|  ChangeLog         | 14 ++++++++++++++
+|  DESCRIPTION       |  4 ++--
+|  NEWS              |  6 ++++++
+|  R/rename_r_to_R.R |  2 +-
+|  R/updateR.R       |  1 +
+|  5 files changed, 24 insertions(+), 3 deletions(-)
+
+* 2014-07-10(Tal Galili) bump to 0.15.6 |4ce9edc| 
+|  DESCRIPTION | 4 ++--
+|  NEWS        | 9 ++++++---
+|  2 files changed, 8 insertions(+), 5 deletions(-)
+
+* 2014-07-10(Tal Galili) updated rename to go from .r to .b to .R |5a32541| 
+|  man/rename_r_to_R.Rd | 20 +++++++++++++++++++-
+|  1 file changed, 19 insertions(+), 1 deletion(-)
+
+* 2014-07-10(Tal Galili) Nicer ChangeLog |706600e| 
+|  ChangeLog | 3149 +++++++++++++++++++++++++++++++++--------------------------
+|  R/zzz.R   |    6 +-
+|  2 files changed, 1796 insertions(+), 1359 deletions(-)
+
 * 2014-07-10(Tal Galili) rename .b to .R |166823a| 
 |  R/RStudio_CRAN_data.R     |  472 ++++++++++++++
 |  R/RStudio_CRAN_data.b     |  472 --------------
