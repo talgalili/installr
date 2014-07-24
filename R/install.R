@@ -1227,12 +1227,18 @@ source.https <- function(URL,..., remove_r_file = T) {
 require2 <- function(package, ask= TRUE, ...) {
    package <- as.character(substitute(package))
    if(!suppressWarnings(require(package=package, character.only = TRUE))) {
-      install_package <- ask.user.yn.question(paste("Package ",package, 
+	  if(ask) {
+		install_package <- ask.user.yn.question(paste("Package ",package, 
                                                     " is not installed. Do you want to install it now?"))
-      if(install_package) install.packages(pkgs=package)
+      } else { 
+		install_package <- TRUE 
+	}
+	  
+	  if(install_package) install.packages(pkgs=package)
    }
    require(package=package, character.only = TRUE)
 }
+
 
 
 
