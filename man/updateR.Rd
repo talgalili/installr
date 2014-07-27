@@ -3,10 +3,11 @@
 \alias{updateR}
 \title{Checks for the latest R version, and if there is a newer version of R - downloads and installs it.}
 \usage{
-updateR(browse_news, install_R, copy_packages, keep_old_packages,
-  update_packages, start_new_R, quit_R, print_R_versions = TRUE,
-  use_GUI = TRUE, to_checkMD5sums = TRUE, keep_install_file = FALSE,
-  download_dir = tempdir(), silent = FALSE, ...)
+updateR(browse_news, install_R, copy_packages, copy_Rprofile.site,
+  keep_old_packages, update_packages, start_new_R, quit_R,
+  print_R_versions = TRUE, use_GUI = TRUE, to_checkMD5sums = TRUE,
+  keep_install_file = FALSE, download_dir = tempdir(), silent = FALSE,
+  ...)
 }
 \arguments{
   \item{browse_news}{if TRUE (and if there is a newer
@@ -24,6 +25,12 @@ updateR(browse_news, install_R, copy_packages, keep_old_packages,
   R. If missing (this is the default) - the user will be
   asked for his preference (he should say yes, unless he is
   using a global library folder).}
+
+  \item{copy_Rprofile.site}{logical - if to copy your
+  Rprofile.site from the old version of R to the new
+  version of R. If missing (this is the default) - the user
+  will be asked for his preference (he should say yes,
+  unless he is using a global library folder).}
 
   \item{update_packages}{TRUE/FALSE - if to update your
   packages in the new version of R (all packages will be

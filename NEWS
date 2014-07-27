@@ -1,3 +1,17 @@
+installr 0.15.9 (2014-07-27)
+---------------------------
+
+UPDATED FUNCTIONS:
+   * updateR - added copy_Rprofile.site option. Requested by: rsuhada, leeper (at: https://github.com/talgalili/installr/issues/13)
+
+
+installr 0.15.8 (2014-07-24)
+---------------------------
+
+UPDATED FUNCTIONS:
+   * require2 - fix ask=FALSE
+
+
 installr 0.15.7 (2014-07-11)
 ---------------------------
 

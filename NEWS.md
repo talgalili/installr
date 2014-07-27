@@ -1,3 +1,231 @@
+installr 0.15.9 (2014-07-27)
+---------------------------
+
+UPDATED FUNCTIONS:
+   * updateR - added copy_Rprofile.site option. Requested by: rsuhada, leeper (at: https://github.com/talgalili/installr/issues/13)
+
+
+installr 0.15.8 (2014-07-24)
+---------------------------
+
+UPDATED FUNCTIONS:
+   * require2 - fix ask=FALSE
+
+
+installr 0.15.7 (2014-07-11)
+---------------------------
+
+UPDATED FUNCTIONS:
+   * R_version_in_a_folder - updated so it could handle "patched" versions of R. (bug report thanks to rogerjbos i.e.: https://github.com/rogerjbos)
+
+installr 0.15.6 (2014-07-10)
+---------------------------
+
+OTHER NOTES:
+   * Changed all R script files from .r to .R!
+
+installr 0.15.5 (2014-07-04)
+---------------------------
+NEW FUNCTIONS:
+   * rename_r_to_R -  Rename files' extensions in a folder from .r to .R.
+
+NEW FILES ADDED:
+   * rename_r_to_R.R
+
+installr 0.15.4 (2014-06-26)
+---------------------------
+
+OTHER NOTES:
+   * Changed the menu item to be "installr" instead of "Update" (in both zzz.r and startup.r)
+
+
+installr 0.15.3 (2014-06-14)
+---------------------------
+
+OTHER NOTES:
+   * Fixes to doc in kill_all_Rscript_s and uninstall.packages.
+   * installr 0.15.3 is to be shipped to CRAN
+
+
+installr 0.15.2 (2014-06-14)
+---------------------------
+
+BUG FIXES:
+   * install.pandoc - works again. The guys there moved git from googlecode to github, with also a tweak where version numbers can include hyphens ("-").
+
+
+installr 0.15.1 (2014-06-14)
+---------------------------
+
+NEW FUNCTIONS:
+   * get_pid - get the process id by its name
+   * kill_pid - kills the process of all the scripts with some pid
+   * kill_process - kills process with some name
+
+
+BUG FIXES:
+   * install.git - works again. The guys there moved git from googlecode to github. (props to Tom Bancroft for the bug report)
+
+
+installr 0.15.0 (2014-06-08)
+---------------------------
+
+NEW FUNCTIONS:
+   * get_tasklist - returns a data.frame with the current running processes. Windows only.
+   * get_Rscript_PID - returns all of the process IDs (i.e.: PID) of the Rscript.exe that are running. Windows only.
+   * kill_all_Rscript_s - kills the process of all the Rscript.exe that are running (you can schedule how long it should wait before doing it). Windows only.
+
+
+UPDATED FUNCTIONS:
+   * install.URL - made sure to exit the function if it could not download the file
+
+NEW FILES ADDED:
+   * kill_pid.r
+
+
+OTHER NOTES:
+   * Added copyrights to all .r files.
+
+
+installr 0.14.5 (2014-05-19)
+---------------------------
+
+UPDATED FUNCTIONS: (by Boris Hejblum)
+   * Update pkgDNLs_worldmapcolor    
+      Updating pkgDNLs_worldmapcolor function with ggplot2::aes_string (better
+      for R CMD CHECK).
+      Also, the 'data' directory of the package is not on the CRAN (but is on
+      the github version of the package). pkgDNLs_worldmapcolor(...) needs the
+      'WorldBordersData.RData' file in order to work.
+
+installr 0.14.4 (2014-05-08)
+---------------------------
+UPDATED FUNCTIONS:
+   * install.pandoc - the project has moved from http://code.google.com/p/pandoc/downloads/list to https://github.com/jgm/pandoc/releases - so the function had to be updated... (props to  Patrick Kelley for the bug report)
+   * install.url - tweaks to the massage.
+
+installr 0.14.3 (2014-05-06)
+---------------------------
+UPDATED FUNCTIONS:
+	* install.URL - added installer_option A character of the command line arguments
+	* install.R, updaeR - added silent installation mode (source: http://hiratake55.wordpress.com/2014/05/01/how-to-do-a-silent-install-of-r/)
+
+UPDATED DESCRIPTION:
+    * Bump version to 0.14.3
+	* added Takekatsu Hiramura as a contributor.
+	
+installr 0.14.2 (2014-04-17)
+---------------------------
+NEW FUNCTIONS ADDED:
+   * uninstall.packages - removes packages from R.
+
+
+installr 0.14.1 (2014-04-12)
+---------------------------
+UPDATED FUNCTIONS:
+   * download_RStudio_CRAN_data - added the override and massage parameters (makes sure we do not have to download files already downloaded)
+
+
+installr 0.14.0 (2014-04-02)
+---------------------------
+OTHER NOTES:
+   * Bump version to 0.14.0 to signify the number of bug fixes from the original 0.13.0.
+   * installr 0.14.0 is to be shipped to CRAN.
+
+
+installr 0.13.8 (2014-03-19)
+---------------------------
+UPDATED FUNCTIONS:
+   * install.Cygwin - JackStat   Fixed URL and added in 32 and 64 bit options. roxygenized
+
+
+installr 0.13.7 (2014-03-13)
+---------------------------
+UPDATED FUNCTIONS:
+   * R_version_in_a_folder - Handled the case of using one directory for subsequent overwriting R installations by selecting the last one. Contributed by Dieter Menne.
+
+
+
+installr 0.13.6 (2014-03-12)
+---------------------------
+
+UPDATED FUNCTIONS:
+   * install.URL - new parameters added:
+         * massage (TRUE) parameter. The function now prints (cat) if the file was downloaded succesfully or not, combined with the location of the file. It also informs the user if the file is later installed/removed or not.
+   * updateR, install.R - new parameters added:
+         * keep_install_file parameter (default is FALSE). Based on the request by Boral here: http://www.r-statistics.com/2014/03/r-3-0-3-is-released/
+   * install.URL, install.R, updateR - new parameters added:
+         * download_dir (tempdir) character. Allowing the user to choose into which directory the file should be downloaded.
+
+installr 0.13.5 (2014-03-01)
+---------------------------
+
+UPDATED FUNCTIONS:
+   * os.manage - shouldn't ask for minutes if no appropriate option was selected. Don't ask for minutes if 'Cancel' is selected or window was closed without selecting any option. Props to Kornelius Rohmeyer for the commit (rohmeyer@small-projects.de).
+
+
+installr 0.13.4 (2014-02-06)
+---------------------------
+
+UPDATED FUNCTIONS:
+   * install.pandoc - 
+      * if the installation failed, no need to ask about restarting the computer!
+      * retiring "use_regex" from service. (props to Scott Milligan for the bug report.)
+
+
+installr 0.13.3 (2014-02-01)
+---------------------------
+
+OTHER NOTES:
+   * DESCRIPTION:
+      * Fixed the usage of person()
+      * minor tweaks to Title and Description
+   * installr 0.13.3 is to be shipped to CRAN (thanks to the patient guidance of Uwe Ligges!)
+
+installr 0.13.2 (2014-01-31)
+---------------------------
+
+OTHER NOTES:
+   * moved tools from imports to suggest in order to avoid "call not declared from" error.
+   * Added "RdTags" as an internal function, since using tools:::RdTags caused too many problems.
+   * Fixed a single "@" in a roxygen2 doc (which caused erros)
+   * Changed main e-mail to be @gmail instead of @math.tau.ac.il.
+   * installr 0.13.2 is to be shipped to CRAN.
+
+
+
+installr 0.13.1 (2014-01-31)
+---------------------------
+
+UPDATED FUNCTIONS:
+   * read_RStudio_CRAN_data - Added a packages= option to read_RStudio_CRAN_data. read_RStudio_CRAN_data fails on out-of-memory (in the rbindlist call) if you've downloaded many RStudio CRAN logs.  This patch adds a packages= option if you're only interested in a subset of packages, which subsets the daily log data on the fly.  Other such filters might also be added.
+   * Changed DESCRIPTION - removed maintainer (to be made automatically)
+
+OTHER NOTES:
+   * installr 0.13.1 is to be shipped to CRAN.
+
+
+installr 0.13.0 (2014-01-30)
+---------------------------
+
+UPDATED FUNCTIONS:
+   * make checkMD5 issue warnings (maybe with a dialog box) instead of errors (since the current state of affairs is more hassle than it is worth...)
+
+BUG FIXES:
+   * Updated some functions and documents in order to pass CRAN checks: RStudio_CRAN_data_folder, pkgDNLs_worldmapcolor, fetch_tag_from_Rd, add_to_.First_in_Rprofile.site, remove_from_.First_in_Rprofile.site, add_load_installr_on_startup_menu.
+   * README.md - some tweaks to work with the HTML option on CRAN.
+
+OTHER NOTES:
+   * installr 0.13.0 is to be shipped to CRAN.
+
+
+
+installr 0.12.2 (2013-11-26)
+---------------------------
+UPDATED FUNCTIONS:
+   * install.pandoc - added "to_restart" parameter. With a massage to remind the user they should restart their computer after pandoc is installed.
+
+
 installr 0.12.1 (2013-08-23)
 ---------------------------
 BUG FIXES:
@@ -363,3 +591,4 @@ TODO for future releases:
    * install.Rpatch # TODO someday
    * install.python # TODO someday
    * install.java # with correct downloading for each type of windows R (version 32 or 64 bits...
+   * install.qpdf - http://sourceforge.net/projects/qpdf/files/qpdf/

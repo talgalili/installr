@@ -1,10 +1,22 @@
-* 2014-07-11(Tal Galili) R_version_in_a_folder - updated so it could handle "patched" versions of R. |42e35b7| 
-|  ChangeLog         | 14 ++++++++++++++
+* 2014-07-27(talgalili) updateR - added copy_Rprofile.site option. Requested by: rsuhada, leeper |7871e9a| 
+|  DESCRIPTION          |  4 ++--
+|  NEWS                 | 14 ++++++++++++++
+|  R/updateR.R          | 21 +++++++++++++++++++--
+|  man/rename_r_to_R.Rd |  2 +-
+|  man/updateR.Rd       | 15 +++++++++++----
+|  5 files changed, 47 insertions(+), 9 deletions(-)
+
+* 2014-07-24(talgalili) Fix the ask=FALSE option in require2 |1121d3f| 
+|  R/install.R | 10 ++++++++--
+|  1 file changed, 8 insertions(+), 2 deletions(-)
+
+* 2014-07-11(Tal Galili) R_version_in_a_folder - updated so it could handle "patched" versions of R. |3df8095| 
+|  ChangeLog         | 22 ++++++++++++++++++++++
 |  DESCRIPTION       |  4 ++--
 |  NEWS              |  6 ++++++
 |  R/rename_r_to_R.R |  2 +-
 |  R/updateR.R       |  1 +
-|  5 files changed, 24 insertions(+), 3 deletions(-)
+|  5 files changed, 32 insertions(+), 3 deletions(-)
 
 * 2014-07-10(Tal Galili) bump to 0.15.6 |4ce9edc| 
 |  DESCRIPTION | 4 ++--

@@ -645,6 +645,7 @@ copy.packages.between.libraries <- function(from, to, ask =FALSE,keep_old = TRUE
 #' @param browse_news if TRUE (and if there is a newer version of R) - it opens the browser to the NEWS of the latest version of R, for the user to read through
 #' @param install_R TRUE/FALSE - if to install a new version of R (if one is available).  If missing (this is the default)  - the user be asked if to download R or not.Of course the installation part itself (the running of the .exe file) is dependent on the user.
 #' @param copy_packages TRUE/FALSE - if to copy your packages from the old version of R to the new version of R. If missing (this is the default)  - the user will be asked for his preference (he should say yes, unless he is using a global library folder).
+#' @param copy_Rprofile.site logical - if to copy your Rprofile.site from the old version of R to the new version of R. If missing (this is the default)  - the user will be asked for his preference (he should say yes, unless he is using a global library folder).
 #' @param update_packages TRUE/FALSE - if to update your packages in the new version of R (all packages will be updated without asking confirmation per package) If missing (this is the default)  - the user will be asked for his preference (he should say yes, unless he is using a global library folder).  This is done by calling the Rscript in the new R.
 #' @param keep_old_packages - if the keep the packages in the library of the old R installation. If missing (this is the default)  - the user will be asked for his preference (he should say yes, unless he is using a global library folder).
 #' @param start_new_R TRUE/FALSE - if to start the new R (Rgui) after we will quit the old R. Default is TRUE. It will try to start the 64 bit R version, if it does not exist, the 32 bit will be started. This may be less useful for people using RStudio or the likes.
@@ -670,7 +671,8 @@ copy.packages.between.libraries <- function(from, to, ask =FALSE,keep_old = TRUE
 #' 
 #' updateR() # will ask you what you want at every decision.
 #' }
-updateR <- function(browse_news, install_R, copy_packages, keep_old_packages,  update_packages, start_new_R, quit_R,  print_R_versions=TRUE, use_GUI = TRUE, 
+updateR <- function(browse_news, install_R, copy_packages, copy_Rprofile.site,
+                    keep_old_packages,  update_packages, start_new_R, quit_R,  print_R_versions=TRUE, use_GUI = TRUE, 
                     to_checkMD5sums = TRUE, keep_install_file = FALSE, download_dir = tempdir(), silent = FALSE, ...) {
    # this function checks if we have the latest version of R
    # IF not - it notifies the user - and leaves.
@@ -699,7 +701,7 @@ updateR <- function(browse_news, install_R, copy_packages, keep_old_packages,  u
    did_R_install <- install.R(to_checkMD5sums = to_checkMD5sums, keep_install_file = keep_install_file, download_dir = download_dir, silent = silent) 
    if(!did_R_install) return(FALSE) 
    new_R_path <- get.installed.R.folders()[1]
-
+   
    # I could have also used:
    #    if(unname(up_folder(new_R_path))!=unname(up_folder(old_R_path))) {
    # but if the new R is installed somehwere else, then when fetching
@@ -722,6 +724,21 @@ your packages to the new R installation.\n")
       # Next, copy (or MOVE):
       copy.packages.between.libraries(keep_old=keep_old_packages)   
    }
+
+   
+   if(missing(copy_Rprofile.site)) copy_Rprofile.site <- ask.user.yn.question("Do you wish to copy your 'Rprofile.site' from the older version of R to the newer version of R?")
+   
+   if(copy_Rprofile.site) {
+      old_R_path_etc <- file.path(old_R_path, "etc")
+      new_R_path_etc <- file.path(new_R_path, "etc")
+      if("Rprofile.site" %in% list.files(old_R_path_etc)) {
+         file.copy(from = file.path(old_R_path_etc, "Rprofile.site"),
+                   to = file.path(new_R_path_etc, "Rprofile.site"))         
+      } else {
+         warning('"Rprofile.site" does not exist in your old R-etc folder')
+      }      
+   }
+   
    
    # should we update_packages?
    if(missing(update_packages)) update_packages <- ask.user.yn.question("Do you wish to update your packages in the newely installed R? ", use_GUI = use_GUI)
