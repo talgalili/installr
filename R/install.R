@@ -1159,6 +1159,31 @@ install.github <- function(...) install.GitHub(...)
 
 
 
+#' @title Downloads and installs Texmaker for windows
+#' @aliases install.texmaker
+#' @description Allows the user to downloads and install the latest version of Texmaker for Windows.
+#' @details
+#' Texmaker is a free, modern and cross-platform LaTeX editor for linux,
+#' macosx and windows systems that integrates many tools needed to develop
+#' documents with LaTeX, in just one application.
+#' @param URL the URL of the GitHub download page.
+#' @param ... extra parameters to pass to \link{install.URL}
+#' @return logical - was the installation successful or not.
+#' @export
+#' @references
+#' \itemize{
+#' \item Texmaker homepage: \url{http://www.xm1math.net/texmaker/}
+#' } 
+#' @examples
+#' \dontrun{
+#' install.Texmaker() # installs the latest version of Texmaker for windows
+#' }
+install.Texmaker <- function(URL = "http://www.xm1math.net/texmaker/texmakerwin32_install.exe",...) {
+   install.URL(URL,...)
+}
+
+#' @export
+install.texmaker <- function(...) install.Texmaker(...)
 
 
 
