@@ -1,8 +1,9 @@
-installr 0.15.10 (2014-07-27)
+installr 0.15.10 (2014-08-12)
 ---------------------------
 
 NEW FUNCTIONS:
    * install.Texmaker
+   * install.CMake (as requested by stnava: https://github.com/talgalili/installr/issues/18)
 
 
 installr 0.15.9 (2014-07-27)

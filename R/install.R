@@ -558,7 +558,7 @@ install.git <- function(page_with_download_url="http://git-scm.com/download/win"
    m <- regexpr(pat, target_line); 
    URL      <- regmatches(target_line, m) # (The http still needs to be prepended.
    URL      <- paste('https', URL, sep = ':')[1] # we might find the same file more than once - so we'll only take its first one
-   
+# https://github.com/msysgit/msysgit/releases/download/Git-1.9.4-preview20140611/Git-1.9.4-preview20140611.exe
    # install.
    install.URL(URL,...)   
 }
@@ -1529,3 +1529,55 @@ package_authors <- function(package, to_strsplit = TRUE, split=c(",|and"), to_ta
 }
 
 
+
+
+
+
+
+
+
+
+
+
+
+
+#' @title Downloads and installs CMake for windows
+#' @aliases install.cmake
+#' @description Allows the user to downloads and install the latest version of CMake for Windows.
+#' @details
+#' CMake is a family of tools designed to build, test and package software. 
+#' CMake is used to control the software compilation process using simple 
+#' platform and compiler independent configuration files. 
+#' CMake generates native makefiles and workspaces that can be used in the 
+#' compiler environment of your choice.
+#' @param URL the URL of the CMake download page.
+#' @param ... extra parameters to pass to \link{install.URL}
+#' @return TRUE/FALSE - was the installation successful or not.
+#' @export
+#' @references
+#' \itemize{
+#' \item CMake homepage: \url{http://www.cmake.org/cmake/resources/software.html}
+#' } 
+#' @examples
+#' \dontrun{
+#' install.CMake() # installs the latest version of ImageMagick
+#' }
+#'
+install.CMake   <- function(URL="http://www.cmake.org/cmake/resources/software.html",...) {    
+   page_with_download_url <- URL
+   # get download URL:
+   page     <- readLines(page_with_download_url, warn = FALSE)
+   # http://www.cmake.org/files/v3.0/cmake-3.0.1-win32-x86.exe
+   pat <- "//www.cmake.org/files/v[0-9.]+/cmake-[0-9.]+-win32-x86.exe"
+   target_line <- grep(pat, page, value = TRUE); 
+   m <- regexpr(pat, target_line); 
+   URL      <- regmatches(target_line, m) # (The http still needs to be prepended.
+   URL      <- paste('http', URL, sep = ':')[1] # we might find the same file more than once - so we'll only take its first one
+   
+   # install.
+   install.URL(URL,...)   
+}
+
+
+#' @export
+install.cmake <- function(...) install.CMake(...)
