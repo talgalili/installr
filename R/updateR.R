@@ -628,6 +628,8 @@ copy.packages.between.libraries <- function(from, to, ask =FALSE,keep_old = TRUE
 
 #' @title Checks for the latest R version, and if there is a newer version of R - downloads and installs it.
 #' @export
+#' @aliases 
+#' updater
 #' @description This function performs the following steps:
 #' \itemize{
 #' \item Check what is the latest R version.  If the current installed R version is up-to-date, the function ends (and returns FALSE)
@@ -770,6 +772,10 @@ your packages to the new R installation.\n")
    return(TRUE)
 }
 
+
+
+#' @export
+updater <- function(...) updateR(...)
 
 
 
