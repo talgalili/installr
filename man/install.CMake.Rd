@@ -29,7 +29,7 @@ environment of your choice.
 }
 \examples{
 \dontrun{
-install.CMake() # installs the latest version of ImageMagick
+install.CMake() # installs the latest version of CMake
 }
 }
 \references{
