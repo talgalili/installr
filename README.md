@@ -23,7 +23,7 @@ install.packages('installr')
 To install the latest installr version from GitHub use:
 
 ```r
-if (!require('devtools')) install.packages('devtools'); require('devtools')
+if (!require('devtools')) install.packages('devtools'); library('devtools')
 # make sure you have Rtools installed first! if not, then run:
 #install.packages('installr')
 #install_Rtools()
