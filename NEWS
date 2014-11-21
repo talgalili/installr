@@ -1,3 +1,11 @@
+installr 0.15.12 (2014-11-21)
+---------------------------
+
+OTHER NOTES:
+   * Changed suppressMessages(require(installr)) to suppressMessages(library(installr))
+   * Added a few notes on troubleshooting.
+
+
 installr 0.15.11 (2014-08-20)
 ---------------------------
 

@@ -38,11 +38,11 @@
 #' \url{http://www.statmethods.net/interface/customizing.html}
 #' @examples
 #' \dontrun{
-#' is_in_.First_in_Rprofile.site("suppressMessages(require(installr))") # FALSE
-#' add_to_.First_in_Rprofile.site("suppressMessages(require(installr))")
-#' is_in_.First_in_Rprofile.site("suppressMessages(require(installr))") # TRUE
-#' remove_from_.First_in_Rprofile.site("suppressMessages(require(installr))")
-#' is_in_.First_in_Rprofile.site("suppressMessages(require(installr))") # FALSE
+#' is_in_.First_in_Rprofile.site("suppressMessages(library(installr))") # FALSE
+#' add_to_.First_in_Rprofile.site("suppressMessages(library(installr))")
+#' is_in_.First_in_Rprofile.site("suppressMessages(library(installr))") # TRUE
+#' remove_from_.First_in_Rprofile.site("suppressMessages(library(installr))")
+#' is_in_.First_in_Rprofile.site("suppressMessages(library(installr))") # FALSE
 #' # this would still leave .First
 #' }
 add_to_.First_in_Rprofile.site <- function(code, indent = "\t", ... ) {
@@ -102,11 +102,11 @@ add_to_.First_in_Rprofile.site <- function(code, indent = "\t", ... ) {
 #' \url{http://www.statmethods.net/interface/customizing.html}
 #' @examples
 #' \dontrun{
-#' is_in_.First_in_Rprofile.site("suppressMessages(require(installr))") # FALSE
-#' add_to_.First_in_Rprofile.site("suppressMessages(require(installr))")
-#' is_in_.First_in_Rprofile.site("suppressMessages(require(installr))") # TRUE
-#' remove_from_.First_in_Rprofile.site("suppressMessages(require(installr))")
-#' is_in_.First_in_Rprofile.site("suppressMessages(require(installr))") # FALSE
+#' is_in_.First_in_Rprofile.site("suppressMessages(library(installr))") # FALSE
+#' add_to_.First_in_Rprofile.site("suppressMessages(library(installr))")
+#' is_in_.First_in_Rprofile.site("suppressMessages(library(installr))") # TRUE
+#' remove_from_.First_in_Rprofile.site("suppressMessages(library(installr))")
+#' is_in_.First_in_Rprofile.site("suppressMessages(library(installr))") # FALSE
 #' # this would still leave .First
 #' }
 remove_from_.First_in_Rprofile.site <- function(code, fixed = TRUE, ... ) {
@@ -147,11 +147,11 @@ remove_from_.First_in_Rprofile.site <- function(code, fixed = TRUE, ... ) {
 #' \url{http://www.statmethods.net/interface/customizing.html}
 #' @examples
 #' \dontrun{
-#' is_in_.First_in_Rprofile.site("suppressMessages(require(installr))") # FALSE
-#' add_to_.First_in_Rprofile.site("suppressMessages(require(installr))")
-#' is_in_.First_in_Rprofile.site("suppressMessages(require(installr))") # TRUE
-#' remove_from_.First_in_Rprofile.site("suppressMessages(require(installr))")
-#' is_in_.First_in_Rprofile.site("suppressMessages(require(installr))") # FALSE
+#' is_in_.First_in_Rprofile.site("suppressMessages(library(installr))") # FALSE
+#' add_to_.First_in_Rprofile.site("suppressMessages(library(installr))")
+#' is_in_.First_in_Rprofile.site("suppressMessages(library(installr))") # TRUE
+#' remove_from_.First_in_Rprofile.site("suppressMessages(library(installr))")
+#' is_in_.First_in_Rprofile.site("suppressMessages(library(installr))") # FALSE
 #' # this would still leave .First
 #' }
 is_in_.First_in_Rprofile.site <- function(code, fixed= TRUE, ... ) {
@@ -275,8 +275,8 @@ add_remove_installr_from_startup_menu <- function(...) {
 #' }
 load_installr_on_startup <- function(...) {
    add_remove_installr_from_startup_menu()
-   if(!is_in_.First_in_Rprofile.site("suppressMessages(require(installr))")) {
-      add_to_.First_in_Rprofile.site("suppressMessages(require(installr))")
+   if(!is_in_.First_in_Rprofile.site("suppressMessages(library(installr))")) {
+      add_to_.First_in_Rprofile.site("suppressMessages(library(installr))")
    }
    invisible(NULL)
 }
@@ -298,8 +298,8 @@ load_installr_on_startup <- function(...) {
 #' }
 rm_installr_from_startup <- function(...) {
    add_load_installr_on_startup_menu()
-   if(is_in_.First_in_Rprofile.site("suppressMessages(require(installr))")) {
-      remove_from_.First_in_Rprofile.site("suppressMessages(require(installr))")
+   if(is_in_.First_in_Rprofile.site("suppressMessages(library(installr))")) {
+      remove_from_.First_in_Rprofile.site("suppressMessages(library(installr))")
    }
    invisible(NULL)
 }
