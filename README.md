@@ -26,7 +26,7 @@ To install the latest installr version from GitHub use:
 if (!require('devtools')) install.packages('devtools'); library('devtools')
 # make sure you have Rtools installed first! if not, then run:
 #install.packages('installr')
-#install_Rtools()
+#install.Rtools()
 devtools::install_github('talgalili/installr')
 ```
 
@@ -47,6 +47,26 @@ Or **install a new software** simply by running:
 require(installr)
 installr() #  user can easily select (via a GUI interface) a software to install.
 ```
+
+
+## Troubleshooting
+
+If you get from some commands:
+
+```r
+Error in download.file(URL, destfile = ...) : 
+  unsupported URL scheme
+```
+
+Try running:
+
+```r
+setInternet2(TRUE)
+```
+
+Sources: 
+* http://stackoverflow.com/questions/21857264/error-in-download-file-unsupported-url-scheme
+* http://stackoverflow.com/questions/19890633/r-produces-unsupported-url-scheme-error-when-getting-data-from-https-sites
 
 
 ## Contact
