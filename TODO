@@ -1,0 +1,7 @@
+TODO 
+---------------------------
+
+UPDATED FUNCTIONS:
+   * Add "stop()" : The package relies on the standard file system, such as:
+D:\R\R-3.1.0
+If the file system is different - problems will occur. (I should add a check on that, when I think about it - thanks.
