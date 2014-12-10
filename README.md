@@ -1,3 +1,5 @@
+[![Build Status](https://travis-ci.org/talgalili/installr.png?branch=master)](https://travis-ci.org/talgalili/installr)
+
 # installr
 
 ## Introduction
