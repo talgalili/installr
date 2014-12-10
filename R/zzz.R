@@ -33,7 +33,7 @@
 #' add.installr.GUI() 
 #' }
 add.installr.GUI <- function() {
-   require(utils) # needed for winMenuNames etc.
+   library(utils) # needed for winMenuNames etc.
    
    if(is.windows() & is.Rgui() & !is.RStudio()){
       main_menu_name <- "installr" # "Update"
