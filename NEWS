@@ -1,3 +1,10 @@
+installr 0.15.13 (2014-12-10)
+---------------------------
+
+NEW FUNCTIONS:
+   * xlsx2csv - turning xlsx to csv using VB.
+
+
 installr 0.15.12 (2014-11-21)
 ---------------------------
 
