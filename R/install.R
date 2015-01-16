@@ -978,7 +978,7 @@ install.Cygwin  <- function(bit = 32, ...) {
       install.URL("http://cygwin.com/setup-x86.exe", ...)
    }
 
-   if(bit == 32){
+   if(bit == 64){
       install.URL("http://cygwin.com/setup-x86_64.exe", ...)
    }
 
