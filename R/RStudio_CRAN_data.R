@@ -63,7 +63,7 @@ download_RStudio_CRAN_data <- function(START = as.Date(Sys.time())-5,
                                        log_folder = tempdir(), 
                                        trunc_END_date_to_today = TRUE,
                                        override = FALSE,
-                                       massage = TRUE,
+                                       message = TRUE,
                                        ...) {
    # Here's an easy way to get all the URLs in R
    START <- as.Date(START)
@@ -91,14 +91,14 @@ download_RStudio_CRAN_data <- function(START = as.Date(Sys.time())-5,
       
       # if the file is here, and I should NOT override - then skip
       if(zip_filename %in% avilable_files & !override) {
-         if(massage) cat("The file: ", zip_filename, " is already available in the folder - skipping it\n")
+         if(message) message("The file: ", zip_filename, " is already available in the folder - skipping it")
          # do nothing - skip
       } else { # download
          tryCatch(download.file(urls[i], destfile=zip_filename_path, mode = 'wb'), error = function(e) e)
       }      
    }
    
-   if(massage) cat("Files where downloaded to: ", log_folder, "\n")
+   if(message) message("Files were downloaded to: ", log_folder)
    
    return(invisible(log_folder))
 }
@@ -156,7 +156,7 @@ read_RStudio_CRAN_data <- function(log_folder = tempdir(), use_data_table = TRUE
    # read files
    logs <- list()
    for (file in file_list) {
-      cat(paste("Reading", file, "...\n"))
+      cat(paste("Reading", file, "...\n")); flush.console()
       logfile <- read.table(file, header = TRUE, sep = ",", quote = "\"",
                                  dec = ".", fill = TRUE, stringsAsFactors = FALSE,
                                  comment.char = "", as.is=TRUE)
@@ -461,7 +461,7 @@ pkgDNLs_worldmapcolor <- function(pkg_name, dataset, remove_dups=TRUE, ...){
   world.points$dnls <- colcode[world.points$id]
   
   world.map <-  ggplot(data=world.points) +
-    geom_polygon(aes_string(x = "long", y = "lat", group="group", fill="dnls"), color="black") +
+    geom_polygon(aes_string(x = "long", y = "lat", group="group", fill="dnls"), color="blackcat") +
     coord_equal() + #theme_minimal() +
     scale_fill_gradientn(colours=c("white", "yellow", "red"), name="Downloads", values=c(0,0.25,1)) +
     #scale_fill_gradientn(colours=c("white", "#9ECAE1", "#6BAED6", "#2171B5", "#034E7B"), name="Downloads", values=c(0, 0.15, 0.5, 0.75,  1)) 
