@@ -820,7 +820,8 @@ install.ImageMagick  <- function(URL="http://www.imagemagick.org/script/binary-r
    page     <- readLines(page_with_download_url, warn = FALSE)
    # http://www.imagemagick.org/download/binaries/ImageMagick-6.8.3-8-Q16-x86-dll.exe
    # http://www.imagemagick.org/download/binaries/ImageMagick-6.8.3-9-Q16-x86-dll.exe
-   pat <- "//www.imagemagick.org/download/binaries/ImageMagick-[0-9.]+-[0-9]-Q16-x86-dll.exe"; 
+   # http://www.imagemagick.org/download/binaries/ImageMagick-6.9.0-10-Q16-x64-dll.exe
+   pat <- "//www.imagemagick.org/download/binaries/ImageMagick-[0-9.]+-[0-9]+-Q16-x64-dll.exe"; 
    target_line <- grep(pat, page, value = TRUE); 
    m <- regexpr(pat, target_line); 
    URL      <- regmatches(target_line, m) # (The http still needs to be prepended.

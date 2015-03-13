@@ -1,3 +1,10 @@
+installr 0.15.15 (2015-03-13)
+---------------------------
+
+UPDATED FUNCTIONS:
+   * install.ImageMagick - fix
+
+
 installr 0.15.14 (2015-02-04)
 ---------------------------
 OTHER NOTES:
