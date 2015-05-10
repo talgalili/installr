@@ -120,7 +120,7 @@ updateR(T, T, T, T, T, T, T)
 # # the safest upgrade option: See the NEWS,
 # install R, copy packages, keep old packages,
 # update packages in the new installation,
-# start the Rgui of the new R, and quite current session
+# start the Rgui of the new R, and quit current session
 # of R
 
 updateR() # will ask you what you want at every decision.
