@@ -297,7 +297,11 @@ install.R <- function(page_with_download_url = "http://cran.rstudio.com/bin/wind
    if(to_checkMD5sums)    {
       new_R_path <- get.installed.R.folders()[1]
       library(tools)
-      pass_checkMD5sums <- checkMD5sums2(dir=new_R_path, omit_files = c("etc/Rconsole", "etc/Rprofile.site")) # will work!         
+      files_to_omit_from_MD5 <- 
+         c("etc/Rconsole", "etc/Rprofile.site",  "bin/R.exe", "bin/Rscript.exe" )
+      pass_checkMD5sums <- checkMD5sums2(dir=new_R_path, 
+                                         omit_files =files_to_omit_from_MD5
+                                            ) # will work!         
       if(!pass_checkMD5sums) {
          warning("There was some problem with installing R.  Some files are not what they should be (e.g: check MD5 sums did not pass all the tests). \n  You can try installing R again (either manually or through install.R()), \n  and if the problem persists you can file a bug report by running:  bug.report(package = 'installr') ")
          # return(FALSE)
