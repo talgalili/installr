@@ -1,3 +1,54 @@
+installr 0.15.16 (2015-05-10)
+---------------------------
+
+UPDATED FUNCTIONS:
+   * checkMD5sums2 - now uses warning instead of cat (to help user understand this is a warning and not an error)
+   * install.R - now omits the files  ‘bin/R.exe’, ‘bin/Rscript.exe’  from MD5 checksum (since they seem to fail for R 3.2.0 :\ )
+
+installr 0.15.15 (2015-03-13)
+---------------------------
+
+UPDATED FUNCTIONS:
+   * install.ImageMagick - fix (thanks to Fernando and Jazzy)
+
+
+installr 0.15.14 (2015-02-04)
+---------------------------
+OTHER NOTES:
+   * minor fixes.
+   * Added Berry Boessenkool as ctr.
+
+
+installr 0.15.13 (2014-12-10)
+---------------------------
+
+NEW FUNCTIONS:
+   * xlsx2csv - turning xlsx to csv using VB.
+
+
+installr 0.15.12 (2014-11-21)
+---------------------------
+
+OTHER NOTES:
+   * Changed suppressMessages(require(installr)) to suppressMessages(library(installr))
+   * Added a few notes on troubleshooting.
+
+
+installr 0.15.11 (2014-08-20)
+---------------------------
+
+UPDATED FUNCTIONS:
+   * updateR - now has updater as an alias.
+
+
+installr 0.15.10 (2014-08-12)
+---------------------------
+
+NEW FUNCTIONS:
+   * install.Texmaker
+   * install.CMake (as requested by stnava: https://github.com/talgalili/installr/issues/18)
+
+
 installr 0.15.9 (2014-07-27)
 ---------------------------
 
