@@ -1,8 +1,15 @@
+installr 0.15.16 (2015-05-10)
+---------------------------
+
+UPDATED FUNCTIONS:
+   * checkMD5sums2 - now uses warning instead of cat (to help user understand this is a warning and not an error)
+
+
 installr 0.15.15 (2015-03-13)
 ---------------------------
 
 UPDATED FUNCTIONS:
-   * install.ImageMagick - fix
+   * install.ImageMagick - fix (thanks to Fernando and Jazzy)
 
 
 installr 0.15.14 (2015-02-04)
