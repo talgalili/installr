@@ -209,5 +209,6 @@ installrWelcomeMessage <- function(){
 # release(check = TRUE)
 
 
+# devtools::use_code_of_conduct()
 
 
