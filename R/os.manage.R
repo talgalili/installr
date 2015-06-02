@@ -40,7 +40,7 @@
 #' @author Yihui Xie <\url{http://yihui.name}>, and Tal Galili
 #' @seealso \code{\link[base]{system}},\code{\link[base]{shell}}, \code{\link[base]{Sys.sleep}},
 #' \code{\link{is.windows}}, \code{\link{os.shutdown}}, \code{\link{os.sleep}}, \code{\link{os.hibernate}}, \code{\link{os.lock}}, \code{\link{os.restart}}
-#' @references \url{http://cos.name/en/topic/shut-down-your-windows-with-r} , \url{https://github.com/yihui/fun/blob/master/R/shutdown.R}
+#' @references \url{https://github.com/yihui/fun/blob/master/R/shutdown.R}
 #' @examples
 #' \dontrun{
 #' ## when your code is extremely time-consuming, 

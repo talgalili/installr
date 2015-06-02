@@ -3,9 +3,6 @@
 \name{cranometer}
 \alias{cranometer}
 \title{Measures the speed of downloading from different CRAN mirrors}
-\source{
-\url{https://stat.ethz.ch/pipermail/r-help/2009-July/206430.html}
-}
 \usage{
 cranometer(ms = getCRANmirrors(all = FALSE, local.only = FALSE), ...)
 }
@@ -48,7 +45,6 @@ There may also be a difference in reliability, which would
 not so easily be measured by an individual user.
 
 Later that year, Barry also wrote Cranography. See:
-\url{https://stat.ethz.ch/pipermail/r-help/2009-July/206489.html},
 \url{http://www.maths.lancs.ac.uk/~rowlings/R/Cranography/}.
 }
 \examples{

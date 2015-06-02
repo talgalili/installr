@@ -771,9 +771,9 @@ install.lyx <- function(...) install.LyX(...)
 #' @references
 #' \itemize{
 #' \item RStudio homepage: \url{http://www.rstudio.com/}
-#' \item devtools::source_url \url{http://rgm3.lab.nig.ac.jp/RGM/r_function?p=devtools&f=source_url}
 #' } 
 #' @examples
+#' ### devtools::source_url
 #' \dontrun{
 #' install.RStudio() # installs the latest version of RStudio
 #' }
@@ -1202,8 +1202,8 @@ install.texmaker <- function(...) install.Texmaker(...)
 #' @references
 #' Other solutions to the source.https problem:
 #' \itemize{
-#' \item Using RCurl: \url{http://tonybreyal.wordpress.com/2011/11/24/source.https-sourcing-an-r-script-from-github/}
-#' \item devtools::source_url \url{http://rgm3.lab.nig.ac.jp/RGM/r_function?p=devtools&f=source_url}
+#' \item Using RCurl
+#' \item devtools::source_url 
 #' \item A erlevant (OLD) discussion: http://stackoverflow.com/questions/7715723/sourcing-r-script-over-https
 #' }
 #' @examples

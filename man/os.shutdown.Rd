@@ -47,8 +47,6 @@ os.shutdown()
 Yihui Xie <\url{http://yihui.name}>, and Tal Galili
 }
 \references{
-\url{http://cos.name/en/topic/shut-down-your-windows-with-r}
-,
 \url{https://github.com/yihui/fun/blob/master/R/shutdown.R}
 }
 \seealso{
