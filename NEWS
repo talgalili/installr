@@ -4,6 +4,7 @@ installr 0.15.16 (2015-06-02)
 UPDATED FUNCTIONS:
    * checkMD5sums2 - now uses warning instead of cat (to help user understand this is a warning and not an error)
    * install.R - now omits the files  ‘bin/R.exe’, ‘bin/Rscript.exe’  from MD5 checksum (since they seem to fail for R 3.2.0 :\ )
+   * updateR - reminds the user to stop if running it from RStudio.
 
 OTHER NOTES:
    * Added local fun defnitions to Fix:  "no visible global function definition for"

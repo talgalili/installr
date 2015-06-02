@@ -704,6 +704,12 @@ updateR <- function(browse_news, install_R, copy_packages, copy_Rprofile.site,
    if(missing(install_R)) install_R <- ask.user.yn.question("Do you wish to install the latest version of R?", use_GUI = use_GUI)
    if(!install_R) return(FALSE) # if not - return F
    
+   
+   if(identical(options()$device, "RStudioGD")) {
+      stop_because_of_RStudio <- ask.user.yn.question("It is best to run 'updateR()' from Rgui and not from RStudio. Would you like to abort the installation and run it again from RGui?", use_GUI = use_GUI)
+      if(stop_because_of_RStudio) return(FALSE)
+   }
+   
    # if we got this far, the user wants to install the latest version of R (and his current version is old)
    cat("Installing the newest version of R,\n please wait for the installer file to be download and executed.\n Be sure to click 'next' as needed...\n")
    did_R_install <- install.R(to_checkMD5sums = to_checkMD5sums, keep_install_file = keep_install_file, download_dir = download_dir, silent = silent) 
