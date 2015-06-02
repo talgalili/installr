@@ -2,7 +2,7 @@ Package: installr
 Type: Package
 Title: Using R to Install Stuff (such as: R, Rtools, RStudio, git, and more!)
 Version: 0.15.16
-Date: 2015-05-10
+Date: 2015-06-02
 Authors@R: c(person("Tal", "Galili", role = c("aut", "cre", "cph"), email =
     "tal.galili@gmail.com", comment = "http://www.r-statistics.com"),
     person("Barry", "Rowlingson", role = "ctb", email =

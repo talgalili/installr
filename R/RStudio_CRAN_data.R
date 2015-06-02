@@ -18,6 +18,35 @@
 
 
 
+# Fix:  no visible global function definition for
+data.table <- data.table::data.table
+as.data.table <- data.table::as.data.table
+setkey <- data.table::setkey
+rbindlist <- data.table::rbindlist
+
+find_rtools <- devtools::find_rtools
+
+fromJSON <- rjson::fromJSON
+
+readHTMLTable <- XML::readHTMLTable
+
+ddply <- plyr::ddply
+
+
+
+geom_line <- ggplot2::geom_line
+ylab <- ggplot2::ylab
+theme_bw <- ggplot2::theme_bw
+theme <- ggplot2::theme
+element_text <- ggplot2::element_text
+aes_string <- ggplot2::aes_string
+
+fortify <- ggplot2::fortify
+ggplot <- ggplot2::ggplot
+geom_polygon <- ggplot2::geom_polygon
+coord_equal <- ggplot2::coord_equal
+scale_fill_gradientn <- ggplot2::scale_fill_gradientn
+labs <- ggplot2::labs
 
 
 # file.name.from.url <- function(URL) tail(strsplit(URL,   "/")[[1]],1)
@@ -349,10 +378,14 @@ lineplot_package_downloads <- function(pkg_names, dataset, by_time = c("date", "
    package <- NA
    #-----
    
+   . <- TRUE
+   
    agg1 <- ddply(dataset[dataset$"package" %in% pkg_names,], .(time= get(by_time), package), function(xx) {c(V1 = length(unique(xx$ip_id)))})
    
 #    suppressWarnings(colnames(agg1)[1] <- "time")   
-   o <- ggplot(agg1, aes(x=time, y=V1, color=package, group=package)) + geom_line() + ylab("Downloads") + theme_bw() + theme(axis.text.x  = element_text(angle=90, size=8, vjust=0.5))   
+   
+   
+   o <- ggplot(agg1, aes_string(x="time", y="V1", color="package", group="package")) + geom_line() + ylab("Downloads") + theme_bw() + theme(axis.text.x  = element_text(angle=90, size=8, vjust=0.5))   
    print(o)
    
    return(invisible(agg1))
