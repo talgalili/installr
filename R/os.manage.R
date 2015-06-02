@@ -219,7 +219,6 @@ os.restart  <- function(s=0, m=0, h=0) {
 #' @seealso \code{\link[base]{system}},\code{\link[base]{shell}}, \code{\link[base]{Sys.sleep}}, 
 #' \code{\link{is.windows}}, \code{\link{os.shutdown}}, \code{\link{os.sleep}}, \code{\link{os.hibernate}}, \code{\link{os.lock}}, \code{\link{os.restart}}
 #' @references \url{http://superuser.com/questions/42124/how-can-i-put-the-computer-to-sleep-from-command-prompt-run-menu} , \url{http://www.howtogeek.com/howto/windows-vista/quick-tip-create-shutdown-restart-lock-icons-in-windows-vista/}
-#' \url{http://cos.name/en/topic/shut-down-your-windows-with-r} 
 #' @examples
 #' \dontrun{
 #' ## when your code is extremely time-consuming, 
