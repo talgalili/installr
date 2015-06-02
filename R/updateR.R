@@ -39,6 +39,8 @@
 #' \dontrun{
 #' checkMD5sums2(dir=R.home()) # doesn't work for R 3.0.0 or R 3.0.1
 #' checkMD5sums2(dir=R.home(), omit_files = c("etc/Rconsole", "etc/Rprofile.site")) # will work!
+#' # tools::md5sum(file.path(R.home(), "MD5"))
+#' 
 #' }
 checkMD5sums2 <- function (package, dir, md5file, omit_files,...)
 {
