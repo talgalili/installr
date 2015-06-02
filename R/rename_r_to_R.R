@@ -37,7 +37,7 @@
 #' in which the files should be changed. Default is "".
 #' @param recursive (logical) FALSE. Should the function keep going
 #' into folders and check them as well?
-#' @param massage (logical) should we output how many
+#' @param message (logical) should we output how many
 #' files were changed. (defualt is FALSE)
 #' @param text_to_find old file extension (should have $ at the end!)
 #' @param new_extension new file extension...
@@ -48,7 +48,7 @@
 #' rename_r_to_R() # changes only .r in the current wd
 #' rename_r_to_R("R") # fixing the file ending inside a package directory
 #' rename_r_to_R(recursive = TRUE) # Changes 
-#' rename_r_to_R(recursive = TRUE, massage = FALSE) # Changes 
+#' rename_r_to_R(recursive = TRUE, message = FALSE) # Changes 
 #' # ALL of the .r files underneath the current 
 #' # working directory
 #' 
@@ -64,7 +64,7 @@
 #' rename_r_to_R(recursive = TRUE, text_to_find="\\.b$", new_extension = ".R")
 #' 
 #' }
-rename_r_to_R <- function(subdir = ".", recursive = FALSE, massage = TRUE, 
+rename_r_to_R <- function(subdir = ".", recursive = FALSE, message = TRUE, 
                           text_to_find="\\.r$", new_extension = ".R", ...) {
    
    wd <- getwd()
@@ -86,13 +86,13 @@ rename_r_to_R <- function(subdir = ".", recursive = FALSE, massage = TRUE,
    
 
    n_changes <- sum(ss_r) 
-   if(massage) cat("We renamed ", n_changes, " files from ",text_to_find," to ",new_extension,"\n\n")
-   if(massage & n_changes>0) cat("We renamed: \n", paste(files[ss_r], collapse = "\n"))
+   if(message) cat("We renamed ", n_changes, " files from ",text_to_find," to ",new_extension,"\n\n")
+   if(message & n_changes>0) cat("We renamed: \n", paste(files[ss_r], collapse = "\n"))
 
    if(recursive) {
       all_dirs <- list.dirs(full.names = FALSE, recursive = TRUE)
       fo <- function(x,...) rename_r_to_R(subdir = x, text_to_find=text_to_find, new_extension=new_extension ,...)
-      n_changes_dirs <- sapply(all_dirs, fo, massage = massage)
+      n_changes_dirs <- sapply(all_dirs, fo, message = message)
       n_changes <- n_changes + n_changes_dirs
    }
    
@@ -102,10 +102,10 @@ rename_r_to_R <- function(subdir = ".", recursive = FALSE, massage = TRUE,
 # rename_r_to_R("R")
 # rename_r_to_R()
 # rename_r_to_R(recursive = TRUE)
-# rename_r_to_R(recursive = TRUE, massage = FALSE)
+# rename_r_to_R(recursive = TRUE, message = FALSE)
 
 
 # grepl("\\.r$", c(".r", "aaa.r", "aaa.r.a", "aa.aar"))
 
-# sapply("R", rename_r_to_R, massage = massage)
+# sapply("R", rename_r_to_R, message = message)
 # rename_r_to_R("R")

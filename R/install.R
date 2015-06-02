@@ -97,7 +97,7 @@ install.packages.zip <- function(zip_URL) {
 #' @param pkgs a character vector with the names of the packages to be removed.
 #' @param lib a character vector giving the library directories to remove the packages from. 
 #' If missing, defaults to the first element in \link{.libPaths}.
-#' @param warning boolean (TRUE), should a massage be printed in various cases.
+#' @param warning boolean (TRUE), should a message be printed in various cases.
 #' @param ... currently ignored.
 #' @return Invisible NULL
 #' @seealso \code{\link{install.packages}}, \code{\link{remove.packages}},
@@ -142,7 +142,7 @@ uninstall.packages <- function(pkgs,lib, warning = TRUE, ...) {
 #' @param keep_install_file If TRUE - the installer file will not be erased after it is downloaded and run.
 #' @param wait should the R interpreter wait for the command to finish? The default is to NOT wait.
 #' @param download_dir A character of the directory into which to download the file. (default is \link{tempdir}())
-#' @param massage boolean. Should a massage on the file be printed or not (default is TRUE)
+#' @param message boolean. Should a message on the file be printed or not (default is TRUE)
 #' @param installer_option A character of the command line arguments
 #' @param ... parameters passed to 'shell'
 #' @return invisible(TRUE/FALSE) - was the installation successful or not. (this is based on the output of shell of running the command being either 0 or 1/2.  0 means the file was succesfully installed, while 1 or 2 means there was a failure in running the installer.)
@@ -153,7 +153,7 @@ uninstall.packages <- function(pkgs,lib, warning = TRUE, ...) {
 #' \dontrun{
 #' install.URL("adfadf") # shows the error produced when the URL is not valid.
 #' }
-install.URL <- function(exe_URL, keep_install_file = FALSE, wait = TRUE, download_dir = tempdir(), massage = TRUE, installer_option = NULL, ...) {
+install.URL <- function(exe_URL, keep_install_file = FALSE, wait = TRUE, download_dir = tempdir(), message = TRUE, installer_option = NULL, ...) {
    # source: http://stackoverflow.com/questions/15071957/is-it-possible-to-install-pandoc-on-windows-using-an-r-command
    # input: a url of an .exe file to install
    # output: it runs the .exe file (for installing something)   
@@ -166,18 +166,18 @@ install.URL <- function(exe_URL, keep_install_file = FALSE, wait = TRUE, downloa
    
    # check if we downloaded the file.
    if(file.exists(exe_filename)) {
-      if(massage) cat("\nThe file was downloaded succesfully into:\n", exe_filename, "\n")
+      if(message) cat("\nThe file was downloaded succesfully into:\n", exe_filename, "\n")
    } else {
-      if(massage) cat("\nWe failed to download the file into:\n", exe_filename, "\n(i.e.: the installation failed)\n")
+      if(message) cat("\nWe failed to download the file into:\n", exe_filename, "\n(i.e.: the installation failed)\n")
       return(invisible(FALSE))      
    }
    
    if(!keep_install_file & !wait) {
       wait <- TRUE
-      if(massage) cat("wait was set to TRUE since you wanted to installation file removed. In order to be able to run the installer AND remove the file - we must first wait for the installer to finish running before removing the file.")
+      if(message) cat("wait was set to TRUE since you wanted to installation file removed. In order to be able to run the installer AND remove the file - we must first wait for the installer to finish running before removing the file.")
    }
 
-   if(massage) cat("\nRunning the installer now...\n")
+   if(message) cat("\nRunning the installer now...\n")
    
 
    if(!is.null(installer_option)){
@@ -192,7 +192,7 @@ install.URL <- function(exe_URL, keep_install_file = FALSE, wait = TRUE, downloa
       shell_output <- system(install_cmd, wait = wait,...) # system(exe_filename) # I suspect shell works better than system
    }   
    if(!keep_install_file) {
-      if(massage) cat("\nInstallation status: ", shell_output == 0 ,". Removing the file:\n", exe_filename, "\n (In the future, you may keep the file by setting keep_install_file=TRUE) \n")
+      if(message) cat("\nInstallation status: ", shell_output == 0 ,". Removing the file:\n", exe_filename, "\n (In the future, you may keep the file by setting keep_install_file=TRUE) \n")
       unlink(exe_filename, force = TRUE) # on.exit(unlink(exe_filename)) # on.exit doesn't work in case of problems in the running of the file
    }
    # unlink can take some time until done, for some reason.

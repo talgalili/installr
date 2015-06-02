@@ -40,7 +40,7 @@
 #'  (since otherwise, we will only get many 404 errors)
 #' @param override boolean (default is FALSE) - should the function download files that
 #' are already available in the temp folder
-#' @param massage boolean (default is TRUE) - should a massage be printed in interesting cases.
+#' @param message boolean (default is TRUE) - should a message be printed in interesting cases.
 #' @param ... not in use.
 #' @return Returns the value of log_folder.
 #' @seealso \link{download_RStudio_CRAN_data}, \link{read_RStudio_CRAN_data},\link{barplot_package_users_per_day}

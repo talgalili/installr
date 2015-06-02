@@ -168,7 +168,7 @@ xx.global.library <- function(
       cat("I am now copying ", length(packages_in_libs_to_move) ," packages from the old librarys folders' to:","\n")
       cat(global_library_folder,"\n")
       cat("-----------------------","\n")
-      flush.console()  # refresh the console so that the user will see the massage
+      flush.console()  # refresh the console so that the user will see the message
       
       folders.copied <- file.copy(from = packages_in_libs_to_move,    # copy folders
                                   to = global_library_folder,
@@ -216,14 +216,14 @@ xx.global.library <- function(
    
    cat("Your library paths are: ","\n")
    cat(.libPaths(),"\n")	
-   flush.console()  # refresh the console so that the user will see the massage
+   flush.console()  # refresh the console so that the user will see the message
    
 
    
    if(del_packages_that_exist_in_home_lib)
    {
       cat("We will now delete package from your Global library folder that already exist in the local-install library folder","\n")
-      flush.console()  # refresh the console so that the user will see the massage
+      flush.console()  # refresh the console so that the user will see the message
       package.to.del.from.global.lib <- 		paste( paste(global_library_folder, "/", sep = ""),
                                                  list.files(paste(R.home(), "\\library\\", sep = "")),
                                                  sep = "")			
@@ -252,7 +252,7 @@ xx.global.library <- function(
       # Based on:
       # http://cran.r-project.org/bin/windows/base/rw-FAQ.html#What_0027s-the-best-way-to-upgrade_003f
       cat("We will now update all your packges \n")
-      flush.console()  # refresh the console so that the user will see the massage
+      flush.console()  # refresh the console so that the user will see the message
       update.packages(checkBuilt=TRUE, ask=FALSE)
    }
    
@@ -339,7 +339,7 @@ Old.R.RunMe <- function(global.library.folder = NULL, quit.R = NULL)
    cat("I am now copying packages from old library folder to:","\n")
    cat(global.library.folder,"\n")
    cat("-----------------------","\n")
-   flush.console()  # refresh the console so that the user will see the massage
+   flush.console()  # refresh the console so that the user will see the message
    
    # Copy packages from current lib folder to the global lib folder
    list.of.dirs.in.lib <- NULL
@@ -424,7 +424,7 @@ New.R.RunMe <- function (global.library.folder = NULL,
       cat(paste("The path to the Global library (" , global.library.folder, ") already exist. (NO need to create it)"),"\n")
    }
    
-   flush.console()  # refresh the console so that the user will see the massage
+   flush.console()  # refresh the console so that the user will see the message
    
    
    
@@ -459,7 +459,7 @@ New.R.RunMe <- function (global.library.folder = NULL,
    
    cat("Your library paths are: ","\n")
    cat(.libPaths(),"\n")	
-   flush.console()  # refresh the console so that the user will see the massage
+   flush.console()  # refresh the console so that the user will see the message
    
    
    
@@ -468,7 +468,7 @@ New.R.RunMe <- function (global.library.folder = NULL,
    if(del.packages.that.exist.in.home.lib)
    {
       cat("We will now delete package from your Global library folder that already exist in the local-install library folder","\n")
-      flush.console()  # refresh the console so that the user will see the massage
+      flush.console()  # refresh the console so that the user will see the message
       package.to.del.from.global.lib <- 		paste( paste(global.library.folder, "/", sep = ""),
                                                  list.files(paste(R.home(), "\\library\\", sep = "")),
                                                  sep = "")			
@@ -485,7 +485,7 @@ New.R.RunMe <- function (global.library.folder = NULL,
       # Based on:
       # http://cran.r-project.org/bin/windows/base/rw-FAQ.html#What_0027s-the-best-way-to-upgrade_003f
       cat("We will now update all your packges \n")
-      flush.console()  # refresh the console so that the user will see the massage
+      flush.console()  # refresh the console so that the user will see the message
       update.packages(checkBuilt=TRUE, ask=FALSE)
    }
    

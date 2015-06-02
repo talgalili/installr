@@ -610,7 +610,7 @@ copy.packages.between.libraries <- function(from, to, ask =FALSE,keep_old = TRUE
    cat("-----------------------","\n")
    cat("I am now copying ", length(packages_to_YES_move_from) ," packages from:", from_library, " ; into: ", to_library) 
    cat("-----------------------","\n")
-   flush.console()  # refresh the console so that the user will see the massage
+   flush.console()  # refresh the console so that the user will see the message
    packages_to_YES_move_from
    folders.copied <- file.copy(from = paths_of_packages_to_copy_from,    # copy folders
                                to = to_library,
@@ -796,7 +796,7 @@ updater <- function(...) updateR(...)
 #' Also, the function can be called with using "r_version", where multiple R versions can be supplied
 #' and all will be uninstalled.
 #' @param r_version a character vector for R versions to uninstall (the format is of the style: "2.15.3"). 
-#' default is empty - resulting in a prompt massage asking the user what to do.
+#' default is empty - resulting in a prompt message asking the user what to do.
 #' @param use_GUI If asking the user which R version to uninstall, should the GUI be used? (default is TRUE) 
 #' @return the output of \link{system} running the uninstaller
 #' @seealso \link{install.R}, \link{updateR}, \link{system}
