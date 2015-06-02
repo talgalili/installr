@@ -1,6 +1,144 @@
-* 2015-05-10(Tal Galili) Bump to 0.15.16 |2d86e6f| 
-|  DESCRIPTION | 9 +++++----
-|  1 file changed, 5 insertions(+), 4 deletions(-)
+* 2015-06-02(Tal Galili) Removed invalid URLs |c468bb5| 
+|  R/geo_functions.R      | 5 ++---
+|  R/install.R            | 6 +++---
+|  R/os.manage.R          | 2 +-
+|  man/cranometer.Rd      | 4 ----
+|  man/install.RStudio.Rd | 5 ++---
+|  man/os.shutdown.Rd     | 2 --
+|  man/source.https.Rd    | 7 ++-----
+|  7 files changed, 10 insertions(+), 21 deletions(-)
+
+* 2015-06-02(Tal Galili) Fix: The Title field should be in title case, current version then in title case: |eeab228| 
+|  DESCRIPTION | 4 ++--
+|  1 file changed, 2 insertions(+), 2 deletions(-)
+
+* 2015-06-02(Tal Galili) updateR - reminds the user to stop if running it from RStudio. |d418f37| 
+|  NEWS        | 1 +
+|  R/updateR.R | 6 ++++++
+|  2 files changed, 7 insertions(+)
+
+* 2015-06-02(Tal Galili) Fix:  "no visible global function definition for" |6767652| 
+|  DESCRIPTION           |  2 +-
+|  NEWS                  |  5 ++++-
+|  R/RStudio_CRAN_data.R | 35 ++++++++++++++++++++++++++++++++++-
+|  R/zzz.R               |  2 +-
+|  4 files changed, 40 insertions(+), 4 deletions(-)
+
+* 2015-06-02(Tal Galili) ignore travis |39a5a66| 
+|  .Rbuildignore | 1 +
+|  1 file changed, 1 insertion(+)
+
+* 2015-06-02(Tal Galili) Fix massage to message + roxygen 4.1.1 |56a039c| 
+|  NAMESPACE                                    |  2 +-
+|  R/RStudio_CRAN_data.R                        |  2 +-
+|  R/create.global.library.R                    | 18 +++++++++---------
+|  R/install.R                                  | 16 ++++++++--------
+|  R/rename_r_to_R.R                            | 16 ++++++++--------
+|  R/updateR.R                                  |  4 ++--
+|  man/R_version_in_a_folder.Rd                 |  3 ++-
+|  man/add.installr.GUI.Rd                      |  3 ++-
+|  man/add_load_installr_on_startup_menu.Rd     |  3 ++-
+|  man/add_remove_installr_from_startup_menu.Rd |  3 ++-
+|  man/add_to_.First_in_Rprofile.site.Rd        |  3 ++-
+|  man/ask.user.for.a.row.Rd                    |  3 ++-
+|  man/ask.user.yn.question.Rd                  |  3 ++-
+|  man/barplot_package_users_per_day.Rd         |  3 ++-
+|  man/browse.latest.R.NEWS.Rd                  |  3 ++-
+|  man/check.for.updates.R.Rd                   |  3 ++-
+|  man/check.integer.Rd                         |  3 ++-
+|  man/checkMD5sums2.Rd                         |  3 ++-
+|  man/copy.packages.between.libraries.Rd       |  3 ++-
+|  man/cranometer.Rd                            |  3 ++-
+|  man/create.global.library.Rd                 |  3 ++-
+|  man/download_RStudio_CRAN_data.Rd            |  9 +++++----
+|  man/fetch_tag_from_Rd.Rd                     |  3 ++-
+|  man/file.name.from.url.Rd                    |  3 ++-
+|  man/format_RStudio_CRAN_data.Rd              |  3 ++-
+|  man/freegeoip.Rd                             |  3 ++-
+|  man/get.installed.R.folders.Rd               |  3 ++-
+|  man/get_Rscript_PID.Rd                       |  3 ++-
+|  man/get_pid.Rd                               |  3 ++-
+|  man/get_tasklist.Rd                          |  3 ++-
+|  man/install.7zip.Rd                          |  3 ++-
+|  man/install.CMake.Rd                         |  3 ++-
+|  man/install.Cygwin.Rd                        |  3 ++-
+|  man/install.FFmpeg.Rd                        |  3 ++-
+|  man/install.GitHub.Rd                        |  3 ++-
+|  man/install.GraphicsMagick.Rd                |  3 ++-
+|  man/install.ImageMagick.Rd                   |  3 ++-
+|  man/install.LaTeX2RTF.Rd                     |  3 ++-
+|  man/install.LyX.Rd                           |  3 ++-
+|  man/install.MikTeX.Rd                        |  3 ++-
+|  man/install.R.Rd                             |  3 ++-
+|  man/install.RStudio.Rd                       |  3 ++-
+|  man/install.Rdevel.Rd                        |  3 ++-
+|  man/install.Rtools.Rd                        |  3 ++-
+|  man/install.SWFTools.Rd                      |  3 ++-
+|  man/install.Texmaker.Rd                      |  3 ++-
+|  man/install.URL.Rd                           |  7 ++++---
+|  man/install.git.Rd                           |  3 ++-
+|  man/install.notepadpp.Rd                     |  3 ++-
+|  man/install.npptor.Rd                        |  3 ++-
+|  man/install.packages.zip.Rd                  |  3 ++-
+|  man/install.pandoc.Rd                        |  3 ++-
+|  man/installr.Rd                              |  3 ++-
+|  man/is.RStudio.Rd                            |  3 ++-
+|  man/is.Rgui.Rd                               |  3 ++-
+|  man/is.empty.Rd                              |  3 ++-
+|  man/is.exe.installed.Rd                      |  3 ++-
+|  man/is.windows.Rd                            |  3 ++-
+|  man/is_in_.First_in_Rprofile.site.Rd         |  3 ++-
+|  man/kill_all_Rscript_s.Rd                    |  3 ++-
+|  man/kill_pid.Rd                              |  3 ++-
+|  man/kill_process.Rd                          |  3 ++-
+|  man/lineplot_package_downloads.Rd            |  3 ++-
+|  man/load_installr_on_startup.Rd              |  3 ++-
+|  man/most_downloaded_packages.Rd              |  3 ++-
+|  man/myip.Rd                                  |  3 ++-
+|  man/os.hibernate.Rd                          |  3 ++-
+|  man/os.lock.Rd                               |  3 ++-
+|  man/os.manage.Rd                             |  3 ++-
+|  man/os.restart.Rd                            |  3 ++-
+|  man/os.shutdown.Rd                           |  3 ++-
+|  man/os.sleep.Rd                              |  3 ++-
+|  man/package_authors.Rd                       |  3 ++-
+|  man/pkgDNLs_worldmapcolor.Rd                 |  3 ++-
+|  man/read_RStudio_CRAN_data.Rd                |  3 ++-
+|  man/remove.installr.GUI.Rd                   |  3 ++-
+|  man/remove_from_.First_in_Rprofile.site.Rd   |  3 ++-
+|  man/rename_r_to_R.Rd                         |  9 +++++----
+|  man/require2.Rd                              |  3 ++-
+|  man/restart_RGui.Rd                          |  3 ++-
+|  man/rm_installr_from_startup.Rd              |  3 ++-
+|  man/source.https.Rd                          |  3 ++-
+|  man/system.PATH.Rd                           |  3 ++-
+|  man/turn.number.version.Rd                   |  3 ++-
+|  man/turn.version.to.number.Rd                |  3 ++-
+|  man/turn.version.to.number1.Rd               |  3 ++-
+|  man/uninstall.R.Rd                           |  5 +++--
+|  man/uninstall.packages.Rd                    |  5 +++--
+|  man/up_folder.Rd                             |  3 ++-
+|  man/updateR.Rd                               |  3 ++-
+|  man/xlsx2csv.Rd                              |  3 ++-
+|  91 files changed, 209 insertions(+), 124 deletions(-)
+
+* 2015-06-02(Tal Galili) misc |7dbceaf| 
+|  R/updateR.R          | 2 ++
+|  man/checkMD5sums2.Rd | 2 ++
+|  2 files changed, 4 insertions(+)
+
+* 2015-05-22(Tal Galili) Added code of conduct |5f646cd| 
+|  .Rbuildignore |  3 ++-
+|  CONDUCT.md    | 25 +++++++++++++++++++++++++
+|  R/zzz.R       |  1 +
+|  README.md     |  6 ++++++
+|  4 files changed, 34 insertions(+), 1 deletion(-)
+
+* 2015-05-10(Tal Galili) Bump to 0.15.16 |b6fef3c| 
+|  ChangeLog   | 238 ++++++++++++++++++++++++++++++++++++++++++++++++++++++++--
+|  DESCRIPTION |   9 ++-
+|  NEWS.md     |  51 +++++++++++++
+|  3 files changed, 287 insertions(+), 11 deletions(-)
 
 * 2015-05-10(Tal Galili) We don't need to run library again |eedcd04| 
 |  README.md | 3 +--
