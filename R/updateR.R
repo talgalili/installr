@@ -44,7 +44,7 @@
 #' }
 checkMD5sums2 <- function (package, dir, md5file, omit_files,...)
 {
-   library(tools) # making sure this is used.
+   # library(tools) # making sure this is used.
    # R code in the package should call library or require only exceptionally. Such calls are never needed for packages listed in ?Depends? as they will already be on the search path. It used to be common practice to use require calls for packages listed in ?suggests? in functions which used their functionality, but nowadays it is better to access such functionality via :: calls.
    # from: http://cran.r-project.org/doc/manuals/R-exts.html
 
@@ -298,7 +298,7 @@ install.R <- function(page_with_download_url = "http://cran.rstudio.com/bin/wind
    # checks the MD5sums from the new R installation:
    if(to_checkMD5sums)    {
       new_R_path <- get.installed.R.folders()[1]
-      library(tools)
+      # library(tools)
       files_to_omit_from_MD5 <- 
          c("etc/Rconsole", "etc/Rprofile.site",  "bin/R.exe", "bin/Rscript.exe" )
       pass_checkMD5sums <- checkMD5sums2(dir=new_R_path, 

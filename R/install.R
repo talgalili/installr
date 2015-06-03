@@ -471,7 +471,7 @@ install.Rtools <- function(choose_version = FALSE,
    # latest_Frozen==T means we get the latest Rtools version which is Frozen (when writing this function it is Rtools215.exe)
    # latest_Frozen==F means we get the latest Rtools version which is not Frozen (when writing this function it is Rtools30.exe)
 
-   if(check & require(devtools)) { # if we have devtools we can check for the existance of rtools
+   if(check & requireNamespace(devtools)) { # if we have devtools we can check for the existance of rtools
       found_rtools <- devtools::find_rtools()
       if(found_rtools) {
          cat("No need to install Rtools - You've got the relevant version of Rtools installed\n")
@@ -500,11 +500,7 @@ install.Rtools <- function(choose_version = FALSE,
       version_to_install_no_dots <- gsub("\\.","", version_to_install)
       exe_filename <-   paste("Rtools" , version_to_install_no_dots , ".exe", sep = "")
    } else { # else - it means we have a version of R which is beyond our current knowledge of Rtools (or that the user asked to choose a version), so we'll have to let the user decide on what to do.
-      if(!require(XML)) {
-         cat("You need to install the {XML} package in order to use this function.")
-         install_XML <- ask.user.yn.question("Do you wish to install the {XML} package?", use_GUI = use_GUI)
-         if(install_XML) install.packages("XML")         
-      }
+		require2("XML")
       TABLE <- XML::readHTMLTable(page_with_download_url, header=T,stringsAsFactors=F)[[1]]
       # example: http://stackoverflow.com/questions/1395528/scraping-html-tables-into-r-data-frames-using-the-xml-package
       
@@ -1406,7 +1402,7 @@ installr <- function(use_GUI = TRUE, ...) {
 #' 
 #' }
 fetch_tag_from_Rd <- function(package, tag = "\\author",...){
-	require(tools)
+	# require(tools)
 
 	# from "tools" but it is not exported
 	# RdTags <- function (Rd) 
