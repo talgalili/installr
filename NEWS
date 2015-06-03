@@ -1,3 +1,10 @@
+installr 0.15.17 (2015-06-03)
+---------------------------
+
+OTHER NOTES:
+   * Added (MORE) :: calls to Fix:  "no visible global function definition for"
+
+
 installr 0.15.16 (2015-06-02)
 ---------------------------
 

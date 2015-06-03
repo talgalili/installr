@@ -232,11 +232,11 @@ read_RStudio_CRAN_data <- function(log_folder = tempdir(), use_data_table = TRUE
 #' barplot_package_users_per_day("plyr", my_RStudio_CRAN_data)
 #' }
 format_RStudio_CRAN_data <- function(dataset, ...) {
-   is_data_table_loaded <- require2(data.table)
+   is_data_table_loaded <- require2("data.table")
    if(!is_data_table_loaded) stop("The 'data.table' package MUST be installed/loaded in order for this function to work.")
    
    if(("data.table" %in% class(dataset))) {
-      dataset <- as.data.frame(dataset)
+      dataset <- data.table::as.data.frame(dataset)
    }
 
    # add some keys and define variable types
@@ -462,6 +462,24 @@ pkgDNLs_worldmapcolor <- function(pkg_name, dataset, remove_dups=TRUE, ...){
   require2("ggplot2")
   require2("data.table")
   require2("sp")
+  
+  
+ 	geom_line <- ggplot2::geom_line
+	ylab <- ggplot2::ylab
+	theme_bw <- ggplot2::theme_bw
+	theme <- ggplot2::theme
+	element_text <- ggplot2::element_text
+	aes_string <- ggplot2::aes_string
+
+	fortify <- ggplot2::fortify
+	ggplot <- ggplot2::ggplot
+	geom_polygon <- ggplot2::geom_polygon
+	coord_equal <- ggplot2::coord_equal
+	scale_fill_gradientn <- ggplot2::scale_fill_gradientn
+	labs <- ggplot2::labs
+ 
+  
+  
   
   data <- dataset[which(dataset$package == pkg_name),]
   if(remove_dups){
