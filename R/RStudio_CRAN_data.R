@@ -16,13 +16,13 @@
 #  http://www.r-project.org/Licenses/
 #
 
-
+# if(F) 1 else 0
 
 # Fix:  no visible global function definition for
-data.table <- data.table::data.table
-as.data.table <- data.table::as.data.table
-setkey <- data.table::setkey
-rbindlist <- data.table::rbindlist
+data.table <- function(...) if(requireNamespace("data.table")) data.table::data.table(...) else stop("data.table is not loaded")
+as.data.table <- function(...) if(requireNamespace("data.table")) data.table::as.data.table(...) else stop("data.table is not loaded")
+setkey <- function(...) if(requireNamespace("data.table")) data.table::setkey(...) else stop("data.table is not loaded")
+rbindlist <- function(...) if(requireNamespace("data.table")) data.table::rbindlist(...) else stop("data.table is not loaded")
 
 find_rtools <- devtools::find_rtools
 
