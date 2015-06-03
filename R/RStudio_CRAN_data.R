@@ -236,7 +236,7 @@ format_RStudio_CRAN_data <- function(dataset, ...) {
    if(!is_data_table_loaded) stop("The 'data.table' package MUST be installed/loaded in order for this function to work.")
    
    if(("data.table" %in% class(dataset))) {
-      dataset <- data.table::as.data.frame(dataset)
+      dataset <- as.data.frame(dataset)
    }
 
    # add some keys and define variable types

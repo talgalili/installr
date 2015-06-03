@@ -471,7 +471,7 @@ install.Rtools <- function(choose_version = FALSE,
    # latest_Frozen==T means we get the latest Rtools version which is Frozen (when writing this function it is Rtools215.exe)
    # latest_Frozen==F means we get the latest Rtools version which is not Frozen (when writing this function it is Rtools30.exe)
 
-   if(check & requireNamespace(devtools)) { # if we have devtools we can check for the existance of rtools
+   if(check & requireNamespace("devtools")) { # if we have devtools we can check for the existance of rtools
       found_rtools <- devtools::find_rtools()
       if(found_rtools) {
          cat("No need to install Rtools - You've got the relevant version of Rtools installed\n")
