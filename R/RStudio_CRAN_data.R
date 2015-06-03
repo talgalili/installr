@@ -34,20 +34,6 @@
 
 
 
-geom_line <- ggplot2::geom_line
-ylab <- ggplot2::ylab
-theme_bw <- ggplot2::theme_bw
-theme <- ggplot2::theme
-element_text <- ggplot2::element_text
-aes_string <- ggplot2::aes_string
-
-fortify <- ggplot2::fortify
-ggplot <- ggplot2::ggplot
-geom_polygon <- ggplot2::geom_polygon
-coord_equal <- ggplot2::coord_equal
-scale_fill_gradientn <- ggplot2::scale_fill_gradientn
-labs <- ggplot2::labs
-
 
 # file.name.from.url <- function(URL) tail(strsplit(URL,   "/")[[1]],1)
 # # sapply(urls, file.name.from.url)
@@ -366,6 +352,23 @@ barplot_package_users_per_day <- function(pkg_name, dataset, remove_dups = TRUE,
 lineplot_package_downloads <- function(pkg_names, dataset, by_time = c("date", "week"), ...) {   
    require2("ggplot2")
    require2("plyr")
+   
+   
+	geom_line <- ggplot2::geom_line
+	ylab <- ggplot2::ylab
+	theme_bw <- ggplot2::theme_bw
+	theme <- ggplot2::theme
+	element_text <- ggplot2::element_text
+	aes_string <- ggplot2::aes_string
+
+	fortify <- ggplot2::fortify
+	ggplot <- ggplot2::ggplot
+	geom_polygon <- ggplot2::geom_polygon
+	coord_equal <- ggplot2::coord_equal
+	scale_fill_gradientn <- ggplot2::scale_fill_gradientn
+	labs <- ggplot2::labs
+
+   
    
    by_time <- by_time[1]
    
