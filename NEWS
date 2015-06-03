@@ -7,7 +7,7 @@ UPDATED FUNCTIONS:
    * updateR - reminds the user to stop if running it from RStudio.
 
 OTHER NOTES:
-   * Added local fun defnitions to Fix:  "no visible global function definition for"
+   * Added :: calls to Fix:  "no visible global function definition for"
 
 installr 0.15.15 (2015-03-13)
 ---------------------------

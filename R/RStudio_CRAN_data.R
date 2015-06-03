@@ -18,19 +18,19 @@
 
 # if(F) 1 else 0
 
-# Fix:  no visible global function definition for
-data.table <- function(...) if(requireNamespace("data.table")) data.table::data.table(...) else stop("data.table is not loaded")
-as.data.table <- function(...) if(requireNamespace("data.table")) data.table::as.data.table(...) else stop("data.table is not loaded")
-setkey <- function(...) if(requireNamespace("data.table")) data.table::setkey(...) else stop("data.table is not loaded")
-rbindlist <- function(...) if(requireNamespace("data.table")) data.table::rbindlist(...) else stop("data.table is not loaded")
-
-find_rtools <- devtools::find_rtools
-
-fromJSON <- rjson::fromJSON
-
-readHTMLTable <- XML::readHTMLTable
-
-ddply <- plyr::ddply
+# # Fix:  no visible global function definition for
+# data.table <- function(...) if(requireNamespace("data.table")) data.table::data.table(...) else stop("data.table is not loaded")
+# as.data.table <- function(...) if(requireNamespace("data.table")) data.table::as.data.table(...) else stop("data.table is not loaded")
+# setkey <- function(...) if(requireNamespace("data.table")) data.table::setkey(...) else stop("data.table is not loaded")
+# rbindlist <- function(...) if(requireNamespace("data.table")) data.table::rbindlist(...) else stop("data.table is not loaded")
+# 
+# find_rtools <- devtools::find_rtools
+# 
+# fromJSON <- rjson::fromJSON
+# 
+# readHTMLTable <- XML::readHTMLTable
+# 
+# ddply <- plyr::ddply
 
 
 
@@ -198,7 +198,7 @@ read_RStudio_CRAN_data <- function(log_folder = tempdir(), use_data_table = TRUE
    # rbind the files.
    if(use_data_table) is_data_table_loaded <- require2("data.table")
    if(use_data_table & is_data_table_loaded) {
-      dataset <- rbindlist(logs) # MUCH faster...
+      dataset <- data.table::rbindlist(logs) # MUCH faster...
    } else {
       dataset <- do.call("rbind",logs)
    }
@@ -267,8 +267,8 @@ format_RStudio_CRAN_data <- function(dataset, ...) {
 #    dataset[, weekday:=weekdays(dataset$date)]
 #    dataset[, week:=strftime(as.POSIXlt(dataset$date),format="%Y-%W")]
    
-   dataset <- as.data.table(dataset)
-   setkey(dataset, package, date, week, country)  
+   dataset <- data.table::as.data.table(dataset)
+   data.table::setkey(dataset, package, date, week, country)  
    
    return(dataset)
 }
@@ -380,7 +380,7 @@ lineplot_package_downloads <- function(pkg_names, dataset, by_time = c("date", "
    
    . <- TRUE
    
-   agg1 <- ddply(dataset[dataset$"package" %in% pkg_names,], .(time= get(by_time), package), function(xx) {c(V1 = length(unique(xx$ip_id)))})
+   agg1 <- plyr::ddply(dataset[dataset$"package" %in% pkg_names,], .(time= get(by_time), package), function(xx) {c(V1 = length(unique(xx$ip_id)))})
    
 #    suppressWarnings(colnames(agg1)[1] <- "time")   
    

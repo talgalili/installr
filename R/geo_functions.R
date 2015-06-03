@@ -193,7 +193,7 @@ freegeoip <- function(ip = myip(), format = ifelse(length(ip)==1,'list','datafra
       # a single IP address
       require2("rjson")
       url <- paste(c("http://freegeoip.net/json/", ip), collapse='')
-      ret <- fromJSON(readLines(url, warn=FALSE))
+      ret <- rjson::fromJSON(readLines(url, warn=FALSE))
       if (format == 'dataframe')
          ret <- data.frame(t(unlist(ret)))
       return(ret)
