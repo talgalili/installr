@@ -152,7 +152,9 @@ ask.user.yn.question <- function(question, use_GUI = TRUE, add_lines_before = TR
 
 #' @title Checks if there is a newer version of R
 #' @export
-#' @description Fetches the latest (not development!) R version and compares it with your currently installed R version (the version of the R session from which you are running this function).
+#' @description 
+#' Fetches the latest (not development!) R version and compares it with your currently installed R version (the version of the R session from which you are running this function).
+#' 
 #' @param notify_user if to print to you (the user) what is the latest version and what version you are currently using.
 #' @param use_GUI a logical indicating whether a graphics menu should be used if available.  If TRUE, and on Windows, it will use \link{winDialog}, otherwise it will use \link{cat}.
 #' @param page_with_download_url the URL of the page from which R can be downloaded.
