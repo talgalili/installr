@@ -1,3 +1,10 @@
+installr 0.15.18 (2015-06-09)
+---------------------------
+
+BUG FIXES:
+   * moving "utils" to depends allows add.installr.GUI to work again.
+   
+
 installr 0.15.17 (2015-06-03)
 ---------------------------
 
