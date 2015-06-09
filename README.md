@@ -38,14 +38,14 @@ If you are using the Rgui, you will see a new menu added on your top right (just
 For command line use you can **update R** by running:
 
 ```r
-require(installr)
+library("installr"")
 updateR() # this will open dialog boxes to take you through the steps.
 ```
 
 Or **install a new software** simply by running:
 
 ```r
-require(installr)
+library("installr"")
 installr() #  user can easily select (via a GUI interface) a software to install.
 ```
 
