@@ -1,3 +1,18 @@
+installr 0.16.0 (2015-06-09)
+---------------------------
+
+BUG FIXES:
+   * moving "utils" to depends allows add.installr.GUI to work again.
+   * install.notepadpp - works again
+   
+
+installr 0.15.17 (2015-06-03)
+---------------------------
+
+OTHER NOTES:
+   * Added (MORE) :: calls to Fix:  "no visible global function definition for"
+
+
 installr 0.15.16 (2015-06-02)
 ---------------------------
 
@@ -7,7 +22,7 @@ UPDATED FUNCTIONS:
    * updateR - reminds the user to stop if running it from RStudio.
 
 OTHER NOTES:
-   * Added local fun defnitions to Fix:  "no visible global function definition for"
+   * Added :: calls to Fix:  "no visible global function definition for"
 
 installr 0.15.15 (2015-03-13)
 ---------------------------

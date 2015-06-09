@@ -1,3 +1,56 @@
+* 2015-06-09(Tal Galili) install.notepadpp - works again |22516df| 
+|  DESCRIPTION |  2 +-
+|  NEWS        |  3 ++-
+|  R/install.R | 12 ++++++++----
+|  3 files changed, 11 insertions(+), 6 deletions(-)
+
+* 2015-06-09(Tal Galili) moving "utils" to depends allows add.installr.GUI to work again. |1352aa0| 
+|  DESCRIPTION | 7 +++----
+|  NEWS        | 7 +++++++
+|  2 files changed, 10 insertions(+), 4 deletions(-)
+
+* 2015-06-03(Tal Galili) misc |6d034d1| 
+|  R/RStudio_CRAN_data.R | 2 +-
+|  R/install.R           | 2 +-
+|  2 files changed, 2 insertions(+), 2 deletions(-)
+
+* 2015-06-03(Tal Galili) fix "'library' or 'require' calls in package code:" |ac81688| 
+|  R/install.R | 10 +++-------
+|  R/updateR.R |  4 ++--
+|  R/zzz.R     |  3 ++-
+|  3 files changed, 7 insertions(+), 10 deletions(-)
+
+* 2015-06-03(Tal Galili) Added (MORE) :: calls to Fix:  "no visible global function definition for" |9e85ed3| 
+|  DESCRIPTION           |  4 ++--
+|  NEWS                  |  7 +++++++
+|  R/RStudio_CRAN_data.R | 22 ++++++++++++++++++++--
+|  3 files changed, 29 insertions(+), 4 deletions(-)
+
+* 2015-06-03(Tal Galili) move some of the ggplot2 stuff |1db802e| 
+|  R/RStudio_CRAN_data.R | 31 +++++++++++++++++--------------
+|  1 file changed, 17 insertions(+), 14 deletions(-)
+
+* 2015-06-03(Tal Galili) add explicit "visible global function definition" |c73e673| 
+|  NEWS                  |  2 +-
+|  R/RStudio_CRAN_data.R | 34 +++++++++++++++++-----------------
+|  R/geo_functions.R     |  2 +-
+|  R/install.R           |  4 ++--
+|  4 files changed, 21 insertions(+), 21 deletions(-)
+
+* 2015-06-03(Tal Galili) hide data.table a bit |cefba84| 
+|  R/RStudio_CRAN_data.R | 10 +++++-----
+|  1 file changed, 5 insertions(+), 5 deletions(-)
+
+* 2015-06-02(Tal Galili) remove dead URL |f78c094| 
+|  R/os.manage.R    | 1 -
+|  man/os.manage.Rd | 1 -
+|  2 files changed, 2 deletions(-)
+
+* 2015-06-02(Tal Galili) misc |1846a50| 
+|  ChangeLog | 144 ++++++++++++++++++++++++++++++++++++++++++++++++++++++++++--
+|  NEWS.md   |   6 ++-
+|  2 files changed, 146 insertions(+), 4 deletions(-)
+
 * 2015-06-02(Tal Galili) Removed invalid URLs |c468bb5| 
 |  R/geo_functions.R      | 5 ++---
 |  R/install.R            | 6 +++---
