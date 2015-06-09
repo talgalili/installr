@@ -8,13 +8,9 @@ require2(package, ask = TRUE, ...)
 }
 \arguments{
   \item{package}{A character of the name of a package (can
-  also be without quotes).}
-
-  \item{ask}{Should the user be asked to install the
-  require packaged, in case it is missing? (default is
-  TRUE)}
-
-  \item{...}{not used}
+  also be without quotes).} \item{ask}{Should the user
+  be asked to install the require packaged, in case it is
+  missing? (default is TRUE)} \item{...}{not used}
 }
 \value{
 returns (invisibly) a logical indicating whether the
@@ -22,7 +18,7 @@ required package is available.
 }
 \description{
 require2 load add-on packages by passing it to
-\link{require}.  However, if the package is not available
+\link{require}. However, if the package is not available
 on the system, it will first install it (through
 \link{install.packages}), and only then try to load it
 again.

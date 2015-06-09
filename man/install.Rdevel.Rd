@@ -10,10 +10,8 @@
 }
 \arguments{
   \item{exe_URL}{A character with a link to an installer
-  file (with the .exe file extension)}
-
-  \item{...}{extra parameters to pass to
-  \link{install.URL}}
+  file (with the .exe file extension)} \item{...}{extra
+  parameters to pass to \link{install.URL}}
 }
 \value{
 TRUE/FALSE - was the installation of R successful or not.

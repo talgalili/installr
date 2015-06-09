@@ -10,12 +10,12 @@ is.exe.installed(exe_file)
   \item{exe_file}{a character with the name of the}
 }
 \value{
-A boolean vector indication the existence of each program
-on the system.
+A boolean vector indication the existence of each program on
+the system.
 }
 \description{
-Checks the existence of an .exe extention in the search
-path for executable files
+Checks the existence of an .exe extention in the search path
+for executable files
 }
 \examples{
 \dontrun{

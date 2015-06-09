@@ -11,9 +11,7 @@
 }
 \arguments{
   \item{URL}{the URL of the GitHub download page.}
-
-  \item{...}{extra parameters to pass to
-  \link{install.URL}}
+  \item{...}{extra parameters to pass to \link{install.URL}}
 }
 \value{
 TRUE/FALSE - was the installation successful or not.
@@ -33,7 +31,7 @@ install.GitHub() # installs the latest version of GitHub for windows
 }
 \references{
 \itemize{ \item GitHub homepage: \url{https://github.com/}
-\item GitHub for windows download page:
-\url{http://windows.github.com/} }
+\item GitHub for windows download page: \url{http://
+windows.github.com/} }
 }
 

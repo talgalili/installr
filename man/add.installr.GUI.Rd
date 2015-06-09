@@ -25,8 +25,9 @@ add.installr.GUI()
 Tal Galili, Dason
 }
 \references{
-My thanks goes to Yihui and Dason, for the idea and help
-with implementation.  See also:
-\url{http://stackoverflow.com/questions/15250487/how-to-add-a-menu-item-to-rgui/}
+My thanks goes to Yihui and Dason, for the idea and
+help with implementation. See also: \url{http://
+stackoverflow.com/questions/15250487/how-to-add-a-menu-item-
+to-rgui/}
 }
 

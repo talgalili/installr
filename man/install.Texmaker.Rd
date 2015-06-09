@@ -11,9 +11,7 @@
 }
 \arguments{
   \item{URL}{the URL of the GitHub download page.}
-
-  \item{...}{extra parameters to pass to
-  \link{install.URL}}
+  \item{...}{extra parameters to pass to \link{install.URL}}
 }
 \value{
 logical - was the installation successful or not.
@@ -34,7 +32,7 @@ install.Texmaker() # installs the latest version of Texmaker for windows
 }
 }
 \references{
-\itemize{ \item Texmaker homepage:
-\url{http://www.xm1math.net/texmaker/} }
+\itemize{ \item Texmaker homepage: \url{http://
+www.xm1math.net/texmaker/} }
 }
 

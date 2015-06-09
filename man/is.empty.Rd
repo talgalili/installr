@@ -4,18 +4,16 @@
 \alias{is.empty}
 \title{Checks if an object is empty (e.g: of zero length)}
 \source{
-\url{http://stackoverflow.com/questions/6451152/how-to-catch-integer0}
+\url{http://stackoverflow.com/questions/6451152/how-to-
+catch-integer0}
 }
 \usage{
 is.empty(x, mode = NULL, ...)
 }
 \arguments{
-  \item{x}{an object}
-
-  \item{mode}{is the object an empty (zero length) object
-  of this mode (can be "integer", "numeric", and so on...)}
-
-  \item{...}{none are available.}
+  \item{x}{an object} \item{mode}{is the object an empty
+  (zero length) object of this mode (can be "integer",
+  "numeric", and so on...)} \item{...}{none are available.}
 }
 \value{
 Returns TRUE/FALSE if the object is empty or not.

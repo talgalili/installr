@@ -22,9 +22,11 @@ load_installr_on_startup()
 }
 }
 \references{
-\url{http://stackoverflow.com/questions/1395301/how-to-get-r-to-recognize-your-working-directory-as-its-working-directory}
-\url{http://stackoverflow.com/questions/1189759/expert-r-users-whats-in-your-rprofile}
-\url{http://www.noamross.net/blog/2012/11/2/rprofile.html}
-\url{http://www.statmethods.net/interface/customizing.html}
+\url{http://stackoverflow.com/questions/1395301/how-to-
+get-r-to-recognize-your-working-directory-as-its-working-
+directory} \url{http://stackoverflow.com/questions/
+1189759/expert-r-users-whats-in-your-rprofile} \url{http://
+www.noamross.net/blog/2012/11/2/rprofile.html} \url{http://
+www.statmethods.net/interface/customizing.html}
 }
 

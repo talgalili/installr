@@ -8,24 +8,19 @@ uninstall.packages(pkgs, lib, warning = TRUE, ...)
 }
 \arguments{
   \item{pkgs}{a character vector with the names of the
-  packages to be removed.}
-
-  \item{lib}{a character vector giving the library
-  directories to remove the packages from. If missing,
-  defaults to the first element in \link{.libPaths}.}
-
-  \item{warning}{boolean (TRUE), should a message be
-  printed in various cases.}
-
-  \item{...}{currently ignored.}
+  packages to be removed.} \item{lib}{a character vector
+  giving the library directories to remove the packages
+  from. If missing, defaults to the first element in
+  \link{.libPaths}.} \item{warning}{boolean (TRUE), should a
+  message be printed in various cases.} \item{...}{currently
+  ignored.}
 }
 \value{
 Invisible NULL
 }
 \description{
 A wrapper for \link{remove.packages}. Usefull since it also
-works if the package is currently loaded into the
-workspace.
+works if the package is currently loaded into the workspace.
 }
 \examples{
 \dontrun{
@@ -37,7 +32,7 @@ install.packages(c("reshape", "plyr"))
 }
 \seealso{
 \code{\link{install.packages}},
-\code{\link{remove.packages}},
-\code{\link[installr]{install.packages.zip}}
+\code{\link{remove.packages}}, \code{\link[installr]
+{install.packages.zip}}
 }
 

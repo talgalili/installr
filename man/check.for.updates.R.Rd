@@ -9,30 +9,23 @@ check.for.updates.R(notify_user = TRUE, use_GUI = TRUE,
   pat = "R-[0-9.]+-win")
 }
 \arguments{
-  \item{notify_user}{if to print to you (the user) what is
-  the latest version and what version you are currently
-  using.}
-
-  \item{use_GUI}{a logical indicating whether a graphics
-  menu should be used if available.  If TRUE, and on
+  \item{notify_user}{if to print to you (the user) what
+  is the latest version and what version you are currently
+  using.} \item{use_GUI}{a logical indicating whether a
+  graphics menu should be used if available. If TRUE, and on
   Windows, it will use \link{winDialog}, otherwise it will
-  use \link{cat}.}
-
-  \item{page_with_download_url}{the URL of the page from
-  which R can be downloaded.}
-
-  \item{pat}{pattern to search for when looking for a newer
-  R version}
+  use \link{cat}.} \item{page_with_download_url}{the URL
+  of the page from which R can be downloaded.} \item{pat}
+  {pattern to search for when looking for a newer R version}
 }
 \value{
 TRUE/FALSE - if there is a newer version of R to install or
 not.
 }
 \description{
-Fetches the latest (not development!) R version and
-compares it with your currently installed R version (the
-version of the R session from which you are running this
-function).
+Fetches the latest (not development!) R version and compares
+it with your currently installed R version (the version of
+the R session from which you are running this function).
 }
 \examples{
 \dontrun{

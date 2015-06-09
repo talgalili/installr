@@ -8,16 +8,11 @@ barplot_package_users_per_day(pkg_name, dataset, remove_dups = TRUE, ...)
 }
 \arguments{
   \item{pkg_name}{a string of the package we are interested
-  in checking.}
-
-  \item{dataset}{a dataset output from running
-  \link{read_RStudio_CRAN_data}.}
-
-  \item{remove_dups}{default is TRUE. Should the duplicate
-  user ids (based on their ips) be removed.  If TRUE, then
-  the plot is the number of unique users who have
-  downloaded our package everyday.}
-
+  in checking.} \item{dataset}{a dataset output from running
+  \link{read_RStudio_CRAN_data}.} \item{remove_dups}{default
+  is TRUE. Should the duplicate user ids (based on their
+  ips) be removed. If TRUE, then the plot is the number of
+  unique users who have downloaded our package everyday.}
   \item{...}{not in use.}
 }
 \value{
@@ -26,13 +21,13 @@ that time period.
 }
 \description{
 This function is a first template for creating a barplot of
-the number of downloads a package had in a time period.
-This function is based on some other functions, have a look
-at the example for more details.
+the number of downloads a package had in a time period. This
+function is based on some other functions, have a look at
+the example for more details.
 }
 \details{
-RStudio maintains its own CRAN mirror,
-\url{http://cran.rstudio.com} and offers its log files.
+RStudio maintains its own CRAN mirror, \url{http://
+cran.rstudio.com} and offers its log files.
 }
 \examples{
 \dontrun{
@@ -55,6 +50,7 @@ barplot_package_users_per_day("plyr", my_RStudio_CRAN_data)
 }
 \seealso{
 \link{download_RStudio_CRAN_data},
-\link{read_RStudio_CRAN_data},\link{barplot_package_users_per_day}
+\link{read_RStudio_CRAN_data},
+\link{barplot_package_users_per_day}
 }
 

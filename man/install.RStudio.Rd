@@ -11,9 +11,7 @@
 }
 \arguments{
   \item{page_with_download_url}{the URL of the RStudio
-  download page.}
-
-  \item{...}{extra parameters to pass to
+  download page.} \item{...}{extra parameters to pass to
   \link{install.URL}}
 }
 \value{
@@ -35,7 +33,7 @@ install.RStudio() # installs the latest version of RStudio
 }
 }
 \references{
-\itemize{ \item RStudio homepage:
-\url{http://www.rstudio.com/} }
+\itemize{ \item RStudio homepage: \url{http://
+www.rstudio.com/} }
 }
 

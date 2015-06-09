@@ -7,12 +7,12 @@
 turn.number.version(number_to_dots)
 }
 \arguments{
-  \item{number_to_dots}{A numeric vector - of the
-  number-version of R}
+  \item{number_to_dots}{A numeric vector - of the number-
+  version of R}
 }
 \value{
 A vector of "numbers" representing the versions (for
-example: 2015002).  The names of the vector is the original
+example: 2015002). The names of the vector is the original
 version character.
 }
 \description{

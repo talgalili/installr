@@ -7,11 +7,9 @@
 up_folder(FOLDER, n = -1, ...)
 }
 \arguments{
-  \item{FOLDER}{a character vector of folders}
-
-  \item{n}{passed to n in function \link{head}}
-
-  \item{...}{not used.}
+  \item{FOLDER}{a character vector of folders} \item{n}
+  {passed to n in function \link{head}} \item{...}{not
+  used.}
 }
 \value{
 The name of the file in the URL

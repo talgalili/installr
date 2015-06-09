@@ -4,7 +4,8 @@
 \alias{most_downloaded_packages}
 \title{Most downloaded packages}
 \source{
-\url{http://www.nicebread.de/finally-tracking-cran-packages-downloads/}
+\url{http://www.nicebread.de/finally-tracking-cran-packages-
+downloads/}
 }
 \usage{
 most_downloaded_packages(dataset, n = 6L, ...)
@@ -12,11 +13,8 @@ most_downloaded_packages(dataset, n = 6L, ...)
 \arguments{
   \item{dataset}{a dataset output from running
   \link{read_RStudio_CRAN_data}, after going through
-  \link{format_RStudio_CRAN_data}.}
-
-  \item{n}{the number of top packages to show.}
-
-  \item{...}{not in use.}
+  \link{format_RStudio_CRAN_data}.} \item{n}{the number of
+  top packages to show.} \item{...}{not in use.}
 }
 \value{
 a table of top packages by downloads (a numeric vector with
@@ -26,8 +24,8 @@ packages as names)
 Gives the top "x" most downloaded packages.
 }
 \details{
-RStudio maintains its own CRAN mirror,
-\url{http://cran.rstudio.com} and offers its log files.
+RStudio maintains its own CRAN mirror, \url{http://
+cran.rstudio.com} and offers its log files.
 }
 \examples{
 \dontrun{
@@ -48,6 +46,7 @@ lineplot_package_downloads(pkg_names = top_packages, dataset = my_RStudio_CRAN_d
 }
 \seealso{
 \link{download_RStudio_CRAN_data},
-\link{read_RStudio_CRAN_data},\link{barplot_package_users_per_day}
+\link{read_RStudio_CRAN_data},
+\link{barplot_package_users_per_day}
 }
 

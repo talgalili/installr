@@ -4,14 +4,14 @@
 \alias{format_RStudio_CRAN_data}
 \title{Format the RStudio CRAN mirror data into the data.table format}
 \source{
-\url{http://www.nicebread.de/finally-tracking-cran-packages-downloads/}
+\url{http://www.nicebread.de/finally-tracking-cran-packages-
+downloads/}
 }
 \usage{
 format_RStudio_CRAN_data(dataset, ...)
 }
 \arguments{
   \item{dataset}{the RStudio CRAN mirror data object}
-
   \item{...}{not in use.}
 }
 \value{
@@ -24,8 +24,8 @@ country. It also adds the columns weekday and week. Lastly,
 it also sets a key.
 }
 \details{
-RStudio maintains its own CRAN mirror,
-\url{http://cran.rstudio.com} and offers its log files.
+RStudio maintains its own CRAN mirror, \url{http://
+cran.rstudio.com} and offers its log files.
 }
 \examples{
 \dontrun{
@@ -51,6 +51,7 @@ Felix Schonbrodt, Tal Galili
 }
 \seealso{
 \link{download_RStudio_CRAN_data},
-\link{read_RStudio_CRAN_data},\link{barplot_package_users_per_day}
+\link{read_RStudio_CRAN_data},
+\link{barplot_package_users_per_day}
 }
 

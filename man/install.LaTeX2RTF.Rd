@@ -11,9 +11,7 @@
 }
 \arguments{
   \item{page_with_download_url}{the URL of the SWFTools
-  download page.}
-
-  \item{...}{extra parameters to pass to
+  download page.} \item{...}{extra parameters to pass to
   \link{install.URL}}
 }
 \value{
@@ -38,7 +36,7 @@ install.LaTeX2RTF() # installs the latest version of LaTeX2RTF
 }
 }
 \references{
-\itemize{ \item SWFTools homepage:
-\url{http://latex2rtf.sourceforge.net/} }
+\itemize{ \item SWFTools homepage: \url{http://
+latex2rtf.sourceforge.net/} }
 }
 

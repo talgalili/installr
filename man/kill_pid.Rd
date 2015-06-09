@@ -8,18 +8,11 @@ kill_pid(pid, s = 0, m = 0, h = 0, ...)
 }
 \arguments{
   \item{pid}{an integer vector with process id numbers
-  (i.e.: can kill severa pid at once!)}
-
-  \item{s}{numeric. number of seconds to wait before
-  killing the processes}
-
-  \item{m}{numeric. number of minutes to wait before
-  killing the processes}
-
-  \item{h}{numeric. number of hours to wait before killing
-  the processes}
-
-  \item{...}{not used.}
+  (i.e.: can kill severa pid at once!)} \item{s}{numeric.
+  number of seconds to wait before killing the processes}
+  \item{m}{numeric. number of minutes to wait before killing
+  the processes} \item{h}{numeric. number of hours to wait
+  before killing the processes} \item{...}{not used.}
 }
 \value{
 output from system
@@ -42,10 +35,10 @@ get_Rscript_PID() # we no longer have Rscripts running
 }
 }
 \references{
-tasklist details from microsoft homepage:
-\url{http://technet.microsoft.com/en-us/library/bb491010.aspx}
-pskill details from microsoft homepage:
-\url{http://technet.microsoft.com/en-us/sysinternals/bb896683.aspx}
+tasklist details from microsoft homepage: \url{http://
+technet.microsoft.com/en-us/library/bb491010.aspx}
+pskill details from microsoft homepage: \url{http://
+technet.microsoft.com/en-us/sysinternals/bb896683.aspx}
 }
 \seealso{
 \code{\link{get_tasklist}}, \code{\link{get_Rscript_PID}},

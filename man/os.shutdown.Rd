@@ -8,30 +8,23 @@ os.shutdown(s = 0, m = 0, h = 0)
 }
 \arguments{
   \item{s}{time to wait before shutting down (in seconds),
-  added to m and h; passed to
-  \code{\link[base]{Sys.sleep}}}
-
+  added to m and h; passed to \code{\link[base]{Sys.sleep}}}
   \item{m}{time to wait before shutting down (in minutes),
-  added to s and h; passed to
-  \code{\link[base]{Sys.sleep}}}
-
+  added to s and h; passed to \code{\link[base]{Sys.sleep}}}
   \item{h}{time to wait before shutting down (in hours),
-  added to s and m; passed to
-  \code{\link[base]{Sys.sleep}}}
+  added to s and m; passed to \code{\link[base]{Sys.sleep}}}
 }
 \value{
 The status code of \code{\link[base]{system}}.
 }
 \description{
-There is a command \command{shutdown} in both Windows and
-Linux, and this function uses it to shut down a computer.
-
-After the time \code{wait} has passed, R will execute
-\command{shutdown -s -t 0} (for Windows) or
-\command{shutdown -h now} to shut down the computer.
-
-This function is a modified version of Yihui's shutdown
-function from the {fun} package.
+There is a command \command{shutdown} in both Windows
+and Linux, and this function uses it to shut down a
+computer. After the time \code{wait} has passed, R will
+execute \command{shutdown -s -t 0} (for Windows) or
+\command{shutdown -h now} to shut down the computer. This
+function is a modified version of Yihui's shutdown function
+from the {fun} package.
 }
 \examples{
 \dontrun{

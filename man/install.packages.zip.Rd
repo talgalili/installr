@@ -25,10 +25,9 @@ use install.packages on it. 3. To get the package from
 github, by using devtools (but this will require you to
 first install RTools, and not everyone wishes to do it for
 just some package). This function aims to combine option 1
-and 2, by automatically downloading the ZIP file locally
-and then running install.packages on it. After being
-downloaded and installed, the binary is erased from the
-computer.
+and 2, by automatically downloading the ZIP file locally and
+then running install.packages on it. After being downloaded
+and installed, the binary is erased from the computer.
 }
 \examples{
 \dontrun{
@@ -36,7 +35,7 @@ install.packages.zip("http://cran.r-project.org/bin/windows/contrib/r-release/de
 }
 }
 \seealso{
-\code{\link{install.packages}},
-\code{\link[R.utils]{installPackages}}
+\code{\link{install.packages}}, \code{\link[R.utils]
+{installPackages}}
 }
 

@@ -15,13 +15,12 @@ Returns a character vector of the R version (or NA, if this
 is not an R installation folder)
 }
 \description{
-Get the version of the R installed in a folder based on the
-structure of the filename README.R-... (where ... is a
-version number for R). This function helps detect the
+Get the version of the R installed in a folder based on
+the structure of the filename README.R-... (where ... is
+a version number for R). This function helps detect the
 version number of an R installation even if the name of the
-folder is not standard. If multiple versions were
-installed, overwriting each other, the most recent is
-selected.
+folder is not standard. If multiple versions were installed,
+overwriting each other, the most recent is selected.
 }
 \examples{
 \dontrun{

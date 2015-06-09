@@ -7,24 +7,20 @@
 ask.user.yn.question(question, use_GUI = TRUE, add_lines_before = TRUE)
 }
 \arguments{
-  \item{question}{a character string with a question to the
-  user.}
-
-  \item{use_GUI}{a logical indicating whether a graphics
-  menu should be used if available.  If TRUE, and on
+  \item{question}{a character string with a question to
+  the user.} \item{use_GUI}{a logical indicating whether a
+  graphics menu should be used if available. If TRUE, and on
   Windows, it will use \link{winDialog}, otherwise it will
-  use \link[utils]{menu}.}
-
-  \item{add_lines_before}{if to add a line before asking
-  the question.  Default is TRUE.}
+  use \link[utils]{menu}.} \item{add_lines_before}{if to add
+  a line before asking the question. Default is TRUE.}
 }
 \value{
 TRUE/FALSE - if the user answeres yes or no.
 }
 \description{
-Asks the user for one yes/no question.  If the users
+Asks the user for one yes/no question. If the users
 replies with a "yes" (or Y, or y) the function returns
-TRUE.  Otherwise, FALSE. (also exists as the function
+TRUE. Otherwise, FALSE. (also exists as the function
 devtools::yesno)
 }
 \examples{
@@ -45,8 +41,9 @@ Ut enim ad minim veniam, quis nostrud exercitation
 }
 }
 \references{
-\url{http://stackoverflow.com/questions/15250487/how-to-add-a-menu-item-to-rgui}
-(my thanks goes to Dason for his answer and help)
+\url{http://stackoverflow.com/questions/15250487/how-to-add-
+a-menu-item-to-rgui} (my thanks goes to Dason for his answer
+and help)
 }
 \seealso{
 \link[utils]{menu}, (yesno in the package {devtools})

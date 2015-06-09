@@ -8,25 +8,19 @@ checkMD5sums2(package, dir, md5file, omit_files, ...)
 }
 \arguments{
   \item{package}{the name of an installed package}
-
   \item{dir}{the path to the top-level directory of an
-  installed package.}
-
-  \item{md5file}{the exact path of the md5file to compare
-  the dir with}
-
-  \item{omit_files}{a character vector with the files or
-  file diractories to not include in the checksums}
-
-  \item{...}{not used. (but good for future backward
-  compatibility)}
+  installed package.} \item{md5file}{the exact path of
+  the md5file to compare the dir with} \item{omit_files}{a
+  character vector with the files or file diractories to not
+  include in the checksums} \item{...}{not used. (but good
+  for future backward compatibility)}
 }
 \value{
-checkMD5sums returns a logical, NA if there is no 'MD5'
-file to be checked.
+checkMD5sums returns a logical, NA if there is no 'MD5' file
+to be checked.
 }
 \description{
-checkMD5sums checks the files against a file 'MD5'.  This
+checkMD5sums checks the files against a file 'MD5'. This
 extends the default checkMD5sums from package tools by
 adding a new parameter "md5file"
 }

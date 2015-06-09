@@ -11,41 +11,32 @@ download_RStudio_CRAN_data(START = as.Date(Sys.time()) - 5,
 \arguments{
   \item{START}{the defaults is 5 days before today. A
   character string of the START date for files to be
-  downloaded. The date format is "YYYY-MM-DD".}
-
-  \item{END}{the defaults is today. A character string of
-  the END date for files to be downloaded. The date format
-  is "YYYY-MM-DD".}
-
-  \item{log_folder}{the folder into which we would like the
-  files to be downloaded to. Default is the temporary
-  folder picked by \link{tempdir}.}
-
+  downloaded. The date format is "YYYY-MM-DD".} \item{END}
+  {the defaults is today. A character string of the END
+  date for files to be downloaded. The date format is
+  "YYYY-MM-DD".} \item{log_folder}{the folder into which
+  we would like the files to be downloaded to. Default
+  is the temporary folder picked by \link{tempdir}.}
   \item{trunc_END_date_to_today}{default is TRUE. Makes
   sure that if END date is later then today, the END date
   will be change to today (since otherwise, we will only
-  get many 404 errors)}
-
-  \item{override}{boolean (default is FALSE) - should the
-  function download files that are already available in the
-  temp folder}
-
-  \item{message}{boolean (default is TRUE) - should a
-  message be printed in interesting cases.}
-
-  \item{...}{not in use.}
+  get many 404 errors)} \item{override}{boolean (default
+  is FALSE) - should the function download files that are
+  already available in the temp folder} \item{message}
+  {boolean (default is TRUE) - should a message be printed
+  in interesting cases.} \item{...}{not in use.}
 }
 \value{
 Returns the value of log_folder.
 }
 \description{
 This function downlaod these files based on the code from
-the downlaod page (\url{http://cran-logs.rstudio.com/})
-into a temporary folder.
+the downlaod page (\url{http://cran-logs.rstudio.com/}) into
+a temporary folder.
 }
 \details{
-RStudio maintains its own CRAN mirror,
-\url{http://cran.rstudio.com} and offers its log files.
+RStudio maintains its own CRAN mirror, \url{http://
+cran.rstudio.com} and offers its log files.
 }
 \examples{
 \dontrun{
@@ -64,6 +55,7 @@ barplot_package_users_per_day("plyr", my_RStudio_CRAN_data)
 }
 \seealso{
 \link{download_RStudio_CRAN_data},
-\link{read_RStudio_CRAN_data},\link{barplot_package_users_per_day}
+\link{read_RStudio_CRAN_data},
+\link{barplot_package_users_per_day}
 }
 

@@ -8,10 +8,8 @@
 install.CMake(URL = "http://www.cmake.org/cmake/resources/software.html", ...)
 }
 \arguments{
-  \item{URL}{the URL of the CMake download page.}
-
-  \item{...}{extra parameters to pass to
-  \link{install.URL}}
+  \item{URL}{the URL of the CMake download page.} \item{...}
+  {extra parameters to pass to \link{install.URL}}
 }
 \value{
 TRUE/FALSE - was the installation successful or not.
@@ -34,7 +32,7 @@ install.CMake() # installs the latest version of ImageMagick
 }
 }
 \references{
-\itemize{ \item CMake homepage:
-\url{http://www.cmake.org/cmake/resources/software.html} }
+\itemize{ \item CMake homepage: \url{http://www.cmake.org/
+cmake/resources/software.html} }
 }
 

@@ -9,10 +9,8 @@ install.Cygwin(bit = 32, ...)
 }
 \arguments{
   \item{bit}{Specify 32 bit or 64 for your particular
-  version of Windows.}
-
-  \item{...}{extra parameters to pass to
-  \link{install.URL}}
+  version of Windows.} \item{...}{extra parameters to pass
+  to \link{install.URL}}
 }
 \value{
 TRUE/FALSE - was the installation successful or not.

@@ -8,15 +8,11 @@ os.manage(use_GUI = TRUE, ask = TRUE, ...)
 }
 \arguments{
   \item{use_GUI}{a logical indicating whether a graphics
-  menu should be used if available.  If TRUE, and on
-  Windows, it will use \link{winDialog}, otherwise it will
-  use \link[utils]{menu}.}
-
-  \item{ask}{a logical indicating whether to ask the user
-  for the number of minutes in which to perform the
-  operation.}
-
-  \item{...}{not in use}
+  menu should be used if available. If TRUE, and on Windows,
+  it will use \link{winDialog}, otherwise it will use
+  \link[utils]{menu}.} \item{ask}{a logical indicating
+  whether to ask the user for the number of minutes in which
+  to perform the operation.} \item{...}{not in use}
 }
 \value{
 The status code of \code{\link[base]{system}}.
@@ -39,9 +35,10 @@ os.manage()
 }
 }
 \references{
-\url{http://superuser.com/questions/42124/how-can-i-put-the-computer-to-sleep-from-command-prompt-run-menu}
-,
-\url{http://www.howtogeek.com/howto/windows-vista/quick-tip-create-shutdown-restart-lock-icons-in-windows-vista/}
+\url{http://superuser.com/questions/42124/how-can-i-put-
+the-computer-to-sleep-from-command-prompt-run-menu} ,
+\url{http://www.howtogeek.com/howto/windows-vista/quick-tip-
+create-shutdown-restart-lock-icons-in-windows-vista/}
 }
 \seealso{
 \code{\link[base]{system}},\code{\link[base]{shell}},

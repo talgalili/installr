@@ -8,21 +8,18 @@ source.https(URL, ..., remove_r_file = T)
 }
 \arguments{
   \item{URL}{the URL of the .r file to download and
-  source.}
-
-  \item{...}{parameters to pass to \link{source}}
-
-  \item{remove_r_file}{if to remove the .r file after it
-  was sourced.}
+  source.} \item{...}{parameters to pass to \link{source}}
+  \item{remove_r_file}{if to remove the .r file after it was
+  sourced.}
 }
 \value{
 Nothing.
 }
 \description{
 source.https causes R to accept its input from a File in an
-https URL. Input is read and parsed from that file until
-the end of the file is reached, then the parsed expressions
-are evaluated sequentially in the chosen environment.
+https URL. Input is read and parsed from that file until the
+end of the file is reached, then the parsed expressions are
+evaluated sequentially in the chosen environment.
 }
 \details{
 "The easiest way to use Git on Windows." (at least so they
@@ -34,11 +31,10 @@ source.https("https://raw.github.com/talgalili/installr/master/R/install.r")
 }
 }
 \references{
-Other solutions to the source.https problem: \itemize{
-\item Using RCurl \item devtools::source_url \item A
-erlevant (OLD) discussion:
-http://stackoverflow.com/questions/7715723/sourcing-r-script-over-https
-}
+Other solutions to the source.https problem: \itemize{ \item
+Using RCurl \item devtools::source_url \item A erlevant
+(OLD) discussion: http://stackoverflow.com/questions/
+7715723/sourcing-r-script-over-https }
 }
 \seealso{
 \link{source}

@@ -8,23 +8,17 @@ copy.packages.between.libraries(from, to, ask = FALSE, keep_old = TRUE,
   do_NOT_override_packages_in_new_R = TRUE)
 }
 \arguments{
-  \item{from}{a character vector for the location of the
-  old library folder FROM which to copy files from.}
-
-  \item{to}{a character vector for the location of the old
-  library folder TO which to copy files to.}
-
-  \item{ask}{should the user be given the option to choose
-  between which two libraries to copy the packages?  If
-  FALSE (default), the folders are copied from the
-  before-newest R installation to the newest R
-  installation.  This the overrides "from" and "to"
-  parameters.}
-
-  \item{keep_old}{should the packages be COPIED to the new
-  library folder, thus KEEPing the old package as they are?
-  Or should they be removed?}
-
+  \item{from}{a character vector for the location of the old
+  library folder FROM which to copy files from.} \item{to}
+  {a character vector for the location of the old library
+  folder TO which to copy files to.} \item{ask}{should
+  the user be given the option to choose between which two
+  libraries to copy the packages? If FALSE (default), the
+  folders are copied from the before-newest R installation
+  to the newest R installation. This the overrides "from"
+  and "to" parameters.} \item{keep_old}{should the packages
+  be COPIED to the new library folder, thus KEEPing the
+  old package as they are? Or should they be removed?}
   \item{do_NOT_override_packages_in_new_R}{default TRUE If
   FALSE, then If a package exists in both the "from" and
   "to" library folders - it would copy to "to" the version
@@ -32,11 +26,10 @@ copy.packages.between.libraries(from, to, ask = FALSE, keep_old = TRUE,
   be FALSE)}
 }
 \value{
-TRUE if it copied (moved) packages, and FALSE if it did
-not.
+TRUE if it copied (moved) packages, and FALSE if it did not.
 }
 \description{
-Copies all packages from one folder to another.  This
+Copies all packages from one folder to another. This
 function is used if we wish to either: \itemize{ \item
 Upgrade R to a new version - and copy all of the packages
 from the old R installation to the new one. \item Move to a
@@ -44,10 +37,9 @@ global library system - and wanting to copy all of packages
 from the local library folder to the global one } It takes
 into account that we don't want to copy packages which have
 "high" importance (such as MASS, boot, graphics, utils,
-rpart, Matrix and more GREAT packages...) to the new
-library folder. Also, it assumes that within an R
-installation, the packages are located inside the "library"
-folder.
+rpart, Matrix and more GREAT packages...) to the new library
+folder. Also, it assumes that within an R installation, the
+packages are located inside the "library" folder.
 }
 \examples{
 \dontrun{

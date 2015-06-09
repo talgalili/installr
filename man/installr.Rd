@@ -8,11 +8,9 @@ installr(use_GUI = TRUE, ...)
 }
 \arguments{
   \item{use_GUI}{a logical indicating whether a graphics
-  menu should be used if available.  If TRUE, and on
-  Windows, it will use \link{winDialog}, otherwise it will
-  use \link[utils]{menu}.}
-
-  \item{...}{not in use}
+  menu should be used if available. If TRUE, and on Windows,
+  it will use \link{winDialog}, otherwise it will use
+  \link[utils]{menu}.} \item{...}{not in use}
 }
 \value{
 TRUE/FALSE - if the software was installed succesfully or

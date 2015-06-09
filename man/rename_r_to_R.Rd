@@ -10,19 +10,12 @@ rename_r_to_R(subdir = ".", recursive = FALSE, message = TRUE,
 \arguments{
   \item{subdir}{(character) sub folder from the current
   working directoryl in which the files should be changed.
-  Default is "".}
-
-  \item{recursive}{(logical) FALSE. Should the function
-  keep going into folders and check them as well?}
-
-  \item{message}{(logical) should we output how many files
-  were changed. (defualt is FALSE)}
-
+  Default is "".} \item{recursive}{(logical) FALSE.
+  Should the function keep going into folders and check
+  them as well?} \item{message}{(logical) should we
+  output how many files were changed. (defualt is FALSE)}
   \item{text_to_find}{old file extension (should have $ at
-  the end!)}
-
-  \item{new_extension}{new file extension...}
-
+  the end!)} \item{new_extension}{new file extension...}
   \item{...}{not used.}
 }
 \value{
@@ -33,13 +26,11 @@ Rename files' extensions in a folder from .r to .R.
 }
 \details{
 This came after a discussion with Hadley, JJ, and Martin
-leading to the realization that since we are using the R
-language (and not the r language), the standard is to use
-.R files instead of .r
-
-Be careful when using the recursive argument. And remember
-that source("miao.r") and source("miao.R") Are NOT the
-same...
+leading to the realization that since we are using the
+R language (and not the r language), the standard is
+to use .R files instead of .r Be careful when using the
+recursive argument. And remember that source("miao.r") and
+source("miao.R") Are NOT the same...
 }
 \examples{
 \dontrun{

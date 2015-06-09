@@ -8,43 +8,35 @@ install.URL(exe_URL, keep_install_file = FALSE, wait = TRUE,
   download_dir = tempdir(), message = TRUE, installer_option = NULL, ...)
 }
 \arguments{
-  \item{exe_URL}{A character with a link to an installer
-  file (with the .exe file extension)}
-
-  \item{keep_install_file}{If TRUE - the installer file
-  will not be erased after it is downloaded and run.}
-
-  \item{wait}{should the R interpreter wait for the command
-  to finish? The default is to NOT wait.}
-
-  \item{download_dir}{A character of the directory into
-  which to download the file. (default is
-  \link{tempdir}())}
-
-  \item{message}{boolean. Should a message on the file be
-  printed or not (default is TRUE)}
-
-  \item{installer_option}{A character of the command line
-  arguments}
-
-  \item{...}{parameters passed to 'shell'}
+  \item{exe_URL}{A character with a link to an
+  installer file (with the .exe file extension)}
+  \item{keep_install_file}{If TRUE - the installer file will
+  not be erased after it is downloaded and run.} \item{wait}
+  {should the R interpreter wait for the command to
+  finish? The default is to NOT wait.} \item{download_dir}
+  {A character of the directory into which to download
+  the file. (default is \link{tempdir}())} \item{message}
+  {boolean. Should a message on the file be printed or not
+  (default is TRUE)} \item{installer_option}{A character of
+  the command line arguments} \item{...}{parameters passed
+  to 'shell'}
 }
 \value{
-invisible(TRUE/FALSE) - was the installation successful or
-not. (this is based on the output of shell of running the
-command being either 0 or 1/2.  0 means the file was
+invisible(TRUE/FALSE) - was the installation successful
+or not. (this is based on the output of shell of running
+the command being either 0 or 1/2. 0 means the file was
 succesfully installed, while 1 or 2 means there was a
 failure in running the installer.)
 }
 \description{
-Gets a character with a link to an installer file,
-downloads it, runs it, and then erases it.
+Gets a character with a link to an installer file, downloads
+it, runs it, and then erases it.
 }
 \details{
 This function is used by many functions in the installr
 package. The .exe file is downloaded into a temporary
-directory, where it is erased after installation has
-started (by default - though this can be changed)
+directory, where it is erased after installation has started
+(by default - though this can be changed)
 }
 \examples{
 \dontrun{

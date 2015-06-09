@@ -7,12 +7,10 @@
 system.PATH()
 }
 \value{
-A character vector with the search path for executable
-files
+A character vector with the search path for executable files
 }
 \description{
-Returns the search path for executable files based on
-%PATH%
+Returns the search path for executable files based on %PATH%
 }
 \examples{
 \dontrun{
@@ -20,6 +18,8 @@ system.PATH() #
 }
 }
 \references{
-\url{http://www.microsoft.com/resources/documentation/windows/xp/all/proddocs/en-us/ntcmds_shelloverview.mspx?mfr=true}
+\url{http://www.microsoft.com/resources/documentation/
+windows/xp/all/proddocs/en-us/ntcmds_shelloverview.mspx?
+mfr=true}
 }
 

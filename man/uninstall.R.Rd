@@ -11,10 +11,9 @@ uninstall.R(r_version, use_GUI = TRUE)
   \item{r_version}{a character vector for R versions to
   uninstall (the format is of the style: "2.15.3"). default
   is empty - resulting in a prompt message asking the user
-  what to do.}
-
-  \item{use_GUI}{If asking the user which R version to
-  uninstall, should the GUI be used? (default is TRUE)}
+  what to do.} \item{use_GUI}{If asking the user which R
+  version to uninstall, should the GUI be used? (default is
+  TRUE)}
 }
 \value{
 the output of \link{system} running the uninstaller
@@ -22,9 +21,9 @@ the output of \link{system} running the uninstaller
 \description{
 Choose an R version to uninstall via a menubar. By default,
 the function allows the user to pick an R version to
-uninstall from a list. Also, the function can be called
-with using "r_version", where multiple R versions can be
-supplied and all will be uninstalled.
+uninstall from a list. Also, the function can be called with
+using "r_version", where multiple R versions can be supplied
+and all will be uninstalled.
 }
 \examples{
 \dontrun{

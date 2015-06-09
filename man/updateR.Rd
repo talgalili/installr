@@ -13,75 +13,55 @@ updateR(browse_news, install_R, copy_packages, copy_Rprofile.site,
 }
 \arguments{
   \item{browse_news}{if TRUE (and if there is a newer
-  version of R) - it opens the browser to the NEWS of the
-  latest version of R, for the user to read through}
-
-  \item{install_R}{TRUE/FALSE - if to install a new version
-  of R (if one is available).  If missing (this is the
-  default) - the user be asked if to download R or not.Of
-  course the installation part itself (the running of the
-  .exe file) is dependent on the user.}
-
-  \item{copy_packages}{TRUE/FALSE - if to copy your
-  packages from the old version of R to the new version of
-  R. If missing (this is the default) - the user will be
-  asked for his preference (he should say yes, unless he is
-  using a global library folder).}
-
-  \item{copy_Rprofile.site}{logical - if to copy your
-  Rprofile.site from the old version of R to the new
-  version of R. If missing (this is the default) - the user
-  will be asked for his preference (he should say yes,
-  unless he is using a global library folder).}
-
-  \item{keep_old_packages}{- if the keep the packages in
-  the library of the old R installation. If missing (this
-  is the default) - the user will be asked for his
-  preference (he should say yes, unless he is using a
-  global library folder).}
-
-  \item{update_packages}{TRUE/FALSE - if to update your
-  packages in the new version of R (all packages will be
-  updated without asking confirmation per package) If
+  version of R) - it opens the browser to the NEWS of
+  the latest version of R, for the user to read through}
+  \item{install_R}{TRUE/FALSE - if to install a new
+  version of R (if one is available). If missing (this
+  is the default) - the user be asked if to download
+  R or not.Of course the installation part itself (the
+  running of the .exe file) is dependent on the user.}
+  \item{copy_packages}{TRUE/FALSE - if to copy your packages
+  from the old version of R to the new version of R. If
   missing (this is the default) - the user will be asked
   for his preference (he should say yes, unless he is using
-  a global library folder).  This is done by calling the
-  Rscript in the new R.}
-
-  \item{start_new_R}{TRUE/FALSE - if to start the new R
-  (Rgui) after we will quit the old R. Default is TRUE. It
-  will try to start the 64 bit R version, if it does not
-  exist, the 32 bit will be started. This may be less
-  useful for people using RStudio or the likes.}
-
-  \item{quit_R}{TRUE/FALSE - if to quite R after the
-  installation and package copying or not. If missing (this
-  is the default) - the user is asked what to do.}
-
-  \item{print_R_versions}{if to tell the user what version
-  he has and what is the latest version (default is TRUE)}
-
-  \item{use_GUI}{a logical indicating whether a graphics
-  menu should be used if available.  If TRUE, and on
-  Windows, it will use \link{winDialog}, otherwise it will
-  use \link[utils]{menu}.}
-
-  \item{to_checkMD5sums}{Should we check that the new R
-  installation has the files we expect it to (by checking
-  the MD5 sums)? default is TRUE.  It assumes that the R
-  which was isntalled is the latest R version. parameter is
-  passed to install.R()}
-
+  a global library folder).} \item{copy_Rprofile.site}
+  {logical - if to copy your Rprofile.site from the old
+  version of R to the new version of R. If missing (this is
+  the default) - the user will be asked for his preference
+  (he should say yes, unless he is using a global library
+  folder).} \item{keep_old_packages}{- if the keep the
+  packages in the library of the old R installation. If
+  missing (this is the default) - the user will be asked
+  for his preference (he should say yes, unless he is using
+  a global library folder).} \item{update_packages}{TRUE/
+  FALSE - if to update your packages in the new version of R
+  (all packages will be updated without asking confirmation
+  per package) If missing (this is the default) - the user
+  will be asked for his preference (he should say yes,
+  unless he is using a global library folder). This is done
+  by calling the Rscript in the new R.} \item{start_new_R}
+  {TRUE/FALSE - if to start the new R (Rgui) after we will
+  quit the old R. Default is TRUE. It will try to start
+  the 64 bit R version, if it does not exist, the 32 bit
+  will be started. This may be less useful for people using
+  RStudio or the likes.} \item{quit_R}{TRUE/FALSE - if to
+  quite R after the installation and package copying or not.
+  If missing (this is the default) - the user is asked what
+  to do.} \item{print_R_versions}{if to tell the user what
+  version he has and what is the latest version (default
+  is TRUE)} \item{use_GUI}{a logical indicating whether
+  a graphics menu should be used if available. If TRUE,
+  and on Windows, it will use \link{winDialog}, otherwise
+  it will use \link[utils]{menu}.} \item{to_checkMD5sums}
+  {Should we check that the new R installation has the files
+  we expect it to (by checking the MD5 sums)? default is
+  TRUE. It assumes that the R which was isntalled is the
+  latest R version. parameter is passed to install.R()}
   \item{keep_install_file}{If TRUE - the installer file
   will not be erased after it is downloaded and run.}
-
   \item{download_dir}{A character of the directory into
-  which to download the file. (default is
-  \link{tempdir}())}
-
-  \item{silent}{If TRUE - enables silent installation
-  mode.}
-
+  which to download the file. (default is \link{tempdir}())}
+  \item{silent}{If TRUE - enables silent installation mode.}
   \item{...}{Other arguments (this is currently not used in
   any way)}
 }
@@ -90,30 +70,29 @@ a TRUE/FALSE value on whether or not R was updated.
 }
 \description{
 This function performs the following steps: \itemize{ \item
-Check what is the latest R version.  If the current
-installed R version is up-to-date, the function ends (and
-returns FALSE) \item If a newer version of R is available,
-the user is asked if to review the NEWS of the latest R
-version - in order to decide if to install the newest R or
-not. \item If the user wishes to - the function will
-download and install it. (you will need to press the "next"
-buttons on your own) \item Once the installation is done,
-you should press "any-key", and the function will proceed
-with copying all of your packages from your old (well,
-current) R installation, into your newer R installation.
-\item You can then erase all of the packages in your old R
-installation. \item After your packages are moved (and the
-old ones possibly erased), you will get the option to
-update all of your packages in the new version of R. \item
-You will be asked if to open the Rgui of your new R. \item
-Lastely - you can close the current session of your old R.
-}
+Check what is the latest R version. If the current installed
+R version is up-to-date, the function ends (and returns
+FALSE) \item If a newer version of R is available, the user
+is asked if to review the NEWS of the latest R version - in
+order to decide if to install the newest R or not. \item If
+the user wishes to - the function will download and install
+it. (you will need to press the "next" buttons on your own)
+\item Once the installation is done, you should press "any-
+key", and the function will proceed with copying all of
+your packages from your old (well, current) R installation,
+into your newer R installation. \item You can then erase
+all of the packages in your old R installation. \item After
+your packages are moved (and the old ones possibly erased),
+you will get the option to update all of your packages in
+the new version of R. \item You will be asked if to open
+the Rgui of your new R. \item Lastely - you can close the
+current session of your old R. }
 }
 \details{
 It is worth noting that the function assumes that you are
 installing R in the same directory as before. That is, if
-the old R was on: D:\R\R-3.0.0 then the new R will be on
-D:\R\R-3.0.1.
+the old R was on: D:\R\R-3.0.0 then the new R will be on D:
+\R\R-3.0.1.
 }
 \examples{
 \dontrun{

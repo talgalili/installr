@@ -9,24 +9,18 @@ package_authors(package, to_strsplit = TRUE, split = c(",|and"),
 }
 \arguments{
   \item{package}{a character string of the package we are
-  interested in.}
-
-  \item{to_strsplit}{logical (TRUE). Should the authors
-  strings be split (in cases of a "and" or a comma ",")?}
-
-  \item{split}{a character scalar to be passed to
-  \link{strsplit} split paramter. default is c(",|and)}
-
-  \item{to_table}{logical (FALSE). Should the authors
+  interested in.} \item{to_strsplit}{logical (TRUE). Should
+  the authors strings be split (in cases of a "and" or a
+  comma ",")?} \item{split}{a character scalar to be passed
+  to \link{strsplit} split paramter. default is c(",|
+  and)} \item{to_table}{logical (FALSE). Should the authors
   strings be listed in a table - showing a count of how
-  many .Rd files they were listed in? If not - a unique
-  list is produced.}
-
-  \item{...}{not used.}
+  many .Rd files they were listed in? If not - a unique list
+  is produced.} \item{...}{not used.}
 }
 \value{
-a character vector with a package authors (as extracted
-from the author tag in the .Rd files)
+a character vector with a package authors (as extracted from
+the author tag in the .Rd files)
 }
 \description{
 Access (and clean) author elements from R's Rd file
@@ -64,9 +58,9 @@ package_authors("Rcpp")
 }
 }
 \references{
-Useful for updating your DESCRIPTION file:
-
-\url{http://cran.r-project.org/doc/manuals/R-exts.html#The-DESCRIPTION-file}
+Useful for updating your DESCRIPTION file: \url{http://
+cran.r-project.org/doc/manuals/R-exts.html#The-DESCRIPTION-
+file}
 }
 \seealso{
 \link{fetch_tag_from_Rd}

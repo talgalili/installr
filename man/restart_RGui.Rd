@@ -14,7 +14,6 @@ q(...)
 }
 \description{
 Start a new RGui session and then quites the current one.
-
 This is a Windows only function.
 }
 \examples{

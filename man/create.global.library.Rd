@@ -8,9 +8,9 @@ create.global.library(global_library_folder)
 }
 \arguments{
   \item{global_library_folder}{the path of the new global
-  library folder to create.  If missing, will be set to
-  R_path/R/library. (for example: "C:/Program
-  Files/R/library")}
+  library folder to create. If missing, will be set to
+  R_path/R/library. (for example: "C:/Program Files/R/
+  library")}
 }
 \value{
 TRUE/FALSE if we created a new folder or not.

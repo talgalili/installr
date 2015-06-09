@@ -8,10 +8,8 @@ get_pid(process, exact = FALSE, ...)
 }
 \arguments{
   \item{process}{a character vector of process names.}
-
   \item{exact}{logical (FALSE). should we get exact match
   to process name, or can we use just partial matching.}
-
   \item{...}{not used.}
 }
 \value{
@@ -19,8 +17,8 @@ an integer vector with the process ID (pid) of the
 processes.
 }
 \description{
-Returns a vector with the process ID (pid) for all
-processes with a particular name.
+Returns a vector with the process ID (pid) for all processes
+with a particular name.
 }
 \examples{
 \dontrun{
@@ -32,8 +30,8 @@ get_pid(c("wininit", "winlogon")) # finds it
 }
 }
 \references{
-tasklist details from microsoft homepage:
-\url{http://technet.microsoft.com/en-us/library/bb491010.aspx}
+tasklist details from microsoft homepage: \url{http://
+technet.microsoft.com/en-us/library/bb491010.aspx}
 }
 \seealso{
 \code{\link{get_tasklist}}, \code{\link{get_Rscript_PID}},

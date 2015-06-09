@@ -7,20 +7,15 @@
 kill_all_Rscript_s(s = 0, m = 0, h = 0, ...)
 }
 \arguments{
-  \item{s}{numeric. number of seconds to wait before
-  killing the processes}
-
-  \item{m}{numeric. number of minutes to wait before
-  killing the processes}
-
-  \item{h}{numeric. number of hours to wait before killing
-  the processes}
-
-  \item{...}{not used.}
+  \item{s}{numeric. number of seconds to wait before killing
+  the processes} \item{m}{numeric. number of minutes to wait
+  before killing the processes} \item{h}{numeric. number of
+  hours to wait before killing the processes} \item{...}{not
+  used.}
 }
 \value{
-an integer vector with the process ID (pid) of the
-"Rscript" processes.
+an integer vector with the process ID (pid) of the "Rscript"
+processes.
 }
 \description{
 kill (i.e.: stop) all running "Rscript" processes based on
@@ -40,10 +35,10 @@ get_Rscript_PID() # we no longer have Rscripts running
 }
 }
 \references{
-tasklist details from microsoft homepage:
-\url{http://technet.microsoft.com/en-us/library/bb491010.aspx}
-pskill details from microsoft homepage:
-\url{http://technet.microsoft.com/en-us/sysinternals/bb896683.aspx}
+tasklist details from microsoft homepage: \url{http://
+technet.microsoft.com/en-us/library/bb491010.aspx}
+pskill details from microsoft homepage: \url{http://
+technet.microsoft.com/en-us/sysinternals/bb896683.aspx}
 }
 \seealso{
 \code{\link{get_tasklist}}, \code{\link{get_Rscript_PID}},
