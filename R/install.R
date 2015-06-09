@@ -585,11 +585,15 @@ install.notepadpp <- function(page_with_download_url="http://notepad-plus-plus.o
    # "http://git-scm.com/download/win"
    # get download URL:
    page     <- readLines(page_with_download_url, warn = FALSE)
-   # http://download.tuxfamily.org/notepadplus/6.3.1/npp.6.3.1.Installer.exe
-   pat <- "http://download.tuxfamily.org/notepadplus/[0-9.]+/npp.[0-9.]+.Installer.exe"
-   target_line <- grep(pat, page, value = TRUE); 
+   # OLD: http://download.tuxfamily.org/notepadplus/6.3.1/npp.6.3.1.Installer.exe
+   # https://notepad-plus-plus.org/repository/6.x/6.7.8.2/npp.6.7.8.2.Installer.exe
+   pat <- "repository/[0-9.]+.x/[0-9.]+/npp.[0-9.]+.Installer.exe"
+   target_line <- grep(pat, page, value = TRUE) 
    m <- regexpr(pat, target_line); 
-   URL      <- regmatches(target_line, m) # (The http still needs to be prepended.
+   URL <- regmatches(target_line, m) # (The http still needs to be prepended.
+   
+   URL <- paste0("https://notepad-plus-plus.org/", URL)
+   
    
    # install.
    install.URL(URL,...)   
