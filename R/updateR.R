@@ -434,7 +434,7 @@ turn.number.version <- function(number_to_dots) {
 #' @seealso \link{get.installed.R.folders}
 #' @examples
 #' \dontrun{
-#' R_version_in_a_folder(R.home()) 
+#' R_version_in_a_folder(folder = R.home()) 
 #' # returns the version of the current R installation
 #' }
 R_version_in_a_folder <- function(folder) { 
@@ -487,7 +487,10 @@ get.installed.R.folders <- function(sort_by_version = TRUE, add_version_to_name 
    R_folders <- file.path(R_parent_folder, items_in_R_parent_folder) # some of these may NOT be R folders
    R_folders_versions <- sapply(R_folders, R_version_in_a_folder)
    #    R_folders = "C:/R-3.0.2"     
-   if(all(is.na(R_folders_versions))) warning("Could not find any R installation on your system.")
+   if(all(is.na(R_folders_versions))) {
+      warning("Could not find any R installation on your system. (You might have installed your R version on 'c:\\R' without sub folders...")
+      return(NULL)
+   }
    
    # remove NON R installation folders (for example "library")
    ss_R_folders <- !is.na(R_folders_versions)
@@ -689,8 +692,7 @@ updateR <- function(browse_news, install_R, copy_packages, copy_Rprofile.site,
    # If there is a new version - it offers the user to download and install it.   
 
    old_R_path <- get.installed.R.folders()[1]
-   
-   
+
    there_is_a_newer_version_of_R <- check.for.updates.R(print_R_versions)
    
    if(!there_is_a_newer_version_of_R) return(FALSE) # if we have the latest version - we might as well stop now...

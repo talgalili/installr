@@ -1,6 +1,8 @@
 installr 0.16.0 (2015-06-09)
 ---------------------------
 
+UPDATED FUNCTIONS:
+   * R_version_in_a_folder - now returns NULL if no folder was found.
 BUG FIXES:
    * moving "utils" to depends allows add.installr.GUI to work again.
    * install.notepadpp - works again
