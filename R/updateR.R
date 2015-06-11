@@ -720,6 +720,12 @@ updateR <- function(browse_news, install_R, copy_packages, copy_Rprofile.site,
    if(!did_R_install) return(FALSE) 
    new_R_path <- get.installed.R.folders()[1]
    
+   if(is.null(new_R_path)) {
+      warning("You seem to have installed R in an unusual folder structure. It seem to have installed correctly - but you will need to run update.packages(checkBuilt=TRUE, ask=FALSE) manually on your new installation.")
+      return(TRUE)
+   }
+   
+   
    # I could have also used:
    #    if(unname(up_folder(new_R_path))!=unname(up_folder(old_R_path))) {
    # but if the new R is installed somehwere else, then when fetching
@@ -763,7 +769,7 @@ your packages to the new R installation.\n")
    
    if(update_packages & copy_packages) { # we should not update packages if we didn't copy them first...
       new_Rscript_path <- file.path(new_R_path, "bin/Rscript.exe") # make sure to run the newer R to update the packages.
-      update_packages_expression <- paste(new_Rscript_path, ' -e " setInternet2(TRUE); options(repos=structure(c(CRAN=\'http://cran.rstudio.com/\'))); update.packages(checkBuilt=TRUE, ask=F) "')
+      update_packages_expression <- paste(new_Rscript_path, ' -e " setInternet2(TRUE); options(repos=structure(c(CRAN=\'http://cran.rstudio.com/\'))); update.packages(checkBuilt=TRUE, ask=FALSE) "')
       #    update_packages_expression <- paste(new_Rscript_path, ' -e "date()"')
       #    update_packages_expression <- paste(new_Rscript_path, ' -e "print(R.version)"')
       system(update_packages_expression, wait = TRUE, intern = TRUE)  
