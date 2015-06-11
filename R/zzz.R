@@ -197,6 +197,9 @@ installrWelcomeMessage <- function(){
 
 
 
+# remove git tag: https://confluence.atlassian.com/pages/viewpage.action?pageId=282175551
+# git tag -d 0.16.0 
+
 
 
 # when a function is renamed, its document in man must be removed - otherwise it may cause problems with the built check (it will try to run the code in the example, and will fail.)
