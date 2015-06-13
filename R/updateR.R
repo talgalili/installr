@@ -772,10 +772,15 @@ your packages to the new R installation.\n")
       update_packages_expression <- paste(new_Rscript_path, ' -e " setInternet2(TRUE); options(repos=structure(c(CRAN=\'http://cran.rstudio.com/\'))); update.packages(checkBuilt=TRUE, ask=FALSE) "')
       #    update_packages_expression <- paste(new_Rscript_path, ' -e "date()"')
       #    update_packages_expression <- paste(new_Rscript_path, ' -e "print(R.version)"')
-      system(update_packages_expression, wait = TRUE, intern = TRUE)  
+      system(update_packages_expression, wait = TRUE, intern = TRUE, show.output.on.console = TRUE)
       # makes sure the user will not be able to move on to open the new Rgui, until all of its packages are updated
       # also, makes sure the user will see the output of the update.packages function.
    }
+   
+#    a <- paste0(file.path("C:/R/R-3.1.2", "bin/Rscript.exe"), " -e setInternet2(TRUE); update.packages(checkBuilt=TRUE, ask=FALSE)")
+#    a <- paste0(file.path("C:/R/R-3.1.2", "bin/Rscript.exe"), " -e print(R.version)")
+#    system(a, wait = TRUE, show.output.on.console = F) 
+#    system(a, wait = TRUE, show.output.on.console = T) 
    
    
    # should we turn Rgui on?
