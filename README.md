@@ -52,12 +52,22 @@ installr() #  user can easily select (via a GUI interface) a software to install
 
 ## Troubleshooting
 
-If you get from some commands:
+If you one of the followiong errors from some commands:
 
 ```r
 Error in download.file(URL, destfile = ...) : 
   unsupported URL scheme
 ```
+
+Or:
+
+```r
+install.RStudio()
+Error in file(con, "r") : cannot open the connection
+updateR()
+Error in file(con, "r") : cannot open the connection
+```
+
 
 Try running:
 
