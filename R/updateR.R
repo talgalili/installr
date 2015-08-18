@@ -765,7 +765,7 @@ your packages to the new R installation.\n")
    
    
    # should we update_packages?
-   if(missing(update_packages)) update_packages <- ask.user.yn.question("Do you wish to update your packages in the newely installed R? ", use_GUI = use_GUI)
+   if(missing(update_packages)) update_packages <- ask.user.yn.question("Do you wish to update your packages in the newly installed R? ", use_GUI = use_GUI)
    
    if(update_packages & copy_packages) { # we should not update packages if we didn't copy them first...
       new_Rscript_path <- file.path(new_R_path, "bin/Rscript.exe") # make sure to run the newer R to update the packages.
