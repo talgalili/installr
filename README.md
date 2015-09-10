@@ -42,6 +42,8 @@ For command line use you can **update R** by running:
 ```r
 library("installr"")
 updateR() # this will open dialog boxes to take you through the steps.
+# OR use:
+# updateR(TRUE) # this will use common defaults and will be the safest/fastest option
 ```
 
 Or **install a new software** simply by running:

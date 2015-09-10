@@ -70,12 +70,12 @@ It is worth noting that the function assumes that you are installing R in the sa
 }
 \examples{
 \dontrun{
-updateR(T, T, T, T, T, T, T)
-# # the safest upgrade option: See the NEWS,
-# install R, copy packages, keep old packages,
-# update packages in the new installation,
-# start the Rgui of the new R, and quit current session
-# of R
+
+updateR(TRUE) # This sets "fast" to be TRUE
+# # the fastest/safest upgrade option:
+# install R while keeping a copy in the working directory,
+# copy packages, keep old packages,
+# update packages in the new installation.
 
 updateR() # will ask you what you want at every decision.
 }
