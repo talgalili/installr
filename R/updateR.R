@@ -655,6 +655,10 @@ copy.packages.between.libraries <- function(from, to, ask =FALSE,keep_old = TRUE
 #' 
 #' @details
 #' It is worth noting that the function assumes that you are installing R in the same directory as before. That is, if the old R was on: D:\R\R-3.0.0 then the new R will be on D:\R\R-3.0.1.
+#' @param fast logical (default is FALSE). If TRUE, it overrides other parameters and uses a set of defaults to make the
+#' R installation as fast as possible: no news, installr R, copy packages and Rprofile, keep
+#' old packages, updated packages, without quiting current R or starting the new R.
+#' don't use GUI, check MD5sums, keep installed file in the \link{getwd}.
 #' @param browse_news if TRUE (and if there is a newer version of R) - it opens the browser to the NEWS of the latest version of R, for the user to read through
 #' @param install_R TRUE/FALSE - if to install a new version of R (if one is available).  If missing (this is the default)  - the user be asked if to download R or not.Of course the installation part itself (the running of the .exe file) is dependent on the user.
 #' @param copy_packages TRUE/FALSE - if to copy your packages from the old version of R to the new version of R. If missing (this is the default)  - the user will be asked for his preference (he should say yes, unless he is using a global library folder).
@@ -685,7 +689,8 @@ copy.packages.between.libraries <- function(from, to, ask =FALSE,keep_old = TRUE
 #' 
 #' updateR() # will ask you what you want at every decision.
 #' }
-updateR <- function(browse_news, install_R, copy_packages, copy_Rprofile.site,
+updateR <- function(fast = FALSE, 
+                    browse_news, install_R, copy_packages, copy_Rprofile.site,
                     keep_old_packages,  update_packages, start_new_R, quit_R,  print_R_versions=TRUE, GUI = TRUE, 
                     to_checkMD5sums = TRUE, keep_install_file = FALSE, download_dir = tempdir(), silent = FALSE, 
                     setInternet2 = TRUE, ...) {
@@ -693,11 +698,30 @@ updateR <- function(browse_news, install_R, copy_packages, copy_Rprofile.site,
    # IF not - it notifies the user - and leaves.
    # If there is a new version - it offers the user to download and install it.   
 
+   
+   if(fast) { # set a bunch of parameters... (they are also better for blind people)
+      browse_news <- FALSE
+      install_R <- TRUE
+      copy_packages <- TRUE
+      copy_Rprofile.site <- TRUE
+      keep_old_packages <- TRUE
+      update_packages <- TRUE
+      start_new_R <- FALSE
+      quit_R <- FALSE
+      print_R_versions  <-  TRUE
+      GUI  <- FALSE
+      to_checkMD5sums  <-  TRUE
+      keep_install_file  <-  TRUE
+      download_dir  <-  "."
+      silent  <-  FALSE
+      setInternet2 <- TRUE
+   }
+   
    if(setInternet2) setInternet2(TRUE)
    
    old_R_path <- get.installed.R.folders()[1]
 
-   there_is_a_newer_version_of_R <- check.for.updates.R(print_R_versions)
+   there_is_a_newer_version_of_R <- check.for.updates.R(print_R_versions, GUI = GUI)
    
    if(!there_is_a_newer_version_of_R) return(FALSE) # if we have the latest version - we might as well stop now...
    
@@ -705,7 +729,7 @@ updateR <- function(browse_news, install_R, copy_packages, copy_Rprofile.site,
    
    # should we open the NEWS?
    if(missing(browse_news)) browse_news <- ask.user.yn.question("Do you wish to see the NEWS regarding this new version of R?", GUI = GUI)
-   if(browse_news) browse.latest.R.NEWS()      
+   if(browse_news) browse.latest.R.NEWS()
    
    
    # should we install R?

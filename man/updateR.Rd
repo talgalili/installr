@@ -5,13 +5,18 @@
 \alias{updater}
 \title{Checks for the latest R version, and if there is a newer version of R - downloads and installs it.}
 \usage{
-updateR(browse_news, install_R, copy_packages, copy_Rprofile.site,
-  keep_old_packages, update_packages, start_new_R, quit_R,
+updateR(fast = FALSE, browse_news, install_R, copy_packages,
+  copy_Rprofile.site, keep_old_packages, update_packages, start_new_R, quit_R,
   print_R_versions = TRUE, GUI = TRUE, to_checkMD5sums = TRUE,
   keep_install_file = FALSE, download_dir = tempdir(), silent = FALSE,
   setInternet2 = TRUE, ...)
 }
 \arguments{
+\item{fast}{logical (default is FALSE). If TRUE, it overrides other parameters and uses a set of defaults to make the
+R installation as fast as possible: no news, installr R, copy packages and Rprofile, keep
+old packages, updated packages, without quiting current R or starting the new R.
+don't use GUI, check MD5sums, keep installed file in the \link{getwd}.}
+
 \item{browse_news}{if TRUE (and if there is a newer version of R) - it opens the browser to the NEWS of the latest version of R, for the user to read through}
 
 \item{install_R}{TRUE/FALSE - if to install a new version of R (if one is available).  If missing (this is the default)  - the user be asked if to download R or not.Of course the installation part itself (the running of the .exe file) is dependent on the user.}
