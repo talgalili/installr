@@ -4,10 +4,10 @@
 \alias{os.manage}
 \title{Gives managing option to the current OS (shutdown, restart, sleep, hibernate, etc...)}
 \usage{
-os.manage(use_GUI = TRUE, ask = TRUE, ...)
+os.manage(GUI = TRUE, ask = TRUE, ...)
 }
 \arguments{
-\item{use_GUI}{a logical indicating whether a graphics menu should be used if available.  If TRUE, and on Windows, it will use \link{winDialog}, otherwise it will use \link[utils]{menu}.}
+\item{GUI}{a logical indicating whether a graphics menu should be used if available.  If TRUE, and on Windows, it will use \link{winDialog}, otherwise it will use \link[utils]{menu}.}
 
 \item{ask}{a logical indicating whether to ask the user for the number of minutes in which to perform the operation.}
 

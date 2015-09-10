@@ -442,7 +442,7 @@ and enter the row number of the file-version you'd like to install: "
 #' The original collection was put together by Prof. Brian Ripley; it is currently being maintained by Duncan Murdoch.
 #' @param choose_version if TRUE, allows the user to choose which version of RTools to install.  Useful if you wish to install the devel version of RTools, or if you are running on an old version of R which requires an old version of R.
 #' @param check checks if we need to install Rtools or not.  Relies on the "find_rtools" function in the {devtools} package.
-#' @param use_GUI Should a GUI be used when asking the user questions? (defaults to TRUE)
+#' @param GUI Should a GUI be used when asking the user questions? (defaults to TRUE)
 #' @param page_with_download_url the URL of the RTools download page.
 #' @param ... extra parameters to pass to \link{install.URL}
 #' @return invisible(TRUE/FALSE) - was the installation successful or not.
@@ -463,7 +463,7 @@ and enter the row number of the file-version you'd like to install: "
 #' }
 install.Rtools <- function(choose_version = FALSE,                           
                            check=TRUE,
-                           use_GUI = TRUE,
+                           GUI = TRUE,
                            page_with_download_url = 'http://cran.r-project.org/bin/windows/Rtools/',
                            ...
 ) {
@@ -507,7 +507,7 @@ install.Rtools <- function(choose_version = FALSE,
       # choose a version:
       cat("Please remember you are using: ", R.version$version.string , "\n")
       choices <- paste(TABLE[,"Download"], " (",TABLE[,2],")", sep = "")      
-      ROW_id <- menu(choices, graphics = use_GUI, title = "Which Rtools would you like to download?")      
+      ROW_id <- menu(choices, graphics = GUI, title = "Which Rtools would you like to download?")      
       
       if(ROW_id == 0) return(FALSE)
       
@@ -1307,7 +1307,7 @@ restart_RGui <- function(...) {
 #' @title Installing software from R
 #' @export
 #' @description Gives the user the option to download software from within R.
-#' @param use_GUI a logical indicating whether a graphics menu should be used if available.  If TRUE, and on Windows, it will use \link{winDialog}, otherwise it will use \link[utils]{menu}.
+#' @param GUI a logical indicating whether a graphics menu should be used if available.  If TRUE, and on Windows, it will use \link{winDialog}, otherwise it will use \link[utils]{menu}.
 #' @param ... not in use
 #' @return TRUE/FALSE - if the software was installed succesfully or no.
 #' @seealso \link{updateR}, \link{install.R}, 
@@ -1320,7 +1320,7 @@ restart_RGui <- function(...) {
 #' \dontrun{
 #' installr()
 #' }
-installr <- function(use_GUI = TRUE, ...) {
+installr <- function(GUI = TRUE, ...) {
    choices <- c("R (updateR)",
                 "RStudio",
                 "Rtools",
@@ -1340,7 +1340,7 @@ installr <- function(use_GUI = TRUE, ...) {
                 "Cygwin",
                 "Cancel")
    
-   the_answer <- menu(choices, graphics = use_GUI, title = "Which software (for Windows) would you like to install?")            
+   the_answer <- menu(choices, graphics = GUI, title = "Which software (for Windows) would you like to install?")            
    
    switch(the_answer, 
           updateR(),

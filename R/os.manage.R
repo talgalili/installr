@@ -212,7 +212,7 @@ os.restart  <- function(s=0, m=0, h=0) {
 #' @description
 #' A centeral function to run functions for shuting down, restarting, sleeping (etc.) your computer.
 #' This will run these functions immediatly.
-#' @param use_GUI a logical indicating whether a graphics menu should be used if available.  If TRUE, and on Windows, it will use \link{winDialog}, otherwise it will use \link[utils]{menu}.
+#' @param GUI a logical indicating whether a graphics menu should be used if available.  If TRUE, and on Windows, it will use \link{winDialog}, otherwise it will use \link[utils]{menu}.
 #' @param ask a logical indicating whether to ask the user for the number of minutes in which to perform the operation.
 #' @param ... not in use
 #' @return The status code of \code{\link[base]{system}}.
@@ -230,7 +230,7 @@ os.restart  <- function(s=0, m=0, h=0) {
 #' os.manage()
 #' ## the next day you wake up, "thank you, R" :)
 #' }
-os.manage  <- function(use_GUI = TRUE, ask = TRUE, ...) {
+os.manage  <- function(GUI = TRUE, ask = TRUE, ...) {
    choices <- c("Shutdown",
                 "Sleep",
                 "Hibernate",
@@ -238,7 +238,7 @@ os.manage  <- function(use_GUI = TRUE, ask = TRUE, ...) {
                 "Restart",
                 "Cancel")
    
-   the_answer <- menu(choices, graphics = use_GUI, title = "Manage your OS (for Windows)")            
+   the_answer <- menu(choices, graphics = GUI, title = "Manage your OS (for Windows)")            
    
    if (the_answer==0 || choices[the_answer]=="Cancel") return(FALSE)
    

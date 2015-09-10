@@ -7,7 +7,7 @@
 \usage{
 updateR(browse_news, install_R, copy_packages, copy_Rprofile.site,
   keep_old_packages, update_packages, start_new_R, quit_R,
-  print_R_versions = TRUE, use_GUI = TRUE, to_checkMD5sums = TRUE,
+  print_R_versions = TRUE, GUI = TRUE, to_checkMD5sums = TRUE,
   keep_install_file = FALSE, download_dir = tempdir(), silent = FALSE,
   setInternet2 = TRUE, ...)
 }
@@ -30,7 +30,7 @@ updateR(browse_news, install_R, copy_packages, copy_Rprofile.site,
 
 \item{print_R_versions}{if to tell the user what version he has and what is the latest version (default is TRUE)}
 
-\item{use_GUI}{a logical indicating whether a graphics menu should be used if available.  If TRUE, and on Windows, it will use \link{winDialog}, otherwise it will use \link[utils]{menu}.}
+\item{GUI}{a logical indicating whether a graphics menu should be used if available.  If TRUE, and on Windows, it will use \link{winDialog}, otherwise it will use \link[utils]{menu}.}
 
 \item{to_checkMD5sums}{Should we check that the new R installation has the files we expect it to (by checking the MD5 sums)? default is TRUE.  It assumes that the R which was isntalled is the latest R version. parameter is passed to install.R()}
 

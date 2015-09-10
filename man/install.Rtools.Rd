@@ -8,7 +8,7 @@
 Some parts of the code are taken from the devtools, see \url{https://github.com/hadley/devtools/blob/master/R/rtools.r}
 }
 \usage{
-install.Rtools(choose_version = FALSE, check = TRUE, use_GUI = TRUE,
+install.Rtools(choose_version = FALSE, check = TRUE, GUI = TRUE,
   page_with_download_url = "http://cran.r-project.org/bin/windows/Rtools/",
   ...)
 }
@@ -17,7 +17,7 @@ install.Rtools(choose_version = FALSE, check = TRUE, use_GUI = TRUE,
 
 \item{check}{checks if we need to install Rtools or not.  Relies on the "find_rtools" function in the {devtools} package.}
 
-\item{use_GUI}{Should a GUI be used when asking the user questions? (defaults to TRUE)}
+\item{GUI}{Should a GUI be used when asking the user questions? (defaults to TRUE)}
 
 \item{page_with_download_url}{the URL of the RTools download page.}
 

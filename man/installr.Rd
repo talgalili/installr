@@ -4,10 +4,10 @@
 \alias{installr}
 \title{Installing software from R}
 \usage{
-installr(use_GUI = TRUE, ...)
+installr(GUI = TRUE, ...)
 }
 \arguments{
-\item{use_GUI}{a logical indicating whether a graphics menu should be used if available.  If TRUE, and on Windows, it will use \link{winDialog}, otherwise it will use \link[utils]{menu}.}
+\item{GUI}{a logical indicating whether a graphics menu should be used if available.  If TRUE, and on Windows, it will use \link{winDialog}, otherwise it will use \link[utils]{menu}.}
 
 \item{...}{not in use}
 }

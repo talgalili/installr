@@ -5,13 +5,13 @@
 \alias{uninstall.r}
 \title{Uninstall an R version}
 \usage{
-uninstall.R(r_version, use_GUI = TRUE)
+uninstall.R(r_version, GUI = TRUE)
 }
 \arguments{
 \item{r_version}{a character vector for R versions to uninstall (the format is of the style: "2.15.3").
 default is empty - resulting in a prompt message asking the user what to do.}
 
-\item{use_GUI}{If asking the user which R version to uninstall, should the GUI be used? (default is TRUE)}
+\item{GUI}{If asking the user which R version to uninstall, should the GUI be used? (default is TRUE)}
 }
 \value{
 the output of \link{system} running the uninstaller

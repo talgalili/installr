@@ -113,7 +113,7 @@ checkMD5sums2 <- function (package, dir, md5file, omit_files,...)
 #' @export
 #' @description Asks the user for one yes/no question.  If the users replies with a "yes" (or Y, or y) the function returns TRUE.  Otherwise, FALSE. (also exists as the function devtools::yesno)
 #' @param question a character string with a question to the user.
-#' @param use_GUI a logical indicating whether a graphics menu should be used if available.  If TRUE, and on Windows, it will use \link{winDialog}, otherwise it will use \link[utils]{menu}.
+#' @param GUI a logical indicating whether a graphics menu should be used if available.  If TRUE, and on Windows, it will use \link{winDialog}, otherwise it will use \link[utils]{menu}.
 #' @param add_lines_before if to add a line before asking the question.  Default is TRUE.
 #' @return TRUE/FALSE - if the user answeres yes or no.
 #' @seealso \link[utils]{menu}, (yesno in the package {devtools}) 
@@ -122,8 +122,8 @@ checkMD5sums2 <- function (package, dir, md5file, omit_files,...)
 #' @examples
 #' \dontrun{
 #' ask.user.yn.question("Do you love R?")
-#' ask.user.yn.question(question = "Do you love R?", use_GUI = TRUE) # the same one as before
-#' ask.user.yn.question(question = "Do you love R?", use_GUI = FALSE) 
+#' ask.user.yn.question(question = "Do you love R?", GUI = TRUE) # the same one as before
+#' ask.user.yn.question(question = "Do you love R?", GUI = FALSE) 
 #' # reverts to command line questions
 #' 
 #' ask.user.yn.question("Lorem ipsum dolor sit amet, consectetur adipisicing elit, 
@@ -135,15 +135,15 @@ checkMD5sums2 <- function (package, dir, md5file, omit_files,...)
 #'    # checking how it deals with multi lines, and a lot of text (very good actually)
 #'   
 #' }
-ask.user.yn.question <- function(question, use_GUI = TRUE, add_lines_before = TRUE) {
+ask.user.yn.question <- function(question, GUI = TRUE, add_lines_before = TRUE) {
    choices <- c("Yes", "No")
    
-   if(use_GUI & is.windows()) {
+   if(GUI & is.windows()) {
       the_answer <- winDialog(type = "yesno", message = question)
       the_answer <- ifelse(the_answer == "YES", 1L, 2L) # turns it to 1/2
    } else { # no Windows, and/or no GUI
-      if(add_lines_before & !use_GUI) cat("------------------------\n")   
-      the_answer <- menu(choices, graphics = use_GUI, title = question)            
+      if(add_lines_before & !GUI) cat("------------------------\n")   
+      the_answer <- menu(choices, graphics = GUI, title = question)            
    }
    
    ifelse(the_answer == 1L, TRUE, FALSE)   # returns TRUE or FALSE
@@ -156,7 +156,7 @@ ask.user.yn.question <- function(question, use_GUI = TRUE, add_lines_before = TR
 #' Fetches the latest (not development!) R version and compares it with your currently installed R version (the version of the R session from which you are running this function).
 #' 
 #' @param notify_user if to print to you (the user) what is the latest version and what version you are currently using.
-#' @param use_GUI a logical indicating whether a graphics menu should be used if available.  If TRUE, and on Windows, it will use \link{winDialog}, otherwise it will use \link{cat}.
+#' @param GUI a logical indicating whether a graphics menu should be used if available.  If TRUE, and on Windows, it will use \link{winDialog}, otherwise it will use \link{cat}.
 #' @param page_with_download_url the URL of the page from which R can be downloaded.
 #' @param pat pattern to search for when looking for a newer R version
 #' @return TRUE/FALSE - if there is a newer version of R to install or not.
@@ -170,7 +170,7 @@ ask.user.yn.question <- function(question, use_GUI = TRUE, add_lines_before = TR
 #' #  [1] TRUE
 #' }
 check.for.updates.R <- function(notify_user = TRUE, 
-                                use_GUI = TRUE, 
+                                GUI = TRUE, 
                                 page_with_download_url = "http://cran.rstudio.com/bin/windows/base/",
                                 pat = "R-[0-9.]+-win") {
    page   <- readLines(page_with_download_url, warn = FALSE)    
@@ -205,7 +205,7 @@ check.for.updates.R <- function(notify_user = TRUE,
    
    
    if(notify_user) {
-      if(use_GUI) {
+      if(GUI) {
          winDialog(type = "ok", message = message_text)   
       } else {
          cat(message_text)
@@ -664,7 +664,7 @@ copy.packages.between.libraries <- function(from, to, ask =FALSE,keep_old = TRUE
 #' @param start_new_R TRUE/FALSE - if to start the new R (Rgui) after we will quit the old R. Default is TRUE. It will try to start the 64 bit R version, if it does not exist, the 32 bit will be started. This may be less useful for people using RStudio or the likes.
 #' @param quit_R TRUE/FALSE - if to quite R after the installation and package copying or not. If missing (this is the default) - the user is asked what to do.
 #' @param print_R_versions if to tell the user what version he has and what is the latest version (default is TRUE)
-#' @param use_GUI a logical indicating whether a graphics menu should be used if available.  If TRUE, and on Windows, it will use \link{winDialog}, otherwise it will use \link[utils]{menu}.
+#' @param GUI a logical indicating whether a graphics menu should be used if available.  If TRUE, and on Windows, it will use \link{winDialog}, otherwise it will use \link[utils]{menu}.
 #' @param to_checkMD5sums Should we check that the new R installation has the files we expect it to (by checking the MD5 sums)? default is TRUE.  It assumes that the R which was isntalled is the latest R version. parameter is passed to install.R()
 #' @param keep_install_file If TRUE - the installer file will not be erased after it is downloaded and run.
 #' @param download_dir A character of the directory into which to download the file. (default is \link{tempdir}())
@@ -686,7 +686,7 @@ copy.packages.between.libraries <- function(from, to, ask =FALSE,keep_old = TRUE
 #' updateR() # will ask you what you want at every decision.
 #' }
 updateR <- function(browse_news, install_R, copy_packages, copy_Rprofile.site,
-                    keep_old_packages,  update_packages, start_new_R, quit_R,  print_R_versions=TRUE, use_GUI = TRUE, 
+                    keep_old_packages,  update_packages, start_new_R, quit_R,  print_R_versions=TRUE, GUI = TRUE, 
                     to_checkMD5sums = TRUE, keep_install_file = FALSE, download_dir = tempdir(), silent = FALSE, 
                     setInternet2 = TRUE, ...) {
    # this function checks if we have the latest version of R
@@ -704,17 +704,17 @@ updateR <- function(browse_news, install_R, copy_packages, copy_Rprofile.site,
    # else - there_is_a_newer_version_of_R==T
    
    # should we open the NEWS?
-   if(missing(browse_news)) browse_news <- ask.user.yn.question("Do you wish to see the NEWS regarding this new version of R?", use_GUI = use_GUI)
+   if(missing(browse_news)) browse_news <- ask.user.yn.question("Do you wish to see the NEWS regarding this new version of R?", GUI = GUI)
    if(browse_news) browse.latest.R.NEWS()      
    
    
    # should we install R?
-   if(missing(install_R)) install_R <- ask.user.yn.question("Do you wish to install the latest version of R?", use_GUI = use_GUI)
+   if(missing(install_R)) install_R <- ask.user.yn.question("Do you wish to install the latest version of R?", GUI = GUI)
    if(!install_R) return(FALSE) # if not - return F
    
    
    if(identical(options()$device, "RStudioGD")) {
-      stop_because_of_RStudio <- ask.user.yn.question("It is best to run 'updateR()' from Rgui and not from RStudio. Would you like to abort the installation and run it again from RGui?", use_GUI = use_GUI)
+      stop_because_of_RStudio <- ask.user.yn.question("It is best to run 'updateR()' from Rgui and not from RStudio. Would you like to abort the installation and run it again from RGui?", GUI = GUI)
       if(stop_because_of_RStudio) return(FALSE)
    }
    
@@ -748,7 +748,7 @@ your packages to the new R installation.\n")
    if(copy_packages) {
       #       ask.user.for.a.row(c("Yes"), "Did you finish running the installer for the new R?", "Press 1 (and Enter) if the installation of R is finished:")
       # should we keep the old packages?
-      if(missing(keep_old_packages)) keep_old_packages <- ask.user.yn.question("Once your packages are copied to the new R, \ndo you wish to KEEP the packages from the library in the OLD R installation? \n(if you choose 'NO' - you will erase your packages in the old R version) ", use_GUI = use_GUI)
+      if(missing(keep_old_packages)) keep_old_packages <- ask.user.yn.question("Once your packages are copied to the new R, \ndo you wish to KEEP the packages from the library in the OLD R installation? \n(if you choose 'NO' - you will erase your packages in the old R version) ", GUI = GUI)
       # Next, copy (or MOVE):
       copy.packages.between.libraries(keep_old=keep_old_packages)   
    }
@@ -769,7 +769,7 @@ your packages to the new R installation.\n")
    
    
    # should we update_packages?
-   if(missing(update_packages)) update_packages <- ask.user.yn.question("Do you wish to update your packages in the newly installed R? ", use_GUI = use_GUI)
+   if(missing(update_packages)) update_packages <- ask.user.yn.question("Do you wish to update your packages in the newly installed R? ", GUI = GUI)
    
    if(update_packages & copy_packages) { # we should not update packages if we didn't copy them first...
       new_Rscript_path <- file.path(new_R_path, "bin/Rscript.exe") # make sure to run the newer R to update the packages.
@@ -788,7 +788,7 @@ your packages to the new R installation.\n")
    
    
    # should we turn Rgui on?
-   if(missing(start_new_R)) start_new_R <- ask.user.yn.question("Do you wish to start the Rgui.exe of your new R installation? ", use_GUI = use_GUI)
+   if(missing(start_new_R)) start_new_R <- ask.user.yn.question("Do you wish to start the Rgui.exe of your new R installation? ", GUI = GUI)
    if(start_new_R) {
       new_Rexe_path <- file.path(new_R_path, "bin/x64/Rgui.exe")      
       if(!file.exists(new_Rexe_path)) new_Rexe_path <- file.path(new_R_path, "bin/i386/Rgui.exe")
@@ -796,7 +796,7 @@ your packages to the new R installation.\n")
    }   
    
    # should we turn R off?
-   if(missing(quit_R)) quit_R <- ask.user.yn.question("Do you wish to quit R (your workspace will NOT be saved)? ", use_GUI = use_GUI)
+   if(missing(quit_R)) quit_R <- ask.user.yn.question("Do you wish to quit R (your workspace will NOT be saved)? ", GUI = GUI)
    if(quit_R) quit(save = "no")
    
    
@@ -822,7 +822,7 @@ updater <- function(...) updateR(...)
 #' and all will be uninstalled.
 #' @param r_version a character vector for R versions to uninstall (the format is of the style: "2.15.3"). 
 #' default is empty - resulting in a prompt message asking the user what to do.
-#' @param use_GUI If asking the user which R version to uninstall, should the GUI be used? (default is TRUE) 
+#' @param GUI If asking the user which R version to uninstall, should the GUI be used? (default is TRUE) 
 #' @return the output of \link{system} running the uninstaller
 #' @seealso \link{install.R}, \link{updateR}, \link{system}
 #' @examples
@@ -832,7 +832,7 @@ updater <- function(...) updateR(...)
 #' uninstall.R(c("2.15.3", "2.14.0")) # will uninstall two R versions (if both exists)
 #' uninstall.R("10.10.0") # would pop up the menu options (until R 10.10.0 will be released :D )
 #' }
-uninstall.R <- function(r_version, use_GUI = TRUE) {
+uninstall.R <- function(r_version, GUI = TRUE) {
    # notice that running the uninstall of R does not remove the old library folder!
    
    # get R folders
@@ -845,7 +845,7 @@ uninstall.R <- function(r_version, use_GUI = TRUE) {
    if(missing(r_version) || is.empty(the_answer)) {
             # note: the double | (||) is essential if r_version is missing - 
             #        then the_answer would not be created...
-      the_answer <- menu(choices, graphics = use_GUI, title = "Which R version would you like to UN-install?")            
+      the_answer <- menu(choices, graphics = GUI, title = "Which R version would you like to UN-install?")            
    }
    
    # uninstall R!

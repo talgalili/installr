@@ -4,14 +4,14 @@
 \alias{check.for.updates.R}
 \title{Checks if there is a newer version of R}
 \usage{
-check.for.updates.R(notify_user = TRUE, use_GUI = TRUE,
+check.for.updates.R(notify_user = TRUE, GUI = TRUE,
   page_with_download_url = "http://cran.rstudio.com/bin/windows/base/",
   pat = "R-[0-9.]+-win")
 }
 \arguments{
 \item{notify_user}{if to print to you (the user) what is the latest version and what version you are currently using.}
 
-\item{use_GUI}{a logical indicating whether a graphics menu should be used if available.  If TRUE, and on Windows, it will use \link{winDialog}, otherwise it will use \link{cat}.}
+\item{GUI}{a logical indicating whether a graphics menu should be used if available.  If TRUE, and on Windows, it will use \link{winDialog}, otherwise it will use \link{cat}.}
 
 \item{page_with_download_url}{the URL of the page from which R can be downloaded.}
 

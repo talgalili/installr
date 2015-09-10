@@ -4,12 +4,12 @@
 \alias{ask.user.yn.question}
 \title{Asks the user for one yes/no question.}
 \usage{
-ask.user.yn.question(question, use_GUI = TRUE, add_lines_before = TRUE)
+ask.user.yn.question(question, GUI = TRUE, add_lines_before = TRUE)
 }
 \arguments{
 \item{question}{a character string with a question to the user.}
 
-\item{use_GUI}{a logical indicating whether a graphics menu should be used if available.  If TRUE, and on Windows, it will use \link{winDialog}, otherwise it will use \link[utils]{menu}.}
+\item{GUI}{a logical indicating whether a graphics menu should be used if available.  If TRUE, and on Windows, it will use \link{winDialog}, otherwise it will use \link[utils]{menu}.}
 
 \item{add_lines_before}{if to add a line before asking the question.  Default is TRUE.}
 }
@@ -22,8 +22,8 @@ Asks the user for one yes/no question.  If the users replies with a "yes" (or Y,
 \examples{
 \dontrun{
 ask.user.yn.question("Do you love R?")
-ask.user.yn.question(question = "Do you love R?", use_GUI = TRUE) # the same one as before
-ask.user.yn.question(question = "Do you love R?", use_GUI = FALSE)
+ask.user.yn.question(question = "Do you love R?", GUI = TRUE) # the same one as before
+ask.user.yn.question(question = "Do you love R?", GUI = FALSE)
 # reverts to command line questions
 
 ask.user.yn.question("Lorem ipsum dolor sit amet, consectetur adipisicing elit,

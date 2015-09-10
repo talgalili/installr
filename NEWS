@@ -6,6 +6,7 @@ UPDATED FUNCTIONS:
    
 OTHER NOTES:
    * Updated troubleshooting in the README.
+   * rename use_GUI to GUI.
 
 installr 0.16.0 (2015-06-11)
 ---------------------------
