@@ -669,6 +669,7 @@ copy.packages.between.libraries <- function(from, to, ask =FALSE,keep_old = TRUE
 #' @param keep_install_file If TRUE - the installer file will not be erased after it is downloaded and run.
 #' @param download_dir A character of the directory into which to download the file. (default is \link{tempdir}())
 #' @param silent If TRUE - enables silent installation mode.
+#' @param setInternet2 logical. Should setInternet2(TRUE) be run.
 #' @param ... Other arguments (this is currently not used in any way)
 #' @return a TRUE/FALSE value on whether or not R was updated.
 #' @seealso \link{check.for.updates.R}, \link{install.R}, 
@@ -686,11 +687,14 @@ copy.packages.between.libraries <- function(from, to, ask =FALSE,keep_old = TRUE
 #' }
 updateR <- function(browse_news, install_R, copy_packages, copy_Rprofile.site,
                     keep_old_packages,  update_packages, start_new_R, quit_R,  print_R_versions=TRUE, use_GUI = TRUE, 
-                    to_checkMD5sums = TRUE, keep_install_file = FALSE, download_dir = tempdir(), silent = FALSE, ...) {
+                    to_checkMD5sums = TRUE, keep_install_file = FALSE, download_dir = tempdir(), silent = FALSE, 
+                    setInternet2 = TRUE, ...) {
    # this function checks if we have the latest version of R
    # IF not - it notifies the user - and leaves.
    # If there is a new version - it offers the user to download and install it.   
 
+   if(setInternet2) setInternet2(TRUE)
+   
    old_R_path <- get.installed.R.folders()[1]
 
    there_is_a_newer_version_of_R <- check.for.updates.R(print_R_versions)
@@ -855,7 +859,7 @@ uninstall.R <- function(r_version, use_GUI = TRUE) {
 
 
 #' @export
-uninstall.r <- function(...) uninstall.R(...)
+uninstall.r <- function(...) { uninstall.R(...) }
 
 
 

@@ -1,6 +1,10 @@
-installr 0.16.1 (2015-07-13)
+installr 0.16.1 (2015-09-10)
 ---------------------------
 
+UPDATED FUNCTIONS:
+   * updateR - added a new setInternet2 parameter.
+   
+OTHER NOTES:
    * Updated troubleshooting in the README.
 
 installr 0.16.0 (2015-06-11)
