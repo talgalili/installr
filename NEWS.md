@@ -1,6 +1,26 @@
-installr 0.16.0 (2015-06-09)
+installr 0.17.0 (2015-09-11)
 ---------------------------
 
+UPDATED FUNCTIONS:
+   * updateR - new parameters added:
+      *  setInternet2 - so people would not have the error: "Error in file(con, "r") : cannot open the connection"
+      *  fast - overrides other parameters, so to make the installation as fast as possible for the user: no news, installr R, copy packages and Rprofile, keep
+old packages, updated packages, without quiting current R or starting the new R.
+don't use GUI, check MD5sums, keep installed file in the getwd.
+      * The default parameters in "fast" are set to make it easier to update R (on Windows) for people who are blind. (thanks to Jonathan Godfrey)
+      
+   
+OTHER NOTES:
+   * Updated troubleshooting in the README.
+   * rename use_GUI to GUI.
+
+installr 0.16.0 (2015-06-11)
+---------------------------
+
+UPDATED FUNCTIONS:
+   * R_version_in_a_folder - now returns NULL if no folder was found.
+   * updateR - notices when no sub-R-folder was found - and tells the user what to do (instead of stopping the function - solves issue #27 )
+   
 BUG FIXES:
    * moving "utils" to depends allows add.installr.GUI to work again.
    * install.notepadpp - works again

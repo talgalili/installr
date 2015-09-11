@@ -1,3 +1,347 @@
+* 2015-09-11(Tal Galili) 0.17.0 bump |a91aaee| 
+|  DESCRIPTION | 4 ++--
+|  NEWS        | 2 +-
+|  2 files changed, 3 insertions(+), 3 deletions(-)
+
+* 2015-09-11(Tal Galili) update examples a bit |1e6ecd3| 
+|  R/updateR.R    | 12 ++++++------
+|  README.md      |  2 ++
+|  man/updateR.Rd | 12 ++++++------
+|  3 files changed, 14 insertions(+), 12 deletions(-)
+
+* 2015-09-10(Tal Galili) CRAN badge to README.md |dc5aad1| 
+|  README.md | 2 ++
+|  1 file changed, 2 insertions(+)
+
+* 2015-09-10(Tal Galili) updateR - new parameters added: fast - overrides other parameters, so to make the installation as fast as possible for the user: no news, installr R, copy packages and Rprofile, keep old packages, updated packages, without quiting current R or starting the new R. don't use GUI, check MD5sums, keep installed file in the getwd. |c25caf4| 
+|  NEWS           |  8 +++++++-
+|  R/updateR.R    | 30 +++++++++++++++++++++++++++---
+|  man/updateR.Rd |  9 +++++++--
+|  3 files changed, 41 insertions(+), 6 deletions(-)
+
+* 2015-09-10(Tal Galili) Change use_GUI to GUI |3248c67| 
+|  NEWS                        |  1 +
+|  R/install.R                 | 12 ++++++------
+|  R/os.manage.R               |  6 +++---
+|  R/updateR.R                 | 44 +++++++++++++++++++++----------------------
+|  man/ask.user.yn.question.Rd |  8 ++++----
+|  man/check.for.updates.R.Rd  |  4 ++--
+|  man/install.Rtools.Rd       |  4 ++--
+|  man/installr.Rd             |  4 ++--
+|  man/os.manage.Rd            |  4 ++--
+|  man/uninstall.R.Rd          |  4 ++--
+|  man/updateR.Rd              |  4 ++--
+|  11 files changed, 48 insertions(+), 47 deletions(-)
+
+* 2015-09-10(Tal Galili) roxygen version update |f79ecbe| 
+|  NAMESPACE                                    | 2 +-
+|  man/R_version_in_a_folder.Rd                 | 4 ++--
+|  man/add.installr.GUI.Rd                      | 2 +-
+|  man/add_load_installr_on_startup_menu.Rd     | 2 +-
+|  man/add_remove_installr_from_startup_menu.Rd | 2 +-
+|  man/add_to_.First_in_Rprofile.site.Rd        | 2 +-
+|  man/ask.user.for.a.row.Rd                    | 2 +-
+|  man/ask.user.yn.question.Rd                  | 2 +-
+|  man/barplot_package_users_per_day.Rd         | 2 +-
+|  man/browse.latest.R.NEWS.Rd                  | 2 +-
+|  man/check.for.updates.R.Rd                   | 2 +-
+|  man/check.integer.Rd                         | 2 +-
+|  man/checkMD5sums2.Rd                         | 2 +-
+|  man/copy.packages.between.libraries.Rd       | 2 +-
+|  man/cranometer.Rd                            | 2 +-
+|  man/create.global.library.Rd                 | 2 +-
+|  man/download_RStudio_CRAN_data.Rd            | 2 +-
+|  man/fetch_tag_from_Rd.Rd                     | 2 +-
+|  man/file.name.from.url.Rd                    | 2 +-
+|  man/format_RStudio_CRAN_data.Rd              | 2 +-
+|  man/freegeoip.Rd                             | 2 +-
+|  man/get.installed.R.folders.Rd               | 2 +-
+|  man/get_Rscript_PID.Rd                       | 2 +-
+|  man/get_pid.Rd                               | 2 +-
+|  man/get_tasklist.Rd                          | 2 +-
+|  man/install.7zip.Rd                          | 2 +-
+|  man/install.CMake.Rd                         | 2 +-
+|  man/install.Cygwin.Rd                        | 2 +-
+|  man/install.FFmpeg.Rd                        | 2 +-
+|  man/install.GitHub.Rd                        | 2 +-
+|  man/install.GraphicsMagick.Rd                | 2 +-
+|  man/install.ImageMagick.Rd                   | 2 +-
+|  man/install.LaTeX2RTF.Rd                     | 2 +-
+|  man/install.LyX.Rd                           | 2 +-
+|  man/install.MikTeX.Rd                        | 2 +-
+|  man/install.R.Rd                             | 2 +-
+|  man/install.RStudio.Rd                       | 2 +-
+|  man/install.Rdevel.Rd                        | 2 +-
+|  man/install.Rtools.Rd                        | 2 +-
+|  man/install.SWFTools.Rd                      | 2 +-
+|  man/install.Texmaker.Rd                      | 2 +-
+|  man/install.URL.Rd                           | 2 +-
+|  man/install.git.Rd                           | 2 +-
+|  man/install.notepadpp.Rd                     | 2 +-
+|  man/install.npptor.Rd                        | 2 +-
+|  man/install.packages.zip.Rd                  | 2 +-
+|  man/install.pandoc.Rd                        | 2 +-
+|  man/installr.Rd                              | 2 +-
+|  man/is.RStudio.Rd                            | 2 +-
+|  man/is.Rgui.Rd                               | 2 +-
+|  man/is.empty.Rd                              | 2 +-
+|  man/is.exe.installed.Rd                      | 2 +-
+|  man/is.windows.Rd                            | 2 +-
+|  man/is_in_.First_in_Rprofile.site.Rd         | 2 +-
+|  man/kill_all_Rscript_s.Rd                    | 2 +-
+|  man/kill_pid.Rd                              | 2 +-
+|  man/kill_process.Rd                          | 2 +-
+|  man/lineplot_package_downloads.Rd            | 2 +-
+|  man/load_installr_on_startup.Rd              | 2 +-
+|  man/most_downloaded_packages.Rd              | 2 +-
+|  man/myip.Rd                                  | 2 +-
+|  man/os.hibernate.Rd                          | 2 +-
+|  man/os.lock.Rd                               | 2 +-
+|  man/os.manage.Rd                             | 2 +-
+|  man/os.restart.Rd                            | 2 +-
+|  man/os.shutdown.Rd                           | 2 +-
+|  man/os.sleep.Rd                              | 2 +-
+|  man/package_authors.Rd                       | 2 +-
+|  man/pkgDNLs_worldmapcolor.Rd                 | 2 +-
+|  man/read_RStudio_CRAN_data.Rd                | 2 +-
+|  man/remove.installr.GUI.Rd                   | 2 +-
+|  man/remove_from_.First_in_Rprofile.site.Rd   | 2 +-
+|  man/rename_r_to_R.Rd                         | 2 +-
+|  man/require2.Rd                              | 2 +-
+|  man/restart_RGui.Rd                          | 2 +-
+|  man/rm_installr_from_startup.Rd              | 2 +-
+|  man/source.https.Rd                          | 2 +-
+|  man/system.PATH.Rd                           | 2 +-
+|  man/turn.number.version.Rd                   | 2 +-
+|  man/turn.version.to.number.Rd                | 2 +-
+|  man/turn.version.to.number1.Rd               | 2 +-
+|  man/uninstall.R.Rd                           | 2 +-
+|  man/uninstall.packages.Rd                    | 2 +-
+|  man/up_folder.Rd                             | 2 +-
+|  man/xlsx2csv.Rd                              | 2 +-
+|  85 files changed, 86 insertions(+), 86 deletions(-)
+
+* 2015-09-10(Tal Galili) updateR - added a new setInternet2 parameter. |8fb8689| 
+|  DESCRIPTION    | 2 +-
+|  NEWS           | 6 +++++-
+|  R/updateR.R    | 8 ++++++--
+|  man/updateR.Rd | 6 ++++--
+|  4 files changed, 16 insertions(+), 6 deletions(-)
+
+* 2015-08-18(Tal Galili) Fix issue #38 - type |dddb7cb| 
+|  R/updateR.R | 2 +-
+|  1 file changed, 1 insertion(+), 1 deletion(-)
+
+* 2015-07-13(Tal Galili) Added fix #35 to the README |536a311| 
+|  DESCRIPTION |  4 ++--
+|  NEWS        |  5 +++++
+|  README.md   | 12 +++++++++++-
+|  3 files changed, 18 insertions(+), 3 deletions(-)
+
+* 2015-06-13(Tal Galili) show.output.on.console when updating packages. |fe1315d| 
+|  R/updateR.R | 7 ++++++-
+|  1 file changed, 6 insertions(+), 1 deletion(-)
+
+* 2015-06-11(Tal Galili) 0.16.0 |17edbd5| 
+|  DESCRIPTION | 2 +-
+|  NEWS        | 2 +-
+|  R/zzz.R     | 3 +++
+|  3 files changed, 5 insertions(+), 2 deletions(-)
+
+* 2015-06-11(Tal Galili) updateR - notices when no sub-R-folder was found - and tells the user what to do (instead of stopping the function - solves issue #27 ) |b10f15f| 
+|  NEWS        | 2 ++
+|  R/updateR.R | 8 +++++++-
+|  2 files changed, 9 insertions(+), 1 deletion(-)
+
+* 2015-06-11(Tal Galili) R_version_in_a_folder - now returns NULL if no folder was found. |8d21cc2| 
+|  NEWS        |  2 ++
+|  R/updateR.R | 10 ++++++----
+|  2 files changed, 8 insertions(+), 4 deletions(-)
+
+* 2015-06-09(Tal Galili) Fix all .Rd files |9422dd3| 
+|  NAMESPACE                                    |   2 +-
+|  R/updateR.R                                  |   4 +-
+|  man/R_version_in_a_folder.Rd                 |  17 ++--
+|  man/add.installr.GUI.Rd                      |  11 +--
+|  man/add_load_installr_on_startup_menu.Rd     |   5 +-
+|  man/add_remove_installr_from_startup_menu.Rd |   5 +-
+|  man/add_to_.First_in_Rprofile.site.Rd        |  28 +++---
+|  man/ask.user.for.a.row.Rd                    |  42 ++++-----
+|  man/ask.user.yn.question.Rd                  |  23 ++---
+|  man/barplot_package_users_per_day.Rd         |  32 +++----
+|  man/browse.latest.R.NEWS.Rd                  |  11 ++-
+|  man/check.for.updates.R.Rd                   |  24 +++--
+|  man/check.integer.Rd                         |  13 ++-
+|  man/checkMD5sums2.Rd                         |  25 +++---
+|  man/copy.packages.between.libraries.Rd       |  45 ++++------
+|  man/cranometer.Rd                            |  54 ++++++------
+|  man/create.global.library.Rd                 |  10 +--
+|  man/download_RStudio_CRAN_data.Rd            |  46 +++++-----
+|  man/fetch_tag_from_Rd.Rd                     |  26 +++---
+|  man/file.name.from.url.Rd                    |  15 ++--
+|  man/format_RStudio_CRAN_data.Rd              |  23 ++---
+|  man/freegeoip.Rd                             |  25 +++---
+|  man/get.installed.R.folders.Rd               |  28 ++----
+|  man/get_Rscript_PID.Rd                       |  15 ++--
+|  man/get_pid.Rd                               |  27 +++---
+|  man/get_tasklist.Rd                          |  15 ++--
+|  man/install.7zip.Rd                          |  49 +++++------
+|  man/install.CMake.Rd                         |  26 +++---
+|  man/install.Cygwin.Rd                        |  18 ++--
+|  man/install.FFmpeg.Rd                        |  29 +++---
+|  man/install.GitHub.Rd                        |  20 ++---
+|  man/install.GraphicsMagick.Rd                |  26 +++---
+|  man/install.ImageMagick.Rd                   |  26 +++---
+|  man/install.LaTeX2RTF.Rd                     |  24 ++---
+|  man/install.LyX.Rd                           |  36 ++++----
+|  man/install.MikTeX.Rd                        |  30 +++----
+|  man/install.R.Rd                             |  43 +++++----
+|  man/install.RStudio.Rd                       |  20 ++---
+|  man/install.Rdevel.Rd                        |  17 ++--
+|  man/install.Rtools.Rd                        |  46 ++++------
+|  man/install.SWFTools.Rd                      |  27 +++---
+|  man/install.Texmaker.Rd                      |  22 ++---
+|  man/install.URL.Rd                           |  42 ++++-----
+|  man/install.git.Rd                           |  18 ++--
+|  man/install.notepadpp.Rd                     |  32 +++----
+|  man/install.npptor.Rd                        |  31 +++----
+|  man/install.packages.zip.Rd                  |  26 ++----
+|  man/install.pandoc.Rd                        |  34 ++++---
+|  man/installr.Rd                              |  26 +++---
+|  man/is.RStudio.Rd                            |  13 ++-
+|  man/is.Rgui.Rd                               |  13 ++-
+|  man/is.empty.Rd                              |  19 ++--
+|  man/is.exe.installed.Rd                      |  10 +--
+|  man/is.windows.Rd                            |  17 ++--
+|  man/is_in_.First_in_Rprofile.site.Rd         |  22 ++---
+|  man/kill_all_Rscript_s.Rd                    |  32 ++++---
+|  man/kill_pid.Rd                              |  32 +++----
+|  man/kill_process.Rd                          |  39 +++++----
+|  man/lineplot_package_downloads.Rd            |  30 +++----
+|  man/load_installr_on_startup.Rd              |  15 ++--
+|  man/most_downloaded_packages.Rd              |  24 +++--
+|  man/myip.Rd                                  |   8 +-
+|  man/os.hibernate.Rd                          |  30 +++----
+|  man/os.lock.Rd                               |  25 ++----
+|  man/os.manage.Rd                             |  30 +++----
+|  man/os.restart.Rd                            |  25 ++----
+|  man/os.shutdown.Rd                           |  33 +++----
+|  man/os.sleep.Rd                              |  33 +++----
+|  man/package_authors.Rd                       |  37 ++++----
+|  man/pkgDNLs_worldmapcolor.Rd                 |  27 +++---
+|  man/read_RStudio_CRAN_data.Rd                |  41 ++++-----
+|  man/remove.installr.GUI.Rd                   |   5 +-
+|  man/remove_from_.First_in_Rprofile.site.Rd   |  28 +++---
+|  man/rename_r_to_R.Rd                         |  35 +++++---
+|  man/require2.Rd                              |  20 ++---
+|  man/restart_RGui.Rd                          |   5 +-
+|  man/rm_installr_from_startup.Rd              |  15 ++--
+|  man/source.https.Rd                          |  30 +++----
+|  man/system.PATH.Rd                           |   6 +-
+|  man/turn.number.version.Rd                   |   9 +-
+|  man/turn.version.to.number.Rd                |   9 +-
+|  man/turn.version.to.number1.Rd               |   8 +-
+|  man/uninstall.R.Rd                           |  19 ++--
+|  man/uninstall.packages.Rd                    |  26 +++---
+|  man/up_folder.Rd                             |  14 +--
+|  man/updateR.Rd                               | 117 +++++++++----------------
+|  man/xlsx2csv.Rd                              |  19 ++--
+|  87 files changed, 921 insertions(+), 1238 deletions(-)
+
+* 2015-06-09(Tal Galili) Remove "Roxygen: list(wrap = TRUE)" which damages the .Rd! |231d189| 
+|  DESCRIPTION | 3 +--
+|  1 file changed, 1 insertion(+), 2 deletions(-)
+
+* 2015-06-09(Tal Galili) misc roxygen |5b6a612| 
+|  man/R_version_in_a_folder.Rd               |  11 +-
+|  man/add.installr.GUI.Rd                    |   7 +-
+|  man/add_to_.First_in_Rprofile.site.Rd      |  24 ++---
+|  man/ask.user.for.a.row.Rd                  |  34 +++----
+|  man/ask.user.yn.question.Rd                |  23 ++---
+|  man/barplot_package_users_per_day.Rd       |  28 +++--
+|  man/browse.latest.R.NEWS.Rd                |  10 +-
+|  man/check.for.updates.R.Rd                 |  27 ++---
+|  man/check.integer.Rd                       |   3 +-
+|  man/checkMD5sums2.Rd                       |  22 ++--
+|  man/copy.packages.between.libraries.Rd     |  40 +++-----
+|  man/cranometer.Rd                          |  26 ++---
+|  man/create.global.library.Rd               |   6 +-
+|  man/download_RStudio_CRAN_data.Rd          |  42 ++++----
+|  man/fetch_tag_from_Rd.Rd                   |  16 ++-
+|  man/format_RStudio_CRAN_data.Rd            |  11 +-
+|  man/freegeoip.Rd                           |  24 ++---
+|  man/get.installed.R.folders.Rd             |  17 ++--
+|  man/get_Rscript_PID.Rd                     |   8 +-
+|  man/get_pid.Rd                             |  10 +-
+|  man/get_tasklist.Rd                        |   4 +-
+|  man/install.7zip.Rd                        |  42 ++++----
+|  man/install.CMake.Rd                       |  10 +-
+|  man/install.Cygwin.Rd                      |   6 +-
+|  man/install.FFmpeg.Rd                      |  20 ++--
+|  man/install.GitHub.Rd                      |   8 +-
+|  man/install.GraphicsMagick.Rd              |  20 ++--
+|  man/install.ImageMagick.Rd                 |  22 ++--
+|  man/install.LaTeX2RTF.Rd                   |   8 +-
+|  man/install.LyX.Rd                         |  35 +++----
+|  man/install.MikTeX.Rd                      |  23 ++---
+|  man/install.R.Rd                           |  38 +++----
+|  man/install.RStudio.Rd                     |   8 +-
+|  man/install.Rdevel.Rd                      |   6 +-
+|  man/install.Rtools.Rd                      |  34 +++----
+|  man/install.SWFTools.Rd                    |  20 ++--
+|  man/install.Texmaker.Rd                    |   8 +-
+|  man/install.URL.Rd                         |  46 ++++-----
+|  man/install.git.Rd                         |   6 +-
+|  man/install.notepadpp.Rd                   |  20 ++--
+|  man/install.npptor.Rd                      |  26 ++---
+|  man/install.packages.zip.Rd                |  11 +-
+|  man/install.pandoc.Rd                      |  28 ++---
+|  man/installr.Rd                            |   8 +-
+|  man/is.empty.Rd                            |  12 +--
+|  man/is.exe.installed.Rd                    |   8 +-
+|  man/is.windows.Rd                          |  18 ++--
+|  man/is_in_.First_in_Rprofile.site.Rd       |  20 ++--
+|  man/kill_all_Rscript_s.Rd                  |  27 ++---
+|  man/kill_pid.Rd                            |  25 ++---
+|  man/kill_process.Rd                        |  35 +++----
+|  man/lineplot_package_downloads.Rd          |  29 +++---
+|  man/load_installr_on_startup.Rd            |  10 +-
+|  man/most_downloaded_packages.Rd            |  17 ++--
+|  man/myip.Rd                                |   6 +-
+|  man/os.hibernate.Rd                        |  23 ++---
+|  man/os.lock.Rd                             |  18 ++--
+|  man/os.manage.Rd                           |  21 ++--
+|  man/os.restart.Rd                          |  18 ++--
+|  man/os.shutdown.Rd                         |  27 ++---
+|  man/os.sleep.Rd                            |  21 ++--
+|  man/package_authors.Rd                     |  30 +++---
+|  man/pkgDNLs_worldmapcolor.Rd               |  29 +++---
+|  man/read_RStudio_CRAN_data.Rd              |  43 ++++----
+|  man/remove_from_.First_in_Rprofile.site.Rd |  20 ++--
+|  man/rename_r_to_R.Rd                       |  29 ++----
+|  man/require2.Rd                            |  12 +--
+|  man/restart_RGui.Rd                        |   1 -
+|  man/rm_installr_from_startup.Rd            |  10 +-
+|  man/source.https.Rd                        |  24 ++---
+|  man/system.PATH.Rd                         |  10 +-
+|  man/turn.number.version.Rd                 |   6 +-
+|  man/turn.version.to.number.Rd              |   2 +-
+|  man/uninstall.R.Rd                         |  13 ++-
+|  man/uninstall.packages.Rd                  |  23 ++---
+|  man/up_folder.Rd                           |   8 +-
+|  man/updateR.Rd                             | 147 ++++++++++++---------------
+|  man/xlsx2csv.Rd                            |  20 ++--
+|  78 files changed, 682 insertions(+), 926 deletions(-)
+
+* 2015-06-09(Tal Galili) require to library |f34758d| 
+|  README.md | 4 ++--
+|  1 file changed, 2 insertions(+), 2 deletions(-)
+
+* 2015-06-09(Tal Galili) misc |19b1800| 
+|  ChangeLog | 53 +++++++++++++++++++++++++++++++++++++++++++++++++++++
+|  NEWS.md   | 17 ++++++++++++++++-
+|  2 files changed, 69 insertions(+), 1 deletion(-)
+
 * 2015-06-09(Tal Galili) install.notepadpp - works again |22516df| 
 |  DESCRIPTION |  2 +-
 |  NEWS        |  3 ++-

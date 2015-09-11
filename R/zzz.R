@@ -197,6 +197,10 @@ installrWelcomeMessage <- function(){
 
 
 
+# devtools::use_code_of_conduct()
+
+
+
 # remove git tag: https://confluence.atlassian.com/pages/viewpage.action?pageId=282175551
 # git tag -d 0.16.0 
 
@@ -211,8 +215,4 @@ installrWelcomeMessage <- function(){
 # file.copy("NEWS", "NEWS.md", overwrite = TRUE)
 # devtools::build_win(version = "R-devel")
 # release(check = TRUE)
-
-
-# devtools::use_code_of_conduct()
-
 
