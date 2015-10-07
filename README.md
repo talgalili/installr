@@ -1,5 +1,7 @@
 [![Build Status](https://travis-ci.org/talgalili/installr.png?branch=master)](https://travis-ci.org/talgalili/installr)
 [![CRAN_Status_Badge](http://www.r-pkg.org/badges/version/installr)](http://cran.r-project.org/package=installr)
+![](http://cranlogs.r-pkg.org/badges/installr?color=yellow)
+![](http://cranlogs.r-pkg.org/badges/grand-total/installr?color=yellowgreen)
 
 
 # installr
