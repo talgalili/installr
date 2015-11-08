@@ -531,7 +531,8 @@ install.rtools <- function(...) install.Rtools(...)
 #' @description Allows the user to downloads and install the latest version of git for Windows.
 #' @details
 #' Git is a distributed revision control and source code management system with an emphasis on speed.
-#' @param page_with_download_url the URL of the git download page.
+#' @param URL the URL of the git download page.
+#' @param version numeric - either 32 or 64 (default)
 #' @param ... extra parameters to pass to \link{install.URL}
 #' @return TRUE/FALSE - was the installation successful or not.
 #' @export
@@ -542,21 +543,22 @@ install.rtools <- function(...) install.Rtools(...)
 #' \dontrun{
 #' install.git() # installs the latest version of git
 #' }
-install.git <- function(page_with_download_url="http://git-scm.com/download/win",...) {
+install.git <- function(URL="http://git-scm.com/download/win", version = 64, ...) {
    # "http://git-scm.com/download/win"
    # get download URL:
-   page     <- readLines(page_with_download_url, warn = FALSE)
+   page     <- readLines(URL, warn = FALSE)
    # https://msysgit.googlecode.com/files/Git-1.8.1.2-preview20130201.exe
 #    pat <- "//msysgit.googlecode.com/files/Git-[0-9.]+-preview[0-9.]+.exe"; 
 # https://github.com/msysgit/msysgit/releases/download/Git-1.9.4-preview20140611/Git-1.9.4-preview20140611.exe
-   pat <- "//github.com/msysgit/msysgit/releases/download/Git-[0-9.]+-preview[0-9.]+/Git-[0-9.]+-preview[0-9.]+.exe"; 
+   # https://github.com/git-for-windows/git/releases/download/v2.6.2.windows.1/Git-2.6.2-64-bit.exe
+   pat <- paste0("//github.com/git-for-windows/git/releases/download/v[0-9.]+.windows[0-9.]+/Git-[0-9.]+-",version,"-bit.exe"); 
    target_line <- grep(pat, page, value = TRUE); 
    m <- regexpr(pat, target_line); 
    URL      <- regmatches(target_line, m) # (The http still needs to be prepended.
    URL      <- paste('https', URL, sep = ':')[1] # we might find the same file more than once - so we'll only take its first one
 # https://github.com/msysgit/msysgit/releases/download/Git-1.9.4-preview20140611/Git-1.9.4-preview20140611.exe
    # install.
-   install.URL(URL,...)   
+   install.URL(URL[1],...)   
 }
 
 

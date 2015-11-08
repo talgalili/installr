@@ -4,10 +4,12 @@
 \alias{install.git}
 \title{Downloads and installs git and git-gui for windows}
 \usage{
-install.git(page_with_download_url = "http://git-scm.com/download/win", ...)
+install.git(URL = "http://git-scm.com/download/win", version = 64, ...)
 }
 \arguments{
-\item{page_with_download_url}{the URL of the git download page.}
+\item{URL}{the URL of the git download page.}
+
+\item{version}{numeric - either 32 or 64 (default)}
 
 \item{...}{extra parameters to pass to \link{install.URL}}
 }
