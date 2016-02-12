@@ -1,6 +1,11 @@
 TODO 
 ---------------------------
 
+R 3.2.3
+(Windows only) Function setInternet2() has no effect and will be removed in due course. The choice between methods "internal" and "wininet" is now made by the method arguments of url() and download.file() and their defaults can be set via options. The out-of-the-box default remains "wininet" (as it has been since R 3.2.2).
+
+
+
 UPDATED FUNCTIONS:
    * Add "stop()" : The package relies on the standard file system, such as:
 D:\R\R-3.1.0
