@@ -1,3 +1,10 @@
+installr 0.17.2 (2016-02-12)
+---------------------------
+
+UPDATED FUNCTIONS:
+   * updateR: to_checkMD5sums - now set to FALSE by default (it keeps throwing errors...)
+
+
 installr 0.17.1 (2015-11-08)
 ---------------------------
 

@@ -692,7 +692,8 @@ copy.packages.between.libraries <- function(from, to, ask =FALSE,keep_old = TRUE
 updateR <- function(fast = FALSE, 
                     browse_news, install_R, copy_packages, copy_Rprofile.site,
                     keep_old_packages,  update_packages, start_new_R, quit_R,  print_R_versions=TRUE, GUI = TRUE, 
-                    to_checkMD5sums = TRUE, keep_install_file = FALSE, download_dir = tempdir(), silent = FALSE, 
+                    to_checkMD5sums = FALSE, keep_install_file = FALSE, download_dir = tempdir(),
+                    silent = FALSE, 
                     setInternet2 = TRUE, ...) {
    # this function checks if we have the latest version of R
    # IF not - it notifies the user - and leaves.
@@ -710,7 +711,7 @@ updateR <- function(fast = FALSE,
       quit_R <- FALSE
       print_R_versions  <-  TRUE
       GUI  <- FALSE
-      to_checkMD5sums  <-  TRUE
+      to_checkMD5sums  <-  FALSE
       keep_install_file  <-  TRUE
       download_dir  <-  "."
       silent  <-  FALSE
