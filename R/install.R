@@ -158,7 +158,7 @@ install.URL <- function(exe_URL, keep_install_file = FALSE, wait = TRUE, downloa
    # input: a url of an .exe file to install
    # output: it runs the .exe file (for installing something)   
    exe_filename <- file.path(download_dir, file.name.from.url(exe_URL))   # the name of the zip file MUST be as it was downloaded...   
-   tryCatch(download.file(exe_URL, destfile=exe_filename, mode = 'wb'), 
+   tryCatch(curl::curl_download(exe_URL, destfile=exe_filename, mode = 'wb'), 
             error = function(e) {
                cat("\nExplanation of the error: You didn't enter a valid .EXE URL. \nThis is likely to have happened because there was a change in the software download page, and the function you just ran no longer works. \n\n This is often caused by a change in the URL of the installer file in the download page of the software (making our function unable to know what to download). \n\n Please e-mail: tal.galili@gmail.com and let me know this function needs updating/fixing - thanks!\n")
                return(invisible(FALSE))
@@ -631,13 +631,21 @@ install.npptor <- function(URL="http://sourceforge.net/projects/npptor/files/npp
    # /npptor installer/NppToR-2.6.2.exe
    # http://sourceforge.net/projects/npptor/files/npptor%20installer/NppToR-2.6.2.exe/
    # http://sourceforge.net/projects/npptor/files/npptor%20installer/NppToR-[0-9.]+.exe
-   pat <- "http://sourceforge.net/projects/npptor/files/npptor%20installer/NppToR-[0-9.]+.exe"
-   target_line <- grep(pat, page, value = TRUE); 
-   m <- regexpr(pat, target_line); 
-   URL      <- regmatches(target_line, m)[1] # (The http still needs to be prepended.
+   # pat <- "http://sourceforge.net/projects/npptor/files/npptor%20installer/NppToR-[0-9.]+.exe"
    
-   # install.
-   install.URL(URL,...)   
+   # http://downloads.sourceforge.net/project/npptor/npptor%20installer/NppToR-2.6.4.exe
+   
+   pat <- "NppToR-[0-9.]+.exe" # I assume the first option on the page is the most up-to-date
+   filename <- na.omit(stringr::str_extract(page, pat))[1]
+   URL      <- paste0("http://downloads.sourceforge.net/project/npptor/npptor%20installer/",
+                      filename)
+   
+   # seems to fail...
+   install.URL(URL,...)
+   
+   # download.file("http://downloads.sourceforge.net/project/npptor/npptor%20installer/NppToR-2.7.0.exe",
+   #             destfile="c:\\temp.exe", mode = 'wb')
+   
 }
 
 

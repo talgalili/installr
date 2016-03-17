@@ -1,3 +1,18 @@
+installr 0.17.3 (2016-03-17)
+---------------------------
+
+OTHER NOTES:
+   * Added stringr and curl as imports to the package (so things would be easier to maintain)
+   
+UPDATED FUNCTIONS:
+   * install.URL now uses curl::curl_download instead of download.file (this deals with issues in sourceforge)
+   
+BUG FIXES:
+   * install.npptor - works again
+   
+
+
+
 installr 0.17.2 (2016-02-12)
 ---------------------------
 
