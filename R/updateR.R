@@ -172,12 +172,14 @@ ask.user.yn.question <- function(question, GUI = TRUE, add_lines_before = TRUE) 
 check.for.updates.R <- function(notify_user = TRUE, 
                                 GUI = TRUE, 
                                 page_with_download_url = "http://cran.rstudio.com/bin/windows/base/",
-                                pat = "R-[0-9.]+-win") {
+                                pat = "R-[0-9.]+.+-win\\.exe") {
+   # stringr::str_extract("R-3.2.4-win.exe", "R-[0-9.]+.+-win\\.exe")
+   # stringr::str_extract("R-3.2.4revised-win.exe", "R-[0-9.]+.+-win\\.exe")
+   
    page   <- readLines(page_with_download_url, warn = FALSE)    
-   target_line <- grep(pat, page, value = TRUE); 
-   m <- regexpr(pat, target_line); 
-   latest_R_version  <- regmatches(target_line, m) 
-   latest_R_version  <- gsub(pattern="R-|-win" ,"", latest_R_version) # remove junk text
+   filename <- na.omit(stringr::str_extract(page, pat))[1]
+
+   latest_R_version  <- stringr::str_extract(filename, "[0-9.]+")
    
    pat <- "Last change: [0-9.]+-[0-9.]+-[0-9.]+"; 
    target_line <- grep(pat, page, value = TRUE); 

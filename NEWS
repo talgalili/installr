@@ -1,4 +1,4 @@
-installr 0.17.3 (2016-03-17)
+installr 0.17.3 (2016-03-18)
 ---------------------------
 
 OTHER NOTES:
@@ -9,7 +9,7 @@ UPDATED FUNCTIONS:
    
 BUG FIXES:
    * install.npptor - works again
-   
+   * updateR - can now deal with a file name such as "R-3.2.4revised-win.exe"
 
 
 
