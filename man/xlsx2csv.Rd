@@ -20,6 +20,9 @@ if xlsx has a full path, it will override the path parameter.}
 
 \item{...}{ignored.}
 }
+\description{
+Converts xls(x) to csv using VB script. Not that important now that we have the readxl package.
+}
 \examples{
 \dontrun{
 

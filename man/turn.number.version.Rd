@@ -12,6 +12,9 @@ turn.number.version(number_to_dots)
 \value{
 A vector of "numbers" representing the versions (for example: 2015002).  The names of the vector is the original version character.
 }
+\description{
+Version Num to char
+}
 \examples{
 \dontrun{
 turn.number.version(turn.version.to.number(c("2.15.2", "2.15.2")))

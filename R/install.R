@@ -1458,6 +1458,8 @@ fetch_tag_from_Rd <- function(package, tag = "\\author",...){
 
 #' @title Access (and clean) author elements from R's Rd file
 #' @export
+#' @description 
+#' Find authors.
 #' @details
 #' List authors for a package from its "author" tag elements from its Rd files.
 #' The function also seperate lists of authors, and cleans the output a bit 

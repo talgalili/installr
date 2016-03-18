@@ -212,8 +212,10 @@ freegeoip <- function(ip = myip(), format = ifelse(length(ip)==1,'list','datafra
 
 
 
-#' @title Retreiving your public IP via http://api.exip.org/
+#' @title What is my IP
 #' @export
+#' @description 
+#' Retrieving your public IP via http://api.exip.org/
 #' @param ... not in use
 #' @return your current ip.
 #' @source  \url{http://www.exip.org/about.php}, \url{http://api.exip.org/?call=ip},  \url{http://stackoverflow.com/questions/3097589/getting-my-public-ip-via-api}

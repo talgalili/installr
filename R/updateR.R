@@ -356,6 +356,8 @@ install.Rdevel <- function(exe_URL = "http://cran.rstudio.com/bin/windows/base/R
 
 
 #' @title Turns version to number (for 1 value only)
+#' @description 
+#' Turns version to number (for 1 value only)
 #' @param version_with_dots A character value - of the version of R (for example 2.15.2)
 #' @return A "number" representation of the version (for example: 2015002)
 #' @seealso \link{turn.version.to.number}
@@ -381,7 +383,10 @@ turn.version.to.number1 <- function(version_with_dots) {
 
 
 ### @aliases turn.version.to.number1
+
 #' @title Turns version to number (for a vector of values)
+#' @description 
+#' Turns version to number (for a vector of values)
 #' @param version_with_dots - A character vector - of the version of R (for example 2.15.2)
 #' @return A vector of "numbers" representing the versions (for example: 2015002).  The names of the vector is the original version character.
 #' @examples
@@ -400,7 +405,10 @@ turn.version.to.number <- function(version_with_dots) {
 # turn.version.to.number("2.15.11") # ---> 2015011
 
 # number_to_dots = 2015011
+
 #' @title Turns a vector of version-numbers back to version-character
+#' @description 
+#' Version Num to char
 #' @param number_to_dots A numeric vector - of the number-version of R 
 #' @return A vector of "numbers" representing the versions (for example: 2015002).  The names of the vector is the original version character.
 #' @examples

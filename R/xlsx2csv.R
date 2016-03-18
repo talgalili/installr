@@ -21,6 +21,8 @@
 
 #' @title Converts xls(x) to csv using VB
 #' @export
+#' @description 
+#' Converts xls(x) to csv using VB script. Not that important now that we have the readxl package.
 #' @param xlsx the (character) name of the xlsx (or xls) file to convert.
 #' if xlsx has a full path, it will override the path parameter.
 #' @param csv the (character) name of the csv file to convert to (default will be the name of the xlsx file)

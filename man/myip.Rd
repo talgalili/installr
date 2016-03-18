@@ -2,7 +2,7 @@
 % Please edit documentation in R/geo_functions.R
 \name{myip}
 \alias{myip}
-\title{Retreiving your public IP via http://api.exip.org/}
+\title{What is my IP}
 \source{
 \url{http://www.exip.org/about.php}, \url{http://api.exip.org/?call=ip},  \url{http://stackoverflow.com/questions/3097589/getting-my-public-ip-via-api}
 }
@@ -14,6 +14,9 @@ myip(...)
 }
 \value{
 your current ip.
+}
+\description{
+Retrieving your public IP via http://api.exip.org/
 }
 \examples{
 \dontrun{

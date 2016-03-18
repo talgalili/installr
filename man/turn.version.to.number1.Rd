@@ -12,6 +12,9 @@ turn.version.to.number1(version_with_dots)
 \value{
 A "number" representation of the version (for example: 2015002)
 }
+\description{
+Turns version to number (for 1 value only)
+}
 \examples{
 \dontrun{
 turn.version.to.number1("2.15.2")

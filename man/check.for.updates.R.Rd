@@ -6,7 +6,7 @@
 \usage{
 check.for.updates.R(notify_user = TRUE, GUI = TRUE,
   page_with_download_url = "http://cran.rstudio.com/bin/windows/base/",
-  pat = "R-[0-9.]+-win")
+  pat = "R-[0-9.]+.+-win\\\\.exe")
 }
 \arguments{
 \item{notify_user}{if to print to you (the user) what is the latest version and what version you are currently using.}

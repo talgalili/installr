@@ -262,6 +262,8 @@ add_remove_installr_from_startup_menu <- function(...) {
 
 #' @title Have the installr package load on startup
 #' @export
+#' @description 
+#' Load installr on startup.
 #' @param ... not used. (but good for future backward compatibility)
 #' @return invisible(NULL)
 #' @references
@@ -282,8 +284,10 @@ load_installr_on_startup <- function(...) {
 }
 
 
-#' @title Have the installr package NOT load on startup
+#' @title Remove installr from startup
 #' @export
+#' @description 
+#' Have the installr package NOT load on startup
 #' @param ... not used. (but good for future backward compatibility)
 #' @return invisible(NULL)
 #' @references

@@ -2,7 +2,7 @@
 % Please edit documentation in R/startup.R
 \name{rm_installr_from_startup}
 \alias{rm_installr_from_startup}
-\title{Have the installr package NOT load on startup}
+\title{Remove installr from startup}
 \usage{
 rm_installr_from_startup(...)
 }
@@ -11,6 +11,9 @@ rm_installr_from_startup(...)
 }
 \value{
 invisible(NULL)
+}
+\description{
+Have the installr package NOT load on startup
 }
 \examples{
 \dontrun{

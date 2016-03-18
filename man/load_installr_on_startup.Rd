@@ -12,6 +12,9 @@ load_installr_on_startup(...)
 \value{
 invisible(NULL)
 }
+\description{
+Load installr on startup.
+}
 \examples{
 \dontrun{
 load_installr_on_startup()

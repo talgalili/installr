@@ -26,6 +26,9 @@ If not - a unique list is produced.}
 a character vector with a package authors (as extracted from 
 the author tag in the .Rd files)
 }
+\description{
+Find authors.
+}
 \details{
 List authors for a package from its "author" tag elements from its Rd files.
 The function also seperate lists of authors, and cleans the output a bit 
