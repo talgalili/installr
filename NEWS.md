@@ -1,3 +1,33 @@
+installr 0.17.3 (2016-03-18)
+---------------------------
+
+OTHER NOTES:
+   * Added stringr and curl as imports to the package (so things would be easier to maintain)
+   
+UPDATED FUNCTIONS:
+   * install.URL now uses curl::curl_download instead of download.file (this deals with issues in sourceforge)
+   
+BUG FIXES:
+   * install.npptor - works again
+   * updateR - can now deal with a file name such as "R-3.2.4revised-win.exe"
+
+
+
+installr 0.17.2 (2016-02-12)
+---------------------------
+
+UPDATED FUNCTIONS:
+   * updateR: to_checkMD5sums - now set to FALSE by default (it keeps throwing errors...)
+
+
+installr 0.17.1 (2015-11-08)
+---------------------------
+
+BUG FIXES:
+   * install.git() - works again
+
+
+
 installr 0.17.0 (2015-09-11)
 ---------------------------
 

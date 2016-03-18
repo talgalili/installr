@@ -1,7 +1,157 @@
-* 2015-09-11(Tal Galili) 0.17.0 bump |a91aaee| 
-|  DESCRIPTION | 4 ++--
-|  NEWS        | 2 +-
-|  2 files changed, 3 insertions(+), 3 deletions(-)
+* 2016-03-18(Tal Galili) Fix .Rd to pass CRAN warning |ba58998| 
+|  R/geo_functions.R               | 4 +++-
+|  R/install.R                     | 2 ++
+|  R/startup.R                     | 6 +++++-
+|  R/updateR.R                     | 8 ++++++++
+|  R/xlsx2csv.R                    | 2 ++
+|  man/check.for.updates.R.Rd      | 2 +-
+|  man/load_installr_on_startup.Rd | 3 +++
+|  man/myip.Rd                     | 5 ++++-
+|  man/package_authors.Rd          | 3 +++
+|  man/rm_installr_from_startup.Rd | 5 ++++-
+|  man/turn.number.version.Rd      | 3 +++
+|  man/turn.version.to.number.Rd   | 3 +++
+|  man/turn.version.to.number1.Rd  | 3 +++
+|  man/xlsx2csv.Rd                 | 3 +++
+|  14 files changed, 47 insertions(+), 5 deletions(-)
+
+* 2016-03-18(Tal Galili) updateR - can now deal with a file name such as "R-3.2.4revised-win.exe" ( fix #49 ) |ed2158a| 
+|  DESCRIPTION |  2 +-
+|  NEWS        |  4 ++--
+|  R/updateR.R | 12 +++++++-----
+|  3 files changed, 10 insertions(+), 8 deletions(-)
+
+* 2016-03-17(Tal Galili) OTHER NOTES:    * Added stringr and curl as imports to the package (so things would be easier to maintain) |a616a78| 
+|  DESCRIPTION |  7 +++++--
+|  NEWS        | 15 +++++++++++++++
+|  R/install.R | 22 +++++++++++++++-------
+|  3 files changed, 35 insertions(+), 9 deletions(-)
+
+* 2016-02-12(Tal Galili) roxygen update |c5d9dd9| 
+|  NAMESPACE                                    |  2 +-
+|  TODO                                         |  5 +++++
+|  man/R_version_in_a_folder.Rd                 |  4 ++--
+|  man/add.installr.GUI.Rd                      |  6 +++---
+|  man/add_load_installr_on_startup_menu.Rd     |  2 +-
+|  man/add_remove_installr_from_startup_menu.Rd |  2 +-
+|  man/add_to_.First_in_Rprofile.site.Rd        |  2 +-
+|  man/ask.user.for.a.row.Rd                    |  6 +++---
+|  man/ask.user.yn.question.Rd                  | 14 +++++++-------
+|  man/barplot_package_users_per_day.Rd         |  6 +++---
+|  man/browse.latest.R.NEWS.Rd                  |  4 ++--
+|  man/check.for.updates.R.Rd                   |  8 ++++----
+|  man/check.integer.Rd                         |  2 +-
+|  man/checkMD5sums2.Rd                         |  2 +-
+|  man/copy.packages.between.libraries.Rd       | 12 ++++++------
+|  man/cranometer.Rd                            | 16 ++++++++--------
+|  man/create.global.library.Rd                 |  2 +-
+|  man/download_RStudio_CRAN_data.Rd            |  8 ++++----
+|  man/fetch_tag_from_Rd.Rd                     |  6 +++---
+|  man/file.name.from.url.Rd                    |  2 +-
+|  man/format_RStudio_CRAN_data.Rd              |  8 ++++----
+|  man/freegeoip.Rd                             |  4 ++--
+|  man/get.installed.R.folders.Rd               | 12 ++++++------
+|  man/get_Rscript_PID.Rd                       | 10 +++++-----
+|  man/get_pid.Rd                               |  4 ++--
+|  man/get_tasklist.Rd                          |  8 ++++----
+|  man/install.7zip.Rd                          |  2 +-
+|  man/install.CMake.Rd                         | 11 ++++++-----
+|  man/install.Cygwin.Rd                        |  2 +-
+|  man/install.FFmpeg.Rd                        |  4 ++--
+|  man/install.GitHub.Rd                        |  2 +-
+|  man/install.GraphicsMagick.Rd                |  2 +-
+|  man/install.ImageMagick.Rd                   |  2 +-
+|  man/install.LaTeX2RTF.Rd                     |  2 +-
+|  man/install.LyX.Rd                           |  4 ++--
+|  man/install.MikTeX.Rd                        |  2 +-
+|  man/install.R.Rd                             |  6 +++---
+|  man/install.RStudio.Rd                       |  2 +-
+|  man/install.Rdevel.Rd                        |  8 ++++----
+|  man/install.Rtools.Rd                        |  8 ++++----
+|  man/install.SWFTools.Rd                      |  4 ++--
+|  man/install.Texmaker.Rd                      |  2 +-
+|  man/install.URL.Rd                           |  2 +-
+|  man/install.git.Rd                           |  2 +-
+|  man/install.notepadpp.Rd                     |  2 +-
+|  man/install.npptor.Rd                        |  2 +-
+|  man/install.packages.zip.Rd                  |  2 +-
+|  man/install.pandoc.Rd                        | 10 +++++-----
+|  man/installr-package.Rd                      |  2 +-
+|  man/installr.Rd                              |  6 +++---
+|  man/is.RStudio.Rd                            |  4 ++--
+|  man/is.Rgui.Rd                               |  4 ++--
+|  man/is.empty.Rd                              | 12 +++++++-----
+|  man/is.exe.installed.Rd                      |  4 ++--
+|  man/is.windows.Rd                            |  2 +-
+|  man/is_in_.First_in_Rprofile.site.Rd         |  2 +-
+|  man/kill_all_Rscript_s.Rd                    | 10 +++++-----
+|  man/kill_pid.Rd                              |  8 ++++----
+|  man/kill_process.Rd                          |  8 ++++----
+|  man/lineplot_package_downloads.Rd            |  8 ++++----
+|  man/load_installr_on_startup.Rd              |  5 +----
+|  man/most_downloaded_packages.Rd              |  6 +++---
+|  man/myip.Rd                                  |  5 +----
+|  man/os.hibernate.Rd                          |  8 ++++----
+|  man/os.lock.Rd                               |  6 +++---
+|  man/os.manage.Rd                             | 14 +++++++-------
+|  man/os.restart.Rd                            |  4 ++--
+|  man/os.shutdown.Rd                           |  6 +++---
+|  man/os.sleep.Rd                              |  4 ++--
+|  man/package_authors.Rd                       | 11 ++++-------
+|  man/pkgDNLs_worldmapcolor.Rd                 |  6 +++---
+|  man/read_RStudio_CRAN_data.Rd                |  6 +++---
+|  man/remove.installr.GUI.Rd                   |  2 +-
+|  man/remove_from_.First_in_Rprofile.site.Rd   |  2 +-
+|  man/rename_r_to_R.Rd                         | 10 +++++-----
+|  man/require2.Rd                              |  2 +-
+|  man/restart_RGui.Rd                          |  2 +-
+|  man/rm_installr_from_startup.Rd              |  5 +----
+|  man/source.https.Rd                          |  6 +++---
+|  man/system.PATH.Rd                           |  4 ++--
+|  man/turn.number.version.Rd                   |  5 +----
+|  man/turn.version.to.number.Rd                |  5 +----
+|  man/turn.version.to.number1.Rd               |  5 +----
+|  man/uninstall.R.Rd                           |  6 +++---
+|  man/uninstall.packages.Rd                    |  6 +++---
+|  man/up_folder.Rd                             |  2 +-
+|  man/xlsx2csv.Rd                              |  5 +----
+|  87 files changed, 221 insertions(+), 237 deletions(-)
+
+* 2016-02-12(Tal Galili) updateR: to_checkMD5sums - now set to FALSE by default (it keeps throwing errors...) |65adee8| 
+|  DESCRIPTION    |  7 ++++---
+|  NEWS           |  7 +++++++
+|  R/updateR.R    |  5 +++--
+|  man/updateR.Rd | 12 ++++++------
+|  4 files changed, 20 insertions(+), 11 deletions(-)
+
+* 2015-11-08(Tal Galili) fix install.git() |d595a34| 
+|  DESCRIPTION        |  4 ++--
+|  NEWS               |  8 ++++++++
+|  R/install.R        | 12 +++++++-----
+|  man/install.git.Rd |  6 ++++--
+|  4 files changed, 21 insertions(+), 9 deletions(-)
+
+* 2015-10-26(Tal Galili) fix typo |853020e| 
+|  README.md | 5 +++--
+|  1 file changed, 3 insertions(+), 2 deletions(-)
+
+* 2015-10-07(Tal Galili) CRAN downloads badges! |cd14273| 
+|  README.md | 2 ++
+|  1 file changed, 2 insertions(+)
+
+* 2015-09-11(Tal Galili) importFrom various base package (to fix CRAN check NOTE) |5947ea5| 
+|  NAMESPACE               |  3 +++
+|  R/installr-package.R    | 31 +++++++++++++++++++++++++++++++
+|  man/installr-package.Rd | 12 ++++++++++++
+|  3 files changed, 46 insertions(+)
+
+* 2015-09-11(Tal Galili) 0.17.0 bump |4e799f7| 
+|  ChangeLog   | 344 ++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+|  DESCRIPTION |   4 +-
+|  NEWS        |   2 +-
+|  NEWS.md     |  22 +++-
+|  R/zzz.R     |   8 +-
+|  5 files changed, 372 insertions(+), 8 deletions(-)
 
 * 2015-09-11(Tal Galili) update examples a bit |1e6ecd3| 
 |  R/updateR.R    | 12 ++++++------
