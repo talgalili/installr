@@ -171,7 +171,7 @@ ask.user.yn.question <- function(question, GUI = TRUE, add_lines_before = TRUE) 
 #' }
 check.for.updates.R <- function(notify_user = TRUE, 
                                 GUI = TRUE, 
-                                page_with_download_url = "http://cran.rstudio.com/bin/windows/base/",
+                                page_with_download_url = "https://cran.rstudio.com/bin/windows/base/",
                                 pat = "R-[0-9.]+.+-win\\.exe") {
    # stringr::str_extract("R-3.2.4-win.exe", "R-[0-9.]+.+-win\\.exe")
    # stringr::str_extract("R-3.2.4revised-win.exe", "R-[0-9.]+.+-win\\.exe")
@@ -225,7 +225,7 @@ check.for.updates.R <- function(notify_user = TRUE,
 
 #' @title See the NEWS file for the latest R release
 #' @export
-#' @description Sends the user the the NEWS html file on "http://cran.rstudio.com/bin/windows/base/NEWS.R-3.0.0.html" (URL changes with each version)
+#' @description Sends the user the the NEWS html file on "https://cran.rstudio.com/bin/windows/base/NEWS.R-3.0.0.html" (URL changes with each version)
 #' @param URL the URL of the page from which R can be downloaded.
 #' @param ... for future use
 #' @return invisible(NULL)
@@ -234,7 +234,7 @@ check.for.updates.R <- function(notify_user = TRUE,
 #' browse.latest.R.NEWS() 
 #' }
 browse.latest.R.NEWS <- function(
-   URL = "http://cran.rstudio.com/bin/windows/base/",...) {
+   URL = "https://cran.rstudio.com/bin/windows/base/",...) {
    page_with_download_url <- URL
    page   <- readLines(page_with_download_url, warn = FALSE)
    pat <- "NEWS.R-[0-9.]+.html"# this is the structure of the link...
@@ -267,12 +267,12 @@ browse.latest.R.NEWS <- function(
 #' @param ... extra parameters to pass to \link{install.URL}
 #' @return TRUE/FALSE - was the installation of R successful or not.
 #' @seealso \link{uninstall.R}, \link{install.Rdevel}, \link{updateR}, \link{system}
-#' @references \url{http://cran.rstudio.com/bin/windows/base/}
+#' @references \url{https://cran.rstudio.com/bin/windows/base/}
 #' @examples
 #' \dontrun{
 #' install.R() 
 #' }
-install.R <- function(page_with_download_url = "http://cran.rstudio.com/bin/windows/base/", 
+install.R <- function(page_with_download_url = "https://cran.rstudio.com/bin/windows/base/", 
                       pat = "R-[0-9.]+-win.exe",
                       to_checkMD5sums = TRUE,
                       keep_install_file = FALSE,
@@ -340,12 +340,12 @@ install.R <- function(page_with_download_url = "http://cran.rstudio.com/bin/wind
 #' @param ... extra parameters to pass to \link{install.URL}
 #' @return TRUE/FALSE - was the installation of R successful or not.
 #' @seealso \link{install.R}, \link{updateR}
-#' @references \url{http://cran.rstudio.com/bin/windows/base/rdevel.html}
+#' @references \url{https://cran.rstudio.com/bin/windows/base/rdevel.html}
 #' @examples
 #' \dontrun{
 #' install.Rdevel() 
 #' }
-install.Rdevel <- function(exe_URL = "http://cran.rstudio.com/bin/windows/base/R-devel-win.exe", ...) {
+install.Rdevel <- function(exe_URL = "https://cran.rstudio.com/bin/windows/base/R-devel-win.exe", ...) {
    install.URL(exe_URL)   
 }
 
@@ -808,7 +808,7 @@ your packages to the new R installation.\n")
    
    if(update_packages & copy_packages) { # we should not update packages if we didn't copy them first...
       new_Rscript_path <- file.path(new_R_path, "bin/Rscript.exe") # make sure to run the newer R to update the packages.
-      update_packages_expression <- paste(new_Rscript_path, ' -e " setInternet2(TRUE); options(repos=structure(c(CRAN=\'http://cran.rstudio.com/\'))); update.packages(checkBuilt=TRUE, ask=FALSE) "')
+      update_packages_expression <- paste(new_Rscript_path, ' -e " setInternet2(TRUE); options(repos=structure(c(CRAN=\'https://cran.rstudio.com/\'))); update.packages(checkBuilt=TRUE, ask=FALSE) "')
       #    update_packages_expression <- paste(new_Rscript_path, ' -e "date()"')
       #    update_packages_expression <- paste(new_Rscript_path, ' -e "print(R.version)"')
       system(update_packages_expression, wait = TRUE, intern = TRUE, show.output.on.console = TRUE)

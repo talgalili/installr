@@ -23,7 +23,7 @@ This function is a first template for creating a barplot of the number of downlo
 This function is based on some other functions, have a look at the example for more details.
 }
 \details{
-RStudio maintains its own CRAN mirror, \url{http://cran.rstudio.com} and offers its log files.
+RStudio maintains its own CRAN mirror, \url{https://cran.rstudio.com} and offers its log files.
 }
 \examples{
 \dontrun{

@@ -1,3 +1,10 @@
+installr 0.17.4 (2016-03-19)
+---------------------------
+BUG FIXES:
+   * URL: http://cran.rstudio.com (moved to https://cran.rstudio.com/)
+
+
+
 installr 0.17.3 (2016-03-18)
 ---------------------------
 

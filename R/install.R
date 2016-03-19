@@ -1111,7 +1111,7 @@ install.ffmpeg <- function(...) install.FFmpeg(...)
 #' @description Returns the search path for executable files based on %PATH%
 #' @return A character vector with the search path for executable files
 #' @references
-#' \url{http://www.microsoft.com/resources/documentation/windows/xp/all/proddocs/en-us/ntcmds_shelloverview.mspx?mfr=true}
+#'  http://www.microsoft.com/resources/documentation/windows/xp/all/proddocs/en-us/ntcmds_shelloverview.mspx?mfr=true
 #' @examples
 #' \dontrun{
 #' system.PATH() # 

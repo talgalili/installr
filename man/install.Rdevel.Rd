@@ -5,7 +5,7 @@
 \title{Downloads and installs the latest Rdevel version}
 \usage{
 
-  install.Rdevel(exe_URL = "http://cran.rstudio.com/bin/windows/base/R-devel-win.exe",
+  install.Rdevel(exe_URL = "https://cran.rstudio.com/bin/windows/base/R-devel-win.exe",
   ...)
 }
 \arguments{
@@ -31,7 +31,7 @@ install.Rdevel()
 }
 }
 \references{
-\url{http://cran.rstudio.com/bin/windows/base/rdevel.html}
+\url{https://cran.rstudio.com/bin/windows/base/rdevel.html}
 }
 \seealso{
 \link{install.R}, \link{updateR}

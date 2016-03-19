@@ -32,7 +32,7 @@ This function relies on data.table to run faster.
 WARNING: this function can be quite slow...
 }
 \details{
-RStudio maintains its own CRAN mirror, \url{http://cran.rstudio.com} and offers its log files.
+RStudio maintains its own CRAN mirror, \url{https://cran.rstudio.com} and offers its log files.
 }
 \examples{
 \dontrun{

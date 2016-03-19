@@ -5,7 +5,7 @@
 \title{Checks if there is a newer version of R}
 \usage{
 check.for.updates.R(notify_user = TRUE, GUI = TRUE,
-  page_with_download_url = "http://cran.rstudio.com/bin/windows/base/",
+  page_with_download_url = "https://cran.rstudio.com/bin/windows/base/",
   pat = "R-[0-9.]+.+-win\\\\.exe")
 }
 \arguments{
