@@ -44,7 +44,7 @@ install.R()
 }
 }
 \references{
-\url{https://cran.rstudio.com/bin/windows/base/}
+\url{https://cran.r-project.org/bin/windows/base/}
 }
 \seealso{
 \link{uninstall.R}, \link{install.Rdevel}, \link{updateR}, \link{system}

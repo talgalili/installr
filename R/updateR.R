@@ -267,7 +267,7 @@ browse.latest.R.NEWS <- function(
 #' @param ... extra parameters to pass to \link{install.URL}
 #' @return TRUE/FALSE - was the installation of R successful or not.
 #' @seealso \link{uninstall.R}, \link{install.Rdevel}, \link{updateR}, \link{system}
-#' @references \url{https://cran.rstudio.com/bin/windows/base/}
+#' @references \url{https://cran.r-project.org/bin/windows/base/}
 #' @examples
 #' \dontrun{
 #' install.R() 
@@ -340,7 +340,7 @@ install.R <- function(page_with_download_url = "https://cran.rstudio.com/bin/win
 #' @param ... extra parameters to pass to \link{install.URL}
 #' @return TRUE/FALSE - was the installation of R successful or not.
 #' @seealso \link{install.R}, \link{updateR}
-#' @references \url{https://cran.rstudio.com/bin/windows/base/rdevel.html}
+#' @references \url{https://cran.r-project.org/bin/windows/base/rdevel.html}
 #' @examples
 #' \dontrun{
 #' install.Rdevel() 

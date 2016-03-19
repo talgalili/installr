@@ -31,7 +31,7 @@ install.Rdevel()
 }
 }
 \references{
-\url{https://cran.rstudio.com/bin/windows/base/rdevel.html}
+\url{https://cran.r-project.org/bin/windows/base/rdevel.html}
 }
 \seealso{
 \link{install.R}, \link{updateR}
