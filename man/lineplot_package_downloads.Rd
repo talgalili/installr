@@ -27,7 +27,7 @@ This function gets a vector of package names, and returns a line plot of
 number of downloads for these packages per week.
 }
 \details{
-RStudio maintains its own CRAN mirror, \url{https://cran.rstudio.com} and offers its log files.
+RStudio maintains its own CRAN mirror, \url{https://cran.rstudio.com/} and offers its log files.
 }
 \examples{
 \dontrun{

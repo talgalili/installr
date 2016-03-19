@@ -34,7 +34,7 @@ Returns the value of log_folder.
 This function downlaod these files based on the code from the downlaod page (\url{http://cran-logs.rstudio.com/}) into a temporary folder.
 }
 \details{
-RStudio maintains its own CRAN mirror, \url{https://cran.rstudio.com} and offers its log files.
+RStudio maintains its own CRAN mirror, \url{https://cran.rstudio.com/} and offers its log files.
 }
 \examples{
 \dontrun{
