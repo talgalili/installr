@@ -25,7 +25,7 @@ a ggplot object
 Plots a worldmap colored by the number of users installation for a given package
 }
 \details{
-RStudio maintains its own CRAN mirror, \url{https://cran.rstudio.com/} and offers its log files.
+RStudio maintains its own CRAN mirror, https://cran.rstudio.com/ and offers its log files.
 }
 \examples{
 \dontrun{

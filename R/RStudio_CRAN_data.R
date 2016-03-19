@@ -45,7 +45,7 @@
 #' 
 #' This function downlaod these files based on the code from the downlaod page (\url{http://cran-logs.rstudio.com/}) into a temporary folder.
 #' @details
-#' RStudio maintains its own CRAN mirror, \url{https://cran.rstudio.com/} and offers its log files.
+#' RStudio maintains its own CRAN mirror, https://cran.rstudio.com/ and offers its log files.
 #' @param START the defaults is 5 days before today. A character string of the START date for files to be downloaded. The date format is "YYYY-MM-DD".
 #' @param END the defaults is today. A character string of the END date for files to be downloaded. 
 #' The date format is "YYYY-MM-DD".
@@ -132,7 +132,7 @@ download_RStudio_CRAN_data <- function(START = as.Date(Sys.time())-5,
 #' This function relies on data.table to run faster.
 #' WARNING: this function can be quite slow...
 #' @details
-#' RStudio maintains its own CRAN mirror, \url{https://cran.rstudio.com/} and offers its log files.
+#' RStudio maintains its own CRAN mirror, https://cran.rstudio.com/ and offers its log files.
 #' @param log_folder the folder which contains the RStudio CRAN log files that were downloaded to. Default is the temporary folder picked by \link{tempdir}.
 #' @param use_data_table default is TRUE. A switch for wether or not to use the data.table package
 #' in order to merge the log files using rbindlist. This function is MUCH faster then the alternative.
@@ -206,7 +206,7 @@ read_RStudio_CRAN_data <- function(log_folder = tempdir(), use_data_table = TRUE
 #' classes for the columns date, package, country. It also adds the columns weekday and week. Lastly, it also sets a key.
 #' 
 #' @details
-#' RStudio maintains its own CRAN mirror, \url{https://cran.rstudio.com/} and offers its log files.
+#' RStudio maintains its own CRAN mirror, https://cran.rstudio.com/ and offers its log files.
 #' @param dataset the RStudio CRAN mirror data object
 #' @param ... not in use.
 #' @author Felix Schonbrodt, Tal Galili
@@ -267,7 +267,7 @@ format_RStudio_CRAN_data <- function(dataset, ...) {
 #' This function is a first template for creating a barplot of the number of downloads a package had in a time period.
 #' This function is based on some other functions, have a look at the example for more details.
 #' @details
-#' RStudio maintains its own CRAN mirror, \url{https://cran.rstudio.com/} and offers its log files.
+#' RStudio maintains its own CRAN mirror, https://cran.rstudio.com/ and offers its log files.
 #' @param pkg_name a string of the package we are interested in checking.
 #' @param dataset a dataset output from running \link{read_RStudio_CRAN_data}.
 #' @param remove_dups default is TRUE. Should the duplicate user ids (based on their ips) be removed.  If TRUE, then the plot is the number of unique users who have downloaded our package everyday.
@@ -322,7 +322,7 @@ barplot_package_users_per_day <- function(pkg_name, dataset, remove_dups = TRUE,
 #' This function gets a vector of package names, and returns a line plot of 
 #' number of downloads for these packages per week.
 #' @details
-#' RStudio maintains its own CRAN mirror, \url{https://cran.rstudio.com/} and offers its log files.
+#' RStudio maintains its own CRAN mirror, https://cran.rstudio.com/ and offers its log files.
 #' @param pkg_names a character vector of packages we are interested in checking.
 #' @param dataset a dataset output from running \link{read_RStudio_CRAN_data}, after going through \link{format_RStudio_CRAN_data}.
 #' @param by_time by what time frame should packages be plotted? defaults to "date", but can also be "week"
@@ -401,7 +401,7 @@ lineplot_package_downloads <- function(pkg_names, dataset, by_time = c("date", "
 #' @description 
 #' Gives the top "x" most downloaded packages.
 #' @details
-#' RStudio maintains its own CRAN mirror, \url{https://cran.rstudio.com/} and offers its log files.
+#' RStudio maintains its own CRAN mirror, https://cran.rstudio.com/ and offers its log files.
 #' @param dataset a dataset output from running \link{read_RStudio_CRAN_data}, after going through \link{format_RStudio_CRAN_data}.
 #' @param n the number of top packages to show.
 #' @param ... not in use.
@@ -435,7 +435,7 @@ most_downloaded_packages <- function(dataset, n = 6L,...) {
 #' @description
 #' Plots a worldmap colored by the number of users installation for a given package
 #' @details
-#' RStudio maintains its own CRAN mirror, \url{https://cran.rstudio.com/} and offers its log files.
+#' RStudio maintains its own CRAN mirror, https://cran.rstudio.com/ and offers its log files.
 #' @param pkg_name a character string of the package we are interested in.
 #' @param dataset a dataset output from running \link{read_RStudio_CRAN_data}.
 #' @param remove_dups logical (default is TRUE). Should the duplicate user ids (based on their ips) be removed.

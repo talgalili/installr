@@ -22,7 +22,7 @@ This function makes sure the the RStudio CRAN mirror data object has correct
 classes for the columns date, package, country. It also adds the columns weekday and week. Lastly, it also sets a key.
 }
 \details{
-RStudio maintains its own CRAN mirror, \url{https://cran.rstudio.com/} and offers its log files.
+RStudio maintains its own CRAN mirror, https://cran.rstudio.com/ and offers its log files.
 }
 \examples{
 \dontrun{

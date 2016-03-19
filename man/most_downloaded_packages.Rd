@@ -23,7 +23,7 @@ a table of top packages by downloads (a numeric vector with packages as names)
 Gives the top "x" most downloaded packages.
 }
 \details{
-RStudio maintains its own CRAN mirror, \url{https://cran.rstudio.com/} and offers its log files.
+RStudio maintains its own CRAN mirror, https://cran.rstudio.com/ and offers its log files.
 }
 \examples{
 \dontrun{
