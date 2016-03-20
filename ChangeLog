@@ -1,3 +1,70 @@
+* 2016-03-20(Tal Galili) install.URL now uses download.file again, but gained an option download_fun for using curl::curl_download (for install.npptor) |f74aef0| 
+|  NEWS               |  4 ++++
+|  R/install.R        | 12 ++++++++----
+|  man/install.URL.Rd |  6 +++++-
+|  3 files changed, 17 insertions(+), 5 deletions(-)
+
+* 2016-03-20(Tal Galili) install.R() - can now deal with a file name such as "R-3.2.4revised-win.exe" ( Fix #50 ?) |cb17d1b| 
+|  DESCRIPTION      |  4 ++--
+|  NEWS             |  6 ++++++
+|  R/install.R      |  2 +-
+|  R/updateR.R      | 16 ++++++++--------
+|  man/install.R.Rd |  2 +-
+|  5 files changed, 18 insertions(+), 12 deletions(-)
+
+* 2016-03-19(Tal Galili) Fix "CRAN URL not in canonical form" (just remove URL tag from rstudio cran) |7048d7a| 
+|  R/RStudio_CRAN_data.R                | 14 +++++++-------
+|  man/barplot_package_users_per_day.Rd |  2 +-
+|  man/download_RStudio_CRAN_data.Rd    |  2 +-
+|  man/format_RStudio_CRAN_data.Rd      |  2 +-
+|  man/lineplot_package_downloads.Rd    |  2 +-
+|  man/most_downloaded_packages.Rd      |  2 +-
+|  man/pkgDNLs_worldmapcolor.Rd         |  2 +-
+|  man/read_RStudio_CRAN_data.Rd        |  2 +-
+|  8 files changed, 14 insertions(+), 14 deletions(-)
+
+* 2016-03-19(Tal Galili) https://cran.rstudio.com/bin to https://cran.r-project.org/bin |8d02089| 
+|  R/updateR.R           | 4 ++--
+|  man/install.R.Rd      | 2 +-
+|  man/install.Rdevel.Rd | 2 +-
+|  3 files changed, 4 insertions(+), 4 deletions(-)
+
+* 2016-03-19(Tal Galili) fix a missing "/" in \url{https://cran.rstudio.com} |4760be0| 
+|  R/RStudio_CRAN_data.R                | 14 +++++++-------
+|  man/barplot_package_users_per_day.Rd |  2 +-
+|  man/download_RStudio_CRAN_data.Rd    |  2 +-
+|  man/format_RStudio_CRAN_data.Rd      |  2 +-
+|  man/lineplot_package_downloads.Rd    |  2 +-
+|  man/most_downloaded_packages.Rd      |  2 +-
+|  man/pkgDNLs_worldmapcolor.Rd         |  2 +-
+|  man/read_RStudio_CRAN_data.Rd        |  2 +-
+|  8 files changed, 14 insertions(+), 14 deletions(-)
+
+* 2016-03-19(Tal Galili) URL: http://cran.rstudio.com (moved to https://cran.rstudio.com/) |c1e561f| 
+|  DESCRIPTION                          |  4 ++--
+|  NEWS                                 |  7 +++++++
+|  R/RStudio_CRAN_data.R                | 14 +++++++-------
+|  R/install.R                          |  2 +-
+|  R/updateR.R                          | 16 ++++++++--------
+|  man/barplot_package_users_per_day.Rd |  2 +-
+|  man/browse.latest.R.NEWS.Rd          |  4 ++--
+|  man/check.for.updates.R.Rd           |  2 +-
+|  man/download_RStudio_CRAN_data.Rd    |  2 +-
+|  man/format_RStudio_CRAN_data.Rd      |  2 +-
+|  man/install.R.Rd                     |  4 ++--
+|  man/install.Rdevel.Rd                |  4 ++--
+|  man/lineplot_package_downloads.Rd    |  2 +-
+|  man/most_downloaded_packages.Rd      |  2 +-
+|  man/pkgDNLs_worldmapcolor.Rd         |  2 +-
+|  man/read_RStudio_CRAN_data.Rd        |  2 +-
+|  man/system.PATH.Rd                   |  2 +-
+|  17 files changed, 40 insertions(+), 33 deletions(-)
+
+* 2016-03-18(Tal Galili) 0.17.3 |ccec0fc| 
+|  ChangeLog | 158 ++++++++++++++++++++++++++++++++++++++++++++++++++++++++++--
+|  NEWS.md   |  30 ++++++++++++
+|  2 files changed, 184 insertions(+), 4 deletions(-)
+
 * 2016-03-18(Tal Galili) Fix .Rd to pass CRAN warning |ba58998| 
 |  R/geo_functions.R               | 4 +++-
 |  R/install.R                     | 2 ++

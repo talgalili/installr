@@ -1,3 +1,20 @@
+installr 0.17.5 (2016-03-20)
+---------------------------
+
+UPDATED FUNCTIONS:
+   * install.URL now uses download.file again, but gained an option download_fun for using curl::curl_download (for install.npptor)
+
+BUG FIXES:
+   * install.R() - can now deal with a file name such as "R-3.2.4revised-win.exe"
+
+
+installr 0.17.4 (2016-03-19)
+---------------------------
+BUG FIXES:
+   * URL: http://cran.rstudio.com (moved to https://cran.rstudio.com/)
+
+
+
 installr 0.17.3 (2016-03-18)
 ---------------------------
 
