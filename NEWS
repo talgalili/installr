@@ -1,3 +1,9 @@
+installr 0.17.5 (2016-03-20)
+---------------------------
+BUG FIXES:
+   * install.R() - can now deal with a file name such as "R-3.2.4revised-win.exe"
+
+
 installr 0.17.4 (2016-03-19)
 ---------------------------
 BUG FIXES:

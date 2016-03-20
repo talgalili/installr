@@ -273,7 +273,7 @@ browse.latest.R.NEWS <- function(
 #' install.R() 
 #' }
 install.R <- function(page_with_download_url = "https://cran.rstudio.com/bin/windows/base/", 
-                      pat = "R-[0-9.]+-win.exe",
+                      pat = "R-[0-9.]+.+-win\\.exe",
                       to_checkMD5sums = TRUE,
                       keep_install_file = FALSE,
                       download_dir = tempdir(),
@@ -282,12 +282,12 @@ install.R <- function(page_with_download_url = "https://cran.rstudio.com/bin/win
    # I'm using the rsudio cran since it redirects to other servers wourld wide.
    # here there is a question on how to do it with the different mirrors. (maybe to add it as an option?)
    # this might be a good time for the "find the best mirror" function.   
-   page   <- readLines(page_with_download_url, warn = FALSE)
-   ### pat <- "R-[0-9.]+-win.exe"; # moved to the function's parameters list.
-   target_line <- grep(pat, page, value = TRUE); 
-   m <- regexpr(pat, target_line); 
-   exe_filename   <- regmatches(target_line, m) 
-   URL <- paste(page_with_download_url, exe_filename, sep = '')
+
+      # stringr::str_extract("R-3.2.4revised-win.exe", pat)
+   page   <- readLines(page_with_download_url, warn = FALSE)    
+   filename <- na.omit(stringr::str_extract(page, pat))[1]
+   
+   URL <- paste(page_with_download_url, filename, sep = '')
    
    # add command line arguments for silent mode
    if(silent){
@@ -296,7 +296,7 @@ install.R <- function(page_with_download_url = "https://cran.rstudio.com/bin/win
       installer_option <- NULL
    }
    
-   did_R_install <- install.URL(URL, keep_install_file = keep_install_file,download_dir=download_dir, installer_option = installer_option, ...)
+   did_R_install <- install.URL(URL, keep_install_file = keep_install_file, download_dir=download_dir, installer_option = installer_option, ...)
    if(!did_R_install) return(FALSE) 
    
    # checks the MD5sums from the new R installation:
