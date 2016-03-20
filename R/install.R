@@ -144,6 +144,8 @@ uninstall.packages <- function(pkgs,lib, warning = TRUE, ...) {
 #' @param download_dir A character of the directory into which to download the file. (default is \link{tempdir}())
 #' @param message boolean. Should a message on the file be printed or not (default is TRUE)
 #' @param installer_option A character of the command line arguments
+#' @param download_fun a function to use for downloading. Default is \link{download.file}. We can also use
+#' \link[curl]{curl_download} (but it doesn't give as good of an output while downloading the file).
 #' @param ... parameters passed to 'shell'
 #' @return invisible(TRUE/FALSE) - was the installation successful or not. (this is based on the output of shell of running the command being either 0 or 1/2.  0 means the file was succesfully installed, while 1 or 2 means there was a failure in running the installer.)
 #' @seealso \link{shell}
@@ -153,13 +155,14 @@ uninstall.packages <- function(pkgs,lib, warning = TRUE, ...) {
 #' \dontrun{
 #' install.URL("adfadf") # shows the error produced when the URL is not valid.
 #' }
-install.URL <- function(exe_URL, keep_install_file = FALSE, wait = TRUE, download_dir = tempdir(), message = TRUE, installer_option = NULL, ...) {
+install.URL <- function(exe_URL, keep_install_file = FALSE, wait = TRUE, download_dir = tempdir(), message = TRUE, installer_option = NULL, download_fun = download.file, ...) {
    # source: http://stackoverflow.com/questions/15071957/is-it-possible-to-install-pandoc-on-windows-using-an-r-command
    # input: a url of an .exe file to install
    # output: it runs the .exe file (for installing something)   
    exe_filename <- file.path(download_dir, file.name.from.url(exe_URL))   # the name of the zip file MUST be as it was downloaded...   
-   tryCatch(curl::curl_download(exe_URL, destfile=exe_filename, quiet = FALSE, mode = 'wb'), 
-            error = function(e) {
+   # tryCatch(curl::curl_download(exe_URL, destfile=exe_filename, quiet = FALSE, mode = 'wb'), 
+   tryCatch(download_fun(exe_URL, destfile=exe_filename, quiet = FALSE, mode = 'wb'), 
+                     error = function(e) {
                cat("\nExplanation of the error: You didn't enter a valid .EXE URL. \nThis is likely to have happened because there was a change in the software download page, and the function you just ran no longer works. \n\n This is often caused by a change in the URL of the installer file in the download page of the software (making our function unable to know what to download). \n\n Please e-mail: tal.galili@gmail.com and let me know this function needs updating/fixing - thanks!\n")
                return(invisible(FALSE))
                })  
@@ -641,7 +644,8 @@ install.npptor <- function(URL="http://sourceforge.net/projects/npptor/files/npp
                       filename)
    
    # seems to fail...
-   install.URL(URL,...)
+   cat("Please wait a moment while downloading (you may not see R respond for half a minute)\n ")
+   install.URL(URL, download_fun = curl::curl_download, ...)
    
    # download.file("http://downloads.sourceforge.net/project/npptor/npptor%20installer/NppToR-2.7.0.exe",
    #             destfile="c:\\temp.exe", mode = 'wb')

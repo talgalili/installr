@@ -5,7 +5,8 @@
 \title{Downloads and runs a .exe installer file for some software from a URL}
 \usage{
 install.URL(exe_URL, keep_install_file = FALSE, wait = TRUE,
-  download_dir = tempdir(), message = TRUE, installer_option = NULL, ...)
+  download_dir = tempdir(), message = TRUE, installer_option = NULL,
+  download_fun = download.file, ...)
 }
 \arguments{
 \item{exe_URL}{A character with a link to an installer file (with the .exe file extension)}
@@ -19,6 +20,9 @@ install.URL(exe_URL, keep_install_file = FALSE, wait = TRUE,
 \item{message}{boolean. Should a message on the file be printed or not (default is TRUE)}
 
 \item{installer_option}{A character of the command line arguments}
+
+\item{download_fun}{a function to use for downloading. Default is \link{download.file}. We can also use
+\link[curl]{curl_download} (but it doesn't give as good of an output while downloading the file).}
 
 \item{...}{parameters passed to 'shell'}
 }
