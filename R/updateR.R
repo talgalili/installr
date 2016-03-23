@@ -237,12 +237,11 @@ browse.latest.R.NEWS <- function(
    URL = "https://cran.rstudio.com/bin/windows/base/",...) {
    page_with_download_url <- URL
    page   <- readLines(page_with_download_url, warn = FALSE)
-   pat <- "NEWS.R-[0-9.]+.html"# this is the structure of the link...
+   pat <- "NEWS.R-[0-9.]+[^\">]*.html" # this is the structure of the link...
    target_line <- grep(pat, page, value = TRUE); 
    m <- regexpr(pat, target_line); 
-   latest_R_version_NEWS_html  <- regmatches(target_line, m)[1]
-   
-   URL <- paste(page_with_download_url, latest_R_version_NEWS_html, sep = "")
+   latest_news_path  <- regmatches(target_line, m)[1]
+   URL <- paste(page_with_download_url, ifelse(is.na(latest_news_path), "", latest_news_path), sep = "")
    browseURL(URL)   
    
    return(invisible(NULL))
