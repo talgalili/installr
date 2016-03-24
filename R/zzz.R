@@ -210,7 +210,7 @@ installrWelcomeMessage <- function(){
 # When all is done, run:
 # require(devtools)
 # check()
-# check(args="--as-cran")
+# devtools::check(args="--as-cran")
 #                 Thanks to: http://stackoverflow.com/questions/10017702/r-cmd-check-options-for-more-rigorous-testing-2-15-0
 # file.copy("NEWS", "NEWS.md", overwrite = TRUE)
 # devtools::build_win(version = "R-devel")
