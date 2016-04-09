@@ -449,7 +449,7 @@ turn.number.version <- function(number_to_dots) {
 R_version_in_a_folder <- function(folder) { 
 #    folder = R.home()
    files <- list.files(folder)
-   files <- gsub("patched", "", files)
+   files <- gsub("patched|revised", "", files)
    ss <- grep("README.R-[0-9]+.[0-9]+.[0-9]+$", files)
    if(length(ss)==0) return(NA) # this means that the current folder is NOT an R installation folder with the file README.R-numbers
    README_x <- files[ss] # for example: "README.R-3.0.1"   
@@ -568,7 +568,7 @@ get.installed.R.folders <- function(sort_by_version = TRUE, add_version_to_name 
 #' # As before, but this time it will MOVE (instead of COPY) the packages.
 #' #  e.g: erase them from their old location.
 #' }
-copy.packages.between.libraries <- function(from, to, ask =FALSE,keep_old = TRUE, do_NOT_override_packages_in_new_R = TRUE) {
+copy.packages.between.libraries <- function(from, to, ask = FALSE, keep_old = TRUE, do_NOT_override_packages_in_new_R = TRUE) {
    
    installed_R_folders <- get.installed.R.folders()   
    installed_R_folders_TABLE <-data.frame("R_version" = names(installed_R_folders) , Folder = installed_R_folders)
