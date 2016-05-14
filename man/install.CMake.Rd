@@ -5,7 +5,7 @@
 \alias{install.cmake}
 \title{Downloads and installs CMake for windows}
 \usage{
-install.CMake(URL = "http://www.cmake.org/cmake/resources/software.html", ...)
+install.CMake(URL = "https://cmake.org/download/", ...)
 }
 \arguments{
 \item{URL}{the URL of the CMake download page.}

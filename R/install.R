@@ -1591,16 +1591,19 @@ package_authors <- function(package, to_strsplit = TRUE, split=c(",|and"), to_ta
 #' install.CMake() # installs the latest version of ImageMagick
 #' }
 #'
-install.CMake   <- function(URL="http://www.cmake.org/cmake/resources/software.html",...) {    
+install.CMake   <- function(URL="https://cmake.org/download/",...) {    
    page_with_download_url <- URL
    # get download URL:
    page     <- readLines(page_with_download_url, warn = FALSE)
    # http://www.cmake.org/files/v3.0/cmake-3.0.1-win32-x86.exe
-   pat <- "//www.cmake.org/files/v[0-9.]+/cmake-[0-9.]+-win32-x86.exe"
+   # pat <- "//www.cmake.org/files/v[0-9.]+/cmake-[0-9.]+-win32-x86.exe"
+   pat <- "/files/v[0-9.]+/cmake-[0-9.]+-win32-x86.msi"
+   
    target_line <- grep(pat, page, value = TRUE); 
    m <- regexpr(pat, target_line); 
    URL      <- regmatches(target_line, m) # (The http still needs to be prepended.
-   URL      <- paste('http', URL, sep = ':')[1] # we might find the same file more than once - so we'll only take its first one
+   URL      <- paste('https://cmake.org', URL, sep = '')[1] # we might find the same file more than once - so we'll only take its first one
+   
    
    # install.
    install.URL(URL,...)   
