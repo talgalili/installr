@@ -4,12 +4,12 @@
 \alias{require2}
 \title{Loading Packages (and Installing them if they are missing)}
 \usage{
-require2(package, ask = TRUE, ...)
+require2(package, ask = FALSE, ...)
 }
 \arguments{
 \item{package}{A character of the name of a package (can also be without quotes).}
 
-\item{ask}{Should the user be asked to install the require packaged, in case it is missing? (default is TRUE)}
+\item{ask}{Should the user be asked to install the require packaged, in case it is missing? (default is FALSE)}
 
 \item{...}{not used}
 }
