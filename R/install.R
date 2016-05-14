@@ -638,10 +638,10 @@ install.npptor <- function(URL="http://sourceforge.net/projects/npptor/files/npp
    
    # http://downloads.sourceforge.net/project/npptor/npptor%20installer/NppToR-2.6.4.exe
    
-   if(!require("stringr")) {
+   if(!requireNamespace("stringr")) {
       cat("The package 'stringr' is missing - trying to install it")
       install.packages("stringr")
-      library("stringr")
+      requireNamespace("stringr")
    }
    
    pat <- "NppToR-[0-9.]+.exe" # I assume the first option on the page is the most up-to-date
@@ -651,10 +651,10 @@ install.npptor <- function(URL="http://sourceforge.net/projects/npptor/files/npp
    
    
    cat("Please wait a moment while downloading (you may not see R respond for half a minute)\n ")
-   if(!require("curl")) {
+   if(!requireNamespace("curl")) {
       cat("The package 'curl' is missing - trying to install it")
       install.packages("curl")
-      library("curl")
+      requireNamespace("curl")
    }
    install.URL(URL, download_fun = curl::curl_download, ...)
    
