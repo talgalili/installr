@@ -1,3 +1,44 @@
+* 2016-05-14(Tal Galili) Fix install.CMake() ( fix issue #48 ) |56d19fc| 
+|  NEWS                 | 2 +-
+|  R/install.R          | 9 ++++++---
+|  man/install.CMake.Rd | 2 +-
+|  3 files changed, 8 insertions(+), 5 deletions(-)
+
+* 2016-05-14(Tal Galili) Fix "Error in setInternet2(TRUE) : use != NA is defunct" when using updateR(). Fix issue #56 |35d5796| 
+|  DESCRIPTION    |  4 ++--
+|  NEWS           |  7 +++++++
+|  R/updateR.R    | 11 ++++++++---
+|  man/updateR.Rd |  2 +-
+|  4 files changed, 18 insertions(+), 6 deletions(-)
+
+* 2016-04-13(Tal Galili) Moved stringr and curl to suggest (so to allow users of R version 2.11-3.00 to also use installr for updating their R) |5295c8f| 
+|  DESCRIPTION |  9 ++++-----
+|  NEWS        |  6 ++++++
+|  R/install.R | 13 ++++++++++++-
+|  3 files changed, 22 insertions(+), 6 deletions(-)
+
+* 2016-04-09(Tal Galili) copy.packages.between.libraries - can now deal with a file name such as "R-3.2.4revised-win.exe". (by fixing R_version_in_a_folder which was used inside get.installed.R.folders) - this should fix issue #53 |7d2b4bf| 
+|  DESCRIPTION | 4 ++--
+|  NEWS        | 7 +++++++
+|  R/updateR.R | 4 ++--
+|  3 files changed, 11 insertions(+), 4 deletions(-)
+
+*   2016-03-24(Tal Galili) Merge pull request #51 from garborg/master |aa33622
+|\  
+| * 2016-03-23(Sean Garborg) Update browse.latest.R.NEWS path pattern |e0a6c87| | 
+| |  R/updateR.R | 7 +++----
+| |  1 file changed, 3 insertions(+), 4 deletions(-)
+
+* | 2016-03-24(Tal Galili) misc |72f5f6e
+|/  |   
+|    R/zzz.R | 2 +-
+|    1 file changed, 1 insertion(+), 1 deletion(-)
+
+* 2016-03-20(Tal Galili) bump to 0.17.5 |41979bd| 
+|  ChangeLog | 67 +++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+|  NEWS.md   | 17 ++++++++++++++++
+|  2 files changed, 84 insertions(+)
+
 * 2016-03-20(Tal Galili) install.URL now uses download.file again, but gained an option download_fun for using curl::curl_download (for install.npptor) |f74aef0| 
 |  NEWS               |  4 ++++
 |  R/install.R        | 12 ++++++++----

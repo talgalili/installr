@@ -1,3 +1,23 @@
+installr 0.17.8 (2016-05-14)
+---------------------------
+
+BUG FIXES:
+   * Fix "Error in setInternet2(TRUE) : use != NA is defunct" when using updateR()
+   * Fix install.CMake() ( fix issue #48 )
+
+installr 0.17.7 (2016-04-13)
+---------------------------
+
+* Moved stringr and curl to suggest (so to allow users of R version 2.11-3.00 to also use installr for updating their R)
+
+
+installr 0.17.6 (2016-04-09)
+---------------------------
+
+BUG FIXES:
+   * copy.packages.between.libraries - can now deal with a file name such as "R-3.2.4revised-win.exe". (by fixing R_version_in_a_folder which was used inside get.installed.R.folders)
+
+
 installr 0.17.5 (2016-03-20)
 ---------------------------
 
