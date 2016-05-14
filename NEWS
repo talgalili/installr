@@ -1,3 +1,10 @@
+installr 0.17.8 (2016-05-14)
+---------------------------
+
+BUG FIXES:
+   * Fix "Error in setInternet2(TRUE) : use != NA is defunct" when using updateR()
+
+
 installr 0.17.7 (2016-04-13)
 ---------------------------
 
