@@ -22,8 +22,9 @@
 
 #' @title Checks if some .exe is available in on the Windows machine search PATH
 #' @description Checks the existence of an .exe extention in the search path for executable files
-#' @param exe_file a character with the name of the 
-#' @return A boolean vector indication the existence of each program on the system.
+#' @param exe_file a character with the name of the executable to be looked for
+#' @export
+#' @return A boolean vector indicating the existence of each program's availability  on the system.
 #' @examples
 #' \dontrun{
 #' is.exe.installed(c("zip.exe", "Rgui.exe", "blablabla")) # [1]  TRUE  TRUE FALSE
