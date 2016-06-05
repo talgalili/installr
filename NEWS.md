@@ -1,9 +1,17 @@
+installr 0.18.0 (2016-06-05)
+---------------------------
+
+NEW FUNCTIONS:
+   * install.python - Downloads and installs python 2 or 3
+
+
 installr 0.17.8 (2016-05-14)
 ---------------------------
 
 BUG FIXES:
    * Fix "Error in setInternet2(TRUE) : use != NA is defunct" when using updateR()
    * Fix install.CMake() ( fix issue #48 )
+   * In require2 change ask from TRUE to FALSE
 
 installr 0.17.7 (2016-04-13)
 ---------------------------

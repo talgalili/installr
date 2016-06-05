@@ -1,3 +1,35 @@
+*   2016-06-05(Tal Galili) Merge pull request #61 from ajrgodfrey/master |e4a2ee2
+|\  
+| * 2016-06-05(ajrgodfrey) added install.python and re-built |ecba7dd
+|/  |   
+|    NAMESPACE               |  2 ++
+|    R/installPython.R       | 57 +++++++++++++++++++++++++++++++++++++++++++++
+|    man/install.python.Rd   | 35 ++++++++++++++++++++++++++++
+|    man/is.exe.installed.Rd |  4 ++--
+|    4 files changed, 96 insertions(+), 2 deletions(-)
+
+*   2016-06-04(Tal Galili) Merge pull request #59 from ajrgodfrey/master |ee41cc1
+|\  
+| * 2016-06-03(Jonathan Godfrey) add export and fix typos for is.exe.installed() |c169aaa
+|/  |   
+|    R/is.x.R | 5 +++--
+|    1 file changed, 3 insertions(+), 2 deletions(-)
+
+* 2016-05-14(Tal Galili) In require2 change ask from TRUE to FALSE |4d0bfcd| 
+|  NEWS            | 1 +
+|  R/install.R     | 4 ++--
+|  man/require2.Rd | 4 ++--
+|  3 files changed, 5 insertions(+), 4 deletions(-)
+
+* 2016-05-14(Tal Galili) fix require to requireNamespace to pass CRAN checks |1a89f23| 
+|  R/install.R | 8 ++++----
+|  1 file changed, 4 insertions(+), 4 deletions(-)
+
+* 2016-05-14(Tal Galili) ChangeLog |706065e| 
+|  ChangeLog | 41 +++++++++++++++++++++++++++++++++++++++++
+|  NEWS.md   | 20 ++++++++++++++++++++
+|  2 files changed, 61 insertions(+)
+
 * 2016-05-14(Tal Galili) Fix install.CMake() ( fix issue #48 ) |56d19fc| 
 |  NEWS                 | 2 +-
 |  R/install.R          | 9 ++++++---
