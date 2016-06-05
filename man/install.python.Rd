@@ -22,11 +22,14 @@ TRUE/FALSE - was the installation successful or not.
 Downloads and installs the latest version of python 2 or 3 for Windows.
 }
 \details{
-Python is a programming language which has two versions under active development. Make sure you know which version is required for the code you have to run, or alternatively, make sure you are developing code that is fit for your chosen version of Python.
+Python is a programming language which has two versions under active development. 
+Make sure you know which version is required for the code you have to run, or alternatively, make sure you are developing code that is fit for your chosen version of Python.
 }
 \examples{
 \dontrun{
 install.python() 
+install.python(,3)
+install.python(,2)
 }
 }
 \author{
