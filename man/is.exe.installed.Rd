@@ -7,10 +7,10 @@
 is.exe.installed(exe_file)
 }
 \arguments{
-\item{exe_file}{a character with the name of the}
+\item{exe_file}{a character with the name of the executable to be looked for}
 }
 \value{
-A boolean vector indication the existence of each program on the system.
+A boolean vector indicating the existence of each program's availability  on the system.
 }
 \description{
 Checks the existence of an .exe extention in the search path for executable files
