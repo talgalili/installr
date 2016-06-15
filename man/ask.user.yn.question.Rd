@@ -14,7 +14,7 @@ ask.user.yn.question(question, GUI = TRUE, add_lines_before = TRUE)
 \item{add_lines_before}{if to add a line before asking the question.  Default is TRUE.}
 }
 \value{
-TRUE/FALSE - if the user answeres yes or no.
+TRUE/FALSE - if the user answers yes or no.
 }
 \description{
 Asks the user for one yes/no question.  If the users replies with a "yes" (or Y, or y) the function returns TRUE.  Otherwise, FALSE. (also exists as the function devtools::yesno)

@@ -16,7 +16,7 @@ if xlsx has a full path, it will override the path parameter.}
 
 \item{csv}{the (character) name of the csv file to convert to (default will be the name of the xlsx file)}
 
-\item{path}{the path for the files (default is the working diractory).}
+\item{path}{the path for the files (default is the working directory).}
 
 \item{...}{ignored.}
 }

@@ -26,7 +26,7 @@
 #' @param xlsx the (character) name of the xlsx (or xls) file to convert.
 #' if xlsx has a full path, it will override the path parameter.
 #' @param csv the (character) name of the csv file to convert to (default will be the name of the xlsx file)
-#' @param path the path for the files (default is the working diractory).
+#' @param path the path for the files (default is the working directory).
 #' @param ... ignored.
 #' @return NULL
 #' @source

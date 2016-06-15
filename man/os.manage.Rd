@@ -17,8 +17,8 @@ os.manage(GUI = TRUE, ask = TRUE, ...)
 The status code of \code{\link[base]{system}}.
 }
 \description{
-A centeral function to run functions for shuting down, restarting, sleeping (etc.) your computer.
-This will run these functions immediatly.
+A central function to run functions for shuting down, restarting, sleeping (etc.) your computer.
+This will run these functions immediately.
 }
 \examples{
 \dontrun{

@@ -38,7 +38,7 @@
 #' @param recursive (logical) FALSE. Should the function keep going
 #' into folders and check them as well?
 #' @param message (logical) should we output how many
-#' files were changed. (defualt is FALSE)
+#' files were changed. (default is FALSE)
 #' @param text_to_find old file extension (should have $ at the end!)
 #' @param new_extension new file extension...
 #' @param ... not used.
