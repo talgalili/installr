@@ -13,7 +13,7 @@ checkMD5sums2(package, dir, md5file, omit_files, ...)
 
 \item{md5file}{the exact path of the md5file to compare the dir with}
 
-\item{omit_files}{a character vector with the files or file diractories to not include in the checksums}
+\item{omit_files}{a character vector with the files or file directories to not include in the checksums}
 
 \item{...}{not used. (but good for future backward compatibility)}
 }

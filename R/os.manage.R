@@ -210,8 +210,8 @@ os.restart  <- function(s=0, m=0, h=0) {
 #' @title Gives managing option to the current OS (shutdown, restart, sleep, hibernate, etc...)
 #' @export
 #' @description
-#' A centeral function to run functions for shuting down, restarting, sleeping (etc.) your computer.
-#' This will run these functions immediatly.
+#' A central function to run functions for shuting down, restarting, sleeping (etc.) your computer.
+#' This will run these functions immediately.
 #' @param GUI a logical indicating whether a graphics menu should be used if available.  If TRUE, and on Windows, it will use \link{winDialog}, otherwise it will use \link[utils]{menu}.
 #' @param ask a logical indicating whether to ask the user for the number of minutes in which to perform the operation.
 #' @param ... not in use

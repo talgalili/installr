@@ -15,7 +15,7 @@ in which the files should be changed. Default is "".}
 into folders and check them as well?}
 
 \item{message}{(logical) should we output how many
-files were changed. (defualt is FALSE)}
+files were changed. (default is FALSE)}
 
 \item{text_to_find}{old file extension (should have $ at the end!)}
 

@@ -27,7 +27,7 @@ install.URL(exe_URL, keep_install_file = FALSE, wait = TRUE,
 \item{...}{parameters passed to 'shell'}
 }
 \value{
-invisible(TRUE/FALSE) - was the installation successful or not. (this is based on the output of shell of running the command being either 0 or 1/2.  0 means the file was succesfully installed, while 1 or 2 means there was a failure in running the installer.)
+invisible(TRUE/FALSE) - was the installation successful or not. (this is based on the output of shell of running the command being either 0 or 1/2.  0 means the file was successfully installed, while 1 or 2 means there was a failure in running the installer.)
 }
 \description{
 Gets a character with a link to an installer file, downloads it, runs it, and then erases it.

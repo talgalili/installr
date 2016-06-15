@@ -33,7 +33,7 @@ Other solutions to the source.https problem:
 \itemize{
 \item Using RCurl
 \item devtools::source_url 
-\item A erlevant (OLD) discussion: http://stackoverflow.com/questions/7715723/sourcing-r-script-over-https
+\item A relevant (OLD) discussion: http://stackoverflow.com/questions/7715723/sourcing-r-script-over-https
 }
 }
 \seealso{
