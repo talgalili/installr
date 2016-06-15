@@ -31,7 +31,7 @@
 #' @param package the name of an installed package
 #' @param dir the path to the top-level directory of an installed package.
 #' @param md5file the exact path of the md5file to compare the dir with
-#' @param omit_files a character vector with the files or file diractories to not include in the checksums
+#' @param omit_files a character vector with the files or file directories to not include in the checksums
 #' @param ... not used. (but good for future backward compatibility)
 #' @return checkMD5sums returns a logical, NA if there is no 'MD5' file to be checked.
 #' @seealso \link[tools]{checkMD5sums}
@@ -115,7 +115,7 @@ checkMD5sums2 <- function (package, dir, md5file, omit_files,...)
 #' @param question a character string with a question to the user.
 #' @param GUI a logical indicating whether a graphics menu should be used if available.  If TRUE, and on Windows, it will use \link{winDialog}, otherwise it will use \link[utils]{menu}.
 #' @param add_lines_before if to add a line before asking the question.  Default is TRUE.
-#' @return TRUE/FALSE - if the user answeres yes or no.
+#' @return TRUE/FALSE - if the user answers yes or no.
 #' @seealso \link[utils]{menu}, (yesno in the package {devtools}) 
 #' @references \url{http://stackoverflow.com/questions/15250487/how-to-add-a-menu-item-to-rgui} 
 #' (my thanks goes to Dason for his answer and help)

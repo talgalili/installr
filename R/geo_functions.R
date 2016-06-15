@@ -42,9 +42,9 @@
 #' from each of the mirror sites in the CRAN mirrors list. 
 #' If you want to test it on a subset then call getCRANmirrors yourself and subset it somehow.
 #' 
-#' It runs on the full CRAN list and while desiginig this package I've yet to find a 
+#' It runs on the full CRAN list and while designing this package I've yet to find a 
 #' timeout or error so I'm not sure what will happen if download.file
-#' fails. It retuns a data frame like you get from getCRANmirrors but
+#' fails. It returns a data frame like you get from getCRANmirrors but
 #' with an extra 't' column giving the elapsed time to get the NEWS file.
 #' 
 #' CAVEATS: if your network has any local caching then these results

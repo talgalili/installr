@@ -12,7 +12,7 @@ installr(GUI = TRUE, ...)
 \item{...}{not in use}
 }
 \value{
-TRUE/FALSE - if the software was installed succesfully or no.
+TRUE/FALSE - if the software was installed successfully or not.
 }
 \description{
 Gives the user the option to download software from within R.

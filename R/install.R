@@ -147,7 +147,7 @@ uninstall.packages <- function(pkgs,lib, warning = TRUE, ...) {
 #' @param download_fun a function to use for downloading. Default is \link{download.file}. We can also use
 #' \link[curl]{curl_download} (but it doesn't give as good of an output while downloading the file).
 #' @param ... parameters passed to 'shell'
-#' @return invisible(TRUE/FALSE) - was the installation successful or not. (this is based on the output of shell of running the command being either 0 or 1/2.  0 means the file was succesfully installed, while 1 or 2 means there was a failure in running the installer.)
+#' @return invisible(TRUE/FALSE) - was the installation successful or not. (this is based on the output of shell of running the command being either 0 or 1/2.  0 means the file was successfully installed, while 1 or 2 means there was a failure in running the installer.)
 #' @seealso \link{shell}
 #' @export
 #' @author GERGELY DAROCZI, Tal Galili
@@ -169,7 +169,7 @@ install.URL <- function(exe_URL, keep_install_file = FALSE, wait = TRUE, downloa
    
    # check if we downloaded the file.
    if(file.exists(exe_filename)) {
-      if(message) cat("\nThe file was downloaded succesfully into:\n", exe_filename, "\n")
+      if(message) cat("\nThe file was downloaded successfully into:\n", exe_filename, "\n")
    } else {
       if(message) cat("\nWe failed to download the file into:\n", exe_filename, "\n(i.e.: the installation failed)\n")
       return(invisible(FALSE))      
@@ -207,7 +207,7 @@ install.URL <- function(exe_URL, keep_install_file = FALSE, wait = TRUE, downloa
       #    file.access(exe_filename, mode = 3)
    return(invisible(shell_output == 0))
    # error code 1/2 means that we couldn't finish running the file
-   # # 0 means - the file was succesfully installed.   
+   # # 0 means - the file was successfully installed.   
 }
 
 
@@ -1229,7 +1229,7 @@ install.texmaker <- function(...) install.Texmaker(...)
 #' \itemize{
 #' \item Using RCurl
 #' \item devtools::source_url 
-#' \item A erlevant (OLD) discussion: http://stackoverflow.com/questions/7715723/sourcing-r-script-over-https
+#' \item A relevant (OLD) discussion: http://stackoverflow.com/questions/7715723/sourcing-r-script-over-https
 #' }
 #' @examples
 #' \dontrun{
@@ -1334,7 +1334,7 @@ restart_RGui <- function(...) {
 #' @description Gives the user the option to download software from within R.
 #' @param GUI a logical indicating whether a graphics menu should be used if available.  If TRUE, and on Windows, it will use \link{winDialog}, otherwise it will use \link[utils]{menu}.
 #' @param ... not in use
-#' @return TRUE/FALSE - if the software was installed succesfully or no.
+#' @return TRUE/FALSE - if the software was installed successfully or not.
 #' @seealso \link{updateR}, \link{install.R}, 
 #' \link{install.RStudio}, \link{install.Rtools}, \link{install.pandoc}, 
 #' \link{install.MikTeX}, \link{install.git}, \link{install.git},
