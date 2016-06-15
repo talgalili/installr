@@ -4,6 +4,5 @@
 installR.Rproj
 \.RData$
 \.Rhistory$
-NEWS.md
 ^CONDUCT\.md$
 ^\.travis\.yml$
