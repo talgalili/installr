@@ -133,6 +133,20 @@ uninstall.packages <- function(pkgs,lib, warning = TRUE, ...) {
 
 
 
+# source: http://stackoverflow.com/questions/5076593/how-to-determine-if-you-have-an-internet-connection-in-r
+# checks if there is internet.
+havingIP <- function() {
+   if (.Platform$OS.type == "windows") {
+      ipmessage <- system("ipconfig", intern = TRUE)
+   } else {
+      ipmessage <- system("ifconfig", intern = TRUE)
+   }
+   validIP <- "((25[0-5]|2[0-4][0-9]|[01]?[0-9][0-9]?)[.]){3}(25[0-5]|2[0-4][0-9]|[01]?[0-9][0-9]?)"
+   any(grep(validIP, ipmessage))
+}
+
+
+
 #' @title Downloads and runs a .exe installer file for some software from a URL
 #' @description Gets a character with a link to an installer file, downloads it, runs it, and then erases it.
 #' @details
@@ -159,6 +173,11 @@ install.URL <- function(exe_URL, keep_install_file = FALSE, wait = TRUE, downloa
    # source: http://stackoverflow.com/questions/15071957/is-it-possible-to-install-pandoc-on-windows-using-an-r-command
    # input: a url of an .exe file to install
    # output: it runs the .exe file (for installing something)   
+   
+   
+   if(!havingIP()) warning("You do not seem to be connected to the internet. Hence - you will likely not be able to download software.")
+   
+   
    exe_filename <- file.path(download_dir, file.name.from.url(exe_URL))   # the name of the zip file MUST be as it was downloaded...   
    # tryCatch(curl::curl_download(exe_URL, destfile=exe_filename, quiet = FALSE, mode = 'wb'), 
    tryCatch(download_fun(exe_URL, destfile=exe_filename, quiet = FALSE, mode = 'wb'), 
