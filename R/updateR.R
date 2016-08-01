@@ -682,7 +682,7 @@ copy.packages.between.libraries <- function(from, to, ask = FALSE, keep_old = TR
 #' @param keep_install_file If TRUE - the installer file will not be erased after it is downloaded and run.
 #' @param download_dir A character of the directory into which to download the file. (default is \link{tempdir}())
 #' @param silent If TRUE - enables silent installation mode.
-#' @param setInternet2 logical. Should setInternet2(TRUE) be run. (only relevant for versions of R before 3.2.0)
+#' @param setInternet2 logical. Should setInternet2(TRUE) be run. (only relevant for versions of R before 3.3.0)
 #' @param ... Other arguments (this is currently not used in any way)
 #' @return a TRUE/FALSE value on whether or not R was updated.
 #' @seealso \link{check.for.updates.R}, \link{install.R}, 
@@ -727,8 +727,8 @@ updateR <- function(fast = FALSE,
       setInternet2 <- TRUE
    }
    
-   current_R_is_less_then_R_3.2.0 <- (as.numeric(R.version$major) * 1000 + as.numeric(R.version$minor)) < 3002
-   if(setInternet2 & current_R_is_less_then_R_3.2.0) setInternet2(TRUE)
+   current_R_is_less_then_R_3.3.0 <- as.numeric(R.version$major) * 1000 + as.numeric(R.version$minor) < 3003
+   if(setInternet2 & current_R_is_less_then_R_3.3.0) setInternet2(TRUE)
    
    
    
