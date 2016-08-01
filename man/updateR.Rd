@@ -45,7 +45,7 @@ don't use GUI, check MD5sums, keep installed file in the \link{getwd}.}
 
 \item{silent}{If TRUE - enables silent installation mode.}
 
-\item{setInternet2}{logical. Should setInternet2(TRUE) be run. (only relevant for versions of R before 3.3.0)}
+\item{setInternet2}{logical. Should setInternet2(TRUE) be run. (only relevant for versions of R before 3.2.0)}
 
 \item{...}{Other arguments (this is currently not used in any way)}
 }

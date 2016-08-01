@@ -1,4 +1,4 @@
-installr 0.18.0 (2016-07-03)
+installr 0.18.0 (2016-08-01)
 ---------------------------
 
 NEW FUNCTIONS:
@@ -7,6 +7,8 @@ NEW FUNCTIONS:
 UPDATED FUNCTIONS:
    * install.URL now gives warning if there is suspicion that the user is not connected to the internet.
 
+BUG FIXES:
+   * Fix "Error in setInternet2(TRUE) : use != NA is defunct" when using updateR() for R 3.2.0
 
 
 installr 0.17.8 (2016-05-14)
