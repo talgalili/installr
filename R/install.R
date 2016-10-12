@@ -702,6 +702,8 @@ install.npptor <- function(URL="http://sourceforge.net/projects/npptor/files/npp
 #' @examples
 #' \dontrun{
 #' install.MikTeX() # installs the latest version of MikTeX
+#' install.MikTeX(32) # installs the latest version of MikTeX
+#' install.MikTeX(64) # installs the latest version of MikTeX
 #' }
 install.MikTeX  <- function(version, page_with_download_url="http://miktex.org/download",...) {
    if(missing(version)) {
@@ -717,22 +719,24 @@ install.MikTeX  <- function(version, page_with_download_url="http://miktex.org/d
       page     <- readLines(page_with_download_url, warn = FALSE)
       #"http://mirrors.ctan.org/systems/win32/miktex/setup/basic-miktex-2.9.4757.exe
       # "http://mirrors.ctan.org/systems/win32/miktex/setup/basic-miktex-2.9.4757-x64.exe"
-      pat <- "//mirrors.ctan.org/systems/win32/miktex/setup/basic-miktex-[0-9.]+.exe"; 
+      # http://miktex.org/download/ctan/systems/win32/miktex/setup/basic-miktex-2.9.6069-x64.exe
+      pat <- "/download/ctan/systems/win32/miktex/setup/basic-miktex-[0-9.]+.exe"; 
       target_line <- grep(pat, page, value = TRUE); 
       m <- regexpr(pat, target_line); 
       URL      <- regmatches(target_line, m) # (The http still needs to be prepended.
-      URL      <- paste('http', URL, sep = ':')[1] # we might find the same file more than once - so we'll only take its first one
+      URL      <- paste('http://miktex.org', URL, sep = '')[1] # we might find the same file more than once - so we'll only take its first one
    } else { # else -> version == 64
       page     <- readLines(page_with_download_url, warn = FALSE)
       #"http://mirrors.ctan.org/systems/win32/miktex/setup/basic-miktex-2.9.4757.exe
       # "http://mirrors.ctan.org/systems/win32/miktex/setup/basic-miktex-2.9.4757-x64.exe"
-      pat <- "//mirrors.ctan.org/systems/win32/miktex/setup/basic-miktex-[0-9.]+-x64.exe"; 
+      pat <- "/download/ctan/systems/win32/miktex/setup/basic-miktex-[0-9.]+-x64.exe"; 
       target_line <- grep(pat, page, value = TRUE); 
       m <- regexpr(pat, target_line); 
       URL      <- regmatches(target_line, m) # (The http still needs to be prepended.
-      URL      <- paste('http', URL, sep = ':')[1] # we might find the same file more than once - so we'll only take its first one      
+      URL      <- paste('http://miktex.org', URL, sep = '')[1] # we might find the same file more than once - so we'll only take its first one
    }
    # install.
+   # install.URL(URL)   
    install.URL(URL,...)   
 }
 

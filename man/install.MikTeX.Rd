@@ -29,6 +29,8 @@ MiKTeX is essential for using Sweave, knitr, and creating Vignette for R package
 \examples{
 \dontrun{
 install.MikTeX() # installs the latest version of MikTeX
+install.MikTeX(32) # installs the latest version of MikTeX
+install.MikTeX(64) # installs the latest version of MikTeX
 }
 }
 \references{
