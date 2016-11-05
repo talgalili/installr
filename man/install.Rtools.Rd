@@ -9,7 +9,7 @@ Some parts of the code are taken from the devtools, see \url{https://github.com/
 }
 \usage{
 install.Rtools(choose_version = FALSE, check = TRUE, GUI = TRUE,
-  page_with_download_url = "http://cran.r-project.org/bin/windows/Rtools/",
+  page_with_download_url = "https://cran.r-project.org/bin/windows/Rtools/",
   ...)
 }
 \arguments{
@@ -45,6 +45,6 @@ install.Rtools(TRUE, FALSE) # asks the user to choose
 }
 }
 \references{
-RTools homepage (for other resources and documentation): \url{http://cran.r-project.org/bin/windows/Rtools/}
+RTools homepage (for other resources and documentation): \url{https://cran.r-project.org/bin/windows/Rtools/}
 }
 

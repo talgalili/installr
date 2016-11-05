@@ -20,7 +20,7 @@ The install.packages.zip must use this function, since it is crucial that the na
 }
 \examples{
 \dontrun{
-url <- "http://cran.r-project.org/bin/windows/base/R-2.15.3-win.exe"
+url <- "https://cran.r-project.org/bin/windows/base/R-2.15.3-win.exe"
 file.name.from.url(url) # returns: "R-2.15.3-win.exe"
 }
 }

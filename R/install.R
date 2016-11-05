@@ -28,7 +28,7 @@
 #' @seealso \code{\link{install.URL}}, \code{\link{install.packages.zip}}
 #' @examples
 #' \dontrun{
-#' url <- "http://cran.r-project.org/bin/windows/base/R-2.15.3-win.exe"
+#' url <- "https://cran.r-project.org/bin/windows/base/R-2.15.3-win.exe"
 #' file.name.from.url(url) # returns: "R-2.15.3-win.exe"
 #' }
 file.name.from.url <- function(URL) {
@@ -73,7 +73,7 @@ up_folder <- function(FOLDER, n = -1,...) {
 #' @seealso \code{\link{install.packages}}, \code{\link[R.utils]{installPackages}}
 #' @examples
 #' \dontrun{
-#' install.packages.zip("http://cran.r-project.org/bin/windows/contrib/r-release/devtools_1.1.zip")
+#' install.packages.zip("https://cran.r-project.org/bin/windows/contrib/r-release/devtools_1.1.zip")
 #' }
 install.packages.zip <- function(zip_URL) {
    # zip_URL is the URL for the package_name.zip file
@@ -84,7 +84,7 @@ install.packages.zip <- function(zip_URL) {
    invisible(NULL)
 }
 # a simple example of use:
-# install.packages.zip(zip_URL="http://cran.r-project.org/bin/windows/contrib/r-release/TeachingSampling_2.0.1.zip")
+# install.packages.zip(zip_URL="https://cran.r-project.org/bin/windows/contrib/r-release/TeachingSampling_2.0.1.zip")
 
 
 
@@ -129,7 +129,7 @@ uninstall.packages <- function(pkgs,lib, warning = TRUE, ...) {
    invisible(NULL)
 }
 # a simple example of use:
-# install.packages.zip(zip_URL="http://cran.r-project.org/bin/windows/contrib/r-release/TeachingSampling_2.0.1.zip")
+# install.packages.zip(zip_URL="https://cran.r-project.org/bin/windows/contrib/r-release/TeachingSampling_2.0.1.zip")
 
 
 
@@ -472,7 +472,7 @@ and enter the row number of the file-version you'd like to install: "
 #' @source
 #' Some parts of the code are taken from the devtools, see \url{https://github.com/hadley/devtools/blob/master/R/rtools.r}
 #' @references
-#' RTools homepage (for other resources and documentation): \url{http://cran.r-project.org/bin/windows/Rtools/}
+#' RTools homepage (for other resources and documentation): \url{https://cran.r-project.org/bin/windows/Rtools/}
 #' @examples
 #' \dontrun{
 #' install.Rtools() # installs the latest version of RTools (if one is needed)
@@ -486,7 +486,7 @@ and enter the row number of the file-version you'd like to install: "
 install.Rtools <- function(choose_version = FALSE,                           
                            check=TRUE,
                            GUI = TRUE,
-                           page_with_download_url = 'http://cran.r-project.org/bin/windows/Rtools/',
+                           page_with_download_url = 'https://cran.r-project.org/bin/windows/Rtools/',
                            ...
 ) {
    # choose_version==T allows the user to choose which version of Rtools he wishes to install
@@ -1520,7 +1520,7 @@ fetch_tag_from_Rd <- function(package, tag = "\\author",...){
 #' @references
 #' Useful for updating your DESCRIPTION file:
 #' 
-#' \url{http://cran.r-project.org/doc/manuals/R-exts.html#The-DESCRIPTION-file}
+#' \url{https://cran.r-project.org/doc/manuals/R-exts.html#The-DESCRIPTION-file}
 #' 
 #' @examples
 #' \dontrun{

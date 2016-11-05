@@ -63,7 +63,7 @@ package_authors("Rcpp")
 \references{
 Useful for updating your DESCRIPTION file:
 
-\url{http://cran.r-project.org/doc/manuals/R-exts.html#The-DESCRIPTION-file}
+\url{https://cran.r-project.org/doc/manuals/R-exts.html#The-DESCRIPTION-file}
 }
 \seealso{
 \link{fetch_tag_from_Rd}

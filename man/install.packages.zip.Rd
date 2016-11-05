@@ -24,7 +24,7 @@ This function aims to combine option 1 and 2, by automatically downloading the Z
 }
 \examples{
 \dontrun{
-install.packages.zip("http://cran.r-project.org/bin/windows/contrib/r-release/devtools_1.1.zip")
+install.packages.zip("https://cran.r-project.org/bin/windows/contrib/r-release/devtools_1.1.zip")
 }
 }
 \seealso{
