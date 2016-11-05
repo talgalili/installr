@@ -683,6 +683,7 @@ copy.packages.between.libraries <- function(from, to, ask = FALSE, keep_old = TR
 #' @param download_dir A character of the directory into which to download the file. (default is \link{tempdir}())
 #' @param silent If TRUE - enables silent installation mode.
 #' @param setInternet2 logical. Should setInternet2(TRUE) be run. (only relevant for versions of R before 3.3.0)
+#' @param cran_mirror URL of your preferred CRAN mirror. (default is https://cran.rstudio.com/)
 #' @param ... Other arguments (this is currently not used in any way)
 #' @return a TRUE/FALSE value on whether or not R was updated.
 #' @seealso \link{check.for.updates.R}, \link{install.R}, 
@@ -703,7 +704,9 @@ updateR <- function(fast = FALSE,
                     keep_old_packages,  update_packages, start_new_R, quit_R,  print_R_versions=TRUE, GUI = TRUE, 
                     to_checkMD5sums = FALSE, keep_install_file = FALSE, download_dir = tempdir(),
                     silent = FALSE, 
-                    setInternet2 = TRUE, ...) {
+                    setInternet2 = TRUE, 
+                    cran_mirror = "https://cran.rstudio.com/",
+		    ...) {
    # this function checks if we have the latest version of R
    # IF not - it notifies the user - and leaves.
    # If there is a new version - it offers the user to download and install it.   
@@ -735,7 +738,8 @@ updateR <- function(fast = FALSE,
    
    old_R_path <- get.installed.R.folders()[1]
 
-   there_is_a_newer_version_of_R <- check.for.updates.R(print_R_versions, GUI = GUI)
+   there_is_a_newer_version_of_R <- check.for.updates.R(print_R_versions, GUI = GUI,
+                                                        page_with_download_url = paste0(cran_mirror,"bin/windows/base/"))
    
    if(!there_is_a_newer_version_of_R) return(FALSE) # if we have the latest version - we might as well stop now...
    
@@ -758,7 +762,7 @@ updateR <- function(fast = FALSE,
    
    # if we got this far, the user wants to install the latest version of R (and his current version is old)
    cat("Installing the newest version of R,\n please wait for the installer file to be download and executed.\n Be sure to click 'next' as needed...\n")
-   did_R_install <- install.R(to_checkMD5sums = to_checkMD5sums, keep_install_file = keep_install_file, download_dir = download_dir, silent = silent) 
+   did_R_install <- install.R(to_checkMD5sums = to_checkMD5sums, keep_install_file = keep_install_file, download_dir = download_dir, silent = silent, page_with_download_url = paste0(cran_mirror,"bin/windows/base/"))
    if(!did_R_install) return(FALSE) 
    new_R_path <- get.installed.R.folders()[1]
    
@@ -811,7 +815,7 @@ your packages to the new R installation.\n")
    
    if(update_packages & copy_packages) { # we should not update packages if we didn't copy them first...
       new_Rscript_path <- file.path(new_R_path, "bin/Rscript.exe") # make sure to run the newer R to update the packages.
-      update_packages_expression <- paste(new_Rscript_path, ' -e " options(repos=structure(c(CRAN=\'https://cran.rstudio.com/\'))); update.packages(checkBuilt=TRUE, ask=FALSE) "')
+      update_packages_expression <- paste0(new_Rscript_path, ' -e " options(repos=structure(c(CRAN=\'',cran_mirror,'\'))); update.packages(checkBuilt=TRUE, ask=FALSE) "')
       # update_packages_expression <- paste(new_Rscript_path, ' -e " setInternet2(TRUE); options(repos=structure(c(CRAN=\'https://cran.rstudio.com/\'))); update.packages(checkBuilt=TRUE, ask=FALSE) "')
       #    update_packages_expression <- paste(new_Rscript_path, ' -e "date()"')
       #    update_packages_expression <- paste(new_Rscript_path, ' -e "print(R.version)"')
