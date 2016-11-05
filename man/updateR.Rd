@@ -9,7 +9,7 @@ updateR(fast = FALSE, browse_news, install_R, copy_packages,
   copy_Rprofile.site, keep_old_packages, update_packages, start_new_R, quit_R,
   print_R_versions = TRUE, GUI = TRUE, to_checkMD5sums = FALSE,
   keep_install_file = FALSE, download_dir = tempdir(), silent = FALSE,
-  setInternet2 = TRUE, ...)
+  setInternet2 = TRUE, cran_mirror = "https://cran.rstudio.com/", ...)
 }
 \arguments{
 \item{fast}{logical (default is FALSE). If TRUE, it overrides other parameters and uses a set of defaults to make the
@@ -46,6 +46,8 @@ don't use GUI, check MD5sums, keep installed file in the \link{getwd}.}
 \item{silent}{If TRUE - enables silent installation mode.}
 
 \item{setInternet2}{logical. Should setInternet2(TRUE) be run. (only relevant for versions of R before 3.3.0)}
+
+\item{cran_mirror}{URL of your preferred CRAN mirror. (default is https://cran.rstudio.com/)}
 
 \item{...}{Other arguments (this is currently not used in any way)}
 }

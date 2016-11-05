@@ -1,8 +1,8 @@
 Package: installr
 Type: Package
 Title: Using R to Install Stuff (Such As: R, Rtools, RStudio, Git, and More!)
-Version: 0.18.0
-Date: 2016-07-03
+Version: 0.19.0
+Date: 2016-11-05
 Authors@R: c(person("Tal", "Galili", role = c("aut", "cre", "cph"), email =
     "tal.galili@gmail.com", comment = "http://www.r-statistics.com"),
     person("Barry", "Rowlingson", role = "ctb", email =
@@ -26,7 +26,8 @@ Authors@R: c(person("Tal", "Galili", role = c("aut", "cre", "cph"), email =
     "https://github.com/BerryBoessenkool", role = "ctb"), 
     person("Jonathan",
     "Godfrey", email = "a.j.godfrey@massey.ac.nz", comment =
-    "https://github.com/ajrgodfrey", role = "ctb")
+    "https://github.com/ajrgodfrey", role = "ctb"),
+    person("Tom", "Allard", email = "tallard@frb.gov", role = "ctb")
     )
 Description: R is great for installing software.  Through the 'installr'
     package you can automate the updating of R (on Windows, using updateR())
