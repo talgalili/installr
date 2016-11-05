@@ -1,8 +1,13 @@
-installr 0.18.0 (2016-06-05)
+installr 0.18.0 (2016-11-05)
 ---------------------------
 
 NEW FUNCTIONS:
    * install.python - Downloads and installs python 2 or 3
+
+UPDATED FUNCTIONS:
+   * install.URL now gives warning if there is suspicion that the user is not connected to the internet.
+   * updateR  - added cran_mirror option 
+
 
 
 installr 0.17.8 (2016-05-14)

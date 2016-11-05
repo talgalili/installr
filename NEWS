@@ -1,4 +1,4 @@
-installr 0.18.0 (2016-07-03)
+installr 0.18.0 (2016-11-05)
 ---------------------------
 
 NEW FUNCTIONS:
@@ -6,6 +6,7 @@ NEW FUNCTIONS:
 
 UPDATED FUNCTIONS:
    * install.URL now gives warning if there is suspicion that the user is not connected to the internet.
+   * updateR  - added cran_mirror option 
 
 
 
