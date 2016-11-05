@@ -1,5 +1,5 @@
 [![Build Status](https://travis-ci.org/talgalili/installr.png?branch=master)](https://travis-ci.org/talgalili/installr)
-[![CRAN_Status_Badge](http://www.r-pkg.org/badges/version/installr)](http://cran.r-project.org/package=installr)
+[![CRAN_Status_Badge](http://www.r-pkg.org/badges/version/installr)](https://cran.r-project.org/package=installr)
 ![](http://cranlogs.r-pkg.org/badges/installr?color=yellow)
 ![](http://cranlogs.r-pkg.org/badges/grand-total/installr?color=yellowgreen)
 
@@ -83,8 +83,8 @@ setInternet2(TRUE)
 ```
 
 Sources: 
-* http://stackoverflow.com/questions/21857264/error-in-download-file-unsupported-url-scheme
-* http://stackoverflow.com/questions/19890633/r-produces-unsupported-url-scheme-error-when-getting-data-from-https-sites
+* https://stackoverflow.com/questions/21857264/error-in-download-file-unsupported-url-scheme
+* https://stackoverflow.com/questions/19890633/r-produces-unsupported-url-scheme-error-when-getting-data-from-https-sites
 
 
 ## Contact
