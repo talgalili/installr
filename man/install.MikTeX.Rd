@@ -5,8 +5,8 @@
 \alias{install.miktex}
 \title{Downloads and installs MikTeX for windows}
 \usage{
-install.MikTeX(version, page_with_download_url = "http://miktex.org/download",
-  ...)
+install.MikTeX(version = 64,
+  page_with_download_url = "http://miktex.org/download", ...)
 }
 \arguments{
 \item{version}{gets the values 32 and 64. Deciding if we should install version 32bit or 64bit. If missing (default) the user is prompted for a decisioin.}
