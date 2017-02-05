@@ -1300,8 +1300,10 @@ source.https <- function(URL,..., remove_r_file = T) {
 #' a= require2(geonames)
 #' a
 #' }
-require2 <- function(package, ask = FALSE, ...) {
-   package <- as.character(substitute(package))
+require2 <- function (package, ask = FALSE, character.only = FALSE, ...) 
+{
+   if (!character.only)
+          package <- as.character(substitute(package))
    if(!suppressWarnings(require(package=package, character.only = TRUE))) {
 	  if(ask) {
 		install_package <- ask.user.yn.question(paste("Package ",package, 
