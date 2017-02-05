@@ -19,13 +19,13 @@
 #' 
 #' \dontrun{
 #' install.inno()
-#' install.inno(quick_start_pack = T)
+#' install.inno(quick_start_pack = TRUE)
 #' }
 #' 
 #' @export
 
 install.inno <- function(
-  quick_start_pack = F,
+  quick_start_pack = FALSE,
   ...) {
   
   page_with_download_url = 'http://www.jrsoftware.org/download.php/' 
