@@ -182,7 +182,7 @@ install.URL <- function(exe_URL, keep_install_file = FALSE, wait = TRUE, downloa
    # tryCatch(curl::curl_download(exe_URL, destfile=exe_filename, quiet = FALSE, mode = 'wb'), 
    tryCatch(download_fun(exe_URL, destfile=exe_filename, quiet = FALSE, mode = 'wb'), 
                      error = function(e) {
-               cat("\nExplanation of the error: You didn't enter a valid .EXE URL. \nThis is likely to have happened because there was a change in the software download page, and the function you just ran no longer works. \n\n This is often caused by a change in the URL of the installer file in the download page of the software (making our function unable to know what to download). \n\n Please e-mail: tal.galili@gmail.com and let me know this function needs updating/fixing - thanks!\n")
+               cat("\nExplanation of the error: You didn't enter a valid .EXE URL. \nThis is likely to have happened because there was a change in the URL of the installer file in the download page of the software (making our function unable to know what to download). \n\nThis might have already been fixed in the latest version of installr. Install the latest version of installr using devtools::install_github('talgalili/installr') and try again.\n\nIf this doesn't help please e-mail: tal.galili@gmail.com and let me know this function needs updating/fixing (please include the output of sessionInfo() ) - thanks!\n")
                return(invisible(FALSE))
                })  
    
