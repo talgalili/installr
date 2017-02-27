@@ -1,3 +1,10 @@
+installr 0.19.0 (2017-02-05)
+---------------------------
+
+NEW FUNCTIONS:
+   * install.inno - "Inno Setup is a free installer for Windows programs. First introduced in 1997, Inno Setup today rivals and even surpasses many commercial installers in feature set and stability."
+
+
 installr 0.18.1 (2016-11-11)
 ---------------------------
 

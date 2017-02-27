@@ -4,7 +4,7 @@
 \alias{require2}
 \title{Loading Packages (and Installing them if they are missing)}
 \usage{
-require2(package, ask = FALSE, ...)
+require2(package, ask = FALSE, character.only = FALSE, ...)
 }
 \arguments{
 \item{package}{A character of the name of a package (can also be without quotes).}
