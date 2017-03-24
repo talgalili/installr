@@ -25,7 +25,7 @@
 #' @export
 
 install.inno <- function(
-  quick_start_pack = FALSE, encrypt_module = TRUE,
+  quick_start_pack = FALSE, encryption_module = TRUE,
   ...) {
   
   page_with_download_url = 'http://www.jrsoftware.org/download.php/' 
@@ -39,7 +39,7 @@ install.inno <- function(
   
   install.URL(URL, ...)
   
-  if (encrypt_module) {
+  if (encryption_module) {
     # Find the Inno Setup folder
     progs <- c(list.dirs("C:/Program Files", T, F),
                list.dirs("C:/Program Files (x86)", T, F))
