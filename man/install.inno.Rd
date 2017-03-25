@@ -4,10 +4,12 @@
 \alias{install.inno}
 \title{Downloads and installs Inno Setup}
 \usage{
-install.inno(quick_start_pack = FALSE, ...)
+install.inno(quick_start_pack = FALSE, encryption_module = TRUE, ...)
 }
 \arguments{
-\item{quick_start_pack}{TRUE/FALSE - The Inno Setup QuickStart Pack includes Inno Setup and Inno Script Studio script editor. See \href{http://www.jrsoftware.org/is3rdparty.php}{Third-Party Files} page for more information.}
+\item{quick_start_pack}{logical (default is FALSE) - The Inno Setup QuickStart Pack includes Inno Setup and Inno Script Studio script editor. See \href{http://www.jrsoftware.org/is3rdparty.php}{Third-Party Files} page for more information.}
+
+\item{encryption_module}{logical (default is TRUE) - Inno Setup's Encryption Module}
 
 \item{...}{extra parameters to pass to \link{install.URL}}
 }
