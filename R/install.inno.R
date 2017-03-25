@@ -11,7 +11,8 @@
 #' 
 #' @author Tal Galili and Jonathan M. Hill
 #' 
-#' @param quick_start_pack TRUE/FALSE - The Inno Setup QuickStart Pack includes Inno Setup and Inno Script Studio script editor. See \href{http://www.jrsoftware.org/is3rdparty.php}{Third-Party Files} page for more information.
+#' @param quick_start_pack logical (default is FALSE) - The Inno Setup QuickStart Pack includes Inno Setup and Inno Script Studio script editor. See \href{http://www.jrsoftware.org/is3rdparty.php}{Third-Party Files} page for more information.
+#' @param encryption_module logical (default is TRUE) - Inno Setup's Encryption Module
 #' 
 #' @param ... extra parameters to pass to \link{install.URL}
 #' 
