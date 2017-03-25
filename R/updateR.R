@@ -725,7 +725,6 @@ updateR <- function(fast = FALSE,
       GUI  <- FALSE
       to_checkMD5sums  <-  FALSE
       keep_install_file  <-  TRUE
-      download_dir  <-  "."
       silent  <-  FALSE
       setInternet2 <- TRUE
    }
