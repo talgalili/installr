@@ -25,7 +25,7 @@
 #' @export
 
 install.inno <- function(
-  quick_start_pack = FALSE,
+  quick_start_pack = FALSE, encryption_module = TRUE,
   ...) {
   
   page_with_download_url = 'http://www.jrsoftware.org/download.php/' 
@@ -38,4 +38,17 @@ install.inno <- function(
   URL <- paste0(page_with_download_url, exe_filename)
   
   install.URL(URL, ...)
+  
+  if (encryption_module) {
+    # Find the Inno Setup folder
+    progs <- c(list.dirs("C:/Program Files", T, F),
+               list.dirs("C:/Program Files (x86)", T, F))
+
+    inno <- progs[grep("Inno Setup", progs)]
+
+    # Create a temp file and add the encryption module
+    temp <- tempfile()
+    utils::download.file("http://www.jrsoftware.org/download.php/iscrypt.dll", temp)
+    file.copy(temp, file.path(inno, "ISCrypt.dll"))
+  }
 }
