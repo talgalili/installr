@@ -41,4 +41,3 @@ install.pandoc()
 \author{
 GERGELY DAROCZI, G. Grothendieck, Tal Galili
 }
-

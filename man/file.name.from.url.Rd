@@ -27,4 +27,3 @@ file.name.from.url(url) # returns: "R-2.15.3-win.exe"
 \seealso{
 \code{\link{install.URL}}, \code{\link{install.packages.zip}}
 }
-

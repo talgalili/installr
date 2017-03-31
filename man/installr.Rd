@@ -29,4 +29,3 @@ installr()
 \link{install.GraphicsMagick}, \link{install.ImageMagick},
 \link{check.for.updates.R}, \link{install.URL}, \link{install.packages.zip},
 }
-

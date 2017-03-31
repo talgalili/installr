@@ -34,9 +34,6 @@ os.shutdown()
 ## the next day you wake up, "thank you, R" :)
 }
 }
-\author{
-Yihui Xie <\url{http://yihui.name}>, and Tal Galili
-}
 \references{
 \url{https://github.com/yihui/fun/blob/master/R/shutdown.R}
 }
@@ -44,4 +41,6 @@ Yihui Xie <\url{http://yihui.name}>, and Tal Galili
 \code{\link[base]{system}},\code{\link[base]{shell}}, \code{\link[base]{Sys.sleep}},
 \code{\link{is.windows}}, \code{\link{os.shutdown}}, \code{\link{os.sleep}}, \code{\link{os.hibernate}}, \code{\link{os.lock}}, \code{\link{os.restart}}
 }
-
+\author{
+Yihui Xie <\url{http://yihui.name}>, and Tal Galili
+}

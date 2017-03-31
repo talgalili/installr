@@ -45,10 +45,9 @@ is.empty(b)
 is.empty(b,"integer")
 
 }
-\author{
-James (\url{http://stackoverflow.com/users/269476/james})
-}
 \seealso{
 \link{integer}, \link{identical}
 }
-
+\author{
+James (\url{http://stackoverflow.com/users/269476/james})
+}

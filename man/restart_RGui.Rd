@@ -22,4 +22,3 @@ This is a Windows only function.
 restart_RGui()
 }
 }
-

@@ -27,4 +27,3 @@ rm_installr_from_startup()
 \url{http://www.noamross.net/blog/2012/11/2/rprofile.html}
 \url{http://www.statmethods.net/interface/customizing.html}
 }
-

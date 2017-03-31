@@ -12,4 +12,3 @@ add_load_installr_on_startup_menu(...)
 \description{
 Add menu item for having installr load on startup
 }
-

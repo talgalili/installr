@@ -26,4 +26,3 @@ R_version_in_a_folder(folder = R.home())
 \seealso{
 \link{get.installed.R.folders}
 }
-

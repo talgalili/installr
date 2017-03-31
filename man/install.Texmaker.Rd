@@ -35,4 +35,3 @@ install.Texmaker() # installs the latest version of Texmaker for windows
 \item Texmaker homepage: \url{http://www.xm1math.net/texmaker/}
 }
 }
-

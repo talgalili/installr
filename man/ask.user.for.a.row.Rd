@@ -38,4 +38,3 @@ version_table <- data.frame(versions = c("devel", "V 1.0.0", "V 2.0.0"))
 installr:::ask.user.for.a.row(version_table)
 }
 }
-

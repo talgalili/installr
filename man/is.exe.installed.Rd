@@ -21,4 +21,3 @@ is.exe.installed(c("zip.exe", "Rgui.exe", "blablabla")) # [1]  TRUE  TRUE FALSE
 is.exe.installed("7z") 
 }
 }
-

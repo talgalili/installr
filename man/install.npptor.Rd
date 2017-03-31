@@ -33,4 +33,3 @@ install.npptor() # installs the latest version of NppToR
 homepage: \url{http://npptor.sourceforge.net/}
 download page: \url{http://sourceforge.net/projects/npptor/}
 }
-

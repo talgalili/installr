@@ -24,4 +24,3 @@ If you are running a different OS, then the installr package (at its current for
 is.windows() # returns TRUE on my machine.
 }
 }
-

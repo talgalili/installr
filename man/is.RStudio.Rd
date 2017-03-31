@@ -23,4 +23,3 @@ This function is used in order to check if a GUI can be added to the session or 
 is.RStudio() 
 }
 }
-

@@ -45,4 +45,3 @@ install.7zip() # installs the latest version of 7-Zip
 \item 7-zip homepage: \url{http://www.7-zip.org/}
 }
 }
-

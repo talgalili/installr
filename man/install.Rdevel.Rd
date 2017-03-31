@@ -36,4 +36,3 @@ install.Rdevel()
 \seealso{
 \link{install.R}, \link{updateR}
 }
-

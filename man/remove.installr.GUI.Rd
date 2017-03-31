@@ -21,4 +21,3 @@ add.installr.GUI()  # add menus
 remove.installr.GUI() # remove them
 }
 }
-

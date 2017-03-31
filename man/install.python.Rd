@@ -35,4 +35,3 @@ install.python(,2)
 \author{
 Tal Galili and A. Jonathan R. Godfrey
 }
-

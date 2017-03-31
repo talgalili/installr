@@ -31,4 +31,3 @@ install.git() # installs the latest version of git
 git homepage: \url{http://git-scm.com/}
 git download page: \url{http://git-scm.com/download/win}
 }
-

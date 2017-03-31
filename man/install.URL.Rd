@@ -41,10 +41,9 @@ The .exe file is downloaded into a temporary directory, where it is erased after
 install.URL("adfadf") # shows the error produced when the URL is not valid.
 }
 }
-\author{
-GERGELY DAROCZI, Tal Galili
-}
 \seealso{
 \link{shell}
 }
-
+\author{
+GERGELY DAROCZI, Tal Galili
+}

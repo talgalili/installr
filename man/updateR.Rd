@@ -86,4 +86,3 @@ updateR() # will ask you what you want at every decision.
 \link{check.for.updates.R}, \link{install.R}, 
 \link{copy.packages.between.libraries}, \link{uninstall.R}
 }
-

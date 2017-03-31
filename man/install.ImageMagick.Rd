@@ -34,4 +34,3 @@ install.ImageMagick() # installs the latest version of ImageMagick
 \item ImageMagick homepage: \url{http://www.imagemagick.org/script/index.php}
 }
 }
-

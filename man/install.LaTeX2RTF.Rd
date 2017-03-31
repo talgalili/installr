@@ -33,4 +33,3 @@ install.LaTeX2RTF() # installs the latest version of LaTeX2RTF
 \item SWFTools homepage: \url{http://latex2rtf.sourceforge.net/}
 }
 }
-

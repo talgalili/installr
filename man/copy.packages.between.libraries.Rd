@@ -46,4 +46,3 @@ copy.packages.between.libraries(ask = T)
 \seealso{
 \link{get.installed.R.folders}
 }
-

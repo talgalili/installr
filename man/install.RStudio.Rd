@@ -34,4 +34,3 @@ install.RStudio() # installs the latest version of RStudio
 \item RStudio homepage: \url{http://www.rstudio.com/}
 }
 }
-

@@ -26,4 +26,3 @@ myip() # "37.132.25.15"
 \seealso{
 \link{freegeoip}, \link{myip}, \link{cranometer}
 }
-

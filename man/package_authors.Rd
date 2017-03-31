@@ -68,4 +68,3 @@ Useful for updating your DESCRIPTION file:
 \seealso{
 \link{fetch_tag_from_Rd}
 }
-

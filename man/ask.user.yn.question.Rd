@@ -43,4 +43,3 @@ Ut enim ad minim veniam, quis nostrud exercitation
 \seealso{
 \link[utils]{menu}, (yesno in the package {devtools})
 }
-

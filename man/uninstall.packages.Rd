@@ -35,4 +35,3 @@ install.packages(c("reshape", "plyr"))
 \code{\link{install.packages}}, \code{\link{remove.packages}},
 \code{\link[installr]{install.packages.zip}}
 }
-

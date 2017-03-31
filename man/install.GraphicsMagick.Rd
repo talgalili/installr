@@ -34,4 +34,3 @@ install.GraphicsMagick() # installs the latest version of GraphicsMagick
 \item GraphicsMagick homepage: \url{http://www.graphicsmagick.org/}
 }
 }
-

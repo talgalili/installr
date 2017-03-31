@@ -36,4 +36,3 @@ rm(check.integer)
 \author{
 VitoshKa
 }
-

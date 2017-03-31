@@ -36,4 +36,3 @@ install.CMake() # installs the latest version of ImageMagick
 \item CMake homepage: \url{http://www.cmake.org/cmake/resources/software.html}
 }
 }
-

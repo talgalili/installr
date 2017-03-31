@@ -37,4 +37,3 @@ install.MikTeX(64) # installs the latest version of MikTeX
 MikTeX homepage: \url{http://miktex.org/}
 MikTeX download page: \url{http://miktex.org/download}
 }
-

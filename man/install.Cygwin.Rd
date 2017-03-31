@@ -31,4 +31,3 @@ install.Cygwin() # installs the latest version of Cygwin
 \item Cygwin homepage: \url{http://cygwin.com/}
 }
 }
-

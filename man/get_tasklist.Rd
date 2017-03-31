@@ -36,4 +36,3 @@ tasklist details from microsoft homepage: \url{http://technet.microsoft.com/en-u
 \code{\link{kill_pid}}, \code{\link{kill_all_Rscript_s}}, \link[tools]{pskill}
 \code{\link{kill_pid}}, \code{\link{kill_all_Rscript_s}}
 }
-

@@ -32,4 +32,3 @@ install.notepadpp() # installs the latest version of Notepad++
 homepage: \url{http://notepad-plus-plus.org/}
 download page: \url{http://notepad-plus-plus.org/download/}
 }
-

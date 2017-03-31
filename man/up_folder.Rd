@@ -23,4 +23,3 @@ Gets a character vector of folder strings and
 \examples{
 up_folder(FOLDER = c("D:/R/R-3.0.1", "D:/R/R-3.0.2", "D:/R/R-3.0.3"))
 }
-

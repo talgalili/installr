@@ -47,4 +47,3 @@ install.Rtools(TRUE, FALSE) # asks the user to choose
 \references{
 RTools homepage (for other resources and documentation): \url{https://cran.r-project.org/bin/windows/Rtools/}
 }
-
