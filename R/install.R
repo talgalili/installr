@@ -1294,6 +1294,8 @@ source.https <- function(URL,..., remove_r_file = T) {
 #' 
 #' @param package A character of the name of a package (can also be without quotes).
 #' @param ask Should the user be asked to install the require packaged, in case it is missing? (default is FALSE)
+#' @param character.only logical (FALSE) - a logical indicating whether package or 
+#' help can be assumed to be character strings. Passed to \link{require}.
 #' @param ... not used
 #' 
 #' @return  returns (invisibly) a logical indicating whether the required package is available.

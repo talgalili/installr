@@ -11,6 +11,9 @@ require2(package, ask = FALSE, character.only = FALSE, ...)
 
 \item{ask}{Should the user be asked to install the require packaged, in case it is missing? (default is FALSE)}
 
+\item{character.only}{logical (FALSE) - a logical indicating whether package or 
+help can be assumed to be character strings. Passed to \link{require}.}
+
 \item{...}{not used}
 }
 \value{
