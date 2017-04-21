@@ -17,6 +17,9 @@
 #
 
 
+#' @import stringr
+NULL
+
 
 
 #' @title Adds a menu based GUI for updating R within Rgui
