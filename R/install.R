@@ -482,6 +482,8 @@ and enter the row number of the file-version you'd like to install: "
 #' install.Rtools(TRUE, FALSE) # asks the user to choose 
 #' # the latest version of RTools to install 
 #' # (regardless if one is needed)
+#' # install.Rtools(F,F)
+#' 
 #' }
 install.Rtools <- function(choose_version = FALSE,                           
                            check=TRUE,
@@ -522,8 +524,10 @@ install.Rtools <- function(choose_version = FALSE,
       version_to_install_no_dots <- gsub("\\.","", version_to_install)
       exe_filename <-   paste("Rtools" , version_to_install_no_dots , ".exe", sep = "")
    } else { # else - it means we have a version of R which is beyond our current knowledge of Rtools (or that the user asked to choose a version), so we'll have to let the user decide on what to do.
-		require2("XML")
-      TABLE <- XML::readHTMLTable(page_with_download_url, header=T,stringsAsFactors=F)[[1]]
+      require2("htmltab")
+      TABLE <- htmltab::htmltab(page_with_download_url)
+# 		require2("XML")
+#       TABLE <- XML::readHTMLTable(page_with_download_url, header=T,stringsAsFactors=F)[[1]]
       # example: http://stackoverflow.com/questions/1395528/scraping-html-tables-into-r-data-frames-using-the-xml-package
       
       # choose a version:
