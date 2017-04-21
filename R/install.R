@@ -470,7 +470,7 @@ and enter the row number of the file-version you'd like to install: "
 #' @return invisible(TRUE/FALSE) - was the installation successful or not.
 #' @export
 #' @source
-#' Some parts of the code are taken from the devtools, see \url{https://github.com/hadley/devtools/blob/master/R/rtools.r}
+#' Some parts of the code are taken from the devtools.
 #' @references
 #' RTools homepage (for other resources and documentation): \url{https://cran.r-project.org/bin/windows/Rtools/}
 #' @examples
