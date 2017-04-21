@@ -1,3 +1,26 @@
+installr 0.19.0 (2017-04-21)
+---------------------------
+
+NEW FUNCTIONS:
+   * install.inno - "Inno Setup is a free installer for Windows programs. First introduced in 1997, Inno Setup today rivals and even surpasses many commercial installers in feature set and stability."
+
+
+BUG FIXES:
+   * Fix install.Rtools()
+
+
+OTHER NOTES:
+   * Moved stringr to depends. R now must be >2.14
+
+
+
+installr 0.18.1 (2016-11-11)
+---------------------------
+
+BUG FIXES:
+   * Fix install.MikTeX()
+
+
 installr 0.18.0 (2016-11-05)
 ---------------------------
 
