@@ -1014,7 +1014,7 @@ install.latex2rtf <- function(...) install.LaTeX2RTF(...)
 #' @export
 #' @references
 #' \itemize{
-#' \item Cygwin homepage: \url{http://cygwin.com/}
+#' \item Cygwin homepage: https://www.cygwin.com/
 #' } 
 #' @examples
 #' \dontrun{
