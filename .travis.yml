@@ -1,24 +1,24 @@
-language: c
+language: R
+cache: packages
+sudo: true
+dist: trusty
+
+addons:
+  apt:
+    packages:
+      - libfreetype6
+
+r:
+#  - oldrel
+  - release
+  - devel
+
+env:
+  global:
+  - _R_CHECK_FORCE_SUGGESTS_=false
 
 before_install:
-  - curl -OL http://raw.github.com/craigcitro/r-travis/master/scripts/travis-tool.sh
-  - chmod 755 ./travis-tool.sh
-  - ./travis-tool.sh bootstrap
-install:
-  - ./travis-tool.sh r_binary_install Rcpp highlight
-  - ./travis-tool.sh github_package hadley/testthat
-  - ./travis-tool.sh install_deps
-
-script: ./travis-tool.sh run_tests
-
-on_failure:
-  - ./travis-tool.sh dump_logs
-
-branches:
-  except:
-  - /-expt$/
-notifications:
-  email:
-    on_success: change
-    on_failure: change
-
+  - sudo add-apt-repository ppa:ubuntugis/ubuntugis-unstable --yes
+  - sudo apt-get --yes --force-yes update -qq
+  - sudo apt-get install --yes libudunits2-dev libproj-dev libgeos-dev libgdal-dev
+  - Rscript -e 'update.packages(ask = FALSE)'
