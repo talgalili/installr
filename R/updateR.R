@@ -116,7 +116,7 @@ checkMD5sums2 <- function (package, dir, md5file, omit_files,...)
 #' @param GUI a logical indicating whether a graphics menu should be used if available.  If TRUE, and on Windows, it will use \link{winDialog}, otherwise it will use \link[utils]{menu}.
 #' @param add_lines_before if to add a line before asking the question.  Default is TRUE.
 #' @return TRUE/FALSE - if the user answers yes or no.
-#' @seealso \link[utils]{menu}, (yesno in the package {devtools}) 
+#' @seealso menu in the {utils} package, yesno in the {devtools} package. 
 #' @references \url{http://stackoverflow.com/questions/15250487/how-to-add-a-menu-item-to-rgui} 
 #' (my thanks goes to Dason for his answer and help)
 #' @examples

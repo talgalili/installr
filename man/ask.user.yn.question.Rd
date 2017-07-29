@@ -41,5 +41,5 @@ Ut enim ad minim veniam, quis nostrud exercitation
 (my thanks goes to Dason for his answer and help)
 }
 \seealso{
-\link[utils]{menu}, (yesno in the package {devtools})
+menu in the {utils} package, yesno in the {devtools} package.
 }
