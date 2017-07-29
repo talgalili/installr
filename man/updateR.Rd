@@ -64,7 +64,7 @@ This function performs the following steps:
 \item You can then erase all of the packages in your old R installation.
 \item After your packages are moved (and the old ones possibly erased), you will get the option to update all of your packages in the new version of R.
 \item You will be asked if to open the Rgui of your new R.
-\item Lastely - you can close the current session of your old R. 
+\item Lastly - you can close the current session of your old R. 
 }
 }
 \details{
