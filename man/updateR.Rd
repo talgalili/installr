@@ -35,7 +35,7 @@ don't use GUI, check MD5sums, keep installed file in the \link{getwd}.}
 
 \item{print_R_versions}{if to tell the user what version he has and what is the latest version (default is TRUE)}
 
-\item{GUI}{a logical indicating whether a graphics menu should be used if available.  If TRUE, and on Windows, it will use \link{winDialog}, otherwise it will use \link[utils]{menu}.}
+\item{GUI}{a logical indicating whether a graphics menu should be used if available.  If TRUE, and on Windows, it will use winDialog, otherwise it will use \link[utils]{menu}.}
 
 \item{to_checkMD5sums}{Should we check that the new R installation has the files we expect it to (by checking the MD5 sums)? default is TRUE.  It assumes that the R which was isntalled is the latest R version. parameter is passed to install.R()}
 

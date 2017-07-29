@@ -9,7 +9,7 @@ ask.user.yn.question(question, GUI = TRUE, add_lines_before = TRUE)
 \arguments{
 \item{question}{a character string with a question to the user.}
 
-\item{GUI}{a logical indicating whether a graphics menu should be used if available.  If TRUE, and on Windows, it will use \link{winDialog}, otherwise it will use \link[utils]{menu}.}
+\item{GUI}{a logical indicating whether a graphics menu should be used if available.  If TRUE, and on Windows, it will use winDialog, otherwise it will use \link[utils]{menu}.}
 
 \item{add_lines_before}{if to add a line before asking the question.  Default is TRUE.}
 }
