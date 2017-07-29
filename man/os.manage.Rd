@@ -7,7 +7,7 @@
 os.manage(GUI = TRUE, ask = TRUE, ...)
 }
 \arguments{
-\item{GUI}{a logical indicating whether a graphics menu should be used if available.  If TRUE, and on Windows, it will use \link{winDialog}, otherwise it will use \link[utils]{menu}.}
+\item{GUI}{a logical indicating whether a graphics menu should be used if available.  If TRUE, and on Windows, it will use winDialog, otherwise it will use \link[utils]{menu}.}
 
 \item{ask}{a logical indicating whether to ask the user for the number of minutes in which to perform the operation.}
 
