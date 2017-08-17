@@ -53,6 +53,20 @@ is.exe.installed <- function(exe_file) {
 is.windows <- function(...) unname(Sys.info()["sysname"] == "Windows")
 # inspiration: http://dennislwm-star.blogspot.sg/2012/11/r-is-almost-platform-independent.html
 
+#' @title Checks if the running OS is x64
+#' @description Returns TRUE/FALSE if the R session is running on Windows 64-bit or not.
+#' @details
+#' This function is run when the 'installr' package is first loaded in order to check if the current running OS is Windows 64-bit.
+#' If you are running a different OS, then the installr package (at its current form) does not have much to offer you.
+#' @param ... none are available.
+#' @return Returns TRUE/FALSE if the R session is running on Windows 64-bit or not. 
+#' @export
+#' @examples
+#' \dontrun{
+#' is.x64() # returns TRUE on my machine.
+#' }
+is.x64 <- function(...) unname(Sys.info()["release"] == ">= 8 x64")
+
 
 #' @title Checks if the R session is running within RStudio
 #' @description Returns TRUE/FALSE if the R session is running within RStudio or not.
