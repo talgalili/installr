@@ -31,7 +31,7 @@ don't use GUI, check MD5sums, keep installed file in the \link{getwd}.}
 
 \item{start_new_R}{TRUE/FALSE - if to start the new R (Rgui) after we will quit the old R. Default is TRUE. It will try to start the 64 bit R version, if it does not exist, the 32 bit will be started. This may be less useful for people using RStudio or the likes.}
 
-\item{quit_R}{TRUE/FALSE - if to quite R after the installation and package copying or not. If missing (this is the default) - the user is asked what to do.}
+\item{quit_R}{TRUE/FALSE - if to quit R after the installation and package copying or not. If missing (this is the default) - the user is asked what to do.}
 
 \item{print_R_versions}{if to tell the user what version he has and what is the latest version (default is TRUE)}
 
