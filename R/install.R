@@ -868,7 +868,7 @@ install.rstudio <- function(...) install.RStudio(...)
 #' \dontrun{
 #' install.ImageMagick() # installs the latest version of ImageMagick
 #' }
-install.ImageMagick  <- function(URL="http://www.imagemagick.org/script/binary-releases.php",...) {    
+install.ImageMagick  <- function(URL="http://www.imagemagick.org/script/download.php",...) {    
    page_with_download_url <- URL
    # get download URL:
    page     <- readLines(page_with_download_url, warn = FALSE)
