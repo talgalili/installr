@@ -778,7 +778,7 @@ updateR <- function(fast = FALSE,
    # folder.  Hence, the new and old R paths will be the same.
    if(new_R_path==old_R_path) {
       cat("
-We can not seem to find the location if the new R you have installed.
+We can not seem to find the location of the new R you have installed.
 The rest of the updating process is aborted, please take care to copy
 your packages to the new R installation.\n")
       return(TRUE)
