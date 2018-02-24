@@ -5,12 +5,9 @@
 \alias{install.miktex}
 \title{Downloads and installs MikTeX for windows}
 \usage{
-install.MikTeX(version = 64,
-  page_with_download_url = "http://miktex.org/download", ...)
+install.MikTeX(page_with_download_url = "http://miktex.org/download", ...)
 }
 \arguments{
-\item{version}{gets the values 32 and 64. Deciding if we should install version 32bit or 64bit. If missing (default) the user is prompted for a decisioin.}
-
 \item{page_with_download_url}{the URL of the MikTeX download page.}
 
 \item{...}{extra parameters to pass to \link{install.URL}}
@@ -28,9 +25,7 @@ MiKTeX is essential for using Sweave, knitr, and creating Vignette for R package
 }
 \examples{
 \dontrun{
-install.MikTeX() # installs the latest version of MikTeX
-install.MikTeX(32) # installs the latest version of MikTeX
-install.MikTeX(64) # installs the latest version of MikTeX
+install.MikTeX() # installs the latest version of MikTeX 62 bit
 }
 }
 \references{

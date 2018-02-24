@@ -695,7 +695,6 @@ install.npptor <- function(URL="http://sourceforge.net/projects/npptor/files/npp
 #' MiKTeX is a typesetting system for Microsoft Windows that is developed by Christian Schenk. It consists of an implementation of TeX and a set of related programs. MiKTeX provides the tools necessary to prepare documents using the TeX/LaTeX markup language, as well a simple tex editor (TeXworks).
 #' 
 #' MiKTeX is essential for using Sweave, knitr, and creating Vignette for R packages.
-#' @param version gets the values 32 and 64. Deciding if we should install version 32bit or 64bit. If missing (default) the user is prompted for a decisioin.
 #' @param page_with_download_url the URL of the MikTeX download page.
 #' @param ... extra parameters to pass to \link{install.URL}
 #' @return TRUE/FALSE - was the installation successful or not.
@@ -705,43 +704,23 @@ install.npptor <- function(URL="http://sourceforge.net/projects/npptor/files/npp
 #' MikTeX download page: \url{http://miktex.org/download}
 #' @examples
 #' \dontrun{
-#' install.MikTeX() # installs the latest version of MikTeX
-#' install.MikTeX(32) # installs the latest version of MikTeX
-#' install.MikTeX(64) # installs the latest version of MikTeX
+#' install.MikTeX() # installs the latest version of MikTeX 62 bit
 #' }
-install.MikTeX  <- function(version = 64, page_with_download_url="http://miktex.org/download",...) {
-   
-   # if(missing(version)) {
-   #    version <- ifelse(ask.user.for.a.row(data.frame(version = c(32, 64)), "Which version of MiKTeX do you want?") == 1,
-   #                      32, 64)
-   # } else { 
-   #    if(!(version %in% c(32,64)))       version <- ifelse(ask.user.for.a.row(data.frame(version = c(32, 64)), "Which version of MiKTeX do you want?") == 1,
-   #                                                         32, 64)      
-   # }
-   
+install.MikTeX  <- function(page_with_download_url="http://miktex.org/download", ...) {
    # get download URL:
-   if(version == 32) {
-      page     <- readLines(page_with_download_url, warn = FALSE)
-      #"http://mirrors.ctan.org/systems/win32/miktex/setup/basic-miktex-2.9.4757.exe
-      # "http://mirrors.ctan.org/systems/win32/miktex/setup/basic-miktex-2.9.4757-x64.exe"
-      # http://miktex.org/download/ctan/systems/win32/miktex/setup/basic-miktex-2.9.6069-x64.exe
-      pat <- "/download/ctan/systems/win32/miktex/setup/basic-miktex-[0-9.]+.exe"; 
-      target_line <- grep(pat, page, value = TRUE); 
-      m <- regexpr(pat, target_line); 
-      URL      <- regmatches(target_line, m) # (The http still needs to be prepended.
-      URL      <- paste('http://miktex.org', URL, sep = '')[1] # we might find the same file more than once - so we'll only take its first one
-   } else { # else -> version == 64
-      page     <- readLines(page_with_download_url, warn = FALSE)
-      #"http://mirrors.ctan.org/systems/win32/miktex/setup/basic-miktex-2.9.4757.exe
-      # "http://mirrors.ctan.org/systems/win32/miktex/setup/basic-miktex-2.9.4757-x64.exe"
-      # http://ctan.mirror.ftn.uns.ac.rs/systems/win32/miktex/setup/basic-miktex-2.9.6069-x64.exe
-      pat <- "http://.*/systems/win32/miktex/setup/basic-miktex-[0-9.]+-x64.exe"; 
-      target_line <- grep(pat, page, value = TRUE); 
-      m <- regexpr(pat, target_line); 
-      URL      <- regmatches(target_line, m) # (The http still needs to be prepended.
-      # URL      <- paste('http://miktex.org', URL, sep = '')[1] # we might find the same file more than once - so we'll only take its first one
-   }
-   # install.
+   page     <- readLines(page_with_download_url, warn = FALSE)
+   # The damn url keeps changing...
+   #"http://mirrors.ctan.org/systems/win32/miktex/setup/basic-miktex-2.9.4757.exe
+   # "http://mirrors.ctan.org/systems/win32/miktex/setup/basic-miktex-2.9.4757-x64.exe"
+   # http://ctan.mirror.ftn.uns.ac.rs/systems/win32/miktex/setup/basic-miktex-2.9.6069-x64.exe
+   # https://miktex.org/download/ctan/systems/win32/miktex/setup/windows-x64/basic-miktex-2.9.6615-x64.exe
+   # I'm noticing that the one thing that doesn't change is that it is a .exe link - so let's only rely on this.
+   pat <- "http://.*64.*.exe"; 
+   target_line <- grep(pat, page, value = TRUE); 
+   m <- regexpr(pat, target_line); 
+   URL <- regmatches(target_line, m) # (The http still needs to be prepended.
+   URL <- URL[1] # use basic instead of setup
+
    # install.URL(URL)   
    install.URL(URL,...)   
 }
