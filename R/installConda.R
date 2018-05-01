@@ -36,9 +36,9 @@ install.conda = function (version = 3,
                            ...)
 {
   if(is.x64()){
-    bitNo<-"-x86_64"
+    bitNo<-"x86_64"
   }else{
-    bitNo<-"-x86"
+    bitNo<-"x86"
   }
   
   URL <- paste0("https://repo.continuum.io/miniconda/Miniconda",version,"-latest-Windows-",bitNo,".exe")
