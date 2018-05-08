@@ -34,27 +34,41 @@
 #' }
 install.java <- function(version = 10,
                          page_with_download_url = "http://jdk.java.net/java-se-ri/",
-                         path = "C:/java"){
-  
-  page <- readLines(paste0(page_with_download_url,version), warn = F)
+                         path = "C:/java") {
+  page <- readLines(paste0(page_with_download_url, version), warn = F)
   target_line <- grep("windows", page, value = T)[1]
   
   pat <- "https://.+?(zip|gz)"
-  m <- regexpr(pat, target_line); 
+  m <- regexpr(pat, target_line)
+  
   URL      <- regmatches(target_line, m)
   
   filename <- file.path(tempdir(), file.name.from.url(URL))
-  download.file(URL, destfile=filename, mode = 'wb')
-  if(grepl("zip$",URL)){
+  download.file(URL, destfile = filename, mode = 'wb')
+  if (grepl("zip$", URL)) {
     unzip(zipfile = filename, exdir = path)
   }
-  if(grepl("gz$",URL)){
+  if (grepl("gz$", URL)) {
     untar(tarfile = filename, exdir = path)
   }
   
   path_list <- list.dirs(path)
-  home_path <- path_list[grep("jdk-[0-9]+$", path_list)]
+  home_path <- grep("jdk-[0-9]+$", path_list, value = T)
+  home_path <- grep(version, home_path, value = T)
   
+  profiled <- paste0("Sys.setenv(JAVA_HOME='", home_path, "')")
+  
+  if (!file.exists("~/.Rprofile")) {
+    file.create("~/.Rprofile")
+  }
+  
+  pre <- readLines("~/.Rprofile", warn = F)
+  
+  if(any(grepl("JAVA_HOME",pre))){
+    pre <- pre[-grep("JAVA_HOME", pre)]
+  }
+  profiled <- c(pre, profiled)
+  write(profiled, "~/.Rprofile")
   Sys.setenv(JAVA_HOME=home_path)
 }
 
