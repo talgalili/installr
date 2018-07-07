@@ -6,12 +6,14 @@
 \usage{
 
   install.python(page_with_download_url = "https://www.python.org/downloads/windows/",
-  version_number = 3, ...)
+  version_number = 3, x64 = is.x64(), ...)
 }
 \arguments{
 \item{page_with_download_url}{a link to the list of download links for Python}
 
-\item{version_number}{Either 2 or 3. Version 2 will lead to download of v2.7.xxx}
+\item{version_number}{Either 2 or 3. Version 2/3 will lead to download of v2.7.xx/3.6.xx respectively.}
+
+\item{x64}{logical: fetch a 64 bit version. default checks architecture of current R session.}
 
 \item{...}{extra parameters to pass to \link{install.URL}}
 }
@@ -23,7 +25,7 @@ Downloads and installs the latest version of python 2 or 3 for Windows.
 }
 \details{
 Python is a programming language which has two versions under active development. 
-Make sure you know which version is required for the code you have to run, or alternatively, make sure you are developing code that is fit for your chosen version of Python.
+Make sure you know which version is required for the code you have to run, or alternatively, make sure you are developing code that is fit for your chosen version of Python. In addition, the Python installers are specific to 32 or 64 bit windows architectures.
 }
 \examples{
 \dontrun{

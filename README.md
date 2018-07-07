@@ -59,7 +59,7 @@ installr() #  user can easily select (via a GUI interface) a software to install
 
 ## Troubleshooting
 
-If you one of the followiong errors from some commands:
+If you get either of the following errors from some commands:
 
 ```r
 Error in download.file(URL, destfile = ...) : 
