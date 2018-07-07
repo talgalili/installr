@@ -1,8 +1,12 @@
 installr 0.20.1 (2018-07-07)
 ---------------------------
 
+NEW FUNCTIONS:
+   * install.Java
+   
 UPDATED FUNCTIONS:
    * updated install.python() to check 32/64 bit Windows
+
    
 
 installr 0.20.0 (2018-05-02)
