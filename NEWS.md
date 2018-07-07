@@ -1,3 +1,13 @@
+installr 0.21.0 (2018-07-07)
+---------------------------
+
+NEW FUNCTIONS:
+   * install.Java
+   
+UPDATED FUNCTIONS:
+   * updated install.python() to check 32/64 bit Windows
+
+   
 
 installr 0.20.0 (2018-05-02)
 ---------------------------
@@ -10,6 +20,7 @@ NEW FUNCTIONS:
 BUG FIXES:
    * Fix install.ImageMagick()
    * Fix install.MikTeX
+   * Fix myip
 
 
 installr 0.19.0 (2017-04-21)
