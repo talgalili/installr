@@ -11,7 +11,7 @@ check.for.updates.R(notify_user = TRUE, GUI = TRUE,
 \arguments{
 \item{notify_user}{if to print to you (the user) what is the latest version and what version you are currently using.}
 
-\item{GUI}{a logical indicating whether a graphics menu should be used if available.  If TRUE, and on Windows, it will use \link{winDialog}, otherwise it will use \link{cat}.}
+\item{GUI}{a logical indicating whether a graphics menu should be used if available.  If TRUE, and on Windows, it will use winDialog, otherwise it will use \link{cat}.}
 
 \item{page_with_download_url}{the URL of the page from which R can be downloaded.}
 
@@ -33,4 +33,3 @@ check.for.updates.R()
 #  [1] TRUE
 }
 }
-

@@ -32,4 +32,3 @@ install.FFmpeg() # installs the latest version of FFmpeg
 \item FFmpeg homepage: \url{http://FFmpeg.org/}
 }
 }
-

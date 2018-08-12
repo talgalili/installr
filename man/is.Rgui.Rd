@@ -26,4 +26,3 @@ is.Rgui()
 \seealso{
 \link{is.RStudio}, \link{is.windows}
 }
-

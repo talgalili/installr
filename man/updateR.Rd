@@ -31,11 +31,11 @@ don't use GUI, check MD5sums, keep installed file in the \link{getwd}.}
 
 \item{start_new_R}{TRUE/FALSE - if to start the new R (Rgui) after we will quit the old R. Default is TRUE. It will try to start the 64 bit R version, if it does not exist, the 32 bit will be started. This may be less useful for people using RStudio or the likes.}
 
-\item{quit_R}{TRUE/FALSE - if to quite R after the installation and package copying or not. If missing (this is the default) - the user is asked what to do.}
+\item{quit_R}{TRUE/FALSE - if to quit R after the installation and package copying or not. If missing (this is the default) - the user is asked what to do.}
 
 \item{print_R_versions}{if to tell the user what version he has and what is the latest version (default is TRUE)}
 
-\item{GUI}{a logical indicating whether a graphics menu should be used if available.  If TRUE, and on Windows, it will use \link{winDialog}, otherwise it will use \link[utils]{menu}.}
+\item{GUI}{a logical indicating whether a graphics menu should be used if available.  If TRUE, and on Windows, it will use winDialog, otherwise it will use \link[utils]{menu}.}
 
 \item{to_checkMD5sums}{Should we check that the new R installation has the files we expect it to (by checking the MD5 sums)? default is TRUE.  It assumes that the R which was isntalled is the latest R version. parameter is passed to install.R()}
 
@@ -64,7 +64,7 @@ This function performs the following steps:
 \item You can then erase all of the packages in your old R installation.
 \item After your packages are moved (and the old ones possibly erased), you will get the option to update all of your packages in the new version of R.
 \item You will be asked if to open the Rgui of your new R.
-\item Lastely - you can close the current session of your old R. 
+\item Lastly - you can close the current session of your old R. 
 }
 }
 \details{
@@ -86,4 +86,3 @@ updateR() # will ask you what you want at every decision.
 \link{check.for.updates.R}, \link{install.R}, 
 \link{copy.packages.between.libraries}, \link{uninstall.R}
 }
-

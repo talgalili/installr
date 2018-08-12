@@ -35,4 +35,3 @@ is_in_.First_in_Rprofile.site("suppressMessages(library(installr))") # FALSE
 \url{http://www.noamross.net/blog/2012/11/2/rprofile.html}
 \url{http://www.statmethods.net/interface/customizing.html}
 }
-

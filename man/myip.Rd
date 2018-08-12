@@ -4,7 +4,7 @@
 \alias{myip}
 \title{What is my IP}
 \source{
-\url{http://www.exip.org/about.php}, \url{http://api.exip.org/?call=ip},  \url{http://stackoverflow.com/questions/3097589/getting-my-public-ip-via-api}
+\url{https://api.ipify.org}
 }
 \usage{
 myip(...)
@@ -13,10 +13,12 @@ myip(...)
 \item{...}{not in use}
 }
 \value{
-your current ip.
+your current ip (character string)
 }
 \description{
-Retrieving your public IP via http://api.exip.org/
+Retrieving your public IP via \url{https://api.ipify.org}.
+(old solution used: http://api.exip.org/
+based on http://stackoverflow.com/questions/3097589/getting-my-public-ip-via-api)
 }
 \examples{
 \dontrun{
@@ -26,4 +28,3 @@ myip() # "37.132.25.15"
 \seealso{
 \link{freegeoip}, \link{myip}, \link{cranometer}
 }
-

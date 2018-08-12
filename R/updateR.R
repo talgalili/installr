@@ -113,10 +113,10 @@ checkMD5sums2 <- function (package, dir, md5file, omit_files,...)
 #' @export
 #' @description Asks the user for one yes/no question.  If the users replies with a "yes" (or Y, or y) the function returns TRUE.  Otherwise, FALSE. (also exists as the function devtools::yesno)
 #' @param question a character string with a question to the user.
-#' @param GUI a logical indicating whether a graphics menu should be used if available.  If TRUE, and on Windows, it will use \link{winDialog}, otherwise it will use \link[utils]{menu}.
+#' @param GUI a logical indicating whether a graphics menu should be used if available.  If TRUE, and on Windows, it will use winDialog, otherwise it will use \link[utils]{menu}.
 #' @param add_lines_before if to add a line before asking the question.  Default is TRUE.
 #' @return TRUE/FALSE - if the user answers yes or no.
-#' @seealso \link[utils]{menu}, (yesno in the package {devtools}) 
+#' @seealso menu in the {utils} package, yesno in the {devtools} package. 
 #' @references \url{http://stackoverflow.com/questions/15250487/how-to-add-a-menu-item-to-rgui} 
 #' (my thanks goes to Dason for his answer and help)
 #' @examples
@@ -156,7 +156,7 @@ ask.user.yn.question <- function(question, GUI = TRUE, add_lines_before = TRUE) 
 #' Fetches the latest (not development!) R version and compares it with your currently installed R version (the version of the R session from which you are running this function).
 #' 
 #' @param notify_user if to print to you (the user) what is the latest version and what version you are currently using.
-#' @param GUI a logical indicating whether a graphics menu should be used if available.  If TRUE, and on Windows, it will use \link{winDialog}, otherwise it will use \link{cat}.
+#' @param GUI a logical indicating whether a graphics menu should be used if available.  If TRUE, and on Windows, it will use winDialog, otherwise it will use \link{cat}.
 #' @param page_with_download_url the URL of the page from which R can be downloaded.
 #' @param pat pattern to search for when looking for a newer R version
 #' @return TRUE/FALSE - if there is a newer version of R to install or not.
@@ -659,7 +659,7 @@ copy.packages.between.libraries <- function(from, to, ask = FALSE, keep_old = TR
 #' \item You can then erase all of the packages in your old R installation.
 #' \item After your packages are moved (and the old ones possibly erased), you will get the option to update all of your packages in the new version of R.
 #' \item You will be asked if to open the Rgui of your new R.
-#' \item Lastely - you can close the current session of your old R. 
+#' \item Lastly - you can close the current session of your old R. 
 #' } 
 #' 
 #' @details
@@ -675,9 +675,9 @@ copy.packages.between.libraries <- function(from, to, ask = FALSE, keep_old = TR
 #' @param update_packages TRUE/FALSE - if to update your packages in the new version of R (all packages will be updated without asking confirmation per package) If missing (this is the default)  - the user will be asked for his preference (he should say yes, unless he is using a global library folder).  This is done by calling the Rscript in the new R.
 #' @param keep_old_packages - if the keep the packages in the library of the old R installation. If missing (this is the default)  - the user will be asked for his preference (he should say yes, unless he is using a global library folder).
 #' @param start_new_R TRUE/FALSE - if to start the new R (Rgui) after we will quit the old R. Default is TRUE. It will try to start the 64 bit R version, if it does not exist, the 32 bit will be started. This may be less useful for people using RStudio or the likes.
-#' @param quit_R TRUE/FALSE - if to quite R after the installation and package copying or not. If missing (this is the default) - the user is asked what to do.
+#' @param quit_R TRUE/FALSE - if to quit R after the installation and package copying or not. If missing (this is the default) - the user is asked what to do.
 #' @param print_R_versions if to tell the user what version he has and what is the latest version (default is TRUE)
-#' @param GUI a logical indicating whether a graphics menu should be used if available.  If TRUE, and on Windows, it will use \link{winDialog}, otherwise it will use \link[utils]{menu}.
+#' @param GUI a logical indicating whether a graphics menu should be used if available.  If TRUE, and on Windows, it will use winDialog, otherwise it will use \link[utils]{menu}.
 #' @param to_checkMD5sums Should we check that the new R installation has the files we expect it to (by checking the MD5 sums)? default is TRUE.  It assumes that the R which was isntalled is the latest R version. parameter is passed to install.R()
 #' @param keep_install_file If TRUE - the installer file will not be erased after it is downloaded and run.
 #' @param download_dir A character of the directory into which to download the file. (default is \link{tempdir}())
@@ -778,7 +778,7 @@ updateR <- function(fast = FALSE,
    # folder.  Hence, the new and old R paths will be the same.
    if(new_R_path==old_R_path) {
       cat("
-We can not seem to find the location if the new R you have installed.
+We can not seem to find the location of the new R you have installed.
 The rest of the updating process is aborted, please take care to copy
 your packages to the new R installation.\n")
       return(TRUE)

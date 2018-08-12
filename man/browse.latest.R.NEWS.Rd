@@ -22,4 +22,3 @@ Sends the user the the NEWS html file on "https://cran.rstudio.com/bin/windows/b
 browse.latest.R.NEWS() 
 }
 }
-

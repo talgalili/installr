@@ -24,4 +24,3 @@ turn.version.to.number1("3.0.1")
 \seealso{
 \link{turn.version.to.number}
 }
-

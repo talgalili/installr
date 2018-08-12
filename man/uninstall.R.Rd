@@ -33,4 +33,3 @@ uninstall.R("10.10.0") # would pop up the menu options (until R 10.10.0 will be 
 \seealso{
 \link{install.R}, \link{updateR}, \link{system}
 }
-

@@ -27,9 +27,6 @@ This locks Windows after set amount of time.
 os.lock()
 }
 }
-\author{
-Tal Galili
-}
 \references{
 \url{http://superuser.com/questions/42124/how-can-i-put-the-computer-to-sleep-from-command-prompt-run-menu} , \url{http://www.howtogeek.com/howto/windows-vista/quick-tip-create-shutdown-restart-lock-icons-in-windows-vista/}
 }
@@ -37,4 +34,6 @@ Tal Galili
 \code{\link[base]{system}},\code{\link[base]{shell}}, \code{\link[base]{Sys.sleep}}, 
 \code{\link{is.windows}}, \code{\link{os.shutdown}}, \code{\link{os.sleep}}, \code{\link{os.hibernate}}, \code{\link{os.lock}}, \code{\link{os.restart}}
 }
-
+\author{
+Tal Galili
+}

@@ -34,4 +34,3 @@ install.GitHub() # installs the latest version of GitHub for windows
 \item GitHub for windows download page: \url{http://windows.github.com/}
 }
 }
-

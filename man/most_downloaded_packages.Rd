@@ -45,4 +45,3 @@ lineplot_package_downloads(pkg_names = top_packages, dataset = my_RStudio_CRAN_d
 \seealso{
 \link{download_RStudio_CRAN_data}, \link{read_RStudio_CRAN_data},\link{barplot_package_users_per_day}
 }
-

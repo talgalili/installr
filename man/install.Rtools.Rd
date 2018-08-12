@@ -5,7 +5,7 @@
 \alias{install.rtools}
 \title{Downloads and installs Rtools}
 \source{
-Some parts of the code are taken from the devtools, see \url{https://github.com/hadley/devtools/blob/master/R/rtools.r}
+Some parts of the code are taken from the devtools.
 }
 \usage{
 install.Rtools(choose_version = FALSE, check = TRUE, GUI = TRUE,
@@ -42,9 +42,10 @@ install.Rtools(TRUE) # if one is needed - asks the user to choose the latest
 install.Rtools(TRUE, FALSE) # asks the user to choose 
 # the latest version of RTools to install 
 # (regardless if one is needed)
+# install.Rtools(F,F)
+
 }
 }
 \references{
 RTools homepage (for other resources and documentation): \url{https://cran.r-project.org/bin/windows/Rtools/}
 }
-

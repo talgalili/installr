@@ -42,10 +42,9 @@ wm
 
 }
 }
-\author{
-Boris Hejblum
-}
 \seealso{
 \link{download_RStudio_CRAN_data}, \link{read_RStudio_CRAN_data}, \link{barplot_package_users_per_day}, \link[ggplot2]{ggplot}
 }
-
+\author{
+Boris Hejblum
+}

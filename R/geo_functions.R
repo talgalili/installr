@@ -215,10 +215,12 @@ freegeoip <- function(ip = myip(), format = ifelse(length(ip)==1,'list','datafra
 #' @title What is my IP
 #' @export
 #' @description 
-#' Retrieving your public IP via http://api.exip.org/
+#' Retrieving your public IP via \url{https://api.ipify.org}.
+#' (old solution used: http://api.exip.org/
+#' based on http://stackoverflow.com/questions/3097589/getting-my-public-ip-via-api)
 #' @param ... not in use
-#' @return your current ip.
-#' @source  \url{http://www.exip.org/about.php}, \url{http://api.exip.org/?call=ip},  \url{http://stackoverflow.com/questions/3097589/getting-my-public-ip-via-api}
+#' @return your current ip (character string)
+#' @source  \url{https://api.ipify.org}
 #' @seealso \link{freegeoip}, \link{myip}, \link{cranometer}
 #' 
 #' @examples
@@ -226,7 +228,7 @@ freegeoip <- function(ip = myip(), format = ifelse(length(ip)==1,'list','datafra
 #' myip() # "37.132.25.15"
 #' }
 myip <- function(...) {
-   readLines("http://api.exip.org/?call=ip", warn = FALSE)
+   readLines("https://api.ipify.org", warn = FALSE)
 }
 
 

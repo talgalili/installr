@@ -20,4 +20,3 @@ Turns version to number (for a vector of values)
 turn.version.to.number(c("2.15.2", "2.15.2"))
 }
 }
-

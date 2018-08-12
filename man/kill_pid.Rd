@@ -45,4 +45,3 @@ pskill details from microsoft homepage: \url{http://technet.microsoft.com/en-us/
 \code{\link{get_tasklist}}, \code{\link{get_Rscript_PID}}, \code{\link{get_pid}},
 \code{\link{kill_pid}}, \code{\link{kill_all_Rscript_s}}, \link[tools]{pskill}
 }
-

@@ -35,4 +35,3 @@ install.SWFTools() # installs the latest version of SWFTools
 \item SWFTools homepage: \url{http://swftools.org/}
 }
 }
-

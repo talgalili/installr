@@ -28,7 +28,6 @@ install.Cygwin() # installs the latest version of Cygwin
 }
 \references{
 \itemize{
-\item Cygwin homepage: \url{http://cygwin.com/}
+\item Cygwin homepage: https://www.cygwin.com/
 }
 }
-

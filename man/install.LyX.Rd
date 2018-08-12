@@ -38,4 +38,3 @@ install.LyX() # installs the latest version of LyX
 \item LyX homepage: \url{http://www.lyx.org/}
 }
 }
-

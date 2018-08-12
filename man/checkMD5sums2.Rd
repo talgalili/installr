@@ -34,4 +34,3 @@ checkMD5sums2(dir=R.home(), omit_files = c("etc/Rconsole", "etc/Rprofile.site"))
 \seealso{
 \link[tools]{checkMD5sums}
 }
-

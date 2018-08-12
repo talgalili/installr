@@ -61,4 +61,3 @@ rename_r_to_R(recursive = TRUE, text_to_find="\\\\.b$", new_extension = ".R")
 
 }
 }
-

@@ -43,10 +43,9 @@ points(my_lati,my_long,col=2,pch=18, cex = 1)
 # lines(c(my_lati,0) ,c(my_long, 50), col = 2)#' 
 }
 }
-\author{
-Heuristic Andrew (see source for details)
-}
 \seealso{
 \link{freegeoip}, \link{myip}, \link{cranometer}
 }
-
+\author{
+Heuristic Andrew (see source for details)
+}

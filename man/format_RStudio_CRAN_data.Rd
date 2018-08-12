@@ -43,10 +43,9 @@ barplot_package_users_per_day("installr", my_RStudio_CRAN_data)
 barplot_package_users_per_day("plyr", my_RStudio_CRAN_data)
 }
 }
-\author{
-Felix Schonbrodt, Tal Galili
-}
 \seealso{
 \link{download_RStudio_CRAN_data}, \link{read_RStudio_CRAN_data},\link{barplot_package_users_per_day}
 }
-
+\author{
+Felix Schonbrodt, Tal Galili
+}

@@ -39,4 +39,3 @@ Other solutions to the source.https problem:
 \seealso{
 \link{source}
 }
-

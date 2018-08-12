@@ -20,4 +20,3 @@ Creates a global library folder (above the folder R is currently installed in)
 create.global.library()
 }
 }
-

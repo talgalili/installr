@@ -212,7 +212,7 @@ os.restart  <- function(s=0, m=0, h=0) {
 #' @description
 #' A central function to run functions for shuting down, restarting, sleeping (etc.) your computer.
 #' This will run these functions immediately.
-#' @param GUI a logical indicating whether a graphics menu should be used if available.  If TRUE, and on Windows, it will use \link{winDialog}, otherwise it will use \link[utils]{menu}.
+#' @param GUI a logical indicating whether a graphics menu should be used if available.  If TRUE, and on Windows, it will use winDialog, otherwise it will use \link[utils]{menu}.
 #' @param ask a logical indicating whether to ask the user for the number of minutes in which to perform the operation.
 #' @param ... not in use
 #' @return The status code of \code{\link[base]{system}}.

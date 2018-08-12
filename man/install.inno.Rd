@@ -35,4 +35,3 @@ install.inno(quick_start_pack = TRUE)
 \author{
 Tal Galili and Jonathan M. Hill
 }
-
