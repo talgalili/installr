@@ -37,7 +37,7 @@ install.conda = function (version = 3,
                           bitNo = "auto",
                            ...)
 {
-  bitNo <- as.character(binNo)
+  bitNo <- as.character(bitNo)
   if(bitNo == "auto"){
     if(is.x64()){
       bitNo <- "x86_64"
