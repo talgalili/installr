@@ -10,7 +10,8 @@ On how to ask the user for input:
 }
 \usage{
 ask.user.for.a.row(TABLE,
-  header_text = "Possible versions to download (choose one)", questions_text)
+  header_text = "Possible versions to download (choose one)",
+  questions_text)
 }
 \arguments{
 \item{TABLE}{a data.frame table with rows from which we wish the user to choose a row.  If TABLE is not a data.frame, it will be coerced into one.}

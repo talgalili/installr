@@ -4,12 +4,14 @@
 \alias{install.conda}
 \title{Downloads and installs miniconda}
 \usage{
-install.conda(version = 3, ...)
+install.conda(version = 3, bitNo = "auto", ...)
 }
 \arguments{
 \item{version}{2 or 3. Default is 3}
 
 \item{...}{extra parameters to pass to \link{install.URL}}
+
+\item{binNo}{32 or 64. Defaults is "auto" to check system.}
 }
 \value{
 TRUE/FALSE - was the installation successful or not.

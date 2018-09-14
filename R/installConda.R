@@ -25,6 +25,7 @@
 #' @export
 #' @author Tal Galili and A. Jonathan R. Godfrey
 #' @param version 2 or 3. Default is 3
+#' @param binNo 32 or 64. Defaults is "auto" to check system.
 #' @param ... extra parameters to pass to \link{install.URL}
 #' @examples
 #' \dontrun{
@@ -33,12 +34,22 @@
 #' install.conda(3)
 #' }
 install.conda = function (version = 3,
+                          bitNo = "auto",
                            ...)
 {
-  if(is.x64()){
-    bitNo<-"x86_64"
-  }else{
-    bitNo<-"x86"
+  bitNo <- as.character(binNo)
+  if(bitNo == "auto"){
+    if(is.x64()){
+      bitNo <- "x86_64"
+    }else{
+      bitNo <- "x86"
+    }
+  }
+  if(bitNo == "64"){
+    bitNo <- "x86_64"
+  }
+  if(bitNo == "32"){
+    bitNo <- "x86"
   }
   
   URL <- paste0("https://repo.continuum.io/miniconda/Miniconda",version,"-latest-Windows-",bitNo,".exe")
