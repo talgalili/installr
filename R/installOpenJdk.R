@@ -15,13 +15,18 @@
 #  A copy of the GNU General Public License is available at
 #  http://www.r-project.org/Licenses/
 #
-#' @title Downloads and set path openjdk
+
+
+
+
+#' @title Install Java - downloads and set path openjdk
+#' @aliases install.Java install.jdk install.Jdk install.openjdk install.OpenJdk
 #' @description Downloads and set path the latest version of openjdk for Windows.
 #' @details
 #' install openjdk 9 or 10 version for windows.
 #' 
 #' @return TRUE/FALSE - was the installation successful or not.
-#' @author Tal Galili and A. Jonathan R. Godfrey and Chanyub Park
+#' @author Chan-Yub Park And Tal Galili
 #' @param version 9 or 10 is passible. Default is 10.
 #' @param page_with_download_url where to download. Default is \url{http://jdk.java.net/java-se-ri/}
 #' @param path where to set java. Defulat path is C:/java

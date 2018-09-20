@@ -1,3 +1,28 @@
+installr 0.21.0 (2018-07-07)
+---------------------------
+
+NEW FUNCTIONS:
+   * install.Java
+   
+UPDATED FUNCTIONS:
+   * updated install.python() to check 32/64 bit Windows
+
+   
+
+installr 0.20.0 (2018-05-02)
+---------------------------
+
+NEW FUNCTIONS:
+   * install.nodejs - Downloads and installs the latest version of nodejs LTS or Current for Windows.
+   * is.x64 - Checks if the running OS is x64
+   * install.conda - Miniconda is minimal version of anaconda for python.
+
+BUG FIXES:
+   * Fix install.ImageMagick()
+   * Fix install.MikTeX
+   * Fix myip
+
+
 installr 0.19.0 (2017-04-21)
 ---------------------------
 

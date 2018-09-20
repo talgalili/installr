@@ -7,7 +7,7 @@
 \alias{install.Jdk}
 \alias{install.openjdk}
 \alias{install.OpenJdk}
-\title{Downloads and set path openjdk}
+\title{Install Java - downloads and set path openjdk}
 \usage{
 install.java(version = 10,
   page_with_download_url = "http://jdk.java.net/java-se-ri/",
@@ -57,5 +57,5 @@ install.java(10)
 }
 }
 \author{
-Tal Galili and A. Jonathan R. Godfrey and Chanyub Park
+Chan-Yub Park And Tal Galili
 }
