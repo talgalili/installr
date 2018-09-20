@@ -23,9 +23,9 @@
 #' 
 #' @return TRUE/FALSE - was the installation successful or not.
 #' @export
-#' @author Tal Galili and A. Jonathan R. Godfrey
+#' @author Tal Galili and A. Jonathan R. Godfrey and Chanyub Park
 #' @param version 2 or 3. Default is 3
-#' @param binNo 32 or 64. Defaults is "auto" to check system.
+#' @param bitNo 32 or 64. Defaults is "auto" to check system.
 #' @param ... extra parameters to pass to \link{install.URL}
 #' @examples
 #' \dontrun{

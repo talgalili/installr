@@ -9,9 +9,9 @@ install.conda(version = 3, bitNo = "auto", ...)
 \arguments{
 \item{version}{2 or 3. Default is 3}
 
-\item{...}{extra parameters to pass to \link{install.URL}}
+\item{bitNo}{32 or 64. Defaults is "auto" to check system.}
 
-\item{binNo}{32 or 64. Defaults is "auto" to check system.}
+\item{...}{extra parameters to pass to \link{install.URL}}
 }
 \value{
 TRUE/FALSE - was the installation successful or not.
@@ -30,5 +30,5 @@ install.conda(3)
 }
 }
 \author{
-Tal Galili and A. Jonathan R. Godfrey
+Tal Galili and A. Jonathan R. Godfrey and Chanyub Park
 }

@@ -2,9 +2,34 @@
 % Please edit documentation in R/installOpenJdk.R
 \name{install.java}
 \alias{install.java}
+\alias{install.Java}
+\alias{install.jdk}
+\alias{install.Jdk}
+\alias{install.openjdk}
+\alias{install.OpenJdk}
 \title{Downloads and set path openjdk}
 \usage{
 install.java(version = 10,
+  page_with_download_url = "http://jdk.java.net/java-se-ri/",
+  path = "C:/java")
+
+install.Java(version = 10,
+  page_with_download_url = "http://jdk.java.net/java-se-ri/",
+  path = "C:/java")
+
+install.jdk(version = 10,
+  page_with_download_url = "http://jdk.java.net/java-se-ri/",
+  path = "C:/java")
+
+install.Jdk(version = 10,
+  page_with_download_url = "http://jdk.java.net/java-se-ri/",
+  path = "C:/java")
+
+install.openjdk(version = 10,
+  page_with_download_url = "http://jdk.java.net/java-se-ri/",
+  path = "C:/java")
+
+install.OpenJdk(version = 10,
   page_with_download_url = "http://jdk.java.net/java-se-ri/",
   path = "C:/java")
 }
@@ -32,5 +57,5 @@ install.java(10)
 }
 }
 \author{
-Tal Galili and A. Jonathan R. Godfrey
+Tal Galili and A. Jonathan R. Godfrey and Chanyub Park
 }
