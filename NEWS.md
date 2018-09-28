@@ -1,3 +1,12 @@
+installr 0.21.1 (2018-09-28)
+---------------------------
+   
+UPDATED FUNCTIONS:
+   * updated install.conda() to set 32/64 bit Windows
+
+BUG FIXES:
+   * Fix install.Java() Documents
+
 installr 0.21.0 (2018-07-07)
 ---------------------------
 
