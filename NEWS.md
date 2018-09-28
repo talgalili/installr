@@ -7,6 +7,7 @@ UPDATED FUNCTIONS:
 BUG FIXES:
    * Fix install.Java() Documents
 
+
 installr 0.21.0 (2018-07-07)
 ---------------------------
 
