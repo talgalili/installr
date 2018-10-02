@@ -24,7 +24,7 @@
 #' 
 #' @return TRUE/FALSE - was the installation successful or not.
 #' @export
-#' @author Tal Galili and A. Jonathan R. Godfrey
+#' @author Tal Galili and A. Jonathan R. Godfrey and Chanyub Park
 #' @param page_with_download_url a link to the list of download links for Nodejs
 #' @param version_number Either LTS or Current. Version LTS will lead to download of v6.11.X
 #' @param ... extra parameters to pass to \link{install.URL}

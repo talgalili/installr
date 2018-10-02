@@ -12,6 +12,26 @@
 install.java(version = 10,
   page_with_download_url = "http://jdk.java.net/java-se-ri/",
   path = "C:/java")
+
+install.Java(version = 10,
+  page_with_download_url = "http://jdk.java.net/java-se-ri/",
+  path = "C:/java")
+
+install.jdk(version = 10,
+  page_with_download_url = "http://jdk.java.net/java-se-ri/",
+  path = "C:/java")
+
+install.Jdk(version = 10,
+  page_with_download_url = "http://jdk.java.net/java-se-ri/",
+  path = "C:/java")
+
+install.openjdk(version = 10,
+  page_with_download_url = "http://jdk.java.net/java-se-ri/",
+  path = "C:/java")
+
+install.OpenJdk(version = 10,
+  page_with_download_url = "http://jdk.java.net/java-se-ri/",
+  path = "C:/java")
 }
 \arguments{
 \item{version}{9 or 10 is passible. Default is 10.}

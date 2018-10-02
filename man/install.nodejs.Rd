@@ -4,7 +4,8 @@
 \alias{install.nodejs}
 \title{Downloads and installs nodejs LTS or Current}
 \usage{
-install.nodejs(page_with_download_url = "https://nodejs.org/en/download/",
+
+  install.nodejs(page_with_download_url = "https://nodejs.org/en/download/",
   version_number = "LTS", ...)
 }
 \arguments{
@@ -32,5 +33,5 @@ install.nodejs(,"LTS")
 }
 }
 \author{
-Tal Galili and A. Jonathan R. Godfrey
+Tal Galili and A. Jonathan R. Godfrey and Chanyub Park
 }

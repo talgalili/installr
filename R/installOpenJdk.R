@@ -26,7 +26,6 @@
 #' install openjdk 9 or 10 version for windows.
 #' 
 #' @return TRUE/FALSE - was the installation successful or not.
-#' @export
 #' @author Chan-Yub Park And Tal Galili
 #' @param version 9 or 10 is passible. Default is 10.
 #' @param page_with_download_url where to download. Default is \url{http://jdk.java.net/java-se-ri/}
@@ -37,6 +36,11 @@
 #' install.java(version = 10)
 #' install.java(10)
 #' }
+#' @name install.java
+NULL
+
+#' @export
+#' @rdname install.java
 install.java <- function(version = 10,
                          page_with_download_url = "http://jdk.java.net/java-se-ri/",
                          path = "C:/java") {
@@ -78,16 +82,21 @@ install.java <- function(version = 10,
 }
 
 #' @export
-install.Java <- function(...) install.java(...)
+#' @rdname install.java
+install.Java <- install.java
 
 #' @export
-install.jdk <- function(...) install.java(...)
+#' @rdname install.java
+install.jdk <- install.java
 
 #' @export
-install.Jdk <- function(...) install.java(...)
+#' @rdname install.java
+install.Jdk <- install.java
 
 #' @export
-install.openjdk <- function(...) install.java(...)
+#' @rdname install.java
+install.openjdk <- install.java
 
 #' @export
-install.OpenJdk <- function(...) install.java(...)
+#' @rdname install.java
+install.OpenJdk <- install.java

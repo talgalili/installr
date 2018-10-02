@@ -4,10 +4,12 @@
 \alias{install.conda}
 \title{Downloads and installs miniconda}
 \usage{
-install.conda(version = 3, ...)
+install.conda(version = 3, bitNo = "auto", ...)
 }
 \arguments{
 \item{version}{2 or 3. Default is 3}
+
+\item{bitNo}{32 or 64. Defaults is "auto" to check system.}
 
 \item{...}{extra parameters to pass to \link{install.URL}}
 }
@@ -28,5 +30,5 @@ install.conda(3)
 }
 }
 \author{
-Tal Galili and A. Jonathan R. Godfrey
+Tal Galili and A. Jonathan R. Godfrey and Chanyub Park
 }
