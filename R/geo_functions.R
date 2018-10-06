@@ -166,7 +166,7 @@ cranometer <- function(ms = getCRANmirrors(all = FALSE, local.only = FALSE),...)
 #' 
 #' @return a list or data.frame with details on your geo location based on the freegeoip.net service.
 #' 
-#' @source  \url{http://heuristically.wordpress.com/2013/05/20/geolocate-ip-addresses-in-r/}.  \url{http://freegeoip.net/json/}
+#' @source  \url{http://heuristically.wordpress.com/2013/05/20/geolocate-ip-addresses-in-r/}.
 #' 
 #' @seealso \link{freegeoip}, \link{myip}, \link{cranometer}
 #' @examples
@@ -188,6 +188,7 @@ cranometer <- function(ms = getCRANmirrors(all = FALSE, local.only = FALSE),...)
 #' }
 freegeoip <- function(ip = myip(), format = ifelse(length(ip)==1,'list','dataframe'),...)
 {
+   stop("The website of this service has moved to https://ipstack.com/. If you want to update this function to work with it, please send a pull request on https://github.com/talgalili/installr")
    if (1 == length(ip))
    {
       # a single IP address

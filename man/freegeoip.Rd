@@ -4,7 +4,7 @@
 \alias{freegeoip}
 \title{Geolocate IP addresses in R}
 \source{
-\url{http://heuristically.wordpress.com/2013/05/20/geolocate-ip-addresses-in-r/}.  \url{http://freegeoip.net/json/}
+\url{http://heuristically.wordpress.com/2013/05/20/geolocate-ip-addresses-in-r/}.
 }
 \usage{
 freegeoip(ip = myip(), format = ifelse(length(ip) == 1, "list",

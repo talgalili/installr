@@ -27,21 +27,21 @@
 #' 
 #' @return TRUE/FALSE - was the installation successful or not.
 #' @author Chan-Yub Park And Tal Galili
-#' @param version 9 or 10 is passible. Default is 10.
-#' @param page_with_download_url where to download. Default is \url{http://jdk.java.net/java-se-ri/}
+#' @param version 9 or 10 is passible. Default is 11.
+#' @param page_with_download_url where to download. Default is \url{http://jdk.java.net/java-se-ri/11}
 #' @param path where to set java. Defulat path is C:/java
 #' @examples
 #' \dontrun{
 #' install.java() 
-#' install.java(version = 10)
-#' install.java(10)
+#' install.java(version = 11)
+#' install.java(11)
 #' }
 #' @name install.java
 NULL
 
 #' @export
 #' @rdname install.java
-install.java <- function(version = 10,
+install.java <- function(version = 11,
                          page_with_download_url = "http://jdk.java.net/java-se-ri/",
                          path = "C:/java") {
   page <- readLines(paste0(page_with_download_url, version), warn = F)
