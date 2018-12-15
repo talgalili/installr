@@ -269,7 +269,10 @@ install.pandoc <- function(
       # https://github.com/jgm/pandoc/releases/download/1.12.4/pandoc-1.12.4-windows.msi
       # https://github.com/jgm/pandoc/releases/download/1.12.4.2/pandoc-1.12.4.2-1-windows.msi
 #    pat <- "jgm/pandoc/releases/download/[0-9.]+/pandoc-[0-9.]+-windows\\.msi"
-   pat <- "jgm/pandoc/releases/download/[0-9.]+/pandoc-[0-9.-]+-windows\\.msi"
+   #pat <- "jgm/pandoc/releases/download/[0-9.]+/pandoc-[0-9.-]+-windows\\.msi"
+	sysArch <- Sys.getenv("R_ARCH") 
+	sysArch <-  gsub("/ |/x", "", sysArch)
+  	pat <- paste0("jgm/pandoc/releases/download/[0-9.]+/pandoc-[0-9.-]+-windows",".*", sysArch, ".*", ".msi")
    #    grep(pat, page, value = TRUE, fixed = F)
 #    glob2rx("jgm/pandoc/releases/download/1.12.4/pandoc-1.12.4.msi.Windows.installer.msi")
 #    grep("aaa[:graph:]*", "aaasdfadsfa  adaf / sdfa", value = TRUE)
