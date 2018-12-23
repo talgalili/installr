@@ -57,6 +57,7 @@ Suggests:
     plyr,
     ggplot2,
     sp,
-    tools
+    tools,
+    pkgbuild
 License: GPL-2
 RoxygenNote: 6.1.0
