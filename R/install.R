@@ -706,21 +706,23 @@ install.npptor <- function(URL="http://sourceforge.net/projects/npptor/files/npp
 #' \dontrun{
 #' install.MikTeX() # installs the latest version of MikTeX 62 bit
 #' }
-install.MikTeX  <- function(page_with_download_url="http://miktex.org/download", ...) {
+install.MikTeX  <- function(page_with_download_url="https://miktex.org/download", ...) {
    # get download URL:
    page     <- readLines(page_with_download_url, warn = FALSE)
+   # cat(page, sep = "\n")
    # The damn url keeps changing...
    #"http://mirrors.ctan.org/systems/win32/miktex/setup/basic-miktex-2.9.4757.exe
    # "http://mirrors.ctan.org/systems/win32/miktex/setup/basic-miktex-2.9.4757-x64.exe"
    # http://ctan.mirror.ftn.uns.ac.rs/systems/win32/miktex/setup/basic-miktex-2.9.6069-x64.exe
    # https://miktex.org/download/ctan/systems/win32/miktex/setup/windows-x64/basic-miktex-2.9.6615-x64.exe
    # I'm noticing that the one thing that doesn't change is that it is a .exe link - so let's only rely on this.
-   pat <- "http://.*64.*.exe"; 
+   # https://miktex.org/download/ctan/systems/win32/miktex/setup/windows-x64/basic-miktex-2.9.6942-x64.exe
+   pat <- "download.*basic.*64.*.exe"; 
    target_line <- grep(pat, page, value = TRUE); 
    m <- regexpr(pat, target_line); 
    URL <- regmatches(target_line, m) # (The http still needs to be prepended.
    URL <- URL[1] # use basic instead of setup
-
+   URL <- paste0("https://miktex.org/", URL)
    # install.URL(URL)   
    install.URL(URL,...)   
 }
