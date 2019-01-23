@@ -7,8 +7,8 @@
 \url{http://www.nicebread.de/finally-tracking-cran-packages-downloads/}
 }
 \usage{
-lineplot_package_downloads(pkg_names, dataset, by_time = c("date", "week"),
-  ...)
+lineplot_package_downloads(pkg_names, dataset, by_time = c("date",
+  "week"), ...)
 }
 \arguments{
 \item{pkg_names}{a character vector of packages we are interested in checking.}

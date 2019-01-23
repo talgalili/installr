@@ -5,6 +5,7 @@ BUG FIXES:
    * Fix install.MikTeX
    * Fix install.Rtools
    * Fix install.pandoc
+   * Fix install.RStudio
 
 
 installr 0.21.0 (2018-10-06)

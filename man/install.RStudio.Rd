@@ -6,7 +6,7 @@
 \title{Downloads and installs RStudio for windows}
 \usage{
 
-  install.RStudio(page_with_download_url = "http://www.rstudio.com/ide/download/desktop",
+  install.RStudio(page_with_download_url = "https://www.rstudio.com/products/rstudio/download",
   ...)
 }
 \arguments{
