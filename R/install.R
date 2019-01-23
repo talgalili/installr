@@ -269,7 +269,10 @@ install.pandoc <- function(
       # https://github.com/jgm/pandoc/releases/download/1.12.4/pandoc-1.12.4-windows.msi
       # https://github.com/jgm/pandoc/releases/download/1.12.4.2/pandoc-1.12.4.2-1-windows.msi
 #    pat <- "jgm/pandoc/releases/download/[0-9.]+/pandoc-[0-9.]+-windows\\.msi"
-   pat <- "jgm/pandoc/releases/download/[0-9.]+/pandoc-[0-9.-]+-windows\\.msi"
+   #pat <- "jgm/pandoc/releases/download/[0-9.]+/pandoc-[0-9.-]+-windows\\.msi"
+	sysArch <- Sys.getenv("R_ARCH") 
+	sysArch <-  gsub("/ |/x", "", sysArch)
+  	pat <- paste0("jgm/pandoc/releases/download/[0-9.]+/pandoc-[0-9.-]+-windows",".*", sysArch, ".*", ".msi")
    #    grep(pat, page, value = TRUE, fixed = F)
 #    glob2rx("jgm/pandoc/releases/download/1.12.4/pandoc-1.12.4.msi.Windows.installer.msi")
 #    grep("aaa[:graph:]*", "aaasdfadsfa  adaf / sdfa", value = TRUE)
@@ -495,8 +498,8 @@ install.Rtools <- function(choose_version = FALSE,
    # latest_Frozen==T means we get the latest Rtools version which is Frozen (when writing this function it is Rtools215.exe)
    # latest_Frozen==F means we get the latest Rtools version which is not Frozen (when writing this function it is Rtools30.exe)
 
-   if(check & requireNamespace("devtools")) { # if we have devtools we can check for the existance of rtools
-      found_rtools <- devtools::find_rtools()
+   if(check & requireNamespace("pkgbuild")) { # if we have devtools we can check for the existance of rtools
+      found_rtools <- pkgbuild::find_rtools()
       if(found_rtools) {
          cat("No need to install Rtools - You've got the relevant version of Rtools installed\n")
          return(invisible(FALSE))
