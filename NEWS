@@ -3,7 +3,8 @@ installr 0.21.1 (2019-01-23)
 
 BUG FIXES:
    * Fix install.MikTeX
-
+   * Fix install.Rtools
+   * Fix install.pandoc
 
 
 installr 0.21.0 (2018-10-06)
