@@ -1,4 +1,4 @@
-installr 0.21.1 (2019-01-23)
+installr 0.21.1 (2019-02-09)
 ---------------------------
 
 BUG FIXES:
@@ -6,6 +6,7 @@ BUG FIXES:
    * Fix install.Rtools
    * Fix install.pandoc
    * Fix install.RStudio
+   * Fix install.inno
 
 
 installr 0.21.0 (2018-10-06)
