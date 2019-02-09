@@ -49,7 +49,7 @@ install.inno <- function(
 
     # Create a temp file and add the encryption module
     temp <- tempfile()
-    utils::download.file("http://www.jrsoftware.org/download.php/iscrypt.dll", temp)
+    utils::download.file("http://www.jrsoftware.org/download.php/iscrypt.dll", temp, mode = 'wb')
     file.copy(temp, file.path(inno, "ISCrypt.dll"))
   }
 }
