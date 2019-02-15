@@ -1,15 +1,15 @@
-installr 0.21.1 (2018-09-28)
+installr 0.21.1 (2019-02-09)
 ---------------------------
-   
-UPDATED FUNCTIONS:
-   * updated install.conda() to set 32/64 bit Windows
 
 BUG FIXES:
-   * Fix install.Java() Documents
-   * Fix install.RStudio updated URL
+   * Fix install.MikTeX
+   * Fix install.Rtools
+   * Fix install.pandoc
+   * Fix install.RStudio
+   * Fix install.inno
 
 
-installr 0.21.0 (2018-07-07)
+installr 0.21.0 (2018-10-06)
 ---------------------------
 
 NEW FUNCTIONS:
@@ -17,7 +17,12 @@ NEW FUNCTIONS:
    
 UPDATED FUNCTIONS:
    * updated install.python() to check 32/64 bit Windows
+   * updated install.conda() to set 32/64 bit Windows
 
+BUG FIXES:
+   * Fix install.Java() Documents
+   * Fix install.ImageMagick()
+   
    
 
 installr 0.20.0 (2018-05-02)
