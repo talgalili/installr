@@ -4,8 +4,7 @@
 \alias{install.7zip}
 \title{Downloads and installs 7-Zip for windows}
 \usage{
-
-  install.7zip(page_with_download_url = "http://www.7-zip.org/download.html",
+install.7zip(page_with_download_url = "http://www.7-zip.org/download.html",
   ...)
 }
 \arguments{

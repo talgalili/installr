@@ -6,11 +6,10 @@
 \title{Checks for the latest R version, and if there is a newer version of R - downloads and installs it.}
 \usage{
 updateR(fast = FALSE, browse_news, install_R, copy_packages,
-  copy_Rprofile.site, keep_old_packages, update_packages, start_new_R,
-  quit_R, print_R_versions = TRUE, GUI = TRUE,
-  to_checkMD5sums = FALSE, keep_install_file = FALSE,
-  download_dir = tempdir(), silent = FALSE, setInternet2 = TRUE,
-  cran_mirror = "https://cran.rstudio.com/", ...)
+  copy_Rprofile.site, keep_old_packages, update_packages, start_new_R, quit_R,
+  print_R_versions = TRUE, GUI = TRUE, to_checkMD5sums = FALSE,
+  keep_install_file = FALSE, download_dir = tempdir(), silent = FALSE,
+  setInternet2 = TRUE, cran_mirror = "https://cran.rstudio.com/", ...)
 }
 \arguments{
 \item{fast}{logical (default is FALSE). If TRUE, it overrides other parameters and uses a set of defaults to make the
