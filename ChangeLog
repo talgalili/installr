@@ -1,3 +1,28 @@
+* 2019-06-09(Tal Galili) Misc fixes for CRAN |2d55bd0| 
+|  ChangeLog                         | 6 ++++++
+|  DESCRIPTION                       | 6 +++---
+|  NEWS                              | 7 +++++++
+|  NEWS.md                           | 7 +++++++
+|  R/install.R                       | 4 ++--
+|  R/installr-package.R              | 2 +-
+|  README.md                         | 2 +-
+|  man/ask.user.for.a.row.Rd         | 3 ++-
+|  man/browse.latest.R.NEWS.Rd       | 3 ++-
+|  man/download_RStudio_CRAN_data.Rd | 3 ++-
+|  man/get.installed.R.folders.Rd    | 3 ++-
+|  man/install.7zip.Rd               | 3 ++-
+|  man/install.FFmpeg.Rd             | 3 ++-
+|  man/install.ImageMagick.Rd        | 3 ++-
+|  man/install.MikTeX.Rd             | 3 ++-
+|  man/install.R.Rd                  | 4 ++--
+|  man/install.RStudio.Rd            | 4 +---
+|  man/install.java.Rd               | 6 ------
+|  man/install.nodejs.Rd             | 3 ++-
+|  man/installr-package.Rd           | 1 -
+|  man/lineplot_package_downloads.Rd | 4 ++--
+|  man/updateR.Rd                    | 9 +++++----
+|  22 files changed, 55 insertions(+), 34 deletions(-)
+
 * 2019-02-15(Tal Galili) update NEWS |8c1e503| 
 |  ChangeLog | 6074 ++++++++++++++++++++++++++++++++++-------------------------
 |  NEWS.md   |   19 +-
