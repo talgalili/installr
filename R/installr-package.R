@@ -24,7 +24,7 @@
 #' 
 #' @name installr-package
 #' @docType package
-#' @keywords package, installr
+#' @keywords installr
 #' @import stats
 #' @import utils
 #' @import graphics

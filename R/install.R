@@ -815,8 +815,8 @@ install.lyx <- function(...) install.LyX(...)
 #' \dontrun{
 #' install.RStudio() # installs the latest version of RStudio
 #' }
-install.RStudio  <- function(page_with_download_url =
-    "https://www.rstudio.com/products/rstudio/download", ...) {    
+install.RStudio  <- function(page_with_download_url, ...) {    
+   if(missing(page_with_download_url)) page_with_download_url <- "https://www.rstudio.com/products/rstudio/download"
    # get download URL:
    page     <- readLines(page_with_download_url, warn = FALSE)
    # http://download1.rstudio.org/RStudio-0.97.318.exe#

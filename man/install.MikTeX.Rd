@@ -5,7 +5,8 @@
 \alias{install.miktex}
 \title{Downloads and installs MikTeX for windows}
 \usage{
-install.MikTeX(page_with_download_url = "https://miktex.org/download", ...)
+install.MikTeX(page_with_download_url = "https://miktex.org/download",
+  ...)
 }
 \arguments{
 \item{page_with_download_url}{the URL of the MikTeX download page.}

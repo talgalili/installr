@@ -4,7 +4,8 @@
 \alias{browse.latest.R.NEWS}
 \title{See the NEWS file for the latest R release}
 \usage{
-browse.latest.R.NEWS(URL = "https://cran.rstudio.com/bin/windows/base/", ...)
+browse.latest.R.NEWS(URL = "https://cran.rstudio.com/bin/windows/base/",
+  ...)
 }
 \arguments{
 \item{URL}{the URL of the page from which R can be downloaded.}

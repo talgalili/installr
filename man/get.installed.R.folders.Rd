@@ -4,7 +4,8 @@
 \alias{get.installed.R.folders}
 \title{Returns folder names with R installations}
 \usage{
-get.installed.R.folders(sort_by_version = TRUE, add_version_to_name = TRUE)
+get.installed.R.folders(sort_by_version = TRUE,
+  add_version_to_name = TRUE)
 }
 \arguments{
 \item{sort_by_version}{should the returned vector be sorted by the version number? (default is yes - so that the first element is of the newest version of R) should the user be given the option to choose between which two libraries to copy the packages?  If FALSE (default), the folders are copied from the before-newest R installation to the newest R installation.}

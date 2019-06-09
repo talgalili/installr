@@ -164,5 +164,5 @@ https://github.com/talgalili/installr/blob/master/NEWS.md
 
 # Code of conduct
 
-Please note that this project is released with a [Contributor Code of Conduct](CONDUCT.md). By participating in this project you agree to abide by its terms.
+Please note that this project is released with a [Contributor Code of Conduct](https://github.com/talgalili/installr/blob/master/CONDUCT.md). By participating in this project you agree to abide by its terms.
 

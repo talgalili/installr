@@ -8,4 +8,3 @@
 Using R to Install Stuff (Such As: R, Rtools, RStudio, Git, and More!)
 }
 \keyword{installr}
-\keyword{package,}

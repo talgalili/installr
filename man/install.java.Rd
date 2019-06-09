@@ -7,12 +7,6 @@
 \alias{install.Jdk}
 \alias{install.openjdk}
 \alias{install.OpenJdk}
-\alias{install.java}
-\alias{install.Java}
-\alias{install.jdk}
-\alias{install.Jdk}
-\alias{install.openjdk}
-\alias{install.OpenJdk}
 \title{Install Java - downloads and set path openjdk}
 \usage{
 install.java(version = 11,

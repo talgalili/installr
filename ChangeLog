@@ -1,3 +1,9 @@
+* 2019-02-15(Tal Galili) update NEWS |8c1e503| 
+|  ChangeLog | 6074 ++++++++++++++++++++++++++++++++++-------------------------
+|  NEWS.md   |   19 +-
+|  R/zzz.R   |    2 +-
+|  3 files changed, 3524 insertions(+), 2571 deletions(-)
+
 * 2019-02-15(Tal Galili) update docs |c2290f6| 
 |  man/ask.user.for.a.row.Rd         | 3 +--
 |  man/browse.latest.R.NEWS.Rd       | 3 +--
