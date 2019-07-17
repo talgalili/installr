@@ -8,7 +8,7 @@
 Some parts of the code are taken from the devtools.
 }
 \usage{
-install.Rtools(choose_version = FALSE, check = TRUE, GUI = TRUE,
+install.Rtools(choose_version = TRUE, check = FALSE, GUI = TRUE,
   page_with_download_url = "https://cran.r-project.org/bin/windows/Rtools/",
   ...)
 }

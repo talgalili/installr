@@ -1,3 +1,10 @@
+installr 0.21.4 (2019-07-17)
+---------------------------
+
+BUG FIXES:
+   * Fix install.RStudio
+   * Fix install.Rtools - foce the user to choose a version to download
+
 installr 0.21.3 (2019-06-09)
 ---------------------------
 
