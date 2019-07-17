@@ -1,3 +1,21 @@
+* 2019-07-17(Tal Galili) from devtools to remotes |af484b4| 
+|  README.md | 4 ++--
+|  1 file changed, 2 insertions(+), 2 deletions(-)
+
+* 2019-07-17(Tal Galili) Fix install.RStudio ( fix #130 ) |66dbf31| 
+|  DESCRIPTION           |  4 ++--
+|  NEWS                  |  7 +++++++
+|  R/install.R           | 14 +++++++-------
+|  man/install.Rtools.Rd |  2 +-
+|  4 files changed, 17 insertions(+), 10 deletions(-)
+
+* 2019-06-09(Tal Galili) version: 0.21.3 Added OS_type: windows |986a158| 
+|  ChangeLog   | 25 +++++++++++++++++++++++++
+|  DESCRIPTION |  3 ++-
+|  NEWS        |  6 ++++++
+|  NEWS.md     |  6 ++++++
+|  4 files changed, 39 insertions(+), 1 deletion(-)
+
 * 2019-06-09(Tal Galili) Misc fixes for CRAN |2d55bd0| 
 |  ChangeLog                         | 6 ++++++
 |  DESCRIPTION                       | 6 +++---

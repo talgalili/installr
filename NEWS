@@ -1,5 +1,8 @@
-installr 0.21.4 (2019-07-17)
+installr 0.22.0 (2019-07-17)
 ---------------------------
+
+OTHER NOTES:
+   * Started using pkgdown :)
 
 BUG FIXES:
    * Fix install.RStudio
