@@ -29,10 +29,10 @@ install.packages('installr')
 To install the latest installr version from GitHub use:
 
 ```r
-if (!require('devtools')) install.packages('devtools'); # make sure you have Rtools installed first! if not, then run:
+if (!require('remotes')) install.packages('remotes'); # make sure you have Rtools installed first! if not, then run:
 #install.packages('installr')
 #install.Rtools()
-devtools::install_github('talgalili/installr')
+remotes::install_github('talgalili/installr')
 ```
 
 ## Usage
