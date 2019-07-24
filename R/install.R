@@ -498,6 +498,10 @@ install.Rtools <- function(choose_version = TRUE,
    # latest_Frozen==T means we get the latest Rtools version which is Frozen (when writing this function it is Rtools215.exe)
    # latest_Frozen==F means we get the latest Rtools version which is not Frozen (when writing this function it is Rtools30.exe)
 
+   regex <- function(x, expr) {
+      regmatches(x , regexpr(expr, x))
+   }
+   
    if(check & requireNamespace("pkgbuild")) { # if we have devtools we can check for the existance of rtools
       found_rtools <- pkgbuild::find_rtools()
       if(found_rtools) {
@@ -540,8 +544,14 @@ install.Rtools <- function(choose_version = TRUE,
       
       if(ROW_id == 0) return(FALSE)
       
-      exe_filename <- TABLE[ROW_id,"Download"] # the version the user asked for
+      exe_filename <- regex(TABLE[ROW_id,"Download"], ".*\\.exe") # TABLE[ROW_id,"Download"] # the version the user asked for
    }      
+   
+   if(length(exe_filename) == 0) {
+      message("You'll need to go to the site and download this yourself. I'm now going to try and open the url for you.")
+      browseURL(page_with_download_url)
+      return(FALSE)
+   }
    
    # install Rtools!
    URL <- paste(page_with_download_url, exe_filename, sep = '')   
