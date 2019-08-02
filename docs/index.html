@@ -5,11 +5,11 @@
 <meta charset="utf-8">
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Using R to Install Stuff (Such As: R, 'Rtools', 'RStudio', 'Git', and More!) • installr</title>
+<title>Using R to Install Stuff On Windows OS (Such As: R, 'Rtools', 'RStudio', 'Git', and More!) • installr</title>
 <!-- jquery --><script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js" integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8=" crossorigin="anonymous"></script><!-- Bootstrap --><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha256-916EbMg70RQy9LHiGkXzG8hSg9EdNy97GazNG/aiY1w=" crossorigin="anonymous">
 <script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha256-U5ZEeKfGNOja007MMD3YBI0A3OSZOQbeG6z2f2Y0hu8=" crossorigin="anonymous"></script><!-- Font Awesome icons --><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css" integrity="sha256-eZrrJcwDc/3uDhsdt61sL2oOBY362qM3lon1gyExkL0=" crossorigin="anonymous">
 <!-- clipboard.js --><script src="https://cdnjs.cloudflare.com/ajax/libs/clipboard.js/2.0.4/clipboard.min.js" integrity="sha256-FiZwavyI2V6+EXO1U+xzLG3IKldpiTFf3153ea9zikQ=" crossorigin="anonymous"></script><!-- sticky kit --><script src="https://cdnjs.cloudflare.com/ajax/libs/sticky-kit/1.1.3/sticky-kit.min.js" integrity="sha256-c4Rlo1ZozqTPE2RLuvbusY3+SU1pQaJC0TjuhygMipw=" crossorigin="anonymous"></script><!-- pkgdown --><link href="pkgdown.css" rel="stylesheet">
-<script src="pkgdown.js"></script><meta property="og:title" content="Using R to Install Stuff (Such As: R, 'Rtools', 'RStudio', 'Git', and More!)">
+<script src="pkgdown.js"></script><meta property="og:title" content="Using R to Install Stuff On Windows OS (Such As: R, 'Rtools', 'RStudio', 'Git', and More!)">
 <meta property="og:description" content="R is great for installing software.  Through the 'installr'
     package you can automate the updating of R (on Windows, using updateR())
     and install new software. Software installation is initiated through a
@@ -154,75 +154,7 @@ Error <span class="cf">in</span> <span class="kw"><a href="https://www.rdocument
 <h2 class="hasAnchor">
 <a href="#available-functions-are" class="anchor"></a>Available functions are:</h2>
 <p>You can see the most recent changes to the package in the NEWS.md file:</p>
-<p><a href="https://github.com/talgalili/installr/blob/master/NEWS.md" class="uri">https://github.com/talgalili/installr/blob/master/NEWS.md</a></p>
-<ul>
-<li>R install/update/uninstall related functions:
-<ul>
-<li>updateR() - serves as a “check for updates” function of R itself. Running the function will check for a newer version of R than the one currently used. If one exists, the function will download the most updated R version and run its installer. Once done, the function will offer to copy (or move) all of the packages from the old R library to the new R library. It will then offer to update the moved packages, offer to open the new Rgui, and lastely, it will quit the old R.</li>
-<li>uninstall.R</li>
-<li>require2 - just like “require”, only makes sure to download and install the package in case it is not present on the system (useful for examples…)</li>
-<li>restart_RGui - a function to restart Rgui from Rgui</li>
-<li>check.for.updates.R</li>
-<li>install.R</li>
-<li>install.Rdevel - usefull for when developing R packages (as this version contains the latest checks.)</li>
-</ul>
-</li>
-<li>Installing software from withing R:
-<ul>
-<li>install.RStudio() - download and runs the installer for RStudio.</li>
-<li>install.Rtools() - download and runs the installer for Rtools (allowing the user to choose which version to download)<br>
-</li>
-<li>install.pandoc() - download and runs the installer for pandoc.</li>
-<li>install.MikTeX() - download and runs the installer for MikTeX.</li>
-<li>install.git() - download and runs the installer for git-gui.</li>
-<li>install.packages.zip() - for installing package from a url of a ZIP file. Currently, it is the only option I know of for downloading+installing a direct ZIP of an R package.</li>
-<li>install.URL() - gets a URL of a zipped file, and makes sure to download and run it.</li>
-<li>install.LyX()</li>
-<li>install.LaTeX2RTF()</li>
-<li>install.GitHub()</li>
-<li>install.ImageMagick()</li>
-<li>install.GraphicsMagick()</li>
-<li>install.SWFTools()</li>
-<li>install.FFmpeg()</li>
-<li>install.7zip()</li>
-<li>install.notepadpp()</li>
-<li>install.npptor()</li>
-<li>install.Cygwin()</li>
-</ul>
-</li>
-<li>Operation system managing functions
-<ul>
-<li>manage.os() - for shutdown/sleep of a Windows computer (useful for running at the end of a simulation). Controls all the following functions.</li>
-<li>os.hibernate()</li>
-<li>os.lock()</li>
-<li>os.restart()</li>
-<li>os.shutdown()</li>
-<li>os.sleep()</li>
-<li>is.Rgui()</li>
-<li>is.RStudio()</li>
-<li>is.windows()</li>
-</ul>
-</li>
-<li>CRAN and network related functions:
-<ul>
-<li>cranometer - Estimates the speed of each CRAN mirror by measuring the time it takes to download the NEWS file.</li>
-<li>myip - return your ip address.</li>
-<li>freegeoip - Geolocate IP addresses in R (contributed by Heuristic Andrew)</li>
-<li>download_RStudio_CRAN_data</li>
-<li>read_RStudio_CRAN_data</li>
-<li>barplot_package_users_per_day</li>
-<li>lineplot_package_downloads</li>
-<li>format_RStudio_CRAN_data</li>
-<li>most_downloaded_packages</li>
-</ul>
-</li>
-<li>Misc functions:
-<ul>
-<li>is.empty - function added for checking if an object is empty (e.g: of zero length)</li>
-</ul>
-</li>
-<li>There are a few more functions that you could see in the help files…</li>
-</ul>
+<p><a href="http://talgalili.github.io/installr/news/index.html" class="uri">http://talgalili.github.io/installr/news/index.html</a></p>
 </div>
 </div>
 <div id="code-of-conduct" class="section level1">

@@ -1,3 +1,131 @@
+* 2019-07-24(Tal Galili) Fix install.Rtools |8e76427| 
+|  DESCRIPTION |  2 +-
+|  NEWS        |  4 +++-
+|  R/install.R | 12 +++++++++++-
+|  3 files changed, 15 insertions(+), 3 deletions(-)
+
+* 2019-07-17(Tal Galili) minor |7c0881a| 
+|  R/zzz.R | 2 +-
+|  1 file changed, 1 insertion(+), 1 deletion(-)
+
+* 2019-07-17(Tal Galili) ignore stuff for CRAN |72aff63| 
+|  .Rbuildignore | 22 +++++++++++++++++++++-
+|  1 file changed, 21 insertions(+), 1 deletion(-)
+
+* 2019-07-17(Tal Galili) added http://talgalili.github.io/installr/ |a137e3a| 
+|  DESCRIPTION | 5 +++--
+|  1 file changed, 3 insertions(+), 2 deletions(-)
+
+* 2019-07-17(Tal Galili) Started using pkgdown :) |b050f13| 
+|  ChangeLog                                         |   18 +
+|  DESCRIPTION                                       |    2 +-
+|  NEWS                                              |    5 +-
+|  NEWS.md                                           |   10 +
+|  docs/CONDUCT.html                                 |  135 +++
+|  docs/authors.html                                 |  224 ++++
+|  docs/docsearch.css                                |  148 +++
+|  docs/docsearch.js                                 |   85 ++
+|  docs/index.html                                   |  279 +++++
+|  docs/link.svg                                     |   12 +
+|  docs/news/index.html                              | 1171 +++++++++++++++++++
+|  docs/pkgdown.css                                  |  236 ++++
+|  docs/pkgdown.js                                   |  115 ++
+|  docs/pkgdown.yml                                  |    5 +
+|  docs/reference/R_version_in_a_folder.html         |  176 +++
+|  docs/reference/add.installr.GUI.html              |  170 +++
+|  .../add_load_installr_on_startup_menu.html        |  153 +++
+|  .../add_remove_installr_from_startup_menu.html    |  153 +++
+|  .../reference/add_to_.First_in_Rprofile.site.html |  185 +++
+|  docs/reference/ask.user.for.a.row.html            |  193 +++
+|  docs/reference/ask.user.yn.question.html          |  198 ++++
+|  docs/reference/barplot_package_users_per_day.html |  205 ++++
+|  docs/reference/browse.latest.R.NEWS.html          |  170 +++
+|  docs/reference/check.for.updates.R.html           |  184 +++
+|  docs/reference/check.integer.html                 |  179 +++
+|  docs/reference/checkMD5sums2.html                 |  190 +++
+|  .../copy.packages.between.libraries.html          |  204 ++++
+|  docs/reference/cranometer.html                    |  233 ++++
+|  docs/reference/create.global.library.html         |  165 +++
+|  docs/reference/download_RStudio_CRAN_data.html    |  218 ++++
+|  docs/reference/fetch_tag_from_Rd.html             |  205 ++++
+|  docs/reference/file.name.from.url.html            |  178 +++
+|  docs/reference/format_RStudio_CRAN_data.html      |  205 ++++
+|  docs/reference/freegeoip.html                     |  203 ++++
+|  docs/reference/get.installed.R.folders.html       |  189 +++
+|  docs/reference/get_Rscript_PID.html               |  188 +++
+|  docs/reference/get_pid.html                       |  193 +++
+|  docs/reference/get_tasklist.html                  |  187 +++
+|  docs/reference/index.html                         |  700 +++++++++++
+|  docs/reference/install.7zip.html                  |  198 ++++
+|  docs/reference/install.CMake.html                 |  188 +++
+|  docs/reference/install.Cygwin.html                |  183 +++
+|  docs/reference/install.FFmpeg.html                |  182 +++
+|  docs/reference/install.GitHub.html                |  185 +++
+|  docs/reference/install.GraphicsMagick.html        |  185 +++
+|  docs/reference/install.ImageMagick.html           |  185 +++
+|  docs/reference/install.LaTeX2RTF.html             |  184 +++
+|  docs/reference/install.LyX.html                   |  192 +++
+|  docs/reference/install.MikTeX.html                |  184 +++
+|  docs/reference/install.R.html                     |  213 ++++
+|  docs/reference/install.RStudio.html               |  184 +++
+|  docs/reference/install.Rdevel.html                |  191 +++
+|  docs/reference/install.Rtools.html                |  210 ++++
+|  docs/reference/install.SWFTools.html              |  186 +++
+|  docs/reference/install.Texmaker.html              |  186 +++
+|  docs/reference/install.URL.html                   |  211 ++++
+|  docs/reference/install.conda.html                 |  183 +++
+|  docs/reference/install.git.html                   |  186 +++
+|  docs/reference/install.inno.html                  |  185 +++
+|  docs/reference/install.java.html                  |  205 ++++
+|  docs/reference/install.nodejs.html                |  185 +++
+|  docs/reference/install.notepadpp.html             |  184 +++
+|  docs/reference/install.npptor.html                |  184 +++
+|  docs/reference/install.packages.zip.html          |  181 +++
+|  docs/reference/install.pandoc.html                |  196 ++++
+|  docs/reference/install.python.html                |  189 +++
+|  docs/reference/installr-package.html              |  142 +++
+|  docs/reference/installr.html                      |  179 +++
+|  docs/reference/is.RStudio.html                    |  171 +++
+|  docs/reference/is.Rgui.html                       |  177 +++
+|  docs/reference/is.empty.html                      |  200 ++++
+|  docs/reference/is.exe.installed.html              |  166 +++
+|  docs/reference/is.windows.html                    |  172 +++
+|  docs/reference/is.x64.html                        |  172 +++
+|  docs/reference/is_in_.First_in_Rprofile.site.html |  188 +++
+|  docs/reference/kill_all_Rscript_s.html            |  201 ++++
+|  docs/reference/kill_pid.html                      |  205 ++++
+|  docs/reference/kill_process.html                  |  212 ++++
+|  docs/reference/lineplot_package_downloads.html    |  214 ++++
+|  docs/reference/load_installr_on_startup.html      |  174 +++
+|  docs/reference/most_downloaded_packages.html      |  203 ++++
+|  docs/reference/myip.html                          |  181 +++
+|  docs/reference/os.hibernate.html                  |  195 +++
+|  docs/reference/os.lock.html                       |  191 +++
+|  docs/reference/os.manage.html                     |  195 +++
+|  docs/reference/os.restart.html                    |  188 +++
+|  docs/reference/os.shutdown.html                   |  199 ++++
+|  docs/reference/os.sleep.html                      |  195 +++
+|  docs/reference/package_authors.html               |  228 ++++
+|  docs/reference/pkgDNLs_worldmapcolor.html         |  207 ++++
+|  docs/reference/read_RStudio_CRAN_data.html        |  214 ++++
+|  docs/reference/remove.installr.GUI.html           |  162 +++
+|  .../remove_from_.First_in_Rprofile.site.html      |  188 +++
+|  docs/reference/rename_r_to_R.html                 |  218 ++++
+|  docs/reference/require2.html                      |  181 +++
+|  docs/reference/restart_RGui.html                  |  167 +++
+|  docs/reference/rm_installr_from_startup.html      |  175 +++
+|  docs/reference/source.https.html                  |  197 ++++
+|  docs/reference/system.PATH.html                   |  161 +++
+|  docs/reference/turn.number.version.html           |  166 +++
+|  docs/reference/turn.version.to.number.html        |  165 +++
+|  docs/reference/turn.version.to.number1.html       |  172 +++
+|  docs/reference/uninstall.R.html                   |  185 +++
+|  docs/reference/uninstall.packages.html            |  190 +++
+|  docs/reference/up_folder.html                     |  173 +++
+|  docs/reference/updateR.html                       |  278 +++++
+|  docs/reference/xlsx2csv.html                      |  180 +++
+|  107 files changed, 20519 insertions(+), 2 deletions(-)
+
 * 2019-07-17(Tal Galili) from devtools to remotes |af484b4| 
 |  README.md | 4 ++--
 |  1 file changed, 2 insertions(+), 2 deletions(-)
