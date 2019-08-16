@@ -893,8 +893,9 @@ install.imagemagick <- function(...) install.ImageMagick(...)
 #' @details
 #' GraphicsMagick is the swiss army knife of image processing. Comprised of 282K physical lines (according to David A. Wheeler's SLOCCount) of source code in the base package (or 964K including 3rd party libraries) it provides a robust and efficient collection of tools and libraries which support reading, writing, and manipulating an image in over 88 major formats including important formats like DPX, GIF, JPEG, JPEG-2000, PNG, PDF, PNM, and TIFF.
 #' This function downloads Win32 dynamic at 16 bits-per-pixel.
+#' No direct file is available to run, You'll need to open/run the file that your browser is now downloading.
 #' @param URL the URL of the ImageMagick download page.
-#' @param ... extra parameters to pass to \link{install.URL}
+#' @param ... deprecated
 #' @return TRUE/FALSE - was the installation successful or not.
 #' @export
 #' @references
@@ -905,20 +906,23 @@ install.imagemagick <- function(...) install.ImageMagick(...)
 #' \dontrun{
 #' install.GraphicsMagick() # installs the latest version of GraphicsMagick
 #' }
-install.GraphicsMagick  <- function(URL="http://sourceforge.net/projects/graphicsmagick/",...) {    
-   page_with_download_url <- URL
-   # get download URL:
-   page     <- readLines(page_with_download_url, warn = FALSE)
-   # http://downloads.sourceforge.net/project/graphicsmagick/graphicsmagick-binaries/1.3.17/GraphicsMagick-1.3.17-Q16-windows-dll.exe?r=http%3A%2F%2Fsourceforge.net%2Fprojects%2Fgraphicsmagick%2Ffiles%2F&ts=1362862824&use_mirror=garr
-   # http://sourceforge.net/projects/graphicsmagick/files/graphicsmagick-binaries/1.3.17/GraphicsMagick-1.3.17-Q8-windows-dll.exe/download
-   pat <- "//sourceforge.net/projects/graphicsmagick/files/graphicsmagick-binaries/[0-9.]+/GraphicsMagick-[0-9.]+-Q16-windows-dll.exe"
-   target_line <- grep(pat, page, value = TRUE); 
-   m <- regexpr(pat, target_line); 
-   URL      <- regmatches(target_line, m) # (The http still needs to be prepended.
-   URL      <- paste('http', URL, sep = ':')[1] # we might find the same file more than once - so we'll only take its first one
+install.GraphicsMagick  <- function(URL="https://sourceforge.net/projects/graphicsmagick/files/latest/download",...) {    
    
-   # install.
-   install.URL(URL,...)   
+   # page_with_download_url <- URL
+   # # get download URL:
+   # page     <- readLines(page_with_download_url, warn = FALSE)
+   # # http://downloads.sourceforge.net/project/graphicsmagick/graphicsmagick-binaries/1.3.17/GraphicsMagick-1.3.17-Q16-windows-dll.exe?r=http%3A%2F%2Fsourceforge.net%2Fprojects%2Fgraphicsmagick%2Ffiles%2F&ts=1362862824&use_mirror=garr
+   # # http://sourceforge.net/projects/graphicsmagick/files/graphicsmagick-binaries/1.3.17/GraphicsMagick-1.3.17-Q8-windows-dll.exe/download
+   # pat <- "//sourceforge.net/projects/graphicsmagick/files/graphicsmagick-binaries/[0-9.]+/GraphicsMagick-[0-9.]+-Q16-windows-dll.exe"
+   # target_line <- grep(pat, page, value = TRUE); 
+   # m <- regexpr(pat, target_line); 
+   # URL      <- regmatches(target_line, m) # (The http still needs to be prepended.
+   # URL      <- paste('http', URL, sep = ':')[1] # we might find the same file more than once - so we'll only take its first one
+   # 
+   # # install.
+   # install.URL(URL,...)   
+   browseURL(URL)
+   message("No direct file is available to run, You'll need to open/run the file that your browser is now downloading.")
 }
 
 #' @export
