@@ -64,6 +64,8 @@ Suggests:
     sp,
     tools,
     pkgbuild,
+    testthat (>= 2.1.0),
+    mockery,
     R.utils
 License: GPL-2
 RoxygenNote: 6.1.1
