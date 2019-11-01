@@ -32,7 +32,8 @@ Authors@R: c(person("Tal", "Galili", role = c("aut", "cre", "cph"), email =
     person("Jonathan", "Hill", email = "jon.mark.hill@gmail.com", role = "ctb"),
     person("Chan-Yub", "Park", email = "mrchypark@gmail.com",
     comment = "https://github.com/mrchypark", role = "ctb"),
-    person("Gerhard", "Nachtmann", email = "kpm.nachtmann@gmail.com", role = "ctb")
+    person("Gerhard", "Nachtmann", email = "kpm.nachtmann@gmail.com", role = "ctb"),
+    person("Russ", "Hyde", email = "russ.hyde.data@gmail.com", role = "ctb")
     )
 Description: R is great for installing software.  Through the 'installr'
     package you can automate the updating of R (on Windows, using updateR())

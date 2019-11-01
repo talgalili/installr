@@ -1,6 +1,9 @@
 installr 0.22.1 (2019-08-16)
 ---------------------------
 
+OTHER NOTES:
+   * Appveyor integration added to the github repo
+
 BUG FIXES:
    * Fix install.GraphicsMagick
 
