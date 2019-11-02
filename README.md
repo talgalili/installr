@@ -1,8 +1,10 @@
+<!-- badges: start -->
 [![Build Status](https://travis-ci.org/talgalili/installr.png?branch=master)](https://travis-ci.org/talgalili/installr)
 [![CRAN_Status_Badge](http://www.r-pkg.org/badges/version/installr)](https://cran.r-project.org/package=installr)
+[![AppVeyor build status](https://ci.appveyor.com/api/projects/status/github/talgalili/installr?branch=master&svg=true)](https://ci.appveyor.com/project/talgalili/installr)
 ![](http://cranlogs.r-pkg.org/badges/installr?color=yellow)
 ![](http://cranlogs.r-pkg.org/badges/grand-total/installr?color=yellowgreen)
-
+<!-- badges: end -->
 
 # installr
 
