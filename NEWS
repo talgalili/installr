@@ -6,6 +6,7 @@ OTHER NOTES:
 
 BUG FIXES:
    * Fix install.GraphicsMagick
+   * Fix create.global.library to allow no arguments
 
 
 installr 0.22.0 (2019-08-02)
