@@ -671,7 +671,7 @@ copy.packages.between.libraries <- function(from, to, ask = FALSE, keep_old = TR
 #' @param browse_news if TRUE (and if there is a newer version of R) - it opens the browser to the NEWS of the latest version of R, for the user to read through
 #' @param install_R TRUE/FALSE - if to install a new version of R (if one is available).  If missing (this is the default)  - the user be asked if to download R or not.Of course the installation part itself (the running of the .exe file) is dependent on the user.
 #' @param copy_packages TRUE/FALSE - if to copy your packages from the old version of R to the new version of R. If missing (this is the default)  - the user will be asked for his preference (he should say yes, unless he is using a global library folder).
-#' @param copy_Rprofile.site logical - if to copy your Rprofile.site from the old version of R to the new version of R. If missing (this is the default)  - the user will be asked for his preference (he should say yes, unless he is using a global library folder).
+#' @param copy_site_files logical - if to copy your Rprofile.site and Renviron.site from the old version of R to the new version of R. If missing (this is the default)  - the user will be asked for his preference (he should say yes, unless he is using a global library folder).
 #' @param update_packages TRUE/FALSE - if to update your packages in the new version of R (all packages will be updated without asking confirmation per package) If missing (this is the default)  - the user will be asked for his preference (he should say yes, unless he is using a global library folder).  This is done by calling the Rscript in the new R.
 #' @param keep_old_packages - if the keep the packages in the library of the old R installation. If missing (this is the default)  - the user will be asked for his preference (he should say yes, unless he is using a global library folder).
 #' @param start_new_R TRUE/FALSE - if to start the new R (Rgui) after we will quit the old R. Default is TRUE. It will try to start the 64 bit R version, if it does not exist, the 32 bit will be started. This may be less useful for people using RStudio or the likes.
@@ -700,7 +700,7 @@ copy.packages.between.libraries <- function(from, to, ask = FALSE, keep_old = TR
 #' updateR() # will ask you what you want at every decision.
 #' }
 updateR <- function(fast = FALSE, 
-                    browse_news, install_R, copy_packages, copy_Rprofile.site,
+                    browse_news, install_R, copy_packages, copy_site_files,
                     keep_old_packages,  update_packages, start_new_R, quit_R,  print_R_versions=TRUE, GUI = TRUE, 
                     to_checkMD5sums = FALSE, keep_install_file = FALSE, download_dir = tempdir(),
                     silent = FALSE, 
@@ -716,7 +716,7 @@ updateR <- function(fast = FALSE,
       browse_news <- FALSE
       install_R <- TRUE
       copy_packages <- TRUE
-      copy_Rprofile.site <- TRUE
+      copy_site_files <- TRUE
       keep_old_packages <- TRUE
       update_packages <- TRUE
       start_new_R <- FALSE
@@ -794,18 +794,28 @@ your packages to the new R installation.\n")
       copy.packages.between.libraries(keep_old=keep_old_packages)   
    }
 
+   # Check ... for deprecated copy_Rprofile.site 
+   # if copy_site_files has been set it takes precedence
+   # if copy_Rprofile.site has been set, give copy_site_files the same value
+   # if neither have been set, ask the user
+   args <- list(...)
+   if ('copy_Rprofile.site' %in% names(args)){
+     warning('"copy_Rprofile.site" argument has been deprecated in favour of copy_site_files - both Renviron.site and Rprofile.site will be copied if they exist')
+     if(missing(copy_site_files)) copy_site_files <- args[['copy_Rprofile.site']]
+   }
    
-   if(missing(copy_Rprofile.site)) copy_Rprofile.site <- ask.user.yn.question("Do you wish to copy your 'Rprofile.site' from the older version of R to the newer version of R?")
+   if(missing(copy_site_files)) copy_site_files <- ask.user.yn.question("Do you wish to copy your 'Rprofile.site' and 'Renviron.site' from the older version of R to the newer version of R?")
    
-   if(copy_Rprofile.site) {
+   if(copy_site_files) {
       old_R_path_etc <- file.path(old_R_path, "etc")
       new_R_path_etc <- file.path(new_R_path, "etc")
-      if("Rprofile.site" %in% list.files(old_R_path_etc)) {
-         file.copy(from = file.path(old_R_path_etc, "Rprofile.site"),
-                   to = file.path(new_R_path_etc, "Rprofile.site"))         
+      files_to_copy <- intersect(c('Rprofile.site', 'Renviron.site'), list.files(old_R_path_etc))
+      if(length(files_to_copy) != 0) {
+         file.copy(from = file.path(old_R_path_etc, files_to_copy),
+                   to = file.path(new_R_path_etc, files_to_copy))         
       } else {
-         warning('"Rprofile.site" does not exist in your old R-etc folder')
-      }      
+         warning('Could not find either "Rprofile.site" or "Renviron.site" in your old R-etc folder')
+      }
    }
    
    
