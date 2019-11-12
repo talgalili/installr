@@ -62,10 +62,9 @@ is.windows <- function(...) unname(Sys.info()["sysname"] == "Windows")
 #' @return Returns TRUE/FALSE if the R session is running on Windows 64-bit or not. 
 #' @export
 #' @examples
-#' \dontrun{
 #' is.x64() # returns TRUE on my machine.
-#' }
-is.x64 <- function(...) unname(Sys.info()["release"] == ">= 8 x64")
+
+is.x64 <- function(...)  .Platform$r_arch == "x64"
 
 
 #' @title Checks if the R session is running within RStudio
