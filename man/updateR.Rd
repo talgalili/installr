@@ -6,10 +6,10 @@
 \title{Checks for the latest R version, and if there is a newer version of R - downloads and installs it.}
 \usage{
 updateR(fast = FALSE, browse_news, install_R, copy_packages,
-  copy_Rprofile.site, keep_old_packages, update_packages, start_new_R,
-  quit_R, print_R_versions = TRUE, GUI = TRUE,
-  to_checkMD5sums = FALSE, keep_install_file = FALSE,
-  download_dir = tempdir(), silent = FALSE, setInternet2 = TRUE,
+  copy_site_files, keep_old_packages, update_packages, start_new_R, quit_R,
+  print_R_versions = TRUE, GUI = TRUE, to_checkMD5sums = FALSE,
+  keep_install_file = FALSE, download_dir = tempdir(),
+  silent = FALSE, setInternet2 = TRUE,
   cran_mirror = "https://cran.rstudio.com/", ...)
 }
 \arguments{
@@ -24,7 +24,7 @@ don't use GUI, check MD5sums, keep installed file in the \link{getwd}.}
 
 \item{copy_packages}{TRUE/FALSE - if to copy your packages from the old version of R to the new version of R. If missing (this is the default)  - the user will be asked for his preference (he should say yes, unless he is using a global library folder).}
 
-\item{copy_Rprofile.site}{logical - if to copy your Rprofile.site from the old version of R to the new version of R. If missing (this is the default)  - the user will be asked for his preference (he should say yes, unless he is using a global library folder).}
+\item{copy_site_files}{logical - if to copy your Rprofile.site and Renviron.site from the old version of R to the new version of R. If missing (this is the default)  - the user will be asked for his preference (he should say yes, unless he is using a global library folder).}
 
 \item{keep_old_packages}{- if the keep the packages in the library of the old R installation. If missing (this is the default)  - the user will be asked for his preference (he should say yes, unless he is using a global library folder).}
 
