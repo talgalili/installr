@@ -23,6 +23,7 @@
 #' @details
 #' The install.packages.zip must use this function, since it is crucial that the name of the file into which the ZIPPED package is downloaded to the computer, will have the same name as the file which is online.
 #' @param URL Some url to a file.
+#' @param rm.params (optional, default=\code{FALSE}). Whether or not to remove query parameters from URL.
 #' @return The name of the file in the URL
 #' @export
 #' @seealso \code{\link{install.URL}}, \code{\link{install.packages.zip}}
@@ -30,6 +31,11 @@
 #' \dontrun{
 #' url <- "https://cran.r-project.org/bin/windows/base/R-2.15.3-win.exe"
 #' file.name.from.url(url) # returns: "R-2.15.3-win.exe"
+#'
+#' url <- "https://bioconductor.org/packages/R/genetics?version=5.01&f=gz"
+#' file.name.from.url(url, rm.params=TRUE)  # returns: "genetics?version=5.01&f=gz"
+#' file.name.from.url(url, rm.params=FALSE) # returns: "genetics"
+#' file.name.from.url(url)                  # returns: "genetics"
 #' }
 file.name.from.url <- function(URL, rm.params=FALSE) {
     name <- basename(URL);
