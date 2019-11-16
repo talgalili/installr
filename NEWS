@@ -1,6 +1,9 @@
 installr 0.22.1 (2019-08-16)
 ---------------------------
 
+UPDATED FUNCTIONS:
+   * updateR - changed copy_Rprofile.site argument to copy_site_files, which will now also copy Renviron.site
+
 OTHER NOTES:
    * Appveyor integration added to the github repo
 
