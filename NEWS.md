@@ -1,6 +1,16 @@
-﻿installr 0.22.2 (2019-11-28)
+installr 0.22.1 (2019-08-16)
+---------------------------
 
-small edits to improve 32/64 bit architecture detection and appropriate download for Python.
+UPDATED FUNCTIONS:
+   * updateR - changed copy_Rprofile.site argument to copy_site_files, which will now also copy Renviron.site
+   * small edits to improve 32/64 bit architecture detection and appropriate download for Python.
+
+OTHER NOTES:
+   * Appveyor integration added to the github repo
+
+BUG FIXES:
+   * Fix install.GraphicsMagick
+   * Fix create.global.library to allow no arguments
 
 
 installr 0.22.0 (2019-08-02)
