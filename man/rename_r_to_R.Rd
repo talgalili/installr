@@ -4,8 +4,14 @@
 \alias{rename_r_to_R}
 \title{Rename files' extensions in a folder from .r to .R}
 \usage{
-rename_r_to_R(subdir = ".", recursive = FALSE, message = TRUE,
-  text_to_find = "\\\\.r$", new_extension = ".R", ...)
+rename_r_to_R(
+  subdir = ".",
+  recursive = FALSE,
+  message = TRUE,
+  text_to_find = "\\\\.r$",
+  new_extension = ".R",
+  ...
+)
 }
 \arguments{
 \item{subdir}{(character) sub folder from the current working directoryl 

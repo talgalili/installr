@@ -5,9 +5,10 @@
 \alias{install.texmaker}
 \title{Downloads and installs Texmaker for windows}
 \usage{
-
-  install.Texmaker(URL = "http://www.xm1math.net/texmaker/texmakerwin32_install.exe",
-  ...)
+install.Texmaker(
+  URL = "http://www.xm1math.net/texmaker/texmakerwin32_install.exe",
+  ...
+)
 }
 \arguments{
 \item{URL}{the URL of the GitHub download page.}

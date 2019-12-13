@@ -8,9 +8,13 @@
 Some parts of the code are taken from the devtools.
 }
 \usage{
-install.Rtools(choose_version = TRUE, check = FALSE, GUI = TRUE,
+install.Rtools(
+  choose_version = TRUE,
+  check = FALSE,
+  GUI = TRUE,
   page_with_download_url = "https://cran.r-project.org/bin/windows/Rtools/",
-  ...)
+  ...
+)
 }
 \arguments{
 \item{choose_version}{if TRUE, allows the user to choose which version of RTools to install.  Useful if you wish to install the devel version of RTools, or if you are running on an old version of R which requires an old version of R.}

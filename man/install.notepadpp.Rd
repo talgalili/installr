@@ -4,9 +4,10 @@
 \alias{install.notepadpp}
 \title{Downloads and installs Notepad++ for windows}
 \usage{
-
-  install.notepadpp(page_with_download_url = "http://notepad-plus-plus.org/download/",
-  ...)
+install.notepadpp(
+  page_with_download_url = "http://notepad-plus-plus.org/download/",
+  ...
+)
 }
 \arguments{
 \item{page_with_download_url}{the URL of the Notepad++ download page.}

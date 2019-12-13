@@ -4,9 +4,10 @@
 \alias{install.Rdevel}
 \title{Downloads and installs the latest Rdevel version}
 \usage{
-
-  install.Rdevel(exe_URL = "https://cran.rstudio.com/bin/windows/base/R-devel-win.exe",
-  ...)
+install.Rdevel(
+  exe_URL = "https://cran.rstudio.com/bin/windows/base/R-devel-win.exe",
+  ...
+)
 }
 \arguments{
 \item{exe_URL}{A character with a link to an installer file (with the .exe file extension)}

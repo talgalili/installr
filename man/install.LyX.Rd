@@ -5,8 +5,11 @@
 \alias{install.lyx}
 \title{Downloads and installs LyX for windows}
 \usage{
-install.LyX(page_with_download_url = "http://www.lyx.org/Download",
-  new_installation, ...)
+install.LyX(
+  page_with_download_url = "http://www.lyx.org/Download",
+  new_installation,
+  ...
+)
 }
 \arguments{
 \item{page_with_download_url}{the URL of the LyX download page.}

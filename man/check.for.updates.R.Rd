@@ -4,9 +4,12 @@
 \alias{check.for.updates.R}
 \title{Checks if there is a newer version of R}
 \usage{
-check.for.updates.R(notify_user = TRUE, GUI = TRUE,
+check.for.updates.R(
+  notify_user = TRUE,
+  GUI = TRUE,
   page_with_download_url = "https://cran.rstudio.com/bin/windows/base/",
-  pat = "R-[0-9.]+.+-win\\\\.exe")
+  pat = "R-[0-9.]+.+-win\\\\.exe"
+)
 }
 \arguments{
 \item{notify_user}{if to print to you (the user) what is the latest version and what version you are currently using.}

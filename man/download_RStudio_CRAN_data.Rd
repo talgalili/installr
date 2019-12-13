@@ -4,10 +4,15 @@
 \alias{download_RStudio_CRAN_data}
 \title{Download RStudio CRAN mirror data files into a folder}
 \usage{
-download_RStudio_CRAN_data(START = as.Date(Sys.time()) - 5,
-  END = as.Date(Sys.time()), log_folder = tempdir(),
-  trunc_END_date_to_today = TRUE, override = FALSE, message = TRUE,
-  ...)
+download_RStudio_CRAN_data(
+  START = as.Date(Sys.time()) - 5,
+  END = as.Date(Sys.time()),
+  log_folder = tempdir(),
+  trunc_END_date_to_today = TRUE,
+  override = FALSE,
+  message = TRUE,
+  ...
+)
 }
 \arguments{
 \item{START}{the defaults is 5 days before today. A character string of the START date for files to be downloaded. The date format is "YYYY-MM-DD".}

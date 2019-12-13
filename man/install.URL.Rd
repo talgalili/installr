@@ -4,9 +4,16 @@
 \alias{install.URL}
 \title{Downloads and runs a .exe installer file for some software from a URL}
 \usage{
-install.URL(exe_URL, keep_install_file = FALSE, wait = TRUE,
-  download_dir = tempdir(), message = TRUE, installer_option = NULL,
-  download_fun = download.file, ...)
+install.URL(
+  exe_URL,
+  keep_install_file = FALSE,
+  wait = TRUE,
+  download_dir = tempdir(),
+  message = TRUE,
+  installer_option = NULL,
+  download_fun = download.file,
+  ...
+)
 }
 \arguments{
 \item{exe_URL}{A character with a link to an installer file (with the .exe file extension)}

@@ -4,9 +4,11 @@
 \alias{install.nodejs}
 \title{Downloads and installs nodejs LTS or Current}
 \usage{
-
-  install.nodejs(page_with_download_url = "https://nodejs.org/en/download/",
-  version_number = "LTS", ...)
+install.nodejs(
+  page_with_download_url = "https://nodejs.org/en/download/",
+  version_number = "LTS",
+  ...
+)
 }
 \arguments{
 \item{page_with_download_url}{a link to the list of download links for Nodejs}

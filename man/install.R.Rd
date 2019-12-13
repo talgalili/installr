@@ -4,11 +4,15 @@
 \alias{install.R}
 \title{Downloads and installs the latest R version}
 \usage{
-
-  install.R(page_with_download_url = "https://cran.rstudio.com/bin/windows/base/",
-  pat = "R-[0-9.]+.+-win\\\\.exe", to_checkMD5sums = TRUE,
-  keep_install_file = FALSE, download_dir = tempdir(),
-  silent = FALSE, ...)
+install.R(
+  page_with_download_url = "https://cran.rstudio.com/bin/windows/base/",
+  pat = "R-[0-9.]+.+-win\\\\.exe",
+  to_checkMD5sums = TRUE,
+  keep_install_file = FALSE,
+  download_dir = tempdir(),
+  silent = FALSE,
+  ...
+)
 }
 \arguments{
 \item{page_with_download_url}{URL from which the latest stable version of R can be downloaded from.}

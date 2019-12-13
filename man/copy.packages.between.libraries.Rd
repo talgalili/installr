@@ -4,8 +4,13 @@
 \alias{copy.packages.between.libraries}
 \title{Copies all packages from one library folder to another}
 \usage{
-copy.packages.between.libraries(from, to, ask = FALSE, keep_old = TRUE,
-  do_NOT_override_packages_in_new_R = TRUE)
+copy.packages.between.libraries(
+  from,
+  to,
+  ask = FALSE,
+  keep_old = TRUE,
+  do_NOT_override_packages_in_new_R = TRUE
+)
 }
 \arguments{
 \item{from}{a character vector for the location of the old library folder FROM which to copy files from.}

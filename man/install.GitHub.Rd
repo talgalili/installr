@@ -5,9 +5,10 @@
 \alias{install.github}
 \title{Downloads and installs GitHub for windows}
 \usage{
-
-  install.GitHub(URL = "http://github-windows.s3.amazonaws.com/GitHubSetup.exe",
-  ...)
+install.GitHub(
+  URL = "http://github-windows.s3.amazonaws.com/GitHubSetup.exe",
+  ...
+)
 }
 \arguments{
 \item{URL}{the URL of the GitHub download page.}

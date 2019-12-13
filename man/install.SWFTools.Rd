@@ -5,9 +5,10 @@
 \alias{install.swftools}
 \title{Downloads and installs SWFTools for windows}
 \usage{
-
-  install.SWFTools(page_with_download_url = "http://swftools.org/download.html",
-  ...)
+install.SWFTools(
+  page_with_download_url = "http://swftools.org/download.html",
+  ...
+)
 }
 \arguments{
 \item{page_with_download_url}{the URL of the SWFTools download page.}

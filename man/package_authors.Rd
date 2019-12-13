@@ -4,8 +4,13 @@
 \alias{package_authors}
 \title{Access (and clean) author elements from R's Rd file}
 \usage{
-package_authors(package, to_strsplit = TRUE, split = c(",|and"),
-  to_table = FALSE, ...)
+package_authors(
+  package,
+  to_strsplit = TRUE,
+  split = c(",|and"),
+  to_table = FALSE,
+  ...
+)
 }
 \arguments{
 \item{package}{a character string of the package we are interested in.}

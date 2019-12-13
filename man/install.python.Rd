@@ -4,9 +4,12 @@
 \alias{install.python}
 \title{Downloads and installs python 2 or 3}
 \usage{
-
-  install.python(page_with_download_url = "https://www.python.org/downloads/windows/",
-  version_number = 3, x64 = TRUE, ...)
+install.python(
+  page_with_download_url = "https://www.python.org/downloads/windows/",
+  version_number = 3,
+  x64 = TRUE,
+  ...
+)
 }
 \arguments{
 \item{page_with_download_url}{a link to the list of download links for Python}

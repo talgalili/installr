@@ -7,8 +7,12 @@
 \url{http://stackoverflow.com/questions/15071957/is-it-possible-to-install-pandoc-on-windows-using-an-r-command}
 }
 \usage{
-install.pandoc(URL = "https://github.com/jgm/pandoc/releases",
-  use_regex = TRUE, to_restart, ...)
+install.pandoc(
+  URL = "https://github.com/jgm/pandoc/releases",
+  use_regex = TRUE,
+  to_restart,
+  ...
+)
 }
 \arguments{
 \item{URL}{a link to the list of download links of pandoc}

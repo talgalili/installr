@@ -5,9 +5,10 @@
 \alias{install.graphicsmagick}
 \title{Downloads and installs GraphicsMagick for windows}
 \usage{
-
-  install.GraphicsMagick(URL = "https://sourceforge.net/projects/graphicsmagick/files/latest/download",
-  ...)
+install.GraphicsMagick(
+  URL = "https://sourceforge.net/projects/graphicsmagick/files/latest/download",
+  ...
+)
 }
 \arguments{
 \item{URL}{the URL of the ImageMagick download page.}

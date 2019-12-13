@@ -5,9 +5,10 @@
 \alias{install.imagemagick}
 \title{Downloads and installs ImageMagick for windows}
 \usage{
-
-  install.ImageMagick(URL = "http://www.imagemagick.org/script/download.php",
-  ...)
+install.ImageMagick(
+  URL = "http://www.imagemagick.org/script/download.php",
+  ...
+)
 }
 \arguments{
 \item{URL}{the URL of the ImageMagick download page.}

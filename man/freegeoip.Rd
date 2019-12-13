@@ -7,8 +7,11 @@
 \url{http://heuristically.wordpress.com/2013/05/20/geolocate-ip-addresses-in-r/}.
 }
 \usage{
-freegeoip(ip = myip(), format = ifelse(length(ip) == 1, "list",
-  "dataframe"), ...)
+freegeoip(
+  ip = myip(),
+  format = ifelse(length(ip) == 1, "list", "dataframe"),
+  ...
+)
 }
 \arguments{
 \item{ip}{a character vector of ips (default is the output from \link{myip})}

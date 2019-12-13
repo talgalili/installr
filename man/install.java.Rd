@@ -9,29 +9,41 @@
 \alias{install.OpenJdk}
 \title{Install Java - downloads and set path openjdk}
 \usage{
-install.java(version = 11,
+install.java(
+  version = 11,
   page_with_download_url = "http://jdk.java.net/java-se-ri/",
-  path = "C:/java")
+  path = "C:/java"
+)
 
-install.Java(version = 11,
+install.Java(
+  version = 11,
   page_with_download_url = "http://jdk.java.net/java-se-ri/",
-  path = "C:/java")
+  path = "C:/java"
+)
 
-install.jdk(version = 11,
+install.jdk(
+  version = 11,
   page_with_download_url = "http://jdk.java.net/java-se-ri/",
-  path = "C:/java")
+  path = "C:/java"
+)
 
-install.Jdk(version = 11,
+install.Jdk(
+  version = 11,
   page_with_download_url = "http://jdk.java.net/java-se-ri/",
-  path = "C:/java")
+  path = "C:/java"
+)
 
-install.openjdk(version = 11,
+install.openjdk(
+  version = 11,
   page_with_download_url = "http://jdk.java.net/java-se-ri/",
-  path = "C:/java")
+  path = "C:/java"
+)
 
-install.OpenJdk(version = 11,
+install.OpenJdk(
+  version = 11,
   page_with_download_url = "http://jdk.java.net/java-se-ri/",
-  path = "C:/java")
+  path = "C:/java"
+)
 }
 \arguments{
 \item{version}{9 or 10 is passible. Default is 11.}

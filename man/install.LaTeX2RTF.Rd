@@ -5,9 +5,10 @@
 \alias{install.latex2rtf}
 \title{Downloads and installs LaTeX2RTF for windows}
 \usage{
-
-  install.LaTeX2RTF(page_with_download_url = "http://sourceforge.net/projects/latex2rtf/",
-  ...)
+install.LaTeX2RTF(
+  page_with_download_url = "http://sourceforge.net/projects/latex2rtf/",
+  ...
+)
 }
 \arguments{
 \item{page_with_download_url}{the URL of the SWFTools download page.}

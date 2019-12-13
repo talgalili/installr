@@ -4,9 +4,10 @@
 \alias{install.npptor}
 \title{Downloads and installs NppToR for windows}
 \usage{
-
-  install.npptor(URL = "http://sourceforge.net/projects/npptor/files/npptor\%20installer/",
-  ...)
+install.npptor(
+  URL = "http://sourceforge.net/projects/npptor/files/npptor\%20installer/",
+  ...
+)
 }
 \arguments{
 \item{URL}{the URL of the Notepad++ download page.}

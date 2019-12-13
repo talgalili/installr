@@ -7,8 +7,12 @@
 \url{http://www.nicebread.de/finally-tracking-cran-packages-downloads/}
 }
 \usage{
-read_RStudio_CRAN_data(log_folder = tempdir(), use_data_table = TRUE,
-  packages, ...)
+read_RStudio_CRAN_data(
+  log_folder = tempdir(),
+  use_data_table = TRUE,
+  packages,
+  ...
+)
 }
 \arguments{
 \item{log_folder}{the folder which contains the RStudio CRAN log files that were downloaded to. Default is the temporary folder picked by \link{tempdir}.}

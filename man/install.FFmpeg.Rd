@@ -5,9 +5,10 @@
 \alias{install.ffmpeg}
 \title{Downloads and installs FFmpeg for windows}
 \usage{
-
-  install.FFmpeg(page_with_download_url = "http://ffmpeg.zeranoe.com/builds/",
-  ...)
+install.FFmpeg(
+  page_with_download_url = "http://ffmpeg.zeranoe.com/builds/",
+  ...
+)
 }
 \arguments{
 \item{page_with_download_url}{the URL of the FFmpeg download page.}
