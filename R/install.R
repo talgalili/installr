@@ -23,6 +23,7 @@
 #' @details
 #' The install.packages.zip must use this function, since it is crucial that the name of the file into which the ZIPPED package is downloaded to the computer, will have the same name as the file which is online.
 #' @param URL Some url to a file.
+#' @param rm.params (optional, default=\code{FALSE}). Whether or not to remove query parameters from URL.
 #' @return The name of the file in the URL
 #' @export
 #' @seealso \code{\link{install.URL}}, \code{\link{install.packages.zip}}
@@ -30,12 +31,17 @@
 #' \dontrun{
 #' url <- "https://cran.r-project.org/bin/windows/base/R-2.15.3-win.exe"
 #' file.name.from.url(url) # returns: "R-2.15.3-win.exe"
+#'
+#' url <- "https://bioconductor.org/packages/R/genetics?version=5.01&f=gz"
+#' file.name.from.url(url, rm.params=TRUE)  # returns: "genetics?version=5.01&f=gz"
+#' file.name.from.url(url, rm.params=FALSE) # returns: "genetics"
+#' file.name.from.url(url)                  # returns: "genetics"
 #' }
-file.name.from.url <- function(URL) {
- #  tail(strsplit(URL,   "/")[[1]],1)
-   # corrected to use R's base function thanks to Uwe's remark.
-   basename(URL)
-}
+file.name.from.url <- function(URL, rm.params=FALSE) {
+    name <- basename(URL);
+    if(rm.params) name <- gsub('^((?:(?!\\?).)*).*', '\\1', name, perl=TRUE);
+    return(name);
+};
 
 
 
@@ -76,13 +82,15 @@ up_folder <- function(FOLDER, n = -1,...) {
 #' install.packages.zip("https://cran.r-project.org/bin/windows/contrib/r-release/devtools_1.1.zip")
 #' }
 install.packages.zip <- function(zip_URL) {
-   # zip_URL is the URL for the package_name.zip file
-   zip_filename <- file.path(tempdir(), file.name.from.url(zip_URL))   # the name of the zip file MUST be as it was downloaded...
-   download.file(zip_URL, destfile=zip_filename, mode = 'wb')   
-   install.packages(pkgs= zip_filename, repos=NULL)   
-   unlink(zip_filename)
-   invisible(NULL)
-}
+   name <- file.name.from.url(zip_URL, rm.params=TRUE);
+   # Note: zip_URL does NOT need to be related at all to the URL for the package_name.zip file
+   # see https://github.com/RLogik/utilsRL/blob/master/R/packages.r >> install.from.url for a more comprehensive solution.
+   zip_filename <- file.path(tempdir(), name); 
+   download.file(zip_URL, destfile=zip_filename, mode = 'wb');
+   install.packages(pkgs=zip_filename, repos=NULL);
+   unlink(zip_filename);
+   invisible(NULL);
+};
 # a simple example of use:
 # install.packages.zip(zip_URL="https://cran.r-project.org/bin/windows/contrib/r-release/TeachingSampling_2.0.1.zip")
 
