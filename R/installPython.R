@@ -26,7 +26,7 @@
 #' @export
 #' @author Tal Galili and A. Jonathan R. Godfrey
 #' @param page_with_download_url a link to the list of download links for Python
-#' @param x64 logical: fetch a 64 bit version. default checks architecture of current R session.
+#' @param x64 logical: fetch a 64 bit version. default is TRUE; used to check architecture of current R session.
 #' @param version_number Either 2 or 3. Version 2/3 will lead to download of v2.7.xx/3.6.xx respectively.
 #' @param ... extra parameters to pass to \link{install.URL}
 #' @examples
@@ -37,7 +37,7 @@
 #' }
 install.python = function (page_with_download_url = "https://www.python.org/downloads/windows/",
                            version_number = 3,
-                           x64 = is.x64(),
+                           x64 = TRUE,
                              ...)
 {
   page <- readLines(page_with_download_url, warn = FALSE)

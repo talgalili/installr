@@ -1,3 +1,8 @@
+﻿installr 0.22.2 (2019-11-28)
+
+small edits to improve 32/64 bit architecture detection and appropriate download for Python.
+
+
 installr 0.22.0 (2019-08-02)
 ---------------------------
 
