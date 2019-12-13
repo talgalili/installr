@@ -4,10 +4,12 @@
 \alias{file.name.from.url}
 \title{Extract the file name from some URL}
 \usage{
-file.name.from.url(URL)
+file.name.from.url(URL, rm.params = FALSE)
 }
 \arguments{
 \item{URL}{Some url to a file.}
+
+\item{rm.params}{(optional, default=\code{FALSE}). Whether or not to remove query parameters from URL.}
 }
 \value{
 The name of the file in the URL
@@ -22,6 +24,11 @@ The install.packages.zip must use this function, since it is crucial that the na
 \dontrun{
 url <- "https://cran.r-project.org/bin/windows/base/R-2.15.3-win.exe"
 file.name.from.url(url) # returns: "R-2.15.3-win.exe"
+
+url <- "https://bioconductor.org/packages/R/genetics?version=5.01&f=gz"
+file.name.from.url(url, rm.params=TRUE)  # returns: "genetics?version=5.01&f=gz"
+file.name.from.url(url, rm.params=FALSE) # returns: "genetics"
+file.name.from.url(url)                  # returns: "genetics"
 }
 }
 \seealso{

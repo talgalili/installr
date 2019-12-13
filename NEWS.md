@@ -1,9 +1,10 @@
-installr 0.22.1 (2019-08-16)
+installr 0.22.1 (2019-12-13)
 ---------------------------
 
 UPDATED FUNCTIONS:
    * updateR - changed copy_Rprofile.site argument to copy_site_files, which will now also copy Renviron.site
    * small edits to improve 32/64 bit architecture detection and appropriate download for Python.
+   * install.packages.zip - now removes query parameters from URL.
 
 OTHER NOTES:
    * Appveyor integration added to the github repo
