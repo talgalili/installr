@@ -1630,7 +1630,7 @@ package_authors <- function(package, to_strsplit = TRUE, split=c(",|and"), to_ta
 #' } 
 #' @examples
 #' \dontrun{
-#' install.CMake() # installs the latest version of ImageMagick
+#' install.CMake() # installs the latest version of CMake
 #' }
 #'
 install.CMake   <- function(URL="https://cmake.org/download/",...) {    
