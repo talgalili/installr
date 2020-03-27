@@ -29,16 +29,16 @@ credit in the DESCRIPTION file).
 }
 \examples{
 \dontrun{
-fetch_tag_from_Rd("installr", "\\\\author")
-fetch_tag_from_Rd("knitr", "\\\\author")
-fetch_tag_from_Rd("lubridate", "\\\\author")
+fetch_tag_from_Rd("installr", "\\author")
+fetch_tag_from_Rd("knitr", "\\author")
+fetch_tag_from_Rd("lubridate", "\\author")
 
-fetch_tag_from_Rd("installr", "\\\\source")
+fetch_tag_from_Rd("installr", "\\source")
 
 # get all the authors for this package
-unique(unname(fetch_tag_from_Rd("installr", "\\\\author")))
+unique(unname(fetch_tag_from_Rd("installr", "\\author")))
 
-fetch_tag_from_Rd("installr", "\\\\author")
+fetch_tag_from_Rd("installr", "\\author")
 package_authors("installr")
 
 }

@@ -43,7 +43,7 @@ The function also seperate lists of authors, and cleans the output a bit
 \dontrun{
 
 # before:
-fetch_tag_from_Rd("installr", "\\\\author")
+fetch_tag_from_Rd("installr", "\\author")
 # after:
 package_authors("installr")
 sort(package_authors("installr")) # sorted name list...

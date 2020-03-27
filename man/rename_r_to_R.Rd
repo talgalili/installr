@@ -57,13 +57,13 @@ rename_r_to_R(recursive = TRUE, message = FALSE) # Changes
 # source: http://stackoverflow.com/questions/52950/how-to-make-git-ignore-changes-in-case
 # First run the following in git bash:
 # git config core.ignorecase false
-rename_r_to_R(recursive = TRUE, text_to_find="\\\\.R$", new_extension = ".b")
+rename_r_to_R(recursive = TRUE, text_to_find="\\.R$", new_extension = ".b")
 
 # mmm, since it does not work nicely, you'd need to run the following:
 # and commit between the two.
-rename_r_to_R(recursive = TRUE, text_to_find="\\\\.r$", new_extension = ".b")
+rename_r_to_R(recursive = TRUE, text_to_find="\\.r$", new_extension = ".b")
 # commit!
-rename_r_to_R(recursive = TRUE, text_to_find="\\\\.b$", new_extension = ".R")
+rename_r_to_R(recursive = TRUE, text_to_find="\\.b$", new_extension = ".R")
 
 }
 }
