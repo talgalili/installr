@@ -5,10 +5,16 @@
 \alias{install.cmake}
 \title{Downloads and installs CMake for windows}
 \usage{
-install.CMake(URL = "https://cmake.org/download/", ...)
+install.CMake(
+  URL = "https://github.com/Kitware/CMake/releases",
+  cmake_version = NULL,
+  ...
+)
 }
 \arguments{
 \item{URL}{the URL of the CMake download page.}
+
+\item{cmake_version}{NULL by default, but a user can supply the version as a character.}
 
 \item{...}{extra parameters to pass to \link{install.URL}}
 }
@@ -24,6 +30,8 @@ CMake is used to control the software compilation process using simple
 platform and compiler independent configuration files. 
 CMake generates native makefiles and workspaces that can be used in the 
 compiler environment of your choice.
+If run NOT on Windows (i.e.: max/linux), this would download the file into the working directory.
+(\link{getwd}).
 }
 \examples{
 \dontrun{

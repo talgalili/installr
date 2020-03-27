@@ -1620,7 +1620,10 @@ package_authors <- function(package, to_strsplit = TRUE, split=c(",|and"), to_ta
 #' platform and compiler independent configuration files. 
 #' CMake generates native makefiles and workspaces that can be used in the 
 #' compiler environment of your choice.
+#' If run NOT on Windows (i.e.: max/linux), this would download the file into the working directory.
+#' (\link{getwd}).
 #' @param URL the URL of the CMake download page.
+#' @param cmake_version NULL by default, but a user can supply the version as a character.
 #' @param ... extra parameters to pass to \link{install.URL}
 #' @return TRUE/FALSE - was the installation successful or not.
 #' @export
@@ -1633,60 +1636,90 @@ package_authors <- function(package, to_strsplit = TRUE, split=c(",|and"), to_ta
 #' install.CMake() # installs the latest version of CMake
 #' }
 #'
-install.CMake   <- function (repo =  "https://github.com/Kitware/CMake/releases", cmake_version = NULL)
-{
-  # enforce quality control for repo and cmake version
-  if (!is.null(cmake_version) & !is.character(cmake_version)){
-    stop("cmake_version must be NULL or a character with exact version number")
-  }
-  page <- readLines(repo, warn = FALSE)
-  
-  # get architecture and OS
-  arch_os <- unlist(strsplit(R.version$system, ", "))
-  ver <- "v[0-9.]+/"
-  target_line <- grep(ver, page, value = TRUE)
-  m <- regexpr(ver, target_line)
-  # get available versions and sort decreasing
-  available_versions <- sort(unique(regmatches(target_line, m)), decreasing = TRUE)
-  # remove the "/"
-  available_versions <- gsub(x= available_versions, pattern = "/", replacement = "")
-  # default to latest or user input ?
-  if (is.null(cmake_version)){
-  message("Looking available versions for latest version")
-  print(available_versions)
-  target_version <- gsub(x = available_versions[1], pattern = "v", replacement = "")
-  target_version <- gsub(x = target_version, pattern="/", replacement = "")
-  } else {
-    # must be exact match
-    if (!(paste0("v", cmake_version) %in% available_versions)){
-      message(paste0("Provided version `", cmake_version, "` not found on available versions. See below:"))
-      # print with no v to avoid confusion
-      print(gsub(x = available_versions, pattern = "v", replacement = ""))
-      stop("provided version not available.")
-    } 
-    target_version <- cmake_version
-  }
-  
-  file <- switch(arch_os[2], 
-               "mingw32" = paste0("win-", arch_os[1], ".msi"),
-               "linux-gnu" = paste0("Linux-", arch_os[1], ".tar.gz"),
-               "Darwin" = paste0("Darwin-", arch_os[1], ".tar.gz")
-  )
-  
-  file <- paste0("cmake-", target_version, "-", file)
-  
-  # links look like 
-  # version/cmake-3.17.0-Darwin-x86_64.dmg
-  URL <- paste(repo, "download", paste0("v", target_version), file, sep="/")
-  message("Trying to find CMake in this URL")
-  print(URL)
-  
-  if(arch_os[2] == "migw32"){install.URL(URL, ...)
-	} else {
-	  file.download(URL)
-	}
-  
-}
+
+install.CMake   <-
+   function (URL =  "https://github.com/Kitware/CMake/releases",
+             cmake_version = NULL, 
+             ...)
+   {
+      repo <- URL
+      # enforce quality control for repo and cmake version
+      if (!is.null(cmake_version) & !is.character(cmake_version)) {
+         stop("cmake_version must be NULL or a character with exact version number")
+      }
+      page <- readLines(repo, warn = FALSE)
+      
+      # get architecture and OS
+      arch_os <- unlist(strsplit(R.version$system, ", "))
+      ver <- "v[0-9.]+/"
+      target_line <- grep(ver, page, value = TRUE)
+      m <- regexpr(ver, target_line)
+      # get available versions and sort decreasing
+      available_versions <-
+         sort(unique(regmatches(target_line, m)), decreasing = TRUE)
+      # remove the "/"
+      available_versions <-
+         gsub(x = available_versions,
+              pattern = "/",
+              replacement = "")
+      # default to latest or user input ?
+      if (is.null(cmake_version)) {
+         message("Looking available versions for latest version")
+         print(available_versions)
+         target_version <-
+            gsub(x = available_versions[1],
+                 pattern = "v",
+                 replacement = "")
+         target_version <-
+            gsub(x = target_version,
+                 pattern = "/",
+                 replacement = "")
+      } else {
+         # must be exact match
+         if (!(paste0("v", cmake_version) %in% available_versions)) {
+            message(
+               paste0(
+                  "Provided version `",
+                  cmake_version,
+                  "` not found on available versions. See below:"
+               )
+            )
+            # print with no v to avoid confusion
+            print(gsub(
+               x = available_versions,
+               pattern = "v",
+               replacement = ""
+            ))
+            stop("provided version not available.")
+         }
+         target_version <- cmake_version
+      }
+      
+      os_initial <- regmatches(arch_os[2], regexpr("([A-Za-z\\-]+)", arch_os[2]))
+      file <- switch(
+         os_initial,
+         "mingw" = paste0("win-", arch_os[1], ".msi"),
+         "linux-gnu" = paste0("Linux-", arch_os[1], ".tar.gz"),
+         "darwin" = paste0("Darwin-", arch_os[1], ".tar.gz")
+      )
+      
+      file <- paste0("cmake-", target_version, "-", file)
+      
+      # links look like
+      # version/cmake-3.17.0-Darwin-x86_64.dmg
+      URL <-
+         paste(repo, "download", paste0("v", target_version), file, sep = "/")
+      message("Trying to find CMake in this URL")
+      print(URL)
+      
+      if (os_initial == "mingw") {
+         install.URL(URL, ...)
+      } else {
+         download.file(URL, destfile = file.path(getwd(), file))
+      }
+      
+   }
 
 #' @export
-install.cmake <- function(...) install.CMake(...)
+install.cmake <- function(...)
+   install.CMake(...)
