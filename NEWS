@@ -1,4 +1,4 @@
-installr 0.22.1 (2019-12-13)
+installr 0.23.0 (2020-03-27)
 ---------------------------
 
 UPDATED FUNCTIONS:
@@ -12,6 +12,7 @@ OTHER NOTES:
 BUG FIXES:
    * Fix install.GraphicsMagick
    * Fix create.global.library to allow no arguments
+   * Fix install.CMake
 
 
 installr 0.22.0 (2019-08-02)
