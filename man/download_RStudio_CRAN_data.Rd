@@ -37,7 +37,7 @@ are already available in the temp folder}
 Returns the value of log_folder.
 }
 \description{
-This function download these files based on the code from the downlaod page (\url{http://cran-logs.rstudio.com/}) into a temporary folder.
+This function download these files based on the code from the download page (\url{http://cran-logs.rstudio.com/}) into a temporary folder.
 }
 \details{
 RStudio maintains its own CRAN mirror, https://cran.rstudio.com/ and offers its log files.

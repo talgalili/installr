@@ -30,7 +30,7 @@ there are many log files.}
 Returns the combined data file.
 }
 \description{
-This function reads files downloaded from the downlaod page (\url{http://cran-logs.rstudio.com/}).
+This function reads files downloaded from the download page (\url{http://cran-logs.rstudio.com/}).
 
 This function relies on data.table to run faster.
 WARNING: this function can be quite slow...

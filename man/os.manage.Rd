@@ -17,7 +17,7 @@ os.manage(GUI = TRUE, ask = TRUE, ...)
 The status code of \code{\link[base]{system}}.
 }
 \description{
-A central function to run functions for shuting down, restarting, sleeping (etc.) your computer.
+A central function to run functions for shutting down, restarting, sleeping (etc.) your computer.
 This will run these functions immediately.
 }
 \examples{

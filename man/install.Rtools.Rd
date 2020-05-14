@@ -31,7 +31,7 @@ install.Rtools(
 invisible(TRUE/FALSE) - was the installation successful or not.
 }
 \description{
-Allows the user to choose, downloads and install - the latest version of Rtools for Windows.  By default, the function searches if RTools is installed, if not, it checks if it knows which version to isntall for the current R version, and if not - it asks the user to choose which Rtools version to install.
+Allows the user to choose, downloads and install - the latest version of Rtools for Windows.  By default, the function searches if RTools is installed, if not, it checks if it knows which version to install for the current R version, and if not - it asks the user to choose which Rtools version to install.
 }
 \details{
 RTools is a collection of software for building packages for R under Microsoft Windows, or for building R itself (version 1.9.0 or later).

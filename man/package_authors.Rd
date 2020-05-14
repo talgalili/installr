@@ -18,7 +18,7 @@ package_authors(
 \item{to_strsplit}{logical (TRUE). Should the authors strings be split
 (in cases of a "and" or a comma ",")?}
 
-\item{split}{a character scalar to be passed to \link{strsplit} split paramter.
+\item{split}{a character scalar to be passed to \link{strsplit} split parameter.
 default is c(",|and)}
 
 \item{to_table}{logical (FALSE). Should the authors strings be listed in a
@@ -36,14 +36,14 @@ Find authors.
 }
 \details{
 List authors for a package from its "author" tag elements from its Rd files.
-The function also seperate lists of authors, and cleans the output a bit 
+The function also separate lists of authors, and cleans the output a bit
 (from spaces at the beginning of the strings).
 }
 \examples{
 \dontrun{
 
 # before:
-fetch_tag_from_Rd("installr", "\\author")
+fetch_tag_from_Rd("installr", "\\\\author")
 # after:
 package_authors("installr")
 sort(package_authors("installr")) # sorted name list...

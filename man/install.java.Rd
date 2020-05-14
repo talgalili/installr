@@ -50,7 +50,7 @@ install.OpenJdk(
 
 \item{page_with_download_url}{where to download. Default is \url{http://jdk.java.net/java-se-ri/11}}
 
-\item{path}{where to set java. Defulat path is C:/java}
+\item{path}{where to set java. Default path is C:/java}
 }
 \value{
 TRUE/FALSE - was the installation successful or not.

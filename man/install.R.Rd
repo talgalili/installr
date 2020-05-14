@@ -19,7 +19,7 @@ install.R(
 
 \item{pat}{the pattern of R .exe file to download}
 
-\item{to_checkMD5sums}{Should we check that the new R installation has the files we expect it to (by checking the MD5 sums)? default is TRUE.  It assumes that the R which was isntalled is the latest R version.}
+\item{to_checkMD5sums}{Should we check that the new R installation has the files we expect it to (by checking the MD5 sums)? default is TRUE.  It assumes that the R which was installed is the latest R version.}
 
 \item{keep_install_file}{If TRUE - the installer file will not be erased after it is downloaded and run.}
 
