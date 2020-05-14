@@ -43,7 +43,7 @@
 #' @export
 #' @description 
 #' 
-#' This function download these files based on the code from the downlaod page (\url{http://cran-logs.rstudio.com/}) into a temporary folder.
+#' This function download these files based on the code from the download page (\url{http://cran-logs.rstudio.com/}) into a temporary folder.
 #' @details
 #' RStudio maintains its own CRAN mirror, https://cran.rstudio.com/ and offers its log files.
 #' @param START the defaults is 5 days before today. A character string of the START date for files to be downloaded. The date format is "YYYY-MM-DD".
@@ -127,7 +127,7 @@ download_RStudio_CRAN_data <- function(START = as.Date(Sys.time())-5,
 #' @title Reads RStudio CRAN mirror data files from a folder
 #' @export
 #' @description 
-#' This function reads files downloaded from the downlaod page (\url{http://cran-logs.rstudio.com/}).
+#' This function reads files downloaded from the download page (\url{http://cran-logs.rstudio.com/}).
 #' 
 #' This function relies on data.table to run faster.
 #' WARNING: this function can be quite slow...

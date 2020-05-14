@@ -60,7 +60,7 @@ os.shutdown <- function(s=0, m=0, h=0) {
 		  shell("shutdown -s -f -t 1", wait = F) # -f == forces the shutdown.  And I give R 2 seconds to close.
 		  quit("no")
 		  }
-		  ,# without wait =F, the shuting down will not work properly since Windows will wait for R to close (which will be waiting for Windows to shutdown)
+		  ,# without wait =F, the shutting down will not work properly since Windows will wait for R to close (which will be waiting for Windows to shutdown)
           system("shutdown -h now"))
 }
 
@@ -97,12 +97,12 @@ os.sleep <- function(s=0, m=0, h=0, first_turn_hibernate_off = TRUE) {
    Sys.sleep(wait)
    
    if(first_turn_hibernate_off & is.windows()) {
-      shell("powercfg -hibernate off", wait = F) # without wait =F, the shuting down will not work properly since Windows will wait for R to close (which will be waiting for Windows to shutdown)   
+      shell("powercfg -hibernate off", wait = F) # without wait =F, the shutting down will not work properly since Windows will wait for R to close (which will be waiting for Windows to shutdown)
    }
    
    
    ifelse(is.windows(), 
-          shell("rundll32.exe powrprof.dll,SetSuspendState 0,1,0", wait = F),# without wait =F, the shuting down will not work properly since Windows will wait for R to close (which will be waiting for Windows to shutdown)
+          shell("rundll32.exe powrprof.dll,SetSuspendState 0,1,0", wait = F),# without wait =F, the shutting down will not work properly since Windows will wait for R to close (which will be waiting for Windows to shutdown)
           warning("This function doesn't handle non-Windows OS (you are welcome to contribute code to let me know how to do it, e-mail: tal.galili@gmail.com)."))
 }
 
@@ -134,11 +134,11 @@ os.hibernate  <- function(s=0, m=0, h=0, first_turn_hibernate_on = TRUE) {
    Sys.sleep(wait)
 
    if(first_turn_hibernate_on & is.windows()) {
-      shell("powercfg -hibernate on", wait = F) # without wait =F, the shuting down will not work properly since Windows will wait for R to close (which will be waiting for Windows to shutdown)   
+      shell("powercfg -hibernate on", wait = F) # without wait =F, the shutting down will not work properly since Windows will wait for R to close (which will be waiting for Windows to shutdown)
    }   
    
    ifelse(is.windows(), 
-          shell("rundll32.exe powrprof.dll,SetSuspendState Hibernate", wait = F),# without wait =F, the shuting down will not work properly since Windows will wait for R to close (which will be waiting for Windows to shutdown)
+          shell("rundll32.exe powrprof.dll,SetSuspendState Hibernate", wait = F),# without wait =F, the shutting down will not work properly since Windows will wait for R to close (which will be waiting for Windows to shutdown)
           warning("This function doesn't handle non-Windows OS (you are welcome to contribute code to let me know how to do it, e-mail: tal.galili@gmail.com)."))
 }
 
@@ -170,7 +170,7 @@ os.lock  <- function(s=0, m=0, h=0) {
    Sys.sleep(wait)
    
    ifelse(is.windows(), 
-          shell("Rundll32.exe User32.dll,LockWorkStation", wait = F),# without wait =F, the shuting down will not work properly since Windows will wait for R to close (which will be waiting for Windows to shutdown)
+          shell("Rundll32.exe User32.dll,LockWorkStation", wait = F),# without wait =F, the shutting down will not work properly since Windows will wait for R to close (which will be waiting for Windows to shutdown)
           warning("This function doesn't handle non-Windows OS (you are welcome to contribute code to let me know how to do it, e-mail: tal.galili@gmail.com)."))
 }
 
@@ -199,7 +199,7 @@ os.restart  <- function(s=0, m=0, h=0) {
    Sys.sleep(wait)
    
    ifelse(is.windows(), 
-          shell("Shutdown.exe -r -t 00", wait = F),# without wait =F, the shuting down will not work properly since Windows will wait for R to close (which will be waiting for Windows to shutdown)
+          shell("Shutdown.exe -r -t 00", wait = F),# without wait =F, the shutting down will not work properly since Windows will wait for R to close (which will be waiting for Windows to shutdown)
           warning("This function doesn't handle non-Windows OS (you are welcome to contribute code to let me know how to do it, e-mail: tal.galili@gmail.com)."))
 }
 
@@ -210,7 +210,7 @@ os.restart  <- function(s=0, m=0, h=0) {
 #' @title Gives managing option to the current OS (shutdown, restart, sleep, hibernate, etc...)
 #' @export
 #' @description
-#' A central function to run functions for shuting down, restarting, sleeping (etc.) your computer.
+#' A central function to run functions for shutting down, restarting, sleeping (etc.) your computer.
 #' This will run these functions immediately.
 #' @param GUI a logical indicating whether a graphics menu should be used if available.  If TRUE, and on Windows, it will use winDialog, otherwise it will use \link[utils]{menu}.
 #' @param ask a logical indicating whether to ask the user for the number of minutes in which to perform the operation.

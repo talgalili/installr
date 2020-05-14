@@ -29,7 +29,7 @@
 #' @author Chan-Yub Park And Tal Galili
 #' @param version 9 or 10 is passible. Default is 11.
 #' @param page_with_download_url where to download. Default is \url{http://jdk.java.net/java-se-ri/11}
-#' @param path where to set java. Defulat path is C:/java
+#' @param path where to set java. Default path is C:/java
 #' @examples
 #' \dontrun{
 #' install.java() 

@@ -33,7 +33,7 @@
 #' Be careful when using the recursive argument.
 #' And remember that source("miao.r") and source("miao.R")
 #' Are NOT the same...
-#' @param subdir (character) sub folder from the current working directoryl 
+#' @param subdir (character) sub folder from the current working directory
 #' in which the files should be changed. Default is "".
 #' @param recursive (logical) FALSE. Should the function keep going
 #' into folders and check them as well?
