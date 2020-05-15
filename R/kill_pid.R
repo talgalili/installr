@@ -84,7 +84,7 @@ get_tasklist <- function(...) {
 #' @export
 #' @description kill (i.e.: stop) running processes by there pid.
 #' It spawns a new Rscript which runs \link[tools]{pskill} on the pid-s
-#' @param pid an integer vector with process id numbers (i.e.: can kill severa pid at once!)
+#' @param pid an integer vector with process id numbers (i.e.: can kill several pid at once!)
 #' @param s numeric. number of seconds to wait before killing the processes
 #' @param m numeric. number of minutes to wait before killing the processes
 #' @param h numeric. number of hours to wait before killing the processes

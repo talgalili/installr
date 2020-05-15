@@ -100,7 +100,7 @@ install.packages.zip <- function(zip_URL) {
 #' @title uninstalls (removes) Installed Packages
 #' @export
 #' @description 
-#' A wrapper for \link{remove.packages}. Usefull since it also works if the 
+#' A wrapper for \link{remove.packages}. Useful since it also works if the
 #' package is currently loaded into the workspace.
 #' @param pkgs a character vector with the names of the packages to be removed.
 #' @param lib a character vector giving the library directories to remove the packages from. 
@@ -469,7 +469,7 @@ and enter the row number of the file-version you'd like to install: "
 
 #' @title Downloads and installs Rtools
 #' @aliases install.rtools
-#' @description Allows the user to choose, downloads and install - the latest version of Rtools for Windows.  By default, the function searches if RTools is installed, if not, it checks if it knows which version to isntall for the current R version, and if not - it asks the user to choose which Rtools version to install.
+#' @description Allows the user to choose, downloads and install - the latest version of Rtools for Windows.  By default, the function searches if RTools is installed, if not, it checks if it knows which version to install for the current R version, and if not - it asks the user to choose which Rtools version to install.
 #' @details
 #' RTools is a collection of software for building packages for R under Microsoft Windows, or for building R itself (version 1.9.0 or later).
 #' The original collection was put together by Prof. Brian Ripley; it is currently being maintained by Duncan Murdoch.
@@ -527,7 +527,7 @@ install.Rtools <- function(choose_version = TRUE,
       
 #    version_info2
    
-   # try to fit the best Rtools to isntall
+   # try to fit the best Rtools to install
    Rversion <- as.character(getRversion())
    Rversion_number <- turn.version.to.number(Rversion)      
    ss_min <- Rversion_number >= turn.version.to.number(version_info2$version_min)
@@ -1342,7 +1342,7 @@ require2 <- function (package, ask = FALSE, character.only = FALSE, ...)
 
 #' @title Restart RGui from RGui
 #' @export
-#' @description Start a new RGui session and then quites the current one.
+#' @description Start a new RGui session and then quits the current one.
 #' 
 #' This is a Windows only function.
 #' @param ... passed to q()
@@ -1453,7 +1453,7 @@ installr <- function(GUI = TRUE, ...) {
 #' @param tag a character vector of tag(s) to get from a package's Rd files.
 #' @param ... not in use.
 #' @author Thomas J. Leeper <thosjleeper@@gmail.com>
-#' @return a character vector with the tag's contant, and the name of the 
+#' @return a character vector with the tag's content, and the name of the
 #' Rd source of the function the tag came from.
 #' @source \url{http://stackoverflow.com/questions/17909081/access-elements-from-rs-rd-file}
 #' @seealso \link{package_authors}
@@ -1519,13 +1519,13 @@ fetch_tag_from_Rd <- function(package, tag = "\\author",...){
 #' Find authors.
 #' @details
 #' List authors for a package from its "author" tag elements from its Rd files.
-#' The function also seperate lists of authors, and cleans the output a bit 
+#' The function also separate lists of authors, and cleans the output a bit
 #' (from spaces at the beginning of the strings).
 #' 
 #' @param package a character string of the package we are interested in.
 #' @param to_strsplit logical (TRUE). Should the authors strings be split
 #' (in cases of a "and" or a comma ",")?
-#' @param split a character scalar to be passed to \link{strsplit} split paramter.
+#' @param split a character scalar to be passed to \link{strsplit} split parameter.
 #' default is c(",|and)
 #' @param to_table logical (FALSE). Should the authors strings be listed in a
 #' table - showing a count of how many .Rd files they were listed in?

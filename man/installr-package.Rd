@@ -4,7 +4,4 @@
 \name{installr-package}
 \alias{installr-package}
 \title{Using R to Install Stuff (Such As: R, Rtools, RStudio, Git, and More!)}
-\description{
-Using R to Install Stuff (Such As: R, Rtools, RStudio, Git, and More!)
-}
 \keyword{installr}

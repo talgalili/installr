@@ -20,7 +20,7 @@ If missing, defaults to the first element in \link{.libPaths}.}
 Invisible NULL
 }
 \description{
-A wrapper for \link{remove.packages}. Usefull since it also works if the 
+A wrapper for \link{remove.packages}. Useful since it also works if the
 package is currently loaded into the workspace.
 }
 \examples{

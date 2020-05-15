@@ -7,7 +7,7 @@
 kill_pid(pid, s = 0, m = 0, h = 0, ...)
 }
 \arguments{
-\item{pid}{an integer vector with process id numbers (i.e.: can kill severa pid at once!)}
+\item{pid}{an integer vector with process id numbers (i.e.: can kill several pid at once!)}
 
 \item{s}{numeric. number of seconds to wait before killing the processes}
 

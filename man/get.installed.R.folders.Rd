@@ -17,7 +17,7 @@ Returns a character vector (possibly named, possibly sorted) of the folders wher
 \description{
 The function finds the folders where there are R installations.  This is important for deciding what to uninstall, and where from and to to move libraries.
 This function ignores installations of R-devel at this point.
-Also, this function is based on only looking at the folders above the current installation of R.  If there are other isntallations of R outside the above folder, they will not be listed.
+Also, this function is based on only looking at the folders above the current installation of R.  If there are other installations of R outside the above folder, they will not be listed.
 }
 \examples{
 \dontrun{

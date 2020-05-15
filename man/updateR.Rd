@@ -29,7 +29,7 @@ updateR(
 \arguments{
 \item{fast}{logical (default is FALSE). If TRUE, it overrides other parameters and uses a set of defaults to make the
 R installation as fast as possible: no news, installr R, copy packages and Rprofile, keep
-old packages, updated packages, without quiting current R or starting the new R.
+old packages, updated packages, without quitting current R or starting the new R.
 don't use GUI, check MD5sums, keep installed file in the \link{getwd}.}
 
 \item{browse_news}{if TRUE (and if there is a newer version of R) - it opens the browser to the NEWS of the latest version of R, for the user to read through}
@@ -52,7 +52,7 @@ don't use GUI, check MD5sums, keep installed file in the \link{getwd}.}
 
 \item{GUI}{a logical indicating whether a graphics menu should be used if available.  If TRUE, and on Windows, it will use winDialog, otherwise it will use \link[utils]{menu}.}
 
-\item{to_checkMD5sums}{Should we check that the new R installation has the files we expect it to (by checking the MD5 sums)? default is TRUE.  It assumes that the R which was isntalled is the latest R version. parameter is passed to install.R()}
+\item{to_checkMD5sums}{Should we check that the new R installation has the files we expect it to (by checking the MD5 sums)? default is TRUE.  It assumes that the R which was installed is the latest R version. parameter is passed to install.R()}
 
 \item{keep_install_file}{If TRUE - the installer file will not be erased after it is downloaded and run.}
 

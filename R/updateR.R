@@ -259,7 +259,7 @@ browse.latest.R.NEWS <- function(
 #' See the \link{install.Rdevel} function for installing the latest R-devel version.
 #' @param page_with_download_url URL from which the latest stable version of R can be downloaded from.
 #' @param pat the pattern of R .exe file to download
-#' @param to_checkMD5sums Should we check that the new R installation has the files we expect it to (by checking the MD5 sums)? default is TRUE.  It assumes that the R which was isntalled is the latest R version.
+#' @param to_checkMD5sums Should we check that the new R installation has the files we expect it to (by checking the MD5 sums)? default is TRUE.  It assumes that the R which was installed is the latest R version.
 #' @param keep_install_file If TRUE - the installer file will not be erased after it is downloaded and run.
 #' @param download_dir A character of the directory into which to download the file. (default is \link{tempdir}())
 #' @param silent If TRUE - enables silent installation mode.
@@ -469,7 +469,7 @@ R_version_in_a_folder <- function(folder) {
 #' @description 
 #' The function finds the folders where there are R installations.  This is important for deciding what to uninstall, and where from and to to move libraries.
 #' This function ignores installations of R-devel at this point.
-#' Also, this function is based on only looking at the folders above the current installation of R.  If there are other isntallations of R outside the above folder, they will not be listed.
+#' Also, this function is based on only looking at the folders above the current installation of R.  If there are other installations of R outside the above folder, they will not be listed.
 #' @param sort_by_version should the returned vector be sorted by the version number? (default is yes - so that the first element is of the newest version of R) should the user be given the option to choose between which two libraries to copy the packages?  If FALSE (default), the folders are copied from the before-newest R installation to the newest R installation.
 #' @param add_version_to_name should the version number be added to the vector of folders? (default is yes)
 #' @return Returns a character vector (possibly named, possibly sorted) of the folders where there are R installations.
@@ -490,7 +490,7 @@ R_version_in_a_folder <- function(folder) {
 #' }
 get.installed.R.folders <- function(sort_by_version = TRUE, add_version_to_name = TRUE) {
    # get the parent folder of the current R installation
-   R_parent_folder <- paste(head(strsplit(R.home(), "/|\\\\")[[1]], -1), collapse = "/") # the strsplit is seperating the path whether it is / or \\ (but since \\ is a problem, I need to cancel it with \\\\)      
+   R_parent_folder <- paste(head(strsplit(R.home(), "/|\\\\")[[1]], -1), collapse = "/") # the strsplit is separating the path whether it is / or \\ (but since \\ is a problem, I need to cancel it with \\\\)
    items_in_R_parent_folder <- list.files(R_parent_folder)
    
    R_folders <- file.path(R_parent_folder, items_in_R_parent_folder) # some of these may NOT be R folders
@@ -666,7 +666,7 @@ copy.packages.between.libraries <- function(from, to, ask = FALSE, keep_old = TR
 #' It is worth noting that the function assumes that you are installing R in the same directory as before. That is, if the old R was on: D:\R\R-3.0.0 then the new R will be on D:\R\R-3.0.1.
 #' @param fast logical (default is FALSE). If TRUE, it overrides other parameters and uses a set of defaults to make the
 #' R installation as fast as possible: no news, installr R, copy packages and Rprofile, keep
-#' old packages, updated packages, without quiting current R or starting the new R.
+#' old packages, updated packages, without quitting current R or starting the new R.
 #' don't use GUI, check MD5sums, keep installed file in the \link{getwd}.
 #' @param browse_news if TRUE (and if there is a newer version of R) - it opens the browser to the NEWS of the latest version of R, for the user to read through
 #' @param install_R TRUE/FALSE - if to install a new version of R (if one is available).  If missing (this is the default)  - the user be asked if to download R or not.Of course the installation part itself (the running of the .exe file) is dependent on the user.
@@ -678,7 +678,7 @@ copy.packages.between.libraries <- function(from, to, ask = FALSE, keep_old = TR
 #' @param quit_R TRUE/FALSE - if to quit R after the installation and package copying or not. If missing (this is the default) - the user is asked what to do.
 #' @param print_R_versions if to tell the user what version he has and what is the latest version (default is TRUE)
 #' @param GUI a logical indicating whether a graphics menu should be used if available.  If TRUE, and on Windows, it will use winDialog, otherwise it will use \link[utils]{menu}.
-#' @param to_checkMD5sums Should we check that the new R installation has the files we expect it to (by checking the MD5 sums)? default is TRUE.  It assumes that the R which was isntalled is the latest R version. parameter is passed to install.R()
+#' @param to_checkMD5sums Should we check that the new R installation has the files we expect it to (by checking the MD5 sums)? default is TRUE.  It assumes that the R which was installed is the latest R version. parameter is passed to install.R()
 #' @param keep_install_file If TRUE - the installer file will not be erased after it is downloaded and run.
 #' @param download_dir A character of the directory into which to download the file. (default is \link{tempdir}())
 #' @param silent If TRUE - enables silent installation mode.
