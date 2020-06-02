@@ -1,4 +1,4 @@
-installr 0.23.0 (2020-03-27)
+installr 0.23.0 (2020-06-01)
 ---------------------------
 
 UPDATED FUNCTIONS:
@@ -13,6 +13,8 @@ BUG FIXES:
    * Fix install.GraphicsMagick
    * Fix create.global.library to allow no arguments
    * Fix install.CMake
+   * Fix install.RStudio
+   * Fix install.Rtools
 
 
 installr 0.22.0 (2019-08-02)
