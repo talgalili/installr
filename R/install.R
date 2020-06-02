@@ -184,6 +184,10 @@ install.URL <- function(exe_URL, keep_install_file = FALSE, wait = TRUE, downloa
    
    
    if(!havingIP()) warning("You do not seem to be connected to the internet. Hence - you will likely not be able to download software.")
+  
+   if(!(is.character(exe_URL) && length(exe_URL) == 1)) {
+     stop("exe_URL is not a single URL")
+   }
    
    
    exe_filename <- file.path(download_dir, file.name.from.url(exe_URL))   # the name of the zip file MUST be as it was downloaded...   
