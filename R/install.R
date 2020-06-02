@@ -838,7 +838,7 @@ install.lyx <- function(...) install.LyX(...)
 #' install.RStudio() # installs the latest version of RStudio
 #' }
 install.RStudio  <- function(page_with_download_url, ...) {    
-   if(missing(page_with_download_url)) page_with_download_url <- "https://www.rstudio.com/products/rstudio/download"
+   if(missing(page_with_download_url)) page_with_download_url <- "https://www.rstudio.com/products/rstudio/download/#download"
    # get download URL:
    page     <- readLines(page_with_download_url, warn = FALSE)
    # http://download1.rstudio.org/RStudio-0.97.318.exe#
@@ -846,7 +846,13 @@ install.RStudio  <- function(page_with_download_url, ...) {
    pat <- "http.*.rstudio.org/.*/RStudio-[0-9.]+.exe"
    target_line <- grep(pat, page, value = TRUE)
    m <- regexpr(pat, target_line)
-   URL <- regmatches(target_line, m) # (The http still needs to be prepended.
+   URL <- unique(regmatches(target_line, m))
+   
+   if(length(URL) != 1) {
+      message("You'll need to go to the site and download this yourself. I'm now going to try and open the url for you.")
+      browseURL(page_with_download_url)
+      return(FALSE)
+   }
    
    # install.
    install.URL(URL,...)   
