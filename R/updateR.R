@@ -190,11 +190,7 @@ check.for.updates.R <- function(notify_user = TRUE,
    
    current_R_version <- as.character(getRversion()) # paste(R.version$major, R.version$minor, sep=".")
    
-   # Turn the version character into a number
-   latest_R_version_long <- turn.version.to.number(latest_R_version)   
-   current_R_version_long <- turn.version.to.number(current_R_version)   
-   
-   there_is_a_newer_version <- current_R_version_long < latest_R_version_long # TRUE = there IS a need to update (since the latest version is higher then what we currently have)
+   there_is_a_newer_version <- utils::compareVersion(current_R_version, latest_R_version) == -1 # TRUE = there IS a need to update (since the latest version is higher then what we currently have)
    
    if(there_is_a_newer_version) {
       message_text <-   paste("There is a newer version of R for you to download!\n\n",
