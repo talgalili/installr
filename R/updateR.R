@@ -149,6 +149,28 @@ ask.user.yn.question <- function(question, GUI = TRUE, add_lines_before = TRUE) 
    ifelse(the_answer == 1L, TRUE, FALSE)   # returns TRUE or FALSE
 }
 
+#' @title Fetches latest R version from CRAN
+#' @export
+#' @description Returns the latest version of R available on CRAN as an R system version object.
+#' @param cran_mirror The CRAN mirror to use
+#' @seealso \link{getRversion}
+#' @references \url{https://cran.r-project.org/bin/windows/base/}
+get_latest_r_version <- function(cran_mirror = "https://cran.rstudio.com/") {
+  release_url <- stringr::str_glue("{cran_mirror}/bin/windows/base/release.html")
+  page <- readLines(release_url)
+  pat <- "R-[0-9.]+.+-win\\.exe"
+  filename <- na.omit(stringr::str_extract(page, pat))[[1]]
+  version <- stringr::str_extract(filename, "[0-9.]+")
+  package_version(version)
+}
+
+r_update_available <- function(ignore_patchlevel = F) {
+  latest_r <- get_latest_r_version()
+  if (ignore_patchlevel) latest_r[[1, 3]] <- 0
+  getRversion() < latest_r
+}
+
+
 
 #' @title Checks if there is a newer version of R
 #' @export
