@@ -4,4 +4,14 @@
 \name{installr-package}
 \alias{installr-package}
 \title{Using R to Install Stuff (Such As: R, Rtools, RStudio, Git, and More!)}
+\description{
+R is great for installing software.  Through the 'installr'
+package you can automate the updating of R (on Windows, using updateR())
+and install new software. Software installation is initiated through a
+GUI (just run installr()), or through functions such as: install.Rtools(),
+install.pandoc(), install.git(), and many more. The updateR() command
+performs the following: finding the latest R version, downloading it,
+running the installer, deleting the installation file, copy and updating
+old packages to the new R installation.
+}
 \keyword{installr}
