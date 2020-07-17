@@ -1,4 +1,4 @@
-installr 0.23.0 (2020-06-01)
+installr 0.23.0 (2020-07-17)
 ---------------------------
 
 UPDATED FUNCTIONS:
@@ -15,6 +15,7 @@ BUG FIXES:
    * Fix install.CMake
    * Fix install.RStudio
    * Fix install.Rtools
+   * Fix install.ImageMagick
 
 
 installr 0.22.0 (2019-08-02)

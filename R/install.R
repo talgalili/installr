@@ -882,21 +882,17 @@ install.rstudio <- function(...) install.RStudio(...)
 #' \dontrun{
 #' install.ImageMagick() # installs the latest version of ImageMagick
 #' }
-install.ImageMagick  <- function(URL="http://www.imagemagick.org/script/download.php",...) {    
+install.ImageMagick  <- function(URL="https://www.imagemagick.org/script/download.php",...) {    
    page_with_download_url <- URL
    # get download URL:
    # cat(page)
    page     <- readLines(page_with_download_url, warn = FALSE)
-   # http://www.imagemagick.org/download/binaries/ImageMagick-6.8.3-8-Q16-x86-dll.exe
-   # http://www.imagemagick.org/download/binaries/ImageMagick-6.8.3-9-Q16-x86-dll.exe
-   # http://www.imagemagick.org/download/binaries/ImageMagick-6.9.0-10-Q16-x64-dll.exe
-   # https://imagemagick.org/download/binaries/ImageMagick-7.0.8-12-Q16-x64-dll.exe
-   pat <- "imagemagick.org/download/binaries/ImageMagick-[0-9.]+-[0-9]+-Q16-x64-dll.exe"; 
+   # https://imagemagick.org/download/binaries/ImageMagick-7.0.10-23-Q16-HDRI-x64-dll.exe
+   pat <- "http.+imagemagick.org.+download/binaries.+exe"
    target_line <- grep(pat, page, value = TRUE); 
    m <- regexpr(pat, target_line); 
-   URL      <- regmatches(target_line, m) # (The http still needs to be prepended.
-   URL      <- paste0('https://', URL)[1] # we might find the same file more than once - so we'll only take its first one
-   
+   URL <- regmatches(target_line, m) # (The http still needs to be prepended.
+   URL <- URL[1] # take the first option that comes up
    # install.
    install.URL(URL,...)   
 }
