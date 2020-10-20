@@ -1306,37 +1306,40 @@ source.https <- function(URL,..., remove_r_file = T) {
 
 #' @title Loading Packages (and Installing them if they are missing)
 #' @export
-#' @description  require2 load add-on packages by passing it to \link{require}.  However, if the package is not available on the system, it will first install it (through \link{install.packages}), and only then try to load it again.
-#' 
+#' @description  require2 load add-on packages by passing it to \link{require}.
+#' However, if the package is not available on the system, it will first install it (through \link{install.packages}),
+#' and only then try to load it again.
+#'
 #' @param package A character of the name of a package (can also be without quotes).
 #' @param ask Should the user be asked to install the require packaged, in case it is missing? (default is FALSE)
-#' @param character.only logical (FALSE) - a logical indicating whether package or 
+#' @param character.only logical (FALSE) - a logical indicating whether package or
 #' help can be assumed to be character strings. Passed to \link{require}.
-#' @param ... not used
-#' 
+#' @param min_version Minimum version of package
+#'
 #' @return  returns (invisibly) a logical indicating whether the required package is available.
 #' @examples
 #' \dontrun{
-#' a= require2("devtools")
-#' a
-#' a= require2(geonames)
-#' a
+#' require2("devtools")
+#' require2(geonames)
+#' require2(pkgbuild, min_version = "1.1.0")
+#' data_table_loaded <- require2("data.table")
 #' }
-require2 <- function (package, ask = FALSE, character.only = FALSE, ...) 
-{
-   if (!character.only)
-          package <- as.character(substitute(package))
-   if(!suppressWarnings(require(package=package, character.only = TRUE))) {
-	  if(ask) {
-		install_package <- ask.user.yn.question(paste("Package ",package, 
-                                                    " is not installed. Do you want to install it now?"))
-      } else { 
-		install_package <- TRUE 
-	}
-	  
-	  if(install_package) install.packages(pkgs=package)
-   }
-   require(package=package, character.only = TRUE)
+require2 <- function(package, ask = FALSE, character.only = FALSE, min_version = 0) {
+  if (!character.only) package <- as.character(substitute(package))
+  available <- requireNamespace(package, character.only = T, quietly = T) && packageVersion(package) >= min_version
+  if (!available) {
+    if (ask) {
+      install_package <- ask.user.yn.question(paste(
+        "Package", package, "is not installed.",
+        "Do you want to install it now?"
+      ))
+    } else {
+      install_package <- TRUE
+    }
+
+    if (install_package) install.packages(package)
+  }
+  require(package, character.only = TRUE)
 }
 
 
