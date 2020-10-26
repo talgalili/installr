@@ -420,161 +420,6 @@ and enter the row number of the file-version you'd like to install: "
 
 
 
-# 
-# if(FALSE) {
-#    # version_info is taken from https://github.com/hadley/devtools/blob/master/R/rtools.r
-#    version_info <- list(
-#       "2.11" = list(
-#          version_min = "2.10.0",
-#          version_max = "2.11.1",
-#          path = c("bin", "perl/bin", "MinGW/bin")
-#       ),
-#       "2.12" = list(
-#          version_min = "2.12.0",
-#          version_max = "2.12.2",
-#          path = c("bin", "perl/bin", "MinGW/bin", "MinGW64/bin")
-#       ),
-#       "2.13" = list(
-#          version_min = "2.13.0",
-#          version_max = "2.13.2",
-#          path = c("bin", "MinGW/bin", "MinGW64/bin")
-#       ),
-#       "2.14" = list(
-#          version_min = "2.13.0",
-#          version_max = "2.14.2",
-#          path = c("bin", "MinGW/bin", "MinGW64/bin")
-#       ),
-#       "2.15" = list(
-#          version_min = "2.14.2",
-#          version_max = "2.15.1",
-#          path = c("bin", "gcc-4.6.3/bin")
-#       ),
-#       "2.16" = list(
-#          version_min = "2.15.2",
-#          version_max = "3.0.0",
-#          path = c("bin", "gcc-4.6.3/bin")
-#       ),
-#       "3.0" = list(
-#          version_min = "2.15.2",
-#          version_max = "3.0.0",
-#          path = c("bin", "gcc-4.6.3/bin")
-#       )
-#    )      
-#    
-#    require(plyr)
-#    version_info2 <- ldply(version_info, function(xx) {data.frame(version_min=xx$version_min, version_max = xx$version_max)})
-#    colnames(version_info2)[1] <- "version"
-#   version_info2[,2] <- as.character(version_info2[,2])
-#    version_info2[,3] <- as.character(version_info2[,3])
-#    dput(version_info2)
-# }
-
-
-
-#' @title Downloads and installs Rtools
-#' @aliases install.rtools
-#' @description Allows the user to choose, downloads and install - the latest version of Rtools for Windows.  By default, the function searches if RTools is installed, if not, it checks if it knows which version to install for the current R version, and if not - it asks the user to choose which Rtools version to install.
-#' @details
-#' RTools is a collection of software for building packages for R under Microsoft Windows, or for building R itself (version 1.9.0 or later).
-#' The original collection was put together by Prof. Brian Ripley; it is currently being maintained by Duncan Murdoch.
-#' @param choose_version if TRUE, allows the user to choose which version of RTools to install.  Useful if you wish to install the devel version of RTools, or if you are running on an old version of R which requires an old version of R.
-#' @param check checks if we need to install Rtools or not.  Relies on the "find_rtools" function in the {devtools} package.
-#' @param GUI Should a GUI be used when asking the user questions? (defaults to TRUE)
-#' @param page_with_download_url the URL of the RTools download page.
-#' @param ... extra parameters to pass to \link{install.URL}
-#' @return invisible(TRUE/FALSE) - was the installation successful or not.
-#' @export
-#' @source
-#' Some parts of the code are taken from the devtools.
-#' @references
-#' RTools homepage (for other resources and documentation): \url{https://cran.r-project.org/bin/windows/Rtools/}
-#' @examples
-#' \dontrun{
-#' install.Rtools() # installs the latest version of RTools (if one is needed)
-#' install.Rtools(TRUE) # if one is needed - asks the user to choose the latest 
-#' # version of RTools to install
-#' 
-#' install.Rtools(TRUE, FALSE) # asks the user to choose 
-#' # the latest version of RTools to install 
-#' # (regardless if one is needed)
-#' # install.Rtools(F,F)
-#' 
-#' }
-install.Rtools <- function(choose_version = TRUE,                           
-                           check=FALSE,
-                           GUI = TRUE,
-                           page_with_download_url = 'https://cran.r-project.org/bin/windows/Rtools/history.html',
-                           ...
-) {
-   # choose_version==T allows the user to choose which version of Rtools he wishes to install
-   # latest_Frozen==T means we get the latest Rtools version which is Frozen (when writing this function it is Rtools215.exe)
-   # latest_Frozen==F means we get the latest Rtools version which is not Frozen (when writing this function it is Rtools30.exe)
-
-   regex <- function(x, expr) {
-      regmatches(x , regexpr(expr, x))
-   }
-   
-   if(check & requireNamespace("pkgbuild")) { # if we have devtools we can check for the existance of rtools
-      found_rtools <- pkgbuild::find_rtools()
-      if(found_rtools) {
-         cat("No need to install Rtools - You've got the relevant version of Rtools installed\n")
-         return(invisible(FALSE))
-      }
-   }# if we reached here - it means we'll need to install Rtools.
-
-
-   version_info2 <- structure(list(version = c("2.11", "2.12", "2.13", "2.14", "2.15", 
-                                               "2.16", "3.0"), version_min = c("2.10.0", "2.12.0", "2.13.0", 
-                                                                               "2.13.0", "2.14.2", "2.15.2", "2.15.2"), version_max = c("2.11.1", 
-                                                                                                                                        "2.12.2", "2.13.2", "2.14.2", "2.15.1", "3.0.0", "3.0.0")), .Names = c("version", 
-                                                                                                                                                                                                               "version_min", "version_max"), row.names = c(NA, -7L), class = "data.frame")
-      
-#    version_info2
-   
-   # try to fit the best Rtools to install
-   Rversion <- as.character(getRversion())
-   Rversion_number <- turn.version.to.number(Rversion)      
-   ss_min <- Rversion_number >= turn.version.to.number(version_info2$version_min)
-   ss_max <- Rversion_number <= turn.version.to.number(version_info2$version_max)
-   version_to_install <- tail(version_info2$version[ss_min & ss_max], 1) # get the latest version that fits our current R version.
-
-   
-   if(length(version_to_install) > 0 & !choose_version) { # e.g: there is some version to install      
-      version_to_install_no_dots <- gsub("\\.","", version_to_install)
-      exe_filename <-   paste("Rtools" , version_to_install_no_dots , ".exe", sep = "")
-   } else { # else - it means we have a version of R which is beyond our current knowledge of Rtools (or that the user asked to choose a version), so we'll have to let the user decide on what to do.
-      require2("htmltab")
-      TABLE <- htmltab::htmltab(page_with_download_url, 1)
-      
-# 		require2("XML")
-#       TABLE <- XML::readHTMLTable(page_with_download_url, header=T,stringsAsFactors=F)[[1]]
-      # example: http://stackoverflow.com/questions/1395528/scraping-html-tables-into-r-data-frames-using-the-xml-package
-      
-      # choose a version:
-      cat("Please remember you are using: ", R.version$version.string , "\n")
-      choices <- paste(TABLE[,"Download"], " (",TABLE[,2],")", sep = "")      
-      ROW_id <- menu(choices, graphics = GUI, title = "Which Rtools would you like to download?")      
-      
-      if(ROW_id == 0) return(FALSE)
-      
-      exe_filename <- regex(TABLE[ROW_id,"Download"], ".*\\.exe") # TABLE[ROW_id,"Download"] # the version the user asked for
-   }      
-   
-   if(length(exe_filename) == 0) {
-      message("You'll need to go to the site and download this yourself. I'm now going to try and open the url for you.")
-      browseURL(page_with_download_url)
-      return(FALSE)
-   }
-   
-   # install Rtools!
-   URL <- paste(page_with_download_url, exe_filename, sep = '')   
-   install.URL(URL,...)   
-}
-
-
-#' @export
-install.rtools <- function(...) install.Rtools(...)
-
 
 
 
@@ -1306,37 +1151,40 @@ source.https <- function(URL,..., remove_r_file = T) {
 
 #' @title Loading Packages (and Installing them if they are missing)
 #' @export
-#' @description  require2 load add-on packages by passing it to \link{require}.  However, if the package is not available on the system, it will first install it (through \link{install.packages}), and only then try to load it again.
-#' 
+#' @description  require2 load add-on packages by passing it to \link{require}.
+#' However, if the package is not available on the system, it will first install it (through \link{install.packages}),
+#' and only then try to load it again.
+#'
 #' @param package A character of the name of a package (can also be without quotes).
 #' @param ask Should the user be asked to install the require packaged, in case it is missing? (default is FALSE)
-#' @param character.only logical (FALSE) - a logical indicating whether package or 
+#' @param character.only logical (FALSE) - a logical indicating whether package or
 #' help can be assumed to be character strings. Passed to \link{require}.
-#' @param ... not used
-#' 
+#' @param min_version Minimum version of package
+#'
 #' @return  returns (invisibly) a logical indicating whether the required package is available.
 #' @examples
 #' \dontrun{
-#' a= require2("devtools")
-#' a
-#' a= require2(geonames)
-#' a
+#' require2("devtools")
+#' require2(geonames)
+#' require2(pkgbuild, min_version = "1.1.0")
+#' data_table_loaded <- require2("data.table")
 #' }
-require2 <- function (package, ask = FALSE, character.only = FALSE, ...) 
-{
-   if (!character.only)
-          package <- as.character(substitute(package))
-   if(!suppressWarnings(require(package=package, character.only = TRUE))) {
-	  if(ask) {
-		install_package <- ask.user.yn.question(paste("Package ",package, 
-                                                    " is not installed. Do you want to install it now?"))
-      } else { 
-		install_package <- TRUE 
-	}
-	  
-	  if(install_package) install.packages(pkgs=package)
-   }
-   require(package=package, character.only = TRUE)
+require2 <- function(package, ask = FALSE, character.only = FALSE, min_version = 0) {
+  if (!character.only) package <- as.character(substitute(package))
+  available <- requireNamespace(package, character.only = T, quietly = T) && packageVersion(package) >= min_version
+  if (!available) {
+    if (ask) {
+      install_package <- ask.user.yn.question(paste(
+        "Package", package, "is not installed.",
+        "Do you want to install it now?"
+      ))
+    } else {
+      install_package <- TRUE
+    }
+
+    if (install_package) install.packages(package)
+  }
+  require(package, character.only = TRUE)
 }
 
 

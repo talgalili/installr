@@ -52,13 +52,13 @@ URL: http://talgalili.github.io/installr/,
 BugReports: https://github.com/talgalili/installr/issues
 OS_type: windows
 Depends:
-    R (>= 2.14.0),
+    R (>= 2.14.0)
+Imports:
     stringr,
     utils
 Suggests:
     curl,
     XML,
-    htmltab,
     devtools,
     rjson,
     data.table,
@@ -66,9 +66,10 @@ Suggests:
     ggplot2,
     sp,
     tools,
-    pkgbuild,
+    pkgbuild (>= 1.1.0),
     testthat (>= 2.1.0),
     mockery,
     R.utils
 License: GPL-2
-RoxygenNote: 7.0.2
+RoxygenNote: 7.1.1
+Encoding: UTF-8

@@ -26,3 +26,4 @@ installR.Rproj
 ^revdep$
 ^appveyor\.yml$
 ^\.github$
+^.lintr$
