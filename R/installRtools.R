@@ -59,7 +59,7 @@ install.Rtools <- function(check = TRUE, check_r_update = TRUE, GUI = TRUE, ...)
     if (update_r) {
       updateR(GUI = GUI, print_R_versions = F, install_R = T, start_new_R = T, quit_R = F)
       print("Please run installr::install.Rtools using the newly installed R")
-      return(FALSE)
+      return(invisible(FALSE))
     }
   }
 
