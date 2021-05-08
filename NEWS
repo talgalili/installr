@@ -1,3 +1,9 @@
+installr 0.23.1 (2021-05-08)
+---------------------------
+OTHER NOTES:
+   * fix more urls and make some tests run only in Windows.
+
+
 installr 0.23.0 (2021-05-08)
 ---------------------------
 

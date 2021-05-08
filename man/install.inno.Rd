@@ -7,7 +7,7 @@
 install.inno(quick_start_pack = FALSE, encryption_module = TRUE, ...)
 }
 \arguments{
-\item{quick_start_pack}{logical (default is FALSE) - The Inno Setup QuickStart Pack includes Inno Setup and Inno Script Studio script editor. See \href{http://www.jrsoftware.org/is3rdparty.php}{Third-Party Files} page for more information.}
+\item{quick_start_pack}{logical (default is FALSE) - The Inno Setup QuickStart Pack includes Inno Setup and Inno Script Studio script editor. See \href{https://jrsoftware.org/is3rdparty.php}{Third-Party Files} page for more information.}
 
 \item{encryption_module}{logical (default is TRUE) - Inno Setup's Encryption Module}
 
@@ -17,12 +17,12 @@ install.inno(quick_start_pack = FALSE, encryption_module = TRUE, ...)
 TRUE/FALSE - was the installation successful or not.
 }
 \description{
-Downloads and installs Inno Setup's \href{http://www.jrsoftware.org/isdl.php#stable}{stable release}
+Downloads and installs Inno Setup's \href{https://jrsoftware.org/isdl.php#stable}{stable release}
 }
 \details{
 Inno Setup is a free installer for Windows programs. First introduced in 1997, it currently rivals many commercial installers in feature set and stability.
 
-See \href{http://www.jrsoftware.org/isinfo.php#features}{Features} for more information.
+See \href{https://jrsoftware.org/isinfo.php#features}{Features} for more information.
 }
 \examples{
 

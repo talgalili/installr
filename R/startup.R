@@ -35,7 +35,7 @@
 #' \url{https://stackoverflow.com/questions/1395301/how-to-get-r-to-recognize-your-working-directory-as-its-working-directory}
 #' \url{https://stackoverflow.com/questions/1189759/expert-r-users-whats-in-your-rprofile}
 #' \url{http://www.noamross.net/archives/2012-11-02-rprofile/}
-#' \url{http://www.statmethods.net/interface/customizing.html}
+#' \url{https://www.statmethods.net/interface/customizing.html}
 #' @examples
 #' \dontrun{
 #' is_in_.First_in_Rprofile.site("suppressMessages(library(installr))") # FALSE
@@ -99,7 +99,7 @@ add_to_.First_in_Rprofile.site <- function(code, indent = "\t", ... ) {
 #' \url{https://stackoverflow.com/questions/1395301/how-to-get-r-to-recognize-your-working-directory-as-its-working-directory}
 #' \url{https://stackoverflow.com/questions/1189759/expert-r-users-whats-in-your-rprofile}
 #' \url{http://www.noamross.net/archives/2012-11-02-rprofile/}
-#' \url{http://www.statmethods.net/interface/customizing.html}
+#' \url{https://www.statmethods.net/interface/customizing.html}
 #' @examples
 #' \dontrun{
 #' is_in_.First_in_Rprofile.site("suppressMessages(library(installr))") # FALSE
@@ -144,7 +144,7 @@ remove_from_.First_in_Rprofile.site <- function(code, fixed = TRUE, ... ) {
 #' \url{https://stackoverflow.com/questions/1395301/how-to-get-r-to-recognize-your-working-directory-as-its-working-directory}
 #' \url{https://stackoverflow.com/questions/1189759/expert-r-users-whats-in-your-rprofile}
 #' \url{http://www.noamross.net/archives/2012-11-02-rprofile/}
-#' \url{http://www.statmethods.net/interface/customizing.html}
+#' \url{https://www.statmethods.net/interface/customizing.html}
 #' @examples
 #' \dontrun{
 #' is_in_.First_in_Rprofile.site("suppressMessages(library(installr))") # FALSE
@@ -270,7 +270,7 @@ add_remove_installr_from_startup_menu <- function(...) {
 #' \url{https://stackoverflow.com/questions/1395301/how-to-get-r-to-recognize-your-working-directory-as-its-working-directory}
 #' \url{https://stackoverflow.com/questions/1189759/expert-r-users-whats-in-your-rprofile}
 #' \url{http://www.noamross.net/archives/2012-11-02-rprofile/}
-#' \url{http://www.statmethods.net/interface/customizing.html}
+#' \url{https://www.statmethods.net/interface/customizing.html}
 #' @examples
 #' \dontrun{
 #' load_installr_on_startup()
@@ -294,7 +294,7 @@ load_installr_on_startup <- function(...) {
 #' \url{https://stackoverflow.com/questions/1395301/how-to-get-r-to-recognize-your-working-directory-as-its-working-directory}
 #' \url{https://stackoverflow.com/questions/1189759/expert-r-users-whats-in-your-rprofile}
 #' \url{http://www.noamross.net/archives/2012-11-02-rprofile/}
-#' \url{http://www.statmethods.net/interface/customizing.html}
+#' \url{https://www.statmethods.net/interface/customizing.html}
 #' @examples
 #' \dontrun{
 #' load_installr_on_startup()

@@ -42,5 +42,5 @@ os.shutdown()
 \code{\link{is.windows}}, \code{\link{os.shutdown}}, \code{\link{os.sleep}}, \code{\link{os.hibernate}}, \code{\link{os.lock}}, \code{\link{os.restart}}
 }
 \author{
-Yihui Xie <\url{http://yihui.name}>, and Tal Galili
+Yihui Xie <\url{https://yihui.name}>, and Tal Galili
 }

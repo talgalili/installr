@@ -33,5 +33,5 @@ is_in_.First_in_Rprofile.site("suppressMessages(library(installr))") # FALSE
 \url{https://stackoverflow.com/questions/1395301/how-to-get-r-to-recognize-your-working-directory-as-its-working-directory}
 \url{https://stackoverflow.com/questions/1189759/expert-r-users-whats-in-your-rprofile}
 \url{http://www.noamross.net/archives/2012-11-02-rprofile/}
-\url{http://www.statmethods.net/interface/customizing.html}
+\url{https://www.statmethods.net/interface/customizing.html}
 }
