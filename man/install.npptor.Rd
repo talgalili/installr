@@ -31,6 +31,5 @@ install.npptor() # installs the latest version of NppToR
 }
 }
 \references{
-homepage: \url{https://npptor.sourceforge.net/}
 download page: \url{https://sourceforge.net/projects/npptor/}
 }

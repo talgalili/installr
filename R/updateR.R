@@ -117,7 +117,7 @@ checkMD5sums2 <- function (package, dir, md5file, omit_files,...)
 #' @param add_lines_before if to add a line before asking the question.  Default is TRUE.
 #' @return TRUE/FALSE - if the user answers yes or no.
 #' @seealso menu in the {utils} package, yesno in the {devtools} package. 
-#' @references \url{http://stackoverflow.com/questions/15250487/how-to-add-a-menu-item-to-rgui} 
+#' @references \url{https://stackoverflow.com/questions/15250487/how-to-add-a-menu-item-to-rgui} 
 #' (my thanks goes to Dason for his answer and help)
 #' @examples
 #' \dontrun{

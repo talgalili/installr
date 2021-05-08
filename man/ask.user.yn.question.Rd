@@ -37,7 +37,7 @@ Ut enim ad minim veniam, quis nostrud exercitation
 }
 }
 \references{
-\url{http://stackoverflow.com/questions/15250487/how-to-add-a-menu-item-to-rgui} 
+\url{https://stackoverflow.com/questions/15250487/how-to-add-a-menu-item-to-rgui} 
 (my thanks goes to Dason for his answer and help)
 }
 \seealso{

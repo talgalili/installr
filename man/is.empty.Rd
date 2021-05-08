@@ -4,7 +4,7 @@
 \alias{is.empty}
 \title{Checks if an object is empty (e.g: of zero length)}
 \source{
-\url{http://stackoverflow.com/questions/6451152/how-to-catch-integer0}
+\url{https://stackoverflow.com/questions/6451152/how-to-catch-integer0}
 }
 \usage{
 is.empty(x, mode = NULL, ...)
@@ -49,5 +49,5 @@ is.empty(b,"integer")
 \link{integer}, \link{identical}
 }
 \author{
-James (\url{http://stackoverflow.com/users/269476/james})
+James (\url{https://stackoverflow.com/users/269476/james})
 }

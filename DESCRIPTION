@@ -46,9 +46,9 @@ Description: R is great for installing software.  Through the 'installr'
     performs the following: finding the latest R version, downloading it,
     running the installer, deleting the installation file, copy and updating
     old packages to the new R installation.
-URL: http://talgalili.github.io/installr/,
+URL: https://talgalili.github.io/installr/,
       https://github.com/talgalili/installr/,
-      http://www.r-statistics.com/tag/installr/
+      https://www.r-statistics.com/tag/installr/
 BugReports: https://github.com/talgalili/installr/issues
 Depends:
     R (>= 2.14.0)

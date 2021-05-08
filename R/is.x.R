@@ -113,7 +113,7 @@ is.Rgui <- function(...) {
 #' @details
 #' Uses identical and avoids any attribute problems by using the fact that it is the 
 #' empty set of that class of object and combine it with an element of that class.
-#' @author James (\url{http://stackoverflow.com/users/269476/james})
+#' @author James (\url{https://stackoverflow.com/users/269476/james})
 #' @param x an object
 #' @param mode is the object an empty (zero length) 
 #' object of this mode (can be "integer", "numeric", and so on...)
@@ -121,7 +121,7 @@ is.Rgui <- function(...) {
 #' @return Returns TRUE/FALSE if the object is empty or not.
 #' @export
 #' @seealso \link{integer}, \link{identical}
-#' @source \url{http://stackoverflow.com/questions/6451152/how-to-catch-integer0}
+#' @source \url{https://stackoverflow.com/questions/6451152/how-to-catch-integer0}
 #' @examples
 #' 
 #' is.empty(integer(0)) #TRUE

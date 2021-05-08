@@ -31,7 +31,7 @@
 #' @return NULL
 #' @source
 #' This is based on the code from plang's answer here:
-#' \url{http://stackoverflow.com/questions/1858195/convert-xls-to-csv-on-command-line}
+#' \url{https://stackoverflow.com/questions/1858195/convert-xls-to-csv-on-command-line}
 #' @examples
 #' \dontrun{
 #' 

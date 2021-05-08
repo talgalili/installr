@@ -475,12 +475,12 @@ install.git <- function(URL="http://git-scm.com/download/win", version = 64, ...
 #' @export
 #' @references
 #' homepage: \url{http://notepad-plus-plus.org/}
-#' download page: \url{https://notepad-plus-plus.org/download/}
+#' download page: \url{https://notepad-plus-plus.org/downloads/}
 #' @examples
 #' \dontrun{
 #' install.notepadpp() # installs the latest version of Notepad++
 #' }
-install.notepadpp <- function(page_with_download_url="https://notepad-plus-plus.org/download/",...) {
+install.notepadpp <- function(page_with_download_url="https://notepad-plus-plus.org/downloads/",...) {
    # "http://git-scm.com/download/win"
    # get download URL:
    page     <- readLines(page_with_download_url, warn = FALSE)
@@ -514,7 +514,6 @@ install.notepadpp <- function(page_with_download_url="https://notepad-plus-plus.
 #' @return invisible TRUE/FALSE - was the installation successful or not.
 #' @export
 #' @references
-#' homepage: \url{https://npptor.sourceforge.net/}
 #' download page: \url{https://sourceforge.net/projects/npptor/}
 #' @examples
 #' \dontrun{
