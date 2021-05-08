@@ -37,7 +37,7 @@
 #' @param m time to wait before shutting down (in minutes), added to s and h; passed to \code{\link[base]{Sys.sleep}}
 #' @param h time to wait before shutting down (in hours), added to s and m; passed to \code{\link[base]{Sys.sleep}}
 #' @return The status code of \code{\link[base]{system}}.
-#' @author Yihui Xie <\url{https://yihui.name}>, and Tal Galili
+#' @author Yihui Xie <\url{https://yihui.org/}>, and Tal Galili
 #' @seealso \code{\link[base]{system}},\code{\link[base]{shell}}, \code{\link[base]{Sys.sleep}},
 #' \code{\link{is.windows}}, \code{\link{os.shutdown}}, \code{\link{os.sleep}}, \code{\link{os.hibernate}}, \code{\link{os.lock}}, \code{\link{os.restart}}
 #' @references \url{https://github.com/yihui/fun/blob/master/R/shutdown.R}
