@@ -1,3 +1,308 @@
+*   2020-11-09(Tal Galili) Merge pull request #159 from burgerga/patch-1 |5c68d0e
+|\  
+| * 2020-10-26(Gerhard Burger) Add omitted invisible to installRtools return |0cec316
+|/  |   
+|    R/installRtools.R | 2 +-
+|    1 file changed, 1 insertion(+), 1 deletion(-)
+
+* 2020-10-26(Tal Galili) update date |a15d3b9| 
+|  DESCRIPTION | 2 +-
+|  NEWS        | 2 +-
+|  2 files changed, 2 insertions(+), 2 deletions(-)
+
+*   2020-10-26(Tal Galili) Merge pull request #156 from burgerga/fix_installRtools |5352bd2
+|\  
+| * 2020-07-10(Gerhard Burger) Rewrite install.Rtools (not backwards compatible) |6936dd7| | 
+| |  DESCRIPTION                         |   6 +-
+| |  NAMESPACE                           |   1 +
+| |  R/install.R                         | 155 --------------------------------
+| |  R/installRtools.R                   |  92 +++++++++++++++++++
+| |  R/updateR.R                         |  22 +++++
+| |  man/get_latest_r_version.Rd         |  20 +++++
+| |  man/install.Rtools.Rd               |  46 ++++------
+| |  tests/testthat.R                    |   2 +
+| |  tests/testthat/test-installRtools.R |  32 +++++++
+| |  9 files changed, 191 insertions(+), 185 deletions(-)
+
+| * 2020-10-20(Gerhard Burger) Add lintr |ed8ff90| | 
+| |  .Rbuildignore | 3 ++-
+| |  .lintr        | 5 +++++
+| |  2 files changed, 7 insertions(+), 1 deletion(-)
+
+| * 2020-10-20(Gerhard Burger) Add minimum version argument to require2 |f5e2201| | 
+| |  R/install.R     | 51 +++++++++++++++++++++++++++------------------------
+| |  man/require2.Rd | 18 ++++++++++--------
+| |  2 files changed, 37 insertions(+), 32 deletions(-)
+
+| * 2020-07-10(Gerhard Burger) Simplify R version comparison |9a42a78| | 
+| |  R/updateR.R | 6 +-----
+| |  1 file changed, 1 insertion(+), 5 deletions(-)
+
+| * 2020-07-10(Gerhard Burger) Fix roxygen and check warnings |ae5c7bc
+|/  |   
+|    DESCRIPTION             |  3 ++-
+|    R/installr-package.R    |  9 +++++++++
+|    man/installr-package.Rd | 10 ++++++++++
+|    3 files changed, 21 insertions(+), 1 deletion(-)
+
+* 2020-07-17(Tal Galili) Fix install.ImageMagick |c8af7f3| 
+|  DESCRIPTION |  2 +-
+|  NEWS        |  3 ++-
+|  R/install.R | 14 +++++---------
+|  3 files changed, 8 insertions(+), 11 deletions(-)
+
+* 2020-06-02(Tal Galili) update NEWS |b213529| 
+|  DESCRIPTION | 6 ++++--
+|  NEWS        | 4 +++-
+|  2 files changed, 7 insertions(+), 3 deletions(-)
+
+*   2020-06-02(Tal Galili) Merge pull request #155 from burgerga/fix_install_rstudio |da5fad9
+|\  
+| * 2020-06-02(Gerhard Burger) Fix install.Rstudio |48b8f34| | 
+| |  R/install.R | 10 ++++++++--
+| |  1 file changed, 8 insertions(+), 2 deletions(-)
+
+| * 2020-06-02(Gerhard Burger) Add check for multiple urls in install.URL |407c3aa| | 
+| |  R/install.R                   | 4 ++++
+| |  tests/testthat/test-install.R | 5 +++++
+| |  2 files changed, 9 insertions(+)
+
+* |   2020-06-02(Tal Galili) Merge pull request #154 from AdrianHordyk/master |4526fb1
+|\ \  
+| |/  
+|/|   
+| * 2020-06-01(Adrian) Update install.R |eb5cd08
+|/  |   
+|    R/install.R | 5 +++--
+|    1 file changed, 3 insertions(+), 2 deletions(-)
+
+*   2020-05-15(Tal Galili) Merge pull request #152 from Bisaloo/typos |0a45da9
+|\  
+| * 2020-05-14(Hugo Gruson) Run devtools::document() |4d4ebf3| | 
+| |  man/download_RStudio_CRAN_data.Rd |  2 +-
+| |  man/fetch_tag_from_Rd.Rd          | 14 +++++++-------
+| |  man/get.installed.R.folders.Rd    |  2 +-
+| |  man/install.R.Rd                  |  2 +-
+| |  man/install.Rtools.Rd             |  2 +-
+| |  man/install.java.Rd               |  2 +-
+| |  man/installr-package.Rd           |  3 ---
+| |  man/kill_pid.Rd                   |  2 +-
+| |  man/os.manage.Rd                  |  2 +-
+| |  man/package_authors.Rd            |  6 +++---
+| |  man/read_RStudio_CRAN_data.Rd     |  2 +-
+| |  man/rename_r_to_R.Rd              |  8 ++++----
+| |  man/restart_RGui.Rd               |  2 +-
+| |  man/uninstall.packages.Rd         |  2 +-
+| |  man/updateR.Rd                    |  4 ++--
+| |  15 files changed, 26 insertions(+), 29 deletions(-)
+
+| * 2020-05-14(Hugo Gruson) Fix some typos |26029e6
+|/  |   
+|    R/RStudio_CRAN_data.R     |  4 ++--
+|    R/create.global.library.R |  2 +-
+|    R/install.R               | 14 +++++++-------
+|    R/installOpenJdk.R        |  2 +-
+|    R/kill_pid.R              |  2 +-
+|    R/os.manage.R             | 16 ++++++++--------
+|    R/rename_r_to_R.R         |  2 +-
+|    R/updateR.R               | 10 +++++-----
+|    8 files changed, 26 insertions(+), 26 deletions(-)
+
+* 2020-03-27(Tal Galili) Update NEWS/DESCRIPTION - bump version to 0.23.0 |d14ec06| 
+|  DESCRIPTION | 4 ++--
+|  NEWS        | 3 ++-
+|  NEWS.md     | 3 ++-
+|  3 files changed, 6 insertions(+), 4 deletions(-)
+
+* 2020-03-27(Tal Galili) refreshing some Rd files. |e5a10fd| 
+|  man/fetch_tag_from_Rd.Rd | 12 ++++++------
+|  man/package_authors.Rd   |  2 +-
+|  man/rename_r_to_R.Rd     |  6 +++---
+|  3 files changed, 10 insertions(+), 10 deletions(-)
+
+* 2020-03-27(Tal Galili) Fix install.CMake. |a1ebdb0| 
+|  R/install.R          | 143 ++++++++++++++++++++++++++++++-------------------
+|  man/install.CMake.Rd |  10 +++-
+|  2 files changed, 97 insertions(+), 56 deletions(-)
+
+*   2020-03-27(Tal Galili) Merge pull request #147 from matiasandina/master |e5256f9
+|\  
+| * 2020-03-27(Matias Andina) update installCMake() |e20b184
+|/  |   
+|    R/install.R | 70 +++++++++++++++++++++++++++++++++++++++++++--------------
+|    1 file changed, 53 insertions(+), 17 deletions(-)
+
+*   2019-12-15(Tal Galili) Merge pull request #141 from billdenney/cmake-doc |2452fd0
+|\  
+| * 2019-12-14(Bill Denney) Fix typo in CMake example |e26d17d
+|/  |   
+|    R/install.R          | 2 +-
+|    man/install.CMake.Rd | 2 +-
+|    2 files changed, 2 insertions(+), 2 deletions(-)
+
+* 2019-12-13(Tal Galili) Fixes roxygen of file.name.from.url |74a9eab| 
+|  DESCRIPTION               | 2 +-
+|  NEWS                      | 3 ++-
+|  NEWS.md                   | 3 ++-
+|  man/file.name.from.url.Rd | 9 ++++++++-
+|  4 files changed, 13 insertions(+), 4 deletions(-)
+
+*   2019-12-13(Tal Galili) Merge pull request #135 from RLogik/master |334e4e4
+|\  
+| * 2019-11-16(RLogik) Added comment for extra parameter. |1aa176d| | 
+| |  R/install.R | 6 ++++++
+| |  1 file changed, 6 insertions(+)
+
+| *   2019-10-15(RLogik) Merge pull request #1 from RLogik/RLogik-installr |41b1cb1
+| |\  
+| | * 2019-10-15(RLogik) Update install.R |6cbd2f1
+| |/  | |   
+| |    R/install.R | 26 ++++++++++++++------------
+| |    1 file changed, 14 insertions(+), 12 deletions(-)
+
+* | 2019-12-13(Tal Galili) roxygen 7 - update rd |c78b100| | 
+| |  DESCRIPTION                            |  2 +-
+| |  man/ask.user.for.a.row.Rd              |  6 +++--
+| |  man/ask.user.yn.question.Rd            |  2 +-
+| |  man/browse.latest.R.NEWS.Rd            |  3 +--
+| |  man/check.for.updates.R.Rd             |  7 ++++--
+| |  man/copy.packages.between.libraries.Rd |  9 ++++++--
+| |  man/download_RStudio_CRAN_data.Rd      | 13 +++++++----
+| |  man/freegeoip.Rd                       |  7 ++++--
+| |  man/get.installed.R.folders.Rd         |  3 +--
+| |  man/install.7zip.Rd                    |  7 +++---
+| |  man/install.FFmpeg.Rd                  |  7 +++---
+| |  man/install.GitHub.Rd                  |  7 +++---
+| |  man/install.GraphicsMagick.Rd          |  7 +++---
+| |  man/install.ImageMagick.Rd             |  7 +++---
+| |  man/install.LaTeX2RTF.Rd               |  7 +++---
+| |  man/install.LyX.Rd                     |  7 ++++--
+| |  man/install.MikTeX.Rd                  |  3 +--
+| |  man/install.R.Rd                       | 14 +++++++-----
+| |  man/install.Rdevel.Rd                  |  7 +++---
+| |  man/install.Rtools.Rd                  |  8 +++++--
+| |  man/install.SWFTools.Rd                |  7 +++---
+| |  man/install.Texmaker.Rd                |  7 +++---
+| |  man/install.URL.Rd                     | 13 ++++++++---
+| |  man/install.java.Rd                    | 36 ++++++++++++++++++++----------
+| |  man/install.nodejs.Rd                  |  8 ++++---
+| |  man/install.notepadpp.Rd               |  7 +++---
+| |  man/install.npptor.Rd                  |  7 +++---
+| |  man/install.pandoc.Rd                  |  8 +++++--
+| |  man/install.python.Rd                  |  9 +++++---
+| |  man/lineplot_package_downloads.Rd      |  8 +++++--
+| |  man/package_authors.Rd                 |  9 ++++++--
+| |  man/read_RStudio_CRAN_data.Rd          |  8 +++++--
+| |  man/rename_r_to_R.Rd                   | 10 +++++++--
+| |  man/updateR.Rd                         | 26 ++++++++++++++++-----
+| |  34 files changed, 197 insertions(+), 99 deletions(-)
+
+* | 2019-12-13(Tal Galili) Fix minor versioning issues |63f5519| | 
+| |  DESCRIPTION |  2 +-
+| |  NEWS        |  1 +
+| |  NEWS.md     | 14 ++++++++++++--
+| |  3 files changed, 14 insertions(+), 3 deletions(-)
+
+* |   2019-12-13(Tal Galili) Merge pull request #139 from ajrgodfrey/master |af7ead2
+|\ \  
+| * | 2019-12-05(ajrgodfrey) small edits to NEWS.md and DESCRIPTION to reflect updated install.python() to check 32/64 bit Windows and checked re-build of package |9dc43d1| | | 
+| | |  DESCRIPTION | 4 ++--
+| | |  NEWS.md     | 5 +++++
+| | |  2 files changed, 7 insertions(+), 2 deletions(-)
+
+| * |   2019-12-05(ajrgodfrey) Merge branch 'master' of https://github.com/talgalili/installr |8b86822
+| |\ \  
+| |/ /  
+|/| |   
+* | |   2019-11-16(Tal Galili) Merge pull request #140 from logworthy/site-files |ecbc43e
+|\ \ \  
+| * | | 2019-11-13(logworthy) described changes in NEWS and added logworthy to authors in DESCRIPTION |ec40fc7| | | | 
+| | | |  DESCRIPTION | 3 ++-
+| | | |  NEWS        | 3 +++
+| | | |  2 files changed, 5 insertions(+), 1 deletion(-)
+
+| * | | 2019-11-13(logworthy) Updated generated documentation |23e47c5| | | | 
+| | | |  man/updateR.Rd | 10 +++++-----
+| | | |  1 file changed, 5 insertions(+), 5 deletions(-)
+
+| * | | 2019-11-13(logworthy) added tests |d2831a2| | | | 
+| | | |  tests/testthat/test-copy_site_files.R | 251 ++++++++++++++++++++++++++
+| | | |  1 file changed, 251 insertions(+)
+
+| * | | 2019-11-12(logworthy) In updateR, replaced copy_Rprofile.site with copy_site_files |eff6a14
+|/ / /  | | |   
+| | |    R/updateR.R | 30 ++++++++++++++++++++----------
+| | |    1 file changed, 20 insertions(+), 10 deletions(-)
+
+| * | 2019-11-12(ajrgodfrey) updated install.python() to check 32/64 bit Windows and checked re-build of package |c2edfb8| | | 
+| | |  R/is.x.R              | 5 ++---
+| | |  man/install.python.Rd | 4 ++--
+| | |  man/is.x64.Rd         | 2 --
+| | |  3 files changed, 4 insertions(+), 7 deletions(-)
+
+| * | 2019-11-12(Jonathan Godfrey) updated install.python() to check 32/64 bit Windows and checked re-build of package |a134ea4
+|/ /  | |   
+| |    R/installPython.R | 4 ++--
+| |    1 file changed, 2 insertions(+), 2 deletions(-)
+
+* |   2019-11-02(Tal Galili) Merge pull request #136 from russHyde/no-args-in-create-global-library |167865f
+|\ \  
+| * | 2019-10-25(Russell Hyde) fix no-args bug in `create.global.library` |afe5375
+|/ /  | |   
+| |    DESCRIPTION                                 |   2 +
+| |    NEWS                                        |   1 +
+| |    R/create.global.library.R                   | 241 ++++++++++++----------
+| |    tests/testthat.R                            |   4 +
+| |    tests/testthat/test-create_global_library.R | 130 ++++++++++++
+| |    5 files changed, 267 insertions(+), 111 deletions(-)
+
+* |   2019-11-02(Tal Galili) Merge pull request #138 from russHyde/appveyor |f88cbc3
+|\ \  
+| |/  
+|/|   
+| * 2019-11-01(Russell Hyde) bump NEWS and add @russHyde to authors |352cc8a| | 
+| |  DESCRIPTION | 3 ++-
+| |  NEWS        | 3 +++
+| |  2 files changed, 5 insertions(+), 1 deletion(-)
+
+| * 2019-11-01(Russell Hyde) add appveyor integration |51b7536
+|/  |   
+|    DESCRIPTION  |  3 ++-
+|    README.md    |  4 +++-
+|    appveyor.yml | 52 ++++++++++++++++++++++++++++++++++++++++++++++++++++
+|    3 files changed, 57 insertions(+), 2 deletions(-)
+
+* 2019-09-27(Tal Galili) Update issue templates |556a868| 
+|  .github/ISSUE_TEMPLATE/bug_report.md      | 29 +++++++++++++++++++++++++++++
+|  .github/ISSUE_TEMPLATE/feature_request.md | 20 ++++++++++++++++++++
+|  2 files changed, 49 insertions(+)
+
+* 2019-08-16(Tal Galili)  Fix install.GraphicsMagick |82f6efc| 
+|  DESCRIPTION                   |  4 ++--
+|  NEWS                          |  7 +++++++
+|  R/install.R                   | 32 ++++++++++++++++++--------------
+|  man/install.GraphicsMagick.Rd |  5 +++--
+|  4 files changed, 30 insertions(+), 18 deletions(-)
+
+* 2019-08-02(Tal Galili) fix title |0c54618| 
+|  docs/index.html | 4 ++--
+|  1 file changed, 2 insertions(+), 2 deletions(-)
+
+* 2019-08-02(Tal Galili) fix title case |a3b4bca| 
+|  DESCRIPTION | 2 +-
+|  1 file changed, 1 insertion(+), 1 deletion(-)
+
+* 2019-08-02(Tal Galili) improve the docs |cf18054| 
+|  ChangeLog            | 128 +++++++++++++++++++++++++++++++++++++++++++++++++
+|  DESCRIPTION          |   4 +-
+|  NEWS                 |   8 ++--
+|  NEWS.md              |   6 ++-
+|  R/zzz.R              |   1 +
+|  README.md            |  61 +----------------------
+|  docs/index.html      |  74 ++--------------------------
+|  docs/news/index.html |   9 ++--
+|  8 files changed, 148 insertions(+), 143 deletions(-)
+
 * 2019-07-24(Tal Galili) Fix install.Rtools |8e76427| 
 |  DESCRIPTION |  2 +-
 |  NEWS        |  4 +++-

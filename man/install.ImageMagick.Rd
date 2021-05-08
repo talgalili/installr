@@ -6,7 +6,7 @@
 \title{Downloads and installs ImageMagick for windows}
 \usage{
 install.ImageMagick(
-  URL = "http://www.imagemagick.org/script/download.php",
+  URL = "https://www.imagemagick.org/script/download.php",
   ...
 )
 }
