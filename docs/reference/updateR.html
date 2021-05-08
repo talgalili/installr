@@ -8,21 +8,29 @@
 
 <title>Checks for the latest R version, and if there is a newer version of R - downloads and installs it. — updateR • installr</title>
 
+
 <!-- jquery -->
-<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js" integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8=" crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.1/jquery.min.js" integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo=" crossorigin="anonymous"></script>
 <!-- Bootstrap -->
 
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha256-916EbMg70RQy9LHiGkXzG8hSg9EdNy97GazNG/aiY1w=" crossorigin="anonymous" />
-<script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha256-U5ZEeKfGNOja007MMD3YBI0A3OSZOQbeG6z2f2Y0hu8=" crossorigin="anonymous"></script>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.4.1/css/bootstrap.min.css" integrity="sha256-bZLfwXAP04zRMK2BjiO8iu9pf4FbLqX6zitd+tIvLhE=" crossorigin="anonymous" />
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.4.1/js/bootstrap.min.js" integrity="sha256-nuL8/2cJ5NDSSwnKD8VqreErSWHtnEP9E7AySL+1ev4=" crossorigin="anonymous"></script>
+
+<!-- bootstrap-toc -->
+<link rel="stylesheet" href="../bootstrap-toc.css">
+<script src="../bootstrap-toc.js"></script>
 
 <!-- Font Awesome icons -->
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css" integrity="sha256-eZrrJcwDc/3uDhsdt61sL2oOBY362qM3lon1gyExkL0=" crossorigin="anonymous" />
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.12.1/css/all.min.css" integrity="sha256-mmgLkCYLUQbXn0B1SRqzHar6dCnv9oZFPEC1g1cwlkk=" crossorigin="anonymous" />
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.12.1/css/v4-shims.min.css" integrity="sha256-wZjR52fzng1pJHwx4aV2AO3yyTOXrcDW7jBpJtTwVxw=" crossorigin="anonymous" />
 
 <!-- clipboard.js -->
-<script src="https://cdnjs.cloudflare.com/ajax/libs/clipboard.js/2.0.4/clipboard.min.js" integrity="sha256-FiZwavyI2V6+EXO1U+xzLG3IKldpiTFf3153ea9zikQ=" crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/clipboard.js/2.0.6/clipboard.min.js" integrity="sha256-inc5kl9MA1hkeYUt+EC3BhlIgyp/2jDIyBLS6k3UxPI=" crossorigin="anonymous"></script>
 
-<!-- sticky kit -->
-<script src="https://cdnjs.cloudflare.com/ajax/libs/sticky-kit/1.1.3/sticky-kit.min.js" integrity="sha256-c4Rlo1ZozqTPE2RLuvbusY3+SU1pQaJC0TjuhygMipw=" crossorigin="anonymous"></script>
+<!-- headroom.js -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/headroom/0.11.0/headroom.min.js" integrity="sha256-AsUX4SJE1+yuDu5+mAVzJbuYNPHj/WroHuZ8Ir/CkE0=" crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/headroom/0.11.0/jQuery.headroom.min.js" integrity="sha256-ZX/yNShbjqsohH1k95liqY9Gd8uOiE1S4vZc+9KQ1K4=" crossorigin="anonymous"></script>
 
 <!-- pkgdown -->
 <link href="../pkgdown.css" rel="stylesheet">
@@ -30,8 +38,8 @@
 
 
 
-<meta property="og:title" content="Checks for the latest R version, and if there is a newer version of R - downloads and installs it. — updateR" />
 
+<meta property="og:title" content="Checks for the latest R version, and if there is a newer version of R - downloads and installs it. — updateR" />
 <meta property="og:description" content="This function performs the following steps:
 Check what is the latest R version.  If the current installed R version is up-to-date, the function ends (and returns FALSE)
 If a newer version of R is available, the user is asked if to review the NEWS of the latest R version - in order to decide if to install the newest R or not.
@@ -41,8 +49,9 @@ You can then erase all of the packages in your old R installation.
 After your packages are moved (and the old ones possibly erased), you will get the option to update all of your packages in the new version of R.
 You will be asked if to open the Rgui of your new R.
 Lastly - you can close the current session of your old R.
+
 " />
-<meta name="twitter:card" content="summary" />
+
 
 
 
@@ -56,9 +65,10 @@ Lastly - you can close the current session of your old R.
 <![endif]-->
 
 
+
   </head>
 
-  <body>
+  <body data-spy="scroll" data-target="#toc">
     <div class="container template-reference-topic">
       <header>
       <div class="navbar navbar-default navbar-fixed-top" role="navigation">
@@ -72,7 +82,7 @@ Lastly - you can close the current session of your old R.
       </button>
       <span class="navbar-brand">
         <a class="navbar-link" href="../index.html">installr</a>
-        <span class="version label label-default" data-toggle="tooltip" data-placement="bottom" title="Released version">0.22.0</span>
+        <span class="version label label-default" data-toggle="tooltip" data-placement="bottom" title="Released version">0.23.0</span>
       </span>
     </div>
 
@@ -80,7 +90,7 @@ Lastly - you can close the current session of your old R.
       <ul class="nav navbar-nav">
         <li>
   <a href="../index.html">
-    <span class="fa fa-home fa-lg"></span>
+    <span class="fas fa-home fa-lg"></span>
      
   </a>
 </li>
@@ -91,11 +101,10 @@ Lastly - you can close the current session of your old R.
   <a href="../news/index.html">Changelog</a>
 </li>
       </ul>
-      
       <ul class="nav navbar-nav navbar-right">
         <li>
-  <a href="https://github.com/talgalili/installr">
-    <span class="fa fa-github fa-lg"></span>
+  <a href="https://github.com/talgalili/installr/">
+    <span class="fab fa-github fa-lg"></span>
      
   </a>
 </li>
@@ -106,6 +115,7 @@ Lastly - you can close the current session of your old R.
 </div><!--/.navbar -->
 
       
+
       </header>
 
 <div class="row">
@@ -117,7 +127,6 @@ Lastly - you can close the current session of your old R.
     </div>
 
     <div class="ref-description">
-    
     <p>This function performs the following steps:</p><ul>
 <li><p>Check what is the latest R version.  If the current installed R version is up-to-date, the function ends (and returns FALSE)</p></li>
 <li><p>If a newer version of R is available, the user is asked if to review the NEWS of the latest R version - in order to decide if to install the newest R or not.</p></li>
@@ -128,16 +137,30 @@ Lastly - you can close the current session of your old R.
 <li><p>You will be asked if to open the Rgui of your new R.</p></li>
 <li><p>Lastly - you can close the current session of your old R.</p></li>
 </ul>
-    
+
     </div>
 
-    <pre class="usage"><span class='fu'>updateR</span>(<span class='kw'>fast</span> <span class='kw'>=</span> <span class='fl'>FALSE</span>, <span class='no'>browse_news</span>, <span class='no'>install_R</span>, <span class='no'>copy_packages</span>,
-  <span class='no'>copy_Rprofile.site</span>, <span class='no'>keep_old_packages</span>, <span class='no'>update_packages</span>, <span class='no'>start_new_R</span>,
-  <span class='no'>quit_R</span>, <span class='kw'>print_R_versions</span> <span class='kw'>=</span> <span class='fl'>TRUE</span>, <span class='kw'>GUI</span> <span class='kw'>=</span> <span class='fl'>TRUE</span>,
-  <span class='kw'>to_checkMD5sums</span> <span class='kw'>=</span> <span class='fl'>FALSE</span>, <span class='kw'>keep_install_file</span> <span class='kw'>=</span> <span class='fl'>FALSE</span>,
-  <span class='kw'>download_dir</span> <span class='kw'>=</span> <span class='fu'><a href='https://www.rdocumentation.org/packages/base/topics/tempfile'>tempdir</a></span>(), <span class='kw'>silent</span> <span class='kw'>=</span> <span class='fl'>FALSE</span>, <span class='kw'>setInternet2</span> <span class='kw'>=</span> <span class='fl'>TRUE</span>,
-  <span class='kw'>cran_mirror</span> <span class='kw'>=</span> <span class='st'>"https://cran.rstudio.com/"</span>, <span class='no'>...</span>)</pre>
-    
+    <pre class="usage"><span class='fu'>updateR</span><span class='op'>(</span>
+  fast <span class='op'>=</span> <span class='cn'>FALSE</span>,
+  <span class='va'>browse_news</span>,
+  <span class='va'>install_R</span>,
+  <span class='va'>copy_packages</span>,
+  <span class='va'>copy_site_files</span>,
+  <span class='va'>keep_old_packages</span>,
+  <span class='va'>update_packages</span>,
+  <span class='va'>start_new_R</span>,
+  <span class='va'>quit_R</span>,
+  print_R_versions <span class='op'>=</span> <span class='cn'>TRUE</span>,
+  GUI <span class='op'>=</span> <span class='cn'>TRUE</span>,
+  to_checkMD5sums <span class='op'>=</span> <span class='cn'>FALSE</span>,
+  keep_install_file <span class='op'>=</span> <span class='cn'>FALSE</span>,
+  download_dir <span class='op'>=</span> <span class='fu'><a href='https://rdrr.io/r/base/tempfile.html'>tempdir</a></span><span class='op'>(</span><span class='op'>)</span>,
+  silent <span class='op'>=</span> <span class='cn'>FALSE</span>,
+  setInternet2 <span class='op'>=</span> <span class='cn'>TRUE</span>,
+  cran_mirror <span class='op'>=</span> <span class='st'>"https://cran.rstudio.com/"</span>,
+  <span class='va'>...</span>
+<span class='op'>)</span></pre>
+
     <h2 class="hasAnchor" id="arguments"><a class="anchor" href="#arguments"></a>Arguments</h2>
     <table class="ref-arguments">
     <colgroup><col class="name" /><col class="desc" /></colgroup>
@@ -145,8 +168,8 @@ Lastly - you can close the current session of your old R.
       <th>fast</th>
       <td><p>logical (default is FALSE). If TRUE, it overrides other parameters and uses a set of defaults to make the
 R installation as fast as possible: no news, installr R, copy packages and Rprofile, keep
-old packages, updated packages, without quiting current R or starting the new R.
-don't use GUI, check MD5sums, keep installed file in the <a href='https://www.rdocumentation.org/packages/base/topics/getwd'>getwd</a>.</p></td>
+old packages, updated packages, without quitting current R or starting the new R.
+don't use GUI, check MD5sums, keep installed file in the <a href='https://rdrr.io/r/base/getwd.html'>getwd</a>.</p></td>
     </tr>
     <tr>
       <th>browse_news</th>
@@ -161,8 +184,8 @@ don't use GUI, check MD5sums, keep installed file in the <a href='https://www.rd
       <td><p>TRUE/FALSE - if to copy your packages from the old version of R to the new version of R. If missing (this is the default)  - the user will be asked for his preference (he should say yes, unless he is using a global library folder).</p></td>
     </tr>
     <tr>
-      <th>copy_Rprofile.site</th>
-      <td><p>logical - if to copy your Rprofile.site from the old version of R to the new version of R. If missing (this is the default)  - the user will be asked for his preference (he should say yes, unless he is using a global library folder).</p></td>
+      <th>copy_site_files</th>
+      <td><p>logical - if to copy your Rprofile.site and Renviron.site from the old version of R to the new version of R. If missing (this is the default)  - the user will be asked for his preference (he should say yes, unless he is using a global library folder).</p></td>
     </tr>
     <tr>
       <th>keep_old_packages</th>
@@ -186,11 +209,11 @@ don't use GUI, check MD5sums, keep installed file in the <a href='https://www.rd
     </tr>
     <tr>
       <th>GUI</th>
-      <td><p>a logical indicating whether a graphics menu should be used if available.  If TRUE, and on Windows, it will use winDialog, otherwise it will use <a href='https://www.rdocumentation.org/packages/utils/topics/menu'>menu</a>.</p></td>
+      <td><p>a logical indicating whether a graphics menu should be used if available.  If TRUE, and on Windows, it will use winDialog, otherwise it will use <a href='https://rdrr.io/r/utils/menu.html'>menu</a>.</p></td>
     </tr>
     <tr>
       <th>to_checkMD5sums</th>
-      <td><p>Should we check that the new R installation has the files we expect it to (by checking the MD5 sums)? default is TRUE.  It assumes that the R which was isntalled is the latest R version. parameter is passed to install.R()</p></td>
+      <td><p>Should we check that the new R installation has the files we expect it to (by checking the MD5 sums)? default is TRUE.  It assumes that the R which was installed is the latest R version. parameter is passed to install.R()</p></td>
     </tr>
     <tr>
       <th>keep_install_file</th>
@@ -198,7 +221,7 @@ don't use GUI, check MD5sums, keep installed file in the <a href='https://www.rd
     </tr>
     <tr>
       <th>download_dir</th>
-      <td><p>A character of the directory into which to download the file. (default is <a href='https://www.rdocumentation.org/packages/base/topics/tempfile'>tempdir</a>())</p></td>
+      <td><p>A character of the directory into which to download the file. (default is <a href='https://rdrr.io/r/base/tempfile.html'>tempdir</a>())</p></td>
     </tr>
     <tr>
       <th>silent</th>
@@ -217,48 +240,38 @@ don't use GUI, check MD5sums, keep installed file in the <a href='https://www.rd
       <td><p>Other arguments (this is currently not used in any way)</p></td>
     </tr>
     </table>
-    
+
     <h2 class="hasAnchor" id="value"><a class="anchor" href="#value"></a>Value</h2>
 
     <p>a TRUE/FALSE value on whether or not R was updated.</p>
-    
     <h2 class="hasAnchor" id="details"><a class="anchor" href="#details"></a>Details</h2>
 
     <p>It is worth noting that the function assumes that you are installing R in the same directory as before. That is, if the old R was on: D:<span style="R">R</span><span style="R">R</span>-3.0.0 then the new R will be on D:<span style="R">R</span><span style="R">R</span>-3.0.1.</p>
-    
     <h2 class="hasAnchor" id="see-also"><a class="anchor" href="#see-also"></a>See also</h2>
 
     <div class='dont-index'><p><a href='check.for.updates.R.html'>check.for.updates.R</a>, <a href='install.R.html'>install.R</a>, 
 <a href='copy.packages.between.libraries.html'>copy.packages.between.libraries</a>, <a href='uninstall.R.html'>uninstall.R</a></p></div>
-    
 
     <h2 class="hasAnchor" id="examples"><a class="anchor" href="#examples"></a>Examples</h2>
-    <pre class="examples"><span class='co'># NOT RUN {</span>
-<span class='fu'>updateR</span>(<span class='fl'>TRUE</span>) <span class='co'># This sets "fast" to be TRUE</span>
+    <pre class="examples"><div class='input'><span class='kw'>if</span> <span class='op'>(</span><span class='cn'>FALSE</span><span class='op'>)</span> <span class='op'>{</span>
+
+<span class='fu'>updateR</span><span class='op'>(</span><span class='cn'>TRUE</span><span class='op'>)</span> <span class='co'># This sets "fast" to be TRUE</span>
 <span class='co'># # the fastest/safest upgrade option: </span>
 <span class='co'># install R while keeping a copy in the working directory,</span>
 <span class='co'># copy packages, keep old packages, </span>
 <span class='co'># update packages in the new installation.</span>
 
-<span class='fu'>updateR</span>() <span class='co'># will ask you what you want at every decision.</span>
-<span class='co'># }</span></pre>
+<span class='fu'>updateR</span><span class='op'>(</span><span class='op'>)</span> <span class='co'># will ask you what you want at every decision.</span>
+<span class='op'>}</span>
+</div></pre>
   </div>
-  <div class="col-md-3 hidden-xs hidden-sm" id="sidebar">
-    <h2>Contents</h2>
-    <ul class="nav nav-pills nav-stacked">
-      <li><a href="#arguments">Arguments</a></li>
-      
-      <li><a href="#value">Value</a></li>
-
-      <li><a href="#details">Details</a></li>
-
-      <li><a href="#see-also">See also</a></li>
-      
-      <li><a href="#examples">Examples</a></li>
-    </ul>
-
+  <div class="col-md-3 hidden-xs hidden-sm" id="pkgdown-sidebar">
+    <nav id="toc" data-toggle="toc" class="sticky-top">
+      <h2 data-toc-skip>Contents</h2>
+    </nav>
   </div>
 </div>
+
 
       <footer>
       <div class="copyright">
@@ -266,13 +279,16 @@ don't use GUI, check MD5sums, keep installed file in the <a href='https://www.rd
 </div>
 
 <div class="pkgdown">
-  <p>Site built with <a href="https://pkgdown.r-lib.org/">pkgdown</a> 1.3.0.</p>
+  <p>Site built with <a href="https://pkgdown.r-lib.org/">pkgdown</a> 1.6.1.</p>
 </div>
+
       </footer>
    </div>
 
   
 
+
   </body>
 </html>
+
 
