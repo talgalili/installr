@@ -23,7 +23,7 @@
 # How it all started, a long long time ago: http://stackoverflow.com/questions/1401904/painless-way-to-install-a-new-version-of-r-on-windows
 
 # These functions are based on what is described here:
-# http://www.r-statistics.com/2011/04/how-to-upgrade-r-on-windows-7/
+# https://www.r-statistics.com/2011/04/how-to-upgrade-r-on-windows-7/
 
 # global library
 

@@ -4,7 +4,7 @@
 \alias{format_RStudio_CRAN_data}
 \title{Format the RStudio CRAN mirror data into the data.table format}
 \source{
-\url{http://www.nicebread.de/finally-tracking-cran-packages-downloads/}
+\url{https://www.nicebread.de/finally-tracking-cran-packages-downloads/}
 }
 \usage{
 format_RStudio_CRAN_data(dataset, ...)

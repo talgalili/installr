@@ -32,6 +32,6 @@ install.GitHub() # installs the latest version of GitHub for windows
 \references{
 \itemize{
 \item GitHub homepage: \url{https://github.com/}
-\item GitHub for windows download page: \url{http://windows.github.com/}
+\item GitHub for windows download page: \url{https://desktop.github.com/}
 }
 }

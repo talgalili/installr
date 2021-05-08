@@ -32,9 +32,9 @@
 #' @param ... not used.
 #' @return NULL
 #' @references
-#' \url{http://stackoverflow.com/questions/1395301/how-to-get-r-to-recognize-your-working-directory-as-its-working-directory}
-#' \url{http://stackoverflow.com/questions/1189759/expert-r-users-whats-in-your-rprofile}
-#' \url{http://www.noamross.net/blog/2012/11/2/rprofile.html}
+#' \url{https://stackoverflow.com/questions/1395301/how-to-get-r-to-recognize-your-working-directory-as-its-working-directory}
+#' \url{https://stackoverflow.com/questions/1189759/expert-r-users-whats-in-your-rprofile}
+#' \url{http://www.noamross.net/archives/2012-11-02-rprofile/}
 #' \url{http://www.statmethods.net/interface/customizing.html}
 #' @examples
 #' \dontrun{
@@ -96,9 +96,9 @@ add_to_.First_in_Rprofile.site <- function(code, indent = "\t", ... ) {
 #' @param ... passed to \link{grep}
 #' @return logical. Did we remove that line or not (in case it was not there)
 #' @references
-#' \url{http://stackoverflow.com/questions/1395301/how-to-get-r-to-recognize-your-working-directory-as-its-working-directory}
-#' \url{http://stackoverflow.com/questions/1189759/expert-r-users-whats-in-your-rprofile}
-#' \url{http://www.noamross.net/blog/2012/11/2/rprofile.html}
+#' \url{https://stackoverflow.com/questions/1395301/how-to-get-r-to-recognize-your-working-directory-as-its-working-directory}
+#' \url{https://stackoverflow.com/questions/1189759/expert-r-users-whats-in-your-rprofile}
+#' \url{http://www.noamross.net/archives/2012-11-02-rprofile/}
 #' \url{http://www.statmethods.net/interface/customizing.html}
 #' @examples
 #' \dontrun{
@@ -141,9 +141,9 @@ remove_from_.First_in_Rprofile.site <- function(code, fixed = TRUE, ... ) {
 #' @param ... passed to \link{grep}
 #' @return logical, if code is in Rprofile.site or not.
 #' @references
-#' \url{http://stackoverflow.com/questions/1395301/how-to-get-r-to-recognize-your-working-directory-as-its-working-directory}
-#' \url{http://stackoverflow.com/questions/1189759/expert-r-users-whats-in-your-rprofile}
-#' \url{http://www.noamross.net/blog/2012/11/2/rprofile.html}
+#' \url{https://stackoverflow.com/questions/1395301/how-to-get-r-to-recognize-your-working-directory-as-its-working-directory}
+#' \url{https://stackoverflow.com/questions/1189759/expert-r-users-whats-in-your-rprofile}
+#' \url{http://www.noamross.net/archives/2012-11-02-rprofile/}
 #' \url{http://www.statmethods.net/interface/customizing.html}
 #' @examples
 #' \dontrun{
@@ -267,9 +267,9 @@ add_remove_installr_from_startup_menu <- function(...) {
 #' @param ... not used. (but good for future backward compatibility)
 #' @return invisible(NULL)
 #' @references
-#' \url{http://stackoverflow.com/questions/1395301/how-to-get-r-to-recognize-your-working-directory-as-its-working-directory}
-#' \url{http://stackoverflow.com/questions/1189759/expert-r-users-whats-in-your-rprofile}
-#' \url{http://www.noamross.net/blog/2012/11/2/rprofile.html}
+#' \url{https://stackoverflow.com/questions/1395301/how-to-get-r-to-recognize-your-working-directory-as-its-working-directory}
+#' \url{https://stackoverflow.com/questions/1189759/expert-r-users-whats-in-your-rprofile}
+#' \url{http://www.noamross.net/archives/2012-11-02-rprofile/}
 #' \url{http://www.statmethods.net/interface/customizing.html}
 #' @examples
 #' \dontrun{
@@ -291,9 +291,9 @@ load_installr_on_startup <- function(...) {
 #' @param ... not used. (but good for future backward compatibility)
 #' @return invisible(NULL)
 #' @references
-#' \url{http://stackoverflow.com/questions/1395301/how-to-get-r-to-recognize-your-working-directory-as-its-working-directory}
-#' \url{http://stackoverflow.com/questions/1189759/expert-r-users-whats-in-your-rprofile}
-#' \url{http://www.noamross.net/blog/2012/11/2/rprofile.html}
+#' \url{https://stackoverflow.com/questions/1395301/how-to-get-r-to-recognize-your-working-directory-as-its-working-directory}
+#' \url{https://stackoverflow.com/questions/1189759/expert-r-users-whats-in-your-rprofile}
+#' \url{http://www.noamross.net/archives/2012-11-02-rprofile/}
 #' \url{http://www.statmethods.net/interface/customizing.html}
 #' @examples
 #' \dontrun{

@@ -1,3 +1,4 @@
+# library(testthat)
 context("Test Rtools-related functionality")
 
 test_that("get_compatible_rtools_version works", {
@@ -10,6 +11,7 @@ test_that("get_compatible_rtools_version works", {
   expect_equal(get_compatible_rtools_version("2.9"), "3.0")
 })
 
+# get_rtools_url <- installr:::get_rtools_url
 test_that("getRtoolsUrl returns correct urls", {
   skip_if_offline(host = "cran.r-project.org")
   
@@ -22,6 +24,7 @@ test_that("getRtoolsUrl returns correct urls", {
   expect_true(any(stringr::str_detect(rtools_history, basename(get_rtools_url("3.5", "i686")))))
 })
 
+# get_compatible_rtools_version <- installr:::get_compatible_rtools_version
 # Get an early warning for future problems
 test_that("get_rtools_url returns correct url for latest version of R", {
   skip_if_offline(host = "cran.r-project.org")

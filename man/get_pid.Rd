@@ -31,7 +31,7 @@ get_pid(c("wininit", "winlogon")) # finds it
 }
 }
 \references{
-tasklist details from microsoft homepage: \url{http://technet.microsoft.com/en-us/library/bb491010.aspx}
+tasklist details from microsoft homepage: \url{https://docs.microsoft.com/en-us/previous-versions/windows/it-pro/windows-xp/bb491010(v=technet.10)}
 }
 \seealso{
 \code{\link{get_tasklist}}, \code{\link{get_Rscript_PID}}, \code{\link{get_pid}},

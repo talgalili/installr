@@ -4,7 +4,7 @@
 \alias{read_RStudio_CRAN_data}
 \title{Reads RStudio CRAN mirror data files from a folder}
 \source{
-\url{http://www.nicebread.de/finally-tracking-cran-packages-downloads/}
+\url{https://www.nicebread.de/finally-tracking-cran-packages-downloads/}
 }
 \usage{
 read_RStudio_CRAN_data(

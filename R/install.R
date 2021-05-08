@@ -141,7 +141,7 @@ uninstall.packages <- function(pkgs,lib, warning = TRUE, ...) {
 
 
 
-# source: http://stackoverflow.com/questions/5076593/how-to-determine-if-you-have-an-internet-connection-in-r
+# source: https://stackoverflow.com/questions/5076593/how-to-determine-if-you-have-an-internet-connection-in-r
 # checks if there is internet.
 havingIP <- function() {
    if (.Platform$OS.type == "windows") {
@@ -178,7 +178,7 @@ havingIP <- function() {
 #' install.URL("adfadf") # shows the error produced when the URL is not valid.
 #' }
 install.URL <- function(exe_URL, keep_install_file = FALSE, wait = TRUE, download_dir = tempdir(), message = TRUE, installer_option = NULL, download_fun = download.file, ...) {
-   # source: http://stackoverflow.com/questions/15071957/is-it-possible-to-install-pandoc-on-windows-using-an-r-command
+   # source: https://stackoverflow.com/questions/15071957/is-it-possible-to-install-pandoc-on-windows-using-an-r-command
    # input: a url of an .exe file to install
    # output: it runs the .exe file (for installing something)   
    
@@ -246,7 +246,7 @@ install.URL <- function(exe_URL, keep_install_file = FALSE, wait = TRUE, downloa
 #' @title Downloads and installs pandoc
 #' @description Downloads and installs the latest version of pandoc for Windows.
 #' @details
-#' pandoc is a free open source software for converting documents from many filetypes to many filetypes.  For details, see \url{http://johnmacfarlane.net/pandoc/}.
+#' pandoc is a free open source software for converting documents from many filetypes to many filetypes.  For details, see \url{https://johnmacfarlane.net/pandoc/}.
 #' 
 #' Credit: the code in this function is based on GERGELY DAROCZIs coding in his answer on the Q&A forum StackOverflow, and also G. Grothendieck for the non-XML addition to the function. 
 #' I thank them both!
@@ -259,7 +259,7 @@ install.URL <- function(exe_URL, keep_install_file = FALSE, wait = TRUE, downloa
 #'  after pandoc is installed? (if missing then the user is prompted 
 #' 	for a decision)
 #' @param ... extra parameters to pass to \link{install.URL}
-#' @source \url{http://stackoverflow.com/questions/15071957/is-it-possible-to-install-pandoc-on-windows-using-an-r-command}
+#' @source \url{https://stackoverflow.com/questions/15071957/is-it-possible-to-install-pandoc-on-windows-using-an-r-command}
 #' @examples
 #' \dontrun{
 #' install.pandoc() 
@@ -269,8 +269,8 @@ install.pandoc <- function(
    use_regex = TRUE, to_restart,...
 ) {
    page_with_download_url <- URL
-   # source: http://stackoverflow.com/questions/15071957/is-it-possible-to-install-pandoc-on-windows-using-an-r-command
-   # published on: http://www.r-statistics.com/2013/02/installing-pandoc-from-r-on-windows/
+   # source: https://stackoverflow.com/questions/15071957/is-it-possible-to-install-pandoc-on-windows-using-an-r-command
+   # published on: https://www.r-statistics.com/2013/02/installing-pandoc-from-r-on-windows/
    
    # https://github.com/jgm/pandoc/releases/download/1.12.4/pandoc-1.12.4.msi.Windows.installer.msi
    
@@ -328,7 +328,7 @@ install.pandoc <- function(
 #' @param N A number (if a vector is supplied only the first element is checked - without warning)
 #' @return TRUE/FALSE on whether a number is integer or not.
 #' @author VitoshKa
-#' @source \url{http://stackoverflow.com/questions/3476782/how-to-check-if-the-number-is-integer}
+#' @source \url{https://stackoverflow.com/questions/3476782/how-to-check-if-the-number-is-integer}
 #' @examples
 #' check.integer <- installr:::check.integer
 #' check.integer(4) # TRUE
@@ -340,7 +340,7 @@ install.pandoc <- function(
 #' check.integer(1e600) #FALSE - the function is having a hardtime with Inf...
 #' rm(check.integer)
 check.integer <- function(N){
-   # source: http://stackoverflow.com/questions/3476782/how-to-check-if-the-number-is-integer
+   # source: https://stackoverflow.com/questions/3476782/how-to-check-if-the-number-is-integer
    # author: VitoshKa
    
    # notice that the function "is.integer" is used by based R for checking the object if it is of type integer.
@@ -366,7 +366,7 @@ check.integer <- function(N){
 #' @return The row number the user has choosen from the data.frame table.
 #' @source On how to ask the user for input:
 #' 
-#' \url{http://stackoverflow.com/questions/5974967/what-is-the-correct-way-to-ask-for-user-input-in-an-r-program}
+#' \url{https://stackoverflow.com/questions/5974967/what-is-the-correct-way-to-ask-for-user-input-in-an-r-program}
 #' @examples
 #' \dontrun{
 #' version_table <- data.frame(versions = c("devel", "V 1.0.0", "V 2.0.0"))
@@ -375,7 +375,7 @@ check.integer <- function(N){
 ask.user.for.a.row <- function(TABLE, 
                                header_text = "Possible versions to download (choose one)",
                                questions_text) {
-   # http://stackoverflow.com/questions/5974967/what-is-the-correct-way-to-ask-for-user-input-in-an-r-program
+   # https://stackoverflow.com/questions/5974967/what-is-the-correct-way-to-ask-for-user-input-in-an-r-program
    # based on code by Joris Meys
 
    if(missing(questions_text)) questions_text <- "Please review the table of versions from above,
@@ -475,12 +475,12 @@ install.git <- function(URL="http://git-scm.com/download/win", version = 64, ...
 #' @export
 #' @references
 #' homepage: \url{http://notepad-plus-plus.org/}
-#' download page: \url{http://notepad-plus-plus.org/download/}
+#' download page: \url{https://notepad-plus-plus.org/download/}
 #' @examples
 #' \dontrun{
 #' install.notepadpp() # installs the latest version of Notepad++
 #' }
-install.notepadpp <- function(page_with_download_url="http://notepad-plus-plus.org/download/",...) {
+install.notepadpp <- function(page_with_download_url="https://notepad-plus-plus.org/download/",...) {
    # "http://git-scm.com/download/win"
    # get download URL:
    page     <- readLines(page_with_download_url, warn = FALSE)
@@ -514,8 +514,8 @@ install.notepadpp <- function(page_with_download_url="http://notepad-plus-plus.o
 #' @return invisible TRUE/FALSE - was the installation successful or not.
 #' @export
 #' @references
-#' homepage: \url{http://npptor.sourceforge.net/}
-#' download page: \url{http://sourceforge.net/projects/npptor/}
+#' homepage: \url{https://npptor.sourceforge.net/}
+#' download page: \url{https://sourceforge.net/projects/npptor/}
 #' @examples
 #' \dontrun{
 #' install.npptor() # installs the latest version of NppToR
@@ -933,13 +933,13 @@ install.cygwin <- function(...) install.Cygwin(...)
 #' @export
 #' @references
 #' \itemize{
-#' \item 7-zip homepage: \url{http://www.7-zip.org/}
+#' \item 7-zip homepage: \url{https://www.7-zip.org/}
 #' } 
 #' @examples
 #' \dontrun{
 #' install.7zip() # installs the latest version of 7-Zip
 #' }
-install.7zip  <- function(page_with_download_url="http://www.7-zip.org/download.html",...) {    
+install.7zip  <- function(page_with_download_url="https://www.7-zip.org/download.html",...) {    
    # get download URL:
    page     <- readLines(page_with_download_url, warn = FALSE)
    # http://downloads.sourceforge.net/sevenzip/7z920.exe
@@ -960,7 +960,7 @@ install.7zip  <- function(page_with_download_url="http://www.7-zip.org/download.
 # # ' @param ... NOT used
 # # ' @return the shell output of 7z
 # # ' @references
-# # ' \url{http://stackoverflow.com/questions/14122732/unzip-files-7-zip-via-cmd-command}
+# # ' \url{https://stackoverflow.com/questions/14122732/unzip-files-7-zip-via-cmd-command}
 # # ' @examples
 # # ' \dontrun{
 # # ' 
@@ -1030,7 +1030,7 @@ system.PATH <- function() strsplit(shell("echo %PATH% ", intern= TRUE), ";")[[1]
 # ' @param exe_folder the folder where the relevant .exe file is.
 # ' @return The updated search PATH
 # ' @references
-# ' \url{http://stackoverflow.com/questions/14122732/unzip-files-7-zip-via-cmd-command}
+# ' \url{https://stackoverflow.com/questions/14122732/unzip-files-7-zip-via-cmd-command}
 # ' \dontrun{
 # ' set.PATH("C:\\Program Files (x86)\\7-Zip\\")
 # ' is.exe.installed("7z") 
@@ -1056,7 +1056,7 @@ system.PATH <- function() strsplit(shell("echo %PATH% ", intern= TRUE), ";")[[1]
 #' @references
 #' \itemize{
 #' \item GitHub homepage: \url{https://github.com/}
-#' \item GitHub for windows download page: \url{http://windows.github.com/}
+#' \item GitHub for windows download page: \url{https://desktop.github.com/}
 #' } 
 #' @examples
 #' \dontrun{
@@ -1119,7 +1119,7 @@ install.texmaker <- function(...) install.Texmaker(...)
 #' \itemize{
 #' \item Using RCurl
 #' \item devtools::source_url 
-#' \item A relevant (OLD) discussion: http://stackoverflow.com/questions/7715723/sourcing-r-script-over-https
+#' \item A relevant (OLD) discussion: https://stackoverflow.com/questions/7715723/sourcing-r-script-over-https
 #' }
 #' @examples
 #' \dontrun{
@@ -1137,7 +1137,7 @@ source.https <- function(URL,..., remove_r_file = T) {
 
 # 
 # # being able to source from github
-# source("http://www.r-statistics.com/wp-content/uploads/2012/01/source.https.r.txt")
+# source("https://www.r-statistics.com/wp-content/uploads/2012/01/source.https.r.txt")
 # source.https("source url for install.packages.zip")
 # install.packages.zip("URL/installR.zip")
 # # actually use functions...
@@ -1290,7 +1290,7 @@ installr <- function(GUI = TRUE, ...) {
 
 
 
-# http://stackoverflow.com/questions/8809004/escaping-in-roxygen2-style-documentation
+# https://stackoverflow.com/questions/8809004/escaping-in-roxygen2-style-documentation
 
 
 
@@ -1310,7 +1310,7 @@ installr <- function(GUI = TRUE, ...) {
 #' @author Thomas J. Leeper <thosjleeper@@gmail.com>
 #' @return a character vector with the tag's content, and the name of the
 #' Rd source of the function the tag came from.
-#' @source \url{http://stackoverflow.com/questions/17909081/access-elements-from-rs-rd-file}
+#' @source \url{https://stackoverflow.com/questions/17909081/access-elements-from-rs-rd-file}
 #' @seealso \link{package_authors}
 #' @examples
 #' \dontrun{
@@ -1407,7 +1407,7 @@ fetch_tag_from_Rd <- function(package, tag = "\\author",...){
 #' 
 #' 
 #' ## From the top R packages list: 
-#' ## http://www.r-statistics.com/2013/06/top-100-r-packages-for-2013-jan-may/
+#' ## https://www.r-statistics.com/2013/06/top-100-r-packages-for-2013-jan-may/
 #' package_authors("plyr")
 #' package_authors("digest")
 #' package_authors("ggplot2")
@@ -1484,7 +1484,7 @@ package_authors <- function(package, to_strsplit = TRUE, split=c(",|and"), to_ta
 #' @export
 #' @references
 #' \itemize{
-#' \item CMake homepage: \url{http://www.cmake.org/cmake/resources/software.html}
+#' \item CMake homepage: \url{https://cmake.org/download/}
 #' } 
 #' @examples
 #' \dontrun{

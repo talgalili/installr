@@ -41,6 +41,6 @@ install.CMake() # installs the latest version of CMake
 }
 \references{
 \itemize{
-\item CMake homepage: \url{http://www.cmake.org/cmake/resources/software.html}
+\item CMake homepage: \url{https://cmake.org/download/}
 }
 }

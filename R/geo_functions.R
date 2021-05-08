@@ -57,7 +57,7 @@
 #' 
 #' There may also be a difference in reliability, which would not so easily be measured by an individual user.
 #' 
-#' Later that year, Barry also wrote Cranography. See: \url{http://www.maths.lancs.ac.uk/~rowlings/R/Cranography/}.
+#' Later that year, Barry also wrote Cranography. See: \url{https://www.maths.lancs.ac.uk/~rowlings/R/Cranography/}.
 #' 
 #' @return a data.frame with details on mirror sites and the time it took to download their NEWS file.
 #' 
@@ -166,7 +166,7 @@ cranometer <- function(ms = getCRANmirrors(all = FALSE, local.only = FALSE),...)
 #' 
 #' @return a list or data.frame with details on your geo location based on the freegeoip.net service.
 #' 
-#' @source  \url{http://heuristically.wordpress.com/2013/05/20/geolocate-ip-addresses-in-r/}.
+#' @source  \url{https://heuristically.wordpress.com/2013/05/20/geolocate-ip-addresses-in-r/}.
 #' 
 #' @seealso \link{freegeoip}, \link{myip}, \link{cranometer}
 #' @examples

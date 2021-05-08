@@ -4,7 +4,7 @@
 \alias{most_downloaded_packages}
 \title{Most downloaded packages}
 \source{
-\url{http://www.nicebread.de/finally-tracking-cran-packages-downloads/}
+\url{https://www.nicebread.de/finally-tracking-cran-packages-downloads/}
 }
 \usage{
 most_downloaded_packages(dataset, n = 6L, ...)

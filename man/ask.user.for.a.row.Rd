@@ -6,7 +6,7 @@
 \source{
 On how to ask the user for input:
 
-\url{http://stackoverflow.com/questions/5974967/what-is-the-correct-way-to-ask-for-user-input-in-an-r-program}
+\url{https://stackoverflow.com/questions/5974967/what-is-the-correct-way-to-ask-for-user-input-in-an-r-program}
 }
 \usage{
 ask.user.for.a.row(

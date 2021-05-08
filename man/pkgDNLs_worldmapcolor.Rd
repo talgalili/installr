@@ -4,7 +4,7 @@
 \alias{pkgDNLs_worldmapcolor}
 \title{Worldmap colored by the number of downloads for a given package}
 \source{
-\url{http://www.nicebread.de/finally-tracking-cran-packages-downloads/}
+\url{https://www.nicebread.de/finally-tracking-cran-packages-downloads/}
 }
 \usage{
 pkgDNLs_worldmapcolor(pkg_name, dataset, remove_dups = TRUE, ...)

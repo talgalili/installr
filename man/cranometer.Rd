@@ -37,7 +37,7 @@ your network may be congested on a short-term basis, etc etc.
 
 There may also be a difference in reliability, which would not so easily be measured by an individual user.
 
-Later that year, Barry also wrote Cranography. See: \url{http://www.maths.lancs.ac.uk/~rowlings/R/Cranography/}.
+Later that year, Barry also wrote Cranography. See: \url{https://www.maths.lancs.ac.uk/~rowlings/R/Cranography/}.
 }
 \examples{
 \dontrun{

@@ -4,7 +4,7 @@
 \alias{fetch_tag_from_Rd}
 \title{Access tag elements from R's Rd file}
 \source{
-\url{http://stackoverflow.com/questions/17909081/access-elements-from-rs-rd-file}
+\url{https://stackoverflow.com/questions/17909081/access-elements-from-rs-rd-file}
 }
 \usage{
 fetch_tag_from_Rd(package, tag = "\\\\author", ...)

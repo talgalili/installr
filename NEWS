@@ -17,6 +17,7 @@ BUG FIXES:
    * Fix install.RStudio
    * Fix install.Rtools
    * Fix install.ImageMagick
+   * Fix many urls in the docs
 
 
 installr 0.22.0 (2019-08-02)

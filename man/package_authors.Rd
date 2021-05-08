@@ -50,7 +50,7 @@ sort(package_authors("installr")) # sorted name list...
 
 
 ## From the top R packages list: 
-## http://www.r-statistics.com/2013/06/top-100-r-packages-for-2013-jan-may/
+## https://www.r-statistics.com/2013/06/top-100-r-packages-for-2013-jan-may/
 package_authors("plyr")
 package_authors("digest")
 package_authors("ggplot2")

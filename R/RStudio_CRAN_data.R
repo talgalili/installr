@@ -142,7 +142,7 @@ download_RStudio_CRAN_data <- function(START = as.Date(Sys.time())-5,
 #' @param ... not in use.
 #' @author Felix Schonbrodt, Tal Galili
 #' @return Returns the combined data file.
-#' @source \url{http://www.nicebread.de/finally-tracking-cran-packages-downloads/}
+#' @source \url{https://www.nicebread.de/finally-tracking-cran-packages-downloads/}
 #' @seealso \link{download_RStudio_CRAN_data}, \link{read_RStudio_CRAN_data},\link{barplot_package_users_per_day}
 #' @examples
 #' \dontrun{
@@ -211,7 +211,7 @@ read_RStudio_CRAN_data <- function(log_folder = tempdir(), use_data_table = TRUE
 #' @param ... not in use.
 #' @author Felix Schonbrodt, Tal Galili
 #' @return Returns the re-formated data object.
-#' @source \url{http://www.nicebread.de/finally-tracking-cran-packages-downloads/}
+#' @source \url{https://www.nicebread.de/finally-tracking-cran-packages-downloads/}
 #' @seealso \link{download_RStudio_CRAN_data}, \link{read_RStudio_CRAN_data},\link{barplot_package_users_per_day}
 #' @examples
 #' \dontrun{
@@ -329,7 +329,7 @@ barplot_package_users_per_day <- function(pkg_name, dataset, remove_dups = TRUE,
 #' @param ... not in use.
 #' @author Felix Schonbrodt, Tal Galili
 #' @return invisible aggregated data that was used for the plot
-#' @source \url{http://www.nicebread.de/finally-tracking-cran-packages-downloads/}
+#' @source \url{https://www.nicebread.de/finally-tracking-cran-packages-downloads/}
 #' @seealso \link{download_RStudio_CRAN_data}, \link{read_RStudio_CRAN_data},\link{barplot_package_users_per_day}
 #' @examples
 #' \dontrun{
@@ -406,7 +406,7 @@ lineplot_package_downloads <- function(pkg_names, dataset, by_time = c("date", "
 #' @param n the number of top packages to show.
 #' @param ... not in use.
 #' @return a table of top packages by downloads (a numeric vector with packages as names)
-#' @source \url{http://www.nicebread.de/finally-tracking-cran-packages-downloads/}
+#' @source \url{https://www.nicebread.de/finally-tracking-cran-packages-downloads/}
 #' @seealso \link{download_RStudio_CRAN_data}, \link{read_RStudio_CRAN_data},\link{barplot_package_users_per_day}
 #' @examples
 #' \dontrun{
@@ -442,7 +442,7 @@ most_downloaded_packages <- function(dataset, n = 6L,...) {
 #' @param ... not in use.
 #' @author Boris Hejblum
 #' @return a ggplot object
-#' @source \url{http://www.nicebread.de/finally-tracking-cran-packages-downloads/}
+#' @source \url{https://www.nicebread.de/finally-tracking-cran-packages-downloads/}
 #' @seealso \link{download_RStudio_CRAN_data}, \link{read_RStudio_CRAN_data}, \link{barplot_package_users_per_day}, \link[ggplot2]{ggplot}
 #' @examples
 #' \dontrun{

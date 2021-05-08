@@ -28,7 +28,7 @@
 #' @param ... not used.
 #' @return a data.frame with the current running processes.
 #' @references
-#' tasklist details from microsoft homepage: \url{http://technet.microsoft.com/en-us/library/bb491010.aspx}
+#' tasklist details from microsoft homepage: \url{https://docs.microsoft.com/en-us/previous-versions/windows/it-pro/windows-xp/bb491010(v=technet.10)}
 #' @seealso \code{\link{get_tasklist}}, \code{\link{get_Rscript_PID}}, \code{\link{get_pid}},
 #' \code{\link{kill_pid}}, \code{\link{kill_all_Rscript_s}}, \link[tools]{pskill}
 #' \code{\link{kill_pid}}, \code{\link{kill_all_Rscript_s}}
@@ -91,7 +91,7 @@ get_tasklist <- function(...) {
 #' @param ... not used.
 #' @return output from system
 #' @references
-#' tasklist details from microsoft homepage: \url{http://technet.microsoft.com/en-us/library/bb491010.aspx}
+#' tasklist details from microsoft homepage: \url{https://docs.microsoft.com/en-us/previous-versions/windows/it-pro/windows-xp/bb491010(v=technet.10)}
 #' pskill details from microsoft homepage: \url{http://technet.microsoft.com/en-us/sysinternals/bb896683.aspx}
 #' @seealso \code{\link{get_tasklist}}, \code{\link{get_Rscript_PID}}, \code{\link{get_pid}},
 #' \code{\link{kill_pid}}, \code{\link{kill_all_Rscript_s}}, \link[tools]{pskill}
@@ -143,7 +143,7 @@ kill_pid <- function(pid, s=0, m=0, h=0,...) {
 #' @param ... not used.
 #' @return an integer vector with the process ID (pid) of the processes.
 #' @references
-#' tasklist details from microsoft homepage: \url{http://technet.microsoft.com/en-us/library/bb491010.aspx}
+#' tasklist details from microsoft homepage: \url{https://docs.microsoft.com/en-us/previous-versions/windows/it-pro/windows-xp/bb491010(v=technet.10)}
 #' @seealso \code{\link{get_tasklist}}, \code{\link{get_Rscript_PID}}, \code{\link{get_pid}},
 #' \code{\link{kill_pid}}, \code{\link{kill_all_Rscript_s}}, \link[tools]{pskill}
 #' @examples
@@ -185,7 +185,7 @@ get_pid <- function(process, exact = FALSE, ...) {
 #' @param ... not used.
 #' @return output from system
 #' @references
-#' tasklist details from microsoft homepage: \url{http://technet.microsoft.com/en-us/library/bb491010.aspx}
+#' tasklist details from microsoft homepage: \url{https://docs.microsoft.com/en-us/previous-versions/windows/it-pro/windows-xp/bb491010(v=technet.10)}
 #' pskill details from microsoft homepage: \url{http://technet.microsoft.com/en-us/sysinternals/bb896683.aspx}
 #' @seealso \code{\link{get_tasklist}}, \code{\link{get_Rscript_PID}}, \code{\link{get_pid}},
 #' \code{\link{kill_pid}}, \code{\link{kill_all_Rscript_s}}, \link[tools]{pskill}
@@ -221,7 +221,7 @@ kill_process <- function(process, s=0, m=0, h=0, exact = FALSE, ...) {
 #' @param ... not used.
 #' @return an integer vector with the process ID (pid) of the "Rscript" processes.
 #' @references
-#' tasklist details from microsoft homepage: \url{http://technet.microsoft.com/en-us/library/bb491010.aspx}
+#' tasklist details from microsoft homepage: \url{https://docs.microsoft.com/en-us/previous-versions/windows/it-pro/windows-xp/bb491010(v=technet.10)}
 #' @seealso \code{\link{get_tasklist}}, \code{\link{get_Rscript_PID}}, \code{\link{get_pid}},
 #' \code{\link{kill_pid}}, \code{\link{kill_all_Rscript_s}}, \link[tools]{pskill}
 #' @examples
@@ -257,7 +257,7 @@ get_Rscript_PID <- function(...) {
 #' @param ... not used.
 #' @return an integer vector with the process ID (pid) of the "Rscript" processes.
 #' @references
-#' tasklist details from microsoft homepage: \url{http://technet.microsoft.com/en-us/library/bb491010.aspx}
+#' tasklist details from microsoft homepage: \url{https://docs.microsoft.com/en-us/previous-versions/windows/it-pro/windows-xp/bb491010(v=technet.10)}
 #' pskill details from microsoft homepage: \url{http://technet.microsoft.com/en-us/sysinternals/bb896683.aspx}
 #' @seealso \code{\link{get_tasklist}}, \code{\link{get_Rscript_PID}}, \code{\link{get_pid}},
 #' \code{\link{kill_pid}}, \code{\link{kill_all_Rscript_s}}, \link[tools]{pskill}

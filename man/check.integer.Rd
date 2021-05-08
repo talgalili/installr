@@ -4,7 +4,7 @@
 \alias{check.integer}
 \title{Check if a number is integer}
 \source{
-\url{http://stackoverflow.com/questions/3476782/how-to-check-if-the-number-is-integer}
+\url{https://stackoverflow.com/questions/3476782/how-to-check-if-the-number-is-integer}
 }
 \usage{
 check.integer(N)

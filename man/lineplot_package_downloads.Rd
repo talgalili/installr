@@ -4,7 +4,7 @@
 \alias{lineplot_package_downloads}
 \title{barplot for the number of users installation of a package}
 \source{
-\url{http://www.nicebread.de/finally-tracking-cran-packages-downloads/}
+\url{https://www.nicebread.de/finally-tracking-cran-packages-downloads/}
 }
 \usage{
 lineplot_package_downloads(
