@@ -1,3 +1,9 @@
+installr 0.23.3 (2021-05-21)
+---------------------------
+BUG FIXES:
+   * Fix install.CMake
+
+
 installr 0.23.2 (2021-05-08)
 ---------------------------
 OTHER NOTES:
