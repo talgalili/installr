@@ -1552,7 +1552,7 @@ install.CMake   <-
       os_initial <- regmatches(arch_os[2], regexpr("([A-Za-z\\-]+)", arch_os[2]))
       file <- switch(
          os_initial,
-         "mingw" = paste0("win-", arch_os[1], ".msi"),
+         "mingw" = paste0("windows-", arch_os[1], ".msi"),
          "linux-gnu" = paste0("Linux-", arch_os[1], ".tar.gz"),
          "darwin" = paste0("Darwin-", arch_os[1], ".tar.gz")
       )
