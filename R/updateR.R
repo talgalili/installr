@@ -688,13 +688,13 @@ copy.packages.between.libraries <- function(from, to, ask = FALSE, keep_old = TR
 #' don't use GUI, check MD5sums, keep installed file in the \link{getwd}.
 #' @param browse_news if TRUE (and if there is a newer version of R) - it opens the browser to the NEWS of the latest version of R, for the user to read through
 #' @param install_R TRUE/FALSE - if to install a new version of R (if one is available).  If missing (this is the default)  - the user be asked if to download R or not.Of course the installation part itself (the running of the .exe file) is dependent on the user.
-#' @param copy_packages TRUE/FALSE - if to copy your packages from the old version of R to the new version of R. If missing (this is the default)  - the user will be asked for his preference (he should say yes, unless he is using a global library folder).
-#' @param copy_site_files logical - if to copy your Rprofile.site and Renviron.site from the old version of R to the new version of R. If missing (this is the default)  - the user will be asked for his preference (he should say yes, unless he is using a global library folder).
-#' @param update_packages TRUE/FALSE - if to update your packages in the new version of R (all packages will be updated without asking confirmation per package) If missing (this is the default)  - the user will be asked for his preference (he should say yes, unless he is using a global library folder).  This is done by calling the Rscript in the new R.
-#' @param keep_old_packages - if the keep the packages in the library of the old R installation. If missing (this is the default)  - the user will be asked for his preference (he should say yes, unless he is using a global library folder).
+#' @param copy_packages TRUE/FALSE - if to copy your packages from the old version of R to the new version of R. If missing (this is the default)  - the user will be asked for their preference (he should say yes, unless they are using a global library folder).
+#' @param copy_site_files logical - if to copy your Rprofile.site and Renviron.site from the old version of R to the new version of R. If missing (this is the default)  - the user will be asked for their preference (they should say yes, unless they are using a global library folder).
+#' @param update_packages TRUE/FALSE - if to update your packages in the new version of R (all packages will be updated without asking confirmation per package) If missing (this is the default)  - the user will be asked for their preference (they should say yes, unless they are using a global library folder).  This is done by calling the Rscript in the new R.
+#' @param keep_old_packages - if the keep the packages in the library of the old R installation. If missing (this is the default)  - the user will be asked for their preference (they should say yes, unless they are using a global library folder).
 #' @param start_new_R TRUE/FALSE - if to start the new R (Rgui) after we will quit the old R. Default is TRUE. It will try to start the 64 bit R version, if it does not exist, the 32 bit will be started. This may be less useful for people using RStudio or the likes.
 #' @param quit_R TRUE/FALSE - if to quit R after the installation and package copying or not. If missing (this is the default) - the user is asked what to do.
-#' @param print_R_versions if to tell the user what version he has and what is the latest version (default is TRUE)
+#' @param print_R_versions if to tell the user what version they have and what is the latest version (default is TRUE)
 #' @param GUI a logical indicating whether a graphics menu should be used if available.  If TRUE, and on Windows, it will use winDialog, otherwise it will use \link[utils]{menu}.
 #' @param to_checkMD5sums Should we check that the new R installation has the files we expect it to (by checking the MD5 sums)? default is TRUE.  It assumes that the R which was installed is the latest R version. parameter is passed to install.R()
 #' @param keep_install_file If TRUE - the installer file will not be erased after it is downloaded and run.
@@ -777,7 +777,7 @@ updateR <- function(fast = FALSE,
       if(stop_because_of_RStudio) return(FALSE)
    }
    
-   # if we got this far, the user wants to install the latest version of R (and his current version is old)
+   # if we got this far, the user wants to install the latest version of R (and their current version is old)
    cat("Installing the newest version of R,\n please wait for the installer file to be download and executed.\n Be sure to click 'next' as needed...\n")
    did_R_install <- install.R(to_checkMD5sums = to_checkMD5sums, keep_install_file = keep_install_file, download_dir = download_dir, silent = silent, page_with_download_url = paste0(cran_mirror,"bin/windows/base/"))
    if(!did_R_install) return(FALSE) 
