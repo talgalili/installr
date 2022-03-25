@@ -1,7 +1,9 @@
-installr 0.23.3 (2021-05-21)
+installr 0.23.3 (2022-03-25)
 ---------------------------
 BUG FIXES:
    * Fix install.CMake
+OTHER NOTES:
+   * use gender-neutral pronouns in user documentation
 
 
 installr 0.23.2 (2021-05-08)

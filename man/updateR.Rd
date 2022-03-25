@@ -36,19 +36,19 @@ don't use GUI, check MD5sums, keep installed file in the \link{getwd}.}
 
 \item{install_R}{TRUE/FALSE - if to install a new version of R (if one is available).  If missing (this is the default)  - the user be asked if to download R or not.Of course the installation part itself (the running of the .exe file) is dependent on the user.}
 
-\item{copy_packages}{TRUE/FALSE - if to copy your packages from the old version of R to the new version of R. If missing (this is the default)  - the user will be asked for his preference (he should say yes, unless he is using a global library folder).}
+\item{copy_packages}{TRUE/FALSE - if to copy your packages from the old version of R to the new version of R. If missing (this is the default)  - the user will be asked for their preference (he should say yes, unless they are using a global library folder).}
 
-\item{copy_site_files}{logical - if to copy your Rprofile.site and Renviron.site from the old version of R to the new version of R. If missing (this is the default)  - the user will be asked for his preference (he should say yes, unless he is using a global library folder).}
+\item{copy_site_files}{logical - if to copy your Rprofile.site and Renviron.site from the old version of R to the new version of R. If missing (this is the default)  - the user will be asked for their preference (they should say yes, unless they are using a global library folder).}
 
-\item{keep_old_packages}{- if the keep the packages in the library of the old R installation. If missing (this is the default)  - the user will be asked for his preference (he should say yes, unless he is using a global library folder).}
+\item{keep_old_packages}{- if the keep the packages in the library of the old R installation. If missing (this is the default)  - the user will be asked for their preference (they should say yes, unless they are using a global library folder).}
 
-\item{update_packages}{TRUE/FALSE - if to update your packages in the new version of R (all packages will be updated without asking confirmation per package) If missing (this is the default)  - the user will be asked for his preference (he should say yes, unless he is using a global library folder).  This is done by calling the Rscript in the new R.}
+\item{update_packages}{TRUE/FALSE - if to update your packages in the new version of R (all packages will be updated without asking confirmation per package) If missing (this is the default)  - the user will be asked for their preference (they should say yes, unless they are using a global library folder).  This is done by calling the Rscript in the new R.}
 
 \item{start_new_R}{TRUE/FALSE - if to start the new R (Rgui) after we will quit the old R. Default is TRUE. It will try to start the 64 bit R version, if it does not exist, the 32 bit will be started. This may be less useful for people using RStudio or the likes.}
 
 \item{quit_R}{TRUE/FALSE - if to quit R after the installation and package copying or not. If missing (this is the default) - the user is asked what to do.}
 
-\item{print_R_versions}{if to tell the user what version he has and what is the latest version (default is TRUE)}
+\item{print_R_versions}{if to tell the user what version they have and what is the latest version (default is TRUE)}
 
 \item{GUI}{a logical indicating whether a graphics menu should be used if available.  If TRUE, and on Windows, it will use winDialog, otherwise it will use \link[utils]{menu}.}
 
