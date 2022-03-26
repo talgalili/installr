@@ -358,8 +358,8 @@ check.integer <- function(N){
 #' This function is used in \code{installr} when we are not sure what version of the software to download, or when various actions are available for the user to choose from.
 #' If the user doesn't give a valid row number, the function repeats its questions until a valid row number is chosen (or the user escapes)
 #' @param TABLE a data.frame table with rows from which we wish the user to choose a row.  If TABLE is not a data.frame, it will be coerced into one.
-#' @param header_text the text the users sees (often a question) as a title for the printed table - explaining which row he should choose from
-#' @param questions_text the question the users see after the printing of the table - explaining which row he should choose from.
+#' @param header_text the text the users sees (often a question) as a title for the printed table - explaining which row they should choose from
+#' @param questions_text the question the users see after the printing of the table - explaining which row they should choose from.
 #' (the default is: "Please review the table of versions 
 #' from above, and enter the row number of the file-version 
 #' you'd like to install: ")
