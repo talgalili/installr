@@ -18,9 +18,9 @@ ask.user.for.a.row(
 \arguments{
 \item{TABLE}{a data.frame table with rows from which we wish the user to choose a row.  If TABLE is not a data.frame, it will be coerced into one.}
 
-\item{header_text}{the text the users sees (often a question) as a title for the printed table - explaining which row he should choose from}
+\item{header_text}{the text the users sees (often a question) as a title for the printed table - explaining which row they should choose from}
 
-\item{questions_text}{the question the users see after the printing of the table - explaining which row he should choose from.
+\item{questions_text}{the question the users see after the printing of the table - explaining which row they should choose from.
 (the default is: "Please review the table of versions 
 from above, and enter the row number of the file-version 
 you'd like to install: ")}
