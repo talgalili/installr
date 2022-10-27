@@ -13,21 +13,23 @@ get_compatible_rtools_version <- function(r_version = getRversion()) {
 get_rtools_url <- function(rtools_version = get_compatible_rtools_version(),
                            arch = R.version$arch) {
   base_url <- "https://cran.r-project.org/bin/windows/Rtools/"
-  rtools_version_nodots <- str_replace(rtools_version, "\\.", "")
+  rtools_version_nodots <- stringr::str_replace(rtools_version, "\\.", "")
   if (rtools_version < 4.0) {
-    filename <- str_glue("Rtools{rtools_version_nodots}.exe")
+    filename <- stringr::str_glue("Rtools{rtools_version_nodots}.exe")
   } else if (rtools_version < 4.2) {
-    filename <- str_glue("rtools{rtools_version_nodots}-{arch}.exe")
+    filename <- stringr::str_glue("rtools{rtools_version_nodots}-{arch}.exe")
   } else {
     dir_path <- stringr::str_glue("rtools{rtools_version_nodots}/files/")
     
-    html_vector <- readLines(file(str_glue("{base_url}{dir_path}")))
+    html_con <- file(str_glue("{base_url}{dir_path}"))
+    html_vector <- readLines(html_con)
+    close(html_con)
     html_string <- grep(html_vector, pattern = "\\d{4}-\\d{4}.exe", value = TRUE)
     file_suffix <- stringr::str_extract(string = html_string, pattern = "\\d{4}-\\d{4}.exe")
     
     filename <- stringr::str_glue("{dir_path}rtools{rtools_version_nodots}-{file_suffix}")
   }
-  url <- str_glue("{base_url}{filename}")
+  url <- stringr::str_glue("{base_url}{filename}")
   url
 }
 
