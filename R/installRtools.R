@@ -27,7 +27,7 @@ get_rtools_url <- function(rtools_version = get_compatible_rtools_version(),
     html_string <- grep(html_vector, pattern = "rtools\\d+-[0-9\\-]*\\.exe", value = TRUE)
     file_suffix <- stringr::str_extract(string = html_string, pattern = "rtools\\d+-[0-9\\-]*\\.exe")
     
-    filename <- stringr::str_glue("{dir_path}rtools{rtools_version_nodots}-{file_suffix}")
+    filename <- stringr::str_glue("{dir_path}{file_suffix}")
   }
   url <- stringr::str_glue("{base_url}{filename}")
   url
