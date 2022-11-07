@@ -1,3 +1,29 @@
+installr 0.23.4 (2022-11-07)
+---------------------------
+BUG FIXES:
+   * Fix installr::install.Rtools(). props to and @arthurgailes and @burgerga.
+
+
+
+installr 0.23.3 (2022-03-25)
+---------------------------
+BUG FIXES:
+   * Fix install.CMake
+OTHER NOTES:
+   * use gender-neutral pronouns in user documentation
+
+
+installr 0.23.2 (2021-05-08)
+---------------------------
+OTHER NOTES:
+   * one more redirect-url fix
+
+installr 0.23.1 (2021-05-08)
+---------------------------
+OTHER NOTES:
+   * fix more urls and make some tests run only in Windows.
+
+
 installr 0.23.0 (2021-05-08)
 ---------------------------
 
@@ -17,6 +43,7 @@ BUG FIXES:
    * Fix install.RStudio
    * Fix install.Rtools
    * Fix install.ImageMagick
+   * Fix many urls in the docs
 
 
 installr 0.22.0 (2019-08-02)

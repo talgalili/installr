@@ -1,3 +1,10 @@
+installr 0.23.4 (2022-11-07)
+---------------------------
+BUG FIXES:
+   * Fix installr::install.Rtools(). props to and @arthurgailes and @burgerga.
+
+
+
 installr 0.23.3 (2022-03-25)
 ---------------------------
 BUG FIXES:

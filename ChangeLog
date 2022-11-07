@@ -1,3 +1,279 @@
+* 2022-11-07(Tal Galili) update NEWS and description |6f1fd24| 
+|  DESCRIPTION | 7 ++++---
+|  NEWS        | 7 +++++++
+|  2 files changed, 11 insertions(+), 3 deletions(-)
+
+*   2022-11-02(Gerhard Burger) Merge pull request #178 from arthurgailes/rtools42 |cddb687
+|\  
+| * 2022-11-02(Arthur Gailes) fix duplicated rtools in url string |98f8952| | 
+| |  R/installRtools.R | 2 +-
+| |  1 file changed, 1 insertion(+), 1 deletion(-)
+
+| * 2022-10-27(Arthur Gailes) improve regex match |24b6f52| | 
+| |  R/installRtools.R | 2 +-
+| |  1 file changed, 1 insertion(+), 1 deletion(-)
+
+| * 2022-10-27(Arthur Gailes) improve regex match |4f7570f| | 
+| |  R/installRtools.R | 4 ++--
+| |  1 file changed, 2 insertions(+), 2 deletions(-)
+
+| * 2022-10-27(Arthur Gailes) close open file connection |23f5d9e| | 
+| |  R/installRtools.R | 12 +++++++-----
+| |  1 file changed, 7 insertions(+), 5 deletions(-)
+
+| * 2022-10-27(Arthur Gailes) add 4.2 rtools path |210cac6
+|/  |   
+|    R/installRtools.R | 10 +++++++++-
+|    1 file changed, 9 insertions(+), 1 deletion(-)
+
+* 2022-03-30(Tal Galili) update .Rd |eb2bdc3| 
+|  man/ask.user.for.a.row.Rd | 4 ++--
+|  1 file changed, 2 insertions(+), 2 deletions(-)
+
+*   2022-03-30(Tal Galili) Merge pull request #168 from julianheavyside/patch-1 |aa68a77
+|\  
+| * 2022-03-26(Julian Heavyside) use gender-neutral pronouns in fn doc |5ea6b38
+|/  |   
+|    R/install.R | 4 ++--
+|    1 file changed, 2 insertions(+), 2 deletions(-)
+
+* 2022-03-25(Tal Galili) Update docs + version date |d1ab54d| 
+|  DESCRIPTION    |  2 +-
+|  NEWS           |  4 +++-
+|  man/updateR.Rd | 10 +++++-----
+|  3 files changed, 9 insertions(+), 7 deletions(-)
+
+*   2022-03-25(Tal Galili) Merge pull request #167 from julianheavyside/patch-1 |b6cd10d
+|\  
+| * 2022-03-23(Julian Heavyside) use gender-neutral pronouns in user documentation |dcea0ee
+|/  |   
+|    R/updateR.R | 12 ++++++------
+|    1 file changed, 6 insertions(+), 6 deletions(-)
+
+* 2021-05-21(Tal Galili) update version based on fix #165 |abd6438| 
+|  DESCRIPTION | 4 ++--
+|  NEWS        | 6 ++++++
+|  2 files changed, 8 insertions(+), 2 deletions(-)
+
+*   2021-05-21(Tal Galili) Merge pull request #165 from imagejan/patch-1 |cc3f226
+|\  
+| * 2021-05-21(Jan Eglinger) Update CMake release filename |33c47c7
+|/  |   
+|    R/install.R | 2 +-
+|    1 file changed, 1 insertion(+), 1 deletion(-)
+
+* 2021-05-08(Tal Galili) one more redirect-url fix |e2a5067| 
+|  DESCRIPTION        | 2 +-
+|  NEWS               | 5 +++++
+|  R/os.manage.R      | 2 +-
+|  man/os.shutdown.Rd | 2 +-
+|  4 files changed, 8 insertions(+), 3 deletions(-)
+
+* 2021-05-08(Tal Galili) fix more urls and make some tests run only in Windows. |d9d8944| 
+|  DESCRIPTION                                |  2 +-
+|  NEWS                                       |  6 ++++++
+|  R/install.R                                |  2 +-
+|  R/install.inno.R                           | 10 +++++-----
+|  R/os.manage.R                              |  2 +-
+|  R/startup.R                                | 10 +++++-----
+|  man/add_to_.First_in_Rprofile.site.Rd      |  2 +-
+|  man/install.RStudio.Rd                     |  2 +-
+|  man/install.inno.Rd                        |  6 +++---
+|  man/is_in_.First_in_Rprofile.site.Rd       |  2 +-
+|  man/load_installr_on_startup.Rd            |  2 +-
+|  man/os.shutdown.Rd                         |  2 +-
+|  man/remove_from_.First_in_Rprofile.site.Rd |  2 +-
+|  man/rm_installr_from_startup.Rd            |  2 +-
+|  tests/testthat/test-install.R              |  8 +++++---
+|  15 files changed, 34 insertions(+), 26 deletions(-)
+
+* 2021-05-08(Tal Galili) update pkgdown webiste |f5a5700| 
+|  docs/404.html                                     | 148 +++++++
+|  docs/CONDUCT.html                                 |  49 +-
+|  docs/authors.html                                 |  59 ++-
+|  docs/bootstrap-toc.css                            |  60 +++
+|  docs/bootstrap-toc.js                             | 159 +++++++
+|  docs/index.html                                   |  84 ++--
+|  docs/news/index.html                              | 467 +++++++++-----------
+|  docs/pkgdown.css                                  | 165 ++++++-
+|  docs/pkgdown.js                                   |  15 +-
+|  docs/pkgdown.yml                                  |   7 +-
+|  docs/reference/R_version_in_a_folder.html         |  78 ++--
+|  docs/reference/Rplot001.png                       | Bin 0 -> 1011 bytes
+|  docs/reference/add.installr.GUI.html              |  86 ++--
+|  .../add_load_installr_on_startup_menu.html        |  63 +--
+|  .../add_remove_installr_from_startup_menu.html    |  63 +--
+|  .../reference/add_to_.First_in_Rprofile.site.html |  89 ++--
+|  docs/reference/ask.user.for.a.row.html            |  91 ++--
+|  docs/reference/ask.user.yn.question.html          |  95 ++--
+|  docs/reference/barplot_package_users_per_day.html |  99 ++---
+|  docs/reference/browse.latest.R.NEWS.html          |  76 ++--
+|  docs/reference/check.for.updates.R.html           |  84 ++--
+|  docs/reference/check.integer.html                 |  93 ++--
+|  docs/reference/checkMD5sums2.html                 |  82 ++--
+|  .../copy.packages.between.libraries.html          |  85 ++--
+|  docs/reference/cranometer.html                    | 138 +++---
+|  docs/reference/create.global.library.html         |  75 ++--
+|  docs/reference/download_RStudio_CRAN_data.html    | 106 ++---
+|  docs/reference/fetch_tag_from_Rd.html             | 102 ++---
+|  docs/reference/file.name.from.url.html            |  92 ++--
+|  docs/reference/format_RStudio_CRAN_data.html      | 109 +++--
+|  docs/reference/freegeoip.html                     | 109 ++---
+|  docs/reference/get.installed.R.folders.html       |  85 ++--
+|  docs/reference/get_Rscript_PID.html               |  93 ++--
+|  docs/reference/get_latest_r_version.html          | 168 +++++++
+|  docs/reference/get_pid.html                       |  93 ++--
+|  docs/reference/get_tasklist.html                  |  93 ++--
+|  docs/reference/index.html                         | 211 +++++----
+|  docs/reference/install.7zip.html                  |  91 ++--
+|  docs/reference/install.CMake.html                 |  99 +++--
+|  docs/reference/install.Cygwin.html                |  85 ++--
+|  docs/reference/install.FFmpeg.html                |  86 ++--
+|  docs/reference/install.GitHub.html                |  91 ++--
+|  docs/reference/install.GraphicsMagick.html        |  94 ++--
+|  docs/reference/install.ImageMagick.html           |  89 ++--
+|  docs/reference/install.LaTeX2RTF.html             |  89 ++--
+|  docs/reference/install.LyX.html                   |  90 ++--
+|  docs/reference/install.MikTeX.html                |  82 ++--
+|  docs/reference/install.R.html                     | 101 ++---
+|  docs/reference/install.RStudio.html               |  87 ++--
+|  docs/reference/install.Rdevel.html                |  88 ++--
+|  docs/reference/install.Rtools.html                | 130 +++---
+|  docs/reference/install.SWFTools.html              |  89 ++--
+|  docs/reference/install.Texmaker.html              |  89 ++--
+|  docs/reference/install.URL.html                   | 105 +++--
+|  docs/reference/install.conda.html                 |  87 ++--
+|  docs/reference/install.git.html                   |  81 ++--
+|  docs/reference/install.inno.html                  |  85 ++--
+|  docs/reference/install.java.html                  | 143 +++---
+|  docs/reference/install.nodejs.html                |  92 ++--
+|  docs/reference/install.notepadpp.html             |  87 ++--
+|  docs/reference/install.npptor.html                |  88 ++--
+|  docs/reference/install.packages.zip.html          |  83 ++--
+|  docs/reference/install.pandoc.html                |  96 ++--
+|  docs/reference/install.python.html                |  95 ++--
+|  docs/reference/installr-package.html              |  75 ++--
+|  docs/reference/installr.html                      |  80 ++--
+|  docs/reference/is.RStudio.html                    |  78 ++--
+|  docs/reference/is.Rgui.html                       |  81 ++--
+|  docs/reference/is.empty.html                      | 104 +++--
+|  docs/reference/is.exe.installed.html              |  77 ++--
+|  docs/reference/is.windows.html                    |  78 ++--
+|  docs/reference/is.x64.html                        |  76 ++--
+|  docs/reference/is_in_.First_in_Rprofile.site.html |  96 ++--
+|  docs/reference/kill_all_Rscript_s.html            |  95 ++--
+|  docs/reference/kill_pid.html                      |  99 ++---
+|  docs/reference/kill_process.html                  |  97 ++--
+|  docs/reference/lineplot_package_downloads.html    | 115 ++---
+|  docs/reference/load_installr_on_startup.html      |  84 ++--
+|  docs/reference/most_downloaded_packages.html      | 102 ++---
+|  docs/reference/myip.html                          |  81 ++--
+|  docs/reference/os.hibernate.html                  |  98 ++--
+|  docs/reference/os.lock.html                       |  98 ++--
+|  docs/reference/os.manage.html                     |  93 ++--
+|  docs/reference/os.restart.html                    |  98 ++--
+|  docs/reference/os.shutdown.html                   |  96 ++--
+|  docs/reference/os.sleep.html                      |  98 ++--
+|  docs/reference/package_authors.html               | 120 ++---
+|  docs/reference/pkgDNLs_worldmapcolor.html         | 103 +++--
+|  docs/reference/read_RStudio_CRAN_data.html        | 113 ++---
+|  docs/reference/remove.installr.GUI.html           |  78 ++--
+|  .../remove_from_.First_in_Rprofile.site.html      |  96 ++--
+|  docs/reference/rename_r_to_R.html                 | 100 +++--
+|  docs/reference/require2.html                      |  95 ++--
+|  docs/reference/restart_RGui.html                  |  79 ++--
+|  docs/reference/rm_installr_from_startup.html      |  86 ++--
+|  docs/reference/source.https.html                  |  91 ++--
+|  docs/reference/system.PATH.html                   |  76 ++--
+|  docs/reference/turn.number.version.html           |  77 ++--
+|  docs/reference/turn.version.to.number.html        |  75 ++--
+|  docs/reference/turn.version.to.number1.html       |  80 ++--
+|  docs/reference/uninstall.R.html                   |  88 ++--
+|  docs/reference/uninstall.packages.html            |  92 ++--
+|  docs/reference/up_folder.html                     |  73 +--
+|  docs/reference/updateR.html                       | 124 +++---
+|  docs/reference/xlsx2csv.html                      |  78 ++--
+|  105 files changed, 5495 insertions(+), 4521 deletions(-)
+
+* 2021-05-08(Tal Galili) Fix more urls, and remove a troublesome unittest |ca72e8a| 
+|  DESCRIPTION                         |  4 ++--
+|  R/install.R                         |  5 ++---
+|  R/is.x.R                            |  4 ++--
+|  R/kill_pid.R                        |  6 +++---
+|  R/updateR.R                         |  2 +-
+|  R/xlsx2csv.R                        |  2 +-
+|  R/zzz.R                             |  2 +-
+|  man/add.installr.GUI.Rd             |  2 +-
+|  man/ask.user.yn.question.Rd         |  2 +-
+|  man/install.notepadpp.Rd            |  4 ++--
+|  man/install.npptor.Rd               |  1 -
+|  man/is.empty.Rd                     |  4 ++--
+|  man/kill_all_Rscript_s.Rd           |  2 +-
+|  man/kill_pid.Rd                     |  2 +-
+|  man/kill_process.Rd                 |  2 +-
+|  man/xlsx2csv.Rd                     |  2 +-
+|  tests/testthat/test-installRtools.R | 17 ++++++++++-------
+|  17 files changed, 32 insertions(+), 31 deletions(-)
+
+* 2021-05-08(Tal Galili) Fix many urls |7412e01| 
+|  NEWS                                       |  1 +
+|  R/RStudio_CRAN_data.R                      | 10 +++---
+|  R/create.global.library.R                  |  2 +-
+|  R/geo_functions.R                          |  4 +--
+|  R/install.R                                | 50 ++++++++++++++--------------
+|  R/kill_pid.R                               | 12 +++----
+|  R/os.manage.R                              | 10 +++---
+|  R/startup.R                                | 30 ++++++++---------
+|  man/add_to_.First_in_Rprofile.site.Rd      |  6 ++--
+|  man/ask.user.for.a.row.Rd                  |  2 +-
+|  man/check.integer.Rd                       |  2 +-
+|  man/cranometer.Rd                          |  2 +-
+|  man/fetch_tag_from_Rd.Rd                   |  2 +-
+|  man/format_RStudio_CRAN_data.Rd            |  2 +-
+|  man/freegeoip.Rd                           |  2 +-
+|  man/get_Rscript_PID.Rd                     |  2 +-
+|  man/get_pid.Rd                             |  2 +-
+|  man/get_tasklist.Rd                        |  2 +-
+|  man/install.7zip.Rd                        |  4 +--
+|  man/install.CMake.Rd                       |  2 +-
+|  man/install.GitHub.Rd                      |  2 +-
+|  man/install.notepadpp.Rd                   |  4 +--
+|  man/install.npptor.Rd                      |  4 +--
+|  man/install.pandoc.Rd                      |  4 +--
+|  man/is_in_.First_in_Rprofile.site.Rd       |  6 ++--
+|  man/kill_all_Rscript_s.Rd                  |  2 +-
+|  man/kill_pid.Rd                            |  2 +-
+|  man/kill_process.Rd                        |  2 +-
+|  man/lineplot_package_downloads.Rd          |  2 +-
+|  man/load_installr_on_startup.Rd            |  6 ++--
+|  man/most_downloaded_packages.Rd            |  2 +-
+|  man/os.hibernate.Rd                        |  2 +-
+|  man/os.lock.Rd                             |  2 +-
+|  man/os.manage.Rd                           |  2 +-
+|  man/os.restart.Rd                          |  2 +-
+|  man/os.sleep.Rd                            |  2 +-
+|  man/package_authors.Rd                     |  2 +-
+|  man/pkgDNLs_worldmapcolor.Rd               |  2 +-
+|  man/read_RStudio_CRAN_data.Rd              |  2 +-
+|  man/remove_from_.First_in_Rprofile.site.Rd |  6 ++--
+|  man/rm_installr_from_startup.Rd            |  6 ++--
+|  man/source.https.Rd                        |  2 +-
+|  tests/testthat/test-installRtools.R        |  3 ++
+|  43 files changed, 111 insertions(+), 107 deletions(-)
+
+* 2021-05-08(Tal Galili) update .travis.yml |550cee7| 
+|  .travis.yml | 25 ++++++-------------------
+|  1 file changed, 6 insertions(+), 19 deletions(-)
+
+* 2021-05-08(Tal Galili) installr is now also available to install on linux/mac. (fix #164) |1c57090| 
+|  ChangeLog                  | 305 +++++++++++++++++++++++++++++++++++++++++++
+|  DESCRIPTION                |   3 +-
+|  NEWS                       |   3 +-
+|  NEWS.md                    |   6 +-
+|  R/zzz.R                    |   2 +-
+|  man/install.ImageMagick.Rd |   2 +-
+|  6 files changed, 315 insertions(+), 6 deletions(-)
+
 *   2020-11-09(Tal Galili) Merge pull request #159 from burgerga/patch-1 |5c68d0e
 |\  
 | * 2020-10-26(Gerhard Burger) Add omitted invisible to installRtools return |0cec316
