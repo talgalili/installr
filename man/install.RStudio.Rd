@@ -29,6 +29,6 @@ install.RStudio() # installs the latest version of RStudio
 }
 \references{
 \itemize{
-\item RStudio homepage: \url{https://www.posit.co/}
+\item RStudio homepage: \url{https://posit.co/}
 }
 }

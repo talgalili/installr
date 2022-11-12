@@ -675,7 +675,7 @@ install.lyx <- function(...) install.LyX(...)
 #' @export
 #' @references
 #' \itemize{
-#' \item RStudio homepage: \url{https://www.posit.co/}
+#' \item RStudio homepage: \url{https://posit.co/}
 #' } 
 #' @examples
 #' ### devtools::source_url

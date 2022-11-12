@@ -11,44 +11,44 @@
 \usage{
 install.java(
   version = 11,
-  page_with_download_url = "http://jdk.java.net/java-se-ri/",
+  page_with_download_url = "https://jdk.java.net/java-se-ri/",
   path = "C:/java"
 )
 
 install.Java(
   version = 11,
-  page_with_download_url = "http://jdk.java.net/java-se-ri/",
+  page_with_download_url = "https://jdk.java.net/java-se-ri/",
   path = "C:/java"
 )
 
 install.jdk(
   version = 11,
-  page_with_download_url = "http://jdk.java.net/java-se-ri/",
+  page_with_download_url = "https://jdk.java.net/java-se-ri/",
   path = "C:/java"
 )
 
 install.Jdk(
   version = 11,
-  page_with_download_url = "http://jdk.java.net/java-se-ri/",
+  page_with_download_url = "https://jdk.java.net/java-se-ri/",
   path = "C:/java"
 )
 
 install.openjdk(
   version = 11,
-  page_with_download_url = "http://jdk.java.net/java-se-ri/",
+  page_with_download_url = "https://jdk.java.net/java-se-ri/",
   path = "C:/java"
 )
 
 install.OpenJdk(
   version = 11,
-  page_with_download_url = "http://jdk.java.net/java-se-ri/",
+  page_with_download_url = "https://jdk.java.net/java-se-ri/",
   path = "C:/java"
 )
 }
 \arguments{
 \item{version}{9 or 10 is passible. Default is 11.}
 
-\item{page_with_download_url}{where to download. Default is \url{http://jdk.java.net/java-se-ri/11}}
+\item{page_with_download_url}{where to download. Default is \url{https://jdk.java.net/java-se-ri/11}}
 
 \item{path}{where to set java. Default path is C:/java}
 }
