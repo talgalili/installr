@@ -31,6 +31,6 @@ install.LaTeX2RTF() # installs the latest version of LaTeX2RTF
 }
 \references{
 \itemize{
-\item SWFTools homepage: \url{http://latex2rtf.sourceforge.net/}
+\item SWFTools homepage: \url{https://latex2rtf.sourceforge.net/}
 }
 }

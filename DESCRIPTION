@@ -2,7 +2,7 @@ Package: installr
 Type: Package
 Title: Using R to Install Stuff on Windows OS (Such As: R, 'Rtools', 'RStudio', 'Git', and More!)
 Version: 0.23.4
-Date: 2022-11-07
+Date: 2022-11-13
 Authors@R: c(person("Tal", "Galili", role = c("aut", "cre", "cph"), email =
     "tal.galili@gmail.com", comment = "http://www.r-statistics.com"),
     person("Barry", "Rowlingson", role = "ctb", email =

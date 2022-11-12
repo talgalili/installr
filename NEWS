@@ -1,8 +1,8 @@
-installr 0.23.4 (2022-11-07)
+installr 0.23.4 (2022-11-13)
 ---------------------------
 BUG FIXES:
    * Fix installr::install.Rtools(). props to and @arthurgailes and @burgerga.
-
+   * Fix a bunch of nits for CRAN release
 
 
 installr 0.23.3 (2022-03-25)
@@ -855,7 +855,7 @@ OTHER NOTES:
    * Added documentation to all the functions in install.r (via roxygen2)
 
 
-installR 0.2
+installr 0.2
 ------------
 
 NEW FUNCTIONS ADDED:
@@ -867,7 +867,7 @@ NEW FUNCTIONS ADDED:
 	
 
 
-installR 0.1 (2013-03-01) 
+installr 0.1 (2013-03-01) 
 -------------------------
 
 NEW FUNCTIONS ADDED:
@@ -880,9 +880,10 @@ OTHER NOTES:
 	
 
 	
+installr 0.0.1 (2013-02-20) 
+-------------------------
 
 TODO for future releases:
--------------------------
 	* Better integration with the "global library" strategy
 	* make the os.manage work by running an Rscript, in order to allow for their use in long running of knitr/Sweave projects.
    * Add a rate function for the package

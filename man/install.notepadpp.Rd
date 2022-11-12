@@ -30,6 +30,6 @@ install.notepadpp() # installs the latest version of Notepad++
 }
 }
 \references{
-homepage: \url{http://notepad-plus-plus.org/}
+homepage: \url{https://notepad-plus-plus.org/}
 download page: \url{https://notepad-plus-plus.org/downloads/}
 }

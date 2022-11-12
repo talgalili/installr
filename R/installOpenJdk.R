@@ -28,7 +28,7 @@
 #' @return TRUE/FALSE - was the installation successful or not.
 #' @author Chan-Yub Park And Tal Galili
 #' @param version 9 or 10 is passible. Default is 11.
-#' @param page_with_download_url where to download. Default is \url{http://jdk.java.net/java-se-ri/11}
+#' @param page_with_download_url where to download. Default is \url{https://jdk.java.net/java-se-ri/11}
 #' @param path where to set java. Default path is C:/java
 #' @examples
 #' \dontrun{
@@ -42,7 +42,7 @@ NULL
 #' @export
 #' @rdname install.java
 install.java <- function(version = 11,
-                         page_with_download_url = "http://jdk.java.net/java-se-ri/",
+                         page_with_download_url = "https://jdk.java.net/java-se-ri/",
                          path = "C:/java") {
   page <- readLines(paste0(page_with_download_url, version), warn = F)
   target_line <- grep("windows", page, value = T)[1]

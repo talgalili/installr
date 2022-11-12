@@ -380,8 +380,8 @@ ask.user.for.a.row <- function(TABLE,
 
    if(missing(questions_text)) questions_text <- "Please review the table of versions from above,
 and enter the row number of the file-version you'd like to install: "
-   
-   if(class(TABLE) != "data.frame") {
+
+   if(!inherits(TABLE,"data.frame")) {
       TABLE <- as.data.frame(TABLE)
       colnames(TABLE)[1] <- "Choose:"
    }
@@ -434,14 +434,14 @@ and enter the row number of the file-version you'd like to install: "
 #' @return TRUE/FALSE - was the installation successful or not.
 #' @export
 #' @references
-#' git homepage: \url{http://git-scm.com/}
-#' git download page: \url{http://git-scm.com/download/win}
+#' git homepage: \url{https://git-scm.com/}
+#' git download page: \url{https://git-scm.com/download/win}
 #' @examples
 #' \dontrun{
 #' install.git() # installs the latest version of git
 #' }
-install.git <- function(URL="http://git-scm.com/download/win", version = 64, ...) {
-   # "http://git-scm.com/download/win"
+install.git <- function(URL="https://git-scm.com/download/win", version = 64, ...) {
+   # "https://git-scm.com/download/win"
    # get download URL:
    page     <- readLines(URL, warn = FALSE)
    # https://msysgit.googlecode.com/files/Git-1.8.1.2-preview20130201.exe
@@ -474,14 +474,14 @@ install.git <- function(URL="http://git-scm.com/download/win", version = 64, ...
 #' @return invisible TRUE/FALSE - was the installation successful or not.
 #' @export
 #' @references
-#' homepage: \url{http://notepad-plus-plus.org/}
+#' homepage: \url{https://notepad-plus-plus.org/}
 #' download page: \url{https://notepad-plus-plus.org/downloads/}
 #' @examples
 #' \dontrun{
 #' install.notepadpp() # installs the latest version of Notepad++
 #' }
 install.notepadpp <- function(page_with_download_url="https://notepad-plus-plus.org/downloads/",...) {
-   # "http://git-scm.com/download/win"
+   # "https://git-scm.com/download/win"
    # get download URL:
    page     <- readLines(page_with_download_url, warn = FALSE)
    # OLD: http://download.tuxfamily.org/notepadplus/6.3.1/npp.6.3.1.Installer.exe
@@ -521,7 +521,7 @@ install.notepadpp <- function(page_with_download_url="https://notepad-plus-plus.
 #' }
 install.npptor <- function(URL="http://sourceforge.net/projects/npptor/files/npptor%20installer/",...) {
    page_with_download_url <- URL
-   # "http://git-scm.com/download/win"
+   # "https://git-scm.com/download/win"
    # get download URL:
    page     <- readLines(page_with_download_url, warn = FALSE)
    # /npptor installer/NppToR-2.6.2.exe
@@ -675,7 +675,7 @@ install.lyx <- function(...) install.LyX(...)
 #' @export
 #' @references
 #' \itemize{
-#' \item RStudio homepage: \url{https://www.rstudio.com/}
+#' \item RStudio homepage: \url{https://www.posit.co/}
 #' } 
 #' @examples
 #' ### devtools::source_url
@@ -838,7 +838,7 @@ install.swftools <- function(...) install.SWFTools(...)
 #' @export
 #' @references
 #' \itemize{
-#' \item SWFTools homepage: \url{http://latex2rtf.sourceforge.net/}
+#' \item SWFTools homepage: \url{https://latex2rtf.sourceforge.net/}
 #' } 
 #' @examples
 #' \dontrun{

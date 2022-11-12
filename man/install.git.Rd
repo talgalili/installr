@@ -4,7 +4,7 @@
 \alias{install.git}
 \title{Downloads and installs git and git-gui for windows}
 \usage{
-install.git(URL = "http://git-scm.com/download/win", version = 64, ...)
+install.git(URL = "https://git-scm.com/download/win", version = 64, ...)
 }
 \arguments{
 \item{URL}{the URL of the git download page.}
@@ -28,6 +28,6 @@ install.git() # installs the latest version of git
 }
 }
 \references{
-git homepage: \url{http://git-scm.com/}
-git download page: \url{http://git-scm.com/download/win}
+git homepage: \url{https://git-scm.com/}
+git download page: \url{https://git-scm.com/download/win}
 }
