@@ -1,5 +1,10 @@
+[![Project Status: Unsupported – The project has reached a stable, usable state but the author(s) have ceased all work on it. A new maintainer may be desired.](https://www.repostatus.org/badges/latest/unsupported.svg)](https://www.repostatus.org/#unsupported)
+
+:exclamation: **This repository is unsupported** (see https://github.com/talgalili/installr/issues/183), a more broadly applicable alternative is Winget/WingetUI (https://www.marticliment.com/wingetui/) (see the discussion in https://github.com/talgalili/installr/issues/183#issuecomment-1725363286).
+
+---
+
 <!-- badges: start -->
-[![Build Status](https://travis-ci.org/talgalili/installr.png?branch=master)](https://travis-ci.org/talgalili/installr)
 [![CRAN_Status_Badge](http://www.r-pkg.org/badges/version/installr)](https://cran.r-project.org/package=installr)
 [![AppVeyor build status](https://ci.appveyor.com/api/projects/status/github/talgalili/installr?branch=master&svg=true)](https://ci.appveyor.com/project/talgalili/installr)
 ![](http://cranlogs.r-pkg.org/badges/installr?color=yellow)
