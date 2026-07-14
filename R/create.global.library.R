@@ -121,7 +121,22 @@ create.global.library <- function(global_library_folder)
    did_we_create_global_library_folder
 }
 
-
+# Internal helper that removes package folders from the global library.
+#
+# It only calls unlink() when there is at least one candidate path. This guards
+# against the previously buggy check `if (package.to.del.from.global.lib > 0)`
+# which (a) errored with "argument is of length zero" when the candidate vector
+# was empty (character(0)) and (b) only inspected the first element (with a
+# warning) when several paths were present.
+#
+# Returns (invisibly) the number of candidate paths that were removed.
+delete_packages_from_global_library <-
+   function(package.to.del.from.global.lib) {
+      if (length(package.to.del.from.global.lib) > 0) {
+         unlink(package.to.del.from.global.lib, recursive = TRUE)
+      }
+      invisible(length(package.to.del.from.global.lib))
+   }
 
 
 
@@ -256,10 +271,10 @@ xx.global.library <- function(
 
       package.to.del.from.global.lib <- packages_in_libs_to_move
 
-      number.of.packages.we.will.delete <- length(package.to.del.from.global.lib)
-      if(package.to.del.from.global.lib >0 ) {
+      number.of.packages.we.will.delete <-
+         delete_packages_from_global_library(package.to.del.from.global.lib)
+      if(number.of.packages.we.will.delete > 0) {
          # maybe add a user input here...
-         deleted.packages <- unlink(package.to.del.from.global.lib , recursive = TRUE)   # delete all the packages from the "original" library folder (no need for double folders)
          cat(paste(number.of.packages.we.will.delete,"Packages where deleted."),"\n")
       }
    }
